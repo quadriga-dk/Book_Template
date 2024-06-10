@@ -8,6 +8,9 @@ parts:
     chapters:
       - file: develop/intro
       - file: develop/git
+      - file: develop/python
+      - file: develop/jupyter_book
+      - file: develop/editor
   - caption: Datentypen und Formatierung
     chapters:
       - file: formatting/markdown
