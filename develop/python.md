@@ -1,7 +1,7 @@
 # Python
 
 ## Installation
-Gehe auf die Downloadseite von Anaconda um Dir die passende Version für Dein Betriebssystem herunterzuladen. Es ist nicht nötig, eine E-Mail anzugeben!
+Gehe auf die [Downloadseite von Anaconda](https://www.anaconda.com/download) um Dir die passende Version für Dein Betriebssystem herunterzuladen. Es ist nicht nötig, eine E-Mail anzugeben! Nutze "Skip registration" um gleich zu den Download-Links zu kommen.
 
 Fall Du einen Paketmanager wie homebrew oder Chocolatey nutzt kannst du ggf. auch diesen für die Installation nutzen.
 
