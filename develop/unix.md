@@ -1,3 +1,18 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+```{code-cell} ipython3
+:tags: [remove_cell]
+from jupyterquiz import display_quiz
+```
 # Exkurs: Unix
 
 Viele der Kommandozeilenbefehle, die hier in dieser Anleitung genutzt werden, gehen von einer Unix-Umgebung aus. In einer solchen Umgebung gibt es eine sogenannte Shell – ein Programm, das textuell bedient wird und mit dem viele essentielle Tätigkeiten wie das Anlegen und Verschieben von Ordnern möglich sind. Eine Shell wird in einem sogenannten Terminal-Programm angezeigt, welches das grafische Fenster in Ihrem Betriebssystem zeichnet und die Text Ein- und Ausgabe verwaltet. Diese Unterscheidung ist nur manchmal relevant, sollte aber einmal genannt werden.
@@ -20,7 +35,7 @@ Nehmen wir für die weiteren Übungen die folgende Ordnerstruktur ({numref}`fig-
 
 ```{figure} ../assets/develop/unix/Ordnerstruktur.svg
 ---
-align: center
+align: left
 width: 50%
 name: fig-d-u-ordnerstruktur
 ---
@@ -32,6 +47,56 @@ Darstellung der Ordnerstruktur die für die nachfolgenden Beispiele genutzt wird
 - `cd`
 - `ls`
 - …
+
+
+```{code-cell} ipython3
+:tags: [remove_input]
+questions = \
+[
+  { 'question': "Du befindest dich im Ordner 02_Didaktik. Wie navigierst Du in den Ordner Bilder?",
+    'type': 'multiple_choice',
+    'answers': [
+    { 'answer': 'cd Bilder',
+      'correct': False,
+      'feedback': 'Der Ordner Bilder ist kein Unterordner von 02_Didaktik.'},
+    { 'answer': 'cd ../Bilder',
+      'correct': False,
+      'feedback': 'Der Ordner Bilder liegt nicht neben dem Ordner 02_Didaktik.'},
+    { 'answer': 'cd ../../Bilder',
+      'correct': True,
+      'feedback': 'Richtig!'},
+    { 'answer': 'cd ../../../Tutorial/Bilder',
+      'correct': True,
+      'feedback': "Auch das stimmt. Wir \"gehen\" einen Ordner weiter nach oben und dann wieder zurück in Tutorial."},
+    { 'answer': 'cd ~/Documents/Tutorial/Bilder',
+      'correct': True,
+      'feedback': "Eine absolute Pfadangabe geht jederzeit. Oft sind relative Pfade aber schneller zu tippen und sie funktionieren auch, wenn der Ordner Tutorials an einer anderen Stelle als in Documents liegt."}
+    ]
+  },
+  { 'question': "Du befindest dich im Ordner Tutorial. Wie kannst Du Dir den Inhalt von 01_Technologie anzeigen lassen?",
+    'type': 'multiple_choice',
+    'answers': [
+    { 'answer': 'ls 01_Technologie',
+      'correct': False,
+      'feedback': 'Im Ordner Tutorial gibt es keinen Ordner 01_Technologie.'},
+    { 'answer': 'dir Markdown/01_Technologie',
+      'correct': False,
+      'feedback': 'dir ist der Befehl in Windows. Aber auch dann wäre es falsch, weil dort Backslash benutzt wird. Es müsste dann lauten: dir Markdown\01_Technologie.'},
+    { 'answer': 'ls Markdown/01_Technologie',
+      'correct': True,
+      'feedback': 'Richtig! Das ist die einfachste Variante.'},
+    { 'answer': 'cd Markdown; ls 01_Technologie',
+      'correct': True,
+      'feedback': "Das funktioniert und gibt das richtige Ergebnis aus. Allerdings hast Du Dich \"bewegt\" und bist jetzt im Ordner Markdown. Falls du das nicht willst, müsstest du wieder einen Ordner nach oben."},
+    { 'answer': 'ls -R Markdown',
+      'correct': True,
+      'feedback': "Du als Mensch bekommst so den Inhalt des Ordners 01_Technologie heraus. Allerdings wird Dir noch mehr ausgegeben. Wenn Du die Ausgabe des Befehls mit einem Programm weiterbearbeiten wolltest, dann wäre es keine gute Idee, diesen Befehl zu nutzen."}
+    ]
+  },
+]
+
+display_quiz(questions)
+```
 
 ## Arbeiten mit Ordnern
 - `mkdir`
