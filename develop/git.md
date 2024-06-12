@@ -85,7 +85,13 @@ Mit einem Branch kannst Du einen Commit (bzw. eine Reihe von Commits) benennen, 
 14. Aktiviere Github Pages und Github Actions in deinem Fork um automatisch das Jupyter Book bauen zu lassen.
 
 ## Branches und Commits
-![Darstellung von eine zeitlichen Entwicklung mehrerer Commits und Branches. Ausgehend vom Branch "main" wird ein Branch "tutorial" angelegt. In diesem wird ein Commit gespeichert. Dann wird in Main ein anderer Commit gespeichert. Im nächsten Schritt wird noch ein Commit im Branch "tutorial" erzeugt. Am Ende wird der Branch "tutorial" in den Branch "main" gemerged.](../_static/img/Git_branches_ueber_die_Zeit.svg)
+```{figure} ../assets/develop/git/Git_branches_ueber_die_Zeit.svg
+---
+align: center
+width: 80%
+---
+Darstellung einer zeitlichen Entwicklung mehrerer Commits und Branches. Ausgehend vom Branch *main* wird ein Branch *tutorial* angelegt. In diesem wird ein Commit gespeichert. Dann wird in *main* ein anderer Commit gespeichert. Im nächsten Schritt wird noch ein Commit im Branch *tutorial* erzeugt. Am Ende wird der Branch *tutorial* in den Branch *main* gemerged.
+```
 
 ## Ressourcen
 Es gibt viele Ressourcen rund um Git – die meisten sind nur auf Englisch verfügbar.
