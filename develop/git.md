@@ -65,8 +65,8 @@ Ein anderer Weg ist es, Commits in einem Branch zu pushen und dann bspw. über d
 ## Branch und switch
 Mit einem Branch kannst Du einen Commit (bzw. eine Reihe von Commits) benennen, sodass Du ihn wieder leicht finden kannst. Mit `git branch -c tutorial` erzeugst Du einen Branch. Mit `git switch tutorial` wechselst Du zu dem Branch. Commits, die du erstellts während du im Branch bist, werden automatisch zum Branch hinzugefügt. Dies ermöglicht es, getrennt von Änderungen anderer zu arbeiten. Wenn Du mit dem Zustand des Branches zufrieden bist, kannst Du ihn dann wieder mit dem normalen Entwicklungsbranch (meistens entweder *main* oder *master* genannt) zusammenführen. Ein Branch kann lokal bleiben oder auf den Server synchronisiert werden, sodass andere auch an dem Feature arbeiten können.
 
-
-## Übung:
+```{admonition} Übung
+:class: tip
 1. Gehe auf die [Github-Seite des OER-Templates](https://github.com/quadriga-dk/Book_Template).
 2. Stelle sicher, dass du eingeloggt bist und wähle dann *Fork > Create a new Fork*.
 3. Folge den Anweisungen um eine Kopie spezielle des Templates in Deinem Github-Account zu erstellen, die Fork genannt wird. Ein Fork ist verbunden zum sogenannten *Upstream* Repositorium und kann Änderungen aus diesem bei sich wieder Einpflegen und Vorschläge für Änderungen (sog. Pull Requests) anbieten.
@@ -84,11 +84,13 @@ Mit einem Branch kannst Du einen Commit (bzw. eine Reihe von Commits) benennen, 
 ### Bonus
 14. Aktiviere Github Pages und Github Actions in deinem Fork um automatisch das Jupyter Book bauen zu lassen.
 
+```
+
 ## Branches und Commits
 ```{figure} ../assets/develop/git/Git_branches_ueber_die_Zeit.svg
 ---
-align: center
-width: 80%
+align: left
+width: 100%
 ---
 Darstellung einer zeitlichen Entwicklung mehrerer Commits und Branches. Ausgehend vom Branch *main* wird ein Branch *tutorial* angelegt. In diesem wird ein Commit gespeichert. Dann wird in *main* ein anderer Commit gespeichert. Im nächsten Schritt wird noch ein Commit im Branch *tutorial* erzeugt. Am Ende wird der Branch *tutorial* in den Branch *main* gemerged.
 ```
