@@ -13,7 +13,7 @@ kernelspec:
 :tags: [remove_cell]
 from jupyterquiz import display_quiz
 ```
-# Exkurs: Unix
+# Unix
 
 Viele der Kommandozeilenbefehle, die hier in dieser Anleitung genutzt werden, gehen von einer Unix-Umgebung aus. In einer solchen Umgebung gibt es eine sogenannte Shell – ein Programm, das textuell bedient wird und mit dem viele essentielle Tätigkeiten wie das Anlegen und Verschieben von Ordnern möglich sind. Eine Shell wird in einem sogenannten Terminal-Programm angezeigt, welches das grafische Fenster in Ihrem Betriebssystem zeichnet und die Text Ein- und Ausgabe verwaltet. Diese Unterscheidung ist nur manchmal relevant und oft werden beide Namen – Shell und Terminal – gleichwertig benutzt, aber es sollte Dir klar sein, dass es einen Unterschied gibt.
 
@@ -22,10 +22,12 @@ Die Befehle, die eine Shell ausführen kann können dabei Bestandteil der Shell 
 Eine der Besonderheiten einer Shell ist, dass eingebaute Befehle und Programme gleichwertig miteinander verbunden werden können, sodass komplexe Abläufe mit einfachen Befehlen ausgeführt werden können.
 
 In Unix-basierten Betriebssystemen gibt es verschiedene Shell-Programme wie `bash`, `fish` oder `zsh`, welche von der "Ur-Shell" `sh` abstammen und diese erweitern. Unter Windows gibt es die Möglichkeit eine `bash` über das Programm *Git Bash* zu nutzen.
+
 ```{margin}
 Unter Windows gibt es auch "nativ" ähnliche Programme mit der *Eingabeaufforderung* bzw. der *Power Shell*. Diese unterscheiden sich jedoch teilweise in ihrer Funktionalität und Mächtigkeit und verwenden andere Befehle und eine andere Programm-Syntax.
 ```
 ## Navigation in der Shell
+
 ```{margin}
 Je nachdem, welche Shell Du benutzt kannst Du die Startkonfiguration anpassen über Dateien wie `.profile`, `.bashrc`, `.zshrc`, … Sieh Dir dazu die Dokumentation deiner Shell an.
 ```
@@ -97,10 +99,15 @@ Welche Ausgaben ergeben die folgenden Befehle?
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial
+
 $ ls
+
 $ ls Bilder
+
 $ ls Markdown
+
 $ cd Markdown; ls ..
+
 $ pwd
 ```
 ````{admonition} Lösung
@@ -109,20 +116,24 @@ Wenn Du nacheinander die Befehle eingibst sollte Dein Terminal ungefähr so auss
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial
+
 $ ls
 Bilder
 Markdown
 README.md
+
 $ ls Bilder
 
 $ ls Markdown
 01_Technologie
 02_Didaktik
 Einleitung.md
+
 $ cd Markdown; ls ..
 Bilder
 Markdown
 README.md
+
 $ pwd
 /Users/Testnutzer/Documents/Tutorial/Markdown
 ```
@@ -199,17 +210,21 @@ Mögliche Lösungswege sind:
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial
+
 $ cd Markdown
+
 $ mkdir 03_Assessment
 ```
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial
+
 $ mkdir Markdown/04_Übungen
 ```
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial
+
 $ mkdir /Users/Testnutzer/Documents/Tutorial/Markdown/05_Fazit
 ```
 
@@ -217,7 +232,9 @@ Bonus:
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial
+
 $ cd Markdown/02_Didaktik
+
 $ mkdir ../06_Anhang
 ```
 
@@ -225,6 +242,7 @@ $ mkdir ../06_Anhang
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial
+
 $ ls Markdown
 01_Technologie
 02_Didaktik
@@ -246,14 +264,18 @@ Erstelle im Ordner `Tutorial` eine Datei mit dem Namen `Multiple_Choice.md`. Mit
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial
+
 $ touch Multiple_Choice.md
+
 $ mv Multiple_Choice.md Markdown/03_Assessment/
 ```
 Der Slash (`/`) am Ende des Befehls sagt, dass die Datei *in* den Ordner `03_Assessment` verschoben werden soll. Um sicherzugehen kannst Du auch die nachfolgende Pfadangabe machen:
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial
+
 $ touch Multiple_Choice.md
+
 $ mv Multiple_Choice.md Markdown/03_Assessment/.
 ```
 Das macht nochmals explizit, dass Du die Datei *in* den Ordner verschiebst.
@@ -267,7 +289,9 @@ Lege eine Datei mit einem Tippfehler im Namen, bspw. `Kaulsur.md`, und nenne sie
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial/Markdown/03_Assessment
+
 $ touch Kaulsur.md
+
 $ mv Kaulsur.md Klausur.md
 ```
 
@@ -275,7 +299,9 @@ Du kannst eine Datei auch gleichzeitig verschieben und umbenennen:
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial/
+
 $ touch Kaulsur.md
+
 $ mv Kaulsur.md Markdown/03_Assessment/Klausur.md
 ```
 ````
@@ -286,13 +312,17 @@ Erstelle eine Datei mit dem Namen `.hidden` und einen Ordner mit dem Namen `.sec
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial/
+
 $ touch .hidden
+
 $ mkdir .secrets
+
 $ ls
 Bilder
 Markdown
 README.md
 Videos
+
 $ ls -a
 .
 ..
@@ -311,10 +341,15 @@ Wenn Du im Ordner `Markdown` bist, was geben die folgenden Befehle aus?
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial/Markdown
+
 $ ls
+
 $ ls -a
+
 $ ls ..
+
 $ ls ../Markdown/.
+
 $ ls 01_Technologie/../../Bilder/..
 ```
 
@@ -323,6 +358,7 @@ $ ls 01_Technologie/../../Bilder/..
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial/Markdown
+
 $ ls
 01_Technologie
 02_Didaktik
@@ -331,6 +367,7 @@ $ ls
 05_Fazit
 06_Anhang
 Einleitung.md
+
 $ ls -a
 .
 ..
@@ -341,6 +378,7 @@ $ ls -a
 05_Fazit
 06_Anhang
 Einleitung.md
+
 $ ls -a ..
 .
 ..
@@ -350,6 +388,7 @@ Bilder
 Markdown
 README.md
 Videos
+
 $ ls ../Markdown/.
 01_Technologie
 02_Didaktik
@@ -358,6 +397,7 @@ $ ls ../Markdown/.
 05_Fazit
 06_Anhang
 Einleitung.md
+
 $ ls 01_Technologie/../../Bilder/..
 Bilder
 Markdown
@@ -379,9 +419,12 @@ Um einen Ordner zu löschen musst Du die Option `-r` nutzen.
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial/Markdown
+
 $ rm .hidden
+
 $ rm .secrets
 rm: .secrets: is a directory
+
 $ ls -a
 .
 ..
@@ -390,7 +433,9 @@ Bilder
 Markdown
 README.md
 Videos
+
 $ rm -r .secrets
+
 $ ls -a
 .
 ..
