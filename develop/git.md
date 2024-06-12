@@ -27,15 +27,15 @@ git clone https://github.com/quadriga-dk/Book_Template
 Das Ergebnis dieses Befehls ist, dass ein Ordner `Book_Template` am aktuellen Ort im Dateisystem angelegt wird und in diesem eine vollständige Kopie des Repositoriums von Github abgelegt wird. Navigiere ggf. vor ausführen des Befehls an eine andere Stelle im Dateisystem. Im Repositorium enthalten ist die gesamte Versionsgeschichte – d.h. alle Commits – sowie alle nötigen Informationen, um das lokale Repositorium nutzen zu können.
 
 ### Fetch
-Regelmäßig – insbesondere wenn Du weißt, dass jemand anderes eine neue Version nach Github hochgeladen hat – solltest Du `git fetch` nutzen um eine Kopie der Commits auf dem Server herunterzuladen. Ein `git fetch` ändert nichts an dem Commit in dem Du gerade arbeitest und auch nichts an den Änderungen, die du lokal gerade machst. 
+Regelmäßig – insbesondere wenn Du weißt, dass jemand anderes eine neue Version nach Github hochgeladen hat – solltest Du `git fetch` nutzen um eine Kopie der Commits auf dem Server herunterzuladen. Ein `git fetch` ändert nichts an dem Commit in dem Du gerade arbeitest und auch nichts an den Änderungen, die Du lokal gerade machst. 
 
-Wenn Du einen anderen Commit auswählen willst geht das mit `git checkout`. Das überschreibt ggf. aktive Änderungen, die du noch nicht gespeichert hast (s.u.).
+Wenn Du einen anderen Commit auswählen willst geht das mit `git checkout`. Das überschreibt ggf. aktive Änderungen, die Du noch nicht gespeichert hast (s.u.).
 
 ### Pull
 Wenn Du auf den gleichen Stand wechseln willst wie der Server, dann kannst Du `git pull` nutzen. Dies geht nur reibungslos, wenn Du lokal keine Änderungen gemacht hast, die in Konflikt stehen mit Änderungen, die auf dem Server abgelegt waren. Um mit Konflikten umzugehen gibt es den sogenannten Stash, auf welchen hier vorerst nicht eingegangen wird. Du kannst Konflikte zwischen Commits mit Merge beheben (s.u.).
 
 ### Add
-Während Du lokal arbeitest ändert sich nicht automatisch der aktuelle Snapshot. Stattdessen merkt sich Git diese Änderungen separat – man sagt, die Änderungen sind *unstaged*. Du kannst Dir über `git status` anzeigen lassen, welche Dateien Du lokal geändert hast. Mit `git diff` kannst du dir inhaltliche Änderungen anzeigen lassen. Wenn Du eine der Änderungen für einen Commit vormerken willst, dann geht das mit `git add` – die Änderungen sind dann *staged*.
+Während Du lokal arbeitest ändert sich nicht automatisch der aktuelle Snapshot. Stattdessen merkt sich Git diese Änderungen separat – man sagt, die Änderungen sind *unstaged*. Du kannst Dir über `git status` anzeigen lassen, welche Dateien Du lokal geändert hast. Mit `git diff` kannst Du Dir inhaltliche Änderungen anzeigen lassen. Wenn Du eine der Änderungen für einen Commit vormerken willst, dann geht das mit `git add` – die Änderungen sind dann *staged*.
 
 Um bspw. eine Änderung in dieser Datei für einen Commit vorzumerken nutze diesen Befehl:
 ```bash
@@ -63,23 +63,23 @@ Ein anderer Weg ist es, Commits in einem Branch zu pushen und dann bspw. über d
 `git merge` pflegt Änderungen eines Commits bzw. eines Branches in einen anderen Commit/Branch ein und erzeugt dazu einen sogenannten Merge Commit. Funktioniert das nicht automatisch, so musst Du alle Konflikte von Hand beheben. (Eine andere Option des Zusammenführens nennt sich `git rebase`.)
 
 ## Branch und switch
-Mit einem Branch kannst Du einen Commit (bzw. eine Reihe von Commits) benennen, sodass Du ihn wieder leicht finden kannst. Mit `git branch -c tutorial` erzeugst Du einen Branch. Mit `git switch tutorial` wechselst Du zu dem Branch. Commits, die du erstellts während du im Branch bist, werden automatisch zum Branch hinzugefügt. Dies ermöglicht es, getrennt von Änderungen anderer zu arbeiten. Wenn Du mit dem Zustand des Branches zufrieden bist, kannst Du ihn dann wieder mit dem normalen Entwicklungsbranch (meistens entweder *main* oder *master* genannt) zusammenführen. Ein Branch kann lokal bleiben oder auf den Server synchronisiert werden, sodass andere auch an dem Feature arbeiten können.
+Mit einem Branch kannst Du einen Commit (bzw. eine Reihe von Commits) benennen, sodass Du ihn wieder leicht finden kannst. Mit `git branch -c tutorial` erzeugst Du einen Branch. Mit `git switch tutorial` wechselst Du zu dem Branch. Commits, die Du erstellts während Du im Branch bist, werden automatisch zum Branch hinzugefügt. Dies ermöglicht es, getrennt von Änderungen anderer zu arbeiten. Wenn Du mit dem Zustand des Branches zufrieden bist, kannst Du ihn dann wieder mit dem normalen Entwicklungsbranch (meistens entweder *main* oder *master* genannt) zusammenführen. Ein Branch kann lokal bleiben oder auf den Server synchronisiert werden, sodass andere auch an dem Feature arbeiten können.
 
 ```{admonition} Übung
 :class: tip
 1. Gehe auf die [Github-Seite des OER-Templates](https://github.com/quadriga-dk/Book_Template).
-2. Stelle sicher, dass du eingeloggt bist und wähle dann *Fork > Create a new Fork*.
+2. Stelle sicher, dass Du eingeloggt bist und wähle dann *Fork > Create a new Fork*.
 3. Folge den Anweisungen um eine Kopie spezielle des Templates in Deinem Github-Account zu erstellen, die Fork genannt wird. Ein Fork ist verbunden zum sogenannten *Upstream* Repositorium und kann Änderungen aus diesem bei sich wieder Einpflegen und Vorschläge für Änderungen (sog. Pull Requests) anbieten.
 4. Nutze nun `git clone` um eine Kopie deines Forks auf deiner lokalen Festplatte zu erstellen.
 5. Erzeuge einen Branch mit dem Namen `tutorial` und wechsle in diesen.
 6. Erstelle eine Markdown-Datei schreibe etwas Text in diese.
 7. Füge die Markdown-Datei dem Inhaltsverzeichnis `_toc.yml` hinzu.
 8. Merke die Änderungen für einen Commit vor und erstelle dann den Commit.
-9. Was passiert, wenn du `git push` ausführst?
+9. Was passiert, wenn Du `git push` ausführst?
 10. Wechsle in den Branch `main`.
 11. Merge die Änderungen aus dem Branch `tutorial` nach `main`.
 12. Führe noch einmal `git push` durch. Was passiert dieses mal?
-13. Sie dir die 5 neuesten Commits in der Geschichte an mit `git log -5`.
+13. Sie Dir die 5 neuesten Commits in der Geschichte an mit `git log -5`.
 
 ### Bonus
 14. Aktiviere Github Pages und Github Actions in deinem Fork um automatisch das Jupyter Book bauen zu lassen.
