@@ -1,5 +1,7 @@
 # QUADRIGA OER Template
 
+[Markdown-Cheatsheet für Jupyter Book](https://jupyterbook.org/en/stable/reference/cheatsheet.html)
+
 _english below_
 
 Dieses Repositorium dient als Vorlage für [QUADRIGA](https://quadriga-dk.github.io) OERs, die mit [Jupyter Book](https://jupyterbook.org) geschrieben werden.
