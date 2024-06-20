@@ -1,8 +1,22 @@
+---
+lang: de-DE
+---
+
 # Git – Der De-Facto-Standard der Versionskontrollsoftware
 
 Um die Zusammenarbeit zu unterstützen nutzen wir Git. Git ist eine Versionskontrollsoftware, die es erlaubt Snapshots einer Ordner- und Dateistruktur anzulegen, zwischen diesen hin und her zu wechseln und mit parallelen Änderungen an einer Datei umgehen zu können.
 
 Git ist der De-Facto-Standard in der Softwareentwicklung und eignet sich für alle Text-basierten Dateiformate. Mit Binären Dateien wie Audio, Video, PDF, ZIP-Archiven, … kann es auch umgehen, jedoch sind hier einige Funktionalitäten nicht möglich. Große Dateien sollten nicht direkt im Repositorium abgelegt werden.
+
+## Ressourcen
+Es gibt viele Ressourcen rund um Git – die meisten sind nur auf Englisch verfügbar. Die nachfolgenden Abschnitte können nur einen kurzen Einblick in die Nutzung von Git bieten. Für alles weitere empfehlen wir diese Ressourcen:
+
+- [Julia Evans – Git Cheat-Sheet](https://wizardzines.com/git-cheat-sheet.pdf) (PDF)
+- [Scott Chacon & Ben Straub – Pro Git](https://www.git-scm.com/book/en/v2) (Website, PDF, EPUB)
+- [Scott Chacon & Ben Straub – Pro Git (deutsche Übersetzung)](https://www.git-scm.com/book/de/v2) (Website, PDF, EPUB)
+- [Daniel Shiffman – Git and GitHub for Poets](https://thecodingtrain.com/tracks/git-and-github-for-poets) (Videoreihe)
+- [The Turing Way Community – Getting Started With GitHub](https://book.the-turing-way.org/collaboration/github-novice) (Kapitel in einem Jupyter Book)
+
 
 ## Installation
 Wenn Du noch kein Git installiert hat, dann findest Du die Installationsdateien bspw. auf der [Git Website](https://git-scm.com/downloads). Lade dort die passende Version für Dein Betriebssystem herunter bzw. folge den Anleitungen.
@@ -95,10 +109,3 @@ width: 100%
 Darstellung einer zeitlichen Entwicklung mehrerer Commits und Branches. Ausgehend vom Branch *main* wird ein Branch *tutorial* angelegt. In diesem wird ein Commit gespeichert. Dann wird in *main* ein anderer Commit gespeichert. Im nächsten Schritt wird noch ein Commit im Branch *tutorial* erzeugt. Am Ende wird der Branch *tutorial* in den Branch *main* gemerged.
 ```
 
-## Ressourcen
-Es gibt viele Ressourcen rund um Git – die meisten sind nur auf Englisch verfügbar.
-- [Julia Evans – Git Cheat-Sheet](https://wizardzines.com/git-cheat-sheet.pdf) (PDF)
-- [Scott Chacon & Ben Straub – Pro Git](https://www.git-scm.com/book/en/v2) (Website, PDF, EPUB)
-- [Scott Chacon & Ben Straub – Pro Git (deutsche Übersetzung)](https://www.git-scm.com/book/de/v2) (Website, PDF, EPUB)
-- [Daniel Shiffman – Git and GitHub for Poets](https://thecodingtrain.com/tracks/git-and-github-for-poets) (Videoreihe)
-- [The Turing Way Community – Getting Started With GitHub](https://book.the-turing-way.org/collaboration/github-novice) (Kapitel in einem Jupyter Book)
