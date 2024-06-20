@@ -14,11 +14,11 @@ Du kannst "globale" Environments anlegen, jedoch empfehlen wir hier projekt-spez
 
 Lege ein lokales Environment an in dem Python3 installiert ist mit diesem Befehl. Installiere die Standardeinstellungen.
 ```bash
-conda create -p ./conda
+conda create -p ./conda python=3
 ```
-Unter Windows wäre das:
+In der Windows Eingabeaufforderung wäre das:
 ```cmd
-conda create -p .\conda
+conda create -p .\conda python=3
 ```
 Dies erzeugt einen Ordner `conda` im aktuellen Verzeichnis, in dem alle nötigen Programme wie Python installiert werden.
 
