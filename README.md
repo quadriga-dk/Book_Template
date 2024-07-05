@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 # QUADRIGA OER Template
 
 [Markdown-Cheatsheet für Jupyter Book](https://jupyterbook.org/en/stable/reference/cheatsheet.html)
