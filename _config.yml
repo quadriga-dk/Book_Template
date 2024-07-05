@@ -2,10 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Template Book
-author: |
-  <a ref="https://quadriga-dk.de">QUADRIGA</a>
+author: Hannes Schnaitter
 logo: assets/logo.jpg
-copyright: "2024"
+copyright: "2024, QUADRIGA"
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", conda, README.md]
 
 # Force re-execution of notebooks on each build.
