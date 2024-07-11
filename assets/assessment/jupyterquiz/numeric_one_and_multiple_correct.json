@@ -1,0 +1,124 @@
+[
+    {
+        "question": "Wie viele Quizzes sind auf dieser Seite vor diesem Quiz eingebaut?",
+        "type": "numeric",
+        "answers": [
+            {
+                "type": "value",
+                "value": 6,
+                "correct": true,
+                "feedback": "Genau, es sind 6."
+            },
+            {
+                "type": "value",
+                "value": 7,
+                "correct": false,
+                "feedback": "Das aktuelle Quiz zählt nicht mit."
+            },
+            {
+                "type": "range",
+                "range": [
+                    -10000000000,
+                    0
+                ],
+                "correct": false,
+                "feedback": "Eine negative Anzahl von Quizzes ist nicht möglich! 😃"
+            },
+            {
+                "type": "range",
+                "range": [
+                    0,
+                    5.9
+                ],
+                "correct": false,
+                "feedback": "Nein, es sind mehr."
+            },  
+            {
+                "type": "range",
+                "range": [
+                    6.1,
+                    6.9
+                ],
+                "correct": false,
+                "feedback": "Nein, es sind weniger."
+            },
+            {
+                "type": "range",
+                "range": [
+                    7.1,
+                    10
+                ],
+                "correct": false,
+                "feedback": "Nein, es sind weniger."
+            },
+            {
+                "type": "range",
+                "range": [
+                    10,
+                    10000000000
+                ],
+                "correct": false,
+                "feedback": "So stark verzählt haben können Sie sich aber nicht‽"
+            },
+            {
+                "type": "default",
+                "feedback": "Das war leider falsch. Versuchen Sie es nochmal."
+            }
+        ]
+    },
+    {
+        "question": "Wie viele Minuten haben Sie für die Durcharbeit dieser Seite gebraucht?",
+        "type": "numeric",
+        "answers": [
+            {
+                "type": "range",
+                "range": [
+                    -10000000000,
+                    0
+                ],
+                "correct": false,
+                "feedback": "Sie müssen wohl eine Zeitmaschine besitzen."
+            },
+            {
+                "type": "range",
+                "range": [
+                    0,
+                    2
+                ],
+                "correct": true,
+                "feedback": "Das dürfte ein Rekord sein!"
+            }, 
+            {
+                "type": "range",
+                "range": [
+                    2,
+                    10
+                ],
+                "correct": true,
+                "feedback": "Sie lesen wohl recht zügig."
+            },  
+            {
+                "type": "range",
+                "range": [
+                    10,
+                    20
+                ],
+                "correct": true,
+                "feedback": "Sie stellen sicher, dass Sie alles verstanden haben."
+            },
+            {
+                "type": "range",
+                "range": [
+                    20,
+                    60
+                ],
+                "correct": true,
+                "feedback": "Sie lassen sich Zeit."
+            },
+            {
+                "type": "default",
+                "feedback": "Rom wurde auch nicht in einem Tag gebaut."
+            }
+        ]
+    }
+]
