@@ -1,0 +1,18 @@
+[
+    {
+        "question": "Wie werden die booleschen Werte 'wahr' und 'falsch' in einer JSON-Datei repräsentiert?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "True bzw. False",
+                "correct": false,
+                "feedback": "So werden sie in Python repräsentiert."
+            },
+            {
+                "answer": "true bzw. false",
+                "correct": true,
+                "feedback": "Korrekt. JSON folgt der Programmiersprache Javascript und repräsentiert 'wahr' und 'falsch' als 'true' und 'false'."
+            }
+        ]
+    }
+]

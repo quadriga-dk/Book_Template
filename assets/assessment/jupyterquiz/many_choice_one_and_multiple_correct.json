@@ -1,0 +1,48 @@
+[
+    {
+        "question": "Welche Fragentypen gibt es in JupyterQuiz?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "code": "reorder",
+                "correct": false,
+                "feedback": "Die Möglichkeit einer Anordnungs-Aufgabe gibt es nicht."
+            },
+            {
+                "code": "multiple_choice",
+                "correct": true,
+                "feedback": "Richtig. Diese Frage wurde mit diesem Fragetyp umgesetzt."
+            },
+            {
+                "code": "many_choice",
+                "correct": true,
+                "feedback": "Auch richtig."
+            },
+            {
+                "code": "numeric",
+                "correct": true,
+                "feedback": "Genau. Hier wird eine Zahl als Antwort eingefordert."
+            }
+        ]
+    },
+    {
+        "question": "Gibt es Unterschiede zwischen <span style=\"font-family:monospace\">multiple_choice</span> und <span style=\"font-family:monospace\">many_choice</span>?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Nein",
+                "correct": true,
+                "feedback": "Laut der Dokumentation gibt es keinen Unterschied zwischen diesen zwei Fragentypen."
+            },
+            {
+                "answer": "Ja",
+                "correct": false
+            },
+            {
+                "answer": "Vielleicht",
+                "correct": false,
+                "feedback": "Wir hatten zuerst auch vermutet, dass es einen Unterschied gibt …"
+            }
+        ]
+    }
+]
