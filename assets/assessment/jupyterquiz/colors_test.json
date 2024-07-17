@@ -1,0 +1,115 @@
+[
+    {
+        "question": "Welche Fragentypen gibt es in JupyterQuiz?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "code": "reorder",
+                "correct": false,
+                "feedback": "Die Möglichkeit einer Anordnungs-Aufgabe gibt es nicht."
+            },
+            {
+                "code": "multiple_choice",
+                "correct": true,
+                "feedback": "Richtig. Diese Frage wurde mit diesem Fragetyp umgesetzt."
+            },
+            {
+                "code": "many_choice",
+                "correct": true,
+                "feedback": "Auch richtig."
+            },
+            {
+                "code": "numeric",
+                "correct": true,
+                "feedback": "Genau. Hier wird eine Zahl als Antwort eingefordert."
+            }
+        ]
+    },
+    {
+        "question": "Gibt es Unterschiede zwischen <span style=\"font-family:monospace\">multiple_choice</span> und <span style=\"font-family:monospace\">many_choice</span>?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Nein",
+                "correct": true,
+                "feedback": "Laut der Dokumentation gibt es keinen Unterschied zwischen diesen zwei Fragentypen."
+            },
+            {
+                "answer": "Ja",
+                "correct": false
+            },
+            {
+                "answer": "Vielleicht",
+                "correct": false,
+                "feedback": "Wir hatten zuerst auch vermutet, dass es einen Unterschied gibt …"
+            }
+        ]
+    },
+    {
+        "question": "Wie viele Quizzes sind auf dieser Seite vor diesem Quiz eingebaut?",
+        "type": "numeric",
+        "answers": [
+            {
+                "type": "value",
+                "value": 6,
+                "correct": true,
+                "feedback": "Genau, es sind 6."
+            },
+            {
+                "type": "value",
+                "value": 7,
+                "correct": false,
+                "feedback": "Das aktuelle Quiz zählt nicht mit."
+            },
+            {
+                "type": "range",
+                "range": [
+                    -10000000000,
+                    0
+                ],
+                "correct": false,
+                "feedback": "Eine negative Anzahl von Quizzes ist nicht möglich! 😃"
+            },
+            {
+                "type": "range",
+                "range": [
+                    0,
+                    5.9
+                ],
+                "correct": false,
+                "feedback": "Nein, es sind mehr."
+            },  
+            {
+                "type": "range",
+                "range": [
+                    6.1,
+                    6.9
+                ],
+                "correct": false,
+                "feedback": "Nein, es sind weniger."
+            },
+            {
+                "type": "range",
+                "range": [
+                    7.1,
+                    10
+                ],
+                "correct": false,
+                "feedback": "Nein, es sind weniger."
+            },
+            {
+                "type": "range",
+                "range": [
+                    10,
+                    10000000000
+                ],
+                "correct": false,
+                "feedback": "So stark verzählt haben können Sie sich aber nicht‽"
+            },
+            {
+                "type": "default",
+                "feedback": "Das war leider falsch. Versuchen Sie es nochmal."
+            }
+        ]
+    }
+]
