@@ -8,7 +8,7 @@ Dieses Repositorium dient als Vorlage für [QUADRIGA](https://quadriga-dk.github
 
 Erstellen Sie ein neues Repositorium mit dem Namen des neuen Buchs in der GitHub-Organisation quadriga-dk. Nutzen Sie dazu entweder die GitHub-Funktion "Use this template" oder erstellen Sie ein leeres und kopieren Sie die Inhalte des Templates (bspw. Download als `.zip`-Datei) in das neue Repositorium. Passen Sie dann die Dateien `_config.yml` und `_toc.yml` sowie ggf. die Datei `.github/workflows/deploy-book.yml` auf Ihr neues Buch an. Achten Sie darauf, dass Ihr neues Buch keine direkte Verbindung zum Template mehr hat und Änderungen im Template ggf. "von Hand" in Ihre OER überführt werden müssen.
 
-Übernehmen Sie Änderungen im Styling/Layout in der Vorlage auch in Ihrem Buch. Bei wichtigen Änderungen wird ggf. auch ein Pull-Request an Ihre Bücher durch die Template-Autor\*innen gestellt werden.
+Übernehmen Sie Änderungen im Styling/Layout in der Vorlage auch in Ihrem Buch. Bei wichtigen Änderungen wird ggf. auch ein Pull-Request an Ihre Bücher durch die Template-Autor:innen gestellt werden.
 
 ### Erstellung der Inhalte
 

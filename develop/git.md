@@ -26,7 +26,7 @@ Unter Windows wird neben Git selbst noch das Programm *Git Bash* installiert, we
 ## Github-Account
 Um Git für die Erstellung der QUADRIGA-OERs zu nutzen wird ein Github-Account benötigt. Diesen können Sie auf [github.com](https://github.com) anlegen.
 
-Um Änderungen an den QUADRIGA-OERs vornehmen zu können sollte der Account der Organisation [quadriga-dk](https://github.com/quadriga-dk) zugeordnet werden. Die Arbeit über Pull-Requests ist auch möglich und was insbesondere für Externe Mitarbeiter\*innen bevorzugt wird.
+Um Änderungen an den QUADRIGA-OERs vornehmen zu können sollte der Account der Organisation [quadriga-dk](https://github.com/quadriga-dk) zugeordnet werden. Die Arbeit über Pull-Requests ist auch möglich und was insbesondere für Externe Mitarbeiter:innen bevorzugt wird.
 
 Nutzen Sie diese Anleitung für die Erstellung von OERs außerhalb des QUADRIGA-Projekts, so benötigen Sie keine zusätzlichen Rechte. Sie können das vorliegende Repositorium als Template für Ihre eigene OER nutzen.
 
