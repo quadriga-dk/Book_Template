@@ -1,7 +1,4 @@
----
-lang: de-DE
----
-# Deine QUADRIGA OER
+# Ihre QUADRIGA OER
 
 Diese Vorlage dient der Entwicklung von QUADRIGA OERs. Sie zeigt die Möglichkeiten der Jupyter Book Platform und unsere Empfehlungen, wie sie für die Entwicklung Ihrer OER genutzt werden sollten.
 
