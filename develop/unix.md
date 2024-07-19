@@ -13,6 +13,10 @@ lang: de-DE
 ```{code-cell} ipython3
 :tags: [remove_cell]
 from jupyterquiz import display_quiz
+
+import sys
+sys.path.append("..")
+from quadriga_config import colors
 ```
 # Unix
 
@@ -189,7 +193,7 @@ questions = \
   },
 ]
 
-display_quiz(questions)
+display_quiz(questions, colors=colors.jupyterquiz)
 ```
 
 ## Arbeiten mit Ordnern und Dateien
