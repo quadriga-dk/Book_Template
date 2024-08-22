@@ -17,6 +17,7 @@ parts:
       - file: formatting/markdown
       - file: formatting/notebooks
       - file: formatting/markdown-notebooks
+      - file: formatting/external_links
       - file: formatting/images
       - file: formatting/videos
   - caption: Assessment
