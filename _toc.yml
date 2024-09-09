@@ -24,3 +24,4 @@ parts:
     chapters:
       - file: assessment/introduction
       - file: assessment/jupyterquiz
+      - file: assessment/test-driven_assessment
