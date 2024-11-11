@@ -71,10 +71,10 @@ Wenn Sie in einem anderen Ordner wären (bspw. in `/Users/Testnutzer/Documents/T
 Mit dem Befehl `cd` können Sie den Ordner wechseln, in dem Sie sich befinden. Das geht entweder *absolut* oder *relativ*. Ein absoluter Pfad beginnt in Unix-basierten Systemen immer mit einem `/`. Ein relativer Pfad beginnt nicht mit einem `/` sondern mit einem Ordnernamen oder den speziellen Namen für den aktuellen Ordner `.` oder den übergeordneten Ordner `..`.
 
 `````{admonition} Übung
-:class: tip
+:class: exercise
 Nutzen Sie eine absolute Pfadangabe, um in den Ordner `/Users/Testnutzer/Documents/Tutorial` zu wechseln. Beachten Sie dabei, dass Sie den korrekten Nutzernamen verwenden müssen.
 ````{admonition} Lösung
-:class: dropdown
+:class: solution, dropdown
 ```bash
 $ cd /Users/Testnutzer/Documents/Tutorial
 ```
@@ -100,7 +100,7 @@ README.md
 
 Sie können `ls` auch einen Ordnernamen bzw. einen Pfad übergeben wodurch der Inhalt dieses Pfads ausgegeben wird.
 `````{admonition} Übung
-:class: tip
+:class: exercise
 Welche Ausgaben ergeben die folgenden Befehle?
 ```bash
 $ pwd
@@ -117,7 +117,7 @@ $ cd Markdown; ls ..
 $ pwd
 ```
 ````{admonition} Lösung
-:class: dropdown
+:class: solution, dropdown
 Wenn SIe nacheinander die Befehle eingeben sollte Ihr Terminal ungefähr so aussehen:
 ```bash
 $ pwd
@@ -207,11 +207,11 @@ $ mkdir Videos
 ```
 
 `````{admonition} Übung
-:class: tip
+:class: exercise
 Legen Sie mit verschiedenen Kombinationen aus Navigation sowie absoluten und relativen Pfaden drei neue Unterordner im Ordner Markdown an. Diese sollen `03_Assessment`, `04_Übungen`, `05_Fazit` lauten. Überprüfen Sie mit `ls`, ob Sie alle Ordner korrekt angelegt haben.
 
 ````{admonition} Lösung
-:class: dropdown
+:class: solution, dropdown
 Mögliche Lösungswege sind:
 ```bash
 $ pwd
@@ -288,10 +288,10 @@ Das macht nochmals explizit, dass Sie die Datei *in* den Ordner verschieben.
 
 `mv` wird auch benutzt, um eine Datei umzubenennen.
 `````{admonition} Übung
-:class: tip
+:class: exercise
 Legen Sie eine Datei mit einem Tippfehler im Namen, bspw. `Kaulsur.md`, und korrigieren Sie dann den Dateinamen.
 ````{admonition} Lösung
-:class: dropdown
+:class: solution, dropdown
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial/Markdown/03_Assessment
@@ -342,7 +342,7 @@ Videos
 Wie Sie sehen beinhaltet der Ordner neben `.hidden` und `.secrets` auch noch die zwei speziellen Ordner `.` und `..`. Wie oben einmal erwähnt steht `.` für den *aktuellen* Ordner und `..` für den *übergeordneten* Ordner.
 
 `````{admonition} Übung
-:class: tip
+:class: exercise
 Wenn Sie im Ordner `Markdown` sind, was geben die folgenden Befehle aus? Überlegen Sie zuerst selbst und notieren Sie sich Ihr Ergebnis. Überprüfen Sie dann in der Shell, ob die tatsächlichen Ergebnisse mit Ihren Antworten übereinstimmen.
 ```bash
 $ pwd
@@ -360,7 +360,7 @@ $ ls 01_Technologie/../../Bilder/..
 ```
 
 ````{admonition} Lösung
-:class: dropdown
+:class: solution, dropdown
 ```bash
 $ pwd
 /Users/Testnutzer/Documents/Tutorial/Markdown
@@ -415,7 +415,8 @@ Videos
 
 ### `rm` – ReMove a file or directory
 Wollen Sie eine Datei löschen, so geht das mit `rm`.
-```{important}
+```{admonition} Achtung
+:class: caution
 Wenn Sie eine Datei mit `rm` löschen, dann ist sie endgültig gelöscht und kann nicht wiederhergestellt werden.
 
 Anders als beim Löschen im Windows Explorer oder im macOS Finder gibt es *keinen* Papierkorb.
