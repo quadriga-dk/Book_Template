@@ -1,5 +1,127 @@
-:root{
+/* Custom variables */
+:root {
     --quadriga-main: #00305e;
     --quadriga-main-45: #818bac;
     --quadriga-main-web: #c1d3e0;
+}
+
+/* Reset ALL default admonition icons */
+.admonition-title::before {
+    content: none !important;
+}
+
+/* Exercise/Übung styling */
+div.exercise {
+    background-color: #f7fbff !important;
+    border-left-color: #7baac7 !important;
+}
+
+div.exercise > .admonition-title {
+    background-color: rgba(66, 165, 245, 0.1) !important;
+    color: #4a90c9 !important;
+}
+
+div.exercise > .admonition-title::after {
+    content: "\f44b" !important;
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1 em !important;
+    color: #4a90c9 !important;
+}
+
+
+/* Solution/Lösung styling */
+div.solution {
+    background-color: #e8f5e931 !important;
+    border-left-color: #66bb6a !important;
+}
+
+div.solution > .admonition-title {
+    background-color: rgba(102, 187, 106, 0.1) !important;
+    color: #43a047 !important;
+}
+
+div.solution > .admonition-title::after {
+    content: "👁️" !important;
+    font-family: "Font Awesome 5 Free" !important;
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1em !important;
+    color: #43a047 !important;
+}
+
+/* keypoint styling */
+div.keypoint {
+    background-color: #fff6e026 !important;
+    border-left-color: #f2a541 !important;
+}
+
+div.keypoint > .admonition-title {
+    background-color: rgba(251, 140, 0, 0.1) !important;
+    color: #f2a541 !important;
+}
+
+div.keypoint > .admonition-title::after {
+    content: "💡" !important;  /* Unicode circled question mark */
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1em !important;
+    color: #f2a541 !important;
+}
+
+/* Hinweis styling */
+div.hinweis {
+    background-color: #f0f8ff8d !important;
+    border-left-color: #6ca0d8ad !important;
+}
+
+div.hinweis > .admonition-title {
+    background-color: rgba(108, 160, 216, 0.1) !important;
+    color: #6ca0d8e3 !important;
+}
+
+div.hinweis > .admonition-title::after {
+    content: "📌" !important;
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1.2em !important;
+    color: #6ca0d8ad !important;
+}
+
+/* lernziele styling */
+div.lernziele {
+    background-color: #f7fbff !important;
+    border-left-color: #00305e !important;
+}
+
+div.lernziele > .admonition-title {
+    background-color: rgba(0, 48, 94, 0.1) !important;
+    color: #00305e !important;
+}
+
+div.lernziele > .admonition-title::after {
+    content: "🎓" !important;  /* Unicode circled exclamation mark */
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1 em !important;
+    color: #00305e !important;
+}
+
+/* Caution styling */
+div.caution {
+    background-color: #ffe6e61f !important;
+    border-left-color: #f08a8a !important;
+}
+
+div.caution > .admonition-title {
+    background-color: rgba(211, 47, 47, 0.1) !important;
+    color: #c85454 !important;
+}
+
+div.caution > .admonition-title::after {
+    content: "⚠️" !important;
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1 em !important;
+    color: #c85454 !important;
 }
