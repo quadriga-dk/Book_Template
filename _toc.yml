@@ -25,3 +25,8 @@ parts:
       - file: assessment/introduction
       - file: assessment/jupyterquiz
       - file: assessment/test-driven_assessment
+  - caption: Hinterwerk
+    chapters:
+      - file: hinterwerk/authors
+      - file: hinterwerk/QUADRIGA
+      - file: hinterwerk/impressum
