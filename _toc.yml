@@ -27,6 +27,7 @@ parts:
       - file: assessment/test-driven_assessment
   - caption: Hinterwerk
     chapters:
+      - file: hinterwerk/Literaturverzeichnis
       - file: hinterwerk/authors
       - file: hinterwerk/QUADRIGA
       - file: hinterwerk/impressum

@@ -2,7 +2,7 @@
 
 Diese Vorlage dient der Entwicklung von QUADRIGA OERs. Sie zeigt die Möglichkeiten der Jupyter Book Platform und unsere Empfehlungen, wie sie für die Entwicklung Ihrer OER genutzt werden sollten.
 
-Wenn Sie mehr zu Jupyter Book erfahren wollen, nutzen die [Dokumentation von Juypter Book](https://jupyterbook.org).
+Wenn Sie mehr zu Jupyter Book {cite}`executable_books_community_2021_2561065` erfahren wollen, nutzen die [Dokumentation von Juypter Book](https://jupyterbook.org).
 
 ## Jupyter Book vs. Jupyter Notebook
 
@@ -19,6 +19,11 @@ Jupyter Book basiert auf dem Programm [Sphinx](https://www.sphinx-doc.org/en/mas
 ## Inhaltsverzeichnis
 
 ```{tableofcontents}
+```
+
+# Literatur
+```{bibliography}
+:filter: docname in docnames
 ```
 
 # old english parts
