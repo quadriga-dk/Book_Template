@@ -20,6 +20,7 @@ parts:
       - file: formatting/external_links
       - file: formatting/images
       - file: formatting/videos
+      - file: formatting/admonitions
   - caption: Assessment
     chapters:
       - file: assessment/introduction
