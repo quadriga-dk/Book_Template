@@ -12,7 +12,7 @@ Diese Vorlage dient somit der Entwicklung von QUADRIGA OERs und zeigt die Mögli
 
 ```{admonition} Lernziele
 :class: lernziele
-1. In dieser OER lernen Sie den Technologiestack der QUADRIGA OERs kennen.
+1. Nach durcharbeiten der OER kennen Sie sich mit dem Technologiestack der QUADRIGA OERS aus und können bei der Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
 2. Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA OER anpassen und diese erweitern.
 3. Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
 ```
