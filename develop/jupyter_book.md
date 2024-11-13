@@ -35,6 +35,15 @@ Wenn Sie im lokalen Ordner Ihres Git Repositoriums sind, können Sie die Webansi
 
 Wenn Sie lokale Dateien anpassen – bspw. wenn Sie an Ihrem Buch weiterschreiben – müssen Sie immer zuerst `jb build .` ausführen, bevor die Änderungen im Browser sichtbar werden. Gibt es hierbei Probleme, so kann es helfen zuerst "aufzuräumen" mit `jb clean .`. Wenn Sie danach wieder `jb build .` ausführen, so werden alle Seiten, auch die, die Sie nicht geändert haben, neu gebaut. Dieser Schritt des Aufräumens und Bauens mittels `jb clean . && jb build .` ist insbesondere dann nötig, wenn Sie etwas am Inhaltsverzeichnis (`_toc.yml`) geändert haben.
 
+## Updates der verwendeten Programmbibliotheken
+In der Datei `requirements.txt` werden die jeweils verwendeten Versionen der Programmbibliotheken hinterlegt. Ändert sich die Datei, so sollten Sie Ihre lokale Entwicklungsumgebung aktualisieren.
+
+Stellen Sie dazu zuerst sicher, dass Sie im Virtuellen Environment der OER sind (bspw. mit `conda activate ./conda` im Wurzelverzeichnis der OER). Führen Sie dann den folgenden Befehl aus:
+```sh
+$ pip install -r requirements.txt --upgrade
+```
+Dieser Befehl installiert ggf. neu benötigte Programmbibliotheken und aktualisiert bereits installierte entsprechend der Versions-Vorgaben in der Datei `requirements.txt`.
+
 ## Änderung der OER auf Github
 
 Kleine Änderungen können auch direkt auf Github durchgeführt werden. Jede Datei hat rechts oben ein Stift-Symbol, wodurch Sie in einen Bearbeitungsmodus gelangen. Ein Speichern ist hier automatisch ein Commit – denken Sie an eine gute Commit Message.
