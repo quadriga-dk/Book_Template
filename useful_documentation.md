@@ -2,6 +2,8 @@
 
 ## Markdown
 - [Markdown cheatsheet for Jupyter Book](https://jupyterbook.org/en/stable/reference/cheatsheet.html)
+- [citations in Jupyter Book](https://jupyterbook.org/en/stable/content/citations.html)
+- [images and figures in Jupyter Book](https://jupyterbook.org/en/stable/content/figures.html)
 
 ## git
 - [git documentation](https://git-scm.com/docs/git)
