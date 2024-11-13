@@ -16,6 +16,12 @@ Jupyter Book basiert auf dem Programm [Sphinx](https://www.sphinx-doc.org/en/mas
 
 ## Nutzung des Templates
 
+Um dieses Template zu Nutzen können Sie entweder die Template-Funktion in GitHub nutzen, oder Sie laden sich den aktuellen Zustand bspw. als `.zip`-Datei herunter und fügen sie einem neuen Repositorium hinzu.
+
+Passen Sie dann die Inhalte an. Insbesondere sollten Sie achten auf die Einstellungen in `_config.yml` und das Inhaltsverzeichnis in `_toc.yml`.
+
+Wollen Sie GitHub-Pages für die Veröffentlichung des Jupyter Books nutzen, so müssen Sie einerseits die Funktionalität in den Einstellungen der Repositoriums anpassen und die GitHub Action in `.github/workflows/deploy-book.yml` anpassen und aktivieren. Zudem muss das Repositorium normalerweise öffentlich sein.
+
 ## Inhaltsverzeichnis
 
 ```{tableofcontents}
@@ -25,12 +31,3 @@ Jupyter Book basiert auf dem Programm [Sphinx](https://www.sphinx-doc.org/en/mas
 ```{bibliography}
 :filter: docname in docnames
 ```
-
-# old english parts
-
-## How to use this Template
-A Jupyter Book consists of a configuration file (`_config.yml`), a table of contents (`_toc.yml`) and at least one content file in the formats Markdown, MyST or Jupyter Notebook.  Markdown files are always treated as MyST even, if you don't use any of its special features.
-
-To create a new QUADRIGA OER you can fork this repository and make your changes. Or you can simply create a new repository and then copy the files of this repository.
-
-
