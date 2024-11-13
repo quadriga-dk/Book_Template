@@ -22,6 +22,7 @@ parts:
       - file: develop/editor
   - caption: 2.2 Formatierungs- und Darstellungsmöglichkeiten
     chapters:
+      - file: formatting/intro
       - file: formatting/markdown
       - file: formatting/notebooks
       - file: formatting/markdown-notebooks
