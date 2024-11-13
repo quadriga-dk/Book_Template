@@ -4,7 +4,15 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Entwicklungsumgebung
+  - caption: 1 Struktur und didaktisches Konzept
+    chapters:
+      - file: structure_and_didactic_concept/structure
+      - file: structure_and_didactic_concept/didactic_concept
+  - caption: 2 Technologiestack
+    chapters:
+      - file: technologiestack/zusammenspiel_der_tools
+      - file: technologiestack/grafische_aufbereitung
+  - caption: 2.1 Entwicklungsumgebung
     chapters:
       - file: develop/intro
       - file: develop/git
@@ -12,7 +20,7 @@ parts:
       - file: develop/python
       - file: develop/jupyter_book
       - file: develop/editor
-  - caption: Datentypen und Formatierung
+  - caption: 2.2 Formatierungs- und Darstellungsmöglichkeiten
     chapters:
       - file: formatting/markdown
       - file: formatting/notebooks
@@ -21,11 +29,16 @@ parts:
       - file: formatting/images
       - file: formatting/videos
       - file: formatting/admonitions
-  - caption: Assessment
+  - caption: 3 (Self-)Assessment
     chapters:
       - file: assessment/introduction
       - file: assessment/jupyterquiz
       - file: assessment/test-driven_assessment
+  - caption: 4 Fazit
+    chapters:
+      - file: fazit/abschlussassessment
+      - file: fazit/zusammenfassung
+      - file: fazit/weiterführende_hinweise
   - caption: Hinterwerk
     chapters:
       - file: hinterwerk/Literaturverzeichnis
