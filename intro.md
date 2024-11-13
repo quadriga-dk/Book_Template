@@ -16,6 +16,15 @@ Diese Vorlage dient somit der Entwicklung von QUADRIGA OERs und zeigt die Mögli
 2. Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA OER anpassen und diese erweitern.
 3. Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
 ```
+## Aufbau der OER
+Die OER startet mit einer Vorstellung der inhaltlichen Struktur sowie des didaktischen Konzepts einer QUADRIGA OER. Dann wird die technische Umsetzung präsentiert, wobei auf die Entwicklungsumgebung und die Formatierungs- und Darstellungsmöglichkeiten besonders eingegagen wird. Dann folgen Inhalte zur Einbettung eines (Self-)Assessments. Inhaltlich schließt die OER mit einem Fazit, auf welches dann noch das Hinterwerk folgt.
+
+```{figure} ./assets/intro/Aufbau_der_OER.svg
+---
+align: left
+width: 100%
+---
+```
 
 ## Jupyter Book vs. Jupyter Notebook
 
