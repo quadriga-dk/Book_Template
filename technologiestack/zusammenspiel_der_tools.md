@@ -10,7 +10,7 @@ Die Inhalte werden dann vom Programm `jupyter-book` in eine Website (bestehend a
 
 Die entstandene Website kann anschließend veröffentlicht/gehostet werden. Nutzer\*innen könne dazu die Ergebnisse des Programms `jupyter-book` auf einen Web-Server kopieren. Im Falle dieser OER übernimmt auch diesen Schritt die GitHub Action, wobei die Rolle des Webservers durch den kostenlosen Dienst GitHub Pages übernommen wird.
 
-Auf die hier vorgestellten Technologien und deren Zusammenspiel wird im Laufenden jeweils genauer eingegangen. Die Entwicklungsumgebung wird dabei genauer in [2.1 Entwicklungsumgebung](../develop/intro) vorgestellt. Die Eigenschaften und Fähigkeiten von Markdown-Dateien und Jupyter Notebooks werden genauer in [2.2 Formatierungs- und Darstellungsmöglichkeiten](../formatting/intro) behandelt.
+Auf die hier vorgestellten Technologien und deren Zusammenspiel wird im Laufenden jeweils genauer eingegangen. Die Entwicklungsumgebung wird dabei genauer in [2.1 Entwicklungsumgebung](../entwicklung/einleitung) vorgestellt. Die Eigenschaften und Fähigkeiten von Markdown-Dateien und Jupyter Notebooks werden genauer in [2.2 Formatierungs- und Darstellungsmöglichkeiten](../formatierung/einleitung) behandelt.
 
 
 ## Jupyter Book vs. Jupyter Notebook
