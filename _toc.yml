@@ -2,37 +2,37 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: einleitung
 parts:
   - caption: 1 Struktur und didaktisches Konzept
     chapters:
-      - file: structure_and_didactic_concept/structure
-      - file: structure_and_didactic_concept/didactic_concept
+      - file: struktur_didaktisches_konzept/struktur
+      - file: struktur_didaktisches_konzept/didaktisches_konzept
   - caption: 2 Technologiestack
     chapters:
       - file: technologiestack/zusammenspiel_der_tools
       - file: technologiestack/grafische_aufbereitung
   - caption: 2.1 Entwicklungsumgebung
     chapters:
-      - file: develop/intro
-      - file: develop/git
-      - file: develop/unix
-      - file: develop/python
-      - file: develop/jupyter_book
-      - file: develop/editor
+      - file: entwicklung/einleitung
+      - file: entwicklung/git
+      - file: entwicklung/unix
+      - file: entwicklung/python
+      - file: entwicklung/jupyter_book
+      - file: entwicklung/editor
   - caption: 2.2 Formatierungs- und Darstellungsmöglichkeiten
     chapters:
-      - file: formatting/intro
-      - file: formatting/markdown
-      - file: formatting/notebooks
-      - file: formatting/markdown-notebooks
-      - file: formatting/external_links
-      - file: formatting/images
-      - file: formatting/videos
-      - file: formatting/admonitions
-  - caption: 3 (Self-)Assessment
+      - file: formatierung/einleitung
+      - file: formatierung/markdown
+      - file: formatierung/notebooks
+      - file: formatierung/markdown-notebooks
+      - file: formatierung/links_in_neuem_tab
+      - file: formatierung/abbildungen
+      - file: formatierung/videos
+      - file: formatierung/admonitions
+  - caption: 3 (Selbst-)Assessment
     chapters:
-      - file: assessment/introduction
+      - file: assessment/einleitung
       - file: assessment/jupyterquiz
       - file: assessment/test-driven_assessment
   - caption: 4 Fazit
@@ -42,7 +42,7 @@ parts:
       - file: fazit/weiterführende_hinweise
   - caption: Hinterwerk
     chapters:
-      - file: hinterwerk/Literaturverzeichnis
+      - file: hinterwerk/literaturverzeichnis
       - file: hinterwerk/authors
-      - file: hinterwerk/QUADRIGA
+      - file: hinterwerk/quadriga
       - file: hinterwerk/impressum
