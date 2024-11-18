@@ -452,3 +452,6 @@ README.md
 Videos
 ```
 
+## weiterführende Ressourcen
+- [Taming the Terminal - Bart Busschots (en)](https://ttt.bartificer.net/book.html)
+- 
