@@ -1,6 +1,6 @@
 # Admonitions
 
-Sogenannte Admonitions werden genutzt, um bestimmte Inhalte hervorzuheben. In QUADRIGA OERs nutzen wir dafür die folgenden Typen.
+Sogenannte Admonitions werden genutzt, um bestimmte Inhalte hervorzuheben. In QUADRIGA OER nutzen wir dafür die folgenden Typen.
 
 
 `````{admonition} Übung
@@ -39,7 +39,7 @@ Lernziele werden mit diesem Admonition-Typ gekennzeichnet.
 
 `````{admonition} Hinweis / Empfehlung zusätzlicher Materialien 
 :class: hinweis, dropdown
-Hinweise und/oder Verweise auf und Empfehlungen für zusätzliche Materialien werden mit diesem Admonition-Typ gekennzeichnet. Verweise können hierbei auf andere Bestandteile der OER, andere QUADRIGA OERs oder auch Inhalte dritter zeigen. Links sollten dabei immer in einem neuen Tab öffnen.
+Hinweise und/oder Verweise auf und Empfehlungen für zusätzliche Materialien werden mit diesem Admonition-Typ gekennzeichnet. Verweise können hierbei auf andere Bestandteile der OER, andere QUADRIGA OER oder auch Inhalte dritter zeigen. Links sollten dabei immer in einem neuen Tab öffnen.
 ````html
 <a href="https://example.com" target="_blank">Linktext</a>
 ````

@@ -24,11 +24,11 @@ Wenn Sie noch kein Git installiert haben, dann finden Sie die Installationsdatei
 Unter Windows wird neben Git selbst noch das Programm *Git Bash* installiert, welches es Ihnen ermöglicht Git über die Kommandozeite zu nutzen, als hätten Sie ein UNIX-artiges Betriebssystem wie Linux oder macOS. Alle unten angegebenen Befehle gehen davon aus, dass Sie diese unter Windows im Programm Git Bash eintippen.
 
 ## Github-Account
-Um Git für die Erstellung der QUADRIGA-OERs zu nutzen wird ein Github-Account benötigt. Diesen können Sie auf [github.com](https://github.com) anlegen.
+Um Git für die Erstellung der QUADRIGA-OER zu nutzen wird ein Github-Account benötigt. Diesen können Sie auf [github.com](https://github.com) anlegen.
 
-Um Änderungen an den QUADRIGA-OERs vornehmen zu können sollte der Account der Organisation [quadriga-dk](https://github.com/quadriga-dk) zugeordnet werden. Die Arbeit über Pull-Requests ist auch möglich und was insbesondere für Externe Mitarbeiter:innen bevorzugt wird.
+Um Änderungen an den QUADRIGA-OER vornehmen zu können sollte der Account der Organisation [quadriga-dk](https://github.com/quadriga-dk) zugeordnet werden. Die Arbeit über Pull-Requests ist auch möglich und was insbesondere für Externe Mitarbeiter:innen bevorzugt wird.
 
-Nutzen Sie diese Anleitung für die Erstellung von OERs außerhalb des QUADRIGA-Projekts, so benötigen Sie keine zusätzlichen Rechte. Sie können das vorliegende Repositorium als Template für Ihre eigene OER nutzen.
+Nutzen Sie diese Anleitung für die Erstellung von OER außerhalb des QUADRIGA-Projekts, so benötigen Sie keine zusätzlichen Rechte. Sie können das vorliegende Repositorium als Template für Ihre eigene OER nutzen.
 
 ## Die wichtigsten Git Befehle
 Git speichert Abbilder/Snapshots einer Ordnerstruktur – eines sogenannten Repositoriums. Ein Snapshot wird in Git als Commit bezeichnet. Ein Commit verweist auf alle Dateien und deren Inhalte zu einem bestimmten (logischen) Zeitpunkt.

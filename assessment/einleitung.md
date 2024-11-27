@@ -1,15 +1,15 @@
 ---
 lang: de-DE
 ---
-# Lernstandskontrolle (Assessment) in QUADRIGA OERs
+# Lernstandskontrolle (Assessment) in QUADRIGA OER
 
-QUADRIGA OERs sind vorrangig an Selbstlerner:innen gerichtet, welche ihre Datenkompetenz verbessern wollen. Diese Lerner:innen benötigen Feedback um einschätzen zu können, wo sie in der Lernerfahrung stehen, wie sie vorankommen und in welche Richtung ihre Lernaktivität sie bringen wird. Daher ist das Hauptziel des Assessments in den QUADRIGA OERs die Unterstützung der Lernenden während sie OERs durcharbeiten. Wir fokussieren uns also auf formatives Assessment. Dieses Assessment wird in verschiedenen Formaten und Technologien umgesetzt, welche in den nächsten Abschnitten vorgestellt werden.
+QUADRIGA OER sind vorrangig an Selbstlerner:innen gerichtet, welche ihre Datenkompetenz verbessern wollen. Diese Lerner:innen benötigen Feedback um einschätzen zu können, wo sie in der Lernerfahrung stehen, wie sie vorankommen und in welche Richtung ihre Lernaktivität sie bringen wird. Daher ist das Hauptziel des Assessments in den QUADRIGA OER die Unterstützung der Lernenden während sie OER durcharbeiten. Wir fokussieren uns also auf formatives Assessment. Dieses Assessment wird in verschiedenen Formaten und Technologien umgesetzt, welche in den nächsten Abschnitten vorgestellt werden.
 
 # DRAFT
 ## Einleitung
 Die Lernangebote (OER/QER), die in QUADRIGA entwickelt werden zeichnen sich durch die folgenden Eigenschaften aus, welche sich auf die Wahl und Gestaltung des geeigneten Assessments auswirken.
 - Zielgruppe sind (selbst-motiviert) Lernende mit wissenschaftlichem Hochschulabschluss (ab Qualitifkationslevel Promotionsstudierende aufwärts), welche Expertise in ihrer Kerndisziplin besitzen, jedoch bisher kaum oder keine Datenkompetenzen nachweisen können.- Lernende nutzen die Lernangebote vorrangig im Selbststudium und es gibt keine Unterstützung durch Lehrpersonal. Eine Unterstützung durch parallel Lernende oder Kolleg:innen (ggf. mit mehr Expertise) ist möglicherweise vorhanden, jedoch kann dies nicht vorausgesetzt werden.
-  - Als zusätzliche Nutzungsform der OERs ist die Nachnutzung in einem Zertifikatskurs, Studiengang o.ä. grundsätzlich möglich. Teilweisewird dies mit Hinweisen zur Umsetzung des Assessments in diesemKontext für Lehrende unterstützt.
+  - Als zusätzliche Nutzungsform der OER ist die Nachnutzung in einem Zertifikatskurs, Studiengang o.ä. grundsätzlich möglich. Teilweisewird dies mit Hinweisen zur Umsetzung des Assessments in diesemKontext für Lehrende unterstützt.
 - Lernende sollen das Assessment zur Selbstkontrolle vor, während und nach der Absolvierung einer OER nutzen können.
 - Schnelles, direktes Feedback wird – wo möglich – bevorzugt. Komplexeres Self-Assessment wie bspw. die selbstständige Korrektur der eigenen Abgabe anhand eines Bewertungsrasters wird dennoch an geeigneten Stellen genutzt um der Zielgruppe und deren Kompetenzerwerb gerecht zu werden.
 - Assessment vor der Bearbeitung einer OER kann eingesetzt werden, um die individuellen Lernpfade der Lernenden zu unterstützen. Wurde ein Pre-Assessment erfolgreich und ohne großen Aufwand erfolgreich beantwortet, so ist dies ein starkes Indiz, dass die lernende Person die jeweilige OER nicht oder nur zur Wiederholung durcharbeiten muss um die angestrebten Lernziele zu erreichen.
@@ -18,7 +18,7 @@ Es wird bei jedem Assessment festgelegt, ob und in wie weit eine Unterstützung 
 
 
 ## Formen des Assessments
-In QUADRIGA OERs werden vorrangig folgende Assessment-Formate genutzt.
+In QUADRIGA OER werden vorrangig folgende Assessment-Formate genutzt.
 - Single-Choice- / Multiple-Choice-Tests
     Diese Tests sind schnell und einfach in der Korrektur, da diese automatisch erfolgen kann. Die Erstellung muss überlegt durchgeführt werden.
     
