@@ -10,11 +10,11 @@ Die Entwicklungsumgebung besteht aus verschiedenen Software-Komponenten. Diese s
 
 Konkret benötigen Sie:
 - Git, um die Versionsverwaltung durchzuführen und um mit Github zu interagieren;
-- Python – vorzugsweise über die Anaconda Distribution –, um Jupyter Book lokal nutzen zu können und ggf. für Inhalte der OERs;
+- Python – vorzugsweise über die Anaconda Distribution –, um Jupyter Book lokal nutzen zu können und ggf. für Inhalte der OER;
 - Jupyter Book, um während des Schreibens lokal die Markdown-Dateien und Jupyter Notebooks in eine Website-Ansicht zu transformieren;
 - sowie ggf. ein Editor oder eine IDE wie VSCode, wenn die Bearbeitung der Dateien nicht über die Jupyter Notebook- oder Jupyter Lab-Oberfläche aus der Anaconda Distribution erfolgen soll;
 - und ggf. eine grafische Oberfläche für Git wie Github Desktop.
 
 ## Aufbau dieses Buchteils
-Dieser Buchteil stellt Ihnen nach der Einleitung kurz die einzelnen Software-Komponenten vor und gibt dann jeweils Hinweise zur Installation und der Nutzung der jeweiligen Software. Im Anschluss wird der ganzheitliche Ablauf und das Zusammenspiel der einzelnen Software für die Entwicklung der QUADRIGA OERs beispielhaft dargestellt.
+Dieser Buchteil stellt Ihnen nach der Einleitung kurz die einzelnen Software-Komponenten vor und gibt dann jeweils Hinweise zur Installation und der Nutzung der jeweiligen Software. Im Anschluss wird der ganzheitliche Ablauf und das Zusammenspiel der einzelnen Software für die Entwicklung der QUADRIGA OER beispielhaft dargestellt.
 
