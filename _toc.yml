@@ -30,7 +30,7 @@ parts:
       - file: formatierung/abbildungen
       - file: formatierung/videos
       - file: formatierung/admonitions
-  - caption: 3 (Selbst-)Assessment
+  - caption: 3 Lernstandskontrolle (Assessment)
     chapters:
       - file: assessment/einleitung
       - file: assessment/jupyterquiz
