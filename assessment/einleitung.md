@@ -1,6 +1,7 @@
 ---
 lang: de-DE
 ---
+
 # Lernstandskontrolle (Assessment) in QUADRIGA OER
 
 QUADRIGA OER sind vorrangig an Selbstlerner:innen gerichtet, welche ihre Datenkompetenz verbessern wollen. Diese Lerner:innen benötigen Feedback um einschätzen zu können, wo sie in der Lernerfahrung stehen, wie sie vorankommen und in welche Richtung ihre Lernaktivität sie bringen wird. Daher ist das Hauptziel des Assessments in den QUADRIGA OER die Unterstützung der Lernenden während sie OER durcharbeiten. Wir fokussieren uns also auf formatives Assessment. Dieses Assessment wird in verschiedenen Formaten und Technologien umgesetzt, welche in den nächsten Abschnitten vorgestellt werden.
@@ -91,3 +92,4 @@ Die Lernziele definieren die "obere" Grenze, die Zielgruppe definiert die "unter
 Welche "Zwischenschritte" sind für den Lernerfolg essentiell? Welche sind "nur" Wiederholung?
 
 Das Assessment kann durch Inhalt und Struktur auch bei der Erlangung der Lernziele unterstützen. Bei Pre-Assessment gesetzte Schwerpunkte suggerieren Wichtigkeit der Inhalte bei Lernenden. Assessment während der OER und Post-Assessment steuern ggf. die Wiederholung gewisser Inhalte.
+
