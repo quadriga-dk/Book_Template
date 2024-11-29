@@ -8,6 +8,15 @@ QUADRIGA OER sind vorrangig an Selbstlerner\*innen gerichtet, welche ihre Datenk
 
 In diesem Kapitel werden zuerst theoretische Überlegungen zu Assessment in Selbstlern-OER vorgestellt. Daraus werden dann Empfehlungen für verschiedene Assessment-Formen für QUADRIGA OER erarbeitet. Anschließend wird die Umsetzung dieser Assessment-Formen in konkreten Technologien innerhalb der Jupyter Books beschrieben. Zuerst wird die Zielgruppe der QUADRIGA OER genauer definiert.
 
+## Zielgruppe von QUADRIGA OER
+QUADRGIA entwickelt OER für Wissenschaftler\*innen, die Kompetenzen aus dem Spektrum der Datenkompetenz {cite}`{siehe}neuroth2025` erlernen oder stärken wollen. Genauer sind Wissenschaftler\*innen ab der Qualifikationsstufe der Promovierenden adressiert.
+
+Diesen Lernenden gemein sind Eigenschaften, welche direkten Einfluss auf die Gestaltung der OER und des Assessments darin haben. So sind sie stark selbst-motiviert und besitzen bereits eine gewisse Expertise in ihrer Kerndisziplin. Typischerweise besitzen sie nur vereinzelte und grundlegende Kompetenzen in der Domäne der Datenkompetenzen. Die Zielgruppe lernt viel autodidaktisch oder in kleine Gruppen mit Kolleg\*innen zusammen; durch Lehrpersonal angeleitetes und unterstütztes Lernen findet nur selten statt. Wird in Gruppen gelernt, so ist nicht vorauszusetzen, dass eine der Lernenden die anderen anleiten könnte.
+
+Die OER sind didaktisch für diese Zielgruppe aufbereitet (siehe [Didaktisches Konzept](../struktur_didaktisches_konzept/didaktisches_konzept.md)). Ebenso ist das Assessment auf die Zielgruppe ausgerichtet, was in den nachfolgenden Abschnitten genauer beschrieben wird.
+
+Zusätzlich zur Zielgruppe der Wissenschaftler\*innen können die QUADRIGA OER auch Grundlage für Lehrveranstaltungen bspw. innerhalb eines Studiengangs sein. Dies erfordert jedoch oft eine Umgestaltung von Lernaktivitäten und bspw. eine Einführung von summativem Fremd-Assessment am Ende eines Kurses.
+
 
 # DRAFT
 ## Einleitung
