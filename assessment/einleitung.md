@@ -17,20 +17,14 @@ Die OER sind didaktisch für diese Zielgruppe aufbereitet (siehe [Didaktisches K
 
 Zusätzlich zur Zielgruppe der Wissenschaftler\*innen können die QUADRIGA OER auch Grundlage für Lehrveranstaltungen bspw. innerhalb eines Studiengangs sein. Dies erfordert jedoch oft eine Umgestaltung von Lernaktivitäten und bspw. eine Einführung von summativem Fremd-Assessment am Ende eines Kurses.
 
+## Assessment ins Selbstlern-OER
+Assessment spielt in einer Selbstlern-OER eine besonders wichtige Rolle. 
 
-# DRAFT
-## Einleitung
-Die Lernangebote (OER/QER), die in QUADRIGA entwickelt werden zeichnen sich durch die folgenden Eigenschaften aus, welche sich auf die Wahl und Gestaltung des geeigneten Assessments auswirken.
-- Zielgruppe sind (selbst-motiviert) Lernende mit wissenschaftlichem Hochschulabschluss (ab Qualitifkationslevel Promotionsstudierende aufwärts), welche Expertise in ihrer Kerndisziplin besitzen, jedoch bisher kaum oder keine Datenkompetenzen nachweisen können.- Lernende nutzen die Lernangebote vorrangig im Selbststudium und es gibt keine Unterstützung durch Lehrpersonal. Eine Unterstützung durch parallel Lernende oder Kolleg:innen (ggf. mit mehr Expertise) ist möglicherweise vorhanden, jedoch kann dies nicht vorausgesetzt werden.
-  - Als zusätzliche Nutzungsform der OER ist die Nachnutzung in einem Zertifikatskurs, Studiengang o.ä. grundsätzlich möglich. Teilweisewird dies mit Hinweisen zur Umsetzung des Assessments in diesemKontext für Lehrende unterstützt.
 - Lernende sollen das Assessment zur Selbstkontrolle vor, während und nach der Absolvierung einer OER nutzen können.
 - Schnelles, direktes Feedback wird – wo möglich – bevorzugt. Komplexeres Self-Assessment wie bspw. die selbstständige Korrektur der eigenen Abgabe anhand eines Bewertungsrasters wird dennoch an geeigneten Stellen genutzt um der Zielgruppe und deren Kompetenzerwerb gerecht zu werden.
 - Assessment vor der Bearbeitung einer OER kann eingesetzt werden, um die individuellen Lernpfade der Lernenden zu unterstützen. Wurde ein Pre-Assessment erfolgreich und ohne großen Aufwand erfolgreich beantwortet, so ist dies ein starkes Indiz, dass die lernende Person die jeweilige OER nicht oder nur zur Wiederholung durcharbeiten muss um die angestrebten Lernziele zu erreichen.
 
-Es wird bei jedem Assessment festgelegt, ob und in wie weit eine Unterstützung durch Generative-AI-Systeme durch Lernende eingeplant ist. Folgen die Lernenden diesen Empfehlungen nicht, so sind die Ergebnisse des Assessments nicht aussagekräftig. Die Lernenden sind selbst in der Verantwortung, die Assessments richtig anzuwenden. Wird die OER wie oben besprochen in einer formalen Lehrsituation genutzt, so müssen ggf. die Lehrenden auf die Einhaltung der Vorgaben achten.
-
-
-## Formen des Assessments
+## Assessment-Formen in QUADRIGA OER
 In QUADRIGA OER werden vorrangig folgende Assessment-Formate genutzt.
 - Single-Choice- / Multiple-Choice-Tests
     Diese Tests sind schnell und einfach in der Korrektur, da diese automatisch erfolgen kann. Die Erstellung muss überlegt durchgeführt werden.
@@ -91,12 +85,12 @@ Eine Möglichkeit, die Produktion von Wissen zu testen ist, die Lernenden zuerst
 
 Portfolios wären schön, sind aber technisch nicht wirklich umsetzbar, weil keine Lehrkapazität für die Kurse veranschlagt ist.
 
-## Eignung von Assessment-Methoden für gewisse Lernziele
+### Eignung von Assessment-Methoden für gewisse Lernziele
 Wie bei den Fragetypen angedeutet haben diese Eigenschaften, die sich auf die überprüfbaren Inhalte/Lernziele auswirken.
 Erkennen, Verstehen und ggf. Anwenden (siehe Bloom, Schermutzki) können mit den ersten, einfacheren Fragetypen überprüft werden. Anwenden und Analysieren lassen sich ggf. noch automatisch korrigieren, wenn die Frage/Aufgabenstellung eng genug definiert ist. Spätestens, wenn es um das Beurteilen und Gestalten geht, sind diese vorrangig nur noch durch komplexe Aufgaben – im Kontext von QUADRIGA durch Self-Assessment – zu überprüfen.
 Bei affektiven Lernzielen ergibt sich ein ähnliches Bild, sodass die ersten Stufen (siehe Bloom, Schüller) noch durch die ersten Fragetypen abgedeckt werden können während höhere Stufen vorrangig durch komplexe Aufgaben – hier Self-Assessment – überprüft werden müssen.
 
-## Auswahl der Assessment-Inhalte
+### Auswahl der Assessment-Inhalte
 Die im Assessment zu überprüfenden Inhalte der OER ergeben sich aus den Lernzielen und der Zielgruppe der OER.
 
 Die Lernziele definieren die "obere" Grenze, die Zielgruppe definiert die "untere" Grenze. Zudem ist der Weg von Vorwissen/Grundlagenwissen bzw. -fähigkeiten der Zielgruppe zum Lernziel zu beachten.
@@ -105,3 +99,17 @@ Welche "Zwischenschritte" sind für den Lernerfolg essentiell? Welche sind "nur"
 
 Das Assessment kann durch Inhalt und Struktur auch bei der Erlangung der Lernziele unterstützen. Bei Pre-Assessment gesetzte Schwerpunkte suggerieren Wichtigkeit der Inhalte bei Lernenden. Assessment während der OER und Post-Assessment steuern ggf. die Wiederholung gewisser Inhalte.
 
+
+### Assessment und GenAI
+Es wird bei jedem Assessment festgelegt, ob und in wie weit eine Unterstützung durch Generative-AI-Systeme durch Lernende eingeplant ist. Folgen die Lernenden diesen Empfehlungen nicht, so sind die Ergebnisse des Assessments nicht aussagekräftig. Die Lernenden sind selbst in der Verantwortung, die Assessments richtig anzuwenden. Wird die OER wie oben besprochen in einer formalen Lehrsituation genutzt, so müssen ggf. die Lehrenden auf die Einhaltung der Vorgaben achten.
+
+## Technologien für die Umsetzung des Assessments
+Informationen zur Umsetzung von Quizzes mit JupyterQuiz finden Sie auf der [entsprechenden Unterseite](./jupyterquiz.ipynb).
+
+Informationen zur Umsetzung von Test-Driven Assessment finden Sie auf der [entsprechenden Unterseite](./test-driven_assessment.ipynb).
+
+
+# Literatur
+```{bibliography}
+:filter: docname in docnames
+```
