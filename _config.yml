@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Template Book
-author: Hannes Schnaitter, Lamia Islam
+author: Hannes Schnaitter, Evgenia Samoilova, Lamia Islam
 logo: assets/logo.jpg
 copyright: "2024, QUADRIGA"
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", conda, README.md, LICENSE.md, useful_documentation.md]
