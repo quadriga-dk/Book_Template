@@ -6,12 +6,12 @@ root: einleitung
 options:
   numbered: true
 parts:
-  - caption: 1 Struktur und didaktisches Konzept
+  - caption: A Struktur und didaktisches Konzept
     numbered: true
     chapters:
       - file: struktur_didaktisches_konzept/struktur
       - file: struktur_didaktisches_konzept/didaktisches_konzept
-  - caption: 2 Technologiestack
+  - caption: B Technologiestack
     numbered: true
     chapters:
       - file: technologiestack/zusammenspiel_der_tools
@@ -32,7 +32,7 @@ parts:
         - file: formatierung/abbildungen
         - file: formatierung/videos
         - file: formatierung/admonitions
-  - caption: 3 Lernstandskontrolle (Assessment)
+  - caption: C Lernstandskontrolle (Assessment)
     numbered: true
     chapters:
       - file: assessment/einleitung
@@ -46,7 +46,7 @@ parts:
         sections:
         - file: assessment/jupyterquiz
         - file: assessment/test-driven_assessment
-  - caption: 4 Fazit
+  - caption: D Fazit
     numbered: true
     chapters:
       - file: fazit/abschlussassessment
