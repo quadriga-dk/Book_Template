@@ -26,10 +26,6 @@ lang: de-DE
 <td><b>GitHub</b></td>
 <td><a href="https://github.com/schnaitter" class="external-link" target="_blank">schnaitter</a></td>
 </tr>
-<tr>
-<td><b>E-Mail</b></td>
-<td><a href="mailto:hannes.schnaitter.1@ibi.hu-berlin.de?subject=Anfrage zum QUADRIGA Book_Template">Anfrage zum QUADRIGA Book_Template</a></td>
-</tr>
 </table>
 
 ## Evgenia Samoilova
