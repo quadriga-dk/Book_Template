@@ -126,8 +126,14 @@ div.caution > .admonition-title::after {
     color: #c85454 !important;
 }
 
-/* Externer Link mit Font Awesome Icon dahinter */
+/* Externer Link mit ↗ */
 .external-link:after {
     color: var(--quadriga-main);
     content: "↗";
+}
+
+/* mailto: link mit 📧 */
+a[href^="mailto:"]:after {
+    color: var(--quadriga-main);
+    content: "📧";
 }
