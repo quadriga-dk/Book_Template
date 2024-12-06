@@ -4,21 +4,21 @@ lang: de-DE
 
 # Lernstandskontrolle (Assessment) in QUADRIGA OER
 
-QUADRIGA OER sind vorrangig an Selbstlerner\*innen gerichtet, welche ihre Datenkompetenz verbessern wollen. Diese Lernenden benötigen Feedback um einschätzen zu können, wo sie in der Lernerfahrung stehen und wie sie vorankommen, welche nächsten Schritte sie gehen sollten und welche Ziele sie mit der Lernaktivität erreichen können {cite}`hattie2007`. Daher ist das Hauptziel der Lernstandskontrolle in den QUADRIGA OER die Unterstützung der Lernenden während sie OER durcharbeiten. Wir fokussieren uns also auf formatives Selbst-Assessment.
+QUADRIGA OER sind vorrangig an Selbstlerner\*innen gerichtet, welche ihre Datenkompetenz verbessern wollen. Diese Lernenden benötigen Feedback um einschätzen zu können, welchen Lernstand sie aktuell haben und wie sie vorankommen, welche nächsten Schritte sie gehen sollten und welche Ziele sie mit der Lernaktivität erreichen können {cite}`hattie2007`. Daher ist das Hauptziel der Lernstandskontrolle in den QUADRIGA OER die Unterstützung der Lernenden während sie OER durcharbeiten. Wir fokussieren uns also auf formatives Selbst-Assessment.
 
 In diesem Kapitel werden zuerst theoretische Überlegungen zu Assessment in Selbstlern-OER vorgestellt. Daraus werden dann Empfehlungen für verschiedene Assessment-Formen für QUADRIGA OER erarbeitet. Anschließend wird die Umsetzung dieser Assessment-Formen in konkreten Technologien innerhalb der Jupyter Books beschrieben. Zuerst wird die Zielgruppe der QUADRIGA OER genauer definiert.
 
 ## Zielgruppe von QUADRIGA OER
-QUADRGIA entwickelt OER für Wissenschaftler\*innen, die Kompetenzen aus dem Spektrum der Datenkompetenz {cite}`{siehe}neuroth2025` erlernen oder stärken wollen. Genauer sind Wissenschaftler\*innen ab der Qualifikationsstufe der Promovierenden adressiert.
+QUADRGIA entwickelt OER für Wissenschaftler\*innen, die Kompetenzen aus dem Spektrum der Datenkompetenz {cite}`{siehe}neuroth2025` erlernen oder stärken wollen. Genauer werden Wissenschaftler\*innen ab der Qualifikationsstufe der Promovierenden adressiert.
 
-Diesen Lernenden gemein sind Eigenschaften, welche direkten Einfluss auf die Gestaltung der OER und des Assessments darin haben. So sind sie stark selbst-motiviert und besitzen bereits eine gewisse Expertise in ihrer Kerndisziplin. Typischerweise besitzen sie nur vereinzelte und grundlegende Kompetenzen in der Domäne der Datenkompetenzen. Die Zielgruppe lernt viel autodidaktisch oder in kleine Gruppen mit Kolleg\*innen zusammen; durch Lehrpersonal angeleitetes und unterstütztes Lernen findet nur selten statt. Wird in Gruppen gelernt, so ist nicht vorauszusetzen, dass eine der Lernenden die anderen anleiten könnte.
+Diesen Lernenden gemein sind Eigenschaften, welche direkten Einfluss auf die Gestaltung der OER und des Assessments darin haben. So sind sie stark selbst-motiviert und besitzen bereits eine gewisse Expertise in ihrer Kerndisziplin. Typischerweise besitzen sie jedoch nur vereinzelte und grundlegende Kompetenzen in der Domäne der Datenkompetenzen. Die Zielgruppe lernt viel autodidaktisch oder in kleinen Gruppen – bpsw. mit Kolleg\*innen; durch Lehrpersonal angeleitetes und unterstütztes Lernen findet vergleichsweise selten statt. Wird in Gruppen gelernt, so ist nicht vorauszusetzen, dass eine\*r der Lernenden die anderen inhaltlich anleiten kann.
 
-Die OER sind didaktisch für diese Zielgruppe aufbereitet (siehe [Didaktisches Konzept](../struktur_didaktisches_konzept/didaktisches_konzept.md)). Ebenso ist das Assessment auf die Zielgruppe ausgerichtet, was in den nachfolgenden Abschnitten genauer beschrieben wird.
+Die OER sind didaktisch für diese Zielgruppe aufbereitet (siehe [Didaktisches Konzept](../struktur_didaktisches_konzept/didaktisches_konzept.md)). Ebenso ist das Assessment auf die Zielgruppe ausgerichtet. Dies wird in den nachfolgenden Abschnitten genauer beschrieben.
 
-Zusätzlich zur Zielgruppe der Wissenschaftler\*innen können die QUADRIGA OER auch Grundlage für Lehrveranstaltungen bspw. innerhalb eines Studiengangs sein. Dies erfordert jedoch oft eine Umgestaltung von Lernaktivitäten und bspw. eine Einführung von summativem Fremd-Assessment am Ende eines Kurses.
+Zusätzlich zur Zielgruppe der Wissenschaftler\*innen können die QUADRIGA OER auch Grundlage für Lehrveranstaltungen bspw. innerhalb eines Bachelor- oder Masterstudiengangs sein. Dies erfordert jedoch ggf. eine Anpassung des Niveaus sowie eine Umgestaltung von Lernaktivitäten und bspw. eine Einführung von summativem Fremd-Assessment (Prüfungen) am Ende eines Kurses.
 
 ## Assessment ins Selbstlern-OER
-Assessment spielt in einer Selbstlern-OER eine besonders wichtige Rolle. 
+Assessment spielt in einer Selbstlern-OER eine besonders wichtige Rolle. Existiert eine Lehrperson, so kann diese das Feedback so an die jeweiligen Lernenden anpassen, dass die Rückmeldung selbst wieder "lehrreich"[^orig-instructional] sein kann [@kulhavy1977]. Selbstlern-Materialien müssen diese Funktion durch im Voraus erstellte Varianten im Ablauf oder in Erklärungen, Lösungshinweise und Assessment nachahmen.
 
 - Lernende sollen das Assessment zur Selbstkontrolle vor, während und nach der Absolvierung einer OER nutzen können.
 - Schnelles, direktes Feedback wird – wo möglich – bevorzugt. Komplexeres Self-Assessment wie bspw. die selbstständige Korrektur der eigenen Abgabe anhand eines Bewertungsrasters wird dennoch an geeigneten Stellen genutzt um der Zielgruppe und deren Kompetenzerwerb gerecht zu werden.
@@ -113,3 +113,4 @@ Informationen zur Umsetzung von Test-Driven Assessment finden Sie auf der [entsp
 ```{bibliography}
 :filter: docname in docnames
 ```
+[^orig-instructional]: orig. "instructional"
