@@ -1,6 +1,8 @@
 ---
 lang: de-DE
 ---
+
+(entwicklung:einleitung)=
 # Entwicklungsumgebung
 
 Für jede QUADRIGA OER, die als Jupyter Book entwickelt wird, sollte die automatische Erstellung der Website per Github Actions aktiviert sein. Dadurch werden Änderungen im Haupt-Entwicklungsstrang (`main`-branch in Git) automatisch gebaut, wenn sie in Github veröffentlicht werden. Kleinere Änderungen wie bspw. die Behebung von Tippfehlern können daher sogar über die Web-Oberfläche von Github getätigt werden. Größere Änderungen und die experiementelle (und ggf. private) Weiterentwicklung benötigen jedoch eine lokale Entwicklungsumgebung. Empfehlungen dazu, wie Sie diese bei sich einrichten können, werden in den nachfolgenden Abschnitten beschrieben.
