@@ -3,33 +3,35 @@
 
 format: jb-book
 root: einleitung
+options:
+  numbered: true
 parts:
   - caption: 1 Struktur und didaktisches Konzept
+    numbered: true
     chapters:
       - file: struktur_didaktisches_konzept/struktur
       - file: struktur_didaktisches_konzept/didaktisches_konzept
   - caption: 2 Technologiestack
+    numbered: true
     chapters:
       - file: technologiestack/zusammenspiel_der_tools
       - file: technologiestack/grafische_aufbereitung
-  - caption: 2.1 Entwicklungsumgebung
-    chapters:
       - file: entwicklung/einleitung
-      - file: entwicklung/git
-      - file: entwicklung/unix
-      - file: entwicklung/python
-      - file: entwicklung/jupyter_book
-      - file: entwicklung/editor
-  - caption: 2.2 Formatierungs- und Darstellungsmöglichkeiten
-    chapters:
+        sections:
+        - file: entwicklung/git
+        - file: entwicklung/unix
+        - file: entwicklung/python
+        - file: entwicklung/jupyter_book
+        - file: entwicklung/editor
       - file: formatierung/einleitung
-      - file: formatierung/markdown
-      - file: formatierung/notebooks
-      - file: formatierung/markdown-notebooks
-      - file: formatierung/links_in_neuem_tab
-      - file: formatierung/abbildungen
-      - file: formatierung/videos
-      - file: formatierung/admonitions
+        sections:
+        - file: formatierung/markdown
+        - file: formatierung/notebooks
+        - file: formatierung/markdown-notebooks
+        - file: formatierung/links_in_neuem_tab
+        - file: formatierung/abbildungen
+        - file: formatierung/videos
+        - file: formatierung/admonitions
   - caption: 3 Lernstandskontrolle (Assessment)
     chapters:
       - file: assessment/einleitung
