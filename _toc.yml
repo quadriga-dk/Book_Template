@@ -33,10 +33,19 @@ parts:
         - file: formatierung/videos
         - file: formatierung/admonitions
   - caption: 3 Lernstandskontrolle (Assessment)
+    numbered: true
     chapters:
       - file: assessment/einleitung
-      - file: assessment/jupyterquiz
-      - file: assessment/test-driven_assessment
+        sections:
+        - file: assessment/zielgruppe
+        - file: assessment/selbstlern-oer
+        - file: assessment/formen
+        - file: assessment/auswahl
+        - file: assessment/assessment_genAI
+      - file: assessment/technische_umsetzung
+        sections:
+        - file: assessment/jupyterquiz
+        - file: assessment/test-driven_assessment
   - caption: 4 Fazit
     numbered: true
     chapters:
