@@ -453,5 +453,4 @@ Videos
 ```
 
 ## weiterführende Ressourcen
-- [Taming the Terminal - Bart Busschots (en)](https://ttt.bartificer.net/book.html)
-- 
+- <a href="https://ttt.bartificer.net/book.html" class="external-link" target="_blank">Taming the Terminal - Bart Busschots</a> (en) (Buch mit Podcast-Folgen)

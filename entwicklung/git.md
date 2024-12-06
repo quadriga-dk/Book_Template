@@ -11,22 +11,22 @@ Git ist der De-Facto-Standard in der Softwareentwicklung und eignet sich für al
 ## Ressourcen
 Es gibt viele Ressourcen rund um Git – die meisten sind nur auf Englisch verfügbar. Die nachfolgenden Abschnitte können nur einen kurzen Einblick in die Nutzung von Git bieten. Für alles weitere empfehlen wir Ihnen diese Ressourcen:
 
-- [Julia Evans – Git Cheat-Sheet](https://wizardzines.com/git-cheat-sheet.pdf) (PDF)
-- [Scott Chacon & Ben Straub – Pro Git](https://www.git-scm.com/book/en/v2) (Website, PDF, EPUB)
-- [Scott Chacon & Ben Straub – Pro Git (deutsche Übersetzung)](https://www.git-scm.com/book/de/v2) (Website, PDF, EPUB)
-- [Daniel Shiffman – Git and GitHub for Poets](https://thecodingtrain.com/tracks/git-and-github-for-poets) (Videoreihe)
-- [The Turing Way Community – Getting Started With GitHub](https://book.the-turing-way.org/collaboration/github-novice) (Kapitel in einem Jupyter Book)
+- <a href="https://wizardzines.com/git-cheat-sheet.pdf" class="external-link" target="_blank">Julia Evans – Git Cheat-Sheet</a> (PDF)
+- <a href="https://www.git-scm.com/book/en/v2" class="external-link" target="_blank">Scott Chacon & Ben Straub – Pro Git</a> (Website, PDF, EPUB)
+- <a href="https://www.git-scm.com/book/de/v2" class="external-link" target="_blank">Scott Chacon & Ben Straub – Pro Git (deutsche Übersetzung)</a> (Website, PDF, EPUB)
+- <a href="https://thecodingtrain.com/tracks/git-and-github-for-poets" class="external-link" target="_blank">Daniel Shiffman – Git and GitHub for Poets</a> (Videoreihe)
+- <a href="https://book.the-turing-way.org/collaboration/github-novice" class="external-link" target="_blank">The Turing Way Community – Getting Started With GitHub</a> (Kapitel in einem Jupyter Book)
 
 
 ## Installation
-Wenn Sie noch kein Git installiert haben, dann finden Sie die Installationsdateien bspw. auf der [Git Website](https://git-scm.com/downloads). Laden Sie dort die passende Version für Ihr Betriebssystem herunter bzw. folgen Sie den Anleitungen.
+Wenn Sie noch kein Git installiert haben, dann finden Sie die Installationsdateien bspw. auf der <a href="https://git-scm.com/downloads" class="external-link" target="_blank">Git Website</a>. Laden Sie dort die passende Version für Ihr Betriebssystem herunter bzw. folgen Sie den Anleitungen.
 
 Unter Windows wird neben Git selbst noch das Programm *Git Bash* installiert, welches es Ihnen ermöglicht Git über die Kommandozeite zu nutzen, als hätten Sie ein UNIX-artiges Betriebssystem wie Linux oder macOS. Alle unten angegebenen Befehle gehen davon aus, dass Sie diese unter Windows im Programm Git Bash eintippen.
 
 ## Github-Account
-Um Git für die Erstellung der QUADRIGA-OER zu nutzen wird ein Github-Account benötigt. Diesen können Sie auf [github.com](https://github.com) anlegen.
+Um Git für die Erstellung der QUADRIGA-OER zu nutzen wird ein Github-Account benötigt. Diesen können Sie auf <a href="https://example.com" class="external-link" target="_blank">Linktext</a>[github.com](https://github.com) anlegen.
 
-Um Änderungen an den QUADRIGA-OER vornehmen zu können sollte der Account der Organisation [quadriga-dk](https://github.com/quadriga-dk) zugeordnet werden. Die Arbeit über Pull-Requests ist auch möglich und was insbesondere für Externe Mitarbeiter:innen bevorzugt wird.
+Um Änderungen an den QUADRIGA OER vornehmen zu können sollte der Account der Organisation <a href="https://github.com/quadriga-dk" class="external-link" target="_blank">quadriga-dk</a> zugeordnet werden. Die Arbeit über Pull-Requests ist auch möglich und was insbesondere für Externe Mitarbeiter:innen bevorzugt wird.
 
 Nutzen Sie diese Anleitung für die Erstellung von OER außerhalb des QUADRIGA-Projekts, so benötigen Sie keine zusätzlichen Rechte. Sie können das vorliegende Repositorium als Template für Ihre eigene OER nutzen.
 
@@ -88,7 +88,7 @@ Mit einem Branch können Sie einen Commit (bzw. eine Reihe von Commits) benennen
 
 ```{admonition} Übung
 :class: tip
-1. Gehen Sie auf die [Github-Seite des OER-Templates](https://github.com/quadriga-dk/Book_Template).
+1. Gehen Sie auf die <a href="https://github.com/quadriga-dk/Book_Template" class="external-link" target="_blank">Github-Seite des OER-Templates</a>.
 2. Stellen Sie sicher, dass Sie eingeloggt sind und wählen Sie dann *Fork > Create a new Fork*.
 3. Folgen Sie den Anweisungen um eine spezielle Kopie des Templates in Deinem Github-Account zu erstellen, die Fork genannt wird. Ein Fork ist verbunden mit dem sogenannten *Upstream* Repositorium und kann Änderungen aus diesem bei sich wieder Einpflegen und Vorschläge für Änderungen (sog. Pull Requests) anbieten.
 4. Nutzen Sie nun `git clone` um eine Kopie Ihres Forks auf Ihrer lokalen Festplatte zu erstellen.

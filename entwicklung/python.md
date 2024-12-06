@@ -5,7 +5,7 @@ lang: de-DE
 
 ## Installation
 
-Gehen Sie auf die [Downloadseite von Anaconda](https://www.anaconda.com/download) um die passende Version für Ihr Betriebssystem herunterzuladen. Es ist nicht nötig, eine E-Mail anzugeben! Nutzen Sie "Skip registration" um gleich zu den Download-Links zu kommen.
+Gehen Sie auf die <a href="https://www.anaconda.com/download" class="external-link" target="_blank">Downloadseite von Anaconda</a> um die passende Version für Ihr Betriebssystem herunterzuladen. Es ist nicht nötig, eine E-Mail anzugeben! Nutzen Sie "Skip registration" um gleich zu den Download-Links zu kommen.
 
 Falls Sie einen Paketmanager wie homebrew oder Chocolatey nutzten können Sie ggf. auch diesen für die Installation nutzen.
 

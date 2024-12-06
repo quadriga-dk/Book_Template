@@ -17,7 +17,7 @@ is a slight variation on a flavor of markdown called "CommonMark" markdown,
 with small syntax extensions to allow you to write **roles** and **directives**
 in the Sphinx ecosystem.
 
-For more about MyST, see [the MyST Markdown Overview](https://jupyterbook.org/content/myst.html).
+For more about MyST, see <a href="https://jupyterbook.org/content/myst.html" class="external-link" target="_blank">the MyST Markdown Overview</a>.
 
 ## Sample Roles and Directives
 
@@ -57,4 +57,4 @@ then the bibliography is inserted with:
 ## Learn more
 
 This is just a simple starter to get you started.
-You can learn a lot more at [jupyterbook.org](https://jupyterbook.org).
+You can learn a lot more at <a href="https://jupyterbook.org" class="external-link" target="_blank">jupyterbook.org</a>.

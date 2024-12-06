@@ -10,3 +10,9 @@ Ein in Markdown gesetzter Link öffnet normalerweise im gleichen Browsertab. Das
 <a href="https://example.com" target="_blank">Linktext</a>
 ```
 <a href="https://example.com" target="_blank">Linktext</a>
+
+Verweist der Link auf eine externe Seite, so muss dies zudem gekennzeichnet werden:
+```html
+<a href="https://example.com" class="external-link" target="_blank">Linktext</a>
+```
+<a href="https://example.com" class="external-link" target="_blank">Linktext</a>

@@ -44,9 +44,9 @@ Lernziele werden mit diesem Admonition-Typ gekennzeichnet.
 
 `````{admonition} Hinweis / Empfehlung zusätzlicher Materialien 
 :class: hinweis, dropdown
-Hinweise und/oder Verweise auf und Empfehlungen für zusätzliche Materialien werden mit diesem Admonition-Typ gekennzeichnet. Verweise können hierbei auf andere Bestandteile der OER, andere QUADRIGA OER oder auch Inhalte dritter zeigen. Links sollten dabei immer in einem neuen Tab öffnen.
+Hinweise und/oder Verweise auf und Empfehlungen für zusätzliche Materialien werden mit diesem Admonition-Typ gekennzeichnet. Verweise können hierbei auf andere Bestandteile der OER, andere QUADRIGA OER oder auch Inhalte dritter zeigen. Links sollten dabei immer in einem neuen Tab öffnen und falls sie auf externe Seiten verweisen mit der CSS-Klasse `.external-link` markiert werden.
 ````html
-<a href="https://example.com" target="_blank">Linktext</a>
+<a href="https://example.com" class="external-link" target="_blank">Linktext</a>
 ````
 ````
 ```{admonition} Hinweis / Empfehlung zusätzlicher Materialien 

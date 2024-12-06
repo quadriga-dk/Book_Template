@@ -21,4 +21,4 @@ Jupyter Notebooks sind ausführbare Dokumente, die statische Elemente wie Text (
 
 Jupyter Book kann Jupyter Notebooks als Dokumenttyp einlesen und verarbeiten. Während die HTML-Seiten gebaut werden wird das Notebook von Jupyter Book ausgeführt, sodass in den HTML-Seiten auch die Ergebnisse des Codes dargestellt werden.
 
-Jupyter Book basiert auf dem Programm [Sphinx](https://www.sphinx-doc.org/en/master/), welches für die Generierung von Dokumentationen (hauptsächlich im Bereich der Programmierung) entwickelt wurde.
+Jupyter Book basiert auf dem Programm <a href="https://www.sphinx-doc.org/en/master/" class="external-link" target="_blank">Sphinx</a>, welches für die Generierung von Dokumentationen (hauptsächlich im Bereich der Programmierung) entwickelt wurde.

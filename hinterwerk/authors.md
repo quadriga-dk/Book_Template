@@ -16,15 +16,15 @@ lang: de-DE
 </tr>
 <tr>
 <td><b>ORCID:</b></td>
-<td><a href="https://orcid.org/0000-0002-1602-6032">0000-0002-1602-6032</a></td>
+<td><a href="https://orcid.org/0000-0002-1602-6032" class="external-link" target="_blank">0000-0002-1602-6032</a></td>
 </tr>
 <tr>
 <td><b>Website</b></td>
-<td><a href="https://www.ibi.hu-berlin.de/de/institut/personen/schnaitter">Mitarbeiter-Seite IBI, HU</a></td>
+<td><a href="https://www.ibi.hu-berlin.de/de/institut/personen/schnaitter" class="external-link" target="_blank">Mitarbeiter-Seite IBI, HU</a></td>
 </tr>
 <tr>
 <td><b>GitHub</b></td>
-<td><a href="https://github.com/schnaitter">schnaitter</a></td>
+<td><a href="https://github.com/schnaitter" class="external-link" target="_blank">schnaitter</a></td>
 </tr>
 </table>
 
@@ -44,11 +44,11 @@ lang: de-DE
 </tr>
 <tr>
 <td><b>Website</b></td>
-<td><a href="https://www.uni-potsdam.de/de/multimedia/team/wissenschaftliches-personal/evgenia-samoilova-phd">Mitarbeiterinnen-Seite Universität Potsdam</td>
+<td><a href="https://www.uni-potsdam.de/de/multimedia/team/wissenschaftliches-personal/evgenia-samoilova-phd" class="external-link" target="_blank">Mitarbeiterinnen-Seite Universität Potsdam</td>
 </tr>
 <tr>
 <td><b>GitHub</b></td>
-<td><a href="https://github.com/esamoilo">esamoilo</a></td>
+<td><a href="https://github.com/esamoilo" class="external-link" target="_blank">esamoilo</a></td>
 </tr>
 </table>
 
@@ -72,6 +72,6 @@ lang: de-DE
 </tr>
 <tr>
 <td><b>GitHub</b></td>
-<td><a href="https://github.com/LamiaIslam75">LamiaIslam75</a></td>
+<td><a href="https://github.com/LamiaIslam75" class="external-link" target="_blank">LamiaIslam75</a></td>
 </tr>
 </table>

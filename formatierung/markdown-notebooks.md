@@ -16,7 +16,7 @@ kernelspec:
 # Notebooks with MyST Markdown
 
 Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See [the Notebooks with MyST Markdown documentation](https://jupyterbook.org/file-types/myst-notebooks.html) for more detailed instructions.
+See <a href="https://jupyterbook.org/file-types/myst-notebooks.html" class="external-link" target="_blank">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
 This page shows off a notebook written in MyST Markdown.
 
 ## An example cell
@@ -32,7 +32,7 @@ executed with your default Jupyter kernel, and their outputs will be displayed
 in-line with the rest of your content.
 
 ```{seealso}
-Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
+Jupyter Book uses <a href="https://jupytext.readthedocs.io/en/latest/" class="external-link" target="_blank">Jupytext</a> to convert text-based files to notebooks, and can support <a href="https://jupyterbook.org/file-types/jupytext.html" class="external-link" target="_blank">many other text-based notebook files</a>.
 ```
 
 ## Create a notebook with MyST Markdown
