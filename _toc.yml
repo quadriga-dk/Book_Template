@@ -38,6 +38,7 @@ parts:
       - file: assessment/jupyterquiz
       - file: assessment/test-driven_assessment
   - caption: 4 Fazit
+    numbered: true
     chapters:
       - file: fazit/abschlussassessment
       - file: fazit/zusammenfassung
