@@ -12,6 +12,7 @@ kernelspec:
   name: python3
 ---
 
+(formatierung:myst_notebooks)=
 # Notebooks with MyST Markdown
 
 Jupyter Book also lets you write text-based notebooks using MyST Markdown.

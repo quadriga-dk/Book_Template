@@ -1,3 +1,8 @@
+---
+lang: de-DE
+---
+
+(formatierung:admonitions)=
 # Admonitions
 
 Sogenannte Admonitions werden genutzt, um bestimmte Inhalte hervorzuheben. In QUADRIGA OER nutzen wir dafür die folgenden Typen.

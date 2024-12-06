@@ -1,4 +1,9 @@
-# Links im neuen Tab öffnen
+---
+lang: de-DE
+---
+
+(formatierung:neuer_tab)=
+# Link in neuem Tab öffnen
 
 Ein in Markdown gesetzter Link öffnet normalerweise im gleichen Browsertab. Das ist für die Nutzung in einer OER nicht ideal. Daher sollten diese Links wie folgt als HTML-Link gesetzt werden:
 ```html

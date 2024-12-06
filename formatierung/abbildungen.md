@@ -1,4 +1,9 @@
-# Abbildungen einfügen
+---
+lang: de-DE
+---
+
+(formatierung:abbildungen)=
+# Abbildungen
 
 Jupyter Book bietet verschiedene Möglichkeiten an, um Abbildungen einzufügen. Für QUADRIGA empfehlen wir Ihnen die Nutzung einer `{figure}`-Umgebung.
 

@@ -1,3 +1,8 @@
+---
+lang: de-DE
+---
+
+(formatierung:videos_einbetten)=
 # Videos einbetten
 Da in Markdown auch HTML-Tags genutzt werden können, können diese für die Einbettung von Videos genutzt werden. Liegt die Datei vor, so kann das `video`-Tag genutzt werden. Häufiger jedoch findet die Einbettung per `iframe` statt.
 
