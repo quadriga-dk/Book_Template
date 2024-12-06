@@ -3,7 +3,7 @@ lang: de-DE
 ---
 # Autor\*innen
 
-#### Hannes Schnaitter <span style="font-size:8pt">(er/ihm/sein)</span>
+## Hannes Schnaitter <span style="font-size:8pt">(er/ihm/sein)</span>
 
 <table style="margin-left: 0">
 <tr>
@@ -28,7 +28,7 @@ lang: de-DE
 </tr>
 </table>
 
-#### Evgenia Samoilova
+## Evgenia Samoilova
 <table style="margin-left: 0">
 <tr>
 <td><b>Rolle in QUADRIGA</b></td>
@@ -52,7 +52,7 @@ lang: de-DE
 </tr>
 </table>
 
-#### Lamia Islam
+## Lamia Islam
 <table style="margin-left: 0">
 <tr>
 <td><b>Rolle in QUADRIGA</b></td>
