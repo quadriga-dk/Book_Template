@@ -72,6 +72,6 @@ lang: de-DE
 </tr>
 <tr>
 <td><b>GitHub</b></td>
-<td><a href="https://github.com/LamiaIslam75" class="external-link" target="_blank">LamiaIslam75</a></td>
+<td><a href="https://github.com/lam1aa" class="external-link" target="_blank">lam1aa</a></td>
 </tr>
 </table>
