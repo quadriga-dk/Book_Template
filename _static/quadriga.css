@@ -129,7 +129,5 @@ div.caution > .admonition-title::after {
 /* Externer Link mit Font Awesome Icon dahinter */
 .external-link:after {
     color: var(--quadriga-main);
-    padding-left: 2px;
-    font: normal normal normal 18px/1 Arial;
     content: "↗";
 }
