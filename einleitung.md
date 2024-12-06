@@ -39,7 +39,7 @@ Wollen Sie GitHub-Pages für die Veröffentlichung des Jupyter Books nutzen, so 
 ```{tableofcontents}
 ```
 
-# Literatur
+## Literatur
 ```{bibliography}
 :filter: docname in docnames
 ```
