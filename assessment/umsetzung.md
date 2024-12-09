@@ -2,7 +2,7 @@
 lang: de-DE
 ---
 
-# Technologien für die Umsetzung des Assessments
+# Umsetzung des Assessments
 Informationen zur Umsetzung von Quizzes mit JupyterQuiz finden Sie auf der [entsprechenden Unterseite](./umsetzung/jupyterquiz.ipynb).
 
 Informationen zur Umsetzung von Aufgaben mit Selbstkontrolle finden Sie auf der [entsprechenden Unterseite](./umsetzung/selbstkontrolle.md).

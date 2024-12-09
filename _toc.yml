@@ -42,7 +42,7 @@ parts:
         - file: assessment/formen
         - file: assessment/auswahl
         - file: assessment/assessment_genAI
-      - file: assessment/technische_umsetzung
+      - file: assessment/umsetzung
         sections:
         - file: assessment/umsetzung/jupyterquiz
         - file: assessment/umsetzung/selbstkontrolle
