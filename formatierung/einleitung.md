@@ -15,5 +15,5 @@ Konkrete Umsetzung in QUADRIGA OER:
 - {numref}`%s Admonitions<formatierung:admonitions>`
 
 
-[^url-myst-markdown]: https://mystmd.org
-[^url-jupyter-notebook]: https://docs.jupyter.org/en/latest/what_is_jupyter.html
+[^url-myst-markdown]: <a href="https://mystmd.org" class="external-link" target="_blank">https://mystmd.org</a>
+[^url-jupyter-notebook]: <a href="https://docs.jupyter.org/en/latest/what_is_jupyter.html" class="external-link" target="_blank">https://docs.jupyter.org/en/latest/what_is_jupyter.html</a>
