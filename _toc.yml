@@ -45,6 +45,7 @@ parts:
       - file: assessment/technische_umsetzung
         sections:
         - file: assessment/umsetzung/jupyterquiz
+        - file: assessment/umsetzung/selbstkontrolle
         - file: assessment/umsetzung/test-driven_assessment
   - caption: D Fazit
     numbered: true
@@ -54,7 +55,7 @@ parts:
       - file: fazit/weiterführende_hinweise
   - caption: Hinterwerk
     chapters:
-      - file: hinterwerk/Literaturverzeichnis
+      - file: hinterwerk/literaturverzeichnis
       - file: hinterwerk/authors
-      - file: hinterwerk/QUADRIGA
+      - file: hinterwerk/quadriga
       - file: hinterwerk/impressum
