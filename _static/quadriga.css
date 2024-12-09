@@ -127,8 +127,13 @@ div.caution > .admonition-title::after {
 }
 
 /* Externer Link mit ↗ */
-.reference.external:after {
+.external-link:after {
     color: var(--quadriga-main);
     content: "↗";
 }
 
+/* mailto: link mit 📧 */
+a[href^="mailto:"]:after {
+    color: var(--quadriga-main);
+    content: "📧";
+}
