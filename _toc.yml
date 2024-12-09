@@ -51,12 +51,12 @@ parts:
         - file: assessment/umsetzung/jupyterquiz
         - file: assessment/umsetzung/selbstkontrolle
         - file: assessment/umsetzung/test-driven_assessment
-  - caption: D Fazit
+  - caption: Reflexion und Resümee
     numbered: true
     chapters:
-      - file: fazit/abschlussassessment
-      - file: fazit/zusammenfassung
-      - file: fazit/weiterführende_hinweise
+      - file: reflexion_und_resümee/abschlussassessment
+      - file: reflexion_und_resümee/zusammenfassung
+      - file: reflexion_und_resümee/weiterführende_hinweise
   - caption: Hinterwerk
     chapters:
       - file: hinterwerk/literaturverzeichnis
