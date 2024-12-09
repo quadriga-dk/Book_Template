@@ -54,7 +54,7 @@ parts:
       - file: fazit/weiterführende_hinweise
   - caption: Hinterwerk
     chapters:
-      - file: hinterwerk/literaturverzeichnis
+      - file: hinterwerk/Literaturverzeichnis
       - file: hinterwerk/authors
-      - file: hinterwerk/quadriga
+      - file: hinterwerk/QUADRIGA
       - file: hinterwerk/impressum
