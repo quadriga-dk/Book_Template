@@ -1,7 +1,7 @@
 # Lizensierung der OER und ihrer Bestandteile
-Die Inhalte dieser Open Educational Resource (OER) sind lizensiert unter der [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)-Lizenz soweit sie nicht dem Urheberrecht anderer unterliegen.
+Die Inhalte dieser Open Educational Resource (OER) sind lizensiert unter der <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link" target="_blank">CC BY-SA 4.0</a>-Lizenz soweit sie nicht dem Urheberrecht anderer unterliegen.
 
-Der Code in der OER sowie der Code, der zur Erstellung der OER genutzt wird, ist lizensiert unter der [MIT](https://opensource.org/license/mit)-Lizenz. Diese ist nachfolgend in dieser Datei zu finden.
+Der Code in der OER sowie der Code, der zur Erstellung der OER genutzt wird, ist lizensiert unter der <a href="https://opensource.org/license/mit" class="external-link" target="_blank">MIT</a>-Lizenz. Diese ist nachfolgend in dieser Datei zu finden.
 
 ## MIT License
 Copyright 2024 QUADRIGA

@@ -6,7 +6,7 @@ lang: de-DE
 
 Open Educational Resources (OER) ermöglichen die Erarbeitung, Verbesserung, Aktualisierung und Nutzung von Lehr- und Lerninhalten in einer breiten Community innerhalb klarer rechtlicher Regelungen einer offenen Lizenzierung.
 
-Um diese Aktivitäten möglichst einfach zu gestalten und gleichzeitig die langfristige Nutzbarkeit unabhängig von bestimmten Technologien zu ermöglichen werden OERs im Rahmen des QUADRIGA-Projekts basierend auf Markdown-Dateien und Jupyter-Notebooks erstellt, für die eine langfristige Nutzbarkeit ohne komplizierten Softwarestack zu erwarten ist. Die konkrete Transformation dieser Inhalte in die hier zu sehende Darstellung erfolgt dabei per [Jupyter Book](https://jupyterbook.org) {cite}`executable_books_community_2021_2561065`.
+Um diese Aktivitäten möglichst einfach zu gestalten und gleichzeitig die langfristige Nutzbarkeit unabhängig von bestimmten Technologien zu ermöglichen werden OERs im Rahmen des QUADRIGA-Projekts basierend auf Markdown-Dateien und Jupyter-Notebooks erstellt, für die eine langfristige Nutzbarkeit ohne komplizierten Softwarestack zu erwarten ist. Die konkrete Transformation dieser Inhalte in die hier zu sehende Darstellung erfolgt dabei per <a href="https://jupyterbook.org" class="external-link" target="_blank">Jupyter Book</a> {cite}`executable_books_community_2021_2561065`.
 
 Diese Vorlage dient somit der Entwicklung von QUADRIGA OERs und zeigt die Möglichkeiten der Jupyter Book Plattform auf. Zudem stellt sie unsere Empfehlungen, wie diese für die Entwicklung Ihrer OER genutzt werden sollten, dar. Gleichzeitig dient sie selbst als OER, welche das Erlernen der Gestaltung und Entwicklung von (QUADIRGA) OERs unterstützt.
 

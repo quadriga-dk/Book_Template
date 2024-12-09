@@ -1,6 +1,6 @@
 # QUADRIGA OER Template
 
-Dieses Repositorium dient als Vorlage für [QUADRIGA](https://quadriga-dk.github.io) OERs, die mit [Jupyter Book](https://jupyterbook.org) geschrieben werden.
+Dieses Repositorium dient als Vorlage für <a href="https://www.quadriga-dk.de" class="external-link" target="_blank">QUADRIGA</a> OERs, die mit <a href="https://jupyterbook.org" class="external-link" target="_blank">Jupyter Book</a> geschrieben werden.
 
 ## Nutzung der Vorlage
 
@@ -17,7 +17,7 @@ Jupyter Book kann standardmäßig Inhalte verarbeiten, die in Markdown, MyST und
 Ist die Github Action für Github Pages korrekt konfiguriert, so ist die Arbeit in der GitHub-Oberfläche möglich – wenn sie auch mit großen Wartezeiten verbunden ist. Allerdings empfehlen wir Ihnen immer eine lokale "Entwicklungsumgebung".
 
 Wir empfehlen Ihnen dabei dieses Vorgehen:
-- Installieren Sie [Anaconda](https://www.anaconda.com/download) um eine Python-Umgebung auf Ihrem Rechner zu installieren. Falls Sie schon eine Python-Umgebung haben, können Sie diesen Schritt ggf. überspringen.
+- Installieren Sie <a href="https://www.anaconda.com/download" class="external-link" target="_blank">Anaconda</a> um eine Python-Umgebung auf Ihrem Rechner zu installieren. Falls Sie schon eine Python-Umgebung haben, können Sie diesen Schritt ggf. überspringen.
 - Klonen Sie das Repositorium, an dem Sie arbeiten wollen. Bspw.: `git clone https://github.com/quadriga-dk/Book_Template`
 - In einem Terminal, wechseln Sie in den Order des Repositoriums und erstellen Sie ein lokales *virtual environment*. (Wir nutzen `conda`, aber andere Tools sind möglich, falls Sie schon mit diesen vertraut sind.) Führen Sie dazu diesen Befehl aus: `conda create -p conda python=3`. Dies erstellt eine neue Virtuelle Umgebung im Ordner `./conda/` in welchem alle für Ihr Buch notwendigen Bibliotheken installiert werden können. (Der Ordner `conda` wird durch die Konfiguration in der Datei `.gitignore` nicht mit Git versioniert, sodass die jeweils korrekte Version aller Software für Ihr Betriebssystem installiert werden kann.)
 - Aktivieren Sie nun die Virtuelle Umgebung mit `conda activate ./conda` (und überprüfen Sie, ob alles funktioniert hat mit `which pip`.)

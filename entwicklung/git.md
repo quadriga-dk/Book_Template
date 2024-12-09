@@ -24,7 +24,7 @@ Wenn Sie noch kein Git installiert haben, dann finden Sie die Installationsdatei
 Unter Windows wird neben Git selbst noch das Programm *Git Bash* installiert, welches es Ihnen ermöglicht Git über die Kommandozeite zu nutzen, als hätten Sie ein UNIX-artiges Betriebssystem wie Linux oder macOS. Alle unten angegebenen Befehle gehen davon aus, dass Sie diese unter Windows im Programm Git Bash eintippen.
 
 ## Github-Account
-Um Git für die Erstellung der QUADRIGA-OER zu nutzen wird ein Github-Account benötigt. Diesen können Sie auf <a href="https://example.com" class="external-link" target="_blank">Linktext</a>[github.com](https://github.com) anlegen.
+Um Git für die Erstellung der QUADRIGA-OER zu nutzen wird ein Github-Account benötigt. Diesen können Sie auf <a href="https://github.com" class="external-link" target="_blank">github.com</a> anlegen.
 
 Um Änderungen an den QUADRIGA OER vornehmen zu können sollte der Account der Organisation <a href="https://github.com/quadriga-dk" class="external-link" target="_blank">quadriga-dk</a> zugeordnet werden. Die Arbeit über Pull-Requests ist auch möglich und was insbesondere für Externe Mitarbeiter:innen bevorzugt wird.
 
