@@ -44,8 +44,8 @@ parts:
         - file: assessment/assessment_genAI
       - file: assessment/technische_umsetzung
         sections:
-        - file: assessment/jupyterquiz
-        - file: assessment/test-driven_assessment
+        - file: assessment/umsetzung/jupyterquiz
+        - file: assessment/umsetzung/test-driven_assessment
   - caption: D Fazit
     numbered: true
     chapters:
