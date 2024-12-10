@@ -2,4 +2,5 @@ conda
 _build
 __pycache__
 quadriga1/
+venv/
 **/.DS_Store
