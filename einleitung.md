@@ -4,9 +4,21 @@ lang: de-DE
 
 # QUADRIGA OERs: erstellen und gestalten mit Jupyter Book
 
+```{sidebar} <i class="fas fa-question-circle icon"></i> Ask a Data Steward
+
+Haben Sie Fragen oder Feedback? <br>
+<a href="https://github.com/quadriga-dk/Book_Template/issues/new" class="external-link" target="_blank">
+    Erstellen Sie ein Issue
+</a> auf GitHub, um Hilfe von unseren Datenverwaltern zu erhalten!
+
+Wir schätzen Ihr Feedback und werden so schnell wie möglich antworten.
+```
+
 Diese Vorlage dient der Erstellung von Open Educational Resources (OER) im Rahmen des <a href="https://www.quadriga-dk.de/" class="external-link" target="_blank">QUADRIGA-Projekts</a>.
 
+
 Zur einfachen Erstellung und langfristigen, technikunabhängigen Nutzbarkeit werden QUADRIGA-OERs mit Markdown-Dateien und Jupyter-Notebooks erstellt. Die konkrete Transformation dieser Inhalte in die hier zu sehende Darstellung erfolgt dabei per <a href="https://jupyterbook.org" class="external-link" target="_blank">Jupyter Book</a> {cite}`executable_books_community_2021_2561065`.
+
 
 Diese Vorlage dient somit der Entwicklung von QUADRIGA OERs und zeigt die Möglichkeiten der Jupyter Book Plattform auf. Zudem stellt sie unsere Empfehlungen, wie diese für die Entwicklung Ihrer OER genutzt werden sollten, dar. Gleichzeitig dient sie selbst als OER, welche das Erlernen der Gestaltung und Entwicklung von (QUADIRGA) OERs unterstützt.
 

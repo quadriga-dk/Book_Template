@@ -137,3 +137,12 @@ a[href^="mailto:"]:after {
     color: var(--quadriga-main);
     content: "📧";
 }
+
+/* Sidebar design */
+.sidebar {
+    background-color: #f7fbff !important;
+}
+
+.sidebar p.sidebar-title {
+    color: var(--quadriga-main) !important;
+}
