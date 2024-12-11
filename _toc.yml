@@ -59,6 +59,7 @@ parts:
       - file: reflexion_und_resümee/weiterführende_hinweise
   - caption: Hinterwerk
     chapters:
+      - file: hinterwerk/fragen_und_feedback
       - file: hinterwerk/literaturverzeichnis
       - file: hinterwerk/authors
       - file: hinterwerk/quadriga
