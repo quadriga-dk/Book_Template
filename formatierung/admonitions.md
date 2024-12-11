@@ -42,16 +42,13 @@ Lernziele werden mit diesem Admonition-Typ gekennzeichnet.
 ````
 `````
 
-`````{admonition} Hinweis / Empfehlung zusätzlicher Materialien 
+`````{admonition} Hinweis
 :class: hinweis, dropdown
-Hinweise und/oder Verweise auf und Empfehlungen für zusätzliche Materialien werden mit diesem Admonition-Typ gekennzeichnet. Verweise können hierbei auf andere Bestandteile der OER, andere QUADRIGA OER oder auch Inhalte dritter zeigen. Links sollten dabei immer in einem neuen Tab öffnen und falls sie auf externe Seiten verweisen mit der CSS-Klasse `.external-link` markiert werden.
-````html
-<a href="https://example.com" class="external-link" target="_blank">Linktext</a>
+Hinweise werden mit diesem Admonition-Typ gekennzeichnet. 
 ````
-````
-```{admonition} Hinweis / Empfehlung zusätzlicher Materialien 
+```{admonition} Hinweis
 :class: hinweis, dropdown
-Hinweise und/oder Verweise auf und Empfehlungen für zusätzliche Materialien.
+Hinweise 
 ```
 ````
 `````
@@ -74,6 +71,22 @@ Ist bei einem Arbeitsschritt besondere Vorsicht geboten, um bspw. Dateiverlust z
 ```{admonition} Achtung
 :class: caution
 Ist bei einem Arbeitsschritt besondere Vorsicht geboten, so wird dieser Admonition-Typ genutzt.
+```
+````
+`````
+
+`````{admonition} Weiterführende Literatur / zusätzliche Materialien
+:class: seealso
+Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden so gekennzeichnet.
+
+Verweise können hierbei auf andere Bestandteile der OER, andere QUADRIGA OER oder auch Inhalte dritter zeigen. Links sollten dabei immer in einem neuen Tab öffnen und falls sie auf externe Seiten verweisen mit der CSS-Klasse `.external-link` markiert werden.
+````html
+<a href="https://example.com" class="external-link" target="_blank">Linktext</a>
+````
+````
+```{admonition} Weiterführende Literatur / zusätzliche Materialien
+:class: seealso
+Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden so gekennzeichnet.
 ```
 ````
 `````
