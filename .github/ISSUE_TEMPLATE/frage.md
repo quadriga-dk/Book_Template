@@ -1,5 +1,6 @@
 ---
 name: Frage
+about: Nutzen Sie diese Vorlage, um eine Frage zu dieser Fallstudie zu stellen
 description: Nutzen Sie diese Vorlage, um eine Frage zu dieser Fallstudie zu stellen
 labels: ["question"]
 body:
