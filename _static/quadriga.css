@@ -159,3 +159,24 @@ div.frage-feedback  > .admonition-title::after {
     color: #00305e !important;
 }
 
+/* citation information styling */
+div.citation-information {
+    background-color: #f7fbff !important;
+    border-left-color: #00305e !important;
+}
+
+div.citation-information  > .admonition-title {
+    background-color: rgba(0, 48, 94, 0.1) !important;
+    color: #00305e !important;
+}
+
+div.citation-information  > .admonition-title::after {
+    content: "\f10d";  /* FontAwesome quote left icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1 em !important;
+    color: #00305e !important;
+}
+❝❞
