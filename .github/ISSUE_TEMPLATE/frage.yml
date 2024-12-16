@@ -1,6 +1,6 @@
 name: Frage
 description: Nutzen Sie diese Vorlage, um eine Frage zu dieser Fallstudie zu stellen
-title: "[Frage]: "
+title: "Frage: "
 labels: ["question"]
 assignees: []
 body:

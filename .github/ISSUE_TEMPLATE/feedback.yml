@@ -1,8 +1,8 @@
----
 name: Feedback
-about: Nutzen Sie diese Vorlage, um Feedback zur Fallstudie zu geben
 description: Nutzen Sie diese Vorlage, um Feedback zur Fallstudie zu geben
+title: "Feedback: "
 labels: ["feedback"]
+assignees: []
 body:
   - type: markdown
     attributes:
@@ -50,4 +50,3 @@ body:
       placeholder: Optional - Ihre Ideen für mögliche Verbesserungen
     validations:
       required: false
----
