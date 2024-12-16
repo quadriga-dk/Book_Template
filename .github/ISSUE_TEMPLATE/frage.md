@@ -1,8 +1,11 @@
 ---
 name: Frage
 about: Nutzen Sie diese Vorlage, um eine Frage zu dieser Fallstudie zu stellen
-description: Nutzen Sie diese Vorlage, um eine Frage zu dieser Fallstudie zu stellen
+title: "[Frage]: "
 labels: ["question"]
+assignees: []
+---
+
 body:
   - type: markdown
     attributes:
@@ -31,6 +34,7 @@ body:
     id: question-type
     attributes:
       label: Art der Frage
+      description: Wählen Sie die Art Ihrer Frage aus
       options:
         - Verständnis des Inhalts
         - Technische Umsetzung
@@ -39,4 +43,3 @@ body:
         - Sonstiges
     validations:
       required: true
----
