@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Frage
+    url: https://github.com/lam1aa/Book_Template/issues/new?assignees=&labels=question&projects=&template=frage.md
+    about: Nutzen Sie diese Vorlage, um eine Frage zu dieser Fallstudie zu stellen
+  - name: Feedback
+    url: https://github.com/lam1aa/Book_Template/issues/new?assignees=&labels=feedback&projects=&template=feedback.md
+    about: Nutzen Sie diese Vorlage, um Feedback zur Fallstudie zu geben
+  - name: Ask a Data Steward
+    url: https://github.com/lam1aa/Book_Template/issues/new?assignees=&labels=&projects=&template=ask-a-data-steward.md
