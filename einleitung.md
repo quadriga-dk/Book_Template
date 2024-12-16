@@ -4,15 +4,21 @@ lang: de-DE
 
 # QUADRIGA OERs: erstellen und gestalten mit Jupyter Book
 
-```{sidebar} <i class="fas fa-question-circle icon"></i> Ask a Data Steward
+````{margin}
+```{admonition} Fragen oder Feedback 
+:class: frage-feedback
 
-Haben Sie Fragen oder Feedback? <br>
-<a href="https://github.com/quadriga-dk/Book_Template/issues/new" class="external-link" target="_blank">
-    Erstellen Sie ein Issue
-</a> auf GitHub, um Hilfe von unseren Datenverwaltern zu erhalten!
+<a href="https://github.com/...../issues/new?template=question.md" class="external-link" target="_blank">
+    Stellen Sie eine Frage
+</a> <br>
+<a href="https://github.com/...../issues/new?template=feedback.md" class="external-link" target="_blank">
+    Geben Sie uns Feedback
+</a> 
 
-Wir schätzen Ihr Feedback und werden so schnell wie möglich antworten.
+Mit Ihren Rückmeldungen können wir unser Jupyter Book gezielt an Ihre Bedürfnisse anpassen.
+
 ```
+````
 
 Diese Vorlage dient der Erstellung von Open Educational Resources (OER) im Rahmen des <a href="https://www.quadriga-dk.de/" class="external-link" target="_blank">QUADRIGA-Projekts</a>.
 
