@@ -4,17 +4,38 @@ lang: de-DE
 
 # QUADRIGA OERs: erstellen und gestalten mit Jupyter Book
 
-Open Educational Resources (OER) ermöglichen die Erarbeitung, Verbesserung, Aktualisierung und Nutzung von Lehr- und Lerninhalten in einer breiten Community innerhalb klarer rechtlicher Regelungen einer offenen Lizenzierung.
+````{margin}
+```{admonition} Fragen oder Feedback 
+:class: frage-feedback
 
-Um diese Aktivitäten möglichst einfach zu gestalten und gleichzeitig die langfristige Nutzbarkeit unabhängig von bestimmten Technologien zu ermöglichen werden OERs im Rahmen des QUADRIGA-Projekts basierend auf Markdown-Dateien und Jupyter-Notebooks erstellt, für die eine langfristige Nutzbarkeit ohne komplizierten Softwarestack zu erwarten ist. Die konkrete Transformation dieser Inhalte in die hier zu sehende Darstellung erfolgt dabei per <a href="https://jupyterbook.org" class="external-link" target="_blank">Jupyter Book</a> {cite}`executable_books_community_2021_2561065`.
+<a href="https://github.com/...../issues/new?template=question.md" class="external-link" target="_blank">
+    Stellen Sie eine Frage
+</a> <br>
+<a href="https://github.com/...../issues/new?template=feedback.md" class="external-link" target="_blank">
+    Geben Sie uns Feedback
+</a> 
+
+Mit Ihren Rückmeldungen können wir unser Jupyter Book gezielt an Ihre Bedürfnisse anpassen.
+
+```
+````
+
+Diese Vorlage dient der Erstellung von Open Educational Resources (OER) im Rahmen des <a href="https://www.quadriga-dk.de/" class="external-link" target="_blank">QUADRIGA-Projekts</a>.
+
+
+Zur einfachen Erstellung und langfristigen, technikunabhängigen Nutzbarkeit werden QUADRIGA-OERs mit Markdown-Dateien und Jupyter-Notebooks erstellt. Die konkrete Transformation dieser Inhalte in die hier zu sehende Darstellung erfolgt dabei per <a href="https://jupyterbook.org" class="external-link" target="_blank">Jupyter Book</a> {cite}`executable_books_community_2021_2561065`.
+
 
 Diese Vorlage dient somit der Entwicklung von QUADRIGA OERs und zeigt die Möglichkeiten der Jupyter Book Plattform auf. Zudem stellt sie unsere Empfehlungen, wie diese für die Entwicklung Ihrer OER genutzt werden sollten, dar. Gleichzeitig dient sie selbst als OER, welche das Erlernen der Gestaltung und Entwicklung von (QUADIRGA) OERs unterstützt.
 
-```{admonition} Lernziele
-:class: lernziele
-1. Nach durcharbeiten der OER kennen Sie sich mit dem Technologiestack der QUADRIGA OERS aus und können bei der Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
-2. Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA OER anpassen und diese erweitern.
-3. Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
+Die QUADRIGA-Vorlagen sind speziell für OERs konzipiert, die auf realen Forschungsbeispielen basieren. Sie wurden so entwickelt, dass sie direkt verwendet und mit eigenen Inhalten gefüllt werden können. Diese Seite des Jupyter Books dient als Startseite. Hier sollten Sie eine kurze Beschreibung Ihrer Fallstudie geben und, wenn möglich, ein Bild einfügen, das die Essenz des Inhalts widerspiegelt.
+
+```{figure} /assets/intro/oer-creation-process.png
+---
+align: center
+width: 70%
+---
+Erstellung von QUADRIGA-OERs aus der Jupyter-Book-Vorlage
 ```
 ## Aufbau der OER
 Die OER startet mit einer Vorstellung der inhaltlichen Struktur sowie des didaktischen Konzepts einer QUADRIGA OER. Dann wird die technische Umsetzung präsentiert, wobei auf die Entwicklungsumgebung und die Formatierungs- und Darstellungsmöglichkeiten besonders eingegagen wird. Dann folgen Inhalte zur Auswahl und Einbettung eines (Self-)Assessments. Inhaltlich schließt die OER mit einem Fazit, auf welches noch das Hinterwerk folgt.
