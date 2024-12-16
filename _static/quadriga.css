@@ -138,11 +138,24 @@ a[href^="mailto:"]:after {
     content: "📧";
 }
 
-/* Sidebar design */
-.sidebar {
+/* margin for frage-feedback styling */
+div.frage-feedback {
     background-color: #f7fbff !important;
+    border-left-color: #00305e !important;
 }
 
-.sidebar p.sidebar-title {
-    color: var(--quadriga-main) !important;
+div.frage-feedback  > .admonition-title {
+    background-color: rgba(0, 48, 94, 0.1) !important;
+    color: #00305e !important;
 }
+
+div.frage-feedback  > .admonition-title::after {
+    content: "\f059";  /* FontAwesome question-circle icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1 em !important;
+    color: #00305e !important;
+}
+
