@@ -8,10 +8,10 @@ lang: de-DE
 ```{admonition} Fragen oder Feedback 
 :class: frage-feedback
 
-<a href="https://github.com/...../issues/new?template=question.md" class="external-link" target="_blank">
+<a href="https://github.com/quadriga-dk/Book_Template/issues/new?assignees=&labels=question&projects=&template=frage.md&title=" class="external-link" target="_blank">
     Stellen Sie eine Frage
 </a> <br>
-<a href="https://github.com/...../issues/new?template=feedback.md" class="external-link" target="_blank">
+<a href=href="https://github.com/quadriga-dk/Book_Template/issues/new?assignees=&labels=question&projects=&template=feedback.md&title=" class="external-link" target="_blank">
     Geben Sie uns Feedback
 </a> 
 
