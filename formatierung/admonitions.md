@@ -90,3 +90,26 @@ Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden
 ```
 ````
 `````
+
+`````{admonition} Zitierhinweis
+:class: citation-information
+```bibtex
+@book{nachname_1_fallstudientitel_2024,
+    address = {Potsdam; Berlin},
+    title = {Fallstudientitel. {QUADRIGA} {Open} {Educational} {Ressources}: {Datentyp} {No}.},
+    copyright = {CC-BY-SA 4.0},
+    url = {DOI-Link},
+    language = {deu},
+    author = {Nachname\_1, Vorname\_1 and Nachname\_n, Vorname\_n},
+    year = {2024},
+}
+```
+Schnaitter, H., Samoilova E. & Islam L. (2024). QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template. https://quadriga-dk.github.io/Book_Template/
+
+````
+```{admonition} Zitierhinweis
+:class: citation-information
+
+```
+````
+`````
