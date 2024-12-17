@@ -1,5 +1,5 @@
 ---
 lang: de-DE
 ---
-
-# inhaltliche Strukur
+(inhaltliche_strukur)=
+# Inhaltliche Strukur
