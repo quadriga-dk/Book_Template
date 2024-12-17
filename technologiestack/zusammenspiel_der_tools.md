@@ -1,7 +1,7 @@
 ---
 lang: de-DE
 ---
-
+(zusammenspiel_der_tools)=
 # Zusammenspiel der Tools
 
 Der Technologiestack besteht aus verschiedenen Programmen und Dateitypen. Die Inhalte der OER werden in Markdown-Dateien (`.md`) und Jupyter Notebooks (`.ipynb`) verfasst. In diese Dateien können zusätzlich zum reinen Text statische Inhalte wie Abbildungen und dynamische Inhalte wie Programmcode integriert werden.
