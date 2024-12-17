@@ -1,3 +1,7 @@
+---
+lang: de-DE
+---
+(fragen_feedback)=
 # Fragen und Feedback
 
 Wir freuen uns auf Ihre Rückmeldungen!
