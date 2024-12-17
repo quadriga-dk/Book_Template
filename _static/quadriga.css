@@ -12,7 +12,7 @@
 
 /* Exercise/Übung styling */
 div.exercise {
-    background-color: #f7fbff !important;
+    background-color: rgba(66, 165, 245, 0.05) !important;
     border-left-color: #7baac7 !important;
 }
 
@@ -42,8 +42,9 @@ div.solution > .admonition-title {
 }
 
 div.solution > .admonition-title::after {
-    content: "👁️" !important;
+    content: "\f06e" !important;  /* FontAwesome eye icon */
     font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
     float: left !important;
     padding-right: 0.5rem !important;
     font-size: 1em !important;
@@ -62,7 +63,9 @@ div.keypoint > .admonition-title {
 }
 
 div.keypoint > .admonition-title::after {
-    content: "💡" !important;  /* Unicode circled question mark */
+    content: "\f0eb" !important;  /* FontAwesome lightbulb icon */
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
     float: left !important;
     padding-right: 0.5rem !important;
     font-size: 1em !important;
@@ -71,7 +74,7 @@ div.keypoint > .admonition-title::after {
 
 /* Hinweis styling */
 div.hinweis {
-    background-color: #f0f8ff8d !important;
+    background-color: rgba(108, 160, 216, 0.05) !important;
     border-left-color: #6ca0d8ad !important;
 }
 
@@ -81,13 +84,16 @@ div.hinweis > .admonition-title {
 }
 
 div.hinweis > .admonition-title::after {
-    content: "📌" !important;
+    content: "\f08d" !important;  /* FontAwesome thumbtack icon */
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
     float: left !important;
     padding-right: 0.5rem !important;
     font-size: 1.2em !important;
     color: #6ca0d8ad !important;
 }
 
+/* lernziele styling */
 /* lernziele styling */
 div.lernziele {
     background-color: #f7fbff !important;
@@ -100,11 +106,28 @@ div.lernziele > .admonition-title {
 }
 
 div.lernziele > .admonition-title::after {
-    content: "🎓" !important;  /* Unicode circled exclamation mark */
+    content: "\f19d" !important;  /* FontAwesome graduation-cap icon */
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
     float: left !important;
     padding-right: 0.5rem !important;
     font-size: 1 em !important;
     color: #00305e !important;
+}
+
+/* Dark mode overrides for lernziele */
+html[data-theme='dark'] div.lernziele {
+    background-color: rgba(193, 211, 224, 0.1) !important;
+    border-left-color: var(--quadriga-main-web) !important;
+}
+
+html[data-theme='dark'] div.lernziele > .admonition-title {
+    background-color: rgba(193, 211, 224, 0.15) !important;
+    color: var(--quadriga-main-web) !important;
+}
+
+html[data-theme='dark'] div.lernziele > .admonition-title::after {
+    color: var(--quadriga-main-web) !important;
 }
 
 /* Caution styling */
@@ -119,7 +142,9 @@ div.caution > .admonition-title {
 }
 
 div.caution > .admonition-title::after {
-    content: "⚠️" !important;
+    content: "\f071" !important;  /* FontAwesome exclamation-triangle icon */
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
     float: left !important;
     padding-right: 0.5rem !important;
     font-size: 1 em !important;
@@ -158,6 +183,22 @@ div.frage-feedback  > .admonition-title::after {
     font-size: 1 em !important;
     color: #00305e !important;
 }
+
+/* Dark mode overrides for frage-feedback */
+html[data-theme='dark'] div.frage-feedback {
+    background-color: rgba(193, 211, 224, 0.1) !important;
+    border-left-color: var(--quadriga-main-web) !important;
+}
+
+html[data-theme='dark'] div.frage-feedback > .admonition-title {
+    background-color: rgba(193, 211, 224, 0.15) !important;
+    color: var(--quadriga-main-web) !important;
+}
+
+html[data-theme='dark'] div.frage-feedback > .admonition-title::after {
+    color: var(--quadriga-main-web) !important;
+}
+
 
 /* citation information styling */
 div.citation-information {
