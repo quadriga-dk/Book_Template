@@ -91,25 +91,47 @@ Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden
 ````
 `````
 
-`````{admonition} Zitierhinweis
+``````{admonition} Zitierhinweis
 :class: citation-information
 ```bibtex
-@book{nachname_1_fallstudientitel_2024,
+@book{Schnaitter_OER_Template_2024,
     address = {Potsdam; Berlin},
-    title = {Fallstudientitel. {QUADRIGA} {Open} {Educational} {Ressources}: {Datentyp} {No}.},
+    title = {{QUADRIGA} {OERs}: erstellen und gestalten mit {Jupyter Book}. {QUADRIGA} {Open} {Educational} {Ressources}: {Template}.},
     copyright = {CC-BY-SA 4.0},
-    url = {DOI-Link},
+    url = {[DOI-Link](https://quadriga-dk.github.io/Book_Template/)},
     language = {deu},
-    author = {Nachname\_1, Vorname\_1 and Nachname\_n, Vorname\_n},
+    author = {Schnaitter, Hannes, Samoilova Evgenia and Islam, Lamia},
+    year = {2024},
+}
+@incollection{schnaitter_technologiestack_2024,
+    address = {Potsdam; Berlin},
+    title = {Kapitel A: {Technologiestack}},
+    copyright = {CC-BY-SA 4.0},
+    url = {https://quadriga-dk.github.io/Book_Template/technologiestack/zusammenspiel_der_tools.html},
+    language = {deu},
+    booktitle = {{QUADRIGA} {OERs}: erstellen und gestalten mit {Jupyter Book}. {QUADRIGA} {Open} {Educational} {Ressources}: {Template}.},
+    author = {Schnaitter, Hannes, Samoilova Evgenia and Islam, Lamia},
     year = {2024},
 }
 ```
-Schnaitter, H., Samoilova E. & Islam L. (2024). QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template. https://quadriga-dk.github.io/Book_Template/
+Schnaitter, H., Samoilova, E. & Islam, L. (2024). Kapitel A: Technologiestack In _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/
 
-````
-```{admonition} Zitierhinweis
+`````
+````{admonition} Zitierhinweis
 :class: citation-information
-
+```bibtex
+@book{Schnaitter_OER_Template_2024,
+    address = {Potsdam; Berlin},
+    title = {{QUADRIGA} {OERs}: erstellen und gestalten mit {Jupyter Book}. {QUADRIGA} {Open} {Educational} {Ressources}: {Template}.},
+    copyright = {CC-BY-SA 4.0},
+    url = {[DOI-Link](https://quadriga-dk.github.io/Book_Template/)},
+    language = {deu},
+    author = {Schnaitter, Hannes, Samoilova Evgenia and Islam, Lamia},
+    year = {2024},
+}
 ```
+Schnaitter, H., Samoilova, E. & Islam, L. (2024). _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/
+
 ````
 `````
+``````
