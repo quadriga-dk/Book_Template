@@ -220,3 +220,10 @@ div.citation-information  > .admonition-title::after {
     font-size: 1 em !important;
     color: #00305e !important;
 }
+
+/* Dark mode styling for Jupyter notebook cells */
+html[data-theme='dark'] div.cell div.cell_input,
+html[data-theme='dark'] div.cell details.above-input > summary {
+    background-color: #29313d !important;
+    color: #f7fbff !important;
+}
