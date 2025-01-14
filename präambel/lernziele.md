@@ -2,6 +2,7 @@
 lang: de-DE
 ---
 
+(lernziele)=
 # Lernziele
 
 ```{admonition} Groblernziel

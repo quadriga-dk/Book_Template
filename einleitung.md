@@ -39,9 +39,9 @@ Erstellung von QUADRIGA-OERs aus der Jupyter-Book-Vorlage
 ```
 ## Struktur der Fallstudie
 Im QUADRIGA-Projekt entwickeln wir Fallstudien, die auf datengetriebenen Forschungsaktivitäten basieren und spezifische Forschungsfragen zusammen mit den dazugehörigen Datensätzen und Methoden abbilden. Ihre Fallstudie sollte in empirische Schritte unterteilt werden, die:
-*dem Datenlebenszyklus folgen,
-*den strukturellen Rahmen für Lehrmaterialien bilden,
-*den einzelnen Kapiteln im Jupyter Book entsprechen.
+* dem Datenlebenszyklus folgen,
+* den strukturellen Rahmen für Lehrmaterialien bilden,
+* den einzelnen Kapiteln im Jupyter Book entsprechen.
 
 Diese Schritte sollten in diesem Abschnitt visualisiert und kurz beschrieben werden.
 
@@ -52,13 +52,15 @@ width: 100%
 ---
 Flussdiagramm der QUADRIGA-Vorlage, die sich aus sechs Schritten zusammensetzt.
 ```
+In diesem Jupyter Book durchlaufen wir die folgenden Schritte:
 
-Die OER startet mit einer Vorstellung der inhaltlichen Struktur sowie des didaktischen Konzepts einer QUADRIGA OER. Dann wird die technische Umsetzung präsentiert, wobei auf die Entwicklungsumgebung und die Formatierungs- und Darstellungsmöglichkeiten besonders eingegagen wird. Dann folgen Inhalte zur Auswahl und Einbettung eines (Self-)Assessments. Inhaltlich schließt die OER mit einem Fazit, auf welches noch das Hinterwerk folgt.
+* Im **1. Schritt** führen wir in die OER ein, indem wir die Lernziele definieren und die technischen Voraussetzungen klären (siehe Kapitel {ref}` Präambel<lernziele>`).
+* Im **2. Schritt** stellen wir die inhaltliche Struktur einer QUADRIGA OER vor und erläutern das zugrundeliegende didaktische Konzept (siehe Kapitel {ref}` A Struktur und didaktisches Konzept<inhaltliche_strukur>`).
+* Im **3. Schritt** beschäftigen wir uns mit der technischen Umsetzung, wobei wir zunächst das Zusammenspiel der verschiedenen Tools und deren grafische Aufbereitung betrachten. Anschließend werden die Entwicklungsumgebung sowie die Formatierungs- und Darstellungsmöglichkeiten *Im Detail vorgestellt (siehe Kapitel {ref}` B Technologiestack<zusammenspiel_der_tools>`).
+* Im **4. Schritt** widmen wir uns der Lernstandskontrolle, indem wir die Rolle des Assessments in QUADRIGA OER erläutern und dessen konkrete Umsetzungsmöglichkeiten aufzeigen (siehe Kapitel {ref}` C Lernstandskontrolle (Assessment)<assessment_einleitung>`).
+* Im **5. Schritt** schließen wir die OER inhaltlich mit einem Abschlussassessment ab, fassen die wichtigsten Punkte zusammen und geben weiterführende Hinweise (siehe Kapitel {ref}` Reflexion und Resümee<abschlussassessment>`).
 
-## Inhaltsverzeichnis
-
-```{tableofcontents}
-```
+Die OER wird durch das Hinterwerk komplettiert, das Raum für Fragen und Feedback bietet, das Literaturverzeichnis enthält, die Autor:innen vorstellt sowie Informationen zu QUADRIGA und das Impressum bereitstellt (siehe Kapitel {ref}`Hinterwerk<fragen_feedback>`).
 
 ## Literatur
 ```{bibliography}

@@ -1,7 +1,7 @@
 ---
 lang: de-DE
 ---
-
+(assessment_einleitung)=
 # Lernstandskontrolle (Assessment) in QUADRIGA OER
 
 QUADRIGA OER sind vorrangig an Selbstlerner\*innen gerichtet, welche ihre Datenkompetenz verbessern wollen. Diese Lernenden benötigen Feedback um einschätzen zu können, welchen Lernstand sie aktuell haben und wie sie vorankommen, welche nächsten Schritte sie gehen sollten und welche Ziele sie mit der Lernaktivität erreichen können {cite}`hattie2007`. Daher ist das Hauptziel der Lernstandskontrolle in den QUADRIGA OER die Unterstützung der Lernenden während sie OER durcharbeiten. Wir fokussieren uns also auf formatives Selbst-Assessment.

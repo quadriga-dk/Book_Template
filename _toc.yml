@@ -27,6 +27,7 @@ parts:
         - file: entwicklung/python
         - file: entwicklung/jupyter_book
         - file: entwicklung/editor
+      - file: technologiestack/jupyter_book_mit_gh_page
       - file: formatierung/einleitung
         sections:
         - file: formatierung/markdown
