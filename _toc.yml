@@ -13,11 +13,14 @@ parts:
   - caption: A Struktur und didaktisches Konzept
     numbered: true
     chapters:
+      - file: struktur_didaktisches_konzept/einführung
       - file: struktur_didaktisches_konzept/struktur
       - file: struktur_didaktisches_konzept/didaktisches_konzept
+      - file: struktur_didaktisches_konzept/resümee
   - caption: B Technologiestack
     numbered: true
     chapters:
+      - file: technologiestack/einführung
       - file: technologiestack/zusammenspiel_der_tools
       - file: technologiestack/grafische_aufbereitung
       - file: entwicklung/einleitung
@@ -30,17 +33,18 @@ parts:
       - file: technologiestack/jupyter_book_mit_gh_page
       - file: formatierung/einleitung
         sections:
-        - file: formatierung/markdown
-        - file: formatierung/notebooks
-        - file: formatierung/markdown-notebooks
-        - file: formatierung/link_in_neuem_tab
-        - file: formatierung/abbildungen
-        - file: formatierung/videos
-        - file: formatierung/admonitions
+          - file: formatierung/markdown
+          - file: formatierung/notebooks
+          - file: formatierung/markdown-notebooks
+          - file: formatierung/link_in_neuem_tab
+          - file: formatierung/abbildungen
+          - file: formatierung/videos
+          - file: formatierung/admonitions
+      - file: technologiestack/resümee
   - caption: C Lernstandskontrolle (Assessment)
     numbered: true
     chapters:
-      - file: assessment/einleitung
+      - file: assessment/einführung
         sections:
         - file: assessment/zielgruppe
         - file: assessment/selbstlern-oer
@@ -52,12 +56,15 @@ parts:
         - file: assessment/umsetzung/jupyterquiz
         - file: assessment/umsetzung/selbstkontrolle
         - file: assessment/umsetzung/test-driven_assessment
+      - file: assessment/resümee
   - caption: Reflexion und Resümee
     numbered: true
     chapters:
+      - file: reflexion_und_resümee/reflexion
       - file: reflexion_und_resümee/abschlussassessment
       - file: reflexion_und_resümee/zusammenfassung
       - file: reflexion_und_resümee/weiterführende_hinweise
+      - file: reflexion_und_resümee/resümee
   - caption: Hinterwerk
     chapters:
       - file: hinterwerk/fragen_und_feedback

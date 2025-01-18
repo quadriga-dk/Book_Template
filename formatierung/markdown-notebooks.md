@@ -31,6 +31,46 @@ When your book is built, the contents of any `{code-cell}` blocks will be
 executed with your default Jupyter kernel, and their outputs will be displayed
 in-line with the rest of your content.
 
+You can also hide cell elements of a page. For example, notice the cell below contains the `hide-cell` tag:
+
+```{code-cell}
+:tags: [hide-cell]
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+data = np.random.randn(2, 100)
+fig, ax = plt.subplots()
+ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
+```
+
+Similarly, you can hide just the input code or the output with the `hide-input` and `hide-output` tags respectively.
+
+To add these tags to your code cells, you can use the following syntax:
+
+````md
+```{code-cell}
+:tags: [hide-input]
+
+print("This code's input will be hidden!")
+```
+
+```{code-cell}
+:tags: [hide-output]
+
+print("This code's output will be hidden!")
+```
+
+```{code-cell}
+:tags: [hide-cell]
+
+print("Both input and output will be hidden!")
+```
+````
+
+The cell tags control the visibility of different parts of your code cells, and you can use them to customize how your notebook content is displayed.
+
 ```{seealso}
 Jupyter Book uses <a href="https://jupytext.readthedocs.io/en/latest/" class="external-link" target="_blank">Jupytext</a> to convert text-based files to notebooks, and can support <a href="https://jupyterbook.org/file-types/jupytext.html" class="external-link" target="_blank">many other text-based notebook files</a>.
 ```
