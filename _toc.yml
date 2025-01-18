@@ -25,11 +25,12 @@ parts:
       - file: technologiestack/grafische_aufbereitung
       - file: entwicklung/einleitung
         sections:
-          - file: entwicklung/git
-          - file: entwicklung/unix
-          - file: entwicklung/python
-          - file: entwicklung/jupyter_book
-          - file: entwicklung/editor
+        - file: entwicklung/git
+        - file: entwicklung/unix
+        - file: entwicklung/python
+        - file: entwicklung/jupyter_book
+        - file: entwicklung/editor
+      - file: technologiestack/jupyter_book_mit_gh_page
       - file: formatierung/einleitung
         sections:
           - file: formatierung/markdown
