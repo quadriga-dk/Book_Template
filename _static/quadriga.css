@@ -157,6 +157,11 @@ div.caution > .admonition-title::after {
     content: "↗";
 }
 
+/* Dark mode override for external link */
+html[data-theme='dark'] .external-link:after {
+    color: var(--quadriga-main-web);
+}
+
 /* mailto: link mit 📧 */
 a[href^="mailto:"]:after {
     color: var(--quadriga-main);
