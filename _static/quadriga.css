@@ -232,3 +232,138 @@ html[data-theme='dark'] div.cell details.above-input > summary {
     background-color: #29313d !important;
     color: #f7fbff !important;
 }
+
+
+
+
+
+/* Target sphinx-design specific classes */
+/* Main carousel container */
+/* Main container */
+.sd-cards-carousel {
+    position: relative !important;
+    overflow: hidden !important;
+    width: calc(100% - 60px) !important; /* 30px padding on each side */
+    margin: 0 auto !important;
+    display: flex !important;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    gap: 0 !important;
+}
+
+/* Hide scrollbar */
+.sd-cards-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Reset card styles */
+.sd-cards-carousel .sd-card {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Reset card body styles */
+.sd-cards-carousel .sd-card-body {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+}
+
+/* Reset card text styles */
+.sd-cards-carousel .sd-card-text {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Image styling */
+.sd-cards-carousel .sd-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    max-height: 80vh;
+}
+
+/* Navigation buttons */
+.carousel-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--quadriga-main-web);
+    color: white;
+    opacity: 0.7;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    opacity: 0.7;
+}
+
+.carousel-nav-button:hover {
+    opacity: 1;
+}
+
+.carousel-prev {
+    left: -20px;
+    border-radius: 50px;
+}
+
+.carousel-next {
+    right: -20px;
+    border-radius: 50px;
+}
+
+/* Hide disabled buttons */
+.carousel-nav-button.disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sd-cards-carousel {
+        width: calc(100% - 40px) !important; /* 20px padding on each side */
+    }
+    
+    .carousel-nav-button {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sd-cards-carousel {
+        width: calc(100% - 30px) !important; /* 15px padding on each side */
+    }
+    
+    .carousel-nav-button {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+    
+    .carousel-prev {
+        left: -15px;
+    }
+    
+    .carousel-next {
+        right: -15px;
+    }
+}
