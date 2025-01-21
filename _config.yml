@@ -48,5 +48,6 @@ sphinx:
     html_static_path: ['_static']
     html_css_files:
       - quadriga.css
+      - carousel.css
     html_js_files:
-      - custom.js
+      - carousel.js

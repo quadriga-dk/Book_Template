@@ -2,33 +2,39 @@
 lang: de-DE
 ---
 
-(formatierung:Carousels)=
-# Carousels
+(formatierung:Carousel)=
+# Carousel
 
-## Overview
-A carousel is a slideshow component for cycling through images, text, or other content. It's a common feature in modern web design and can be implemented using HTML, CSS, and JavaScript.
+Mit Sphinx können Sie interaktive Carousels erstellen, um Inhalte ansprechend und strukturiert zu präsentieren. Ein Carousel ist eine Sammlung von Elementen, die horizontal durchgeblättert werden können. Dies ist besonders nützlich, um mehrere Elemente platzsparend darzustellen.
 
-## Implementation
-Basic carousel elements include:
-- Slides container
-- Individual slides
-- Navigation arrows
-- Indicator dots (optional)
 
-## Best Practices
-- Keep load time minimal
-- Ensure accessibility
-- Provide user controls
-- Limit number of slides
-- Auto-pause on hover
+Verwenden Sie die folgende Syntax, um ein Carousel zu erstellen:
+`````
+````{card-carousel} 1
 
-## Code Example
+```{card}
+:class-card: carousel-card
 
-## sphinx
+![Folie1](Bildpfad)
+```
+
+```{card}
+:class-card: carousel-card
+
+![Folie2](Bildpfad)
+```
+````
+
+```{card}
+:class-card: carousel-card
+
+![Folie3](Bildpfad)
+```
+````
+`````
 
 
 ````{card-carousel} 1
-:class-carousel: custom-carousel
 
 ```{card}
 :class-card: carousel-card
@@ -44,9 +50,6 @@ Basic carousel elements include:
 :class-card: carousel-card
 ![image3](../assets/slides/3.jpg)
 ```
+
 ````
 
-## References
-- Bootstrap Carousel Documentation
-- W3C Accessibility Guidelines
-- UI Design Best Practices

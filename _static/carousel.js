@@ -9,8 +9,13 @@ function initializeCarousels() {
     const carousels = document.querySelectorAll('.sd-cards-carousel');
 
     carousels.forEach((carousel, index) => {
-        // Remove any existing scroll position
-        carousel.scrollLeft = 0;
+        // Ensure carousel is wrapped
+        if (!carousel.parentElement.classList.contains('sd-cards-carousel-wrapper')) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'sd-cards-carousel-wrapper';
+            carousel.parentNode.insertBefore(wrapper, carousel);
+            wrapper.appendChild(carousel);
+        }
         
         // Create navigation buttons
         const prevButton = document.createElement('button');
@@ -22,7 +27,6 @@ function initializeCarousels() {
         nextButton.className = 'carousel-nav-button carousel-next';
         
         // Add buttons to carousel
-        carousel.parentElement.style.position = 'relative';
         carousel.parentElement.appendChild(prevButton);
         carousel.parentElement.appendChild(nextButton);
         
