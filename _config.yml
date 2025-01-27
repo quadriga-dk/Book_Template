@@ -5,7 +5,7 @@ title: Template Book
 author: Hannes Schnaitter, Evgenia Samoilova, Lamia Islam
 logo: assets/logo.jpg
 copyright: "2024, QUADRIGA"
-exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", conda, README.md, LICENSE.md, useful_documentation.md]
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", conda, README.md, LICENSE.md, useful_documentation.md, .github, "**Reviewbogen.md"]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
