@@ -5,6 +5,9 @@ lang: de-DE
 
 ## Installation
 
+Installieren Sie eine Python-Distribution auf Ihrem Computer. Sie können dafür die Version von <a href="https://www.python.org/downloads/" target="_blank" class="external-link">python.org</a> nutzen oder bspw. auch Anaconda. Anaconda hat Lizenzbedingungen, welche ggf. nicht in Ihrer Einrichtung genutzt werden können.
+
+### Anaconda
 Gehen Sie auf die <a href="https://www.anaconda.com/download" class="external-link" target="_blank">Downloadseite von Anaconda</a> um die passende Version für Ihr Betriebssystem herunterzuladen. Es ist nicht nötig, eine E-Mail anzugeben! Nutzen Sie "Skip registration" um gleich zu den Download-Links zu kommen.
 
 Falls Sie einen Paketmanager wie homebrew oder Chocolatey nutzten können Sie ggf. auch diesen für die Installation nutzen.
