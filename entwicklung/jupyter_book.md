@@ -30,7 +30,7 @@ Um das Environment zu aktivieren, verwenden Sie den folgenden Befehl:
 
 - **Unter Windows**: Führen Sie in der Eingabeaufforderung aus:
 
-  ```cmd
+  ```
   venv\Scripts\activate
   ```
 
