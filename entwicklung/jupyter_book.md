@@ -6,8 +6,13 @@ lang: de-DE
 ## Einrichtung der lokalen Entwicklungsumgebung
 
 
-### Environments 
-Wenn Sie Anaconda installieren, wird automatisch ein sogenanntes *virtual environment* mit dem Namen `base` eingerichtet. Dieses ist bspw. im Anaconda Command Prompt automatisch aktiviert. In einem virtual environment (oft auch virtual env oder nur venv genannt) kann genau festgelegt werden, welche Programme und Programmbibliotheken in welchen Versionen verwendet werden sollen. Das ist besonders wichtig für aufwendige Konfigurationen oder für die Reproduzierbarkeit.
+### Environments
+Es gibt verschiedene Möglichkeiten sogenannte *virtual environments* zu erstellen. Wir erläutern hier zwei Optionen.
+
+#### `python3 -m venv`
+
+#### Anaconda
+Wenn Sie Anaconda installieren, wird automatisch ein virtual environment mit dem Namen `base` eingerichtet. Dieses ist bspw. im Anaconda Command Prompt automatisch aktiviert. In einem virtual environment (oft auch virtual env oder nur venv genannt) kann genau festgelegt werden, welche Programme und Programmbibliotheken in welchen Versionen verwendet werden sollen. Das ist besonders wichtig für aufwendige Konfigurationen oder für die Reproduzierbarkeit.
 
 Wir nutzen das Programm `conda`, um Environments anzulegen, wobei wir Ihnen empfehlen, ein Environment für genau ein Projekt – in diesem Fall eine OER – zu nutzen.
 
