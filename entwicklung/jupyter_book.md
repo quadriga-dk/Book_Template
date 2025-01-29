@@ -6,8 +6,47 @@ lang: de-DE
 ## Einrichtung der lokalen Entwicklungsumgebung
 
 
-### Environments 
-Wenn Sie Anaconda installieren, wird automatisch ein sogenanntes *virtual environment* mit dem Namen `base` eingerichtet. Dieses ist bspw. im Anaconda Command Prompt automatisch aktiviert. In einem virtual environment (oft auch virtual env oder nur venv genannt) kann genau festgelegt werden, welche Programme und Programmbibliotheken in welchen Versionen verwendet werden sollen. Das ist besonders wichtig für aufwendige Konfigurationen oder für die Reproduzierbarkeit.
+### Environments
+Es gibt verschiedene Möglichkeiten sogenannte *virtual environments* zu erstellen. Wir erläutern hier zwei Optionen.
+
+#### `python3 -m venv`
+Mit dem Befehl `python3 -m venv` können Sie ein virtuelles Environment erstellen, das speziell für Ihr Projekt geeignet ist. Dieses Environment ermöglicht es Ihnen, Python-Pakete und -Bibliotheken isoliert vom globalen Python-System zu installieren und zu verwalten. Dies ist besonders nützlich, um Konflikte zwischen verschiedenen Projekten zu vermeiden und die Reproduzierbarkeit Ihrer Arbeit zu gewährleisten.
+
+Um ein neues virtuelles Environment zu erstellen, navigieren Sie in das Verzeichnis Ihres Projekts und führen Sie den folgenden Befehl aus:
+
+```bash
+python3 -m venv venv
+```
+
+Dies erzeugt einen Ordner venv im aktuellen Verzeichnis, in dem alle notwendigen Dateien für das virtuelle Environment gespeichert werden.
+
+Um das Environment zu aktivieren, verwenden Sie den folgenden Befehl:
+
+- **Unter Unix oder MacOS**: Führen Sie im Terminal aus:
+
+  ```bash
+  source venv/bin/activate
+  ```
+
+- **Unter Windows**: Führen Sie in der Eingabeaufforderung aus:
+
+  ```
+  venv\Scripts\activate
+  ```
+
+Nach der Aktivierung sehen Sie in der Kommandozeile eine Markierung wie `(venv)`, die anzeigt, dass die virtuelle Umgebung aktiv ist.
+
+
+Stellen Sie sicher, dass die virtuelle Umgebung aktiviert ist, und installieren Sie dann die für Ihr Projekt erforderlichen Pakete:
+
+```bash
+pip install -r requirements.txt
+```
+Damit sollte der Befehl `jb` für Jupyter Book zur Verfügung stehen. Klappt das nicht, dann deaktivieren Sie das Environment einmal mit `deactivate` und aktivieren Sie es dann wieder.
+
+
+#### Anaconda
+Wenn Sie Anaconda installieren, wird automatisch ein virtual environment mit dem Namen `base` eingerichtet. Dieses ist bspw. im Anaconda Command Prompt automatisch aktiviert. In einem virtual environment (oft auch virtual env oder nur venv genannt) kann genau festgelegt werden, welche Programme und Programmbibliotheken in welchen Versionen verwendet werden sollen. Das ist besonders wichtig für aufwendige Konfigurationen oder für die Reproduzierbarkeit.
 
 Wir nutzen das Programm `conda`, um Environments anzulegen, wobei wir Ihnen empfehlen, ein Environment für genau ein Projekt – in diesem Fall eine OER – zu nutzen.
 
