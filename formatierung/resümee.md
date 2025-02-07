@@ -2,8 +2,8 @@
 lang: de-DE
 ---
 
-(technologiestack:einführung)=
-# Einführung
+(formatierung:resümee)=
+# Resümee
 
 ````{margin}
 ```{admonition} Fragen oder Feedback 
@@ -22,7 +22,7 @@ Mit Ihren Rückmeldungen können wir unser Jupyter Book gezielt an Ihre Bedürfn
 ````
 
 
-```{admonition} Groblernziel
-:class: lernziele
-1. add groblernziel for technologiestack chapter
+```{admonition} Keypoints
+:class: keypoint
+Wichtige Erkenntnisse, Lernergebnisse und sonstige Keypoints werden mit diesem Admonition-Typ gekennzeichnet.
 ```

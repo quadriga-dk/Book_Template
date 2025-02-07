@@ -10,14 +10,14 @@ parts:
     chapters:
       - file: präambel/lernziele
       - file: präambel/technische_vorraussetzungen
-  - caption: A Struktur und didaktisches Konzept
+  - caption: Struktur und didaktisches Konzept
     numbered: true
     chapters:
       - file: struktur_didaktisches_konzept/einführung
       - file: struktur_didaktisches_konzept/struktur
       - file: struktur_didaktisches_konzept/didaktisches_konzept
       - file: struktur_didaktisches_konzept/resümee
-  - caption: B Technologiestack
+  - caption: Technologiestack
     numbered: true
     chapters:
       - file: technologiestack/einführung
@@ -31,18 +31,21 @@ parts:
         - file: entwicklung/jupyter_book
         - file: entwicklung/editor
       - file: technologiestack/jupyter_book_mit_gh_page
-      - file: formatierung/einleitung
-        sections:
-          - file: formatierung/markdown
-          - file: formatierung/notebooks
-          - file: formatierung/markdown-notebooks
-          - file: formatierung/link_in_neuem_tab
-          - file: formatierung/abbildungen
-          - file: formatierung/carousel
-          - file: formatierung/videos
-          - file: formatierung/admonitions
       - file: technologiestack/resümee
-  - caption: C Lernstandskontrolle (Assessment)
+  - caption: Formatierung
+    numbered: true
+    chapters:
+      - file: formatierung/einleitung
+      - file: formatierung/markdown
+      - file: formatierung/notebooks
+      - file: formatierung/markdown-notebooks
+      - file: formatierung/link_in_neuem_tab
+      - file: formatierung/abbildungen
+      - file: formatierung/carousel
+      - file: formatierung/videos
+      - file: formatierung/admonitions
+      - file: formatierung/resümee
+  - caption: Lernstandskontrolle (Assessment)
     numbered: true
     chapters:
       - file: assessment/einführung
