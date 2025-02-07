@@ -41,6 +41,7 @@ parts:
       - file: formatierung/markdown-notebooks
       - file: formatierung/link_in_neuem_tab
       - file: formatierung/abbildungen
+      - file: formatierung/carousel
       - file: formatierung/videos
       - file: formatierung/admonitions
       - file: formatierung/resümee

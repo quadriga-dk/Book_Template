@@ -1,0 +1,100 @@
+/* Target sphinx-design specific classes */
+/* Main carousel container */
+.sd-cards-carousel {
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;  /* Firefox */
+}
+
+.sd-cards-carousel-wrapper {
+    position: relative;
+    width: 100%; /* Move the width calculation here */
+    margin: 0 auto;
+    padding: 0; /* Add padding for the buttons */
+}
+
+/* Hide scrollbar */
+.sd-cards-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Reset card styles */
+.sd-cards-carousel .sd-card {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Reset card body styles */
+.sd-cards-carousel .sd-card-body {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+}
+
+/* Reset card text styles */
+.sd-cards-carousel .sd-card-text {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Image styling */
+.sd-cards-carousel .sd-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    max-height: 80vh;
+}
+
+/* Navigation buttons */
+.carousel-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #e9ecef;
+    color: #343a40;
+    opacity: 0.8;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    opacity: 0.7;
+    border-radius: 50%;
+}
+
+.carousel-nav-button:hover {
+    opacity: 1;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Hide disabled buttons */
+.carousel-nav-button.disabled {
+    opacity: 0;
+    pointer-events: none;
+}
