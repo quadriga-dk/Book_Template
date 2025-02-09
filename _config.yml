@@ -28,9 +28,9 @@ repository:
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
-  notebook_interface: jupyterlab
-  thebe: true
-  binderhub_url: https://mybinder.org
+  #notebook_interface: jupyterlab
+  #thebe: true
+  #binderhub_url: https://mybinder.org
   colab_url: https://colab.research.google.com
 
 # Add GitHub buttons to your book
