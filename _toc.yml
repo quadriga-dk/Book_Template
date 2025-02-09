@@ -39,6 +39,7 @@ parts:
       - file: formatierung/markdown
       - file: formatierung/notebooks
       - file: formatierung/markdown-notebooks
+      - file: formatierung/interactive_interfaces
       - file: formatierung/link_in_neuem_tab
       - file: formatierung/abbildungen
       - file: formatierung/carousel
