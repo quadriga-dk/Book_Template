@@ -3,7 +3,7 @@ lang: de-DE
 ---
 # Autor\*innen
 
-## Hannes Schnaitter <span style="font-size:8pt">(er/ihm/sein)</span>
+## Hannes Schnaitter <span style="font-size:8pt">(er/ihm/sein)</span> <a href="https://orcid.org/0000-0002-1602-6032" target="_blank">![ORCID](../assets/ORCID-ID_icon_24x24.png)</a>
 
 <table style="margin-left: 0">
 <tr>
@@ -13,10 +13,6 @@ lang: de-DE
 <tr>
 <td><b>Einrichtung:</b></td>
 <td>Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft</td>
-</tr>
-<tr>
-<td><b>ORCID:</b></td>
-<td><a href="https://orcid.org/0000-0002-1602-6032" class="external-link" target="_blank">0000-0002-1602-6032</a></td>
 </tr>
 <tr>
 <td><b>Website:</b></td>
@@ -39,10 +35,6 @@ lang: de-DE
 <td>Universität Potsdam</td>
 </tr>
 <tr>
-<td><b>ORCID:</b></td>
-<td></td>
-</tr>
-<tr>
 <td><b>Website:</b></td>
 <td><a href="https://www.uni-potsdam.de/de/multimedia/team/wissenschaftliches-personal/evgenia-samoilova-phd" class="external-link" target="_blank">Mitarbeiterinnen-Seite Universität Potsdam</td>
 </tr>
@@ -61,14 +53,6 @@ lang: de-DE
 <tr>
 <td><b>Einrichtung:</b></td>
 <td>Universität Potsdam</td>
-</tr>
-<tr>
-<td><b>ORCID:</b></td>
-<td></td>
-</tr>
-<tr>
-<td><b>Website:</b></td>
-<td></td>
 </tr>
 <tr>
 <td><b>GitHub:</b></td>
