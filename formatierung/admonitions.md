@@ -114,7 +114,7 @@ Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden
     year = {2024},
 }
 ```
-Schnaitter, H., Samoilova, E. & Islam, L. (2024). Technologiestack In _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/
+Schnaitter, H., Samoilova, E. & Islam, L. (2024). Technologiestack In _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/technologiestack/einführung.html
 
 `````
 ````{admonition} Zitierhinweis
