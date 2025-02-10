@@ -225,6 +225,19 @@ div.citation-information  > .admonition-title::after {
     font-size: 1 em !important;
     color: #00305e !important;
 }
+html[data-theme='dark'] div.citation-information {
+    background-color: rgba(193, 211, 224, 0.1) !important;
+    border-left-color: var(--quadriga-main-web) !important;
+}
+
+html[data-theme='dark'] div.citation-information > .admonition-title {
+    background-color: rgba(193, 211, 224, 0.15) !important;
+    color: var(--quadriga-main-web) !important;
+}
+
+html[data-theme='dark'] div.citation-information > .admonition-title::after {
+    color: var(--quadriga-main-web) !important;
+}
 
 /* Dark mode styling for Jupyter notebook cells */
 html[data-theme='dark'] div.cell div.cell_input,
