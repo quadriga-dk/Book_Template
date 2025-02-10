@@ -105,7 +105,7 @@ Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden
 }
 @incollection{schnaitter_technologiestack_2024,
     address = {Potsdam; Berlin},
-    title = {Kapitel A: {Technologiestack}},
+    title = {Technologiestack},
     copyright = {CC-BY-SA 4.0},
     url = {https://quadriga-dk.github.io/Book_Template/technologiestack/einführung.html},
     language = {deu},
@@ -114,7 +114,7 @@ Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden
     year = {2024},
 }
 ```
-Schnaitter, H., Samoilova, E. & Islam, L. (2024). Kapitel A: Technologiestack In _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/
+Schnaitter, H., Samoilova, E. & Islam, L. (2024). Technologiestack In _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/
 
 `````
 ````{admonition} Zitierhinweis

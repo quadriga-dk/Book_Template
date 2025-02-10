@@ -1,24 +1,6 @@
 ---
 lang: de-DE
 ---
-`````{margin}
-````{admonition} Zitierhinweis
-:class: citation-information
-```bibtex
-@incollection{schnaitter_technologiestack_2024,
-    address = {Potsdam; Berlin},
-    title = {Kapitel A: {Technologiestack}},
-    copyright = {CC-BY-SA 4.0},
-    url = {https://quadriga-dk.github.io/Book_Template/technologiestack/zusammenspiel_der_tools.html},
-    language = {deu},
-    booktitle = {{QUADRIGA} {OERs}: erstellen und gestalten mit {Jupyter Book}. {QUADRIGA} {Open} {Educational} {Ressources}: {Template}.},
-    author = {Schnaitter, Hannes, Samoilova Evgenia and Islam, Lamia},
-    year = {2024},
-}
-```
-Schnaitter, H., Samoilova, E. & Islam, L. (2024). Kapitel A: Technologiestack In _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/
-````
-`````
 (zusammenspiel_der_tools)=
 # Zusammenspiel der Tools
 
