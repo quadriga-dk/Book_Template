@@ -30,6 +30,7 @@ parts:
         - file: entwicklung/python
         - file: entwicklung/jupyter_book
         - file: entwicklung/editor
+      - file: technologiestack/interactive_interfaces
       - file: technologiestack/jupyter_book_mit_gh_page
       - file: technologiestack/resümee
   - caption: Formatierung
@@ -39,7 +40,6 @@ parts:
       - file: formatierung/markdown
       - file: formatierung/notebooks
       - file: formatierung/markdown-notebooks
-      - file: formatierung/interactive_interfaces
       - file: formatierung/link_in_neuem_tab
       - file: formatierung/abbildungen
       - file: formatierung/carousel
