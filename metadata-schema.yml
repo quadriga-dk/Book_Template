@@ -45,17 +45,21 @@
   description: >
     Beschreibung in natürlicher Sprache. Entweder direkt als Zeichenkette
     (`str`) oder als Liste von Mappings zwischen Sprachencode und Zeichenkette.
-
-    ---
-    description:
-      - de: "Deutsche Beschreibung."
-      - en: "English description."
-    ...
   values:
     - seq:
-      - child: language-code
+      - child: 
+          map: 
+            - key: <https://www.loc.gov/standards/iso639-2/php/code_list.php:ISO639-1>
+              scalar: str
         obligatory: true
     - scalar: str
+  note: >
+    Sprachcodes definiert nach ISO 639 Set 1.
+      ---
+      description:
+        - de: "Deutsche Beschreibung."
+        - en: "English description."
+      ...
 #quadriga.description
 ...
 ---
@@ -158,17 +162,21 @@
   description: >
     Titel in natürlicher Sprache. Entweder direkt als Zeichenkette
     (`str`) oder als Liste von Mappings zwischen Sprachencode und Zeichenkette.
-
-    ---
-    title:
-      - de: "Ein deutscher Titel"
-      - en: "An English Title"
-    ...
   values:
     - seq:
-      - child: language-code
+      - child: 
+          map: 
+            - key: <https://www.loc.gov/standards/iso639-2/php/code_list.php:ISO639-1>
+              scalar: str
         obligatory: true
     - scalar: str
+  note: >
+    Sprachcodes definiert nach ISO 639 Set 1.
+      ---
+      title:
+        - de: "Deutsche Beschreibung."
+        - en: "English description."
+      ...
 #quadriga.title
 ...
 ---
