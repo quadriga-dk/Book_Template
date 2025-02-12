@@ -1,24 +1,32 @@
 quadriga:
   schema-version: 1.1
   doi: 
-  github: 
+  git: 
   url: 
   title: OER Template
-  description: |
-    Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für Nutzer\*innen der OERs und dient gleichzeitig als Template für die Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+  description: >
+    Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für
+    Nutzer\*innen der OERs und dient gleichzeitig als Template für die
+    Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
   discipline: Verwaltungswissenschaften  
   learning-objectives:
-    - description: Nach durcharbeiten der OER kennen Sie sich mit dem Technologie der QUADRIGA OERS aus und können bei der Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
+    - description: >
+        Nach durcharbeiten der OER kennen Sie sich mit dem Technologie der 
+        QUADRIGA OERS aus und können bei der Arbeit mit der OER auftretende
+        Fehler den jeweiligen Komponenten zuordnen.
       competency: false  
       level: false
-    - description: Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA OER anpassen und diese erweitern.
+    - description: >
+        Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA
+        OER anpassen und diese erweitern.
       competency: false  
       level: false
-    - description: |
-        Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
+    - description: >
+        Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template
+        selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
       competency: false
       level: false
-  parts:  
+  chapters:  
     - title:  Präambel
       url: 
       doi:  
