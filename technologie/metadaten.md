@@ -17,7 +17,6 @@ lang: de-DE
 </a>
 
 Mit Ihren Rückmeldungen können wir unser Jupyter Book gezielt an Ihre Bedürfnisse anpassen.
-
 ```
 ````
 
@@ -37,4 +36,5 @@ In diesem Kapitel wird Ihnen zuerst das Metadatenschema für QUADRIGA-OERs vorge
 ## `metadata.yml` der vorliegenden OER
 
 ```{literalinclude} ../metadata.yml
+:language: yaml
 ```
