@@ -25,11 +25,11 @@ parts:
       - file: technologie/grafische_aufbereitung
       - file: entwicklung/einleitung
         sections:
-        - file: entwicklung/git
-        - file: entwicklung/unix
-        - file: entwicklung/python
-        - file: entwicklung/jupyter_book
-        - file: entwicklung/editor
+          - file: entwicklung/git
+          - file: entwicklung/unix
+          - file: entwicklung/python
+          - file: entwicklung/jupyter_book
+          - file: entwicklung/editor
       - file: technologie/interactive_interfaces
       - file: technologie/jupyter_book_mit_gh_page
       - file: technologie/resümee
@@ -55,16 +55,16 @@ parts:
     chapters:
       - file: assessment/einleitung.md
         sections:
-        - file: assessment/zielgruppe
-        - file: assessment/selbstlern-oer
-        - file: assessment/formen
-        - file: assessment/auswahl
-        - file: assessment/assessment_genAI
+          - file: assessment/zielgruppe
+          - file: assessment/selbstlern-oer
+          - file: assessment/formen
+          - file: assessment/auswahl
+          - file: assessment/assessment_genAI
       - file: assessment/umsetzung
         sections:
-        - file: assessment/umsetzung/jupyterquiz
-        - file: assessment/umsetzung/selbstkontrolle
-        - file: assessment/umsetzung/test-driven_assessment
+          - file: assessment/umsetzung/jupyterquiz
+          - file: assessment/umsetzung/selbstkontrolle
+          - file: assessment/umsetzung/test-driven_assessment
       - file: assessment/resümee
   - caption: Reflexion und Resümee
     numbered: true
