@@ -35,3 +35,6 @@ In diesem Kapitel wird Ihnen zuerst das Metadatenschema für QUADRIGA-OERs vorge
 ## Struktur und Felder der `metadata.yml`
 
 ## `metadata.yml` der vorliegenden OER
+
+```{literalinclude} ../metadata.yml
+```

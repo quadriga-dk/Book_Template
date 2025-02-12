@@ -1,5 +1,25 @@
 quadriga:
-  version: 1.1
+  schema-version: 1.1
+  doi: 
+  github: 
+  url: 
+  title: OER Template
   description: |
     Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für Nutzer\*innen der OERs und dient gleichzeitig als Template für die Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
-  
+  discipline: Verwaltungswissenschaften  
+  learning-objectives:
+    - description: 
+      competency: 3  
+      level: beginner
+  chapters:  
+    - title:  
+      learning-objectives:  
+        - description:  
+          competency: 15  
+          level: beginner  
+        - description:  
+          competency: 7  
+          level: advanced  
+      url: 
+      doi:   
+    - title:
