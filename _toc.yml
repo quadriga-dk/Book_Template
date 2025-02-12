@@ -13,23 +13,23 @@ parts:
   - caption: Struktur und didaktisches Konzept
     numbered: true
     chapters:
-      - file: struktur_didaktisches_konzept/einführung
+      - file: struktur_didaktisches_konzept/einleitung
       - file: struktur_didaktisches_konzept/struktur
       - file: struktur_didaktisches_konzept/didaktisches_konzept
       - file: struktur_didaktisches_konzept/resümee
   - caption: Technologie
     numbered: true
     chapters:
-      - file: technologie/einführung
+      - file: technologie/einleitung
       - file: technologie/zusammenspiel_der_tools
       - file: technologie/grafische_aufbereitung
       - file: entwicklung/einleitung
         sections:
-        - file: entwicklung/git
-        - file: entwicklung/unix
-        - file: entwicklung/python
-        - file: entwicklung/jupyter_book
-        - file: entwicklung/editor
+          - file: entwicklung/git
+          - file: entwicklung/unix
+          - file: entwicklung/python
+          - file: entwicklung/jupyter_book
+          - file: entwicklung/editor
       - file: technologie/interactive_interfaces
       - file: technologie/jupyter_book_mit_gh_page
       - file: technologie/metadaten.md
@@ -38,30 +38,34 @@ parts:
     numbered: true
     chapters:
       - file: formatierung/einleitung
-      - file: formatierung/markdown
-      - file: formatierung/notebooks
-      - file: formatierung/markdown-notebooks
-      - file: formatierung/link_in_neuem_tab
-      - file: formatierung/abbildungen
-      - file: formatierung/carousel
-      - file: formatierung/videos
-      - file: formatierung/admonitions
+      - file: formatierung/dateiformate.md
+        sections:
+          - file: formatierung/markdown
+          - file: formatierung/notebooks
+          - file: formatierung/markdown-notebooks
+      - file: formatierung/spezifische_elemente.md
+        sections:
+          - file: formatierung/link_in_neuem_tab
+          - file: formatierung/abbildungen
+          - file: formatierung/carousel
+          - file: formatierung/videos
+          - file: formatierung/admonitions
       - file: formatierung/resümee
   - caption: Lernstandskontrolle (Assessment)
     numbered: true
     chapters:
-      - file: assessment/einführung
+      - file: assessment/einleitung.md
         sections:
-        - file: assessment/zielgruppe
-        - file: assessment/selbstlern-oer
-        - file: assessment/formen
-        - file: assessment/auswahl
-        - file: assessment/assessment_genAI
+          - file: assessment/zielgruppe
+          - file: assessment/selbstlern-oer
+          - file: assessment/formen
+          - file: assessment/auswahl
+          - file: assessment/assessment_genAI
       - file: assessment/umsetzung
         sections:
-        - file: assessment/umsetzung/jupyterquiz
-        - file: assessment/umsetzung/selbstkontrolle
-        - file: assessment/umsetzung/test-driven_assessment
+          - file: assessment/umsetzung/jupyterquiz
+          - file: assessment/umsetzung/selbstkontrolle
+          - file: assessment/umsetzung/test-driven_assessment
       - file: assessment/resümee
   - caption: Reflexion und Resümee
     numbered: true

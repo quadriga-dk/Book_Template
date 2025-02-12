@@ -2,8 +2,8 @@
 lang: de-DE
 ---
 
-(struktur:einführung)=
-# Einführung
+(struktur:einleitung)=
+# Einleitung
 
 ````{margin}
 ```{admonition} Fragen oder Feedback 
