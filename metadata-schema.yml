@@ -2,35 +2,39 @@
 ---
 #quadriga.chapter
 <tag:quadriga-dk.de,2025:quadriga/chapter>:
-  obligatory: true
   values:
     - map
   description: >
     Sammlung der Felder, die ein Kapitel beschreiben
   children:
-    - <tag:quadriga-dk.de,2025:quadriga/description>
-    - <tag:quadriga-dk.de,2025:quadriga/doi>
-    - <tag:quadriga-dk.de,2025:quadriga/learning-objectives>
-    - <tag:quadriga-dk.de,2025:quadriga/title>
-    - <tag:quadriga-dk.de,2025:quadriga/url>
+    - child: <tag:quadriga-dk.de,2025:quadriga/description>
+      obligatory: true
+    - child: <tag:quadriga-dk.de,2025:quadriga/doi>
+      obligatory: false
+    - child: <tag:quadriga-dk.de,2025:quadriga/learning-objectives>
+      obligatory: true
+    - child: <tag:quadriga-dk.de,2025:quadriga/title>
+      obligatory: true
+    - child: <tag:quadriga-dk.de,2025:quadriga/url>
+      obligatory: false
 #quadriga.chapter
 ...
 ---
 #quadriga.chapters
 <tag:quadriga-dk.de,2025:quadriga/chapters>:
-  obligatory: true
   values:
     - seq
   description: >
     Liste der Kapitel der OER.
   children:
-    - <tag:quadriga-dk.de,2025:quadriga/chapter>
+    - child: <tag:quadriga-dk.de,2025:quadriga/chapter>
+      obligatory: true
+      repeat: true
 #quadriga.chapters
 ...
 ---
 #quadriga.competency
 <tag:quadriga-dk.de,2025:quadriga/competency>:
-  obligatory: true
   values:
     - int
   description: >
@@ -41,7 +45,6 @@
 ---
 #quadriga.description
 <tag:quadriga-dk.de,2025:quadriga/description>:
-  obligatory: true
   values:
     - seq
     - str
@@ -54,12 +57,15 @@
       - de: "Deutsche Beschreibung."
       - en: "English description."
     ...
+  # children:
+  #   - child: language-code
+  #     obligatory: true
+  #     repeat: true
 #quadriga.description
 ...
 ---
 #quadriga.doi
 <tag:quadriga-dk.de,2025:quadriga/doi>:
-  obligatory: true
   values:
     - uri
   description: >
@@ -71,7 +77,6 @@
 ---
 #quadriga.git
 <tag:quadriga-dk.de,2025:quadriga/git>:
-  obligatory: true
   values:
     - uri
   description: >
@@ -81,33 +86,35 @@
 ---
 #quadriga.learning-objective
 <tag:quadriga-dk.de,2025:quadriga/learning-objective>:
-  obligatory: true
   values:
     - map
   description: >
     Sammlung der Felder, die ein Kapitel beschreiben
   children:
-    - <tag:quadriga-dk.de,2025:quadriga/competency>
-    - <tag:quadriga-dk.de,2025:quadriga/description>
-    - <tag:quadriga-dk.de,2025:quadriga/level>
+    - key: <tag:quadriga-dk.de,2025:quadriga/competency>
+      obligatory: true
+    - key: <tag:quadriga-dk.de,2025:quadriga/description>
+      obligatory: true
+    - key: <tag:quadriga-dk.de,2025:quadriga/level>
+      obligatory: false
 #quadriga.learning-objective
 ...
 ---
 #quadriga.learning-objectives
 <tag:quadriga-dk.de,2025:quadriga/learning-objectives>:
-  obligatory: true
   values:
     - seq
   description: >
     Liste der Kapitel der OER.
   children:
-    - <tag:quadriga-dk.de,2025:quadriga/learning-objective>
+    - children: <tag:quadriga-dk.de,2025:quadriga/learning-objective>
+      obligatory: true
+      repeat: true
 #quadriga.learning-objectives
 ...
 ---
 #quadriga.level
 <tag:quadriga-dk.de,2025:quadriga/level>:
-  obligatory: false
   values:
     - constants:
         - advanced
@@ -120,27 +127,34 @@
 ---
 #quadriga.quadriga
 <tag:quadriga-dk.de,2025:quadriga/quadriga>:
-  obligatory: true
   values:
     - seq
   description: >
     Mapping, das alle Metadaten nach dem QUADRIGA Metadatenschema beinhaltet.
   children:
-    - <tag:quadriga-dk.de,2025:quadriga/chapters>
-    - <tag:quadriga-dk.de,2025:quadriga/description>
-    - <tag:quadriga-dk.de,2025:quadriga/discipline>
-    - <tag:quadriga-dk.de,2025:quadriga/doi>
-    - <tag:quadriga-dk.de,2025:quadriga/git>
-    - <tag:quadriga-dk.de,2025:quadriga/learning-objectives>
-    - <tag:quadriga-dk.de,2025:quadriga/schema-version>
-    - <tag:quadriga-dk.de,2025:quadriga/title>
-    - <tag:quadriga-dk.de,2025:quadriga/url>
+    - child: <tag:quadriga-dk.de,2025:quadriga/chapters>
+      obligatory: true
+    - child: <tag:quadriga-dk.de,2025:quadriga/description>
+      obligatory: true
+    - child: <tag:quadriga-dk.de,2025:quadriga/discipline>
+      obligatory: true
+    - child: <tag:quadriga-dk.de,2025:quadriga/doi>
+      obligatory: true
+    - child: <tag:quadriga-dk.de,2025:quadriga/git>
+      obligatory: false
+    - child: <tag:quadriga-dk.de,2025:quadriga/learning-objectives>
+      obligatory: true
+    - child: <tag:quadriga-dk.de,2025:quadriga/schema-version>
+      obligatory: true
+    - child: <tag:quadriga-dk.de,2025:quadriga/title>
+      obligatory: true
+    - child: <tag:quadriga-dk.de,2025:quadriga/url>
+      obligatory: false
 #quadriga.quadriga
 ...
 ---
 #quadriga.schema-version
 <tag:quadriga-dk.de,2025:quadriga/schema-version>:
-  obligatory: true
   values:
     - str
   description: >
@@ -150,7 +164,6 @@
 ---
 #quadriga.title
 <tag:quadriga-dk.de,2025:quadriga/title>:
-  obligatory: true
   values:
     - str
     - seq
@@ -168,7 +181,6 @@
 ---
 #quadriga.url
 <tag:quadriga-dk.de,2025:quadriga/url>:
-  obligatory: false
   values:
     - uri
   description: >
