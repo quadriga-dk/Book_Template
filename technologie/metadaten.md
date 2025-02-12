@@ -92,7 +92,7 @@ quadriga:
 :linenos:
 :lineno-match:
 :start-after: "#quadriga.competency"
-:end-before: "#quadriga.chapters"
+:end-before: "#quadriga.competency"
 ```
 #### `description`
 ```{literalinclude} ../metadata-schema.yml
