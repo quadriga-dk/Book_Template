@@ -32,6 +32,7 @@ parts:
         - file: entwicklung/editor
       - file: technologie/interactive_interfaces
       - file: technologie/jupyter_book_mit_gh_page
+      - file: technologie/metadaten.md
       - file: technologie/resümee
   - caption: Formatierung
     numbered: true
