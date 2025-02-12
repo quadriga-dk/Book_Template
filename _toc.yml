@@ -13,14 +13,14 @@ parts:
   - caption: Struktur und didaktisches Konzept
     numbered: true
     chapters:
-      - file: struktur_didaktisches_konzept/einführung
+      - file: struktur_didaktisches_konzept/einleitung
       - file: struktur_didaktisches_konzept/struktur
       - file: struktur_didaktisches_konzept/didaktisches_konzept
       - file: struktur_didaktisches_konzept/resümee
   - caption: Technologie
     numbered: true
     chapters:
-      - file: technologie/einführung
+      - file: technologie/einleitung
       - file: technologie/zusammenspiel_der_tools
       - file: technologie/grafische_aufbereitung
       - file: entwicklung/einleitung
@@ -49,7 +49,7 @@ parts:
   - caption: Lernstandskontrolle (Assessment)
     numbered: true
     chapters:
-      - file: assessment/einführung
+      - file: assessment/einleitung.md
         sections:
         - file: assessment/zielgruppe
         - file: assessment/selbstlern-oer
