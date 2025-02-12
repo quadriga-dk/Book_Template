@@ -55,6 +55,9 @@ width: 70%
 ---
 Erstellung von QUADRIGA-OERs aus der Jupyter-Book-Vorlage
 ```
+## Zielgruppe
+Die Fallstudie richtet sich an Personen, die ihre Fallstudien unter Verwendung der QUADRIGA-Vorlage erstellen möchten. Einzelne Kapitel können jedoch auch für Lernende von Relevanz sein, beispielsweise hinsichtlich der lokalen Nutzung von Jupyter Books auf eigenen Geräten oder der Anwendung von Google Colab.
+
 ## Struktur der Fallstudie
 Im QUADRIGA-Projekt entwickeln wir Fallstudien, die auf datengetriebenen Forschungsaktivitäten basieren und spezifische Forschungsfragen zusammen mit den dazugehörigen Datensätzen und Methoden abbilden. Ihre Fallstudie sollte in empirische Schritte unterteilt werden, die:
 * dem Datenlebenszyklus folgen,
