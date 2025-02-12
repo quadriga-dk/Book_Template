@@ -11,7 +11,7 @@ lang: de-DE
 
 ```
 
-Der Technologiestack besteht aus verschiedenen Programmen und Dateitypen. Die Inhalte der OER werden in Markdown-Dateien (`.md`) und Jupyter Notebooks (`.ipynb`) verfasst. In diese Dateien können zusätzlich zum reinen Text statische Inhalte wie Abbildungen und dynamische Inhalte wie Programmcode integriert werden.
+Der Technologie besteht aus verschiedenen Programmen und Dateitypen. Die Inhalte der OER werden in Markdown-Dateien (`.md`) und Jupyter Notebooks (`.ipynb`) verfasst. In diese Dateien können zusätzlich zum reinen Text statische Inhalte wie Abbildungen und dynamische Inhalte wie Programmcode integriert werden.
 
 Die Inhalte werden dann vom Programm `jupyter-book` in eine Website (bestehend aus `.html`-, `.css`- und `.js`-Dateien) übersetzt. Beinhaltet eine Inhaltsdatei Programmcode, so wird dieser ausgeführt und die Programmergebnisse werden entsprechend der Konfiguration in die Inhaltsdatei eingebettet. Dieser Schritt wird einerseits von den Entwickler\*innen während des Schreibens lokal durchgeführt, andererseits bei in GitHub veröffentlichten Änderungen automatisch durch eine GitHub Action übernommen.
 

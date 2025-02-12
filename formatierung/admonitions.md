@@ -103,18 +103,18 @@ Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden
     author = {Schnaitter, Hannes and Samoilova, Evgenia and Islam, Lamia},
     year = {2024},
 }
-@incollection{schnaitter_technologiestack_2024,
+@incollection{schnaitter_technologie_2024,
     address = {Potsdam; Berlin},
-    title = {Technologiestack},
+    title = {Technologie},
     copyright = {CC-BY-SA 4.0},
-    url = {https://quadriga-dk.github.io/Book_Template/technologiestack/einführung.html},
+    url = {https://quadriga-dk.github.io/Book_Template/technologie/einführung.html},
     language = {deu},
     booktitle = {{QUADRIGA} {OERs}: erstellen und gestalten mit {Jupyter Book}. {QUADRIGA} {Open} {Educational} {Ressources}: {Template}.},
     author = {Schnaitter, Hannes and Samoilova, Evgenia and Islam, Lamia},
     year = {2024},
 }
 ```
-Schnaitter, H., Samoilova, E. & Islam, L. (2024). Technologiestack In _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/technologiestack/einführung.html
+Schnaitter, H., Samoilova, E. & Islam, L. (2024). Technologie In _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/technologie/einführung.html
 
 `````
 ````{admonition} Zitierhinweis

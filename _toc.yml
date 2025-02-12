@@ -17,12 +17,12 @@ parts:
       - file: struktur_didaktisches_konzept/struktur
       - file: struktur_didaktisches_konzept/didaktisches_konzept
       - file: struktur_didaktisches_konzept/resümee
-  - caption: Technologiestack
+  - caption: Technologie
     numbered: true
     chapters:
-      - file: technologiestack/einführung
-      - file: technologiestack/zusammenspiel_der_tools
-      - file: technologiestack/grafische_aufbereitung
+      - file: technologie/einführung
+      - file: technologie/zusammenspiel_der_tools
+      - file: technologie/grafische_aufbereitung
       - file: entwicklung/einleitung
         sections:
         - file: entwicklung/git
@@ -30,9 +30,9 @@ parts:
         - file: entwicklung/python
         - file: entwicklung/jupyter_book
         - file: entwicklung/editor
-      - file: technologiestack/interactive_interfaces
-      - file: technologiestack/jupyter_book_mit_gh_page
-      - file: technologiestack/resümee
+      - file: technologie/interactive_interfaces
+      - file: technologie/jupyter_book_mit_gh_page
+      - file: technologie/resümee
   - caption: Formatierung
     numbered: true
     chapters:

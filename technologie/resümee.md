@@ -2,7 +2,7 @@
 lang: de-DE
 ---
 
-(technologiestack:resümee)=
+(technologie:resümee)=
 # Resümee
 
 

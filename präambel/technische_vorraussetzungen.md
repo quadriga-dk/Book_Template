@@ -4,7 +4,7 @@ lang: de-DE
 
 # Technische Voraussetzungen
 
-Die technischen Voraussetzungen werden in [B Technologiestack](../technologiestack/zusammenspiel_der_tools.md) ausführlich beschrieben.
+Die technischen Voraussetzungen werden in [Technologie](../technologie/zusammenspiel_der_tools.md) ausführlich beschrieben.
 
 ## Nutzung des Templates
 
