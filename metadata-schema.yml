@@ -93,7 +93,7 @@
         obligatory: true
       - key: <tag:quadriga-dk.de,2025:quadriga/description>
         obligatory: true
-      - key: <tag:quadriga-dk.de,2025:quadriga/level>
+      - key: <tag:quadriga-dk.de,2025:quadriga/blooms_category>
         obligatory: false
 #quadriga.learning-objective
 ...
@@ -109,16 +109,19 @@
 #quadriga.learning-objectives
 ...
 ---
-#quadriga.level
-<tag:quadriga-dk.de,2025:quadriga/level>:
+#quadriga.blooms_category
+<tag:quadriga-dk.de,2025:quadriga/blooms_category>:
   values:
     - constants:
-        - advanced
-        - beginner
-        - intermediate
+        - 1 Remember
+        - 2 Understand
+        - 3 Apply
+        - 4 Analyze
+        - 5 Evaluate
+        - 6 Create
   description: >
     Level auf dem das Lernziel angesiedelt ist.
-#quadriga.level
+#quadriga.blooms_category
 ...
 ---
 #quadriga.quadriga

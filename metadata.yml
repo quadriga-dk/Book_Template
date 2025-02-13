@@ -15,17 +15,17 @@ quadriga:
         QUADRIGA OERS aus und können bei der Arbeit mit der OER auftretende
         Fehler den jeweiligen Komponenten zuordnen.
       competency: false  
-      level: false
+      blooms_category: false
     - description: >
         Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA
         OER anpassen und diese erweitern.
       competency: false  
-      level: false
+      blooms_category: false
     - description: >
         Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template
         selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
       competency: false
-      level: false
+      blooms_category: false
   chapters:  
     - title:  Präambel
       url: 
@@ -33,50 +33,50 @@ quadriga:
       learning-objectives:  
         - description:  
           competency: false 
-          level: false  
+          blooms_category: false  
         - description:  
           competency: false 
-          level: false   
+          blooms_category: false   
     - title: Struktur und didaktisches Konzept
       url: 
       doi:  
       learning-objectives:
         - description: 
           competency: false 
-          level: false  
+          blooms_category: false  
         - description: 
           competency: false 
-          level: false   
+          blooms_category: false   
     - title: Technologie
       url: 
       doi:  
       learning-objectives:
         - description: 
           competency: false 
-          level: false  
+          blooms_category: false  
         - description:  
           competency: false 
-          level: false  
+          blooms_category: false  
     - title: Formatierung
       url: 
       doi:  
       learning-objectives:
         - description: 
           competency: false 
-          level: false  
+          blooms_category: false  
         - description:  
           competency: false 
-          level: false  
+          blooms_category: false  
     - title: Lernstandskontrolle (Assessment)
       url: 
       doi:  
       learning-objectives:
         - description: 
           competency: false 
-          level: false  
+          blooms_category: false  
         - description:  
           competency: false 
-          level: false  
+          blooms_category: false  
     - title: Reflexion und Resümee
       url: 
       doi:  

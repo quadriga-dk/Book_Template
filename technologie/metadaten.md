@@ -134,13 +134,13 @@ quadriga:
 :start-after: "#quadriga.learning-objectives"
 :end-before: "#quadriga.learning-objectives"
 ```
-#### `level`
+#### `blooms_category`
 ```{literalinclude} ../metadata-schema.yml
 :language: yaml
 :linenos:
 :lineno-match:
-:start-after: "#quadriga.level"
-:end-before: "#quadriga.level"
+:start-after: "#quadriga.blooms_category"
+:end-before: "#quadriga.blooms_category"
 ```
 #### `quadriga`
 ```{literalinclude} ../metadata-schema.yml
