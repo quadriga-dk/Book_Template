@@ -54,13 +54,13 @@ description:
 doi:
 git:
 learning-objectives:
-  - description:
+  - learning-objective:
     competency:
 children:
-  - description:
+  - learning-objective:
     title:
     learning-objectives:
-      - description:
+      - learning-objective:
         competency: 
 ```
 

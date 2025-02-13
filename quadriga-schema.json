@@ -26,27 +26,34 @@
                 ],
                 "properties": {
                     "title": {
+                        "description": "Kapitelüberschrift",
                         "$ref": "#/$defs/multilingual-text"
                     },
                     "description": {
+                        "description": "Kurze Zusammenfassung des Kapitelinhalts",
                         "$ref": "#/$defs/multilingual-text"
                     },
                     "doi": {
+                        "description": "DOI zum direkten Zitieren des Kapitels",
                         "type": "string"
                     },
                     "url": {
+                        "description": "URL zum direkten Zugriff auf das Kapitel",
                         "type": "string"
                     },
                     "learning-objectives": {
+                        "description": "Liste der Feinlernziele des Kapitels",
                         "$ref": "#/$defs/learning-objectives"
                     }
                 }
             }
         },
         "description": {
+            "description": "Beschreibung der OER",
             "$ref": "#/$defs/multilingual-text"
         },
         "discipline": {
+            "description": "Nennung der Disziplin, die bei der Erstellung der OER im Fokus stand.",
             "enum": [
                 "Verwaltungswissenschaft",
                 "Digital Humanities",
@@ -54,23 +61,29 @@
             ]
         },
         "doi": {
+            "description": "DOI der gesamten OER",
             "type": "string"
         },
         "git": {
+            "description": "Git-Repositorium, in dem die OER-Inhalte zu finden sind.",
             "type": "string"
         },
         "learning-objectives": {
+            "description": "Groblernziele der OER",
             "$ref": "#/$defs/learning-objectives"
         },
         "schema-version": {
+            "description": "Versionsnummer des QUADRIGA-Metadatenschemas",
             "enum": [
                 1.1
             ]
         },
         "title": {
+            "description": "Titel der OER",
             "type": "string"
         },
         "url": {
+            "description": "URL der gesamten OER",
             "type": "string"
         }
     },
@@ -84,10 +97,12 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "description": {
+                    "learning-objective": {
+                        "description": "Formulierung des Lernziels",
                         "$ref": "#/$defs/multilingual-text"
                     },
                     "competency": {
+                        "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework",
                         "type": "integer",
                         "inclusiveMinimum": "1",
                         "inclusiveMaximum": "15"
@@ -113,12 +128,14 @@
                     "type": "string"
                 },
                 {
+                    "description": "Sollen Metadaten mehrsprachig definiert werden, so wird als Key der Sprachcode nach ISO639 Set 2 verwendet.",
                     "type": "object",
                     "patternProperties": {
-                        "^[a-z][a-z]": {
+                        "^[a-z][a-z][a-z]$": {
                             "type": "string"
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 }
             ]
         }
