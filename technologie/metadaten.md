@@ -29,48 +29,46 @@ Mit Ihren Rückmeldungen können wir unser Jupyter Book gezielt an Ihre Bedürfn
 
 In diesem Kapitel wird Ihnen zuerst das Metadatenschema für QUADRIGA-OERs vorgestellt. Anschließend wird präsentiert, wie dieses in der Datei `metadata.yml` konkret umgesetzt wird. Zum Abschluss werden die tatsächlichen Metadaten der vorliegenden OER präsentiert.
 
-## Das QUADRIGA Metadatenschema
-Das QUADRIGA Metadatenschema basiert in Teilen auf DALIA sowie …
+## Das QUADRIGA Metadatenschema+
+
+Das QUADRIGA Metadatenschema basiert in Teilen auf DALIA[^url-dalia] sowie …
 
 ## Struktur und Felder der `metadata.yml`
 
 Für die technische Umsetzung des Metadatenschemas wurde YAML[^url-yaml] gewählt, da es durch OER-Autor\*innen einfach geschrieben und gleichzeitig gut automatisch verarbeitet werden kann.
 
-Alle Metadaten werden dabei unterhalb des Schlüssels `quadriga` verzeichnet.
-
 Die Metadaten können theoretisch auch in anderen YAML-Dateien als eigenständiges YAML-Dokument eingebettet werden, jedoch empfehlen wir die Nutzung einer eigenständigen Datei. Komplexere Funktionalitäten von YAML wie Referenzen und Tags werden nicht genutzt.
 
-Eine Metadatenbeschreibung nach dem QUADRIGA Metadatenschema wird als valide betrachtet, wenn sie mindestens alle Pflichtfelder beinhaltet und technisch korrekt umgesetzt wurde.
+Eine Metadatenbeschreibung nach dem QUADRIGA Metadatenschema wird als valide betrachtet, wenn sie mindestens alle Pflichtfelder beinhaltet und technisch korrekt umgesetzt wurde. Das Metadatenschema ist in JSON-Schema[^url-json-schema] implementiert.
 
 Im Abschnitt Felder werden alle optionalen sowie verpflichtenden Felder präsentiert. Dabei wird jeweils angegeben, ob sie verpflichtend sind sowie welche Datentypen als Wert zugelassen sind.
 
 
-
 ### Struktur
+
 Eine minimal kleine valide Metadatenbeschreibung sieht strukturell wie folgt aus:
 ```yaml
-quadriga:
-  schema-version:
-  title:
-  description:
-  doi:
-  git:
-  learning-objectives:
-    - description:
-      competency:
-  children:
-    - description:
-      title:
-      learning-objectives:
-        - description:
-          competency: 
+schema-version:
+title:
+description:
+doi:
+git:
+learning-objectives:
+  - description:
+    competency:
+children:
+  - description:
+    title:
+    learning-objectives:
+      - description:
+        competency: 
 ```
 
 
 ### Felder
-… hier noch eine Menschenlesbare Beschreibung …
+… hier noch eine menschenlesbare Beschreibung …
 
-### JSON-Schema
+### JSON-Schema[^url-json-schema]
 ```{literalinclude} ../quadriga-schema.json
 :language: json
 :linenos:
@@ -85,3 +83,5 @@ quadriga:
 
 
 [^url-yaml]: <https://yaml.org>
+[^url-json-schema]: <https://json-schema.org>
+[^url-dalia]: <https://dalia.education>
