@@ -70,9 +70,9 @@ quadriga:
 ### Felder
 … hier noch eine Menschenlesbare Beschreibung …
 
-### JSON-Schema (in YAML geschrieben)
-```{literalinclude} ../quadriga-schema.yml
-:language: yaml
+### JSON-Schema
+```{literalinclude} ../quadriga-schema.json
+:language: json
 :linenos:
 ```
 

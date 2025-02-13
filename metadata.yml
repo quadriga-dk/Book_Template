@@ -1,82 +1,73 @@
-quadriga:
-  schema-version: 1.1
-  doi: 
-  git: 
-  url: 
-  title: OER Template
-  description: >
-    Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für
-    Nutzer\*innen der OERs und dient gleichzeitig als Template für die
-    Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
-  discipline: Verwaltungswissenschaften  
-  learning-objectives:
-    - description: >
-        Nach durcharbeiten der OER kennen Sie sich mit dem Technologie der 
-        QUADRIGA OERS aus und können bei der Arbeit mit der OER auftretende
-        Fehler den jeweiligen Komponenten zuordnen.
-      competency: false  
-      blooms_category: false
-    - description: >
-        Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA
-        OER anpassen und diese erweitern.
-      competency: false  
-      blooms_category: false
-    - description: >
+# yaml-language-server: $schema=quadriga-schema.json
+schema-version: 1.1
+doi: TODO
+git: TODO
+url: TODO
+title: OER Template
+description: >
+  Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für
+  Nutzer\*innen der OERs und dient gleichzeitig als Template für die
+  Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+discipline: Verwaltungswissenschaft
+learning-objectives:
+  - description: >
+      Nach durcharbeiten der OER kennen Sie sich mit dem Technologie der 
+      QUADRIGA OERS aus und können bei der Arbeit mit der OER auftretende
+      Fehler den jeweiligen Komponenten zuordnen.
+    competency: 1  
+    blooms_category: 1 Remember
+  - description: >
+      Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA
+      OER anpassen und diese erweitern.
+    competency: 1  
+    blooms_category: 1 Remember
+  - description:
+      de: >
         Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template
         selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
-      competency: false
-      blooms_category: false
-  chapters:  
-    - title:  Präambel
-      url: 
-      doi:  
-      learning-objectives:  
-        - description:  
-          competency: false 
-          blooms_category: false  
-        - description:  
-          competency: false 
-          blooms_category: false   
-    - title: Struktur und didaktisches Konzept
-      url: 
-      doi:  
-      learning-objectives:
-        - description: 
-          competency: false 
-          blooms_category: false  
-        - description: 
-          competency: false 
-          blooms_category: false   
-    - title: Technologie
-      url: 
-      doi:  
-      learning-objectives:
-        - description: 
-          competency: false 
-          blooms_category: false  
-        - description:  
-          competency: false 
-          blooms_category: false  
-    - title: Formatierung
-      url: 
-      doi:  
-      learning-objectives:
-        - description: 
-          competency: false 
-          blooms_category: false  
-        - description:  
-          competency: false 
-          blooms_category: false  
-    - title: Lernstandskontrolle (Assessment)
-      url: 
-      doi:  
-      learning-objectives:
-        - description: 
-          competency: false 
-          blooms_category: false  
-        - description:  
-          competency: false 
-          blooms_category: false  
-    - title: Reflexion und Resümee
-      url: 
-      doi:  
+      en: english description
+    competency: 1
+    blooms_category: 1 Remember
+chapters:  
+  - title:  Präambel
+    url: TODO
+    doi: TODO
+    learning-objectives:  
+      - description: test
+        competency: 1 
+        blooms_category: 1 Remember    
+  - title: Struktur und didaktisches Konzept
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - description: test
+        competency: 1 
+        blooms_category: 1 Remember  
+  - title: Technologie
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - description: test
+        competency: 1 
+        blooms_category: 1 Remember  
+  - title: Formatierung
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - description: test
+        competency: 1 
+        blooms_category: 1 Remember   
+  - title: Lernstandskontrolle (Assessment)
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - description: test
+        competency: 1 
+        blooms_category: 1 Remember  
+  - title: Reflexion und Resümee
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - description: test
+        competency: 1 
+        blooms_category: 1 Remember  

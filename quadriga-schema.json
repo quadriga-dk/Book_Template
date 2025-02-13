@@ -1,0 +1,126 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "tag:quadriga-dk.de,2025:quadriga",
+    "title": "QUADRIGA OER",
+    "description": "Eine OER, die nach dem QUADRIGA-Metadatenschema beschrieben wird.",
+    "type": "object",
+    "required": [
+        "title",
+        "description",
+        "chapters",
+        "learning-objectives",
+        "doi",
+        "schema-version"
+    ],
+    "properties": {
+        "chapters": {
+            "description": "Liste der Kapitel.",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "required": [
+                    "title",
+                    "learning-objectives"
+                ],
+                "properties": {
+                    "title": {
+                        "$ref": "#/$defs/multilingual-text"
+                    },
+                    "description": {
+                        "$ref": "#/$defs/multilingual-text"
+                    },
+                    "doi": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "learning-objectives": {
+                        "$ref": "#/$defs/learning-objectives"
+                    }
+                }
+            }
+        },
+        "description": {
+            "$ref": "#/$defs/multilingual-text"
+        },
+        "discipline": {
+            "enum": [
+                "Verwaltungswissenschaft",
+                "Digital Humanities",
+                "Filmwissenschaft"
+            ]
+        },
+        "doi": {
+            "type": "string"
+        },
+        "git": {
+            "type": "string"
+        },
+        "learning-objectives": {
+            "$ref": "#/$defs/learning-objectives"
+        },
+        "schema-version": {
+            "enum": [
+                1.1
+            ]
+        },
+        "title": {
+            "type": "string"
+        },
+        "url": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "$defs": {
+        "learning-objectives": {
+            "description": "Eine Liste von Lernzielen.",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "$ref": "#/$defs/multilingual-text"
+                    },
+                    "competency": {
+                        "type": "integer",
+                        "inclusiveMinimum": "1",
+                        "inclusiveMaximum": "15"
+                    },
+                    "blooms_category": {
+                        "description": "Kategorie aus der Bloomschen Taxonomie.",
+                        "enum": [
+                            "1 Remember",
+                            "2 Understand",
+                            "3 Apply",
+                            "4 Analyze",
+                            "5 Evaluate",
+                            "6 Create"
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "multilingual-text": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^[a-z][a-z]": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
