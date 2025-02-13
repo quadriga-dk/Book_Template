@@ -68,113 +68,13 @@ quadriga:
 
 
 ### Felder
+… hier noch eine Menschenlesbare Beschreibung …
 
-#### `chapter`
-```{literalinclude} ../metadata-schema.yml
+### JSON-Schema (in YAML geschrieben)
+```{literalinclude} ../quadriga-schema.yml
 :language: yaml
 :linenos:
-:lineno-match:
-:start-after: "#quadriga.chapter"
-:end-before: "#quadriga.chapter"
 ```
-
-#### `chapters`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.chapters"
-:end-before: "#quadriga.chapters"
-```
-#### `competency`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.competency"
-:end-before: "#quadriga.competency"
-```
-#### `description`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.description"
-:end-before: "#quadriga.description"
-```
-#### `doi`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.doi"
-:end-before: "#quadriga.doi"
-```
-#### `git`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.git"
-:end-before: "#quadriga.git"
-```
-#### `learning-objective`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.learning-objective"
-:end-before: "#quadriga.learning-objective"
-```
-#### `learning-objectives`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.learning-objectives"
-:end-before: "#quadriga.learning-objectives"
-```
-#### `blooms_category`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.blooms_category"
-:end-before: "#quadriga.blooms_category"
-```
-#### `quadriga`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.quadriga"
-:end-before: "#quadriga.quadriga"
-```
-#### `schema-version`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.schema-version"
-:end-before: "#quadriga.schema-version"
-```
-#### `title`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.title"
-:end-before: "#quadriga.title"
-```
-#### `url`
-```{literalinclude} ../metadata-schema.yml
-:language: yaml
-:linenos:
-:lineno-match:
-:start-after: "#quadriga.url"
-:end-before: "#quadriga.url"
-```
-
 
 ## `metadata.yml` der vorliegenden OER
 
