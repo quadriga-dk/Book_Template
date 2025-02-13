@@ -12,22 +12,23 @@ properties:
     description: Liste der Kapitel.
     type: array
     minItems: 1
+    uniqueItems: true
     items:
       type: object
+      required: [title, learning-objectives]
       properties:
+        title:
+          $ref: "#multilingual"
         description:
-          type: string
+          $ref: "#multilingual"
         doi:
           type: uri
         url:
           type: uri
-        title:
-          type: string
         learning-objectives: # Feinlernziele
           $ref: "#learning-objectives"
   description:
-    description: Beschreibung der OER.
-    type: string
+    $ref: "#multilingual"
   discipline:
     enum:
       - Verwaltungswissenschaft
@@ -45,25 +46,27 @@ properties:
     type: string
   url:
     type: uri
+additionalProperties: false
 $defs:
   learning-objectives:
     $anchor: learning-objectives
     description: >
       Eine Liste von Lernzielen.
     type: array
+    minItems: 1
+    uniqueItems: true
     items:
       type: object
       properties:
         description:
-          description: Beschreibung des Lernziels.
-          type: string
+          $ref: "#multilingual"
         competency:
-          description: Kompetenz
+          description: Kompetenz nach dem QUADRIGA Datenkompetenzframework.
           type: int
           inclusiveMinimum: 1
           inclusiveMaximum: 15
         blooms_category:
-          description: Kategorie aus der Bloomschen Taonomie.
+          description: Kategorie aus der Bloomschen Taxonomie.
           enum:
             - 1 Remember
             - 2 Understand
@@ -71,4 +74,13 @@ $defs:
             - 4 Analyze
             - 5 Evaluate
             - 6 Create
+      additionalProperties: false
+  multilingual-text:
+    $anchor: multilingual
+    oneOf:
+      - type: string
+      - type: object
+        patternProperties:
+          "^[a-z][a-z]": # ISO 639 Set 1 Sprachcode
+            type: string
 ...
