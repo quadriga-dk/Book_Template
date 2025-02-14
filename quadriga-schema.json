@@ -5,22 +5,23 @@
     "description": "Eine OER, die nach dem QUADRIGA-Metadatenschema beschrieben wird.",
     "type": "object",
     "required": [
-        "title",
-        "description",
-        "chapters",
-        "learning-objectives",
-        "identifier",
-        "schema-version",
         "authors",
+        "chapters",
+        "context-of-creation",
+        "date-of-last-change",
+        "description",
         "discipline",
-        "type-of-research-object",
-        "target-group",
+        "duration",
         "has-predecessor",
         "has-successor",
-        "duration",
+        "identifier",
+        "learning-objectives",
+        "oer-version",
         "publication-date",
-        "date-of-last-change",
-        "oer-version"
+        "schema-version",
+        "target-group",
+        "title",
+        "type-of-research-object"
     ],
     "properties": {
         "authors": {
@@ -41,6 +42,7 @@
                 "type": "object",
                 "required": [
                     "title",
+                    "description",
                     "learning-objectives"
                 ],
                 "properties": {
@@ -85,6 +87,10 @@
             }
         },
         "description": {
+            "description": "Beschreibung der OER",
+            "$ref": "#/$defs/multilingual-text"
+        },
+        "context-of-creation": {
             "description": "Beschreibung der OER",
             "$ref": "#/$defs/multilingual-text"
         },
@@ -173,7 +179,8 @@
         },
         "date-of-last-change": {
             "type": "string",
-            "format": "date"
+            "format": "date",
+            "description": "Datum der letzten (großen, inhaltlich umfangreichen) Änderung. Sollte immer mit einer Versionsänderung einhergehen."
         },
         "git": {
             "description": "Git-Repositorium, in dem die OER-Inhalte zu finden sind.",
@@ -186,7 +193,8 @@
         "schema-version": {
             "description": "Versionsnummer des QUADRIGA-Metadatenschemas",
             "enum": [
-                1.1
+                "1.1",
+                "1.1b"
             ]
         },
         "oer-version": {
@@ -203,14 +211,22 @@
             "format": "uri"
         },
         "qm": {
-            "type": "object",
-            "properties": {
-                "person": {
-                    "$ref": "#/$defs/person"
-                },
-                "date": {
-                    "type": "string",
-                    "format": "date"
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": ["person", "date"],
+                "properties": {
+                    "person": {
+                        "$ref": "#/$defs/person"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "description": {
+                        "$ref": "#/$defs/multilingual-text"
+                    }
                 }
             }
         },
