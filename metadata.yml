@@ -39,23 +39,23 @@ authors:
     lastname: Samoilova
 learning-objectives:
   - learning-objective: >
-      Nach durcharbeiten der OER kennen Sie sich mit dem Technologie der 
-      QUADRIGA OERS aus und können bei der Arbeit mit der OER auftretende
-      Fehler den jeweiligen Komponenten zuordnen.
-    competency: 1  
+      Nach durcharbeiten der OER erkennen Sie die Technologie der 
+      QUADRIGA OERS, können diese in groben Zügen wiedergeben und können bei der
+      Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
+    competency: 1 # TODO
     blooms_category: 1 Remember
   - learning-objective: >
       Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA
       OER anpassen und diese erweitern.
-    competency: 1  
-    blooms_category: 1 Remember
+    competency: 1 # TODO
+    blooms_category: 3 Apply
   - learning-objective:
       deu: >
         Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template
         selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
-      eng: english description
-    competency: 1
-    blooms_category: 1 Remember
+      eng: english description # TODO
+    competency: 1 # TODO
+    blooms_category: 6 Create
 chapters:  
   - title:  Präambel
     description: TODO
