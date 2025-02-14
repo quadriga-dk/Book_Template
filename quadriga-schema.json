@@ -50,29 +50,14 @@
                         "description": "Kapitelüberschrift",
                         "$ref": "#/$defs/multilingual-text"
                     },
-                    "description": {
-                        "description": "Kurze Zusammenfassung des Kapitelinhalts",
-                        "type": "object",
-                        "required": [
-                            "introduction",
-                            "table-of-contents"
-                        ],
-                        "properties": {
-                            "introduction": {
-                                "description": "Einleitung der OER",
-                                "$ref": "#/$defs/multilingual-text"
-                            },
-                            "table-of-contents": {
-                                "description": "Inhaltsverzeichnis der OER",
-                                "$ref": "#/$defs/multilingual-text"
-                            }
-                        },
-                        "additionalProperties": false
-                    },
                     "doi": {
                         "description": "DOI zum direkten Zitieren des Kapitels",
                         "type": "string",
                         "format": "uri"
+                    },
+                    "description": {
+                        "description": "Beschreibung des Kapitelinhalts.",
+                        "$ref": "#/$defs/multilingual-text"
                     },
                     "url": {
                         "description": "URL zum direkten Zugriff auf das Kapitel",
@@ -88,7 +73,22 @@
         },
         "description": {
             "description": "Beschreibung der OER",
-            "$ref": "#/$defs/multilingual-text"
+            "type": "object",
+            "required": [
+                "introduction",
+                "table-of-contents"
+            ],
+            "properties": {
+                "introduction": {
+                    "description": "Einleitung der OER",
+                    "$ref": "#/$defs/multilingual-text"
+                },
+                "table-of-contents": {
+                    "description": "Inhaltsverzeichnis der OER",
+                    "$ref": "#/$defs/multilingual-text"
+                }
+            },
+            "additionalProperties": false
         },
         "context-of-creation": {
             "description": "Beschreibung der OER",
@@ -215,7 +215,10 @@
             "minItems": 1,
             "items": {
                 "type": "object",
-                "required": ["person", "date"],
+                "required": [
+                    "person",
+                    "date"
+                ],
                 "properties": {
                     "person": {
                         "$ref": "#/$defs/person"
