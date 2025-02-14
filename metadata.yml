@@ -5,10 +5,14 @@ identifier: TODO
 git: TODO
 url: TODO
 title: OER Template
-description: >
-  Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für
-  Nutzer\*innen der OERs und dient gleichzeitig als Template für die
-  Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+description: 
+      introduction: >
+        Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
+        für Nutzer\*innen der OERs und dient gleichzeitig als Template für die
+        Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+      table-of-contents: >
+        - Präambel
+        - …
 discipline: [Verwaltungswissenschaften]
 context-of-creation: >
   Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
@@ -54,9 +58,7 @@ learning-objectives:
     blooms_category: 1 Remember
 chapters:  
   - title:  Präambel
-    description:
-      introduction: TODO
-      table-of-contents: TODO
+    description: TODO
     url: TODO
     doi: TODO
     learning-objectives:  
@@ -64,9 +66,7 @@ chapters:
         competency: 1 
         blooms_category: 1 Remember    
   - title: Struktur und didaktisches Konzept
-    description:
-      introduction: TODO
-      table-of-contents: TODO
+    description: TODO
     url: TODO
     doi: TODO
     learning-objectives:
@@ -74,9 +74,7 @@ chapters:
         competency: 1 
         blooms_category: 1 Remember  
   - title: Technologie
-    description:
-      introduction: TODO
-      table-of-contents: TODO
+    description: TODO
     url: TODO
     doi: TODO
     learning-objectives:
@@ -84,9 +82,7 @@ chapters:
         competency: 1 
         blooms_category: 1 Remember  
   - title: Formatierung
-    description:
-      introduction: TODO
-      table-of-contents: TODO
+    description: TODO
     url: TODO
     doi: TODO
     learning-objectives:
@@ -94,9 +90,7 @@ chapters:
         competency: 1 
         blooms_category: 1 Remember   
   - title: Lernstandskontrolle (Assessment)
-    description:
-      introduction: TODO
-      table-of-contents: TODO
+    description: TODO
     url: TODO
     doi: TODO
     learning-objectives:
@@ -104,9 +98,7 @@ chapters:
         competency: 1 
         blooms_category: 1 Remember  
   - title: Reflexion und Resümee
-    description:
-      introduction: TODO
-      table-of-contents: TODO
+    description: TODO
     url: TODO
     doi: TODO
     learning-objectives:
