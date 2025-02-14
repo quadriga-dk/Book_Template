@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=quadriga-schema.json
 schema-version: "1.1b"
-oer-version: "0.34b"
+oer-version: "0.34.0b"
 identifier: TODO
 git: TODO
 url: TODO
