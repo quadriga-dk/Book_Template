@@ -43,22 +43,19 @@ Falls Sie die `carousel.css` und `carousel.js` Dateien bereits in Ihrem `_static
 
 ```{card}
 :class-card: carousel-card
-
 ![Folie1](Bildpfad)
 ```
 
 ```{card}
 :class-card: carousel-card
-
 ![Folie2](Bildpfad)
 ```
-````
 
 ```{card}
 :class-card: carousel-card
-
 ![Folie3](Bildpfad)
 ```
+
 ````
 `````
 ### Szenario 2: Dateien sind nicht vorhanden
