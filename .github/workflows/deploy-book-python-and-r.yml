@@ -1,4 +1,4 @@
-name: deploy-book
+name: deploy-book-python-and-r
 
 on:
   push:
@@ -65,7 +65,7 @@ jobs:
       with:
         path: _build/.jupyter_cache
         key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
-        
+
     # Build the book
     - name: Build the book
       run: |
