@@ -1,0 +1,63 @@
+name: deploy-book
+
+on:
+  push:
+    branches:
+    - main
+
+# This job installs dependencies, builds the book, and deploys it to GitHub Pages
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+    - uses: actions/checkout@v4
+
+    # Install dependencies for Python
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+          
+    # Install R and its dependencies
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+    
+    - name: Install IRkernel
+      run: |
+        Rscript -e 'install.packages(c("IRkernel", "rmarkdown"))'
+    
+    - name: Register IRkernel
+      run: |
+        Rscript -e "IRkernel::installspec()"
+    
+    - name: Install R_requirements
+      run: |
+        Rscript install_dependencies.R
+
+    # log available kernels
+    - name: Print all available kernels
+      run: |
+        jupyter kernelspec list
+
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build .
+
+    # Upload the book's HTML as an artifact
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: "_build/html"
+
+    # Deploy the book's HTML to GitHub Pages
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
