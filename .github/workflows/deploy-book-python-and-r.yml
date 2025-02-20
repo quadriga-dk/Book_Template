@@ -37,9 +37,9 @@ jobs:
       run: |
         Rscript -e "IRkernel::installspec()"
     
-    - name: Install R_requirements
-      run: |
-        Rscript install_dependencies.R
+    # - name: Install R_requirements
+    #   run: |
+    #     Rscript install_dependencies.R
 
     # log available kernels
     - name: Print all available kernels
