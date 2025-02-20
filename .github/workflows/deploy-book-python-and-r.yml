@@ -1,0 +1,83 @@
+name: deploy-book-python-and-r
+
+on:
+  push:
+    branches:
+    - main
+
+# This job installs dependencies, builds the book, and deploys it to GitHub Pages
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+    - uses: actions/checkout@v4
+
+    # Install dependencies for Python
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+        cache: pip
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+          
+    # Install R and its dependencies
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+    
+    # Cache R packages to speed up installation
+    - name: Cache R packages
+      uses: actions/cache@v3
+      with:
+        path: ${{ env.R_LIBS_USER }}
+        key: ${{ runner.os }}-r-${{ hashFiles('**/renv.lock') }}
+        restore-keys: ${{ runner.os }}-r-
+
+    # Install R packages including IRkernel - with optimizations for speed
+    - name: Install R packages
+      run: |
+        # Use binary packages and RSPM for faster installation
+        Rscript -e 'options(repos = c(RSPM = "https://packagemanager.rstudio.com/all/__linux__/focal/latest", CRAN = "https://cloud.r-project.org"))'
+        Rscript -e 'options(install.packages.check.source = "no")'  # Prefer binaries
+        Rscript -e 'install.packages("IRkernel", dependencies=TRUE)'
+        Rscript -e 'IRkernel::installspec(name="ir", displayname="R")'
+    
+    # - name: Install R_requirements
+    #   run: |
+    #     Rscript install_dependencies.R
+
+    # log available kernels
+    - name: Print all available kernels
+      run: |
+        jupyter kernelspec list
+
+    # (optional) Cache your executed notebooks between runs
+    # if you have config:
+    # execute:
+    #   execute_notebooks: cache
+    - name: cache executed notebooks
+      uses: actions/cache@v3
+      with:
+        path: _build/.jupyter_cache
+        key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
+
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build .
+
+    # Upload the book's HTML as an artifact
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: "_build/html"
+
+    # Deploy the book's HTML to GitHub Pages
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

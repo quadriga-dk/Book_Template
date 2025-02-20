@@ -1,0 +1,4 @@
+## packages <- c("farver","blob","colorspace", "sys", "bit", "ps", "labeling", "munsell", "RColorBrewer", "viridisLite", "rematch", "askpass", "bit64", "prettyunits", "processx", "backports", "generics", "DBI", "tidyselect", "withr", "data.table", "gtable", "isoband", "scales", "gargle", "cellranger", "curl", "ids", "rematch2", "cpp11", "pkgconfig", "openssl", "timechange", "systemfonts", "textshaping", "clipr", "vroom", "tzdb", "progress", "callr", "selectr", "stringi", "fansi", "broom", "conflicted", "dbplyr", "dplyr", "dtplyr", "forcats", "ggplot2", "googledrive", "googlesheets4", "haven", "hms", "httr", "lubridate", "magrittr", "modelr", "purrr", "ragg", "readr", "readxl", "reprex", "rstudioapi", "rvest", "stringr", "tibble", "tidyr", "xml2")
+packages <- c("pak")
+install.packages(packages)
+pak::pak("tidyverse")
