@@ -11,7 +11,7 @@ Aufgaben, die eine selbstständige Kontrolle anhand eines Bewertungsrasters und/
 :class: hinweis
 Nehmen Sie sich mindestens die empfohlene Zeit für die Bearbeitung der Aufgabe. Schreiben Sie sich mindestens Notizen in Stichpunkten, besser ausformuliert, für Ihre Lösung auf.
 
-Nehmen Sie dann nach der Bearbeitung die Rolle einer Begutachter\*in ein und geben Sie sich, idealerweise schriftlich, Feedback zu Ihrer Lösung basierend auf dem Bewertungsraster bzw. der Musterlösung:
+Nehmen Sie dann nach der Bearbeitung die Rolle einer Begutachter:in ein und geben Sie sich, idealerweise schriftlich, Feedback zu Ihrer Lösung basierend auf dem Bewertungsraster bzw. der Musterlösung:
 - Was haben Sie gut umgesetzt?
 - Wo gab es Lücken in Ihrer Lösung?
 - Welche Inhalte (die hier überprüft wurden) sollten Sie wiederholen/vertiefen?

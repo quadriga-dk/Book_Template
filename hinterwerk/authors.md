@@ -1,7 +1,7 @@
 ---
 lang: de-DE
 ---
-# Autor\*innen
+# Autor:innen
 
 ## Hannes Schnaitter <span style="font-size:8pt">(er/ihm/sein)</span> <a href="https://orcid.org/0000-0002-1602-6032" target="_blank">![ORCID](../assets/ORCID-ID_icon_24x24.png)</a>
 

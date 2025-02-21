@@ -40,7 +40,7 @@ Das QUADRIGA Metadatenschema basiert in Teilen auf DALIA[^url-dalia] sowie …
 
 ## Struktur und Felder der `metadata.yml`
 
-Für die technische Umsetzung des Metadatenschemas wurde YAML[^url-yaml] gewählt, da es durch OER-Autor\*innen einfach geschrieben und gleichzeitig gut automatisch verarbeitet werden kann.
+Für die technische Umsetzung des Metadatenschemas wurde YAML[^url-yaml] gewählt, da es durch OER-Autor:innen einfach geschrieben und gleichzeitig gut automatisch verarbeitet werden kann.
 
 Die Metadaten können theoretisch auch in anderen YAML-Dateien als eigenständiges YAML-Dokument eingebettet werden, jedoch empfehlen wir die Nutzung einer eigenständigen Datei. Komplexere Funktionalitäten von YAML wie Referenzen und Tags werden nicht genutzt.
 
@@ -74,7 +74,7 @@ children:
 … hier noch eine menschenlesbare Beschreibung …
 
 #### `authors`
-`authors` ist eine Liste der Autor\*innen der OER. Das Feld ist verpflichtend und es muss mindestens ein\*e Autor\*in in der Liste aufgeführt werden. Eine Autor\*in ist modelliert als [`person`](person).
+`authors` ist eine Liste der Autor:innen der OER. Das Feld ist verpflichtend und es muss mindestens ein:e Autor:in in der Liste aufgeführt werden. Eine Autor:in ist modelliert als [`person`](person).
 
 #### `chapters`
 Liste der Kapitel der OER. Sie muss mindestens ein Kapitel enthalten. Ein Kapitel wird mit einem Titel (`title`), einer Beschreibung (`description`) einer Liste von Lernzielen ([`learning-objectives`](learning-objectives)) sowie ggf. einer DOI und einer URL beschrieben.
