@@ -31,11 +31,11 @@ target-group:
 type-of-research-object:
   - übergreifend
 authors:
-  - surname: Hannes
+  - firstname: Hannes
     lastname: Schnaitter
-  - surname: Lamia
+  - firstname: Lamia
     lastname: Islam
-  - surname: Evgenia
+  - firstname: Evgenia
     lastname: Samoilova
 learning-objectives:
   - learning-objective: >

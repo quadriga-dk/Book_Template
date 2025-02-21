@@ -318,11 +318,11 @@
                     "$comment": "Andere Schlüssel können nach Bedarf angelegt werden.",
                     "type": "object",
                     "required": [
-                        "surname",
+                        "firstname",
                         "lastname"
                     ],
                     "properties": {
-                        "surname": {
+                        "firstname": {
                             "type": "string"
                         },
                         "lastname": {
