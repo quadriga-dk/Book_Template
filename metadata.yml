@@ -43,19 +43,19 @@ learning-objectives:
       QUADRIGA OERS, können diese in groben Zügen wiedergeben und können bei der
       Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
     competency: 1 # TODO
-    blooms_category: 1 Remember
+    blooms-category: 1 Remember
   - learning-objective: >
       Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA
       OER anpassen und diese erweitern.
     competency: 1 # TODO
-    blooms_category: 3 Apply
+    blooms-category: 3 Apply
   - learning-objective:
       deu: >
         Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template
         selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
       eng: english description # TODO
     competency: 1 # TODO
-    blooms_category: 6 Create
+    blooms-category: 6 Create
 chapters:  
   - title:  Präambel
     description: TODO
@@ -64,7 +64,7 @@ chapters:
     learning-objectives:  
       - learning-objective: test
         competency: 1 
-        blooms_category: 1 Remember    
+        blooms-category: 1 Remember    
   - title: Struktur und didaktisches Konzept
     description: TODO
     url: TODO
@@ -72,7 +72,7 @@ chapters:
     learning-objectives:
       - learning-objective: test
         competency: 1 
-        blooms_category: 1 Remember  
+        blooms-category: 1 Remember  
   - title: Technologie
     description: TODO
     url: TODO
@@ -80,7 +80,7 @@ chapters:
     learning-objectives:
       - learning-objective: test
         competency: 1 
-        blooms_category: 1 Remember  
+        blooms-category: 1 Remember  
   - title: Formatierung
     description: TODO
     url: TODO
@@ -88,7 +88,7 @@ chapters:
     learning-objectives:
       - learning-objective: test
         competency: 1 
-        blooms_category: 1 Remember   
+        blooms-category: 1 Remember   
   - title: Lernstandskontrolle (Assessment)
     description: TODO
     url: TODO
@@ -96,7 +96,7 @@ chapters:
     learning-objectives:
       - learning-objective: test
         competency: 1 
-        blooms_category: 1 Remember  
+        blooms-category: 1 Remember  
   - title: Reflexion und Resümee
     description: TODO
     url: TODO
@@ -104,4 +104,4 @@ chapters:
     learning-objectives:
       - learning-objective: test
         competency: 1 
-        blooms_category: 1 Remember  
+        blooms-category: 1 Remember  

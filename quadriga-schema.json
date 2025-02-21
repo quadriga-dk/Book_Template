@@ -258,6 +258,11 @@
             "uniqueItems": true,
             "items": {
                 "type": "object",
+                "required": [
+                    "learning-objective",
+                    "competency",
+                    "blooms-category"
+                ],
                 "properties": {
                     "learning-objective": {
                         "description": "Formulierung des Lernziels",
@@ -269,7 +274,7 @@
                         "inclusiveMinimum": "1",
                         "inclusiveMaximum": "15"
                     },
-                    "blooms_category": {
+                    "blooms-category": {
                         "description": "Kategorie aus der Bloomschen Taxonomie.",
                         "enum": [
                             "1 Remember",
