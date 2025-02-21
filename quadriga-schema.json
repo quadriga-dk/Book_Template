@@ -204,6 +204,28 @@
                 }
             }
         },
+        "related-works": {
+            "description": "Eine Liste von Verweisen und jeweils einer kurzen Beschreibung zu zusätzlichen, weiterführenden Inhalten o.ä.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "link",
+                    "description"
+                ],
+                "properties": {
+                    "description": {
+                        "description": "Beschreibung des verlinkten Werks und dessen Beziehung zur OER",
+                        "$ref": "#/$defs/multilingual-text"
+                    },
+                    "link": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
         "schema-version": {
             "description": "Versionsnummer des QUADRIGA-Metadatenschemas",
             "enum": [
