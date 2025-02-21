@@ -27,6 +27,11 @@ Mit Ihren Rückmeldungen können wir unser Jupyter Book gezielt an Ihre Bedürfn
 2. Lernende können die Metadaten ihrer eigenen OER dem QUADRIGA-Schema entsprechend umsetzen.
 ```
 
+```{admonition} Achtung: Baustelle
+:class: caution
+Die hier beschriebenen Inhalte werden aktiv überarbeitet!
+```
+
 In diesem Kapitel wird Ihnen zuerst das Metadatenschema für QUADRIGA-OERs vorgestellt. Anschließend wird präsentiert, wie dieses in der Datei `metadata.yml` konkret umgesetzt wird. Zum Abschluss werden die tatsächlichen Metadaten der vorliegenden OER präsentiert.
 
 ## Das QUADRIGA Metadatenschema+
