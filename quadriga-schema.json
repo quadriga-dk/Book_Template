@@ -71,6 +71,15 @@
                 }
             }
         },
+        "context-of-creation": {
+            "description": "Verweis auf QUADRIGA",
+            "$ref": "#/$defs/multilingual-text"
+        },
+        "date-of-last-change": {
+            "type": "string",
+            "format": "date",
+            "description": "Datum der letzten (großen, inhaltlich umfangreichen) Änderung. Sollte immer mit einer Versionsänderung einhergehen."
+        },
         "description": {
             "description": "Beschreibung der OER",
             "type": "object",
@@ -90,12 +99,8 @@
             },
             "additionalProperties": false
         },
-        "context-of-creation": {
-            "description": "Beschreibung der OER",
-            "$ref": "#/$defs/multilingual-text"
-        },
         "discipline": {
-            "description": "Nennung der Disziplinen, die bei der Erstellung der OER im Fokus stand.",
+            "description": "Nennung der Disziplinen, die bei der Erstellung der OER im Fokus standen.",
             "type": "array",
             "minItems": 1,
             "maxItems": 5,
@@ -109,37 +114,14 @@
                 ]
             }
         },
-        "type-of-research-object": {
-            "description": "Nennung des Datentyps, der vorrangig in der OER behandelt wird.",
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 2,
-            "items": {
-                "enum": [
-                    "Text",
-                    "Tabelle",
-                    "Bewegtes Bild",
-                    "übergreifend"
-                ]
-            }
-        },
-        "identifier": {
-            "description": "Eindeutiger Identifier in Form einer DOI. Die DOI identifiziert die gesamte OER.",
+        "duration": {
+            "description": "Angedachte Bearbeitungsdauer für Lernende.",
             "type": "string",
-            "format": "uri"
+            "format": "duration"
         },
-        "target-group": {
-            "description": "Zielgruppe",
-            "type": "array",
-            "minItems": 1,
-            "items": {
-                "enum": [
-                    "Forschende (PostDoc)",
-                    "Forschende (Projektleitung)",
-                    "Promovierende",
-                    "Hochschullehrende"
-                ]
-            }
+        "git": {
+            "description": "Git-Repositorium, in dem die OER-Inhalte zu finden sind.",
+            "type": "string"
         },
         "has-predecessor": {
             "oneOf": [
@@ -169,46 +151,31 @@
                 }
             ]
         },
-        "duration": {
+        "identifier": {
+            "description": "Eindeutiger Identifier in Form einer DOI. Die DOI identifiziert die gesamte OER.",
             "type": "string",
-            "format": "duration"
+            "format": "uri"
         },
-        "publication-date": {
-            "type": "string",
-            "format": "date"
-        },
-        "date-of-last-change": {
-            "type": "string",
-            "format": "date",
-            "description": "Datum der letzten (großen, inhaltlich umfangreichen) Änderung. Sollte immer mit einer Versionsänderung einhergehen."
-        },
-        "git": {
-            "description": "Git-Repositorium, in dem die OER-Inhalte zu finden sind.",
-            "type": "string"
+        "keywords": {
+            "$comment": "TODO"
         },
         "learning-objectives": {
             "description": "Groblernziele der OER",
             "$ref": "#/$defs/learning-objectives"
         },
-        "schema-version": {
-            "description": "Versionsnummer des QUADRIGA-Metadatenschemas",
-            "enum": [
-                "1.1",
-                "1.1b"
-            ]
+        "license": {
+            "$comment": "TODO"
         },
         "oer-version": {
             "description": "Version der OER",
             "type": "string"
         },
-        "title": {
-            "description": "Titel der OER",
-            "type": "string"
+        "prerequesites": {
+            "$comment": "TODO"
         },
-        "url": {
-            "description": "URL der gesamten OER",
+        "publication-date": {
             "type": "string",
-            "format": "uri"
+            "format": "date"
         },
         "qm": {
             "type": "array",
@@ -233,19 +200,53 @@
                 }
             }
         },
+        "schema-version": {
+            "description": "Versionsnummer des QUADRIGA-Metadatenschemas",
+            "enum": [
+                "1.1",
+                "1.1b"
+            ]
+        },
+        "target-group": {
+            "description": "Zielgruppe",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "enum": [
+                    "Forschende (PostDoc)",
+                    "Forschende (Projektleitung)",
+                    "Promovierende",
+                    "Hochschullehrende"
+                ]
+            }
+        },
+        "title": {
+            "description": "Titel der OER",
+            "type": "string"
+        },
         "type-of-learning-resource": {
             "$comment": "TODO"
         },
-        "prerequesites": {
-            "$comment": "TODO"
+        "type-of-research-object": {
+            "description": "Nennung des Datentyps, der vorrangig in der OER behandelt wird.",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {
+                "enum": [
+                    "Text",
+                    "Tabelle",
+                    "Bewegtes Bild",
+                    "übergreifend"
+                ]
+            }
         },
-        "keywords": {
-            "$comment": "TODO"
+        "url": {
+            "description": "URL der gesamten OER",
+            "type": "string",
+            "format": "uri"
         },
         "used-tools": {
-            "$comment": "TODO"
-        },
-        "license": {
             "$comment": "TODO"
         }
     },
@@ -310,10 +311,10 @@
             "oneOf": [
                 {
                     "type": "string",
-                    "description": "Vollständiger Name der Autor*in"
+                    "description": "Vollständiger Name der Person"
                 },
                 {
-                    "description": "Strukturierte Angabe der Autor*in bestehend mindestens aus Vor- und Nachname",
+                    "description": "Strukturierte Angabe der Person bestehend mindestens aus Vor- und Nachname",
                     "$comment": "Andere Schlüssel können nach Bedarf angelegt werden.",
                     "type": "object",
                     "required": [
