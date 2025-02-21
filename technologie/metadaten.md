@@ -44,7 +44,7 @@ Für die technische Umsetzung des Metadatenschemas wurde YAML[^url-yaml] gewähl
 
 Die Metadaten können theoretisch auch in anderen YAML-Dateien als eigenständiges YAML-Dokument eingebettet werden, jedoch empfehlen wir die Nutzung einer eigenständigen Datei. Komplexere Funktionalitäten von YAML wie Referenzen und Tags werden nicht genutzt.
 
-Eine Metadatenbeschreibung nach dem QUADRIGA Metadatenschema wird als valide betrachtet, wenn sie mindestens alle Pflichtfelder beinhaltet und technisch korrekt umgesetzt wurde. Das Metadatenschema ist in JSON-Schema[^url-json-schema] implementiert.
+Eine Metadatenbeschreibung nach dem QUADRIGA Metadatenschema wird als valide betrachtet, wenn sie mindestens alle Pflichtfelder beinhaltet und technisch korrekt umgesetzt wurde. Das Metadatenschema ist in JSON-Schema[^url-json-schema] implementiert. Das gesamte JSON-Schema der Metadaten ist [am Ende der Seite einzusehen](technologie:metadaten:json-schema)
 
 Im Abschnitt Felder werden alle optionalen sowie verpflichtenden Felder präsentiert. Dabei wird jeweils angegeben, ob sie verpflichtend sind sowie welche Datentypen als Wert zugelassen sind.
 
@@ -161,13 +161,6 @@ URL der "Leseansicht" der OER.
 Verweise auf genutzte Software nach LCSH.
 
 
-
-### JSON-Schema[^url-json-schema]
-```{literalinclude} ../quadriga-schema.json
-:language: json
-:linenos:
-```
-
 ## `metadata.yml` der vorliegenden OER
 
 ```{literalinclude} ../metadata.yml
@@ -175,6 +168,12 @@ Verweise auf genutzte Software nach LCSH.
 :linenos:
 ```
 
+(technologie:metadaten:json-schema)=
+## JSON-Schema[^url-json-schema]
+```{literalinclude} ../quadriga-schema.json
+:language: json
+:linenos:
+```
 
 [^url-yaml]: <https://yaml.org>
 [^url-json-schema]: <https://json-schema.org>
