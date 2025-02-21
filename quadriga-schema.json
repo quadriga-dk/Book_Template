@@ -159,6 +159,10 @@
         "keywords": {
             "$comment": "TODO"
         },
+        "language": {
+            "description": "Sprache der OER als ISO639-1 Sprachcode",
+            "type": "string"
+        },
         "learning-objectives": {
             "description": "Groblernziele der OER",
             "$ref": "#/$defs/learning-objectives"
@@ -296,10 +300,10 @@
                     "type": "string"
                 },
                 {
-                    "description": "Sollen Metadaten mehrsprachig definiert werden, so wird als Key der Sprachcode nach ISO639 Set 2 verwendet.",
+                    "description": "Sollen Metadaten mehrsprachig definiert werden, so wird als Key der Sprachcode nach ISO639-1 verwendet.",
                     "type": "object",
                     "patternProperties": {
-                        "^[a-z][a-z][a-z]$": {
+                        "^[a-z][a-z]$": {
                             "type": "string"
                         }
                     },

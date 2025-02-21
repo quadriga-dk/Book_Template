@@ -50,10 +50,10 @@ learning-objectives:
     competency: 1 # TODO
     blooms-category: 3 Apply
   - learning-objective:
-      deu: >
+      de: >
         Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template
         selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
-      eng: english description # TODO
+      en: english description # TODO
     competency: 1 # TODO
     blooms-category: 6 Create
 chapters:  

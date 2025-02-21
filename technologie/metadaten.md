@@ -113,6 +113,9 @@ Eindeutiger Identifier in Form einer DOI. Die DOI identifiziert die gesamte OER.
 #### `keywords`
 Eine Liste von Stichwörtern oder Schlagwörtern.
 
+#### `language`
+Sprache der OER als ISO639-1 Sprachcode.
+
 #### `learning-objectives`
 Liste der Lernziele einer OER bzw. eines Kapitels. Ein Lernziel selbst besteht aus einer genauen Formulierung des Lernziels (`learning-objective`), der zugeordneten Kompetenz (`competency`) und eine Einordnung in eine Kategorie aus der Bloomschen Taxonomie (`blooms-category`).
 
@@ -120,7 +123,7 @@ Liste der Lernziele einer OER bzw. eines Kapitels. Ein Lernziel selbst besteht a
 Verweis auf die verwendet(en) Lizenz(en).
 
 #### `multilingual-text`
-Natürlichsprachlicher Text wird standardmäßig auf Deutsch verfasst. Soll dies explizit gemacht werden und/oder sollen andere Sprachen verwendet werden, so kann hier statt einer Zeichenkette (`string`) ein Mapping (`object`) von ISO639-2 Ländercodes und dem Text in der entsprechenden Sprache verwendet werden.
+Natürlichsprachlicher Text wird standardmäßig auf Deutsch verfasst. Soll dies explizit gemacht werden und/oder sollen andere Sprachen verwendet werden, so kann hier statt einer Zeichenkette (`string`) ein Mapping (`object`) von ISO639-1 Sprachcodes und dem Text in der entsprechenden Sprache verwendet werden.
 
 #### `oer-version`
 Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change).
