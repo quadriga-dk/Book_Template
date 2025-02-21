@@ -1,0 +1,107 @@
+# yaml-language-server: $schema=quadriga-schema.json
+schema-version: "1.1.0b"
+oer-version: "0.35.0"
+identifier: TODO
+git: TODO
+url: TODO
+title: OER Template
+description: 
+      introduction: >
+        Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
+        für Nutzer\*innen der OERs und dient gleichzeitig als Template für die
+        Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+      table-of-contents: >
+        - Präambel
+        - …
+discipline: [Verwaltungswissenschaften]
+context-of-creation: >
+  Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
+
+  Förderkennzeichen: 16DKZ2034
+date-of-last-change: 2025-02-14
+publication-date: 2024-05-06
+duration: 10h
+has-predecessor: false
+has-successor: false
+target-group:
+  - "Forschende (PostDoc)"
+  - "Forschende (Projektleitung)"
+  - "Promovierende"
+  - "Hochschullehrende"
+type-of-research-object:
+  - übergreifend
+authors:
+  - firstname: Hannes
+    lastname: Schnaitter
+  - firstname: Lamia
+    lastname: Islam
+  - firstname: Evgenia
+    lastname: Samoilova
+learning-objectives:
+  - learning-objective: >
+      Nach durcharbeiten der OER erkennen Sie die Technologie der 
+      QUADRIGA OERS, können diese in groben Zügen wiedergeben und können bei der
+      Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
+    competency: 1 # TODO
+    blooms-category: 1 Remember
+  - learning-objective: >
+      Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA
+      OER anpassen und diese erweitern.
+    competency: 1 # TODO
+    blooms-category: 3 Apply
+  - learning-objective:
+      deu: >
+        Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template
+        selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
+      eng: english description # TODO
+    competency: 1 # TODO
+    blooms-category: 6 Create
+chapters:  
+  - title:  Präambel
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:  
+      - learning-objective: test
+        competency: 1 
+        blooms-category: 1 Remember    
+  - title: Struktur und didaktisches Konzept
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 
+        blooms-category: 1 Remember  
+  - title: Technologie
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 
+        blooms-category: 1 Remember  
+  - title: Formatierung
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 
+        blooms-category: 1 Remember   
+  - title: Lernstandskontrolle (Assessment)
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 
+        blooms-category: 1 Remember  
+  - title: Reflexion und Resümee
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 
+        blooms-category: 1 Remember  
