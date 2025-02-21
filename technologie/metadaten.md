@@ -34,7 +34,7 @@ Die hier beschriebenen Inhalte werden aktiv überarbeitet!
 
 In diesem Kapitel wird Ihnen zuerst das Metadatenschema für QUADRIGA-OERs vorgestellt. Anschließend wird präsentiert, wie dieses in der Datei `metadata.yml` konkret umgesetzt wird. Zum Abschluss werden die tatsächlichen Metadaten der vorliegenden OER präsentiert.
 
-## Das QUADRIGA Metadatenschema+
+## Das QUADRIGA Metadatenschema
 
 Das QUADRIGA Metadatenschema basiert in Teilen auf DALIA[^url-dalia] sowie …
 
