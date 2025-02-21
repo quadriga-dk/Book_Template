@@ -73,6 +73,36 @@ children:
 ### Felder
 … hier noch eine menschenlesbare Beschreibung …
 
+#### `authors`
+#### `chapters`
+#### `context-of-creation` (Umbenennung in `context-of-development`?)
+#### `date-of-last-change`
+#### `description`
+#### `discipline`
+#### `duration`
+#### `git`
+#### `has-predecessor`
+#### `has-successor`
+#### `identifier`
+#### `keywords`
+#### `learning-objectives`
+#### `license`
+#### `multilingual-text`
+#### `oer-version`
+#### `person`
+#### `prerequisites`
+#### `publication-date`
+#### `qm`
+#### `schema-version`
+#### `target-group`
+#### `title`
+#### `type-of-learning-resource`
+#### `type-of-research-object`
+#### `url`
+#### `used-tools`
+
+
+
 ### JSON-Schema[^url-json-schema]
 ```{literalinclude} ../quadriga-schema.json
 :language: json
