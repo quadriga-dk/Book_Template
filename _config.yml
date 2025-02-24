@@ -31,6 +31,7 @@ launch_buttons:
   notebook_interface: jupyterlab # remove if you don't want to use binder
   binderhub_url: https://mybinder.org # remove if you don't want to use binder
   colab_url: https://colab.research.google.com
+  thebe: true
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
