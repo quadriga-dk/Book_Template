@@ -74,6 +74,7 @@ parts:
       - file: reflexion_und_resümee/reflexion
       - file: reflexion_und_resümee/abschlussassessment
       - file: reflexion_und_resümee/zusammenfassung
+      - file: reflexion_und_resümee/Checkliste_neue_OER.md
       - file: reflexion_und_resümee/weiterführende_hinweise
       - file: reflexion_und_resümee/resümee
   - caption: Hinterwerk
