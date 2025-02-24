@@ -37,6 +37,7 @@ lang: de-de
 - [ ] Alt-Text für Abbildungen, soweit sinnvoll
 - [ ] Rechtschreibkontrolle durchgeführt
 - [ ] Zitationen und Literaturverzeichnis(se) korrekt
+- [ ] Hinweise zu Feedback-/Fragen-/Kontakt-Möglichkeiten
 
 ## Publikation
 - [ ] Metadaten sind vollständig
@@ -44,9 +45,11 @@ lang: de-de
 - [ ] Vergabe einer Versionsnummer (bspw. v1.0.0) (siehe [semver.org](https://semver.org))
 - [ ] Erstellung eines GitHub Releases
 - [ ] Veröffentlichung in einem Repositorium (bspw. Zenodo)
+- [ ] Zitationshinweis
 
 ## Links, Verweise und Abhängigkeit
 - [ ] Alle nötigen Materialien sind verfügbar. Wenn möglich in einem sicheren Repositorium oder direkt in der OER hinterlegt. Wenn lizenzrechtlich erlaubt Kopie unsicher abgelegter Datensätze anlegen. 
 - [ ] Links innerhalb der Fallstudien funktionieren
 - [ ] Links auf externe Inhalte überprüft
 - [ ] Code-Abhängigkeiten sind so definiert, dass sie wieder installiert werden können (requirements.txt, …)
+
