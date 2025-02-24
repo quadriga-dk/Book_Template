@@ -43,6 +43,7 @@ parts:
           - file: formatierung/markdown
           - file: formatierung/notebooks
           - file: formatierung/markdown-notebooks
+          - file: formatierung/R-notebook.iypnb
       - file: formatierung/spezifische_elemente.md
         sections:
           - file: formatierung/link_in_neuem_tab
