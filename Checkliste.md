@@ -11,9 +11,13 @@ lang: de-de
 - [ ] Präambel
 - [ ] Hinterwerk
 - [ ] Startseite
-  - [ ] Einladend
+  - [ ] einladende/motivierende Einleitung
+  - [ ] Beschreibung des Aufbaus der OER
 - [ ] Struktur des Inhalts beschrieben
 - [ ] Struktur dem Inhalt angemessen?
+- [ ] Struktur der Kapitel
+  - [ ] Einleitung
+  - [ ] Resüme
 
 ## Assessment
 - [ ] Assessment pro Kapitel
@@ -26,14 +30,23 @@ lang: de-de
 - [ ] Binder funktioniert wie angedacht
 - [ ] Live Code funktioniert wie angedacht
 
-## Publication
+## Formatierung / Typographie / Design
+- [ ] Admonitions passend genutzt
+- [ ] Externe Links sind gekennzeichnet
+- [ ] Abbildungen gut erkennbar
+- [ ] Alt-Text für Abbildungen, soweit sinnvoll
+- [ ] Rechtschreibkontrolle durchgeführt
+- [ ] Zitationen und Literaturverzeichnis(se) korrekt
+
+## Publikation
 - [ ] Metadaten sind vollständig
 - [ ] DOI(s) registriert und in den Metadaten und in der OER
-- [ ] 
+- [ ] Vergabe einer Versionsnummer (bspw. v1.0.0) (siehe [semver.org](https://semver.org))
+- [ ] Erstellung eines GitHub Releases
+- [ ] Veröffentlichung in einem Repositorium (bspw. Zenodo)
 
 ## Links, Verweise und Abhängigkeit
 - [ ] Alle nötigen Materialien wenn möglich direkt in der OER, wenn nicht in einem sicheren Repositorium (Zenodo, …)
 - [ ] Links innerhalb der Fallstudien funktionieren
 - [ ] Links auf externe Inhalte überprüft
 - [ ] Code-Abhängigkeiten sind so definiert, dass sie wieder installiert werden können (requirements.txt, …)
-- [ ] 
