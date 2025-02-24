@@ -55,6 +55,6 @@ COPY . ${HOME}
 RUN chown -R ${NB_USER} ${HOME}
 USER ${NB_UID}
 
-# RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 WORKDIR "${HOME}"
