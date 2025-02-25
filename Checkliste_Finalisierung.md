@@ -19,6 +19,21 @@ lang: de-de
   - [ ] Einleitung
   - [ ] Resüme
 
+## Inhalt
+- [ ] Zielgruppe
+- [ ] Vorkenntnisse
+- [ ] Anwendungsdomain
+- [ ] Datentyp
+- [ ] Informationen über den Lebenszyklus
+- [ ] Zugehörigkeit zu einer definierten Sammlung
+- [ ] Bildungsvoraussetzungen
+- [ ] technische Rahmenbedingungen
+- [ ] rechtliche Aspekte (z. B. bei Nachnutzung von existierenden Bildungsangeboten)
+- [ ] Beziehungsstrukturen (zu thematisch verwandten Bildungsangeboten)
+- [ ] Möglichkeit zu Anmerkungen, Kommentierungen (z. B. durch die Zielgruppen)
+- [ ] Klassifizierung nach inhaltlichen (z. B. fachspezifischen Aspekten) und 
+- [ ] formalen Aspekten (z. B. Kompetenzniveau)
+
 ## Assessment
 - [ ] Assessment pro Kapitel
 - [ ] Abschlussassessment für die OER als Ganzes
