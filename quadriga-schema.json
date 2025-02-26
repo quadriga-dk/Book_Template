@@ -395,6 +395,29 @@
                         "orcid": {
                             "description": "ORCID der Autor*in",
                             "type": "string"
+                        },
+                        "credit": {
+                            "description": "Rolle der Person nach CRediT (siehe https://credit.niso.org",
+                            "type": "array",
+                            "items": {
+                                "enum": [
+                                    "Conceptualization",
+                                    "Data curation",
+                                    "Formal analysis",
+                                    "Funding acquisition",
+                                    "Investigation",
+                                    "Methodology",
+                                    "Project administration",
+                                    "Software",
+                                    "Resources",
+                                    "Supervision",
+                                    "Validation",
+                                    "Visualization",
+                                    "Writing",
+                                    "Writing – original draft",
+                                    "Writing – review & editing"
+                                ]
+                            }
                         }
                     },
                     "additionalProperties": true
