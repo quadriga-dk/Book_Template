@@ -157,7 +157,13 @@
             "format": "uri"
         },
         "keywords": {
-            "$comment": "TODO"
+            "description": "Liste von Schlag-/Stichwörtern",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "description": "Ein Schlag-/Stichwort",
+                "$ref": "#/$defs/multilingual-text"
+            }
         },
         "language": {
             "description": "Sprache der OER als ISO639-1 Sprachcode",
@@ -175,7 +181,13 @@
             "type": "string"
         },
         "prerequesites": {
-            "$comment": "TODO"
+            "description": "Liste von Voraussetzungen",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "description": "Eine Voraussetzung",
+                "$ref": "#/$defs/multilingual-text"
+            }
         },
         "publication-date": {
             "type": "string",
@@ -288,6 +300,7 @@
                 "required": [
                     "learning-objective",
                     "competency",
+                    "data-flow",
                     "blooms-category"
                 ],
                 "properties": {
@@ -297,9 +310,34 @@
                     },
                     "competency": {
                         "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework",
-                        "type": "integer",
-                        "inclusiveMinimum": "1",
-                        "inclusiveMaximum": "15"
+                        "enum": [
+                            "1 Basiskompetenz",
+                            "2 Identifikation",
+                            "3 Qualitätssicherung",
+                            "4 Ethik und Recht",
+                            "5 Erhebung",
+                            "6 Validierung",
+                            "7 Aufbereitung",
+                            "8 Management",
+                            "9 Erschließung",
+                            "10 Datenanalyse",
+                            "11 Visualisierung",
+                            "12 Interpretation",
+                            "13 Aufbereitung",
+                            "14 Datenpublikation",
+                            "15 Kommunikation"
+                        ]
+                    },
+                    "data-flow": {
+                        "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework",
+                        "enum": [
+                            "Grundlagen",
+                            "Planung",
+                            "Erhebung und Aufbereitung",
+                            "Management",
+                            "Analyse",
+                            "Publikation und Nachnutzung"
+                        ]
                     },
                     "blooms-category": {
                         "description": "Kategorie aus der Bloomschen Taxonomie.",

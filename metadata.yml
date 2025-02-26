@@ -42,19 +42,21 @@ learning-objectives:
       Nach durcharbeiten der OER erkennen Sie die Technologie der 
       QUADRIGA OERS, können diese in groben Zügen wiedergeben und können bei der
       Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
-    competency: 1 # TODO
+    competency: 1 Basiskompetenz # TODO: korrigieren
+    data-flow: Grundlagen # TODO: korrigieren
     blooms-category: 1 Remember
   - learning-objective: >
       Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA
       OER anpassen und diese erweitern.
-    competency: 1 # TODO
+    competency: 1 Basiskompetenz # TODO: korrigieren
+    data-flow: Grundlagen # TODO: korrigieren
     blooms-category: 3 Apply
   - learning-objective:
       de: >
         Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template
         selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
-      en: english description # TODO
-    competency: 1 # TODO
+    competency: 1 Basiskompetenz # TODO: korrigieren
+    data-flow: Grundlagen # TODO: korrigieren
     blooms-category: 6 Create
 chapters:  
   - title:  Präambel
@@ -63,7 +65,8 @@ chapters:
     doi: TODO
     learning-objectives:  
       - learning-objective: test
-        competency: 1 
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
         blooms-category: 1 Remember    
   - title: Struktur und didaktisches Konzept
     description: TODO
@@ -71,7 +74,8 @@ chapters:
     doi: TODO
     learning-objectives:
       - learning-objective: test
-        competency: 1 
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
         blooms-category: 1 Remember  
   - title: Technologie
     description: TODO
@@ -79,7 +83,8 @@ chapters:
     doi: TODO
     learning-objectives:
       - learning-objective: test
-        competency: 1 
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
         blooms-category: 1 Remember  
   - title: Formatierung
     description: TODO
@@ -87,7 +92,8 @@ chapters:
     doi: TODO
     learning-objectives:
       - learning-objective: test
-        competency: 1 
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
         blooms-category: 1 Remember   
   - title: Lernstandskontrolle (Assessment)
     description: TODO
@@ -95,7 +101,8 @@ chapters:
     doi: TODO
     learning-objectives:
       - learning-objective: test
-        competency: 1 
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
         blooms-category: 1 Remember  
   - title: Reflexion und Resümee
     description: TODO
@@ -103,5 +110,6 @@ chapters:
     doi: TODO
     learning-objectives:
       - learning-objective: test
-        competency: 1 
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
         blooms-category: 1 Remember  
