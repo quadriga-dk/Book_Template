@@ -53,20 +53,35 @@ Im Abschnitt Felder werden alle optionalen sowie verpflichtenden Felder präsent
 
 Eine minimal kleine valide Metadatenbeschreibung sieht strukturell wie folgt aus:
 ```yaml
-schema-version:
+schema-version: "1.1"
+oer-version:
+identifier:
 title:
 description:
-doi:
+authors:
 git:
+context-of-creation:
+date-of-last-change:
+publication-date:
+discipline:
+target-group:
+duration:
+has-predecessor:
+has-successor:
+type-of-research-object:
 learning-objectives:
   - learning-objective:
     competency:
-children:
-  - learning-objective:
+    data-flow:
+    blooms-category:
+chapters:
+  - description:
     title:
     learning-objectives:
       - learning-objective:
-        competency: 
+        competency:     
+        data-flow:
+        blooms-category:
 ```
 
 
