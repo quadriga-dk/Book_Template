@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=quadriga-schema.json
 schema-version: "1.1b"
 oer-version: "1.0b"
-identifier: TODO
-git: TODO
-url: TODO
+identifier: https://doi.org # TODO: DOI registrieren
+git: https://github.com/quadriga-dk/Book_Template
+url: https://quadriga-dk.github.io/Book_Template/
 title: OER Template
 description: 
       introduction: >
@@ -31,12 +31,17 @@ target-group:
 type-of-research-object:
   - übergreifend
 authors:
-  - firstname: Hannes
-    lastname: Schnaitter
   - firstname: Lamia
     lastname: Islam
   - firstname: Evgenia
     lastname: Samoilova
+    orcid: https://orcid.org/0000-0003-3858-901X
+  - firstname: Hannes
+    lastname: Schnaitter
+    orcid: https://orcid.org/0000-0002-1602-6032
+    credit: 
+      - Writing
+      - Software
 learning-objectives:
   - learning-objective: >
       Nach durcharbeiten der OER erkennen Sie die Technologie der 
