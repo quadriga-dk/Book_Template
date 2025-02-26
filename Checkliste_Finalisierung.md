@@ -17,7 +17,7 @@ lang: de-de
 - [ ] Struktur dem Inhalt angemessen?
 - [ ] Struktur der Kapitel
   - [ ] Einleitung
-  - [ ] Resüme
+  - [ ] Resümee
 
 ## Inhalt
 - [ ] Zielgruppe
