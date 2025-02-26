@@ -3,6 +3,9 @@
     "$id": "tag:quadriga-dk.de,2025:quadriga",
     "title": "QUADRIGA OER",
     "description": "Eine OER, die nach dem QUADRIGA-Metadatenschema beschrieben wird.",
+    "@context": {
+        "dct": "http://purl.org/dc/terms/"
+    },
     "type": "object",
     "required": [
         "authors",
@@ -30,7 +33,8 @@
             "minItems": 1,
             "uniqueItems": true,
             "items": {
-                "$ref": "#/$defs/person"
+                "$ref": "#/$defs/person",
+                "@id": "dct:author"
             }
         },
         "chapters": {
@@ -191,7 +195,8 @@
         },
         "publication-date": {
             "type": "string",
-            "format": "date"
+            "format": "date",
+            "@id": "dct:issued"
         },
         "qm": {
             "type": "array",
@@ -260,7 +265,8 @@
         },
         "title": {
             "description": "Titel der OER",
-            "type": "string"
+            "type": "string",
+            "@id": "dct:title"
         },
         "type-of-learning-resource": {
             "$comment": "TODO"
