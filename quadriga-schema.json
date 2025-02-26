@@ -4,7 +4,9 @@
     "title": "QUADRIGA OER",
     "description": "Eine OER, die nach dem QUADRIGA-Metadatenschema beschrieben wird.",
     "@context": {
-        "dct": "http://purl.org/dc/terms/"
+        "dct": "http://purl.org/dc/terms/",
+        "givenName": "http://schema.org/givenName",
+        "familyName": "http://schema.org/familyName"
     },
     "type": "object",
     "required": [
@@ -388,15 +390,17 @@
                     "$comment": "Andere Schlüssel können nach Bedarf angelegt werden.",
                     "type": "object",
                     "required": [
-                        "firstname",
-                        "lastname"
+                        "given-name",
+                        "familyname"
                     ],
                     "properties": {
-                        "firstname": {
-                            "type": "string"
+                        "given-name": {
+                            "type": "string",
+                            "@id": "givenName"
                         },
-                        "lastname": {
-                            "type": "string"
+                        "familyname": {
+                            "type": "string",
+                            "@id": "familyName"
                         },
                         "orcid": {
                             "description": "ORCID der Autor*in",
