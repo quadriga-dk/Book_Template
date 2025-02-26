@@ -3,7 +3,9 @@ lang: de-DE
 ---
 # Autor:innen
 
-## Hannes Schnaitter <span style="font-size:8pt">(er/ihm/sein)</span> <a href="https://orcid.org/0000-0002-1602-6032" target="_blank">![ORCID](../assets/ORCID-ID_icon_24x24.png)</a>
+## Autor:innen der Inhalte
+
+### Hannes Schnaitter <span style="font-size:8pt">(er/ihm/sein)</span> <a href="https://orcid.org/0000-0002-1602-6032" target="_blank">![ORCID](../assets/ORCID-ID_icon_24x24.png)</a>
 
 <table style="margin-left: 0">
 <tr>
@@ -24,7 +26,7 @@ lang: de-DE
 </tr>
 </table>
 
-## Evgenia Samoilova <a href="https://orcid.org/0000-0003-3858-901X" target="_blank">![ORCID](../assets/ORCID-ID_icon_24x24.png)</a>
+### Evgenia Samoilova <a href="https://orcid.org/0000-0003-3858-901X" target="_blank">![ORCID](../assets/ORCID-ID_icon_24x24.png)</a>
 <table style="margin-left: 0">
 <tr>
 <td><b>Rolle in QUADRIGA:</b></td>
@@ -44,7 +46,7 @@ lang: de-DE
 </tr>
 </table>
 
-## Lamia Islam
+### Lamia Islam
 <table style="margin-left: 0">
 <tr>
 <td><b>Rolle in QUADRIGA:</b></td>
@@ -57,5 +59,23 @@ lang: de-DE
 <tr>
 <td><b>GitHub:</b></td>
 <td><a href="https://github.com/lam1aa" class="external-link" target="_blank">lam1aa</a></td>
+</tr>
+</table>
+
+## sonstige beteiligte Personen
+
+### Yue Zhang
+<table style="margin-left: 0">
+<tr>
+<td><b>Rolle in QUADRIGA:</b></td>
+<td>Technische Unterstützung (insb. R, Docker, Binder, GitHub Actions)</td>
+</tr>
+<tr>
+<td><b>Einrichtung:</b></td>
+<td>Fraunhofer FOKUS</td>
+</tr>
+<tr>
+<td><b>GitHub:</b></td>
+<td><a href="https://github.com/SchenbergZY" class="external-link" target="_blank">SchenbergZY</a></td>
 </tr>
 </table>

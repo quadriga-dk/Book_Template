@@ -3,6 +3,10 @@
     "$id": "tag:quadriga-dk.de,2025:quadriga",
     "title": "QUADRIGA OER",
     "description": "Eine OER, die nach dem QUADRIGA-Metadatenschema beschrieben wird.",
+    "@context": {
+        "dct": "http://purl.org/dc/terms/",
+        "so": "http://schema.org/"
+    },
     "type": "object",
     "required": [
         "authors",
@@ -30,7 +34,8 @@
             "minItems": 1,
             "uniqueItems": true,
             "items": {
-                "$ref": "#/$defs/person"
+                "$ref": "#/$defs/person",
+                "@id": "dct:author"
             }
         },
         "chapters": {
@@ -157,7 +162,13 @@
             "format": "uri"
         },
         "keywords": {
-            "$comment": "TODO"
+            "description": "Liste von Schlag-/Stichwörtern",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "description": "Ein Schlag-/Stichwort",
+                "$ref": "#/$defs/multilingual-text"
+            }
         },
         "language": {
             "description": "Sprache der OER als ISO639-1 Sprachcode",
@@ -175,11 +186,18 @@
             "type": "string"
         },
         "prerequesites": {
-            "$comment": "TODO"
+            "description": "Liste von Voraussetzungen",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "description": "Eine Voraussetzung",
+                "$ref": "#/$defs/multilingual-text"
+            }
         },
         "publication-date": {
             "type": "string",
-            "format": "date"
+            "format": "date",
+            "@id": "dct:issued"
         },
         "qm": {
             "type": "array",
@@ -229,8 +247,8 @@
         "schema-version": {
             "description": "Versionsnummer des QUADRIGA-Metadatenschemas",
             "enum": [
-                "1.1.0",
-                "1.1.0b"
+                "1.1",
+                "1.1b"
             ]
         },
         "target-group": {
@@ -248,7 +266,8 @@
         },
         "title": {
             "description": "Titel der OER",
-            "type": "string"
+            "type": "string",
+            "@id": "dct:title"
         },
         "type-of-learning-resource": {
             "$comment": "TODO"
@@ -288,6 +307,7 @@
                 "required": [
                     "learning-objective",
                     "competency",
+                    "data-flow",
                     "blooms-category"
                 ],
                 "properties": {
@@ -297,9 +317,34 @@
                     },
                     "competency": {
                         "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework",
-                        "type": "integer",
-                        "inclusiveMinimum": "1",
-                        "inclusiveMaximum": "15"
+                        "enum": [
+                            "1 Basiskompetenz",
+                            "2 Identifikation",
+                            "3 Qualitätssicherung",
+                            "4 Ethik und Recht",
+                            "5 Erhebung",
+                            "6 Validierung",
+                            "7 Aufbereitung",
+                            "8 Management",
+                            "9 Erschließung",
+                            "10 Datenanalyse",
+                            "11 Visualisierung",
+                            "12 Interpretation",
+                            "13 Aufbereitung",
+                            "14 Datenpublikation",
+                            "15 Kommunikation"
+                        ]
+                    },
+                    "data-flow": {
+                        "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework",
+                        "enum": [
+                            "Grundlagen",
+                            "Planung",
+                            "Erhebung und Aufbereitung",
+                            "Management",
+                            "Analyse",
+                            "Publikation und Nachnutzung"
+                        ]
                     },
                     "blooms-category": {
                         "description": "Kategorie aus der Bloomschen Taxonomie.",
@@ -344,19 +389,44 @@
                     "$comment": "Andere Schlüssel können nach Bedarf angelegt werden.",
                     "type": "object",
                     "required": [
-                        "firstname",
-                        "lastname"
+                        "given-name",
+                        "familyname"
                     ],
                     "properties": {
-                        "firstname": {
-                            "type": "string"
+                        "given-name": {
+                            "type": "string",
+                            "@id": "so:givenName"
                         },
-                        "lastname": {
-                            "type": "string"
+                        "familyname": {
+                            "type": "string",
+                            "@id": "so:familyName"
                         },
                         "orcid": {
                             "description": "ORCID der Autor*in",
                             "type": "string"
+                        },
+                        "credit": {
+                            "description": "Rolle der Person nach CRediT (siehe https://credit.niso.org",
+                            "type": "array",
+                            "items": {
+                                "enum": [
+                                    "Conceptualization",
+                                    "Data curation",
+                                    "Formal analysis",
+                                    "Funding acquisition",
+                                    "Investigation",
+                                    "Methodology",
+                                    "Project administration",
+                                    "Software",
+                                    "Resources",
+                                    "Supervision",
+                                    "Validation",
+                                    "Visualization",
+                                    "Writing",
+                                    "Writing – original draft",
+                                    "Writing – review & editing"
+                                ]
+                            }
                         }
                     },
                     "additionalProperties": true

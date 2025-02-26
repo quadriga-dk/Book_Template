@@ -53,20 +53,35 @@ Im Abschnitt Felder werden alle optionalen sowie verpflichtenden Felder präsent
 
 Eine minimal kleine valide Metadatenbeschreibung sieht strukturell wie folgt aus:
 ```yaml
-schema-version:
+schema-version: "1.1"
+oer-version:
+identifier:
 title:
 description:
-doi:
+authors:
 git:
+context-of-creation:
+date-of-last-change:
+publication-date:
+discipline:
+target-group:
+duration:
+has-predecessor:
+has-successor:
+type-of-research-object:
 learning-objectives:
   - learning-objective:
     competency:
-children:
-  - learning-objective:
+    data-flow:
+    blooms-category:
+chapters:
+  - description:
     title:
     learning-objectives:
       - learning-objective:
-        competency: 
+        competency:     
+        data-flow:
+        blooms-category:
 ```
 
 
@@ -129,7 +144,7 @@ Natürlichsprachlicher Text wird standardmäßig auf Deutsch verfasst. Soll dies
 Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change).
 
 #### `person`
-Eine Person kann entweder als einfache Zeichenkette oder als Mapping, das mindestens Schlüssel für Vor- und Nachname (`firstname`, `lastname`) enthält modelliert werden.
+Eine Person kann entweder als einfache Zeichenkette oder als Mapping, das mindestens Schlüssel für Vor- und Nachname (`given-name`, `familyname`) enthält modelliert werden.
 
 Es wird empfohlen eine ORCID anzugeben.
 
