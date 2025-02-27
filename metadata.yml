@@ -33,15 +33,27 @@ type-of-research-object:
 authors:
   - given-name: Lamia
     familyname: Islam
+    credit:
+      - Software
   - given-name: Evgenia
     familyname: Samoilova
     orcid: https://orcid.org/0000-0003-3858-901X
+    credit:
+      - Writing
+      - Conceptualization
   - given-name: Hannes
     familyname: Schnaitter
     orcid: https://orcid.org/0000-0002-1602-6032
     credit: 
-      - Writing
+      - Writing – original draft
+      - Writing – review & editing
       - Software
+      - Conceptualization
+  - given-name: Paul
+    familyname: Walter
+    orcid: https://orcid.org/0000-0002-9236-3268
+    credit:
+      - Writing – review & editing
 learning-objectives:
   - learning-objective: >
       Nach durcharbeiten der OER erkennen Sie die Technologie der 
