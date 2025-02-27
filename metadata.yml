@@ -5,14 +5,14 @@ identifier: https://doi.org # TODO: DOI registrieren
 git: https://github.com/quadriga-dk/Book_Template
 url: https://quadriga-dk.github.io/Book_Template/
 title: OER Template
-description: 
-      introduction: >
-        Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
-        für Nutzer:innen der OERs und dient gleichzeitig als Template für die
-        Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
-      table-of-contents: >
-        - Präambel
-        - …
+description:
+  introduction: >
+    Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
+    für Nutzer:innen der OERs und dient gleichzeitig als Template für die
+    Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+  table-of-contents: >
+    - Präambel
+    - …
 discipline: [Verwaltungswissenschaften]
 context-of-creation: >
   Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
@@ -47,10 +47,10 @@ authors:
       - Universität Potsdam
   - given-name: Hannes
     familyname: Schnaitter
-    affiliations: 
+    affiliations:
       - Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
     orcid: https://orcid.org/0000-0002-1602-6032
-    credit: 
+    credit:
       - Writing – original draft
       - Writing – review & editing
       - Software
@@ -83,16 +83,16 @@ learning-objectives:
     competency: 1 Basiskompetenz # TODO: korrigieren
     data-flow: Grundlagen # TODO: korrigieren
     blooms-category: 6 Create
-chapters:  
-  - title:  Präambel
+chapters:
+  - title: Präambel
     description: TODO
     url: TODO
     doi: TODO
-    learning-objectives:  
+    learning-objectives:
       - learning-objective: test
         competency: 1 Basiskompetenz # TODO: korrigieren
         data-flow: Grundlagen # TODO: korrigieren
-        blooms-category: 1 Remember    
+        blooms-category: 1 Remember
   - title: Struktur und didaktisches Konzept
     description: TODO
     url: TODO
@@ -101,7 +101,7 @@ chapters:
       - learning-objective: test
         competency: 1 Basiskompetenz # TODO: korrigieren
         data-flow: Grundlagen # TODO: korrigieren
-        blooms-category: 1 Remember  
+        blooms-category: 1 Remember
   - title: Technologie
     description: TODO
     url: TODO
@@ -110,7 +110,7 @@ chapters:
       - learning-objective: test
         competency: 1 Basiskompetenz # TODO: korrigieren
         data-flow: Grundlagen # TODO: korrigieren
-        blooms-category: 1 Remember  
+        blooms-category: 1 Remember
   - title: Formatierung
     description: TODO
     url: TODO
@@ -119,7 +119,7 @@ chapters:
       - learning-objective: test
         competency: 1 Basiskompetenz # TODO: korrigieren
         data-flow: Grundlagen # TODO: korrigieren
-        blooms-category: 1 Remember   
+        blooms-category: 1 Remember
   - title: Lernstandskontrolle (Assessment)
     description: TODO
     url: TODO
@@ -128,7 +128,7 @@ chapters:
       - learning-objective: test
         competency: 1 Basiskompetenz # TODO: korrigieren
         data-flow: Grundlagen # TODO: korrigieren
-        blooms-category: 1 Remember  
+        blooms-category: 1 Remember
   - title: Reflexion und Resümee
     description: TODO
     url: TODO
@@ -137,4 +137,4 @@ chapters:
       - learning-objective: test
         competency: 1 Basiskompetenz # TODO: korrigieren
         data-flow: Grundlagen # TODO: korrigieren
-        blooms-category: 1 Remember  
+        blooms-category: 1 Remember
