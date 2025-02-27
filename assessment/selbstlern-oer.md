@@ -19,5 +19,6 @@ Aus diesen Überlegungen heraus ergeben sich einige konkrete Aufgaben, die Asses
 ## Literatur
 ```{bibliography}
 :filter: docname in docnames
+:style: plain
 ```
 [^orig-instructional]: orig. "instructional"
