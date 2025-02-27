@@ -56,5 +56,6 @@ RUN chown -R ${NB_USER} ${HOME}
 USER ${NB_UID}
 
 RUN pip install -r requirements.txt
+RUN jupyter sparqlkernel install --user
 
 WORKDIR "${HOME}"
