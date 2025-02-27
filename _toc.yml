@@ -44,6 +44,7 @@ parts:
           - file: formatierung/notebooks
           - file: formatierung/markdown-notebooks
           - file: formatierung/R-notebook.ipynb
+          - file: formatierung/SPARQL-Notebook.ipynb
       - file: formatierung/spezifische_elemente.md
         sections:
           - file: formatierung/link_in_neuem_tab
