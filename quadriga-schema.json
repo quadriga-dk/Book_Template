@@ -431,7 +431,8 @@
                         "orcid": {
                             "description": "ORCID der Autor:in als URI (https://orcid.org/XXXX-XXXX-XXXX-XXXX)",
                             "type": "string",
-                            "format": "https://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]"
+                            "format": "uri",
+                            "pattern": "^https://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$"
                         },
                         "credit": {
                             "description": "Rolle der Person nach CRediT (siehe https://credit.niso.org",
