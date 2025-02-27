@@ -6,7 +6,7 @@ lang: de-DE
 # Checkliste neue OER
 Die nachfolgende Liste können Sie nutzen, wenn Sie eine neue OER auf Basis dieses Templates erstellen. Sie bietet einen Überblick über alle Schritte und verweist jeweils auf die relevanten Kapitel und Abschnitte dieses Templates.
 
-## Git Rempositorium
+## Git Repositorium
 - [ ] Inhalte des Templates in neues Git-Repositorium überführt
   - entweder "von Hand" per Download und Kopieren der relevanten Dateien
   - in GitHub, per Template-Funktionalität
@@ -16,6 +16,7 @@ Die nachfolgende Liste können Sie nutzen, wenn Sie eine neue OER auf Basis dies
 - [ ] GitHub Pages korrekt konfiguriert
 - [ ] passende GitHub Action(s) ausgewählt
   - [ ] Action angepasst
+  - [ ] unnötige Actions gelöscht oder deaktiviert
 
 ## `_config.yml`
 - [ ] Metadaten in der Konfigurationsdatei angepasst
