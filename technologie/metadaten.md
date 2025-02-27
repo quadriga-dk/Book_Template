@@ -154,8 +154,8 @@ Liste der Vorkenntnisse, die für ein erfolgreiches bearbeiten der OER angenomme
 #### `publication-date`
 Datum der Erstveröffentlichung.
 
-#### `qm`
-Informationen zum Qualitätsmanagement (QM) werden hier hinterlegt. Diese sind eine Liste von QM-Ereignissen, welche jeweils beschrieben werden mit einer Person ([`person`](person)), dem Datum des QM-Ereignisses sowie ggf. einer Beschreibung (`description`) der durchgeführten QM-Maßnahme und ggf. deren Ergebnisse.
+#### `quality-assurance`
+Informationen zum Qualitätsmanagement (QM, engl.: quality assurance (QA)) werden hier hinterlegt. Diese sind eine Liste von QM-Ereignissen, welche jeweils beschrieben werden mit einer Person ([`person`](person)), dem Datum des QM-Ereignisses sowie ggf. einer Beschreibung (`description`) der durchgeführten QM-Maßnahme und ggf. deren Ergebnisse.
 
 #### `related-work`
 Eine Liste von Verweisen (URL, o.ä.) und jeweils einer kurzen Beschreibung zu zusätzlichen, weiterführenden Inhalten o.ä.
