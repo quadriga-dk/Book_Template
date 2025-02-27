@@ -35,14 +35,20 @@ authors:
     familyname: Islam
     credit:
       - Software
+    affiliations:
+      - Universität Potsdam
   - given-name: Evgenia
     familyname: Samoilova
     orcid: https://orcid.org/0000-0003-3858-901X
     credit:
       - Writing
       - Conceptualization
+    affiliations:
+      - Universität Potsdam
   - given-name: Hannes
     familyname: Schnaitter
+    affiliations: 
+      - Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
     orcid: https://orcid.org/0000-0002-1602-6032
     credit: 
       - Writing – original draft
@@ -54,6 +60,8 @@ authors:
     orcid: https://orcid.org/0000-0002-9236-3268
     credit:
       - Writing – review & editing
+    affiliations:
+      - Fachhochschule Potsdam
 learning-objectives:
   - learning-objective: >
       Nach durcharbeiten der OER erkennen Sie die Technologie der 
