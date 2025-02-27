@@ -29,7 +29,7 @@
     ],
     "properties": {
         "authors": {
-            "description": "Liste der Autor*innen der OER.",
+            "description": "Liste der Autor:innen der OER.",
             "type": "array",
             "minItems": 1,
             "uniqueItems": true,
@@ -429,8 +429,9 @@
                             "@id": "schema:familyName"
                         },
                         "orcid": {
-                            "description": "ORCID der Autor*in",
-                            "type": "string"
+                            "description": "ORCID der Autor:in als URI (https://orcid.org/XXXX-XXXX-XXXX-XXXX)",
+                            "type": "string",
+                            "format": "https://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]"
                         },
                         "credit": {
                             "description": "Rolle der Person nach CRediT (siehe https://credit.niso.org",
