@@ -33,4 +33,5 @@ In diesem Kapitel werden zuerst theoretische Überlegungen zu Assessment in Selb
 ## Literatur
 ```{bibliography}
 :filter: docname in docnames
+:style: plain
 ```

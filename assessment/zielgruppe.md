@@ -14,4 +14,5 @@ Zusätzlich zur Zielgruppe der Wissenschaftler:innen können die QUADRIGA OER au
 ## Literatur
 ```{bibliography}
 :filter: docname in docnames
+:style: plain
 ```

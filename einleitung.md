@@ -87,4 +87,5 @@ Die OER wird durch das Hinterwerk komplettiert, das Raum für Fragen und Feedbac
 ## Literatur
 ```{bibliography}
 :filter: docname in docnames
+:style: plain
 ```
