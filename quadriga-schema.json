@@ -101,7 +101,8 @@
                 },
                 "table-of-contents": {
                     "description": "Inhaltsverzeichnis der OER",
-                    "$ref": "#/$defs/multilingual-text"
+                    "$ref": "#/$defs/multilingual-text",
+                    "@id": "dct:tableOfContents"
                 }
             },
             "additionalProperties": false
