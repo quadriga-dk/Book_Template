@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=quadriga-schema.json
 schema-version: "1.1-beta"
-oer-version: "0.44.0"
+oer-version: "0.45.0"
 identifier: https://doi.org # TODO: DOI registrieren
 git: https://github.com/quadriga-dk/Book_Template
 url: https://quadriga-dk.github.io/Book_Template/
@@ -12,8 +12,13 @@ description:
     Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
   table-of-contents: >
     - Präambel
-    - …
-discipline: [Verwaltungswissenschaften]
+    - Struktur und didaktisches Konzept
+    - Technologie
+    - Formatierung
+    - Lernstandskontrolle (Assessment)
+    - Reflexion und Resümee
+discipline: 
+  - übergreifend
 context-of-creation: >
   Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
 
@@ -47,6 +52,9 @@ authors:
       - Universität Potsdam
   - given-name: Hannes
     familyname: Schnaitter
+    github: https://github.com/schnaitter
+    website: 
+      - https://www.ibi.hu-berlin.de/de/institut/personen/schnaitter
     affiliations:
       - Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
     orcid: https://orcid.org/0000-0002-1602-6032
