@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=quadriga-schema.json
-schema-version: "1.1b"
-oer-version: "1.0b"
+schema-version: "1.1-beta"
+oer-version: "0.43.0"
 identifier: https://doi.org # TODO: DOI registrieren
 git: https://github.com/quadriga-dk/Book_Template
 url: https://quadriga-dk.github.io/Book_Template/
