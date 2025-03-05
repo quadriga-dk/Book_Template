@@ -18,7 +18,7 @@ Die Entwicklung von QUADRIGA OERs folgt dem Prinzip des "Constructive Alignment"
 Lernziele werden in QUADRIGA hierarchisch strukturiert und prägen direkt die Struktur der Lernmaterialien:
 
 ### Groblernziele und Kapitel
-Groblernziele definieren übergeordnete Ziele und geben an, welche Fertigkeiten und Kenntnisse im Rahmen einer Fallstudie vermittelt werden sollen. Pro Fallstudie werden mindestens drei Groblernziele definiert, die jeweils ein bis mehrere Stunden Lernmaterial umfassen können.
+Groblernziele definieren übergeordnete Ziele und geben an, welche Fertigkeiten und Kenntnisse im Rahmen einer Fallstudie vermittelt werden sollen. Pro Fallstudie werden ca. drei Groblernziele definiert (Einleitungs- und Abschlusskapitel werden nicht mitgezählt), die jeweils ein bis mehrere Stunden Lernmaterial umfassen können.
 
 Beispiel: "Nach Abschluss der OER-Gruppe sind die Lernenden in der Lage, Methoden der Homogenisierung von Textdaten unter Zuhilfenahme von Jupyter Notebooks anzuwenden und die Qualität der Datensammlung anhand eines Samples zu bewerten."
 
