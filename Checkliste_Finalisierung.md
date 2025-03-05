@@ -46,6 +46,7 @@ lang: de-de
 - [ ] Live Code funktioniert wie angedacht
 
 ## Formatierung / Typographie / Design
+- [ ] Teile sollten in Kapitel geändert werden: Es erleichtert die Navigation
 - [ ] Admonitions passend genutzt
 - [ ] Externe Links sind gekennzeichnet
 - [ ] Abbildungen gut erkennbar
@@ -68,3 +69,4 @@ lang: de-de
 - [ ] Links auf externe Inhalte überprüft
 - [ ] Code-Abhängigkeiten sind so definiert, dass sie wieder installiert werden können (requirements.txt, …)
 
+ 

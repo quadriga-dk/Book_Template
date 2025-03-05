@@ -87,3 +87,4 @@ parts:
       - file: hinterwerk/authors
       - file: hinterwerk/quadriga
       - file: hinterwerk/impressum
+      - file: hinterwerk/sprints
