@@ -3,25 +3,34 @@ lang: de-de
 ---
 # Checkliste für die Finalisierung einer Fallstudie
 
-## Lernziele
-- [ ] Groblernziele
-- [ ] Feinlernziele
+## Zielgruppe & Lernziele
+- [ ] Zielgruppe und erforderliches Vorwissen
+- [ ] Groblernziele (Kapitel)
+- [ ] Feinlernziele (Section) -> Blooms Taxonomie für kognitive Lernzielformulierung verwendet
+- [ ] Geschätzter Workload pro Kapitel (1-3 Stunden) festgelegt
+- [ ] Geschätzter Workload pro Abschnitt (20-60 Minuten) festgelegt
+- [ ] Zugangswege definiert (Book-Only, Cloud, Local)
 
 ## Struktur
-- [ ] Präambel
-- [ ] Hinterwerk
 - [ ] Startseite
-  - [ ] einladende/motivierende Einleitung
-  - [ ] Beschreibung des Aufbaus der OER
-- [ ] Struktur des Inhalts beschrieben
-- [ ] Struktur dem Inhalt angemessen?
+  - [ ] Kurze Beschreibung + einladendes Bild
+  - [ ] Zielgruppe
+  - [ ] Struktur der Fallstudie + darstellendes Bild, das die Schritte der Fallstudie als Kapitel visualisiert
+  - [ ] Kurze Beschreibug aller Schritte
+  - [ ] Literatur
+- [ ] Präambel
+  - [ ] Lernziele
+  - [ ] Technische Voraussetzungen
+  - [ ] Vorkenntnisse
 - [ ] Struktur der Kapitel
   - [ ] Einleitung
+  - [ ] Inhalt
   - [ ] Resümee
+  - [ ] Assessment
+- [ ] Reflexion und Resümee
+- [ ] Epilogue
 
 ## Inhalt
-- [ ] Zielgruppe
-- [ ] Vorkenntnisse
 - [ ] Anwendungsdomain
 - [ ] Datentyp
 - [ ] Informationen über den Lebenszyklus
@@ -32,10 +41,13 @@ lang: de-de
 - [ ] Beziehungsstrukturen (zu thematisch verwandten Bildungsangeboten)
 - [ ] Möglichkeit zu Anmerkungen, Kommentierungen (z. B. durch die Zielgruppen)
 - [ ] Klassifizierung nach inhaltlichen (z. B. fachspezifischen Aspekten) und 
-- [ ] formalen Aspekten (z. B. Kompetenzniveau)
+- [ ] formalen Aspekten (z. B. Kompetenzniveau=Blooms Taxonomie=Zugangswege definiert?)
+- [ ] Fachliche Korrektheit überprüft
+- [ ] Code-Beispiele kommentiert und verständlich
+- [ ] Alle Fachbegriffe erklärt oder verlinkt
 
 ## Assessment
-- [ ] Assessment pro Kapitel
+- [ ] Assessment pro Kapitel (pro Zugangsweg?)
 - [ ] Abschlussassessment für die OER als Ganzes
 
 ## Technologie
