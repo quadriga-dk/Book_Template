@@ -11,16 +11,14 @@ chapters:
       - file: präambel/lernziele
       - file: präambel/technische_vorraussetzungen
       - file: präambel/vorkenntnisse
-  - file: struktur_didaktisches_konzept/toc
+  - file: struktur_didaktisches_konzept/einleitung
     sections:
-      - file: struktur_didaktisches_konzept/einleitung
       - file: struktur_didaktisches_konzept/didaktisches_konzept
       - file: struktur_didaktisches_konzept/struktur
       - file: struktur_didaktisches_konzept/komponenten
       - file: struktur_didaktisches_konzept/resümee
-  - file: technologie/toc
+  - file: technologie/einleitung
     sections:
-      - file: technologie/einleitung
       - file: technologie/zusammenspiel_der_tools
       - file: technologie/grafische_aufbereitung
       - file: entwicklung/einleitung
@@ -34,9 +32,8 @@ chapters:
       - file: technologie/jupyter_book_mit_gh_page
       - file: technologie/metadaten.md
       - file: technologie/resümee
-  - file: formatierung/toc
+  - file: formatierung/einleitung
     sections:
-      - file: formatierung/einleitung
       - file: formatierung/dateiformate.md
         sections:
           - file: formatierung/markdown

@@ -26,7 +26,6 @@ Mit Ihren Rückmeldungen können wir unser Jupyter Book gezielt an Ihre Bedürfn
 1. Sie verstehen das didaktische Konzept der QUADRIGA OERs und können dessen Prinzipien bei der Erstellung eigener Lernmaterialien anwenden.
 ```
 
-## Zu diesem Kapitel
 Im Rahmen des QUADRIGA-Projekts werden Open Educational Resources (OERs) entwickelt, die auf realen Forschungsfragen und Fallstudien basieren. Die didaktische Konzeption dieser OERs folgt bestimmten Prinzipien, die in diesem Kapitel vorgestellt werden.
 
 Open Educational Resources (OERs) werden gemäß der UNESCO-Empfehlung definiert als:
