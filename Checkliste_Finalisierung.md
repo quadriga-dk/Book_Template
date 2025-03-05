@@ -32,7 +32,6 @@ lang: de-de
 
 ## Inhalt
 - [ ] Möglichkeit zu Anmerkungen, Kommentierungen (z. B. durch die Zielgruppen)
-- [ ] Klassifizierung nach inhaltlichen (z. B. fachspezifischen Aspekten) und formalen Aspekten (z. B. Kompetenzniveau=Blooms Taxonomie=Zugangswege definiert?)
 - [ ] Fachliche Korrektheit überprüft
 - [ ] Code-Beispiele (wenn skriptbasierte Sprache verwendet wird) kommentiert und verständlich
 - [ ] Alle Fachbegriffe erklärt oder verlinkt
