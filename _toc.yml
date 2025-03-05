@@ -72,11 +72,11 @@ chapters:
       - file: reflexion_und_resümee/Checkliste_neue_OER.md
       - file: reflexion_und_resümee/weiterführende_hinweise
       - file: reflexion_und_resümee/resümee
-  - file: hinterwerk/toc
+  - file: epilog/toc
     sections:
-      - file: hinterwerk/fragen_und_feedback
-      - file: hinterwerk/literaturverzeichnis
-      - file: hinterwerk/authors
-      - file: hinterwerk/quadriga
-      - file: hinterwerk/impressum
-      - file: hinterwerk/sprints
+      - file: epilog/fragen_und_feedback
+      - file: epilog/literaturverzeichnis
+      - file: epilog/authors
+      - file: epilog/quadriga
+      - file: epilog/impressum
+      - file: epilog/sprints
