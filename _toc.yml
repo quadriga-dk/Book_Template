@@ -10,12 +10,14 @@ parts:
     chapters:
       - file: präambel/lernziele
       - file: präambel/technische_vorraussetzungen
+      - file: präambel/vorkenntnisse
   - caption: Struktur und didaktisches Konzept
     numbered: true
     chapters:
       - file: struktur_didaktisches_konzept/einleitung
-      - file: struktur_didaktisches_konzept/struktur
       - file: struktur_didaktisches_konzept/didaktisches_konzept
+      - file: struktur_didaktisches_konzept/struktur
+      - file: struktur_didaktisches_konzept/komponenten
       - file: struktur_didaktisches_konzept/resümee
   - caption: Technologie
     numbered: true
