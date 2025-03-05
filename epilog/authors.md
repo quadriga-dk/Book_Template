@@ -5,7 +5,7 @@ lang: de-DE
 
 ## Autor:innen der Inhalte
 
-### Hannes Schnaitter <span style="font-size:8pt">(er/ihm/sein)</span> <a href="https://orcid.org/0000-0002-1602-6032" target="_blank">![ORCID](/assets/ORCID-ID_icon_24x24.png)</a>
+### Hannes Schnaitter <span style="font-size:8pt">(er/ihm/sein)</span> <a href="https://orcid.org/0000-0002-1602-6032" target="_blank"><img src="/assets/ORCID-ID_icon_24x24.png" alt="ORCID"></a>
 
 <table style="margin-left: 0">
 <tr>
@@ -26,7 +26,7 @@ lang: de-DE
 </tr>
 </table>
 
-### Evgenia Samoilova <a href="https://orcid.org/0000-0003-3858-901X" target="_blank">![ORCID](/assets/ORCID-ID_icon_24x24.png)</a>
+### Evgenia Samoilova <a href="https://orcid.org/0000-0003-3858-901X" target="_blank"><img src="/assets/ORCID-ID_icon_24x24.png" alt="ORCID"></a>
 <table style="margin-left: 0">
 <tr>
 <td><b>Rolle in QUADRIGA:</b></td>
