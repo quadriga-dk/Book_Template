@@ -31,8 +31,6 @@ lang: de-de
 - [ ] Epilogue
 
 ## Inhalt
-- [ ] Anwendungsdomain
-- [ ] Datentyp
 - [ ] Informationen über den Lebenszyklus
 - [ ] Zugehörigkeit zu einer definierten Sammlung
 - [ ] Bildungsvoraussetzungen
