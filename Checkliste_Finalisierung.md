@@ -28,18 +28,11 @@ lang: de-de
   - [ ] Resümee
   - [ ] Assessment
 - [ ] Reflexion und Resümee
-- [ ] Epilogue
+- [ ] Epilog
 
 ## Inhalt
-- [ ] Informationen über den Lebenszyklus
-- [ ] Zugehörigkeit zu einer definierten Sammlung
-- [ ] Bildungsvoraussetzungen
-- [ ] technische Rahmenbedingungen
-- [ ] rechtliche Aspekte (z. B. bei Nachnutzung von existierenden Bildungsangeboten)
-- [ ] Beziehungsstrukturen (zu thematisch verwandten Bildungsangeboten)
 - [ ] Möglichkeit zu Anmerkungen, Kommentierungen (z. B. durch die Zielgruppen)
-- [ ] Klassifizierung nach inhaltlichen (z. B. fachspezifischen Aspekten) und 
-- [ ] formalen Aspekten (z. B. Kompetenzniveau=Blooms Taxonomie=Zugangswege definiert?)
+- [ ] Klassifizierung nach inhaltlichen (z. B. fachspezifischen Aspekten) und formalen Aspekten (z. B. Kompetenzniveau=Blooms Taxonomie=Zugangswege definiert?)
 - [ ] Fachliche Korrektheit überprüft
 - [ ] Code-Beispiele (wenn skriptbasierte Sprache verwendet wird) kommentiert und verständlich
 - [ ] Alle Fachbegriffe erklärt oder verlinkt
@@ -79,5 +72,6 @@ lang: de-de
 - [ ] Links innerhalb der Fallstudien funktionieren
 - [ ] Links auf externe Inhalte überprüft
 - [ ] Code-Abhängigkeiten sind so definiert, dass sie wieder installiert werden können (requirements.txt, …)
+- [ ] rechtliche Aspekte (z. B. bei Nachnutzung von existierenden Bildungsangeboten)
 
  
