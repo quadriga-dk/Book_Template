@@ -44,7 +44,7 @@ author: "Nachname, Vorname"
 > Konkrete Fehler und Probleme können entweder hier als Liste oder im jeweiligen GitHub-Repositorium als Issue vermerkt werden.
 
 
-## Fragen der Autor\*innen an die Reviewer\*innen
+## Fragen der Autor:innen an die Reviewer:innen
 > _(6+ Sätze)_
 
 

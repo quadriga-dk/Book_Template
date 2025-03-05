@@ -26,7 +26,7 @@
         ]
     },
     {
-        "question": "Gibt es Unterschiede zwischen <span style=\"font-family:monospace\">multiple_choice</span> und <span style=\"font-family:monospace\">many_choice</span>?",
+        "question": "Gibt es Unterschiede zwischen <> <span style=\"font-family:monospace\">multiple_choice</span> und <span style=\"font-family:monospace\">many_choice</span>?",
         "type": "many_choice",
         "answers": [
             {

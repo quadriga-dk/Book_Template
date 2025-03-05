@@ -9,4 +9,5 @@ Es wird bei jedem Assessment festgelegt, ob und inwieweit eine Unterstützung du
 ## Literatur
 ```{bibliography}
 :filter: docname in docnames
+:style: plain
 ```

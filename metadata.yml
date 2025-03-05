@@ -1,0 +1,148 @@
+# yaml-language-server: $schema=quadriga-schema.json
+schema-version: "1.1-beta"
+oer-version: "0.45.0"
+identifier: https://doi.org # TODO: DOI registrieren
+git: https://github.com/quadriga-dk/Book_Template
+url: https://quadriga-dk.github.io/Book_Template/
+title: OER Template
+description:
+  introduction: >
+    Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
+    für Nutzer:innen der OERs und dient gleichzeitig als Template für die
+    Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+  table-of-contents: >
+    - Präambel
+    - Struktur und didaktisches Konzept
+    - Technologie
+    - Formatierung
+    - Lernstandskontrolle (Assessment)
+    - Reflexion und Resümee
+discipline: 
+  - übergreifend
+context-of-creation: >
+  Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
+
+  Förderkennzeichen: 16DKZ1034
+date-of-last-change: 2025-02-14
+publication-date: 2024-05-06
+duration: 10h
+has-predecessor: false
+has-successor: false
+target-group:
+  - "Forschende (PostDoc)"
+  - "Forschende (Projektleitung)"
+  - "Promovierende"
+  - "Hochschullehrende"
+type-of-research-object:
+  - übergreifend
+authors:
+  - given-name: Lamia
+    familyname: Islam
+    credit:
+      - Software
+    affiliations:
+      - Universität Potsdam
+  - given-name: Evgenia
+    familyname: Samoilova
+    orcid: https://orcid.org/0000-0003-3858-901X
+    credit:
+      - Writing
+      - Conceptualization
+    affiliations:
+      - Universität Potsdam
+  - given-name: Hannes
+    familyname: Schnaitter
+    github: https://github.com/schnaitter
+    website: 
+      - https://www.ibi.hu-berlin.de/de/institut/personen/schnaitter
+    affiliations:
+      - Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
+    orcid: https://orcid.org/0000-0002-1602-6032
+    credit:
+      - Writing – original draft
+      - Writing – review & editing
+      - Software
+      - Conceptualization
+  - given-name: Paul
+    familyname: Walter
+    orcid: https://orcid.org/0000-0002-9236-3268
+    credit:
+      - Writing – review & editing
+    affiliations:
+      - Fachhochschule Potsdam
+learning-objectives:
+  - learning-objective: >
+      Nach durcharbeiten der OER erkennen Sie die Technologie der 
+      QUADRIGA OERS, können diese in groben Zügen wiedergeben und können bei der
+      Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
+    competency: 1 Basiskompetenz # TODO: korrigieren
+    data-flow: Grundlagen # TODO: korrigieren
+    blooms-category: 1 Remember
+  - learning-objective: >
+      Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA
+      OER anpassen und diese erweitern.
+    competency: 1 Basiskompetenz # TODO: korrigieren
+    data-flow: Grundlagen # TODO: korrigieren
+    blooms-category: 3 Apply
+  - learning-objective:
+      de: >
+        Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template
+        selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
+    competency: 1 Basiskompetenz # TODO: korrigieren
+    data-flow: Grundlagen # TODO: korrigieren
+    blooms-category: 6 Create
+chapters:
+  - title: Präambel
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
+        blooms-category: 1 Remember
+  - title: Struktur und didaktisches Konzept
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
+        blooms-category: 1 Remember
+  - title: Technologie
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
+        blooms-category: 1 Remember
+  - title: Formatierung
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
+        blooms-category: 1 Remember
+  - title: Lernstandskontrolle (Assessment)
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
+        blooms-category: 1 Remember
+  - title: Reflexion und Resümee
+    description: TODO
+    url: TODO
+    doi: TODO
+    learning-objectives:
+      - learning-objective: test
+        competency: 1 Basiskompetenz # TODO: korrigieren
+        data-flow: Grundlagen # TODO: korrigieren
+        blooms-category: 1 Remember

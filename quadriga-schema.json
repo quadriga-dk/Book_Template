@@ -1,0 +1,471 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "tag:quadriga-dk.de,2025:quadriga",
+    "title": "QUADRIGA OER",
+    "description": "Eine OER, die nach dem QUADRIGA-Metadatenschema beschrieben wird.",
+    "@context": {
+        "dct": "http://purl.org/dc/terms/",
+        "schema": "http://schema.org/"
+    },
+    "type": "object",
+    "required": [
+        "authors",
+        "chapters",
+        "context-of-creation",
+        "date-of-last-change",
+        "description",
+        "discipline",
+        "duration",
+        "has-predecessor",
+        "has-successor",
+        "identifier",
+        "learning-objectives",
+        "oer-version",
+        "publication-date",
+        "schema-version",
+        "target-group",
+        "title",
+        "type-of-research-object"
+    ],
+    "properties": {
+        "authors": {
+            "description": "Liste der Autor:innen der OER.",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "$ref": "#/$defs/person",
+                "@id": "dct:author"
+            }
+        },
+        "chapters": {
+            "description": "Liste der Kapitel.",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "required": [
+                    "title",
+                    "description",
+                    "learning-objectives"
+                ],
+                "properties": {
+                    "title": {
+                        "description": "Kapitelüberschrift",
+                        "$ref": "#/$defs/multilingual-text"
+                    },
+                    "doi": {
+                        "description": "DOI zum direkten Zitieren des Kapitels",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "description": {
+                        "description": "Beschreibung des Kapitelinhalts.",
+                        "$ref": "#/$defs/multilingual-text"
+                    },
+                    "url": {
+                        "description": "URL zum direkten Zugriff auf das Kapitel",
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "learning-objectives": {
+                        "description": "Liste der Feinlernziele des Kapitels",
+                        "$ref": "#/$defs/learning-objectives"
+                    }
+                }
+            }
+        },
+        "context-of-creation": {
+            "description": "Verweis auf QUADRIGA",
+            "$ref": "#/$defs/multilingual-text"
+        },
+        "date-of-last-change": {
+            "type": "string",
+            "format": "date",
+            "description": "Datum der letzten (großen, inhaltlich umfangreichen) Änderung. Sollte immer mit einer Versionsänderung einhergehen.",
+            "@id": "dct:modified"
+        },
+        "description": {
+            "description": "Beschreibung der OER",
+            "type": "object",
+            "@id": "dct:description",
+            "required": [
+                "introduction",
+                "table-of-contents"
+            ],
+            "properties": {
+                "introduction": {
+                    "description": "Einleitung der OER",
+                    "$ref": "#/$defs/multilingual-text"
+                },
+                "table-of-contents": {
+                    "description": "Inhaltsverzeichnis der OER",
+                    "$ref": "#/$defs/multilingual-text",
+                    "@id": "dct:tableOfContents"
+                }
+            },
+            "additionalProperties": false
+        },
+        "discipline": {
+            "description": "Nennung der Disziplinen, die bei der Erstellung der OER im Fokus standen.",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 5,
+            "items": {
+                "enum": [
+                    "Verwaltungswissenschaften",
+                    "Digital Humanities",
+                    "Informatik",
+                    "Informationswissenschaft",
+                    "übergreifend"
+                ]
+            }
+        },
+        "duration": {
+            "description": "Angedachte Bearbeitungsdauer für Lernende.",
+            "type": "string",
+            "format": "duration",
+            "@id": "schema:timeRequired"
+        },
+        "git": {
+            "description": "Git-Repositorium, in dem die OER-Inhalte zu finden sind.",
+            "type": "string",
+            "format": "uri",
+            "@id": "schema:codeRepository"
+        },
+        "has-predecessor": {
+            "oneOf": [
+                {
+                    "enum": [
+                        false
+                    ]
+                },
+                {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link zum Vorgänger"
+                }
+            ],
+            "@id": "dct:relation"
+        },
+        "has-successor": {
+            "oneOf": [
+                {
+                    "enum": [
+                        false
+                    ]
+                },
+                {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link zum Vorgänger"
+                }
+            ],
+            "@id": "dct:relation"
+        },
+        "identifier": {
+            "description": "Eindeutiger Identifier in Form einer DOI. Die DOI identifiziert die gesamte OER.",
+            "type": "string",
+            "format": "uri",
+            "@id": "dct:identifier"
+        },
+        "keywords": {
+            "description": "Liste von Schlag-/Stichwörtern",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "description": "Ein Schlag-/Stichwort; als (ggf. mehrsprachiger) Text oder als URI",
+                "oneOf": [
+                    {
+                        "$ref": "#/$defs/multilingual-text"
+                    },
+                    {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                ],
+                "@id": "dct:subject"
+            }
+        },
+        "language": {
+            "description": "Sprache der OER als ISO639-1 Sprachcode",
+            "type": "string",
+            "@id": "dct:language"
+        },
+        "learning-objectives": {
+            "description": "Groblernziele der OER",
+            "$ref": "#/$defs/learning-objectives"
+        },
+        "license": {
+            "@id": "dct:license",
+            "description": "Lizenz der OER als URL",
+            "format": "uri",
+            "type": "string"
+        },
+        "oer-version": {
+            "description": "Version der OER",
+            "$ref": "#/$defs/semver"
+        },
+        "prerequesites": {
+            "description": "Liste von Voraussetzungen",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "description": "Eine Voraussetzung",
+                "$ref": "#/$defs/multilingual-text"
+            }
+        },
+        "publication-date": {
+            "type": "string",
+            "format": "date",
+            "@id": "dct:issued"
+        },
+        "quality-assurance": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "person",
+                    "date"
+                ],
+                "properties": {
+                    "person": {
+                        "$ref": "#/$defs/person"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "description": {
+                        "$ref": "#/$defs/multilingual-text"
+                    }
+                }
+            }
+        },
+        "related-works": {
+            "description": "Eine Liste von Verweisen und jeweils einer kurzen Beschreibung zu zusätzlichen, weiterführenden Inhalten o.ä.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "link",
+                    "description"
+                ],
+                "properties": {
+                    "description": {
+                        "description": "Beschreibung des verlinkten Werks und dessen Beziehung zur OER",
+                        "$ref": "#/$defs/multilingual-text"
+                    },
+                    "link": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "schema-version": {
+            "description": "Versionsnummer des QUADRIGA-Metadatenschemas",
+            "enum": [
+                "1.1",
+                "1.1-beta"
+            ]
+        },
+        "target-group": {
+            "description": "Zielgruppe",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "enum": [
+                    "Forschende (PostDoc)",
+                    "Forschende (Projektleitung)",
+                    "Promovierende",
+                    "Hochschullehrende"
+                ]
+            },
+            "@id": "dct:audience"
+        },
+        "title": {
+            "description": "Titel der OER",
+            "type": "string",
+            "@id": "dct:title"
+        },
+        "type-of-learning-resource": {
+            "enum": [
+                "Jupyter Book"
+            ]
+        },
+        "type-of-research-object": {
+            "description": "Nennung des Datentyps, der vorrangig in der OER behandelt wird.",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {
+                "enum": [
+                    "Text",
+                    "Tabelle",
+                    "Bewegtes Bild",
+                    "übergreifend"
+                ]
+            }
+        },
+        "url": {
+            "description": "URL der gesamten OER",
+            "type": "string",
+            "format": "uri"
+        },
+        "used-tools": {
+            "$comment": "TODO"
+        }
+    },
+    "additionalProperties": false,
+    "$defs": {
+        "learning-objectives": {
+            "description": "Eine Liste von Lernzielen.",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "required": [
+                    "learning-objective",
+                    "competency",
+                    "data-flow",
+                    "blooms-category"
+                ],
+                "properties": {
+                    "learning-objective": {
+                        "description": "Formulierung des Lernziels",
+                        "$ref": "#/$defs/multilingual-text"
+                    },
+                    "competency": {
+                        "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework",
+                        "enum": [
+                            "1 Basiskompetenz",
+                            "2 Identifikation",
+                            "3 Qualitätssicherung",
+                            "4 Ethik und Recht",
+                            "5 Erhebung",
+                            "6 Validierung",
+                            "7 Aufbereitung",
+                            "8 Management",
+                            "9 Erschließung",
+                            "10 Datenanalyse",
+                            "11 Visualisierung",
+                            "12 Interpretation",
+                            "13 Aufbereitung",
+                            "14 Datenpublikation",
+                            "15 Kommunikation"
+                        ]
+                    },
+                    "data-flow": {
+                        "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework",
+                        "enum": [
+                            "Grundlagen",
+                            "Planung",
+                            "Erhebung und Aufbereitung",
+                            "Management",
+                            "Analyse",
+                            "Publikation und Nachnutzung"
+                        ]
+                    },
+                    "blooms-category": {
+                        "description": "Kategorie aus der Bloomschen Taxonomie.",
+                        "enum": [
+                            "1 Remember",
+                            "2 Understand",
+                            "3 Apply",
+                            "4 Analyze",
+                            "5 Evaluate",
+                            "6 Create"
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "multilingual-text": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "description": "Sollen Metadaten mehrsprachig definiert werden, so wird als Key der Sprachcode nach ISO639-1 verwendet.",
+                    "type": "object",
+                    "patternProperties": {
+                        "^[a-z][a-z]$": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            ]
+        },
+        "person": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "description": "Vollständiger Name der Person"
+                },
+                {
+                    "description": "Strukturierte Angabe der Person bestehend mindestens aus Vor- und Nachname",
+                    "$comment": "Andere Schlüssel können nach Bedarf angelegt werden.",
+                    "type": "object",
+                    "required": [
+                        "given-name",
+                        "familyname"
+                    ],
+                    "properties": {
+                        "given-name": {
+                            "description": "Vorname der Person",
+                            "type": "string",
+                            "@id": "schema:givenName"
+                        },
+                        "familyname": {
+                            "description": "Nachname der Person",
+                            "type": "string",
+                            "@id": "schema:familyName"
+                        },
+                        "orcid": {
+                            "description": "ORCID der Autor:in als URI (https://orcid.org/XXXX-XXXX-XXXX-XXXX)",
+                            "type": "string",
+                            "format": "uri",
+                            "pattern": "^https://orcid.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$"
+                        },
+                        "credit": {
+                            "description": "Rolle der Person nach CRediT (siehe https://credit.niso.org",
+                            "type": "array",
+                            "items": {
+                                "enum": [
+                                    "Conceptualization",
+                                    "Data curation",
+                                    "Formal analysis",
+                                    "Funding acquisition",
+                                    "Investigation",
+                                    "Methodology",
+                                    "Project administration",
+                                    "Software",
+                                    "Resources",
+                                    "Supervision",
+                                    "Validation",
+                                    "Visualization",
+                                    "Writing",
+                                    "Writing – original draft",
+                                    "Writing – review & editing"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": true
+                }
+            ]
+        },
+        "semver": {
+            "type": "string",
+            "description": "Semantic Versioning 2.0.0 (https://semver.org)",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+        }
+    }
+}

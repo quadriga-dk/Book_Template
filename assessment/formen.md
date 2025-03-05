@@ -77,4 +77,5 @@ Bei affektiven Lernzielen ergibt sich ein ähnliches Bild, sodass die ersten Stu
 ## Literatur
 ```{bibliography}
 :filter: docname in docnames
+:style: plain
 ```

@@ -2,8 +2,8 @@
 lang: de-DE
 ---
 
-(technologie:einführung)=
-# Einführung
+(technologie:einleitung)=
+# Einleitung
 
 ````{margin}
 ```{admonition} Fragen oder Feedback 

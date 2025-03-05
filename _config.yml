@@ -5,12 +5,12 @@ title: Template Book
 author: Hannes Schnaitter, Evgenia Samoilova, Lamia Islam
 logo: assets/logo.jpg
 copyright: "2024, QUADRIGA"
-exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", conda, venv, README.md, LICENSE.md, useful_documentation.md, .github, "**Reviewbogen.md"]
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", conda, venv, README.md, LICENSE.md, useful_documentation.md, .github, "**Reviewbogen.md", Checkliste_Finalisierung.md]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: cache
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -31,6 +31,7 @@ launch_buttons:
   notebook_interface: jupyterlab # remove if you don't want to use binder
   binderhub_url: https://mybinder.org # remove if you don't want to use binder
   colab_url: https://colab.research.google.com
+  thebe: true
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -43,6 +44,7 @@ html:
 
 sphinx:
   config:
+    bibtex_reference_style: author_year
     html_show_copyright: false
     html_static_path: ['_static']
     html_css_files:

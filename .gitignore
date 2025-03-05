@@ -4,3 +4,5 @@ __pycache__
 quadriga1/
 venv/
 **/.DS_Store
+.vscode
+**/.ipynb_checkpoints
