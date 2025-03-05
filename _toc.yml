@@ -4,7 +4,7 @@
 format: jb-book
 root: einleitung
 options:
-  numbered: true
+  numbered: 3
 chapters:
   - file: präambel/toc
     sections:
