@@ -10,6 +10,7 @@ parts:
     chapters:
       - file: präambel/lernziele
       - file: präambel/technische_vorraussetzungen
+      - file: präambel/vorkenntnisse
   - caption: Struktur und didaktisches Konzept
     numbered: true
     chapters:
