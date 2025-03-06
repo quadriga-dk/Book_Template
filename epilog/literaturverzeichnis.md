@@ -6,7 +6,7 @@
 ```{literalinclude} ../CITATION.bib
 :language: bibtex
 ```
-Schnaitter, H., Samoilova, E. & Islam, L. (2024). _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://doi.org/10.5281/zenodo.14970672
+Schnaitter, H., Samoilova, E. & Islam, L. (2024). _QUADRIGA OERs: erstellen und gestalten mit interaktives Lehrbuch. QUADRIGA Open Educational Ressources: Template._ https://doi.org/10.5281/zenodo.14970672
 
 ````
 `````
