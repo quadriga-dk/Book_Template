@@ -5,10 +5,8 @@ abstract: >-
   Dieses Buch ist einerseits ein Template für die Erstellung von OERs nach den
   Empfehlungen von [QUADRIGA](https://quadriga-dk.de) und andererseits eine OER
   für die Entwicklung von OERs entsprechend der QUADRIGA Empfehlungen.
-message: >-
-  If you use this software, please cite it using the
-  metadata from this file.
 type: software
+message: "Please cite this software using the metadata from 'preferred-citation'."
 authors:
   - given-names: Hannes
     family-names: Schnaitter
