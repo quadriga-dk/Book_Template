@@ -3,7 +3,7 @@ lang: de-DE
 ---
 
 (struktur:einleitung)=
-# Einleitung
+# Struktur und didaktisches Konzept
 
 ````{margin}
 ```{admonition} Fragen oder Feedback 
