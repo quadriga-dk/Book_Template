@@ -39,6 +39,7 @@ references:
       - name: The Jupyter Book Community
         website: https://github.com/jupyter-book/jupyter-book/graphs/contributors
 preferred-citation:
+  year: 2024
   authors:
     - given-names: Hannes
       family-names: Schnaitter
@@ -57,3 +58,4 @@ preferred-citation:
   type: book
   doi: 10.5281/zenodo.14970672
   url: 'https://quadriga-dk.github.io/Book_Template/'
+  repository-code: 'https://github.com/quadriga-dk/Book_Template'
