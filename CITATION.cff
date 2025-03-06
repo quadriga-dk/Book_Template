@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: 1.2.0
 title: Book Template
 abstract: >-
@@ -37,3 +38,22 @@ references:
     authors: 
       - name: The Jupyter Book Community
         website: https://github.com/jupyter-book/jupyter-book/graphs/contributors
+preferred-citation:
+  authors:
+    - given-names: Hannes
+      family-names: Schnaitter
+      orcid: 'https://orcid.org/0000-0002-1602-6032'
+      affiliation: >-
+        Humboldt-Universität zu Berlin, Institut für
+        Bibliotheks- und Informationswissenschaft
+    - given-names: Evgenia
+      family-names: Samoilova
+      orcid: 'https://orcid.org/0000-0003-3858-901X'
+      affiliation: Universität Potsdam
+    - given-names: Lamia
+      family-names: Islam
+      affiliation: Universität Potsdam
+  title: "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template"
+  type: book
+  doi: 10.5281/zenodo.14970672
+  url: 'https://quadriga-dk.github.io/Book_Template/'
