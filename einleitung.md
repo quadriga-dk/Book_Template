@@ -22,7 +22,7 @@ Mit Ihren Rückmeldungen können wir unser Jupyter Book gezielt an Ihre Bedürfn
 `````{margin}
 ````{admonition} Zitierhinweis
 :class: citation-information
-```{literalinclude} ../CITATION.bib
+```{literalinclude} /CITATION.bib
 :language: bibtex
 ```
 Schnaitter, H., Samoilova, E. & Islam, L. (2024). _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://doi.org/10.5281/zenodo.14970672
