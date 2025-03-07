@@ -33,7 +33,7 @@ Ein Beispiel für diesen fallstudienbasierten Ansatz ist die QUADRIGA-Fallstudie
 
 QUADRIGA OERs berücksichtigen die unterschiedlichen Voraussetzungen und Bedürfnisse der Lernenden durch flexible Zugangswege und Interaktionsmöglichkeiten. Je nach Fallstudie und den damit verbundenen Datenkompetenzen bieten wir verschiedene Zugangsebenen an:
 
-📘 Book-Only Mode: Im Browser lesen Sie unser Jupyter Book mit eingeschränkten Interaktionsmöglichkeiten. Dieser Modus erfordert keine Programmierkenntnisse oder Erfahrung mit Jupyter Notebooks und eignet sich für einen ersten Überblick oder wenn der Fokus auf konzeptuellem Verständnis liegt.
+📘 Book-Only Mode: Im Browser lesen Sie unser interaktives Lehrbuch mit eingeschränkten Interaktionsmöglichkeiten. Dieser Modus erfordert keine Programmierkenntnisse oder Erfahrung mit Jupyter Notebooks und eignet sich für einen ersten Überblick oder wenn der Fokus auf konzeptuellem Verständnis liegt.
 🌨️ Cloud Mode: Ausführen und Anpassen der enthaltenen Jupyter Notebooks über Google Colab oder Binder. Kapitel mit ausführbaren Notebooks sind durch ein Raketen-Symbol (🚀) gekennzeichnet - klicken Sie darauf, um das Notebook in der Cloud zu öffnen. Dies ermöglicht praktisches Arbeiten ohne lokale Installation.
 💻 Local Mode: Herunterladen der Jupyter Notebooks auf Ihren Computer zur lokalen Ausführung (z.B. im Anaconda Navigator). Dieser Modus ermöglicht die Nutzung lokaler Daten und umfassende Anpassungen für fortgeschrittene Anwendungsfälle.
 
@@ -50,7 +50,7 @@ Aktives Lernen und Problemorientierung
 
 QUADRIGA OERs fördern aktives Lernen, indem sie:
 
-- Lernenden Kontrolle über ihre Lernerfahrung geben (Selbstnavigation durch das Jupyter Book)
+- Lernenden Kontrolle über ihre Lernerfahrung geben (Selbstnavigation durch das interaktives Lehrbuch)
 - interaktive Aktivitäten mit direktem Feedback anbieten (ausführbare Code-Beispiele)
 - Reflexionsprozesse anregen (Diskussionsfragen und Vergleich verschiedener Lösungsansätze)
 - selbstgesteuertes Lernen ermöglichen (flexible Lernpfade und direkter Zugang zu Ressourcen)
