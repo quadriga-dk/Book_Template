@@ -6,7 +6,7 @@ abstract: >-
   Empfehlungen von [QUADRIGA](https://quadriga-dk.de) und andererseits eine OER
   für die Entwicklung von OERs entsprechend der QUADRIGA Empfehlungen.
 type: software
-message: "Please cite this software using the metadata from 'preferred-citation'."
+message: "Please cite this software using the metadata from 'preferred-citation' 'in CITATION.cff'."
 authors:
   - given-names: Hannes
     family-names: Schnaitter
