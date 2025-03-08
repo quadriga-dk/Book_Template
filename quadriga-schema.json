@@ -332,8 +332,7 @@
                 "required": [
                     "learning-objective",
                     "competency",
-                    "data-flow",
-                    "blooms-category"
+                    "data-flow"
                 ],
                 "properties": {
                     "learning-objective": {

@@ -1,6 +1,6 @@
-# QUADRIGA OER Template
+# QUADRIGA OERs: erstellen und gestalten mit Jupyter Book – QUADRIGA Open Educational Ressources: Template
 
-<a href="https://doi.org/10.5281/zenodo.14970672" target="_blank"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.14970672.svg" alt="DOI: 10.5281/zenodo.14970672"></a>
+[![DOI](https://zenodo.org/badge/796588109.svg)](https://doi.org/10.5281/zenodo.14970672)
 
 Dieses Repositorium dient als Vorlage für <a href="https://www.quadriga-dk.de" class="external-link" target="_blank">QUADRIGA</a> OERs, die mit <a href="https://jupyterbook.org" class="external-link" target="_blank">Jupyter Book</a> geschrieben werden.
 

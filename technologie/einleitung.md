@@ -3,7 +3,7 @@ lang: de-DE
 ---
 
 (technologie:einleitung)=
-# Einleitung
+# Technologie
 
 ````{margin}
 ```{admonition} Fragen oder Feedback 

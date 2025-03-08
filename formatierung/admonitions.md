@@ -93,16 +93,11 @@ Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden
 
 ``````{admonition} Zitierhinweis
 :class: citation-information
+```{literalinclude} ../CITATION.bib
+:language: bibtex
+
+```
 ```bibtex
-@book{schnaitter_OER_Template_2024,
-    address = {Potsdam; Berlin},
-    title = {{QUADRIGA} {OERs}: erstellen und gestalten mit {Jupyter Book}. {QUADRIGA} {Open} {Educational} {Ressources}: {Template}.},
-    copyright = {CC-BY-SA 4.0},
-    url = {[DOI-Link](https://quadriga-dk.github.io/Book_Template/)},
-    language = {deu},
-    author = {Schnaitter, Hannes and Samoilova, Evgenia and Islam, Lamia},
-    year = {2024},
-}
 @incollection{schnaitter_technologie_2024,
     address = {Potsdam; Berlin},
     title = {Technologie},
@@ -119,19 +114,11 @@ Schnaitter, H., Samoilova, E. & Islam, L. (2024). Technologie In _QUADRIGA OERs:
 `````
 ````{admonition} Zitierhinweis
 :class: citation-information
-```bibtex
-@book{Schnaitter_OER_Template_2024,
-    address = {Potsdam; Berlin},
-    title = {{QUADRIGA} {OERs}: erstellen und gestalten mit {Jupyter Book}. {QUADRIGA} {Open} {Educational} {Ressources}: {Template}.},
-    copyright = {CC-BY-SA 4.0},
-    url = {[DOI-Link](https://quadriga-dk.github.io/Book_Template/)},
-    language = {deu},
-    author = {Schnaitter, Hannes and Samoilova, Evgenia and Islam, Lamia},
-    year = {2024},
-}
-```
-Schnaitter, H., Samoilova, E. & Islam, L. (2024). _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/
+```{literalinclude} ../CITATION.bib
+:language: bibtex
 
+```
+Schnaitter, H., Samoilova, E. & Islam, L. (2024). _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://doi.org/10.5281/zenodo.14970672
 ````
 `````
 ``````
