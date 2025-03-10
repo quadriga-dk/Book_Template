@@ -1,2 +1,2 @@
-# packages <- c("tidyverse")
-# pak::pak(packages)
+packages <- c("tidyverse")
+pak::pak(packages)
