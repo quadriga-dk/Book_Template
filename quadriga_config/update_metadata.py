@@ -39,7 +39,7 @@ def update_metadata():
 
     # Save updated metadata.yml
     with open('metadata.yml', 'w') as f:
-        f.write("# yaml-language-server: $schema=quadriga-schema.json")
+        f.write("# yaml-language-server: $schema=quadriga-schema.json\n")
         yaml.dump(metadata, f, sort_keys=False, default_flow_style=False)
 if __name__ == "__main__":
     update_metadata()
