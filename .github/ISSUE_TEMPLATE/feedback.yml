@@ -14,7 +14,7 @@ body:
     attributes:
       label: Abschnitt/Modul
       description: Auf welchen Teil der Fallstudie bezieht sich Ihr Feedback?
-      placeholder: "z.B. Kapitel B, Abschnitt 2, gesamtes Jupyter Book"
+      placeholder: "z.B. Kapitel B, Abschnitt 2, gesamtes interaktives Lehrbuch"
     validations:
       required: false
 
