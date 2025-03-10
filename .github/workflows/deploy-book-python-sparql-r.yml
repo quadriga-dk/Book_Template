@@ -32,6 +32,12 @@ jobs:
           
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
+    - uses: r-lib/actions/setup-r-dependencies@v2
+      with:
+        cache-version: 1
+        extra-packages: |
+          any::IRkernel
+          any::tidyverse
     
     - name: Cache R packages
       uses: actions/cache@v3
@@ -43,14 +49,14 @@ jobs:
     - name: Install R packages
       run: |
         # Use binary packages and RSPM for faster installation
-        Rscript -e 'options(repos = c(RSPM = "https://packagemanager.rstudio.com/all/__linux__/focal/latest", CRAN = "https://cloud.r-project.org"))'
-        Rscript -e 'options(install.packages.check.source = "no")'  # Prefer binaries
-        Rscript -e 'install.packages("IRkernel", dependencies=TRUE)'
+        #Rscript -e 'options(repos = c(RSPM = "https://packagemanager.rstudio.com/all/__linux__/focal/latest", CRAN = "https://cloud.r-project.org"))'
+        #Rscript -e 'options(install.packages.check.source = "no")'  # Prefer binaries
+        #Rscript -e 'install.packages("IRkernel", dependencies=TRUE)'
         Rscript -e 'IRkernel::installspec(name="ir", displayname="R")'
     
-    - name: Install R_requirements
-      run: |
-        Rscript install_dependencies.R
+    #- name: Install R_requirements
+    #  run: |
+    #    Rscript install_dependencies.R
 
     - name: Install SPARQL kernel
       run: |
