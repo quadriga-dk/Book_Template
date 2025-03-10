@@ -43,9 +43,9 @@ jobs:
         Rscript -e 'install.packages("IRkernel", dependencies=TRUE)'
         Rscript -e 'IRkernel::installspec(name="ir", displayname="R")'
     
-    # - name: Install R_requirements
-    #   run: |
-    #     Rscript install_dependencies.R
+    - name: Install R_requirements
+      run: |
+        Rscript install_dependencies.R
 
     - name: Install SPARQL kernel
       run: |
