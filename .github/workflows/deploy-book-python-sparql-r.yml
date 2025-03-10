@@ -40,13 +40,16 @@ jobs:
         key: ${{ runner.os }}-r-${{ hashFiles('**/renv.lock') }}
         restore-keys: ${{ runner.os }}-r-
 
-    - name: Install R packages
+    - name: Install pak
       run: |
-        # Use binary packages and RSPM for faster installation
-        Rscript -e 'options(repos = c(RSPM = "https://packagemanager.rstudio.com/all/__linux__/focal/latest", CRAN = "https://cloud.r-project.org"))'
-        Rscript -e 'options(install.packages.check.source = "no")'  # Prefer binaries
-        Rscript -e 'install.packages("IRkernel", dependencies=TRUE)'
-        Rscript -e 'IRkernel::installspec(name="ir", displayname="R")'
+        install.packages("pak", repos = "https://r-lib.github.io/p/pak/devel/")
+        pak::pkg_install("tidyverse")
+      shell: Rscript {0}
+    - name: Install IRkernel
+      run: |
+        pak::pkg_install("IRkernel")
+        IRkernel::installspec(name="ir", displayname="R")
+      shell: Rscript {0}
     
     - name: Install R_requirements
       run: |
