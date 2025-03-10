@@ -6,6 +6,7 @@ root: einleitung
 options:
   numbered: 3
 chapters:
+  - file: create_learning_obj
   - file: präambel/toc
     sections:
       - file: präambel/lernziele
