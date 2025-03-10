@@ -7,15 +7,23 @@ url: https://quadriga-dk.github.io/Book_Template/
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Ressources: Template'
 description:
-  introduction: "Diese OER f\xFChrt in die Erstellung von QUADRIGA-OERs ein, bietet\
-    \ Inhalte f\xFCr Nutzer:innen der OERs und dient gleichzeitig als Template f\xFC\
-    r die Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.\n"
-  table-of-contents: "- Pr\xE4ambel - Struktur und didaktisches Konzept - Technologie\
-    \ - Formatierung - Lernstandskontrolle (Assessment) - Reflexion und Res\xFCmee\n"
+  introduction: 'Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
+    für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung
+    eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+
+    '
+  table-of-contents: '- Präambel - Struktur und didaktisches Konzept - Technologie
+    - Formatierung - Lernstandskontrolle (Assessment) - Reflexion und Resümee
+
+    '
 discipline:
-- "\xFCbergreifend"
-context-of-creation: "Die vorliegenden Open Educational Resources wurden durch das\
-  \ Datenkompetenzzentrum QUADRIGA erstellt.\nF\xF6rderkennzeichen: 16DKZ1034\n"
+- übergreifend
+context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
+  Datenkompetenzzentrum QUADRIGA erstellt.
+
+  Förderkennzeichen: 16DKZ1034
+
+  '
 date-of-last-change: 2025-02-14
 publication-date: 2024-05-06
 duration: 10h
@@ -27,42 +35,48 @@ target-group:
 - Promovierende
 - Hochschullehrende
 type-of-research-object:
-- "\xFCbergreifend"
+- übergreifend
 authors:
 - given-name: Hannes
   familyname: Schnaitter
   orcid: https://orcid.org/0000-0002-1602-6032
   affiliations:
-  - "Humboldt-Universit\xE4t zu Berlin, Institut f\xFCr Bibliotheks- und Informationswissenschaft"
+  - Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
 - given-name: Evgenia
   familyname: Samoilova
   orcid: https://orcid.org/0000-0003-3858-901X
   affiliations:
-  - "Universit\xE4t Potsdam"
+  - Universität Potsdam
 - given-name: Lamia
   familyname: Islam
   affiliations:
-  - "Universit\xE4t Potsdam"
+  - Universität Potsdam
 learning-objectives:
-- learning-objective: "Nach durcharbeiten der OER erkennen Sie die Technologie der\
-    \  QUADRIGA OERS, k\xF6nnen diese in groben Z\xFCgen wiedergeben und k\xF6nnen\
-    \ bei der Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.\n"
+- learning-objective: 'Nach durcharbeiten der OER erkennen Sie die Technologie der  QUADRIGA
+    OERS, können diese in groben Zügen wiedergeben und können bei der Arbeit mit der
+    OER auftretende Fehler den jeweiligen Komponenten zuordnen.
+
+    '
   competency: 1 Basiskompetenz
   data-flow: Grundlagen
   blooms-category: 1 Remember
-- learning-objective: "Nach durcharbeiten der OER k\xF6nnen Sie selbst Inhalte in\
-    \ einer QUADRIGA OER anpassen und diese erweitern.\n"
+- learning-objective: 'Nach durcharbeiten der OER können Sie selbst Inhalte in einer
+    QUADRIGA OER anpassen und diese erweitern.
+
+    '
   competency: 1 Basiskompetenz
   data-flow: Grundlagen
   blooms-category: 3 Apply
 - learning-objective:
-    de: "Nach durcharbeiten der OER k\xF6nnen Sie ausgehend von diesem OER-Template\
-      \ selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.\n"
+    de: 'Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst
+      vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
+
+      '
   competency: 1 Basiskompetenz
   data-flow: Grundlagen
   blooms-category: 6 Create
 chapters:
-- title: "Pr\xE4ambel"
+- title: Präambel
   description: TODO
   url: TODO
   doi: TODO
@@ -107,7 +121,7 @@ chapters:
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
     blooms-category: 1 Remember
-- title: "Reflexion und Res\xFCmee"
+- title: Reflexion und Resümee
   description: TODO
   url: TODO
   doi: TODO
