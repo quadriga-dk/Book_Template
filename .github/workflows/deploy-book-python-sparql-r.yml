@@ -15,6 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+   
+    - name: Install libcurl for R pak
+      run: |
+        sudo apt-get install -y --no-install-recommends libcurl4-openssl-dev
+
     - name: Set up Python 3.11
       uses: actions/setup-python@v5
       with:
