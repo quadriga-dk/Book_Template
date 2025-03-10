@@ -1,9 +1,12 @@
 name: Deploy book with Python, SPARQL, and R
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Update Metadata"]
+    types:
+      - completed
     branches:
-    - main
+      - main
   workflow_dispatch:
 
 # This job installs dependencies, builds the book, and deploys it to GitHub Pages
