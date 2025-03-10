@@ -38,7 +38,7 @@ jobs:
       with:
         path: ${{ env.R_LIBS_USER }}
         key: ${{ runner.os }}-r-${{ hashFiles('**/renv.lock') }}
-        restore-keys: ${{ runner.os }}-r-${{ hashFiles('**/renv.lock') }}
+        restore-keys: ${{ runner.os }}-r-
 
     - name: Install pak
       run: |
