@@ -16,7 +16,7 @@ lang: de-DE
     Geben Sie uns Feedback
 </a>
 
-Mit Ihren Rückmeldungen können wir unser Jupyter Book gezielt an Ihre Bedürfnisse anpassen.
+Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre Bedürfnisse anpassen.
 ```
 ````
 
@@ -144,7 +144,7 @@ Natürlichsprachlicher Text wird standardmäßig auf Deutsch verfasst. Soll dies
 Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change).
 
 #### `person`
-Eine Person kann entweder als einfache Zeichenkette oder als Mapping, das mindestens Schlüssel für Vor- und Nachname (`given-name`, `familyname`) enthält modelliert werden.
+Eine Person kann entweder als einfache Zeichenkette oder als Mapping, das mindestens Schlüssel für Vor- und Nachname (`given-names`, `family-names`) enthält modelliert werden.
 
 Es wird empfohlen eine ORCID anzugeben.
 

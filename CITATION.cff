@@ -3,7 +3,7 @@ cff-version: 1.2.0
 title: "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template"
 abstract: >-
   Dieses Buch ist einerseits ein Template für die Erstellung von OERs nach den
-  Empfehlungen von [QUADRIGA](https://quadriga-dk.de) und andererseits eine OER
+  Empfehlungen von QUADRIGA (https://quadriga-dk.de) und andererseits eine OER
   für die Entwicklung von OERs entsprechend der QUADRIGA Empfehlungen.
 type: software
 message: "Please cite this software using the metadata from `preferred-citation` in `CITATION.cff`."
@@ -11,9 +11,7 @@ authors:
   - given-names: Hannes
     family-names: Schnaitter
     orcid: 'https://orcid.org/0000-0002-1602-6032'
-    affiliation: >-
-      Humboldt-Universität zu Berlin, Institut für
-      Bibliotheks- und Informationswissenschaft
+    affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
   - given-names: Evgenia
     family-names: Samoilova
     orcid: 'https://orcid.org/0000-0003-3858-901X'
