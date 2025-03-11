@@ -110,7 +110,7 @@ learning-objectives:
   learning-objective:
     de: Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst
       vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
-oer-version: 0.45.0
+oer-version: 0.51.0
 publication-date: 2024-05-06
 schema-version: 1.1-beta
 target-group:
