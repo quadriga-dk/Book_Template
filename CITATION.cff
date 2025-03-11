@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: 1.2.0
-title: "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template"
+title: "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template"
 abstract: >-
   Dieses Buch ist einerseits ein Template für die Erstellung von OERs nach den
   Empfehlungen von QUADRIGA (https://quadriga-dk.de) und andererseits eine OER
