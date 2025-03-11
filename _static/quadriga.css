@@ -12,13 +12,13 @@
 
 /* Exercise/Übung styling */
 div.exercise {
-    background-color: rgba(66, 165, 245, 0.05) !important;
+    background-color: rgba(66, 165, 245, 0.03) !important;
     border-left-color: #7baac7 !important;
 }
 
 div.exercise > .admonition-title {
     background-color: rgba(66, 165, 245, 0.1) !important;
-    color: #4a90c9 !important;
+    color: #222832 !important;
 }
 
 div.exercise > .admonition-title::after {
@@ -38,7 +38,7 @@ div.solution {
 
 div.solution > .admonition-title {
     background-color: rgba(102, 187, 106, 0.1) !important;
-    color: #43a047 !important;
+    color: #222832 !important;
 }
 
 div.solution > .admonition-title::after {
@@ -59,7 +59,7 @@ div.keypoint {
 
 div.keypoint > .admonition-title {
     background-color: rgba(251, 140, 0, 0.1) !important;
-    color: #f2a541 !important;
+    color: #222832 !important;
 }
 
 div.keypoint > .admonition-title::after {
@@ -74,13 +74,13 @@ div.keypoint > .admonition-title::after {
 
 /* Hinweis styling */
 div.hinweis {
-    background-color: rgba(108, 160, 216, 0.05) !important;
-    border-left-color: #6ca0d8ad !important;
+    background-color: rgba(108, 160, 216, 0.03) !important;
+    border-left-color: #6ca0d8e3 !important;
 }
 
 div.hinweis > .admonition-title {
-    background-color: rgba(108, 160, 216, 0.1) !important;
-    color: #6ca0d8e3 !important;
+    background-color: rgba(108, 160, 216, 0.2) !important;
+    color: #222832 !important;
 }
 
 div.hinweis > .admonition-title::after {
@@ -90,10 +90,39 @@ div.hinweis > .admonition-title::after {
     float: left !important;
     padding-right: 0.5rem !important;
     font-size: 1.2em !important;
-    color: #6ca0d8ad !important;
+    color: #679bd3 !important;
 }
 
-/* lernziele styling */
+/* Caution styling */
+div.caution {
+    background-color: #ffe6e61f !important;
+    border-left-color: #f08a8a !important;
+}
+
+div.caution > .admonition-title {
+    background-color: rgba(211, 47, 47, 0.1) !important;
+    color: #222832 !important;
+}
+
+div.caution > .admonition-title::after {
+    content: "\f071" !important;  /* FontAwesome exclamation-triangle icon */
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1 em !important;
+    color: #c85454 !important;
+}
+
+/* Dark mode overrides for admonitions titles */
+html[data-theme='dark'] div.caution > .admonition-title,
+html[data-theme='dark'] div.hinweis > .admonition-title,
+html[data-theme='dark'] div.keypoint > .admonition-title,
+html[data-theme='dark'] div.solution > .admonition-title,
+html[data-theme='dark'] div.exercise > .admonition-title {
+    color: #CED6DD !important;
+}
+
 /* lernziele styling */
 div.lernziele {
     background-color: #f7fbff !important;
@@ -130,26 +159,6 @@ html[data-theme='dark'] div.lernziele > .admonition-title::after {
     color: var(--quadriga-main-web) !important;
 }
 
-/* Caution styling */
-div.caution {
-    background-color: #ffe6e61f !important;
-    border-left-color: #f08a8a !important;
-}
-
-div.caution > .admonition-title {
-    background-color: rgba(211, 47, 47, 0.1) !important;
-    color: #c85454 !important;
-}
-
-div.caution > .admonition-title::after {
-    content: "\f071" !important;  /* FontAwesome exclamation-triangle icon */
-    font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900 !important;
-    float: left !important;
-    padding-right: 0.5rem !important;
-    font-size: 1 em !important;
-    color: #c85454 !important;
-}
 
 /* Externer Link mit ↗ */
 .external-link:after {
