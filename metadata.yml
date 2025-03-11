@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=quadriga-schema.json
 authors:
-- affiliations: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
+- affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
+  affiliations: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
   credit:
   - Writing
   - Software
