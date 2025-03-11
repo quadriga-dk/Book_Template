@@ -1,18 +1,22 @@
 name: Deploy book with Python
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Update Metadata"]
+    types:
+      - completed
     branches:
-    - main
-  workflow_dispatch:
+      - main
 
 # This job installs dependencies, builds the book, and deploys it to GitHub Pages
+# only runs if "Update Metadata" workflow is successful
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
     permissions:
       pages: write
       id-token: write
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
