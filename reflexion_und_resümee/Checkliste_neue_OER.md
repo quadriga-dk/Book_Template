@@ -11,7 +11,7 @@ Die nachfolgende Liste können Sie nutzen, wenn Sie eine neue OER auf Basis dies
 - [ ] Fallstudie identifiziert mit konkreter Forschungsfrage und authentischen Daten
 - [ ] Zielgruppe und erforderliches Vorwissen klar definiert
 - [ ] Struktur nach Datenzyklus/Forschungsprozess ausgerichtet
-- [ ] 3 Groblernziele (Kapitel) definiert (+Präambel, Fragestellung, Reflexion/Resümee, und Hinterwerk)
+- [ ] 3 Groblernziele (Kapitel) definiert (+Präambel, Fragestellung, Reflexion/Resümee, und Epilog)
 - [ ] Feinlernziele nach ABCD-Prinzip formuliert (Audience, Behavior, Condition, Degree) 
 - [ ] Bloom'sche Taxonomie für kognitive Lernzielformulierung verwendet
 - [ ] Geschätzter Workload pro Kapitel (1-3 Stunden) festgelegt

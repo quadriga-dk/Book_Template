@@ -6,5 +6,5 @@ lang: de-DE
 
 ## 05.03.2025
 - [ ] Teile sollten in Kapitel geändert werden. Es erleichtert die Navigation. 
-- [ ] Umbenennen "Hinterwerk" -> "Epilogue"
+- [x] Umbenennen "Hinterwerk" -> "Epilog"
 - 
