@@ -32,6 +32,7 @@ def update_metadata():
                     if meta_author['given-names'] == author['given-names'] and meta_author['family-names'] == author['family-names']:
                         new_author_entry = meta_author
                         break
+            # Update author entry with citation data
             if 'given-names' in author:
                 new_author_entry['given-names'] = author['given-names']
             if 'family-names' in author:
@@ -46,6 +47,6 @@ def update_metadata():
     # Save updated metadata.yml
     with open('metadata.yml', 'w') as f:
         f.write("# yaml-language-server: $schema=quadriga-schema.json\n")
-        yaml.dump(metadata, f, allow_unicode=True)
+        yaml.dump(metadata, f, encoding="utf-8", default_flow_style=False, width=80, allow_unicode=True)
 if __name__ == "__main__":
     update_metadata()

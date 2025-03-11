@@ -1,7 +1,6 @@
 # yaml-language-server: $schema=quadriga-schema.json
 authors:
 - affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
-  affiliations: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
   credit:
   - Writing
   - Software
@@ -83,8 +82,19 @@ description:
   introduction: Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
     für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung
     eigener OERs auf Basis der QUADRIGA-Empfehlungen.
-  table-of-contents: '- Präambel - Struktur und didaktisches Konzept - Technologie
-    - Formatierung - Lernstandskontrolle (Assessment) - Reflexion und Resümee'
+  table-of-contents: '- Präambel
+
+    - Struktur und didaktisches Konzept
+
+    - Technologie
+
+    - Formatierung
+
+    - Lernstandskontrolle (Assessment)
+
+    - Reflexion und Resümee
+
+    - Epliog'
 discipline:
 - übergreifend
 duration: 10h
