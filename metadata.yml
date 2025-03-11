@@ -1,19 +1,20 @@
 # yaml-language-server: $schema=quadriga-schema.json
 authors:
-- affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
+- affiliation: "Humboldt-Universit\xE4t zu Berlin, Institut f\xFCr Bibliotheks- und\
+    \ Informationswissenschaft"
   credit:
   - Writing
   - Software
   family-names: Schnaitter
   given-names: Hannes
   orcid: https://orcid.org/0000-0002-1602-6032
-- affiliation: Universität Potsdam
+- affiliation: "Universit\xE4t Potsdam"
   credit:
   - Writing
   family-names: Samoilova
   given-names: Evgenia
   orcid: https://orcid.org/0000-0003-3858-901X
-- affiliation: Universität Potsdam
+- affiliation: "Universit\xE4t Potsdam"
   credit:
   - Software
   family-names: Islam
@@ -26,7 +27,7 @@ chapters:
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
     learning-objective: test
-  title: Präambel
+  title: "Pr\xE4ambel"
   url: TODO
 - description: TODO
   doi: TODO
@@ -71,32 +72,20 @@ chapters:
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
     learning-objective: test
-  title: Reflexion und Resümee
+  title: "Reflexion und Res\xFCmee"
   url: TODO
-context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch dasDatenkompetenzzentrum
-  QUADRIGA erstellt.
-
-  Förderkennzeichen: 16DKZ1034'
+context-of-creation: "Die vorliegenden Open Educational Resources wurden durch dasDatenkompetenzzentrum\
+  \ QUADRIGA erstellt.\nF\xF6rderkennzeichen: 16DKZ1034"
 date-of-last-change: 2025-02-14
 description:
-  introduction: Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
-    für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung
-    eigener OERs auf Basis der QUADRIGA-Empfehlungen.
-  table-of-contents: '- Präambel
-
-    - Struktur und didaktisches Konzept
-
-    - Technologie
-
-    - Formatierung
-
-    - Lernstandskontrolle (Assessment)
-
-    - Reflexion und Resümee
-
-    - Epliog'
+  introduction: "Diese OER f\xFChrt in die Erstellung von QUADRIGA-OERs ein, bietet\
+    \ Inhalte f\xFCr Nutzer:innen der OERs und dient gleichzeitig als Template f\xFC\
+    r die Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen."
+  table-of-contents: "- Pr\xE4ambel\n- Struktur und didaktisches Konzept\n- Technologie\n\
+    - Formatierung\n- Lernstandskontrolle (Assessment)\n- Reflexion und Res\xFCmee\n\
+    - Epliog"
 discipline:
-- übergreifend
+- "\xFCbergreifend"
 duration: 10h
 git: https://github.com/quadriga-dk/Book_Template
 has-predecessor: false
@@ -106,20 +95,20 @@ learning-objectives:
 - blooms-category: 1 Remember
   competency: 1 Basiskompetenz
   data-flow: Grundlagen
-  learning-objective: Nach durcharbeiten der OER erkennen Sie die Technologie der
-    QUADRIGA OERS, können diese in groben Zügen wiedergeben und können bei der Arbeit
-    mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
+  learning-objective: "Nach durcharbeiten der OER erkennen Sie die Technologie der\
+    \ QUADRIGA OERS, k\xF6nnen diese in groben Z\xFCgen wiedergeben und k\xF6nnen\
+    \ bei der Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen."
 - blooms-category: 3 Apply
   competency: 1 Basiskompetenz
   data-flow: Grundlagen
-  learning-objective: Nach durcharbeiten der OER können Sie selbst Inhalte in einer
-    QUADRIGA OER anpassen und diese erweitern.
+  learning-objective: "Nach durcharbeiten der OER k\xF6nnen Sie selbst Inhalte in\
+    \ einer QUADRIGA OER anpassen und diese erweitern."
 - blooms-category: 6 Create
   competency: 1 Basiskompetenz
   data-flow: Grundlagen
   learning-objective:
-    de: Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst
-      vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
+    de: "Nach durcharbeiten der OER k\xF6nnen Sie ausgehend von diesem OER-Template\
+      \ selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen."
 oer-version: 0.51.0
 publication-date: 2024-05-06
 schema-version: 1.1-beta
@@ -131,5 +120,5 @@ target-group:
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Ressources: Template'
 type-of-research-object:
-- übergreifend
+- "\xFCbergreifend"
 url: https://quadriga-dk.github.io/Book_Template/
