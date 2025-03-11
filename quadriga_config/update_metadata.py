@@ -26,6 +26,12 @@ def update_metadata():
         metadata_authors = []
         for author in citation_data['authors']:
             author_entry = {}
+            # Copy existing metadata for authors entry
+            for meta_author in metadata['authors']:
+                if 'given-names' in meta_author and 'family-names' in meta_author:
+                    if meta_author['given-names'] == author['given-names'] and meta_author['family-names'] == author['family-names']:
+                        author_entry = meta_author
+                        break
             if 'given-names' in author:
                 author_entry['given-names'] = author['given-names']
             if 'family-names' in author:
