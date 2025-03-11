@@ -5,14 +5,6 @@ lang: de-DE
 (lernziele)=
 # Lernziele
 
-````{admonition} Lernziel 1 from metadata
-:class: lernziele
-
-```{glue:} lo-global-1
-:doc: ../create_lo_admonitions.ipynb
-```
-````
-
 ```{admonition} Groblernziel
 :class: lernziele
 1. Nach durcharbeiten der OER kennen Sie sich mit dem Technologie der QUADRIGA OERS aus und können bei der Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
