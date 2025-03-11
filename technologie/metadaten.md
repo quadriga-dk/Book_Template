@@ -16,7 +16,7 @@ lang: de-DE
     Geben Sie uns Feedback
 </a>
 
-Mit Ihren Rückmeldungen können wir unser Jupyter Book gezielt an Ihre Bedürfnisse anpassen.
+Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre Bedürfnisse anpassen.
 ```
 ````
 
