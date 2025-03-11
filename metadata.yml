@@ -2,16 +2,23 @@
 authors:
 - affiliations:
   - Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
+  credit:
+  - Writing
+  - Software
   family-names: Schnaitter
   given-names: Hannes
   orcid: https://orcid.org/0000-0002-1602-6032
 - affiliations:
   - Universität Potsdam
+  credit:
+  - Writing
   family-names: Samoilova
   given-names: Evgenia
   orcid: https://orcid.org/0000-0003-3858-901X
 - affiliations:
   - Universität Potsdam
+  credit:
+  - Software
   family-names: Islam
   given-names: Lamia
 chapters:
