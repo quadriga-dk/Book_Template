@@ -413,16 +413,16 @@
                     "$comment": "Andere Schlüssel können nach Bedarf angelegt werden.",
                     "type": "object",
                     "required": [
-                        "given-name",
-                        "familyname"
+                        "given-names",
+                        "family-names"
                     ],
                     "properties": {
-                        "given-name": {
+                        "given-names": {
                             "description": "Vorname der Person",
                             "type": "string",
                             "@id": "schema:givenName"
                         },
-                        "familyname": {
+                        "family-names": {
                             "description": "Nachname der Person",
                             "type": "string",
                             "@id": "schema:familyName"

@@ -27,9 +27,9 @@ def update_metadata():
         for author in citation_data['authors']:
             author_entry = {}
             if 'given-names' in author:
-                author_entry['given-name'] = author['given-names']
+                author_entry['given-names'] = author['given-names']
             if 'family-names' in author:
-                author_entry['familyname'] = author['family-names']
+                author_entry['family-names'] = author['family-names']
             if 'orcid' in author:
                 author_entry['orcid'] = author['orcid']
             if 'affiliation' in author:

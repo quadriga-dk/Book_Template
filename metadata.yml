@@ -2,18 +2,18 @@
 authors:
 - affiliations:
   - Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
-  familyname: Schnaitter
-  given-name: Hannes
+  family-names: Schnaitter
+  given-names: Hannes
   orcid: https://orcid.org/0000-0002-1602-6032
 - affiliations:
   - Universität Potsdam
-  familyname: Samoilova
-  given-name: Evgenia
+  family-names: Samoilova
+  given-names: Evgenia
   orcid: https://orcid.org/0000-0003-3858-901X
 - affiliations:
   - Universität Potsdam
-  familyname: Islam
-  given-name: Lamia
+  family-names: Islam
+  given-names: Lamia
 chapters:
 - description: TODO
   doi: TODO
