@@ -1,21 +1,26 @@
 name: Deploy book with Python, SPARQL, and R
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Update Metadata"]
+    types:
+      - completed
     branches:
-    - main
+      - main
 
 # This job installs dependencies, builds the book, and deploys it to GitHub Pages
+# only runs if "Update Metadata" workflow is successful
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
     permissions:
       pages: write
       id-token: write
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-   
     - name: Install libcurl for R pak
       run: |
         sudo apt-get install -y --no-install-recommends libcurl4-openssl-dev
@@ -26,26 +31,26 @@ jobs:
         python-version: 3.11
         cache: pip
 
-    - name: Install dependencies
+    - name: Install Python dependencies
       run: |
         pip install -r requirements.txt
           
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
     
-    - name: Cache R packages
+    - name: Cacheing for R packages
       uses: actions/cache@v3
       with:
         path: ${{ env.R_LIBS_USER }}
-        key: ${{ runner.os }}-r-${{ hashFiles('**/renv.lock') }}
+        key: ${{ runner.os }}-r-${{ hashFiles('**/install_dependencies.R') }}
         restore-keys: ${{ runner.os }}-r-
 
     - name: Install pak
       run: |
         install.packages("pak", repos = "https://r-lib.github.io/p/pak/devel/")
-        pak::pkg_install("tidyverse")
       shell: Rscript {0}
-    - name: Install IRkernel
+    
+    - name: Install IRkernel and set it up
       run: |
         pak::pkg_install("IRkernel")
         IRkernel::installspec(name="ir", displayname="R")
@@ -63,11 +68,10 @@ jobs:
       run: |
         jupyter kernelspec list
 
-    # (optional) Cache your executed notebooks between runs
-    # if you have config:
+    # only caches if set up in _config.yml with:
     # execute:
     #   execute_notebooks: cache
-    - name: cache executed notebooks
+    - name: Cache executed notebooks
       uses: actions/cache@v3
       with:
         path: _build/.jupyter_cache

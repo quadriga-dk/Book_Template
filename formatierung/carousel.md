@@ -32,7 +32,7 @@ Ein Carousel ist ein interaktives Element, das mehrere Inhalte (wie Bilder, Text
 
 ## Anleitung zur Nutzung des benutzerdefinierten Carousels
 
-Dieses Jupyter Book verwendet ein **angepasstes Carousel**, das mit einer eigenen CSS- und JavaScript-Datei (`carousel.css` und `carousel.js`) ausgestattet ist. Damit das Carousel korrekt funktioniert, müssen diese Dateien in das Jupyter Book eingebunden werden.
+Diese Beispielseite verwendet ein **angepasstes Carousel**, das mit einer eigenen CSS- und JavaScript-Datei (`carousel.css` und `carousel.js`) ausgestattet ist. Damit das Carousel korrekt funktioniert, müssen diese Dateien in das Jupyter Book eingebunden werden.
 
 ### Szenario 1: Dateien sind bereits vorhanden
 
