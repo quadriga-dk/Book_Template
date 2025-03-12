@@ -9,7 +9,7 @@ lang: de-de
 - [ ] Feinlernziele (Section) -> Blooms Taxonomie für kognitive Lernzielformulierung verwendet
 - [ ] Geschätzter Workload pro Kapitel (1-3 Stunden) festgelegt
 - [ ] Geschätzter Workload pro Abschnitt (20-60 Minuten) festgelegt
-- [ ] Zugangswege definiert (Book-Only, Cloud, Local)
+- [ ] Zugangswege definiert (Book-Only und/order 🚀Cloud und/order 🚀Local)
 
 ## Struktur
 - [ ] Startseite
