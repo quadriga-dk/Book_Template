@@ -50,7 +50,7 @@ preferred-citation:
     - given-names: Lamia
       family-names: Islam
       affiliation: Universität Potsdam
-  title: "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template"
+  title: "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template"
   type: book
   doi: 10.5281/zenodo.14970672
   url: 'https://quadriga-dk.github.io/Book_Template/'

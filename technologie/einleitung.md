@@ -35,7 +35,7 @@ Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre
     year = {2024},
 }
 ```
-Schnaitter, H., Samoilova, E. & Islam, L. (2024). Technologie In _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Ressources: Template._ https://quadriga-dk.github.io/Book_Template/
+Schnaitter, H., Samoilova, E. & Islam, L. (2024). Technologie In _QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template._ https://quadriga-dk.github.io/Book_Template/
 ````
 `````
 
