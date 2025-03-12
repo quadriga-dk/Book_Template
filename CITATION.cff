@@ -55,3 +55,10 @@ preferred-citation:
   doi: 10.5281/zenodo.14970672
   url: 'https://quadriga-dk.github.io/Book_Template/'
   repository-code: 'https://github.com/quadriga-dk/Book_Template'
+  license: CC-BY-SA-4.0
+  languages:
+    - deu
+  copyright: CC-BY-SA-4.0
+  keywords:
+    - Open Educational Resource
+  
