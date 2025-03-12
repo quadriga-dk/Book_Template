@@ -31,10 +31,16 @@ Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre
 3. Die zentralen didaktischen Komponenten einer QUADRIGA OER können identifiziert und deren Funktion im Lernprozess erklärt werden.
 ```
 
-Im Rahmen des QUADRIGA-Projekts werden Open Educational Resources (OERs) entwickelt, die auf realen Forschungsfragen und Fallstudien basieren. Die didaktische Konzeption dieser OERs folgt bestimmten Prinzipien, die in diesem Kapitel vorgestellt werden.
+Im Rahmen des QUADRIGA-Projekts werden Open Educational Resources (OERs) entwickelt, die auf realen Forschungsfragen und Fallstudien basieren. Die didaktische Konzeption dieser OERs {cite}`samoilova2024` folgt bestimmten Prinzipien, die in diesem Kapitel vorgestellt werden.
 
 Open Educational Resources (OERs) werden gemäß der UNESCO-Empfehlung definiert als:
 
 "Lern-, Lehr- und Forschungsmaterialien, in jedem Format und Medium, die gemeinfrei sind oder urheberrechtlich geschützt und unter einer offenen Lizenz veröffentlicht sind, wodurch kostenloser Zugang, Weiterverwendung, Nutzung zu beliebigen Zwecken, Bearbeitung und Weiterverbreitung durch Andere erlaubt wird."
 
 In diesem Kapitel lernen Sie zunächst die grundlegenden didaktischen Ansätze kennen, auf denen QUADRIGA OERs basieren. Anschließend wird die Struktur der Lernmaterialien erläutert, wobei besonders auf die Formulierung von Lernzielen und den Aufbau von Fallstudien eingegangen wird. Darüber hinaus werden wir die zentralen Komponenten der OERs vorstellen und erklären, wie diese zur Erreichung der Lernziele beitragen.
+
+## Literatur
+```{bibliography}
+:filter: docname in docnames
+:style: plain
+```
