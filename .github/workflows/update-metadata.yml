@@ -36,7 +36,7 @@ jobs:
         run: python quadriga_config/update_citation_cff.py
       
       - name: Create CITATION.bib based on CITATION.cff
-        run: python quadriga_config/create_bibtex.py
+        run: python quadriga/create_bibtex.py
       
       - name: Check if files changed
         id: check_changes
