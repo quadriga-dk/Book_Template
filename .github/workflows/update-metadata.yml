@@ -43,7 +43,7 @@ jobs:
       - name: Check if metadata.yml changed
         id: check_changes
         run: |
-          if git diff --quiet metadata.yml; && git diff --quiet CITATION.bib then
+          if git diff --quiet metadata.yml && git diff --quiet CITATION.bib; then
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           else
             echo "changes_detected=true" >> $GITHUB_OUTPUT
