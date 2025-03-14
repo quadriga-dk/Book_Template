@@ -23,8 +23,29 @@ Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre
 
 ```{admonition} Groblernziel
 :class: lernziele
-1. Sie verstehen das didaktische Konzept der QUADRIGA OERs und können dessen Prinzipien bei der Erstellung eigener Lernmaterialien anwenden.
+Didaktischer Aufbau und forschungsgeleitete Methodik der QUADRIGA OERs
 ```
+
+````{admonition} Feinlernziele
+:class: lernziele
+
+1. ```{glue:} lo-ch2-1
+    :doc: ../create_learning_obj.ipynb
+    ```
+
+2. ```{glue:} lo-ch2-2
+    :doc: ../create_learning_obj.ipynb
+    ```
+
+3. ```{glue:} lo-ch2-3
+    :doc: ../create_learning_obj.ipynb
+    ```
+
+4. ```{glue:} lo-ch2-4
+    :doc: ../create_learning_obj.ipynb
+    ```
+
+````
 
 Im Rahmen des QUADRIGA-Projekts werden Open Educational Resources (OERs) entwickelt, die auf realen Forschungsfragen und Fallstudien basieren. Die didaktische Konzeption dieser OERs folgt bestimmten Prinzipien, die in diesem Kapitel vorgestellt werden.
 
