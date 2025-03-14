@@ -21,12 +21,8 @@ Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre
 ```
 ````
 
-```{admonition} Groblernziel
-:class: lernziele
-Didaktischer Aufbau und forschungsgeleitete Methodik der QUADRIGA OERs
-```
 
-````{admonition} Feinlernziele
+````{admonition} Didaktischer Aufbau und forschungsgeleitete Methodik der QUADRIGA OERs
 :class: lernziele
 
 1. ```{glue:} lo-ch2-1
