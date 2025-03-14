@@ -25,6 +25,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: pip
       
       - name: Install dependencies
         run: |
@@ -34,10 +35,13 @@ jobs:
       - name: Run metadata update script
         run: python quadriga_config/update_metadata.py
       
-      - name: Check if metadata.yml changed
+      - name: Create CITATION.bib based on CITATION.cff
+        run: python quadriga_config/create_bibtex.py
+      
+      - name: Check if files changed
         id: check_changes
         run: |
-          if git diff --quiet metadata.yml; then
+          if git diff --quiet metadata.yml && git diff --quiet CITATION.bib; then
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           else
             echo "changes_detected=true" >> $GITHUB_OUTPUT
@@ -48,6 +52,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add metadata.yml
-          git commit -m "[Automated] Update metadata.yml"
+          git add metadata.yml CITATION.bib
+          git commit -m "[Automated] Update metadata files"
           git push
