@@ -31,10 +31,22 @@ chapters:
 - description: TODO
   doi: TODO
   learning-objectives:
-  - blooms-category: 1 Remember
-    competency: 1 Basiskompetenz
-    data-flow: Grundlagen
-    learning-objective: test
+  - blooms-category: TODO
+    competency: TODO
+    data-flow: TODO
+    learning-objective: 1 test
+  - blooms-category: TODO
+    competency: TODO
+    data-flow: TODO
+    learning-objective: 2 test
+  - blooms-category: TODO
+    competency: TODO
+    data-flow: TODO
+    learning-objective: 3 test
+  - blooms-category: TODO
+    competency: TODO
+    data-flow: TODO
+    learning-objective: 4 test
   title: Struktur und didaktisches Konzept
   url: TODO
 - description: TODO
