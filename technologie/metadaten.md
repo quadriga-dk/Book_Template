@@ -92,7 +92,7 @@ context-of-creation:
 … hier noch eine menschenlesbare Beschreibung …
 
 #### `schema-version`
-Versionsnummer des QUADRIGA-Metadatenschemas im SemVer[^url-semver]-Format. Es gibt ein kontrolliertes Vokabular möglicher Versionen. Wird das QUADRIGA-MEtadatenschema verändert/erweitert, so wird einen neue Version in das kontrollierte Vokabular aufgenommen.
+Versionsnummer des QUADRIGA-Metadatenschemas im SemVer[^url-semver]-Format. Es gibt ein kontrolliertes Vokabular möglicher Versionen. Wird das QUADRIGA-Metadatenschema verändert/erweitert, so wird eine neue Version in das kontrollierte Vokabular aufgenommen.
 
 #### `oer-version`
 Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change).
