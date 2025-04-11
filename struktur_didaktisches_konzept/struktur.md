@@ -7,7 +7,7 @@ lang: de-DE
 ```{admonition} Feinlernziel
 :class: lernziele
 
-1. Sie können die hierarchische Struktur der Lernziele in QUADRIGA OERs beschreiben und erläutern, wie die Struktur der Fallstudien mit dem Datenlebenszyklus und den Lernzielen zusammenhängt.
+2. Sie können die hierarchische Struktur der Lernziele in QUADRIGA OERs beschreiben und erläutern, wie die Struktur der Fallstudien mit dem Datenlebenszyklus und den Lernzielen zusammenhängt.
 
 ```
 
