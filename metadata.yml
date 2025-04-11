@@ -35,13 +35,10 @@ target-group:
 - Promovierende
 - Hochschullehrende
 authors:
-- given-names: Hannes Michael
+- given-names: Hannes
   family-names: Schnaitter
   orcid: https://orcid.org/0000-0002-1602-6032
   affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
-  credit:
-  - Writing
-  - Software
 - given-names: Evgenia
   family-names: Samoilova
   orcid: https://orcid.org/0000-0003-3858-901X
