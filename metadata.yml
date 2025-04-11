@@ -20,10 +20,13 @@ description:
 discipline:
 - übergreifend
 duration: 10h
+type-of-research-object:
+- übergreifend
+identifier: https://doi.org
+url: https://quadriga-dk.github.io/Book_Template/
 git: https://github.com/quadriga-dk/Book_Template
 has-predecessor: false
 has-successor: false
-identifier: https://doi.org
 date-of-last-change: 2025-03-11
 publication-date: 2024-05-06
 target-group:
@@ -31,97 +34,94 @@ target-group:
 - Forschende (Projektleitung)
 - Promovierende
 - Hochschullehrende
-type-of-research-object:
-- übergreifend
-url: https://quadriga-dk.github.io/Book_Template/
 authors:
-- affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
-  credit:
-  - Writing
-  - Software
+- given-names: Hannes Michael
   family-names: Schnaitter
-  given-names: Hannes
   orcid: https://orcid.org/0000-0002-1602-6032
-- affiliation: Universität Potsdam
+  affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
   credit:
   - Writing
+  - Software
+- given-names: Evgenia
   family-names: Samoilova
-  given-names: Evgenia
   orcid: https://orcid.org/0000-0003-3858-901X
-- affiliation: Universität Potsdam
+  affiliation: Universität Potsdam
+  credit:
+  - Writing
+- given-names: Lamia
+  family-names: Islam
+  affiliation: Universität Potsdam
   credit:
   - Software
-  family-names: Islam
-  given-names: Lamia
 chapters:
 - description: TODO
   doi: TODO
   learning-objectives:
-  - blooms-category: 1 Remember
+  - learning-objective: test
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
-    learning-objective: test
+    blooms-category: 1 Remember
   title: Präambel
   url: TODO
 - description: TODO
   doi: TODO
   learning-objectives:
-  - blooms-category: 1 Remember
+  - learning-objective: test
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
-    learning-objective: test
+    blooms-category: 1 Remember
   title: Struktur und didaktisches Konzept
   url: TODO
 - description: TODO
   doi: TODO
   learning-objectives:
-  - blooms-category: 1 Remember
+  - learning-objective: test
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
-    learning-objective: test
+    blooms-category: 1 Remember
   title: Technologie
   url: TODO
 - description: TODO
   doi: TODO
   learning-objectives:
-  - blooms-category: 1 Remember
+  - learning-objective: test
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
-    learning-objective: test
+    blooms-category: 1 Remember
   title: Formatierung
   url: TODO
 - description: TODO
   doi: TODO
   learning-objectives:
-  - blooms-category: 1 Remember
+  - learning-objective: test
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
-    learning-objective: test
+    blooms-category: 1 Remember
   title: Lernstandskontrolle (Assessment)
   url: TODO
 - description: TODO
   doi: TODO
   learning-objectives:
-  - blooms-category: 1 Remember
+  - learning-objective: test
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
-    learning-objective: test
+    blooms-category: 1 Remember
   title: Reflexion und Resümee
   url: TODO
+learning-objectives:
+- learning-objective: Nach durcharbeiten der OER erkennen Sie die Technologie der QUADRIGA OERs, können diese in groben Zügen wiedergeben und können bei der Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
+  competency: 1 Basiskompetenz
+  data-flow: Grundlagen
+  blooms-category: 1 Remember
+- learning-objective: Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA OER anpassen und diese erweitern.
+  competency: 1 Basiskompetenz
+  data-flow: Grundlagen
+  blooms-category: 3 Apply
+- learning-objective:
+    de: Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
+  competency: 1 Basiskompetenz
+  data-flow: Grundlagen
+  blooms-category: 6 Create
 context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
 
   Förderkennzeichen: 16DKZ1034'
-learning-objectives:
-- blooms-category: 1 Remember
-  competency: 1 Basiskompetenz
-  data-flow: Grundlagen
-  learning-objective: Nach durcharbeiten der OER erkennen Sie die Technologie der QUADRIGA OERs, können diese in groben Zügen wiedergeben und können bei der Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
-- blooms-category: 3 Apply
-  competency: 1 Basiskompetenz
-  data-flow: Grundlagen
-  learning-objective: Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA OER anpassen und diese erweitern.
-- blooms-category: 6 Create
-  competency: 1 Basiskompetenz
-  data-flow: Grundlagen
-  learning-objective:
-    de: Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
