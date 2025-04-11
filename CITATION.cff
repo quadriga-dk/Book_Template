@@ -1,64 +1,51 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: 1.2.0
-title: "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template"
-abstract: >-
-  Dieses Buch ist einerseits ein Template für die Erstellung von OERs nach den
-  Empfehlungen von QUADRIGA (https://quadriga-dk.de) und andererseits eine OER
-  für die Entwicklung von OERs entsprechend der QUADRIGA Empfehlungen.
+title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources:
+  Template'
+abstract: Dieses Buch ist einerseits ein Template für die Erstellung von OERs nach den Empfehlungen von
+  QUADRIGA (https://quadriga-dk.de) und andererseits eine OER für die Entwicklung von OERs entsprechend
+  der QUADRIGA Empfehlungen.
 type: software
-message: "Please cite this software using the metadata from `preferred-citation` in `CITATION.cff`."
-authors:
-  - given-names: Hannes
-    family-names: Schnaitter
-    orcid: 'https://orcid.org/0000-0002-1602-6032'
-    affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
-  - given-names: Evgenia
-    family-names: Samoilova
-    orcid: 'https://orcid.org/0000-0003-3858-901X'
-    affiliation: Universität Potsdam
-  - given-names: Lamia
-    family-names: Islam
-    affiliation: Universität Potsdam
+message: Please cite this software using the metadata from `preferred-citation` in `CITATION.cff`.
+authors: &id001
+- given-names: Hannes
+  family-names: Schnaitter
+  orcid: https://orcid.org/0000-0002-1602-6032
+  affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
+- given-names: Evgenia
+  family-names: Samoilova
+  orcid: https://orcid.org/0000-0003-3858-901X
+  affiliation: Universität Potsdam
+- given-names: Lamia
+  family-names: Islam
+  affiliation: Universität Potsdam
 identifiers:
-  - type: doi
-    value: 10.5281/zenodo.14970672
-    description: Zenodo
-repository-code: 'https://github.com/quadriga-dk/Book_Template'
-url: 'https://quadriga-dk.github.io/Book_Template/'
+- type: doi
+  value: 10.5281/zenodo.14970672
+  description: Zenodo
+repository-code: https://github.com/quadriga-dk/Book_Template
+url: https://quadriga-dk.github.io/Book_Template/
 keywords:
-  - open educational resource
+- open educational resource
 license: CC-BY-SA-4.0
 references:
-  - title: Jupyter Book
-    type: software
-    authors: 
-      - name: The Jupyter Book Community
-        website: https://github.com/jupyter-book/jupyter-book/graphs/contributors
+- title: Jupyter Book
+  type: software
+  authors:
+  - name: The Jupyter Book Community
+    website: https://github.com/jupyter-book/jupyter-book/graphs/contributors
 preferred-citation:
   year: 2024
-  authors:
-    - given-names: Hannes
-      family-names: Schnaitter
-      orcid: 'https://orcid.org/0000-0002-1602-6032'
-      affiliation: >-
-        Humboldt-Universität zu Berlin, Institut für
-        Bibliotheks- und Informationswissenschaft
-    - given-names: Evgenia
-      family-names: Samoilova
-      orcid: 'https://orcid.org/0000-0003-3858-901X'
-      affiliation: Universität Potsdam
-    - given-names: Lamia
-      family-names: Islam
-      affiliation: Universität Potsdam
-  title: "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template"
+  authors: *id001
+  title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources:
+    Template'
   type: book
   doi: 10.5281/zenodo.14970672
-  url: 'https://quadriga-dk.github.io/Book_Template/'
-  repository-code: 'https://github.com/quadriga-dk/Book_Template'
+  url: https://quadriga-dk.github.io/Book_Template/
+  repository-code: https://github.com/quadriga-dk/Book_Template
   license: CC-BY-SA-4.0
   languages:
-    - deu
+  - deu
   copyright: CC-BY-SA-4.0
   keywords:
-    - Open Educational Resource
-  
+  - Open Educational Resource
