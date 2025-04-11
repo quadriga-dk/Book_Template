@@ -53,52 +53,52 @@ Im Abschnitt Felder werden alle optionalen sowie verpflichtenden Felder präsent
 
 Eine minimal kleine valide Metadatenbeschreibung sieht strukturell wie folgt aus:
 ```yaml
-schema-version: "1.1"
+schema-version:
 oer-version:
-identifier:
 title:
 description:
-authors:
-git:
-context-of-creation:
-date-of-last-change:
-publication-date:
 discipline:
-target-group:
 duration:
+type-of-research-object:
+identifier:
+url:
+git:
 has-predecessor:
 has-successor:
-type-of-research-object:
+date-of-last-change:
+publication-date:
+target-group:
+authors:
+chapters:
+  - description:
+    doi:
+    learning-objectives:
+      - learning-objective:
+        competency:
+        data-flow:
+        blooms-category:
+    title:
+    url:
 learning-objectives:
   - learning-objective:
     competency:
     data-flow:
     blooms-category:
-chapters:
-  - description:
-    title:
-    learning-objectives:
-      - learning-objective:
-        competency:     
-        data-flow:
-        blooms-category:
+context-of-creation:
 ```
 
 
 ### Felder
 … hier noch eine menschenlesbare Beschreibung …
 
-#### `authors`
-`authors` ist eine Liste der Autor:innen der OER. Das Feld ist verpflichtend und es muss mindestens ein:e Autor:in in der Liste aufgeführt werden. Eine Autor:in ist modelliert als [`person`](person).
+#### `schema-version`
+Versionsnummer des QUADRIGA-Metadatenschemas im SemVer[^url-semver]-Format. Es gibt ein kontrolliertes Vokabular möglicher Versionen. Wird das QUADRIGA-MEtadatenschema verändert/erweitert, so wird einen neue Version in das kontrollierte Vokabular aufgenommen.
 
-#### `chapters`
-Liste der Kapitel der OER. Sie muss mindestens ein Kapitel enthalten. Ein Kapitel wird mit einem Titel (`title`), einer Beschreibung (`description`) einer Liste von Lernzielen ([`learning-objectives`](learning-objectives)) sowie ggf. einer DOI und einer URL beschrieben.
+#### `oer-version`
+Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change).
 
-#### `context-of-creation` (Umbenennung in `context-of-development`?)
-Eine Beschreibung des Entstehungskontextes. Im konkreten Fall ein natürlichsprachlicher ([`multilingual-text`](multilingual-text)) Verweis auf das QUADRIGA-Projekt.
-
-#### `date-of-last-change`
-Datum der letzten (großen, inhaltlich umfangreichen) Änderung. Sollte immer mit einer Versionsänderung ([`oer-version`](oer-version)) einhergehen.
+#### `title`
+Titel der OER.
 
 #### `description`
 Die Beschreibung der OER beinhaltet einerseits das Inhaltsverzeichnis und andererseits einen einleitenden Text. Beide sind als [`multilingual-text`](multilingual-text) modelliert.
@@ -108,6 +108,15 @@ In diesem Feld werden alle Disziplinen aufgezählt, welche bei der Erstellung de
 
 #### `duration`
 In diesem Feld wird angegeben, wie lange Lernende ca. für das Bearbeiten der OER brauchen.
+
+#### `type-of-research-object`
+Bis zu zwei Datentyp, welche in der OER im Fokus stehen können aus einem kontrollierten Vokabular ausgewählt werden. 
+
+#### `identifier`
+Eindeutiger Identifier in Form einer DOI. Die DOI identifiziert die gesamte OER.
+
+#### `url`
+URL der "Leseansicht" der OER.
 
 #### `git`
 Verweis auf das Git-Repositorium, in dem die OER zu finden ist.
@@ -122,8 +131,26 @@ Verweis auf eine Nachfolger-OER, in der bspw. Inhalte oder Ergebnisse aus der ak
 
 Hat OER A einen Nachfolger B, so verweist B im Eintrag [`has-predecessor`](has-predecessor) auf A.
 
-#### `identifier`
-Eindeutiger Identifier in Form einer DOI. Die DOI identifiziert die gesamte OER.
+#### `date-of-last-change`
+Datum der letzten (großen, inhaltlich umfangreichen) Änderung. Sollte immer mit einer Versionsänderung ([`oer-version`](oer-version)) einhergehen.
+
+#### `publication-date`
+Datum der Erstveröffentlichung.
+
+#### `target-group`
+Beschreibung der Zielgruppe der OER. Es können eine oder mehrere Zielgruppen aus einem kontrollierten Vokabular ausgewählt werden.
+
+#### `authors`
+`authors` ist eine Liste der Autor:innen der OER. Das Feld ist verpflichtend und es muss mindestens ein:e Autor:in in der Liste aufgeführt werden. Eine Autor:in ist modelliert als [`person`](person).
+
+#### `chapters`
+Liste der Kapitel der OER. Sie muss mindestens ein Kapitel enthalten. Ein Kapitel wird mit einem Titel (`title`), einer Beschreibung (`description`) einer Liste von Lernzielen ([`learning-objectives`](learning-objectives)) sowie ggf. einer DOI und einer URL beschrieben.
+
+#### `learning-objectives`
+Liste der Lernziele einer OER. Ein Lernziel selbst besteht aus einer genauen Formulierung des Lernziels (`learning-objective`), der zugeordneten Kompetenz (`competency`), einer Einordnung in die Datenfluss-Stufe (`data-flow`) und eine Einordnung in eine Kategorie aus der Bloomschen Taxonomie (`blooms-category`).
+
+#### `context-of-creation` (Umbenennung in `context-of-development`?)
+Eine Beschreibung des Entstehungskontextes. Im konkreten Fall ein natürlichsprachlicher ([`multilingual-text`](multilingual-text)) Verweis auf das QUADRIGA-Projekt.
 
 #### `keywords`
 Eine Liste von Stichwörtern oder Schlagwörtern.
@@ -131,56 +158,45 @@ Eine Liste von Stichwörtern oder Schlagwörtern.
 #### `language`
 Sprache der OER als ISO639-1 Sprachcode.
 
-#### `learning-objectives`
-Liste der Lernziele einer OER bzw. eines Kapitels. Ein Lernziel selbst besteht aus einer genauen Formulierung des Lernziels (`learning-objective`), der zugeordneten Kompetenz (`competency`) und eine Einordnung in eine Kategorie aus der Bloomschen Taxonomie (`blooms-category`).
-
 #### `license`
 Verweis auf die verwendet(en) Lizenz(en).
 
+#### `prerequisites`
+Liste der Vorkenntnisse, die für ein erfolgreiches bearbeiten der OER angenommen werden.
+
+#### `quality-assurance`
+Informationen zum Qualitätsmanagement (QM, engl.: quality assurance (QA)) werden hier hinterlegt. Diese sind eine Liste von QM-Ereignissen, welche jeweils beschrieben werden mit einer Person ([`person`](person)), dem Datum des QM-Ereignisses sowie ggf. einer Beschreibung (`description`) der durchgeführten QM-Maßnahme und ggf. deren Ergebnisse.
+
+#### `related-works`
+Eine Liste von Verweisen (URL, o.ä.) und jeweils einer kurzen Beschreibung zu zusätzlichen, weiterführenden Inhalten o.ä.
+
+#### `type-of-learning-resource`
+Beschreibung der Materialart der OER. Auswahl aus einem kontrollierten Vokabular.
+
+#### `used-tools`
+Verweise auf genutzte Software nach LCSH.
+
+#### `data-flow`
+Stufe im Datenfluss nach dem QUADRIGA Datenkompetenzframework. Wird bei der Beschreibung von Lernzielen verwendet und kann aus einem kontrollierten Vokabular ausgewählt werden.
+
+#### `competency`
+Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework. Wird bei der Beschreibung von Lernzielen verwendet und kann aus einem kontrollierten Vokabular ausgewählt werden.
+
+#### `blooms-category`
+Einordnung eines Lernziels in eine Kategorie aus der Bloomschen Taxonomie. Wird bei der Beschreibung von Lernzielen verwendet und kann aus einem kontrollierten Vokabular ausgewählt werden.
+
+<!-- Fields defined in $defs follow below -->
+
+#### `semver`
+Ein Bezeichner nach dem Semantic Versioning 2.0.0 Format. Wird bei der Versionierung des Schemas und der OER verwendet. Besteht aus Major-, Minor- und Patch-Version (z.B. "1.1.0"), optional gefolgt von Pre-Release-Identifikatoren und Build-Metadaten.
+
 #### `multilingual-text`
 Natürlichsprachlicher Text wird standardmäßig auf Deutsch verfasst. Soll dies explizit gemacht werden und/oder sollen andere Sprachen verwendet werden, so kann hier statt einer Zeichenkette (`string`) ein Mapping (`object`) von ISO639-1 Sprachcodes und dem Text in der entsprechenden Sprache verwendet werden.
-
-#### `oer-version`
-Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change).
 
 #### `person`
 Eine Person kann entweder als einfache Zeichenkette oder als Mapping, das mindestens Schlüssel für Vor- und Nachname (`given-names`, `family-names`) enthält modelliert werden.
 
 Es wird empfohlen eine ORCID anzugeben.
-
-#### `prerequisites`
-Liste der Vorkenntnisse, die für ein erfolgreiches bearbeiten der OER angenommen werden.
-
-#### `publication-date`
-Datum der Erstveröffentlichung.
-
-#### `quality-assurance`
-Informationen zum Qualitätsmanagement (QM, engl.: quality assurance (QA)) werden hier hinterlegt. Diese sind eine Liste von QM-Ereignissen, welche jeweils beschrieben werden mit einer Person ([`person`](person)), dem Datum des QM-Ereignisses sowie ggf. einer Beschreibung (`description`) der durchgeführten QM-Maßnahme und ggf. deren Ergebnisse.
-
-#### `related-work`
-Eine Liste von Verweisen (URL, o.ä.) und jeweils einer kurzen Beschreibung zu zusätzlichen, weiterführenden Inhalten o.ä.
-
-#### `schema-version`
-Versionsnummer des QUADRIGA-Metadatenschemas im SemVer[^url-semver]-Format. Es gibt ein kontrolliertes Vokabular möglicher Versionen. Wird das QUADRIGA-MEtadatenschema verändert/erweitert, so wird einen neue Version in das kontrollierte Vokabular aufgenommen.
-
-#### `target-group`
-Beschreibung der Zielgruppe der OER. Es können eine oder mehrere Zielgruppen aus einem kontrollierten Vokabular ausgewählt werden.
-
-#### `title`
-Titel der OER.
-
-#### `type-of-learning-resource`
-Beschreibung der Materialart der OER. Auswahl aus einem kontrollierten Vokabular.
-
-#### `type-of-research-object`
-Bis zu zwei Datentyp, welche in der OER im Fokus stehen können aus einem kontrollierten Vokabular ausgewählt werden. 
-
-#### `url`
-URL der "Leseansicht" der OER.
-
-#### `used-tools`
-Verweise auf genutzte Software nach LCSH.
-
 
 ## `metadata.yml` der vorliegenden OER
 
