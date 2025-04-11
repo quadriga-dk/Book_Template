@@ -92,10 +92,10 @@ context-of-creation:
 … hier noch eine menschenlesbare Beschreibung …
 
 #### `schema-version`
-Versionsnummer des QUADRIGA-Metadatenschemas im SemVer[^url-semver]-Format. Es gibt ein kontrolliertes Vokabular möglicher Versionen. Wird das QUADRIGA-Metadatenschema verändert/erweitert, so wird eine neue Version in das kontrollierte Vokabular aufgenommen.
+Versionsnummer des QUADRIGA-Metadatenschemas im SemVer[^url-semver]-Format. Es gibt ein kontrolliertes Vokabular möglicher Versionen. Wird das QUADRIGA-Metadatenschema verändert/erweitert, so wird eine neue Version in das kontrollierte Vokabular aufgenommen. Siehe [`semver`](#semver).
 
 #### `oer-version`
-Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change).
+Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change). Siehe [`semver`](#semver).
 
 #### `title`
 Titel der OER.
@@ -188,7 +188,7 @@ Einordnung eines Lernziels in eine Kategorie aus der Bloomschen Taxonomie. Wird 
 <!-- Fields defined in $defs follow below -->
 
 #### `semver`
-Ein Bezeichner nach dem Semantic Versioning 2.0.0 Format. Wird bei der Versionierung des Schemas und der OER verwendet. Besteht aus Major-, Minor- und Patch-Version (z.B. "1.1.0"), optional gefolgt von Pre-Release-Identifikatoren und Build-Metadaten.
+Ein Bezeichner nach dem Semantic Versioning 2.0.0 Format[^url-semver]. Wird bei der Versionierung des Schemas und der OER verwendet. Besteht aus Major-, Minor- und Patch-Version (z.B. "1.1.0"), optional gefolgt von Pre-Release-Identifikatoren und Build-Metadaten.
 
 #### `multilingual-text`
 Natürlichsprachlicher Text wird standardmäßig auf Deutsch verfasst. Soll dies explizit gemacht werden und/oder sollen andere Sprachen verwendet werden, so kann hier statt einer Zeichenkette (`string`) ein Mapping (`object`) von ISO639-1 Sprachcodes und dem Text in der entsprechenden Sprache verwendet werden.
@@ -196,7 +196,7 @@ Natürlichsprachlicher Text wird standardmäßig auf Deutsch verfasst. Soll dies
 #### `person`
 Eine Person kann entweder als einfache Zeichenkette oder als Mapping, das mindestens Schlüssel für Vor- und Nachname (`given-names`, `family-names`) enthält modelliert werden.
 
-Es wird empfohlen eine ORCID anzugeben.
+Es wird empfohlen eine ORCID[^url-orcid] anzugeben.
 
 ## `metadata.yml` der vorliegenden OER
 
@@ -216,3 +216,4 @@ Es wird empfohlen eine ORCID anzugeben.
 [^url-json-schema]: <https://json-schema.org>
 [^url-dalia]: <https://dalia.education>
 [^url-semver]: <https://semver.org>
+[^url-orcid]: <https://orcid.org>
