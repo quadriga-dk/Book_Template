@@ -19,7 +19,6 @@
         "has-predecessor",
         "has-successor",
         "identifier",
-        "learning-objectives",
         "oer-version",
         "publication-date",
         "schema-version",
@@ -48,17 +47,13 @@
                 "required": [
                     "title",
                     "description",
-                    "learning-objectives"
+                    "learning-objectives",
+                    "learning-goal"
                 ],
                 "properties": {
                     "title": {
                         "description": "Kapitelüberschrift",
                         "$ref": "#/$defs/multilingual-text"
-                    },
-                    "doi": {
-                        "description": "DOI zum direkten Zitieren des Kapitels",
-                        "type": "string",
-                        "format": "uri"
                     },
                     "description": {
                         "description": "Beschreibung des Kapitelinhalts.",
@@ -69,9 +64,19 @@
                         "type": "string",
                         "format": "uri"
                     },
+                    "duration": {
+                        "description": "Angedachte Bearbeitungsdauer für Lernende.",
+                        "type": "string",
+                        "format": "duration",
+                        "@id": "schema:timeRequired"
+                    },
                     "learning-objectives": {
                         "description": "Liste der Feinlernziele des Kapitels",
                         "$ref": "#/$defs/learning-objectives"
+                    },
+                    "learning-goal": {
+                        "$ref": "#/$defs/multilingual-text",
+                        "description": "Kurze Benennung des Groblernziels des Kapitels."
                     }
                 }
             }
