@@ -58,20 +58,20 @@ chapters:
       - learning-objective: Nach durcharbeiten der OER erkennen Sie die Technologie der QUADRIGA OERs, können diese in groben Zügen wiedergeben und können bei der Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
         competency: 1 Basiskompetenz
         data-flow: Grundlagen
-        blooms-category: 1 Remember
+        blooms-category:  1 Erinnern
       - learning-objective: Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA OER anpassen und diese erweitern.
         competency: 1 Basiskompetenz
         data-flow: Grundlagen
-        blooms-category: 3 Apply
+        blooms-category: 3 Anwenden
       - learning-objective:
           de: Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
         competency: 1 Basiskompetenz
         data-flow: Grundlagen
-        blooms-category: 6 Create
+        blooms-category: 6 Erschaffen
       - learning-objective: test
         competency: 1 Basiskompetenz
         data-flow: Grundlagen
-        blooms-category: 1 Remember
+        blooms-category:  1 Erinnern
     title: Präambel
     url: TODO
   - description: TODO
@@ -80,7 +80,7 @@ chapters:
       - learning-objective: test
         competency: 1 Basiskompetenz
         data-flow: Grundlagen
-        blooms-category: 1 Remember
+        blooms-category:  1 Erinnern
     title: Struktur und didaktisches Konzept
     url: TODO
   - description: TODO
@@ -89,7 +89,7 @@ chapters:
       - learning-objective: test
         competency: 1 Basiskompetenz
         data-flow: Grundlagen
-        blooms-category: 1 Remember
+        blooms-category:  1 Erinnern
     title: Technologie
     url: TODO
   - description: TODO
@@ -98,7 +98,7 @@ chapters:
       - learning-objective: test
         competency: 1 Basiskompetenz
         data-flow: Grundlagen
-        blooms-category: 1 Remember
+        blooms-category:  1 Erinnern
     title: Formatierung
     url: TODO
   - description: TODO
@@ -107,7 +107,7 @@ chapters:
       - learning-objective: test
         competency: 1 Basiskompetenz
         data-flow: Grundlagen
-        blooms-category: 1 Remember
+        blooms-category:  1 Erinnern
     title: Lernstandskontrolle (Assessment)
     url: TODO
   - description: TODO
@@ -116,7 +116,7 @@ chapters:
       - learning-objective: test
         competency: 1 Basiskompetenz
         data-flow: Grundlagen
-        blooms-category: 1 Remember
+        blooms-category:  1 Erinnern
     title: Reflexion und Resümee
     url: TODO
 context-of-creation:

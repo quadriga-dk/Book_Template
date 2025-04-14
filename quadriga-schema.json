@@ -379,12 +379,12 @@
                     "blooms-category": {
                         "description": "Kategorie aus der Bloomschen Taxonomie.",
                         "enum": [
-                            "1 Remember",
-                            "2 Understand",
-                            "3 Apply",
-                            "4 Analyze",
-                            "5 Evaluate",
-                            "6 Create"
+                            "1 Erinnern",
+                            "2 Verstehen",
+                            "3 Anwenden",
+                            "4 Analysieren",
+                            "5 Bewerten",
+                            "6 Erschaffen"
                         ]
                     }
                 },
