@@ -275,7 +275,8 @@
             "description": "Versionsnummer des QUADRIGA-Metadatenschemas",
             "enum": [
                 "1.1",
-                "1.1-beta"
+                "1.1-beta",
+                "1.1-beta2"
             ]
         },
         "target-group": {
