@@ -64,16 +64,16 @@ chapters:
   learning-goal: TODO
   duration: 1h
   learning-objectives:
-  - learning-objective: Nach dem Durcharbeiten der OER erkennen Sie die Technologie der
-      QUADRIGA OERs, können diese in groben Zügen wiedergeben und können bei der Arbeit
-      mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
+  - learning-objective: Nach dem Durcharbeiten der OER erkennen Sie die Technologie
+      der QUADRIGA OERs, können diese in groben Zügen wiedergeben und können bei der
+      Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
     focus: Wissen
     blooms-category: 2 Verstehen
     learning-objective-id: technologie-verstehen
-  - learning-objective: Nach dem Durcharbeiten der OER können Sie selbst Inhalte in einer
-      QUADRIGA OER anpassen und diese erweitern.
+  - learning-objective: Nach dem Durcharbeiten der OER können Sie selbst Inhalte in
+      einer QUADRIGA OER anpassen und diese erweitern.
     competency: 1 Basiskompetenz
     focus: Fähigkeit
     data-flow: Grundlagen
