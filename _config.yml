@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Template Book
+title: "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template"
 author: Hannes Schnaitter, Evgenia Samoilova, Lamia Islam
 logo: assets/logo.jpg
 copyright: "2024, QUADRIGA"

@@ -32,11 +32,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyyaml
       
+      - name: Extract title and toc from _config.yml and _toc.yml
+        run: python quadriga/extract_from_config_toc.py
+      
       - name: Update CITATION.cff from metadata
-        run: python quadriga_config/update_citation_cff.py
+        run: python quadriga/update_citation_cff.py
       
       - name: Create CITATION.bib based on CITATION.cff
-        run: python quadriga_config/create_bibtex.py
+        run: python quadriga/create_bibtex.py
       
       - name: Check if files changed
         id: check_changes

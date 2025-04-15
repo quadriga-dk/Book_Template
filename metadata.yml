@@ -1,22 +1,24 @@
-# yaml-language-server: $schema=quadriga-schema.json
-schema-version: 1.1-beta
-oer-version: 0.51.0
-title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template'
+schema-version: 1.1-beta2
+book-version: 0.51.0
+title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
+  Resources: Template'
 description:
-  introduction: Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+  introduction: Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
+    für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung
+    eigener OERs auf Basis der QUADRIGA-Empfehlungen.
   table-of-contents: '- Präambel
 
     - Struktur und didaktisches Konzept
 
     - Technologie
 
-    - Formatierung
+    - Formatierungs- und Darstellungsmöglichkeiten
 
     - Lernstandskontrolle (Assessment)
 
     - Reflexion und Resümee
 
-    - Epliog'
+    - Epilog'
 discipline:
 - übergreifend
 duration: 10h
@@ -25,9 +27,12 @@ type-of-research-object:
 identifier: https://doi.org
 url: https://quadriga-dk.github.io/Book_Template/
 git: https://github.com/quadriga-dk/Book_Template
-has-predecessor: false
-has-successor: false
-date-of-last-change: 2025-03-11
+license:
+  code: https://opensource.org/licenses/AGPL-3.0
+  content:
+    url: https://creativecommons.org/licenses/by-sa/4.0/
+    name: CC BY-SA 4.0
+date-of-last-change: '2025-04-15'
 publication-date: 2024-05-06
 target-group:
 - Forschende (PostDoc)
@@ -52,73 +57,87 @@ authors:
   - Software
 chapters:
 - description: TODO
-  doi: TODO
+  learning-goal: TODO
+  duration: 1h
   learning-objectives:
-  - learning-objective: test
+  - learning-objective: Nach durcharbeiten der OER erkennen Sie die Technologie der
+      QUADRIGA OERs, können diese in groben Zügen wiedergeben und können bei der Arbeit
+      mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
-    blooms-category: 1 Remember
+    focus: Wissen
+    blooms-category: 1 Erinnern
+  - learning-objective: Nach durcharbeiten der OER können Sie selbst Inhalte in einer
+      QUADRIGA OER anpassen und diese erweitern.
+    competency: 1 Basiskompetenz
+    focus: Fähigkeit
+    data-flow: Grundlagen
+    blooms-category: 3 Anwenden
+  - learning-objective:
+      de: Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template
+        selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
+    competency: 1 Basiskompetenz
+    focus: Wissen
+    data-flow: Grundlagen
+    blooms-category: 6 Erschaffen
+  - learning-objective: test
+    competency: 1 Basiskompetenz
+    focus: Wissen
+    data-flow: Grundlagen
+    blooms-category: 1 Erinnern
   title: Präambel
   url: TODO
 - description: TODO
-  doi: TODO
+  learning-goal: TODO
   learning-objectives:
   - learning-objective: test
     competency: 1 Basiskompetenz
+    focus: Wissen
     data-flow: Grundlagen
-    blooms-category: 1 Remember
+    blooms-category: 1 Erinnern
   title: Struktur und didaktisches Konzept
   url: TODO
 - description: TODO
-  doi: TODO
+  learning-goal: TODO
   learning-objectives:
   - learning-objective: test
     competency: 1 Basiskompetenz
+    focus: Wissen
     data-flow: Grundlagen
-    blooms-category: 1 Remember
+    blooms-category: 1 Erinnern
   title: Technologie
   url: TODO
 - description: TODO
-  doi: TODO
+  learning-goal: TODO
   learning-objectives:
   - learning-objective: test
     competency: 1 Basiskompetenz
+    focus: Wissen
     data-flow: Grundlagen
-    blooms-category: 1 Remember
+    blooms-category: 1 Erinnern
   title: Formatierung
   url: TODO
 - description: TODO
-  doi: TODO
+  learning-goal: TODO
   learning-objectives:
   - learning-objective: test
     competency: 1 Basiskompetenz
+    focus: Wissen
     data-flow: Grundlagen
-    blooms-category: 1 Remember
+    blooms-category: 1 Erinnern
   title: Lernstandskontrolle (Assessment)
   url: TODO
 - description: TODO
-  doi: TODO
+  learning-goal: TODO
   learning-objectives:
   - learning-objective: test
     competency: 1 Basiskompetenz
+    focus: Wissen
     data-flow: Grundlagen
-    blooms-category: 1 Remember
+    blooms-category: 1 Erinnern
   title: Reflexion und Resümee
   url: TODO
-learning-objectives:
-- learning-objective: Nach durcharbeiten der OER erkennen Sie die Technologie der QUADRIGA OERs, können diese in groben Zügen wiedergeben und können bei der Arbeit mit der OER auftretende Fehler den jeweiligen Komponenten zuordnen.
-  competency: 1 Basiskompetenz
-  data-flow: Grundlagen
-  blooms-category: 1 Remember
-- learning-objective: Nach durcharbeiten der OER können Sie selbst Inhalte in einer QUADRIGA OER anpassen und diese erweitern.
-  competency: 1 Basiskompetenz
-  data-flow: Grundlagen
-  blooms-category: 3 Apply
-- learning-objective:
-    de: Nach durcharbeiten der OER können Sie ausgehend von diesem OER-Template selbst vollkommen neue OERs im Stil der QUADRIGA OERs erstellen.
-  competency: 1 Basiskompetenz
-  data-flow: Grundlagen
-  blooms-category: 6 Create
-context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
+context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
+  Datenkompetenzzentrum QUADRIGA erstellt.
 
   Förderkennzeichen: 16DKZ1034'
