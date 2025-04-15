@@ -70,6 +70,12 @@
                         "format": "duration",
                         "@id": "schema:timeRequired"
                     },
+                    "duration": {
+                        "description": "Angedachte Bearbeitungsdauer für Lernende.",
+                        "type": "string",
+                        "format": "duration",
+                        "@id": "schema:timeRequired"
+                    },
                     "learning-objectives": {
                         "description": "Liste der Feinlernziele des Kapitels",
                         "$ref": "#/$defs/learning-objectives"
@@ -363,6 +369,14 @@
                             "13 Aufbereitung",
                             "14 Datenpublikation",
                             "15 Kommunikation"
+                        ]
+                    },
+                    "focus": {
+                        "description": "Fokus des Lernziels auf den Aspekt Wissen, Fähigkeit oder Haltung der Kompetenz.",
+                        "enum": [
+                            "Wissen",
+                            "Fähigkeit",
+                            "Haltung"
                         ]
                     },
                     "data-flow": {
