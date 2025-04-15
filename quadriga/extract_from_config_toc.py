@@ -103,11 +103,11 @@ def extract_and_update():
                 # Create the full path to the file
                 full_path = os.path.join(repo_root, file_path)
                 
-                # Extract the title from the file's first heading
-                title = extract_first_heading(full_path)
+                # Extract the chapter title from the file's first heading
+                chapter_title = extract_first_heading(full_path)
                 
                 # Add to the list of chapters
-                toc_chapters.append(title)
+                toc_chapters.append(chapter_title)
     
     # Format the TOC as a string with proper indentation and single newline between items
     toc_formatted = "- " + "\n- ".join(toc_chapters)
