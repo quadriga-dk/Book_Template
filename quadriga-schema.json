@@ -70,12 +70,6 @@
                         "format": "duration",
                         "@id": "schema:timeRequired"
                     },
-                    "duration": {
-                        "description": "Angedachte Bearbeitungsdauer für Lernende.",
-                        "type": "string",
-                        "format": "duration",
-                        "@id": "schema:timeRequired"
-                    },
                     "learning-objectives": {
                         "description": "Liste der Feinlernziele des Kapitels",
                         "$ref": "#/$defs/learning-objectives"
