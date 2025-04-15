@@ -27,6 +27,6 @@ lang: de-DE
 :class: lernziele
 
 ```{glue:} lo-global-1
-:doc: ../create_learning_obj.ipynb
+:doc: /quadriga/create_learning_obj.ipynb
 ```
 ````
