@@ -33,7 +33,7 @@ jobs:
           pip install pyyaml
       
       - name: Extract title and toc from _config.yml and _toc.yml
-        run: python extract_from_config_toc.py
+        run: python quadriga/extract_from_config_toc.py
       
       - name: Update CITATION.cff from metadata
         run: python quadriga/update_citation_cff.py
