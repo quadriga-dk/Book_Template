@@ -163,6 +163,10 @@ Liste der Kapitel der OER. Sie muss mindestens ein Kapitel enthalten. Ein Kapite
 #### `learning-objectives`⭐
 Liste der Lernziele eines Kapitels. Ein Lernziel selbst besteht aus einer genauen Formulierung des Lernziels (`learning-objective`), der zugeordneten Kompetenz ({ref}`metadata:competency`), dem Kompetenz-Fokus des Lernziels ({ref}`metadata:focus`), einer Einordnung in den Datenfluss ({ref}`metadata:data-flow`) und eine Einordnung in eine Kategorie aus der Bloomschen Taxonomie ({ref}`metadata:blooms-category`).
 
+(metadata:learning-goal)=
+#### `learning-goal`⭐
+Kurze Benennung des Groblernziels eines Kapitels. Wird im Kontext eines Kapitels verwendet, um das übergeordnete Lernziel zu beschreiben.
+
 (metadata:context-of-creation)=
 #### `context-of-creation`⭐
 Eine Beschreibung des Entstehungskontextes. Im konkreten Fall ein natürlichsprachlicher Verweis auf das QUADRIGA-Projekt.
@@ -190,6 +194,10 @@ Informationen zum Qualitätsmanagement (QM, engl.: quality assurance (QA)) werde
 (metadata:related-works)=
 #### `related-works`
 Eine Liste von Verweisen (URL, o.ä.) und jeweils einer kurzen Beschreibung zu zusätzlichen, weiterführenden Inhalten o.ä.
+
+(metadata:supplemented-by)=
+#### `supplemented-by`
+Liste von Verweisen und jeweils einer kurzen Beschreibung zu zusätzlichen, weiterführenden Inhalten, die spezifisch zu einem Kapitel gehören. Jeder Eintrag enthält eine Beschreibung (`description`) und eine URL (`url`).
 
 (metadata:type-of-learning-resource)=
 #### `type-of-learning-resource`
@@ -230,6 +238,22 @@ Natürlichsprachlicher Text wird standardmäßig auf Deutsch verfasst. Soll dies
 Eine Person kann entweder als einfache Zeichenkette oder als Mapping, das mindestens Schlüssel für Vor- und Nachname (`given-names`, `family-names`) enthält modelliert werden.
 
 Es wird empfohlen eine ORCID[^url-orcid] anzugeben. Zusätzlich können Rollen nach dem CRediT-System (Contributor Roles Taxonomy) für die Person angegeben werden.
+
+(metadata:chapter-title)=
+#### `title`⭐ (in `chapters`)
+Kapitelüberschrift, die für dieses Kapitel verwendet wird. Kann als einfacher Text oder als mehrsprachiger Text angegeben werden.
+
+(metadata:chapter-description)=
+#### `description`⭐ (in `chapters`)
+Beschreibung des Kapitelinhalts. Bietet eine Übersicht darüber, was in diesem Kapitel behandelt wird.
+
+(metadata:chapter-url)=
+#### `url` (in `chapters`)
+URL zum direkten Zugriff auf die erste Seite der 'Leseansicht' (Website) des Kapitels.
+
+(metadata:chapter-duration)=
+#### `duration` (in `chapters`)
+Angedachte Bearbeitungsdauer für Lernende, spezifisch für dieses Kapitel.
 
 ## `metadata.yml` der vorliegenden OER
 
