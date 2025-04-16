@@ -69,7 +69,6 @@ target-group:
 authors:
 chapters:
   - description:
-    doi:
     learning-objectives:
       - learning-objective:
         competency:
