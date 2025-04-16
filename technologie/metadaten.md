@@ -36,7 +36,7 @@ In diesem Kapitel wird Ihnen zuerst das Metadatenschema für QUADRIGA-OERs vorge
 
 ## Das QUADRIGA Metadatenschema
 
-Das QUADRIGA Metadatenschema basiert in Teilen auf DALIA[^url-dalia] sowie …
+Das QUADRIGA Metadatenschema basiert in Teilen auf DALIA[^url-dalia] sowie weiteren etablierten Metadatenstandards. Es wurde speziell für Open Educational Resources (OERs) entwickelt, die im Rahmen des QUADRIGA-Projekts erstellt werden und umfasst spezifische Felder zur Beschreibung von Lernzielen, Kompetenzen und didaktischen Elementen.
 
 ## Struktur und Felder der `metadata.yml`
 
@@ -57,63 +57,61 @@ schema-version:
 book-version:
 title:
 description:
+  introduction:
+  table-of-contents:
 discipline:
 duration:
 type-of-research-object:
 identifier:
 url:
-git:
 date-of-last-change:
 publication-date:
 target-group:
 authors:
+  - given-names:
+    family-names:
 chapters:
-  - description:
+  - title:
+    description:
     learning-objectives:
       - learning-objective:
         competency:
+        focus:
         data-flow:
         blooms-category:
-    title:
-    url:
-learning-objectives:
-  - learning-objective:
-    competency:
-    focus:
-    data-flow:
-    blooms-category:
+    learning-goal:
 context-of-creation:
 ```
 
 
 ### Felder
-… hier noch eine menschenlesbare Beschreibung …
+Im Folgenden werden die wichtigsten Felder des QUADRIGA-Metadatenschemas beschrieben. Pflichtfelder sind mit ⭐ gekennzeichnet.
 
-#### `schema-version`
-Versionsnummer des QUADRIGA-Metadatenschemas im SemVer[^url-semver]-Format. Es gibt ein kontrolliertes Vokabular möglicher Versionen. Wird das QUADRIGA-Metadatenschema verändert/erweitert, so wird eine neue Version in das kontrollierte Vokabular aufgenommen. Siehe [`semver`](#semver).
+#### `schema-version`⭐
+Versionsnummer des QUADRIGA-Metadatenschemas. Es gibt ein kontrolliertes Vokabular möglicher Versionen (aktuell: "1.1", "1.1-beta", "1.1-beta2"). Wird das QUADRIGA-Metadatenschema verändert/erweitert, so wird eine neue Version in das kontrollierte Vokabular aufgenommen.
 
-#### `oer-version`
-Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change). Siehe [`semver`](#semver).
+#### `book-version`⭐
+Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change).
 
-#### `title`
+#### `title`⭐
 Titel der OER.
 
-#### `description`
-Die Beschreibung der OER beinhaltet einerseits das Inhaltsverzeichnis und andererseits einen einleitenden Text. Beide sind als [`multilingual-text`](multilingual-text) modelliert.
+#### `description`⭐
+Die Beschreibung der OER enthält eine Einleitung (`introduction`) und ein Inhaltsverzeichnis (`table-of-contents`). Beide Felder sind erforderlich.
 
 #### `discipline`
 In diesem Feld werden alle Disziplinen aufgezählt, welche bei der Erstellung der OER im Fokus standen. Es gibt ein kontrolliertes Vokabular möglicher Disziplinen.
 
-#### `duration`
+#### `duration`⭐
 In diesem Feld wird angegeben, wie lange Lernende ca. für das Bearbeiten der OER brauchen.
 
-#### `type-of-research-object`
-Bis zu zwei Datentyp, welche in der OER im Fokus stehen können aus einem kontrollierten Vokabular ausgewählt werden. 
+#### `type-of-research-object`⭐
+Bis zu zwei Datentypen, welche in der OER im Fokus stehen, können aus einem kontrollierten Vokabular ausgewählt werden. Mögliche Werte sind "Text", "Tabelle", "Bewegtes Bild" und "übergreifend".
 
-#### `identifier`
+#### `identifier`⭐
 Eindeutiger Identifier in Form einer DOI. Die DOI identifiziert die gesamte OER.
 
-#### `url`
+#### `url`⭐
 URL der "Leseansicht" der OER.
 
 #### `git`
@@ -129,26 +127,26 @@ Verweis auf eine Nachfolger-OER, in der bspw. Inhalte oder Ergebnisse aus der ak
 
 Hat OER A einen Nachfolger B, so verweist B im Eintrag [`has-predecessor`](has-predecessor) auf A.
 
-#### `date-of-last-change`
-Datum der letzten (großen, inhaltlich umfangreichen) Änderung. Sollte immer mit einer Versionsänderung ([`oer-version`](oer-version)) einhergehen.
+#### `date-of-last-change`⭐
+Datum der letzten (großen, inhaltlich umfangreichen) Änderung. Sollte immer mit einer Versionsänderung ([`book-version`](book-version)) einhergehen.
 
-#### `publication-date`
+#### `publication-date`⭐
 Datum der Erstveröffentlichung.
 
-#### `target-group`
+#### `target-group`⭐
 Beschreibung der Zielgruppe der OER. Es können eine oder mehrere Zielgruppen aus einem kontrollierten Vokabular ausgewählt werden.
 
-#### `authors`
-`authors` ist eine Liste der Autor:innen der OER. Das Feld ist verpflichtend und es muss mindestens ein:e Autor:in in der Liste aufgeführt werden. Eine Autor:in ist modelliert als [`person`](person).
+#### `authors`⭐
+`authors` ist eine Liste der Autor:innen der OER. Das Feld ist verpflichtend und es muss mindestens ein:e Autor:in in der Liste aufgeführt werden. Eine Autor:in wird entweder als einfache Zeichenkette oder strukturiert mit mindestens Vor- und Nachnamen angegeben, optional mit ORCID und weiteren Informationen.
 
-#### `chapters`
-Liste der Kapitel der OER. Sie muss mindestens ein Kapitel enthalten. Ein Kapitel wird mit einem Titel (`title`), einer Beschreibung (`description`) einer Liste von Lernzielen ([`learning-objectives`](learning-objectives)) sowie ggf. einer DOI und einer URL beschrieben.
+#### `chapters`⭐
+Liste der Kapitel der OER. Sie muss mindestens ein Kapitel enthalten. Ein Kapitel wird mit einem Titel (`title`), einer Beschreibung (`description`), einem Groblernziel (`learning-goal`), einer Liste von Lernzielen ([`learning-objectives`](learning-objectives)) sowie ggf. einer URL und weiteren Informationen beschrieben.
 
-#### `learning-objectives`
-Liste der Lernziele einer OER. Ein Lernziel selbst besteht aus einer genauen Formulierung des Lernziels (`learning-objective`), der zugeordneten Kompetenz (`competency`), einer Einordnung in die Datenfluss-Stufe (`data-flow`) und eine Einordnung in eine Kategorie aus der Bloomschen Taxonomie (`blooms-category`).
+#### `learning-objectives`⭐
+Liste der Lernziele eines Kapitels. Ein Lernziel selbst besteht aus einer genauen Formulierung des Lernziels (`learning-objective`), der zugeordneten Kompetenz (`competency`), dem Kompetenz-Fokus des Lernziels (`focus`), einer Einordnung in den Datenfluss (`data-flow`) und eine Einordnung in eine Kategorie aus der Bloomschen Taxonomie (`blooms-category`).
 
-#### `context-of-creation` (Umbenennung in `context-of-development`?)
-Eine Beschreibung des Entstehungskontextes. Im konkreten Fall ein natürlichsprachlicher ([`multilingual-text`](multilingual-text)) Verweis auf das QUADRIGA-Projekt.
+#### `context-of-creation`⭐
+Eine Beschreibung des Entstehungskontextes. Im konkreten Fall ein natürlichsprachlicher Verweis auf das QUADRIGA-Projekt.
 
 #### `keywords`
 Eine Liste von Stichwörtern oder Schlagwörtern.
@@ -157,7 +155,7 @@ Eine Liste von Stichwörtern oder Schlagwörtern.
 Sprache der OER als ISO639-1 Sprachcode.
 
 #### `license`
-Verweis auf die verwendet(en) Lizenz(en).
+Verweis auf die verwendete(n) Lizenz(en). Bei Angabe sind mindestens Informationen zur Lizenz des Inhalts (`content`) erforderlich, optional können auch Angaben zur Lizenz des Codes (`code`) gemacht werden.
 
 #### `prerequisites`
 Liste der Vorkenntnisse, die für ein erfolgreiches bearbeiten der OER angenommen werden.
@@ -172,16 +170,19 @@ Eine Liste von Verweisen (URL, o.ä.) und jeweils einer kurzen Beschreibung zu z
 Beschreibung der Materialart der OER. Auswahl aus einem kontrollierten Vokabular.
 
 #### `used-tools`
-Verweise auf genutzte Software nach LCSH.
+Verweise auf genutzte Software nach LCSH. Diese können als einfache URI oder als strukturierte Angabe mit Namen und URL angegeben werden.
 
 #### `data-flow`
-Stufe im Datenfluss nach dem QUADRIGA Datenkompetenzframework. Wird bei der Beschreibung von Lernzielen verwendet und kann aus einem kontrollierten Vokabular ausgewählt werden.
+Stufe im Datenfluss nach dem QUADRIGA Datenkompetenzframework. Wird bei der Beschreibung von Lernzielen verwendet und kann aus einem kontrollierten Vokabular ausgewählt werden: "Grundlagen", "Planung", "Erhebung und Aufbereitung", "Management", "Analyse" sowie "Publikation und Nachnutzung".
 
 #### `competency`
 Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework. Wird bei der Beschreibung von Lernzielen verwendet und kann aus einem kontrollierten Vokabular ausgewählt werden.
 
 #### `blooms-category`
 Einordnung eines Lernziels in eine Kategorie aus der Bloomschen Taxonomie. Wird bei der Beschreibung von Lernzielen verwendet und kann aus einem kontrollierten Vokabular ausgewählt werden.
+
+#### `focus`
+Fokus eines Lernziels auf den Aspekt "Wissen", "Fähigkeit" oder "Haltung" der Kompetenz.
 
 <!-- Fields defined in $defs follow below -->
 
@@ -194,18 +195,18 @@ Natürlichsprachlicher Text wird standardmäßig auf Deutsch verfasst. Soll dies
 #### `person`
 Eine Person kann entweder als einfache Zeichenkette oder als Mapping, das mindestens Schlüssel für Vor- und Nachname (`given-names`, `family-names`) enthält modelliert werden.
 
-Es wird empfohlen eine ORCID[^url-orcid] anzugeben.
+Es wird empfohlen eine ORCID[^url-orcid] anzugeben. Zusätzlich können Rollen nach dem CRediT-System (Contributor Roles Taxonomy) für die Person angegeben werden.
 
 ## `metadata.yml` der vorliegenden OER
 
-```{literalinclude} ../metadata.yml
+```{literalinclude} /metadata.yml
 :language: yaml
 :linenos:
 ```
 
 (technologie:metadaten:json-schema)=
 ## JSON-Schema[^url-json-schema]
-```{literalinclude} ../quadriga-schema.json
+```{literalinclude} /quadriga-schema.json
 :language: json
 :linenos:
 ```
