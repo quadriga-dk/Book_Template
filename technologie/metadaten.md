@@ -87,111 +87,145 @@ context-of-creation:
 ### Felder
 Im Folgenden werden die wichtigsten Felder des QUADRIGA-Metadatenschemas beschrieben. Pflichtfelder sind mit ⭐ gekennzeichnet.
 
+(metadata:schema-version)=
 #### `schema-version`⭐
 Versionsnummer des QUADRIGA-Metadatenschemas. Es gibt ein kontrolliertes Vokabular möglicher Versionen (aktuell: "1.1", "1.1-beta", "1.1-beta2"). Wird das QUADRIGA-Metadatenschema verändert/erweitert, so wird eine neue Version in das kontrollierte Vokabular aufgenommen.
 
+(metadata:book-version)=
 #### `book-version`⭐
-Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von [`date-of-last-change`](date-of-last-change).
+Version der OER im SemVer[^url-semver]-Format. Eine Versionsänderung korrespondiert auch immer mit einer Änderung von {ref}`metadata:date-of-last-change`.
 
+(metadata:title)=
 #### `title`⭐
 Titel der OER.
 
+(metadata:description)=
 #### `description`⭐
 Die Beschreibung der OER enthält eine Einleitung (`introduction`) und ein Inhaltsverzeichnis (`table-of-contents`). Beide Felder sind erforderlich.
 
+(metadata:discipline)=
 #### `discipline`
 In diesem Feld werden alle Disziplinen aufgezählt, welche bei der Erstellung der OER im Fokus standen. Es gibt ein kontrolliertes Vokabular möglicher Disziplinen.
 
+(metadata:duration)=
 #### `duration`⭐
 In diesem Feld wird angegeben, wie lange Lernende ca. für das Bearbeiten der OER brauchen.
 
+(metadata:type-of-research-object)=
 #### `type-of-research-object`⭐
 Bis zu zwei Datentypen, welche in der OER im Fokus stehen, können aus einem kontrollierten Vokabular ausgewählt werden. Mögliche Werte sind "Text", "Tabelle", "Bewegtes Bild" und "übergreifend".
 
+(metadata:identifier)=
 #### `identifier`⭐
 Eindeutiger Identifier in Form einer DOI. Die DOI identifiziert die gesamte OER.
 
+(metadata:url)=
 #### `url`⭐
 URL der "Leseansicht" der OER.
 
+(metadata:git)=
 #### `git`
 Verweis auf das Git-Repositorium, in dem die OER zu finden ist.
 
+(metadata:has-predecessor)=
 #### `has-predecessor`
-Verweis auf eine Vorgänger-OER, in der bspw. vorausgesetzte Inhalte erklärt oder vorangegangene Schritte durchgeführt werden. Entweder `false` oder der [`identifier`](identifier) des Vorgängers.
+Verweis auf eine Vorgänger-OER, in der bspw. vorausgesetzte Inhalte erklärt oder vorangegangene Schritte durchgeführt werden. Entweder `false` oder der {ref}`metadata:identifier` des Vorgängers.
 
-Hat OER A einen Vorgänger B, so verweist B im Eintrag [`has-successor`](has-successor) auf A.
+Hat OER A einen Vorgänger B, so verweist B im Eintrag {ref}`metadata:has-successor` auf A.
 
+(metadata:has-successor)=
 #### `has-successor`
-Verweis auf eine Nachfolger-OER, in der bspw. Inhalte oder Ergebnisse aus der aktuellen OER nachgenutzt/weiterentwickelt werden. Entweder `false` oder der [`identifier`](identifier) des Nachfolgers.
+Verweis auf eine Nachfolger-OER, in der bspw. Inhalte oder Ergebnisse aus der aktuellen OER nachgenutzt/weiterentwickelt werden. Entweder `false` oder der {ref}`metadata:identifier` des Nachfolgers.
 
-Hat OER A einen Nachfolger B, so verweist B im Eintrag [`has-predecessor`](has-predecessor) auf A.
+Hat OER A einen Nachfolger B, so verweist B im Eintrag {ref}`metadata:has-predecessor` auf A.
 
+(metadata:date-of-last-change)=
 #### `date-of-last-change`⭐
-Datum der letzten (großen, inhaltlich umfangreichen) Änderung. Sollte immer mit einer Versionsänderung ([`book-version`](book-version)) einhergehen.
+Datum der letzten (großen, inhaltlich umfangreichen) Änderung. Sollte immer mit einer Versionsänderung ({ref}`metadata:book-version`) einhergehen.
 
+(metadata:publication-date)=
 #### `publication-date`⭐
 Datum der Erstveröffentlichung.
 
+(metadata:target-group)=
 #### `target-group`⭐
 Beschreibung der Zielgruppe der OER. Es können eine oder mehrere Zielgruppen aus einem kontrollierten Vokabular ausgewählt werden.
 
+(metadata:authors)=
 #### `authors`⭐
 `authors` ist eine Liste der Autor:innen der OER. Das Feld ist verpflichtend und es muss mindestens ein:e Autor:in in der Liste aufgeführt werden. Eine Autor:in wird entweder als einfache Zeichenkette oder strukturiert mit mindestens Vor- und Nachnamen angegeben, optional mit ORCID und weiteren Informationen.
 
+(metadata:chapters)=
 #### `chapters`⭐
-Liste der Kapitel der OER. Sie muss mindestens ein Kapitel enthalten. Ein Kapitel wird mit einem Titel (`title`), einer Beschreibung (`description`), einem Groblernziel (`learning-goal`), einer Liste von Lernzielen ([`learning-objectives`](learning-objectives)) sowie ggf. einer URL und weiteren Informationen beschrieben.
+Liste der Kapitel der OER. Sie muss mindestens ein Kapitel enthalten. Ein Kapitel wird mit einem Titel (`title`), einer Beschreibung (`description`), einem Groblernziel (`learning-goal`), einer Liste von Lernzielen ({ref}`metadata:learning-objectives`) sowie ggf. einer URL und weiteren Informationen beschrieben.
 
+(metadata:learning-objectives)=
 #### `learning-objectives`⭐
-Liste der Lernziele eines Kapitels. Ein Lernziel selbst besteht aus einer genauen Formulierung des Lernziels (`learning-objective`), der zugeordneten Kompetenz (`competency`), dem Kompetenz-Fokus des Lernziels (`focus`), einer Einordnung in den Datenfluss (`data-flow`) und eine Einordnung in eine Kategorie aus der Bloomschen Taxonomie (`blooms-category`).
+Liste der Lernziele eines Kapitels. Ein Lernziel selbst besteht aus einer genauen Formulierung des Lernziels (`learning-objective`), der zugeordneten Kompetenz ({ref}`metadata:competency`), dem Kompetenz-Fokus des Lernziels ({ref}`metadata:focus`), einer Einordnung in den Datenfluss ({ref}`metadata:data-flow`) und eine Einordnung in eine Kategorie aus der Bloomschen Taxonomie ({ref}`metadata:blooms-category`).
 
+(metadata:context-of-creation)=
 #### `context-of-creation`⭐
 Eine Beschreibung des Entstehungskontextes. Im konkreten Fall ein natürlichsprachlicher Verweis auf das QUADRIGA-Projekt.
 
+(metadata:keywords)=
 #### `keywords`
 Eine Liste von Stichwörtern oder Schlagwörtern.
 
+(metadata:language)=
 #### `language`
 Sprache der OER als ISO639-1 Sprachcode.
 
+(metadata:license)=
 #### `license`
 Verweis auf die verwendete(n) Lizenz(en). Bei Angabe sind mindestens Informationen zur Lizenz des Inhalts (`content`) erforderlich, optional können auch Angaben zur Lizenz des Codes (`code`) gemacht werden.
 
+(metadata:prerequisites)=
 #### `prerequisites`
 Liste der Vorkenntnisse, die für ein erfolgreiches bearbeiten der OER angenommen werden.
 
+(metadata:quality-assurance)=
 #### `quality-assurance`
-Informationen zum Qualitätsmanagement (QM, engl.: quality assurance (QA)) werden hier hinterlegt. Diese sind eine Liste von QM-Ereignissen, welche jeweils beschrieben werden mit einer Person ([`person`](person)), dem Datum des QM-Ereignisses sowie ggf. einer Beschreibung (`description`) der durchgeführten QM-Maßnahme und ggf. deren Ergebnisse.
+Informationen zum Qualitätsmanagement (QM, engl.: quality assurance (QA)) werden hier hinterlegt. Diese sind eine Liste von QM-Ereignissen, welche jeweils beschrieben werden mit einer Person ({ref}`metadata:person`), dem Datum des QM-Ereignisses sowie ggf. einer Beschreibung (`description`) der durchgeführten QM-Maßnahme und ggf. deren Ergebnisse.
 
+(metadata:related-works)=
 #### `related-works`
 Eine Liste von Verweisen (URL, o.ä.) und jeweils einer kurzen Beschreibung zu zusätzlichen, weiterführenden Inhalten o.ä.
 
+(metadata:type-of-learning-resource)=
 #### `type-of-learning-resource`
 Beschreibung der Materialart der OER. Auswahl aus einem kontrollierten Vokabular.
 
+(metadata:used-tools)=
 #### `used-tools`
 Verweise auf genutzte Software nach LCSH. Diese können als einfache URI oder als strukturierte Angabe mit Namen und URL angegeben werden.
 
+(metadata:data-flow)=
 #### `data-flow`
 Stufe im Datenfluss nach dem QUADRIGA Datenkompetenzframework. Wird bei der Beschreibung von Lernzielen verwendet und kann aus einem kontrollierten Vokabular ausgewählt werden: "Grundlagen", "Planung", "Erhebung und Aufbereitung", "Management", "Analyse" sowie "Publikation und Nachnutzung".
 
+(metadata:competency)=
 #### `competency`
 Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework. Wird bei der Beschreibung von Lernzielen verwendet und kann aus einem kontrollierten Vokabular ausgewählt werden.
 
+(metadata:blooms-category)=
 #### `blooms-category`
 Einordnung eines Lernziels in eine Kategorie aus der Bloomschen Taxonomie. Wird bei der Beschreibung von Lernzielen verwendet und kann aus einem kontrollierten Vokabular ausgewählt werden.
 
+(metadata:focus)=
 #### `focus`
 Fokus eines Lernziels auf den Aspekt "Wissen", "Fähigkeit" oder "Haltung" der Kompetenz.
 
 <!-- Fields defined in $defs follow below -->
 
+(metadata:semver)=
 #### `semver`
 Ein Bezeichner nach dem Semantic Versioning 2.0.0 Format[^url-semver]. Wird bei der Versionierung des Schemas und der OER verwendet. Besteht aus Major-, Minor- und Patch-Version (z.B. "1.1.0"), optional gefolgt von Pre-Release-Identifikatoren und Build-Metadaten.
 
+(metadata:multilingual-text)=
 #### `multilingual-text`
 Natürlichsprachlicher Text wird standardmäßig auf Deutsch verfasst. Soll dies explizit gemacht werden und/oder sollen andere Sprachen verwendet werden, so kann hier statt einer Zeichenkette (`string`) ein Mapping (`object`) von ISO639-1 Sprachcodes und dem Text in der entsprechenden Sprache verwendet werden.
 
+(metadata:person)=
 #### `person`
 Eine Person kann entweder als einfache Zeichenkette oder als Mapping, das mindestens Schlüssel für Vor- und Nachname (`given-names`, `family-names`) enthält modelliert werden.
 
