@@ -122,9 +122,6 @@ def extract_and_update():
         if 'description' in metadata_data:
             metadata_data['description']['table-of-contents'] = toc_formatted
         
-        # Update the date of last change
-        metadata_data['date-of-last-change'] = datetime.now().strftime('%Y-%m-%d')
-        
         # Save the updated metadata
         save_yaml_file(metadata_path, metadata_data)
         print("Metadata updated successfully!")
