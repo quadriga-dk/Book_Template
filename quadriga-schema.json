@@ -293,7 +293,7 @@
             "description": "Version des Buchs.",
             "$ref": "#/$defs/semver"
         },
-        "prerequesites": {
+        "prerequisites": {
             "description": "Liste von Voraussetzungen und deren jeweiliger Einordnung in der Bloomschen Taxonomie, welche Lernende für die erfolgreiche Bearbeitung des Buchs mitbringen sollten.",
             "type": "array",
             "minItems": 1,
@@ -358,7 +358,7 @@
             "items": {
                 "type": "object",
                 "required": [
-                    "link",
+                    "url",
                     "description"
                 ],
                 "properties": {
@@ -366,7 +366,7 @@
                         "description": "Beschreibung des verlinkten Werks und dessen Beziehung zur OER",
                         "$ref": "#/$defs/multilingual-text"
                     },
-                    "link": {
+                    "url": {
                         "type": "string",
                         "format": "uri"
                     }
