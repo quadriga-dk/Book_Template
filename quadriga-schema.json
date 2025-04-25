@@ -460,37 +460,87 @@
             "minItems": 1,
             "uniqueItems": true,
             "items": {
-                "type": "object",
-                "required": [
-                    "learning-objective",
-                    "competency",
-                    "data-flow",
-                    "focus",
-                    "blooms-category"
-                ],
-                "properties": {
-                    "learning-objective": {
-                        "description": "Formulierung des Lernziels.",
-                        "$ref": "#/$defs/multilingual-text"
+                "oneOf": [
+                    {
+                        "type": "object",
+                        "required": [
+                            "learning-objective",
+                            "competency",
+                            "blooms-category",
+                            "focus",
+                            "data-flow"
+                        ],
+                        "properties": {
+                            "learning-objective": {
+                                "description": "Formulierung des Lernziels.",
+                                "$ref": "#/$defs/multilingual-text"
+                            },
+                            "competency": {
+                                "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework.",
+                                "$ref": "#/$defs/competency"
+                            },
+                            "focus": {
+                                "description": "Fokus des Lernziels auf den Aspekt \"Wissen\", \"Fähigkeit\" oder \"Haltung\" der Kompetenz.",
+                                "$ref": "#/$defs/focus"
+                            },
+                            "data-flow": {
+                                "description": "Schritt im Datenfluss, dem die Kompetenz zugeordnet ist.",
+                                "$ref": "#/$defs/data-flow"
+                            },
+                            "blooms-category": {
+                                "description": "Kategorie der Bloomschen Taxonomie, welcher das Lernziel zugeordnet ist. Aus der Kombination der Zuordnungen der Lernziele eines Kapitels lässt sich ein allgemeines Kompetenzniveau (\"Basis\", \"Fortgeschritten\", \"Expert:in\") ableiten.",
+                                "$ref": "#/$defs/bloom"
+                            }
+                        },
+                        "additionalProperties": false
                     },
-                    "competency": {
-                        "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework.",
-                        "$ref": "#/$defs/competency"
-                    },
-                    "focus": {
-                        "description": "Fokus des Lernziels auf den Aspekt \"Wissen\", \"Fähigkeit\" oder \"Haltung\" der Kompetenz.",
-                        "$ref": "#/$defs/focus"
-                    },
-                    "data-flow": {
-                        "description": "Schritt im Datenfluss, dem die Kompetenz zugeordnet ist.",
-                        "$ref": "#/$defs/data-flow"
-                    },
-                    "blooms-category": {
-                        "description": "Kategorie der Bloomschen Taxonomie, welcher das Lernziel zugeordnet ist. Aus der Kombination der Zuordnungen der Lernziele eines Kapitels lässt sich ein allgemeines Kompetenzniveau (\"Basis\", \"Fortgeschritten\", \"Expert:in\") ableiten.",
-                        "$ref": "#/$defs/bloom"
+                    {
+                        "type": "object",
+                        "required": [
+                            "learning-objective",
+                            "competencies"
+                        ],
+                        "properties": {
+                            "learning-objective": {
+                                "description": "Formulierung des Lernziels.",
+                                "$ref": "#/$defs/multilingual-text"
+                            },
+                            "competencies": {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "competency": {
+                                            "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework.",
+                                            "$ref": "#/$defs/competency"
+                                        },
+                                        "focus": {
+                                            "description": "Fokus des Lernziels auf den Aspekt \"Wissen\", \"Fähigkeit\" oder \"Haltung\" der Kompetenz.",
+                                            "$ref": "#/$defs/focus"
+                                        },
+                                        "data-flow": {
+                                            "description": "Schritt im Datenfluss, dem die Kompetenz zugeordnet ist.",
+                                            "$ref": "#/$defs/data-flow"
+                                        },
+                                        "blooms-category": {
+                                            "description": "Kategorie der Bloomschen Taxonomie, welcher das Lernziel zugeordnet ist. Aus der Kombination der Zuordnungen der Lernziele eines Kapitels lässt sich ein allgemeines Kompetenzniveau (\"Basis\", \"Fortgeschritten\", \"Expert:in\") ableiten.",
+                                            "$ref": "#/$defs/bloom"
+                                        }
+                                    },
+                                    "required": [
+                                        "competency",
+                                        "focus",
+                                        "data-flow",
+                                        "blooms-category"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        },
+                        "additionalProperties": false
                     }
-                },
-                "additionalProperties": false
+                ]
             }
         },
         "multilingual-text": {
