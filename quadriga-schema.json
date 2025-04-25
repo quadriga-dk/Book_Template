@@ -475,53 +475,19 @@
                     },
                     "competency": {
                         "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework.",
-                        "enum": [
-                            "1 Basiskompetenz",
-                            "2 Identifikation",
-                            "3 Qualitätssicherung",
-                            "4 Ethik und Recht",
-                            "5 Erhebung",
-                            "6 Validierung",
-                            "7 Aufbereitung",
-                            "8 Management",
-                            "9 Erschließung",
-                            "10 Datenanalyse",
-                            "11 Visualisierung",
-                            "12 Interpretation",
-                            "13 Aufbereitung",
-                            "14 Datenpublikation",
-                            "15 Kommunikation"
-                        ]
+                        "$ref": "#/$defs/competency"
                     },
                     "focus": {
                         "description": "Fokus des Lernziels auf den Aspekt \"Wissen\", \"Fähigkeit\" oder \"Haltung\" der Kompetenz.",
-                        "enum": [
-                            "Wissen",
-                            "Fähigkeit",
-                            "Haltung"
-                        ]
+                        "$ref": "#/$defs/focus"
                     },
                     "data-flow": {
                         "description": "Schritt im Datenfluss, dem die Kompetenz zugeordnet ist.",
-                        "enum": [
-                            "Grundlagen",
-                            "Planung",
-                            "Erhebung und Aufbereitung",
-                            "Management",
-                            "Analyse",
-                            "Publikation und Nachnutzung"
-                        ]
+                        "$ref": "#/$defs/data-flow"
                     },
                     "blooms-category": {
                         "description": "Kategorie der Bloomschen Taxonomie, welcher das Lernziel zugeordnet ist. Aus der Kombination der Zuordnungen der Lernziele eines Kapitels lässt sich ein allgemeines Kompetenzniveau (\"Basis\", \"Fortgeschritten\", \"Expert:in\") ableiten.",
-                        "enum": [
-                            "1 Erinnern",
-                            "2 Verstehen",
-                            "3 Anwenden",
-                            "4 Analysieren",
-                            "5 Bewerten",
-                            "6 Erschaffen"
-                        ]
+                        "$ref": "#/$defs/bloom"
                     }
                 },
                 "additionalProperties": false
@@ -609,6 +575,56 @@
             "type": "string",
             "description": "Semantic Versioning 2.0.0 (https://semver.org)",
             "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+        },
+        "bloom": {
+            "description": "Die Bloomsche Taxonomie",
+            "enum": [
+                "1 Erinnern",
+                "2 Verstehen",
+                "3 Anwenden",
+                "4 Analysieren",
+                "5 Bewerten",
+                "6 Erschaffen"
+            ]
+        },
+        "focus": {
+            "description": "Fokus des Lernziels auf den Aspekt \"Wissen\", \"Fähigkeit\" oder \"Haltung\" der Kompetenz.",
+            "enum": [
+                "Wissen",
+                "Fähigkeit",
+                "Haltung"
+            ]
+        },
+        "data-flow": {
+            "description": "Schritt im Datenfluss, dem die Kompetenz zugeordnet ist.",
+            "enum": [
+                "Grundlagen",
+                "Planung",
+                "Erhebung und Aufbereitung",
+                "Management",
+                "Analyse",
+                "Publikation und Nachnutzung"
+            ]
+        },
+        "competency": {
+            "description": "Im Lernziel adressierte Kompetenz nach dem QUADRIGA Datenkompetenzframework.",
+            "enum": [
+                "1 Basiskompetenz",
+                "2 Identifikation",
+                "3 Qualitätssicherung",
+                "4 Ethik und Recht",
+                "5 Erhebung",
+                "6 Validierung",
+                "7 Aufbereitung",
+                "8 Management",
+                "9 Erschließung",
+                "10 Datenanalyse",
+                "11 Visualisierung",
+                "12 Interpretation",
+                "13 Aufbereitung",
+                "14 Datenpublikation",
+                "15 Kommunikation"
+            ]
         }
     }
 }
