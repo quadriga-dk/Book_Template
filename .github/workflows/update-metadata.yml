@@ -32,19 +32,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyyaml
       
-      - name: Extract title and toc from _config.yml and _toc.yml
-        run: python quadriga/extract_from_config_toc.py
-      
-      - name: Update CITATION.cff from metadata
-        run: python quadriga/update_citation_cff.py
-      
-      - name: Create CITATION.bib based on CITATION.cff
-        run: python quadriga/create_bibtex.py
+      - name: Update metadata files
+        run: python -m quadriga.metadata.run_all
       
       - name: Check if files changed
         id: check_changes
         run: |
-          if git diff --quiet metadata.yml && git diff --quiet CITATION.bib; then
+          if git diff --quiet metadata.yml && git diff --quiet CITATION.bib && git diff --quiet CITATION.cff; then
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           else
             echo "changes_detected=true" >> $GITHUB_OUTPUT
