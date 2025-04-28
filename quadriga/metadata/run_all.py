@@ -1,5 +1,5 @@
 """
-This module contains all configuration for the various libraries used in QUADRIGA OERs as well as update scripts for metadata files.
+This script runs the various metadata update scripts in the correct order.
 """
 from .extract_from_config_toc import extract_and_update
 from .update_citation_cff import update_citation
