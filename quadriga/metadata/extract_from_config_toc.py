@@ -66,9 +66,10 @@ def extract_and_update():
     """
     Extract information from _config.yml and _toc.yml files and update metadata.yml.
     """
-    # Get the repository root directory (assuming the script is in a subdirectory)
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    repo_root = os.path.dirname(script_dir)
+    # Get the repository root directory (assuming the script is in a subdirectory of /quadriga)
+    quadriga_metadata_dir = os.path.dirname(os.path.abspath(__file__))
+    quadriga_dir = os.path.dirname(quadriga_metadata_dir)
+    repo_root = os.path.dirname(quadriga_dir)
     
     # Define file paths
     config_path = os.path.join(repo_root, '_config.yml')
