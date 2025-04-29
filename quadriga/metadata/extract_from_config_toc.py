@@ -125,6 +125,11 @@ def extract_and_update():
         
         # Save the updated metadata
         save_yaml_file(metadata_path, metadata_data)
+        # prepend the comment to configure the yaml-lsp to use quadriga-schema.json
+        with open(metadata_path, 'r+', encoding='utf-8') as file:
+            content = file.read()
+            file.seek(0, 0)
+            file.write("# yaml-language-server: $schema=quadriga-schema.json\n" + content)
         print("Metadata updated successfully!")
     else:
         print("Metadata file couldn't be loaded or is empty.")
