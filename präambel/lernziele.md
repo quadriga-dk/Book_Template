@@ -11,3 +11,11 @@ lang: de-DE
 2. Sie können die hierarchische Struktur der Lernziele in QUADRIGA OERs beschreiben und erläutern, wie die Struktur der Fallstudien mit dem Datenlebenszyklus und den Lernzielen zusammenhängt.
 3. Sie können die zentralen didaktischen Komponenten einer QUADRIGA OER identifizieren und deren Funktion im Lernprozess erklären.
 ```
+
+````{admonition} Lernziel 1 from metadata testing
+:class: lernziele
+
+```{glue:} lo-global-1
+:doc: /quadriga/create_learning_obj.ipynb
+```
+````
