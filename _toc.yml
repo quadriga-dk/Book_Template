@@ -49,6 +49,7 @@ chapters:
           - file: formatierung/carousel
           - file: formatierung/videos
           - file: formatierung/admonitions
+          - file: formatierung/interaktive_code_zelle.ipynb
       - file: formatierung/resümee
   - file: assessment/toc
     sections:
