@@ -45,6 +45,8 @@ jobs:
         packages: |
           any::tidyverse
           any::IRkernel
+        install-pandoc: false
+        install-quarto: false
 
     - name: Set up IRkernel
       run: |
