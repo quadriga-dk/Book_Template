@@ -3,3 +3,4 @@ jupyterquiz==2.8.*
 matplotlib
 numpy
 sparqlkernel
+ipywidgets==8.1.7
