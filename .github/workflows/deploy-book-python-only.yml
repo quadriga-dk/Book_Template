@@ -21,6 +21,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    # Python
     - name: Set up Python 3.11
       uses: actions/setup-python@v5
       with:
@@ -30,7 +31,9 @@ jobs:
     - name: Install Python dependencies
       run: |
         pip install -r requirements.txt
+     
     
+    # check all kernels 
     - name: Log all available kernels
       run: |
         jupyter kernelspec list
