@@ -42,9 +42,9 @@ jobs:
       with:
         cache: true
         cache-version: 2
-        extra-packages: |
-          tidyverse
-          IRkernel
+        packages: |
+          any::tidyverse
+          any::IRkernel
 
     - name: Set up IRkernel
       run: |
