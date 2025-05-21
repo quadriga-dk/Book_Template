@@ -1,4 +1,4 @@
-name: Deploy book with Python and R
+name: Deploy book with Python  and R
 
 on:
   workflow_run:
@@ -21,10 +21,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Install libcurl for R pak
-      run: |
-        sudo apt-get install -y --no-install-recommends libcurl4-openssl-dev
-
+    # Python
     - name: Set up Python 3.11
       uses: actions/setup-python@v5
       with:
@@ -34,32 +31,28 @@ jobs:
     - name: Install Python dependencies
       run: |
         pip install -r requirements.txt
-          
+     
+
+    # R
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
     
-    - name: Cacheing for R packages
-      uses: actions/cache@v3
+    - name: Install R dependencies
+      uses: r-lib/actions/setup-r-dependencies@v2
       with:
-        path: ${{ env.R_LIBS_USER }}
-        key: ${{ runner.os }}-r-${{ hashFiles('**/install_dependencies.R') }}
-        restore-keys: ${{ runner.os }}-r-
+        cache: true
+        cache-version: 2
+        extra-packages: |
+          tidyverse
+          IRkernel
 
-    - name: Install pak
+    - name: Set up IRkernel
       run: |
-        install.packages("pak", repos = "https://r-lib.github.io/p/pak/devel/")
-      shell: Rscript {0}
-    
-    - name: Install IRkernel and set it up
-      run: |
-        pak::pkg_install("IRkernel")
         IRkernel::installspec(name="ir", displayname="R")
       shell: Rscript {0}
     
-    - name: Install R_requirements
-      run: |
-        Rscript install_dependencies.R
     
+    # check all kernels 
     - name: Log all available kernels
       run: |
         jupyter kernelspec list
