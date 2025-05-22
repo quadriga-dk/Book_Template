@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 import sys
-import logging # Import logging
+import logging 
 from .utils import load_yaml_file, get_file_path, format_authors_for_bibtex, generate_citation_key
 
-# Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 def create_bibtex_from_cff():

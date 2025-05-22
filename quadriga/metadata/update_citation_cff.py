@@ -7,10 +7,9 @@ fields in 'CITATION.cff'. It handles fields like title, authors, URL,
 repository URL, and publication date. It also ensures that the 
 'preferred-citation' section, if present, is updated consistently.
 """
-import logging  # Import logging
+import logging
 from .utils import load_yaml_file, save_yaml_file, get_file_path
 
-# Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 def update_citation():

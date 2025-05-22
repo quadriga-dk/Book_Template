@@ -7,11 +7,10 @@ This module provides reused functionality across different metadata scripts.
 import yaml
 import re
 import json
-import logging  # Import logging
+import logging
 from pathlib import Path
 from datetime import datetime
 
-# Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 # ---- File Path Handling ----

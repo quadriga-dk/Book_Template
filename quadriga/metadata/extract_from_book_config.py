@@ -4,10 +4,9 @@ It then uses this information to update metadata.yml.
 The titles for the TOC chapters are extracted from the first heading of the corresponding files.
 """
 
-from pathlib import Path  # Import Path
-import logging  # Import logging
+from pathlib import Path  
+import logging  
 from datetime import datetime
-# Import utility functions from utils.py
 from .utils import (
     get_repo_root,
     get_file_path,
@@ -16,7 +15,6 @@ from .utils import (
     extract_first_heading
 )
 
-# Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 def extract_and_update():
