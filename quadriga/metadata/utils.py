@@ -136,6 +136,22 @@ def save_yaml_file(file_path: str | Path, data, schema_comment: str | None = Non
 
 # ---- Markdown and Jupyter Content Handling ----
 
+def remove_yaml_frontmatter(text: str) -> str:
+    """
+    Remove YAML frontmatter from markdown content.
+    
+    YAML frontmatter is expected to be at the beginning of the file
+    and delimited by triple dashes (---) on their own lines.
+    
+    Args:
+        text (str): Markdown content that may contain frontmatter
+        
+    Returns:
+        str: Content with frontmatter removed
+    """
+    pattern = r'^\s*---\s*\n(.*?)\n\s*---\s*(\n|$)'
+    return re.sub(pattern, '', text, count=1, flags=re.DOTALL)
+
 def extract_first_heading(file_path: str | Path) -> str:
     """
     Extract the first heading from a markdown or jupyter notebook file.
@@ -169,8 +185,7 @@ def extract_first_heading(file_path: str | Path) -> str:
                 with open(file_path_obj, 'r', encoding='utf-8') as file:
                     content = file.read()
                 
-                # Remove YAML frontmatter if present
-                content = re.sub(r'^---\n.*?\n---\n', '', content, flags=re.DOTALL)
+                content = remove_yaml_frontmatter(content)
                 heading_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
                 if heading_match:
                     return heading_match.group(1).strip()
