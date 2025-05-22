@@ -7,7 +7,11 @@ fields in 'CITATION.cff'. It handles fields like title, authors, URL,
 repository URL, and publication date. It also ensures that the 
 'preferred-citation' section, if present, is updated consistently.
 """
+import logging  # Import logging
 from .utils import load_yaml_file, save_yaml_file, get_file_path
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 def update_citation():
     """
@@ -37,7 +41,7 @@ def update_citation():
     citation_data = load_yaml_file(citation_cff_path)
 
     if not metadata or not citation_data:
-        print("Error: Could not load metadata.yml or CITATION.cff. Exiting.")
+        logging.error("Could not load metadata.yml or CITATION.cff. Exiting.")
         return
     
     # Update citation fields based on metadata

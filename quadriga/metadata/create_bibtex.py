@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 import sys
+import logging # Import logging
 from .utils import load_yaml_file, get_file_path, format_authors_for_bibtex, generate_citation_key
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 def create_bibtex_from_cff():
     """
@@ -19,7 +23,7 @@ def create_bibtex_from_cff():
     citation_data = load_yaml_file(citation_cff_path)
     
     if not citation_data:
-        print(f"Error: Could not load {citation_cff_path}. Exiting.", file=sys.stderr)
+        logging.error(f"Could not load {citation_cff_path}. Exiting.")
         return
 
     # Extract data from preferred-citation or root
@@ -65,9 +69,9 @@ def create_bibtex_from_cff():
     try:
         with open(citation_bib_path, 'w', encoding='utf-8') as f:
             f.write(bibtex)
-        print(f"BibTeX citation successfully created at {citation_bib_path}")
+        logging.info(f"BibTeX citation successfully created at {citation_bib_path}")
     except IOError as e:
-        print(f"Error writing to {citation_bib_path}: {e}", file=sys.stderr)
+        logging.error(f"Error writing to {citation_bib_path}: {e}")
 
 if __name__ == "__main__":
     create_bibtex_from_cff()

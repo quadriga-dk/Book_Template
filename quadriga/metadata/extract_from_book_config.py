@@ -5,6 +5,7 @@ The titles for the TOC chapters are extracted from the first heading of the corr
 """
 
 from pathlib import Path  # Import Path
+import logging  # Import logging
 from datetime import datetime
 # Import utility functions from utils.py
 from .utils import (
@@ -14,6 +15,9 @@ from .utils import (
     save_yaml_file,
     extract_first_heading
 )
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 def extract_and_update():
     """
@@ -33,7 +37,7 @@ def extract_and_update():
     metadata_data = load_yaml_file(metadata_path)
     
     if not all([config_data, toc_data, metadata_data]):
-        print("One or more required files couldn't be loaded. Exiting.")
+        logging.error("One or more required files couldn't be loaded. Exiting.")
         return
     
     # Extract information from _config.yml
@@ -77,9 +81,9 @@ def extract_and_update():
         
         # Save the updated metadata 
         save_yaml_file(metadata_path, metadata_data, schema_comment="# yaml-language-server: $schema=quadriga-schema.json")
-        print("Metadata updated successfully!")
+        logging.info("Metadata updated successfully!")
     else:
-        print("Metadata file couldn't be loaded or is empty.")
+        logging.error("Metadata file couldn't be loaded or is empty.")
 
 if __name__ == "__main__":
     extract_and_update()

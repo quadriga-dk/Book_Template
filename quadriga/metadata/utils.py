@@ -7,8 +7,12 @@ This module provides reused functionality across different metadata scripts.
 import yaml
 import re
 import json
+import logging  # Import logging
 from pathlib import Path
 from datetime import datetime
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 # ---- File Path Handling ----
 
@@ -55,7 +59,7 @@ def load_yaml_file(file_path: str | Path):
         with open(file_path, 'r', encoding='utf-8') as file:
             return yaml.safe_load(file)
     except Exception as e:
-        print(f"Error loading {Path(file_path).name}: {e}")
+        logging.error(f"Error loading {Path(file_path).name}: {e}")
         return None
 
 def save_yaml_file(file_path: str | Path, data, schema_comment: str | None = None):
@@ -78,9 +82,9 @@ def save_yaml_file(file_path: str | Path, data, schema_comment: str | None = Non
                 file.seek(0, 0)
                 file.write(f"{schema_comment}\n" + content)
                 
-        print(f"Successfully updated {Path(file_path).name}")
+        logging.info(f"Successfully updated {Path(file_path).name}")
     except Exception as e:
-        print(f"Error saving to {Path(file_path).name}: {e}")
+        logging.error(f"Error saving to {Path(file_path).name}: {e}")
 
 # ---- Markdown and Jupyter Content Handling ----
 
@@ -115,13 +119,13 @@ def extract_first_heading(file_path: str | Path) -> str:
             if heading_match:
                 return heading_match.group(1).strip()
         else:
-            print(f"Unsupported file type for heading extraction: {file_path_obj.name}")
+            logging.warning(f"Unsupported file type for heading extraction: {file_path_obj.name}")
             return file_path_obj.stem
 
     except FileNotFoundError:
-        print(f"File not found: {file_path_obj.name}")
+        logging.error(f"File not found: {file_path_obj.name}")
     except Exception as e:
-        print(f"Error processing {file_path_obj.name}: {e}")
+        logging.error(f"Error processing {file_path_obj.name}: {e}")
     
     return file_path_obj.stem
 
