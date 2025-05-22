@@ -7,7 +7,6 @@ on:
       - completed
     branches:
       - main
-  workflow_dispatch:
 
 # This job installs dependencies, builds the book, and deploys it to GitHub Pages
 # only runs if "Update Metadata" workflow is successful
@@ -46,6 +45,8 @@ jobs:
         packages: |
           any::tidyverse
           any::IRkernel
+        install-pandoc: false
+        install-quarto: false
 
     - name: Set up IRkernel
       run: |
