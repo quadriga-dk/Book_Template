@@ -1,18 +1,44 @@
 #!/usr/bin/env python3
-import yaml
-import json
-import re
-from pathlib import Path
+"""
+Updates the CITATION.cff file with metadata from metadata.yml.
+
+This script reads metadata from 'metadata.yml' and updates the corresponding
+fields in 'CITATION.cff'. It handles fields like title, authors, URL, 
+repository URL, and publication date. It also ensures that the 
+'preferred-citation' section, if present, is updated consistently.
+"""
+from .utils import load_yaml_file, save_yaml_file, get_file_path
 
 def update_citation():
-    """Update CITATION.cff using data from metadata.yml"""
+    """
+    Updates the CITATION.cff file using data from the metadata.yml file.
+
+    The function performs the following steps:
+    1.  Constructs absolute paths to 'metadata.yml' and 'CITATION.cff'.
+    2.  Loads data from both YAML files.
+    3.  Updates 'CITATION.cff' fields (title, authors, URL, repository-code, 
+        and publication year in preferred-citation) based on 'metadata.yml'.
+    4.  For authors, it attempts to preserve existing author details in 
+        'CITATION.cff' if a matching author (by given and family names) is found.
+    5.  Saves the updated data back to 'CITATION.cff', including a schema comment.
+    
+    If 'metadata.yml' or 'CITATION.cff' cannot be loaded, an error message is
+    printed, and the function returns without making changes.
+    """
+    # Define file paths 
+    repo_root = get_file_path('')  # Get repo root by providing empty relative path
+    metadata_path = get_file_path('metadata.yml', repo_root)
+    citation_cff_path = get_file_path('CITATION.cff', repo_root)
+
     # Load metadata.yml
-    with open('metadata.yml', 'r', encoding='utf-8') as f:
-        metadata = yaml.safe_load(f)
+    metadata = load_yaml_file(metadata_path)
     
     # Load existing CITATION.cff
-    with open('CITATION.cff', 'r', encoding='utf-8') as f:
-        citation_data = yaml.safe_load(f)
+    citation_data = load_yaml_file(citation_cff_path)
+
+    if not metadata or not citation_data:
+        print("Error: Could not load metadata.yml or CITATION.cff. Exiting.")
+        return
     
     # Update citation fields based on metadata
     if 'title' in metadata:
@@ -73,10 +99,7 @@ def update_citation():
                 citation_data['preferred-citation']['year'] = year
     
     # Save updated CITATION.cff
-    with open('CITATION.cff', 'w', encoding='utf-8') as f:
-        f.write("# yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json\n")
-        yaml.dump(citation_data, f, encoding='utf-8', default_flow_style=False, 
-                 width=100, allow_unicode=True, sort_keys=False)
+    save_yaml_file(citation_cff_path, citation_data, schema_comment="# yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json")
 
 if __name__ == "__main__":
     update_citation()
