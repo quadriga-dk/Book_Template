@@ -1,7 +1,7 @@
 """
 This script runs the various metadata update scripts in the correct order.
 """
-from .extract_from_config_toc import extract_and_update
+from .extract_from_book_config import extract_and_update
 from .update_citation_cff import update_citation
 from .create_bibtex import create_bibtex_from_cff
 
