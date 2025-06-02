@@ -40,7 +40,16 @@ Schnaitter, H., Samoilova, E. & Islam, L. (2024). Technologie In _QUADRIGA OERs:
 `````
 
 
-```{admonition} Groblernziel
+```{admonition} Die technische Umsetzung der QUADRIGA OERs:
 :class: lernziele
-1. add groblernziel for technologie chapter
+
+1. Die Bestandteile der Entwicklungsumgebung (Git, Python, Jupyter Book, Editor) können identifiziert und deren Funktionen im OER-Entwicklungsprozess erläutert werden.
+
+2. Der Unterschied zwischen Jupyter Book und Jupyter Notebook kann erklärt und deren jeweilige Rolle im Entwicklungsworkflow beschrieben werden.
+
+3. Die automatische Website-Erstellung über GitHub Actions kann erklärt und der Vorteil gegenüber manueller lokaler Entwicklung bewertet werden.
+
+4. Die Installation und Einrichtung einer lokalen Entwicklungsumgebung mit Python/Anaconda kann durchgeführt und Virtual Environments für projektspezifische Anforderungen erstellt werden.
+
+5. Der Unterschied zwischen Texteditoren und Textprozessoren für die Code-Entwicklung kann erklärt und geeignete Editoren wie VS Code für die OER-Entwicklung ausgewählt werden.
 ```
