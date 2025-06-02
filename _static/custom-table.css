@@ -1,0 +1,68 @@
+/* sparql output table styling*/
+
+div.cell_output table {
+    width: 100% !important;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+
+div.cell_output table tbody tr, 
+div.cell_output table tbody tr th, 
+div.cell_output table tbody tr td {
+    text-align: left !important;
+    position: relative;
+}
+
+div.cell_output table tbody tr td {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+    word-wrap: break-word;
+}
+
+/* Dynamic width based on number of columns */
+div.cell_output table td:first-child:nth-last-child(2),
+div.cell_output table td:first-child:nth-last-child(2) ~ td {
+    width: 50%;
+    max-width: 300px;
+}
+
+
+/* Adjust max-width if there are more than 4 columns */
+div.cell_output table td:first-child:nth-last-child(n+3),
+div.cell_output table td:first-child:nth-last-child(n+3) ~ td {
+    max-width: 120px !important;
+}
+
+/* Row expansion on hover */
+div.cell_output table tbody tr:hover td {
+    white-space: normal;
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 12px 8px;
+    vertical-align: top;
+}
+
+
+/* Enhanced styling for expanded state */
+div.cell_output table tbody tr:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    div.cell_output table td {
+        min-width: 100px;
+        font-size: 14px;
+    }
+    
+    div.cell_output table tbody tr:hover td {
+        font-size: 13px;
+        padding: 10px 6px;
+    }
+}
