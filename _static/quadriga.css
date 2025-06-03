@@ -1,3 +1,6 @@
+/* font-awesome icons library */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
 /* Custom variables */
 :root {
     --quadriga-main: #00305e;
@@ -256,3 +259,38 @@ html[data-theme='dark'] div.cell details.above-input > summary {
 }
 
 
+/* Zeitinfo/Bearbeitungszeit styling */
+div.zeitinfo {
+    background-color: #fff9f4 !important;             /* sehr helles Apricot */
+    border-left-color: #e59d7e !important;            /* weiches Apricot */
+}
+
+div.zeitinfo > .admonition-title {
+    background-color: rgba(229, 157, 126, 0.12) !important;
+    color: #cc6f53 !important;                        /* kräftigerer Apricot-Ton */
+}
+
+div.zeitinfo > .admonition-title::after {
+    content: "\f017" !important;                      /* Font Awesome clock */
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1em !important;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #cc6f53 !important;                  /* Apricot-Farbe für das Icon */
+}
+
+/* Dark mode overrides for zeitinfo */
+html[data-theme='dark'] div.zeitinfo {
+    background-color: rgba(229, 157, 126, 0.1) !important;
+    border-left-color: #e59d7e !important;
+}
+
+html[data-theme='dark'] div.zeitinfo > .admonition-title {
+    background-color: rgba(229, 157, 126, 0.15) !important;
+    color: #e59d7e !important;
+}
+
+html[data-theme='dark'] div.zeitinfo > .admonition-title::after {
+    color: #e59d7e !important;
+}
