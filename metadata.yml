@@ -25,7 +25,7 @@ discipline:
 duration: 10h
 type-of-research-object:
 - übergreifend
-identifier: https://doi.org
+identifier: https://doi.org/10.5281/zenodo.14970672
 url: https://quadriga-dk.github.io/Book_Template/
 git: https://github.com/quadriga-dk/Book_Template
 license:
