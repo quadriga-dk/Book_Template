@@ -522,6 +522,10 @@
                             "5 Bewerten",
                             "6 Erschaffen"
                         ]
+                    },
+                    "assessment": {
+                        "description": "Beschreibung der Art der Überprüfung des Lernziels.",
+                        "$ref": "#/$defs/multilingual-text"
                     }
                 },
                 "additionalProperties": false
