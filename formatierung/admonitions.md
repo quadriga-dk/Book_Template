@@ -91,6 +91,17 @@ Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden
 ````
 `````
 
+`````{admonition} Bearbeitungszeit
+:class: zeitinfo
+Dieser Admonition-Typ wird verwendet, um die voraussichtliche Bearbeitungszeit für Aufgaben oder Kapitel anzugeben.
+````
+```{admonition} Bearbeitungszeit/Zeitinfo
+:class: zeitinfo
+Informiert Lernende über den voraussichtlichen Zeitaufwand für Abschnitte oder Aufgaben.
+```
+````
+`````
+
 ``````{admonition} Zitierhinweis
 :class: citation-information
 ```{literalinclude} ../CITATION.bib
