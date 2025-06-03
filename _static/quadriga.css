@@ -279,3 +279,18 @@ div.zeitinfo > .admonition-title::after {
     font-weight: 900;
     color: #cc6f53 !important;                  /* Apricot-Farbe für das Icon */
 }
+
+/* Dark mode overrides for zeitinfo */
+html[data-theme='dark'] div.zeitinfo {
+    background-color: rgba(229, 157, 126, 0.1) !important;
+    border-left-color: #e59d7e !important;
+}
+
+html[data-theme='dark'] div.zeitinfo > .admonition-title {
+    background-color: rgba(229, 157, 126, 0.15) !important;
+    color: #e59d7e !important;
+}
+
+html[data-theme='dark'] div.zeitinfo > .admonition-title::after {
+    color: #e59d7e !important;
+}
