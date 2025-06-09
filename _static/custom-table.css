@@ -54,6 +54,31 @@ div.cell_output table tbody tr:hover {
     position: relative;
 }
 
+/* Dark mode */
+html[data-theme='dark'] div.cell_output table {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+html[data-theme=dark] .bd-content div.cell_output .text_html:not(:has(table.dataframe)) {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+html[data-theme=dark] div.cell_output th {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+html[data-theme=dark] div.cell_output table tbody tr:nth-child(odd) {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+div.cell_output tbody tr:hover{
+    background: rgba(66, 165, 245, 0.2) !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     div.cell_output table td {
