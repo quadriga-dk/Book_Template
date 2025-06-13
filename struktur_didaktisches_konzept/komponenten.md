@@ -4,12 +4,6 @@ lang: de-DE
 (komponenten)=
 # Zentrale Komponenten der OERs
 
-```{admonition} Feinlernziel
-:class: lernziele
-
-3. Sie können die zentralen didaktischen Komponenten einer QUADRIGA OER identifizieren und deren Funktion im Lernprozess erklären.
-
-```
 QUADRIGA OERs bestehen aus verschiedenen Komponenten, die zusammen eine ganzheitliche Lernerfahrung ermöglichen:
 
 ## Einleitung

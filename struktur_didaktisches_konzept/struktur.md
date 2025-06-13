@@ -4,13 +4,6 @@ lang: de-DE
 (inhaltliche_strukur)=
 # Lernziele und Struktur
 
-```{admonition} Feinlernziel
-:class: lernziele
-
-2. Sie können die hierarchische Struktur der Lernziele in QUADRIGA OERs beschreiben und erläutern, wie die Struktur der Fallstudien mit dem Datenlebenszyklus und den Lernzielen zusammenhängt.
-
-```
-
 Die Entwicklung von QUADRIGA OERs folgt dem Prinzip des "Constructive Alignment", bei dem Lernziele, Lernaktivitäten und Assessment aufeinander abgestimmt werden. Dieser Ansatz beginnt mit der Festlegung von Lernzielen und geht schrittweise zu Assessment und Lernaktivitäten über.
 
 ## Hierarchische Strukturierung von Lernzielen und OER-Inhalten
