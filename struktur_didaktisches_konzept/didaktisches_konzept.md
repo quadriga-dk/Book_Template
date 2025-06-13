@@ -4,12 +4,6 @@ lang: de-DE
 (didaktisches_konzept)=
 # Forschungsgeleitete Fallstudien als Kern der Lernerfahrung
 
-```{admonition} Feinlernziel
-:class: lernziele
-
-1. Sie können den forschungsgeleiteten Ansatz der QUADRIGA OERs erläutern und erklären, wie Fallstudien aus der tatsächlichen Forschungspraxis zur Vermittlung von Datenkompetenzen beitragen.
-
-```
 
 ## Forschungsgeleitete Fallstudien als Kern der Lernerfahrung
 

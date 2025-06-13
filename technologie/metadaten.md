@@ -21,12 +21,6 @@ Mit Ihren Rückmeldungen können wir unser interaktives Lehrbuch gezielt an Ihre
 ````
 
 
-```{admonition} Feinlernziele
-:class: lernziele
-1. Lernende kennen das Metadatenschema für in QUADRIGA erstellte OERs und dessen technische Umsetzung.
-2. Lernende können die Metadaten ihrer eigenen OER dem QUADRIGA-Schema entsprechend umsetzen.
-```
-
 ```{admonition} Achtung: Baustelle
 :class: caution
 Die hier beschriebenen Inhalte werden aktiv überarbeitet!

@@ -1,12 +1,5 @@
 # Interaktive Rechenumgebungen mit Google Colab
 
-```{admonition} Feinlernziel(e) dieses Kapitels
-:class: lernziele
-* Sie können Jupyter Notebooks in interaktiven Cloud-Umgebungen öffnen und bearbeiten
-* Sie verstehen die grundlegenden Konzepte und Herausforderungen bei der Arbeit mit Google Colab
-* Sie kennen die wichtigsten Lösungsansätze für häufig auftretende Probleme
-```
-
 Da Jupyter Books auf Jupyter-Notebooks oder ausführbaren Markdown-Dateien basieren, ist es möglich, über einen Launch-Button direkt in der Cloud interaktive Jupyter-Sessions zu starten. So können Inhalte in einer vertrauten Coding-Umgebung live ausprobiert werden. Wir verwenden in dieser Vorlage Google Colab, eine kostenlose Cloud-Lösung für Jupyter Notebooks. Im Folgenden erläutern wir die wichtigsten Aspekte der Nutzung dieser interaktiven Funktionen.
 
 

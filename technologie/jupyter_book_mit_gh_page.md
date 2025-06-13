@@ -4,11 +4,6 @@ lang: de-DE
 (gh_page)=
 # Jupyter Book mit GitHub Pages veröffentlichen
 
-```{admonition} Feinlernziel(e) dieses Kapitels
-:class: lernziele
-Sie können ein Jupyter Book mit GitHub Pages veröffentlichen und die geeignete Bereitstellungsmethode für Ihr Projekt auswählen.
-```
-
 GitHub Pages ist ein Hosting-Dienst, mit dem digitale Inhalte direkt aus einem GitHub-Repository veröffentlicht werden können. Dadurch können Jupyter Books online bereitgestellt und öffentlich zugänglich gemacht werden. In diesem Abschnitt werden die beiden gängigsten Methoden zur Bereitstellung eines Jupyter Books vorgestellt: 
 
 - Deploy from a branch

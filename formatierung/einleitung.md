@@ -5,12 +5,6 @@ lang: de-DE
 (formatierung:einleitung)=
 # Formatierungs- und Darstellungsmöglichkeiten
 
-```{admonition} Feinlernziel
-:class: lernziele
-
-1. add feinlernziel content for this subchapter
-
-```
 
 Jupyter Book verarbeitet standardmäßig zwei Dateiformate – Markdown[^url-myst-markdown] und Jupyter Notebook[^url-jupyter-notebook]. Dabei gibt es verschiedene Formatierungsmöglichkeiten um Abbildungen, Admonitions und ähnliches umzusetzen. In den nachfolgenden Abschnitten werden grundlegende Formatierungshinweise gegeben sowie spezielle Variationen für QUADRGIA OER vorgestellt. Weitere Hinweise zur Formatierung finden Sie auch im <a href="https://jupyterbook.org/en/stable/reference/cheatsheet.html" class="external-link" target="_blank">MyST syntax cheat sheet</a>.
 
