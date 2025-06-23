@@ -62,7 +62,8 @@ authors:
 chapters:
 - title: Präambel
   url: https://quadriga-dk.github.io/Book_Template/präambel/toc.html
-  description: Präambel des Templates. Gibt grundlegende Informationen zu Lernzielen, Voraussetzungen und Vorkenntnissen.
+  description: Präambel des Templates. Gibt grundlegende Informationen zu Lernzielen,
+    Voraussetzungen und Vorkenntnissen.
   learning-goal: Überblick über Template
   duration: 15min
   learning-objectives:
@@ -73,72 +74,93 @@ chapters:
     blooms-category: 1 Erinnern
 - title: Struktur und didaktisches Konzept
   url: https://quadriga-dk.github.io/Book_Template/struktur_didaktisches_konzept/einleitung.html
-  description: Dieses Kapitel stellt die Struktur des Templates und das zugrunde liegende didaktische Konzept vor.
+  description: Dieses Kapitel stellt die Struktur des Templates und das zugrunde liegende
+    didaktische Konzept vor.
   learning-goal: Fallstudienbasiertes didaktisches Konzept von QUADRIGA
   learning-objectives:
-  - learning-objective: Der forschungsgeleitete Ansatz der QUADRIGA OERs kann erläutert und der Beitrag von Fallstudien zur Datenkompetenzvermittlung erklärt werden.
+  - learning-objective: Der forschungsgeleitete Ansatz der QUADRIGA OERs kann erläutert
+      und der Beitrag von Fallstudien zur Datenkompetenzvermittlung erklärt werden.
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
-  - learning-objective: Die hierarchische Struktur der Lernziele in QUADRIGA OERs kann beschrieben und der Zusammenhang zwischen Fallstudienstruktur, Datenlebenszyklus und Lernzielen erläutert werden.
+  - learning-objective: Die hierarchische Struktur der Lernziele in QUADRIGA OERs
+      kann beschrieben und der Zusammenhang zwischen Fallstudienstruktur, Datenlebenszyklus
+      und Lernzielen erläutert werden.
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
-  - learning-objective: Die zentralen didaktischen Komponenten einer QUADRIGA OER können identifiziert und deren Funktion im Lernprozess erklärt werden.
+  - learning-objective: Die zentralen didaktischen Komponenten einer QUADRIGA OER
+      können identifiziert und deren Funktion im Lernprozess erklärt werden.
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
 - title: Technologie
   url: https://quadriga-dk.github.io/Book_Template/technologie/einleitung.html
-  description: Es werden die verschiedenen Bestandteile des Templates sowie die Technologien, welche genutzt werden, vorgestellt. Besonderes Augenmerk liegt auf dem Zusammenspiel der einzelnen Elemente.
+  description: Es werden die verschiedenen Bestandteile des Templates sowie die Technologien,
+    welche genutzt werden, vorgestellt. Besonderes Augenmerk liegt auf dem Zusammenspiel
+    der einzelnen Elemente.
   learning-goal: Technische Umsetzung der QUADRIGA OERs
   learning-objectives:
-  - learning-objective: Die Bestandteile der Entwicklungsumgebung (Git, Python, Jupyter Book, Editor) können identifiziert und deren Funktionen im OER-Entwicklungsprozess erläutert werden.
+  - learning-objective: Die Bestandteile der Entwicklungsumgebung (Git, Python, Jupyter
+      Book, Editor) können identifiziert und deren Funktionen im OER-Entwicklungsprozess
+      erläutert werden.
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
-  - learning-objective: Der Unterschied zwischen Jupyter Book und Jupyter Notebook kann erklärt und deren jeweilige Rolle im Entwicklungsworkflow beschrieben werden.
+  - learning-objective: Der Unterschied zwischen Jupyter Book und Jupyter Notebook
+      kann erklärt und deren jeweilige Rolle im Entwicklungsworkflow beschrieben werden.
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
-  - learning-objective: Die automatische Website-Erstellung über GitHub Actions kann erklärt und der Vorteil gegenüber manueller lokaler Entwicklung bewertet werden.
+  - learning-objective: Die automatische Website-Erstellung über GitHub Actions kann
+      erklärt und der Vorteil gegenüber manueller lokaler Entwicklung bewertet werden.
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
-  - learning-objective: Die Installation und Einrichtung einer lokalen Entwicklungsumgebung mit Python/Anaconda kann durchgeführt und Virtual Environments für projektspezifische Anforderungen erstellt werden.
+  - learning-objective: Die Installation und Einrichtung einer lokalen Entwicklungsumgebung
+      mit Python/Anaconda kann durchgeführt und Virtual Environments für projektspezifische
+      Anforderungen erstellt werden.
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
-  - learning-objective: Der Unterschied zwischen Texteditoren und Textprozessoren für die Code-Entwicklung kann erklärt und geeignete Editoren wie VS Code für die OER-Entwicklung ausgewählt werden.
+  - learning-objective: Der Unterschied zwischen Texteditoren und Textprozessoren
+      für die Code-Entwicklung kann erklärt und geeignete Editoren wie VS Code für
+      die OER-Entwicklung ausgewählt werden.
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
 - title: Formatierungs- und Darstellungsmöglichkeiten
   url: https://quadriga-dk.github.io/Book_Template/formatierung/einleitung.html
-  description: Spezifische Ausführungen und Anleitungen zu Markdown- und Jupyter-Noteboook-Dateien und Formatierungsmöglichkeiten. Empfehlungen für deren einheitliche Nutzung in QUADRIGA OERs.
-  learning-goal: Schreiben und Formatieren von Inhalten nach den Empfehlungen von QUADRIGA
+  description: Spezifische Ausführungen und Anleitungen zu Markdown- und Jupyter-Noteboook-Dateien
+    und Formatierungsmöglichkeiten. Empfehlungen für deren einheitliche Nutzung in
+    QUADRIGA OERs.
+  learning-goal: Schreiben und Formatieren von Inhalten nach den Empfehlungen von
+    QUADRIGA
   learning-objectives:
-  - learning-objective: Kenntnis, Auswahl und Nutzung verschiedener möglicher Dateiformate und Programmiersprachen
+  - learning-objective: Kenntnis, Auswahl und Nutzung verschiedener möglicher Dateiformate
+      und Programmiersprachen
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
-  - learning-objective: Kenntnis, Auswahl und Nutzung spezifischer Auszeichungs- und Formatierungsoptionen
+  - learning-objective: Kenntnis, Auswahl und Nutzung spezifischer Auszeichungs- und
+      Formatierungsoptionen
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
 - title: Lernstandskontrolle (Assessment)
   url: https://quadriga-dk.github.io/Book_Template/assessment/toc.html
-  description: Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books, die den QUADRIGA-Empfehlungen folgen
+  description: Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books,
+    die den QUADRIGA-Empfehlungen folgen
   learning-goal: Gestaltung und Implementierung von Assessments
   learning-objectives:
   - learning-objective: Verständnis des Assessmentkonzepts von QUADRIGA
@@ -153,10 +175,12 @@ chapters:
     blooms-category: 1 Erinnern
 - title: Reflexion und Resümee
   url: https://quadriga-dk.github.io/Book_Template/reflexion_und_resümee/toc.html
-  description: Zusammenfassung und Wiederholung der wichtigsten Inhalte des Buchs. Hinweise auf weiterführende Inhalte.
+  description: Zusammenfassung und Wiederholung der wichtigsten Inhalte des Buchs.
+    Hinweise auf weiterführende Inhalte.
   learning-goal: Festigung der erlernten Inhalte
   learning-objectives:
-  - learning-objective: Kenntnis der wichtigsten Inhalte des Templates und dessen Nutzung
+  - learning-objective: Kenntnis der wichtigsten Inhalte des Templates und dessen
+      Nutzung
     competency: 1 Basiskompetenz
     focus: Wissen
     data-flow: Grundlagen
