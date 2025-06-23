@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=quadriga-schema.json
 schema-version: 1.1-beta2
-book-version: 0.55.0
+book-version: 0.55.1
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
 description:
@@ -66,7 +66,7 @@ chapters:
   learning-goal: Überblick über Template
   duration: 15min
   learning-objectives:
-    - learning-objective: Verständnis der Lernziele des Templates
+  - learning-objective: Verständnis der Lernziele des Templates
     competency: 1 Basiskompetenz
     data-flow: Grundlagen
     focus: Wissen
