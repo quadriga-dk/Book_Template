@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "tag:quadriga-dk.de,2025:quadriga",
     "title": "QUADRIGA OER",
-    "description": "Eine OER, die nach dem QUADRIGA-Metadatenschema beschrieben wird.",
+    "description": "Ein Jupyter Book (Buch, Sammlung von OERs), das nach dem QUADRIGA-Metadatenschema beschrieben wird.",
     "@context": {
         "dct": "http://purl.org/dc/terms/",
         "schema": "http://schema.org/"
@@ -26,7 +26,7 @@
     ],
     "properties": {
         "authors": {
-            "description": "Liste der Autor:innen der OER.",
+            "description": "Liste der Autor:innen des Buchs.",
             "type": "array",
             "minItems": 1,
             "uniqueItems": true,
@@ -87,7 +87,7 @@
                             ],
                             "properties": {
                                 "description": {
-                                    "description": "Beschreibung des verlinkten Werks und dessen Beziehung zur OER.",
+                                    "description": "Beschreibung des verlinkten Werks und dessen Beziehung zur OER/zum Kapitel.",
                                     "$ref": "#/$defs/multilingual-text"
                                 },
                                 "url": {
@@ -113,7 +113,7 @@
             "@id": "dct:modified"
         },
         "description": {
-            "description": "Beschreibung der OER",
+            "description": "Beschreibung des Buchs.",
             "type": "object",
             "@id": "dct:description",
             "required": [
@@ -122,11 +122,11 @@
             ],
             "properties": {
                 "introduction": {
-                    "description": "Einleitung der OER",
+                    "description": "Einleitung des Buchs.",
                     "$ref": "#/$defs/multilingual-text"
                 },
                 "table-of-contents": {
-                    "description": "Inhaltsverzeichnis der OER",
+                    "description": "Inhaltsverzeichnis des Buchs.",
                     "$ref": "#/$defs/multilingual-text",
                     "@id": "dct:tableOfContents"
                 }
@@ -134,7 +134,7 @@
             "additionalProperties": false
         },
         "discipline": {
-            "description": "Nennung der Disziplinen, die bei der Erstellung der OER im Fokus standen.",
+            "description": "Nennung der Disziplinen, die bei der Erstellung  im Fokus standen.",
             "type": "array",
             "minItems": 1,
             "maxItems": 5,
@@ -155,7 +155,7 @@
             "@id": "schema:timeRequired"
         },
         "git": {
-            "description": "Git-Repositorium, in dem die OER-Inhalte zu finden sind.",
+            "description": "Git-Repositorium, in dem die Buch/OER-Inhalte zu finden sind.",
             "type": "string",
             "format": "uri",
             "@id": "schema:codeRepository"
@@ -215,7 +215,7 @@
             }
         },
         "language": {
-            "description": "Sprache der OER als ISO639-1 Sprachcode.",
+            "description": "Sprache des Buchs als ISO639-1 Sprachcode.",
             "type": "string",
             "@id": "dct:language"
         },
@@ -363,7 +363,7 @@
                 ],
                 "properties": {
                     "description": {
-                        "description": "Beschreibung des verlinkten Werks und dessen Beziehung zur OER",
+                        "description": "Beschreibung des verlinkten Werks und dessen Beziehung zum Buch.",
                         "$ref": "#/$defs/multilingual-text"
                     },
                     "url": {
@@ -397,7 +397,7 @@
             "@id": "dct:audience"
         },
         "title": {
-            "description": "Titel der OER",
+            "description": "Titel des Buchs",
             "type": "string",
             "@id": "dct:title"
         },
@@ -407,7 +407,7 @@
             ]
         },
         "type-of-research-object": {
-            "description": "Nennung des Datentyps, der vorrangig in der OER behandelt wird.",
+            "description": "Nennung des Datentyps, der vorrangig im Buch behandelt wird.",
             "type": "array",
             "minItems": 1,
             "maxItems": 2,
@@ -421,7 +421,7 @@
             }
         },
         "url": {
-            "description": "URL der gesamten OER",
+            "description": "URL des Buchs.",
             "type": "string",
             "format": "uri"
         },
@@ -549,7 +549,7 @@
             ]
         },
         "person": {
-            "description": "Eine Person, die an der Erstellung der OER beteiligt war.",
+            "description": "Eine Person, die an der Erstellung des Buchs beteiligt war.",
             "@id": "schema:person",
             "oneOf": [
                 {
