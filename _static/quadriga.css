@@ -253,7 +253,9 @@ html[data-theme='dark'] div.citation-information > .admonition-title::after {
 
 /* Dark mode styling for Jupyter notebook cells */
 html[data-theme='dark'] div.cell div.cell_input,
-html[data-theme='dark'] div.cell details.above-input > summary {
+html[data-theme='dark'] div.cell div.cell_output,
+html[data-theme='dark'] div.cell details.above-input > summary,
+html[data-theme='dark'] div.cell details.above-output > summary {
     background-color: #29313d !important;
     color: #f7fbff !important;
 }
