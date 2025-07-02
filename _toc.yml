@@ -30,6 +30,7 @@ chapters:
           - file: entwicklung/editor
       - file: technologie/interactive_interfaces
       - file: technologie/jupyter_book_mit_gh_page
+      - file: technologie/jupyter_kernel
       - file: technologie/publikation_auf_zenodo.md
       - file: technologie/metadaten.md
       - file: technologie/resümee
