@@ -5,7 +5,7 @@ lang: de-DE
 (jupyter_kernel)=
 # Jupyter Kernels
 
-Jupyter Kernels sind die Recheneinheiten, die Code in Jupyter Notebooks ausführen. Wenn Sie ein Jupyter Book mit ausführbarem Inhalt oder Code erstellen, ist das Verständnis von Kernels sowohl für die lokale Entwicklung als auch für automatisierte Builds von entscheidender Bedeutung.
+Jupyter Kernels sind Programm-Umgebungen, die ein Jupyter Notebook interaktiv werden lässt. Die korrekte Konfiguration des Kernels ist für die Lokale Entwicklung ebenso wie für die Nutzung in GitHub Actions (und anderen CI/CD-Umgebungen) relevant.
 
 ```{admonition} Was ist ein Jupyter Kernel?
 :class: hinweis
@@ -15,82 +15,69 @@ Ein Jupyter Kernel ist ein separater Prozess, der Ihren Code ausführt und mit d
 
 ## Grundlagen und Funktionsweise
 
-Jupyter Notebooks können mit vielen verschiedenen Programmiersprachen arbeiten – Python, R, Julia, Scala und sogar spezialisierte Sprachen wie SPARQL für Datenbankabfragen. Jede Sprache benötigt ihre eigene Ausführungsumgebung, um den Code korrekt zu verarbeiten. Deshalb brauchen wir verschiedene Kernels für verschiedene Sprachen.
+Jupyter Notebooks können mit vielen verschiedenen Programmiersprachen arbeiten – Python, R, Julia, Scala und auch spezialisierten Sprachen wie SPARQL für Datenbankabfragen. Jede Sprache benötigt ihre eigene Ausführungsumgebung, um den Code korrekt zu verarbeiten. Deshalb brauchen wir verschiedene Kernels für verschiedene Sprachen.
 
-Ohne Kernels:
-- Würde Ihr Code nicht ausgeführt
-- Würden Variablen nicht zwischen Zellen gespeichert
-- Könnten Sie keine Ausgaben, Diagramme oder Ergebnisse sehen
+Ohne Kernels,
+- würde Ihr Code nicht ausgeführt
+- würden Variablen nicht zwischen Zellen gespeichert und
+- könnten Sie keine Ausgaben, Diagramme oder Ergebnisse sehen.
 
-Die am häufigsten verwendeten Kernels in Jupyter Books sind der **IPython Kernel** für Python-Code, der **IR Kernel** für R-Code und der **SPARQL Kernel** für Datenbankabfragen mit der SPARQL-Abfragesprache zur Arbeit mit Wissensgraphen und semantischen Daten.
+Die am häufigsten verwendeten Kernels in unseren Jupyter Books sind der *IPython Kernel* für Python-Code, der *IR Kernel* für R-Code und der *SPARQL Kernel* für Datenbankabfragen mit der SPARQL-Abfragesprache zur Arbeit mit Wissensgraphen und semantischen Daten.
 
 ## Kernels in GitHub Actions einrichten
 
-Wenn Sie Ihr Jupyter Book lokal erstellen, sind die Kernels bereits auf Ihrem Computer installiert. GitHub Actions startet jedoch mit einer sauberen Umgebung, sodass Sie die Kernels dort erst installieren und konfigurieren müssen.
+Wenn Sie Ihr Jupyter Book lokal erstellen müssen Sie auch die passenden Kernels lokal installieren. Der Python-Kernel wird bei einer Installation des Pakets `jupyter` mitinstalliert. Andere Kernels müssen Sie ggf. selbst nachinstallieren. Befolgen Sie dazu die Anweisungen im jeweiligen Book bzw. orientieren Sie sich an den Nachfolgenden ausführungen. Eine GitHub Action startet normalerweise mit einer leeren Linux-Umgebung, sodass Sie die Kernels dort erst installieren und konfigurieren müssen.
+
+Die nachfolgenden Code-Beispiele entstammen der Datei `.github/workflows/deploy-book-python-sparql-r.yml` welche die Installation und Konfiguration der drei Kernels vornimmt. Sie kann als Grundlage für spezielle Konfigurationen in Ihrem Book dienen.
 
 ### Python Kernel
 
-Die Python-Einrichtung ist unkompliziert, da Python den IPython Kernel mitbringt:
+Die Python-Einrichtung ist relativ unkompliziert, da der entspechende Kernel bei der Installation der benötigten Python-Pakete via `requirements.txt` installiert und konfiguriert wird:
 
-```yaml
-- name: Set up Python 3.11
-  uses: actions/setup-python@v5
-  with:
-    python-version: 3.11
-    cache: pip  # Pip-Abhängigkeiten zwischenspeichern für schnellere Builds
-
-- name: Install Python dependencies
-  run: |
-    pip install -r requirements.txt
+```{literalinclude} ../.github/workflows/deploy-book-python-sparql-r.yml
+:language: yaml
+:lineno-match:
+:start-after: "# Python"
+:end-before: "# R"
 ```
 
 ### R Kernel
 
-R erfordert mehr Schritte, da wir sowohl R als auch den IRkernel installieren müssen:
+R erfordert etwas mehr Schritte, da wir nicht nur R und den passenden Kernel installieren, sondern diesen zudem für die Nutzung in Jupyter Notebooks registrieren müssen.
 
-```yaml
-- name: Set up R
-  uses: r-lib/actions/setup-r@v2
-
-- name: Install R dependencies
-  uses: r-lib/actions/setup-r-dependencies@v2
-  with:
-    cache: true              # R-Pakete zwischenspeichern für schnellere Builds
-    cache-version: 2         # Cache-Version (bei Bedarf aktualisieren)
-    packages: |              # Liste der zu installierenden R-Pakete
-      any::tidyverse         # Datenmanipulation und -visualisierung
-      any::IRkernel          # Der eigentliche R-Kernel für Jupyter
-    install-pandoc: false    # Pandoc überspringen (nicht für Jupyter Book benötigt)
-    install-quarto: false    # Quarto überspringen (nicht für Jupyter Book benötigt)
-
-- name: Set up IRkernel
-  run: |
-    IRkernel::installspec(name="ir", displayname="R")
-  shell: Rscript {0}         # Als R-Skript ausführen
+```{literalinclude} ../.github/workflows/deploy-book-python-sparql-r.yml
+:language: yaml
+:lineno-match:
+:start-after: "# R"
+:end-before: "# SPARQL"
 ```
+
+Zusätzlich zum `IRkernel` wird auch das sog. `tidyverse` installiert, welches für die Arbeit mit Daten in R weit verbreitet ist.
 
 ### SPARQL Kernel einrichten
 
 Die SPARQL Kernel-Installation ist einfach, sobald Python eingerichtet ist:
 
-```yaml
-- name: Install SPARQL Kernel
-  run: |
-    jupyter sparqlkernel install --user  # SPARQL Kernel für aktuellen Benutzer installieren
+```{literalinclude} ../.github/workflows/deploy-book-python-sparql-r.yml
+:language: yaml
+:lineno-match:
+:start-after: "# SPARQL"
+:end-before: "# check all kernels"
 ```
 
 ### Mehrere Kernels kombinieren
 
-Möchten Sie in einem Workflow mehrere Programmiersprachen unterstützen, so fügen Sie alle Einrichtungsschritte nacheinander ein. Entscheidend ist, dass sämtliche Kernel installiert sind, bevor der Build des Books gestartet wird.
+Möchten Sie in einem Workflow mehrere Programmiersprachen unterstützen, so fügen Sie alle Einrichtungsschritte nacheinander ein. Entscheidend ist, dass sämtliche Kernel installiert sind, bevor der Build des Books gestartet wird. Nutzen Sie hierzu die Beispiele im vorliegenden Template.
 
 ### Kernels überprüfen
 
 Es ist immer eine gute Praxis zu überprüfen, ob alle Ihre Kernels ordnungsgemäß installiert sind:
 
-```yaml
-- name: Log all available kernels
-  run: |
-    jupyter kernelspec list
+```{literalinclude} ../.github/workflows/deploy-book-python-sparql-r.yml
+:language: yaml
+:lineno-match:
+:start-after: "# check all kernels"
+:end-before: "# only caches"
 ```
 
 Dieser Befehl zeigt Ihnen alle Kernels an, die GitHub Actions zur Ausführung Ihrer Notebooks verwenden kann.
