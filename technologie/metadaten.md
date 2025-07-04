@@ -38,7 +38,7 @@ Für die technische Umsetzung des Metadatenschemas wurde YAML[^url-yaml] gewähl
 
 Die Metadaten können theoretisch auch in anderen YAML-Dateien als eigenständiges YAML-Dokument eingebettet werden, jedoch empfehlen wir die Nutzung einer eigenständigen Datei. Komplexere Funktionalitäten von YAML wie Referenzen und Tags werden nicht genutzt.
 
-Eine Metadatenbeschreibung nach dem QUADRIGA Metadatenschema wird als valide betrachtet, wenn sie mindestens alle Pflichtfelder beinhaltet und technisch korrekt umgesetzt wurde. Das Metadatenschema ist in JSON-Schema[^url-json-schema] implementiert. Das gesamte JSON-Schema der Metadaten ist [am Ende der Seite einzusehen](technologie:metadaten:json-schema)
+Eine Metadatenbeschreibung nach dem QUADRIGA Metadatenschema wird als valide betrachtet, wenn sie mindestens alle Pflichtfelder beinhaltet und technisch korrekt umgesetzt wurde. Das Metadatenschema ist in JSON-Schema[^url-json-schema] implementiert.
 
 Im Abschnitt Felder werden alle optionalen sowie verpflichtenden Felder präsentiert. Dabei wird jeweils angegeben, ob sie verpflichtend sind sowie welche Datentypen als Wert zugelassen sind.
 
@@ -77,13 +77,14 @@ chapters:
 context-of-creation:
 ```
 
+Eine <a href="https://github.com/quadriga-dk/quadriga-schema/blob/main/minimal_metadata.yml" target="_blank" class="external-link">minimale Metadatendatei als Startpunkt</a> finden Sie auch im <a href="https://github.com/quadriga-dk/quadriga-schema/" target="_blank" class="external-link">Repositorium zum QUADRIGA-Metadaten-Schema</a>.
 
 ### Felder
-Im Folgenden werden die wichtigsten Felder des QUADRIGA-Metadatenschemas beschrieben. Pflichtfelder sind mit ⭐ gekennzeichnet.
+Im Folgenden werden die wichtigsten Felder des QUADRIGA-Metadatenschemas beschrieben. Pflichtfelder sind mit ⭐ gekennzeichnet. Nutzen Sie auch die <a href="https://quadriga-dk.github.io/quadriga-schema" target="_blank" class="external-link">interaktive Darstellung des Schemas</a>.
 
 (metadata:schema-version)=
 #### `schema-version`⭐
-Versionsnummer des QUADRIGA-Metadatenschemas. Es gibt ein kontrolliertes Vokabular möglicher Versionen (aktuell: "1.1", "1.1-beta", "1.1-beta2"). Wird das QUADRIGA-Metadatenschema verändert/erweitert, so wird eine neue Version in das kontrollierte Vokabular aufgenommen.
+Versionsnummer des QUADRIGA-Metadatenschemas. Es gibt ein kontrolliertes Vokabular möglicher Versionen (aktuell: "1.0.0-alpha"). Wird das QUADRIGA-Metadatenschema verändert/erweitert, so wird eine neue Version definiert.
 
 (metadata:book-version)=
 #### `book-version`⭐
@@ -254,10 +255,8 @@ Angedachte Bearbeitungsdauer für Lernende, spezifisch für dieses Kapitel.
 
 (technologie:metadaten:json-schema)=
 ## JSON-Schema[^url-json-schema]
-```{literalinclude} /quadriga-schema.json
-:language: json
-:linenos:
-```
+
+Das JSON-Schema ist definiert im Repositorium <a href="https://github.com/quadriga-dk/quadriga-schema" target="_blank" class="external-link">quadriga-schema</a>. Auf Basis dieses Repositoriums wird eine <a href="https://quadriga-dk.github.io/quadriga-schema/schema.html" target="_blank" class="external-link">interaktive Darstellung</a> sowie der <a href="https://quadriga-dk.github.io/quadriga-schema/schema.json" target="_blank" class="external-link">Einstieg für die Nutzung in anderen Schemas oder in Verifikationstools</a> generiert.
 
 [^url-yaml]: <https://yaml.org>
 [^url-json-schema]: <https://json-schema.org>
