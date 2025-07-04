@@ -84,18 +84,22 @@ Schritt für Schritt gehen Sie so vor:
    ```
 2. "Veröffentlichen" Sie das Tag auf GitHub.
    ```bash
-   $ git push tag v0.1.2 origin
+   $ git push origin tag v0.1.2
    ```
 3. Die Action `update-metadata.yml` läuft und erstellt ggf. einen neuen Commit. Wird ein Commit erstellt, so wird der Tag auf dem Server "verschoben".
    
    Warten Sie, bis die Action vollständig ausgeführt wurde.
 4. Aktualisieren Sie die Tags in Ihrem lokalen Repositorium.
+   ```{admonition} Achtung
+   :class: caution
+   Achtung, die nachfolgende Operation überschreibt lokale Tags!
+   ```
    ```bash
-   $ git fetch --tags --all
+   $ git fetch --tags --all --force
    ```
    Sie können überprüfen, ob Ihre lokalen Tags korrekt sind mit `git log`.
 
-   Sollte lokal der Tag nicht auf den neuesten, ggf. von der Action erstellten Commit verweisen, so können Sie Ihre lokale Version löschen und dann nochmals die Tags von GitHub übernehmen.
+   Wollen Sie nicht alle lokalen Tags überschreiben, so können Sie gezielt Ihre lokale Version löschen und dann nochmals die Tags von GitHub übernehmen.
    ```bash
    $ git tag -d v0.1.2
    $ git fetch --tags --all
