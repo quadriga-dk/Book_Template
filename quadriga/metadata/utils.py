@@ -104,7 +104,7 @@ def save_yaml_file(file_path: str | Path, data, schema_comment: str | None = Non
         file_path (str | Path): Path where the YAML file should be saved
         data (dict/list): Data to save
         schema_comment (str, optional): Schema comment to add at the start of the file
-                                        e.g. "# yaml-language-server: $schema=quadriga-schema.json"
+                                        e.g. "# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/schema.json"
 
     Returns:
         bool: True if successful, False otherwise
