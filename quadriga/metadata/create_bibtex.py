@@ -173,6 +173,8 @@ def create_bibtex_from_cff():
             bibtex_lines.append(f"  author    = {{{author_str}}},")
         if year:
             bibtex_lines.append(f"  year      = {{{year}}},")
+        if "version" in pref:
+            bibtex_lines.append(f"  version   = {{{pref['version']}}},")
 
         # Define common fields for all entry types
         simple_fields = [
@@ -354,4 +356,3 @@ def create_bibtex_from_cff():
 if __name__ == "__main__":
     success = create_bibtex_from_cff()
     sys.exit(0 if success else 1)
-
