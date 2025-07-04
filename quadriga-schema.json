@@ -526,6 +526,10 @@
                     "assessment": {
                         "description": "Beschreibung der Art der Überprüfung des Lernziels.",
                         "$ref": "#/$defs/multilingual-text"
+                    },
+                    "learning-objective-id": {
+                        "description": "Eindeutige ID des Lernziels für den Zweck der Einbindung im Buch per `glue`.",
+                        "type": "string"
                     }
                 },
                 "additionalProperties": false
