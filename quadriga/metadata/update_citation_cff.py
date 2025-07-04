@@ -80,6 +80,19 @@ def update_citation():
         else:
             logging.warning("No title found in metadata.yml")
 
+        if "book-version" in metadata:
+            citation_data["version"] = metadata["book-version"]
+            if "preferred-citation" in citation_data:
+                citation_data["preferred-citation"]["version"] = metadata[
+                    "book-version"
+                ]
+            updates_made = True
+            logging.info(f"Updated version to: {metadata["book-version"]}")
+        else:
+            logging.warning(
+                "No book version found in metadata.yml, skipping version update"
+            )
+
         if "authors" in metadata and metadata["authors"]:
             try:
                 # Convert metadata authors format to citation authors format
@@ -146,16 +159,29 @@ def update_citation():
             updates_made = True
             logging.info(f"Updated repository-code to: {metadata['git']}")
 
-        # Update publication date if it exists
-        if "publication-date" in metadata:
-            pub_date = metadata["publication-date"]
-            if isinstance(pub_date, str) and len(pub_date) >= 4:
-                year = pub_date[:4]  # Extract year from YYYY-MM-DD
-                if "preferred-citation" in citation_data:
-                    citation_data["preferred-citation"]["year"] = year
-                    updates_made = True
-                    logging.info(f"Updated publication year to: {year}")
+        # Update publication year based on date-of-last-change or publication-date
+        # Prefer newer date-of-last-change, if available
+        year_source = None
+        year_value = None
 
+        if "date-of-last-change" in metadata:
+            date_str = metadata["date-of-last-change"]
+            if isinstance(date_str, str) and len(date_str) >= 4:
+                year_value = date_str[:4]
+                year_source = "date-of-last-change"
+        elif "publication-date" in metadata:
+            date_str = metadata["publication-date"]
+            if isinstance(date_str, str) and len(date_str) >= 4:
+                year_value = date_str[:4]  # Extract year from YYYY-MM-DD
+                year_source = "publication-date"
+        if year_value and "preferred-citation" in citation_data:
+            citation_data["preferred-citation"]["year"] = year_value
+            updates_made = True
+            logging.info(
+                f"Updated publication year to: {year_value} (from {year_source})"
+            )
+
+        # No changes
         if not updates_made:
             logging.warning("No updates were made to CITATION.cff")
             return True  # Not an error, just no changes needed
@@ -176,4 +202,3 @@ def update_citation():
 if __name__ == "__main__":
     success = update_citation()
     sys.exit(0 if success else 1)
-
