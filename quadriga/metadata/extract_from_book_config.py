@@ -118,9 +118,9 @@ def extract_and_update():
         # Update metadata.yml
         if metadata_data:
             try:
-                # Update the title if it doesn't already have the full title
-                if 'title' in metadata_data and title and not metadata_data['title'].startswith(title):
-                    metadata_data['title'] = f"{title}. {metadata_data['title']}"
+                # Update the title by using the data from _config.yml
+                if "title" in metadata_data and title:
+                    metadata_data["title"] = title
                 
                 # Update the description table of contents
                 if 'description' in metadata_data:
