@@ -256,7 +256,7 @@ Angedachte Bearbeitungsdauer für Lernende, spezifisch für dieses Kapitel.
 (technologie:metadaten:json-schema)=
 ## JSON-Schema[^url-json-schema]
 
-Das JSON-Schema ist definiert im Repositorium <a href="https://github.com/quadriga-dk/quadriga-schema" target="_blank" class="external-link">quadriga-schema</a>. Auf Basis dieses Repositoriums wird eine <a href="https://quadriga-dk.github.io/quadriga-schema/schema.html" target="_blank" class="external-link">interaktive Darstellung</a> sowie der <a href="https://quadriga-dk.github.io/quadriga-schema/schema.json" target="_blank" class="external-link">Einstieg für die Nutzung in anderen Schemas oder in Verifikationstools</a> generiert.
+Das JSON-Schema ist definiert im Repositorium <a href="https://github.com/quadriga-dk/quadriga-schema" target="_blank" class="external-link">quadriga-schema</a>. Auf Basis dieses Repositoriums wird eine <a href="https://quadriga-dk.github.io/quadriga-schema/schema.html" target="_blank" class="external-link">interaktive Darstellung</a> sowie der <a href="https://quadriga-dk.github.io/quadriga-schema/schema.json" target="_blank" class="external-link">Einstieg für die Nutzung in anderen Schemas oder in Verifikationstools (schema.json)</a> generiert.
 
 [^url-yaml]: <https://yaml.org>
 [^url-json-schema]: <https://json-schema.org>
