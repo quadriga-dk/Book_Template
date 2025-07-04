@@ -41,6 +41,8 @@ Die Python-Einrichtung ist relativ unkompliziert, da der entsprechende Kernel be
 :end-before: "# R"
 ```
 
+Die Actions im Template nutzen die Datei `.python-version` in der die Python-Version definiert ist. Wollen Sie eine andere Python-Version nutzen, so können Sie diese in dieser Datei einheitlich ändern.
+
 ### R Kernel
 
 R erfordert etwas mehr Schritte, da wir nicht nur R und den passenden Kernel installieren, sondern diesen zudem für die Nutzung in Jupyter Notebooks registrieren müssen.
