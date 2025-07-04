@@ -20,21 +20,45 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
+          fetch-depth: 0
+
+      - name: Extract version from tag (if triggered by tag)
+        id: extract_version
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            TAG_NAME=${GITHUB_REF#refs/tags/}
+            # Remove 'v' prefix if present (v1.0.0 -> 1.0.0)
+            VERSION=${TAG_NAME#v}
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
+            echo "is_tag=true" >> $GITHUB_OUTPUT
+            echo "Triggered by version tag: $TAG_NAME (version: $VERSION)"
+          else
+            echo "is_tag=false" >> $GITHUB_OUTPUT
+            echo "Triggered by regular push to: $GITHUB_REF"
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version-file: '.python-version'
           cache: pip
-      
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pyyaml
-      
+
+      - name: Update version metadata (if triggered by tag)
+        if: steps.extract_version.outputs.is_tag == 'true'
+        env:
+          TAG_VERSION: ${{ steps.extract_version.outputs.version }}
+        run: |
+          python -m quadriga.metadata.update_version_from_tag
+
       - name: Update metadata files
         run: python -m quadriga.metadata.run_all
-      
+
       - name: Check if files changed
         id: check_changes
         run: |
@@ -43,12 +67,45 @@ jobs:
           else
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           fi
-      
-      - name: Commit changes if necessary
-        if: steps.check_changes.outputs.changes_detected == 'true'
+
+      - name: Commit changes (regular push)
+        if: steps.check_changes.outputs.changes_detected == 'true' && steps.extract_version.outputs.is_tag == 'false'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add metadata.yml CITATION.bib
+          git add metadata.yml CITATION.bib CITATION.cff
           git commit -m "[Automated] Update metadata files"
           git push
+
+      - name: Commit changes and move tag (tag-triggered)
+        if: steps.check_changes.outputs.changes_detected == 'true' && steps.extract_version.outputs.is_tag == 'true'
+        run: |
+          # Configure git
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # Commit the metadata changes
+          git add metadata.yml CITATION.bib CITATION.cff
+          git commit -m "[Automated] Update metadata for version ${{ steps.extract_version.outputs.version }}"
+
+          # Delete the old tag (locally and remotely)
+          git tag -d ${{ steps.extract_version.outputs.tag_name }}
+          git push origin :refs/tags/${{ steps.extract_version.outputs.tag_name }}
+
+          # Create new tag at the current commit (with updated metadata)
+          git tag ${{ steps.extract_version.outputs.tag_name }}
+
+          # Push the changes and the new tag
+          git push origin HEAD:main
+          git push origin ${{ steps.extract_version.outputs.tag_name }}
+
+          echo "Tag ${{ steps.extract_version.outputs.tag_name }} moved to commit with updated metadata"
+
+      - name: No changes needed
+        if: steps.check_changes.outputs.changes_detected == 'false'
+        run: |
+          if [[ "${{ steps.extract_version.outputs.is_tag }}" == "true" ]]; then
+            echo "Metadata already matches the tag version - no changes needed"
+          else
+            echo "No metadata changes detected"
+          fi
