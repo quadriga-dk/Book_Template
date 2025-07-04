@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=quadriga-schema.json
+# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/schema.json
 schema-version: 1.0.0-alpha
 book-version: 0.55.1
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational

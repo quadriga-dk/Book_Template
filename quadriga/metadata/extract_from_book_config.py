@@ -149,7 +149,7 @@ def extract_and_update():
                 if save_yaml_file(
                     metadata_path,
                     metadata_data,
-                    schema_comment="# yaml-language-server: $schema=quadriga-schema.json",
+                    schema_comment="# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/schema.json",
                 ):
                     logging.info("Metadata updated successfully!")
                     return True
