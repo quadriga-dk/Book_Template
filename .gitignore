@@ -1,9 +1,17 @@
+# virtual environments
 conda
 .venv
-_build
-__pycache__
-quadriga1/
 venv/
-**/.DS_Store
-.vscode
+
+# jupyter book build directory
+_build
+
+# local Python/Jupyter Notebook caches / save files
+__pycache__
 **/.ipynb_checkpoints
+
+# macOS system files
+**/.DS_Store
+
+# VS Code local configuration etc.
+.vscode
