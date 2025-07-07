@@ -1,3 +1,0 @@
-pynvim==0.5.*
-jupyter_client==8.6.*
-jupytext==1.17.*
