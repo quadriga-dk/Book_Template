@@ -87,7 +87,7 @@ def update_citation():
                     "book-version"
                 ]
             updates_made = True
-            logging.info(f"Updated version to: {metadata["book-version"]}")
+            logging.info(f"Updated version to: {metadata['book-version']}")
         else:
             logging.warning(
                 "No book version found in metadata.yml, skipping version update"
