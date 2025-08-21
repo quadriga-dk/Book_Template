@@ -132,24 +132,16 @@ def extract_and_update():
                     metadata_data["title"] = title
 
                 # Update the description table of contents
-                if "description" in metadata_data:
-                    if isinstance(metadata_data["description"], dict):
-                        metadata_data["description"][
-                            "table-of-contents"
-                        ] = toc_formatted
-                    else:
-                        logging.error(
-                            "'description' in metadata.yml is not a dictionary"
-                        )
-                        return False
+                if "table-of-contents" in metadata_data:
+                    metadata_data["table-of-contents"] = toc_formatted
                 else:
-                    logging.warning("No 'description' field found in metadata.yml")
+                    logging.warning("No 'table-of-contents' field found in metadata.yml")
 
                 # Save the updated metadata
                 if save_yaml_file(
                     metadata_path,
                     metadata_data,
-                    schema_comment="# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/schema.json",
+                    schema_comment="# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0-alpha/schema.json",
                 ):
                     logging.info("Metadata updated successfully!")
                     return True
