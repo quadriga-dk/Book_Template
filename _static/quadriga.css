@@ -122,7 +122,8 @@ html[data-theme='dark'] div.caution > .admonition-title,
 html[data-theme='dark'] div.hinweis > .admonition-title,
 html[data-theme='dark'] div.keypoint > .admonition-title,
 html[data-theme='dark'] div.solution > .admonition-title,
-html[data-theme='dark'] div.exercise > .admonition-title {
+html[data-theme='dark'] div.exercise > .admonition-title,
+html[data-theme='dark'] div.story > .admonition-title {
     color: #CED6DD !important;
 }
 
@@ -295,4 +296,39 @@ html[data-theme='dark'] div.zeitinfo > .admonition-title {
 
 html[data-theme='dark'] div.zeitinfo > .admonition-title::after {
     color: #e59d7e !important;
+}
+
+/* Story styling */
+div.story {
+    background-color: #faf8ff !important;             /* sehr helles Lila */
+    border-left-color: #8e44ad !important;            /* weiches Lila */
+}
+
+div.story > .admonition-title {
+    background-color: rgba(142, 68, 173, 0.12) !important;
+    color: #222832 !important;
+}
+
+div.story > .admonition-title::after {
+    content: "\f02d" !important;                      /* Font Awesome book */
+    float: left !important;
+    padding-right: 0.5rem !important;
+    font-size: 1em !important;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #7a3a96 !important;                        /* Lila-Farbe für das Icon */
+}
+
+/* Dark mode overrides for story */
+html[data-theme='dark'] div.story {
+    background-color: rgba(142, 68, 173, 0.1) !important;
+    border-left-color: #8e44ad !important;
+}
+
+html[data-theme='dark'] div.story > .admonition-title {
+    background-color: rgba(142, 68, 173, 0.15) !important;
+}
+
+html[data-theme='dark'] div.story > .admonition-title::after {
+    color: #b876d1
 }
