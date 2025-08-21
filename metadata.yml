@@ -1,45 +1,9 @@
-# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/schema.json
+# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0-alpha/schema.json
 schema-version: 1.0.0-alpha
 book-version: 0.56.4
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
-description:
-  introduction: Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
-    für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung
-    eigener OERs auf Basis der QUADRIGA-Empfehlungen.
-  table-of-contents: '- Präambel
-
-    - Struktur und didaktisches Konzept
-
-    - Technologie
-
-    - Formatierungs- und Darstellungsmöglichkeiten
-
-    - Lernstandskontrolle (Assessment)
-
-    - Reflexion und Resümee
-
-    - Epilog'
-discipline:
-- übergreifend
-duration: 10h
-type-of-research-object:
-- übergreifend
 identifier: https://doi.org/10.5281/zenodo.14970672
-url: https://quadriga-dk.github.io/Book_Template/
-git: https://github.com/quadriga-dk/Book_Template
-license:
-  code: https://opensource.org/licenses/AGPL-3.0
-  content:
-    url: https://creativecommons.org/licenses/by-sa/4.0/
-    name: CC BY-SA 4.0
-date-of-last-change: '2025-07-04'
-publication-date: 2024-05-06
-target-group:
-- Forschende (PostDoc)
-- Forschende (Projektleitung)
-- Promovierende
-- Hochschullehrende
 authors:
 - given-names: Hannes
   family-names: Schnaitter
@@ -59,6 +23,28 @@ authors:
   affiliation: Universität Potsdam
   credit:
   - Software
+contributors:
+- Zhang, Yue
+table-of-contents: '- Präambel
+
+  - Struktur und didaktisches Konzept
+
+  - Technologie
+
+  - Formatierungs- und Darstellungsmöglichkeiten
+
+  - Lernstandskontrolle (Assessment)
+
+  - Reflexion und Resümee
+
+  - Epilog'
+description: Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
+  für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung
+  eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+discipline:
+- übergreifend
+research-object-type:
+- übergreifend
 chapters:
 - title: Präambel
   url: https://quadriga-dk.github.io/Book_Template/präambel/toc.html
@@ -66,6 +52,7 @@ chapters:
     Voraussetzungen und Vorkenntnissen.
   learning-goal: Überblick über Template
   duration: 15min
+  educational-level: Basis
   learning-objectives:
   - learning-objective: Verständnis der Lernziele des Templates
     competency: 1 Basiskompetenz
@@ -76,6 +63,8 @@ chapters:
   url: https://quadriga-dk.github.io/Book_Template/struktur_didaktisches_konzept/einleitung.html
   description: Dieses Kapitel stellt die Struktur des Templates und das zugrunde liegende
     didaktische Konzept vor.
+  educational-level: Basis
+  duration: 1h
   learning-goal: Fallstudienbasiertes didaktisches Konzept von QUADRIGA
   learning-objectives:
   - learning-objective: Der forschungsgeleitete Ansatz der QUADRIGA OERs kann erläutert
@@ -102,6 +91,8 @@ chapters:
   description: Es werden die verschiedenen Bestandteile des Templates sowie die Technologien,
     welche genutzt werden, vorgestellt. Besonderes Augenmerk liegt auf dem Zusammenspiel
     der einzelnen Elemente.
+  educational-level: Basis
+  duration: 1h
   learning-goal: Technische Umsetzung der QUADRIGA OERs
   learning-objectives:
   - learning-objective: Die Bestandteile der Entwicklungsumgebung (Git, Python, Jupyter
@@ -139,6 +130,8 @@ chapters:
     blooms-category: 1 Erinnern
 - title: Formatierungs- und Darstellungsmöglichkeiten
   url: https://quadriga-dk.github.io/Book_Template/formatierung/einleitung.html
+  duration: 1h
+  educational-level: Basis
   description: Spezifische Ausführungen und Anleitungen zu Markdown- und Jupyter-Noteboook-Dateien
     und Formatierungsmöglichkeiten. Empfehlungen für deren einheitliche Nutzung in
     QUADRIGA OERs.
@@ -162,6 +155,8 @@ chapters:
   description: Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books,
     die den QUADRIGA-Empfehlungen folgen
   learning-goal: Gestaltung und Implementierung von Assessments
+  educational-level: Basis
+  duration: 1h
   learning-objectives:
   - learning-objective: Verständnis des Assessmentkonzepts von QUADRIGA
     competency: 1 Basiskompetenz
@@ -178,6 +173,8 @@ chapters:
   description: Zusammenfassung und Wiederholung der wichtigsten Inhalte des Buchs.
     Hinweise auf weiterführende Inhalte.
   learning-goal: Festigung der erlernten Inhalte
+  educational-level: Basis
+  duration: 1h
   learning-objectives:
   - learning-objective: Kenntnis der wichtigsten Inhalte des Templates und dessen
       Nutzung
@@ -185,7 +182,22 @@ chapters:
     focus: Wissen
     data-flow: Grundlagen
     blooms-category: 1 Erinnern
+target-group:
+- Forschende (PostDoc)
+- Forschende (Projektleitung)
+- Promovierende
+- Hochschullehrende
+duration: 10h
+date-published: '2024-05-06'
+date-modified: '2025-07-04'
 context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
   Datenkompetenzzentrum QUADRIGA erstellt.
 
   Förderkennzeichen: 16DKZ2034'
+url: https://quadriga-dk.github.io/Book_Template/
+git: https://github.com/quadriga-dk/Book_Template
+license:
+  code: https://opensource.org/licenses/AGPL-3.0
+  content:
+    url: https://creativecommons.org/licenses/by-sa/4.0/
+    name: CC BY-SA 4.0
