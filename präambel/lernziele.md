@@ -28,3 +28,9 @@ lang: de-DE
 
 5. Der Unterschied zwischen Texteditoren und Textprozessoren für die Code-Entwicklung kann erklärt und geeignete Editoren wie VS Code für die OER-Entwicklung ausgewählt werden.
 ```
+````{admonition} TEST: Lernziele einbetten aus Metadaten
+:class: lernziele
+```{glue:} lo-global-1
+:doc: /quadriga/create_learning_obj.ipynb
+```
+````
