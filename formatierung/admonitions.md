@@ -75,6 +75,17 @@ Ist bei einem Arbeitsschritt besondere Vorsicht geboten, so wird dieser Admoniti
 ````
 `````
 
+`````{admonition} Geschichte/Story
+:class: story
+Geschichten, Fallstudien oder narrative Beispiele werden mit diesem Admonition-Typ gekennzeichnet.
+````
+```{admonition} Story
+:class: story
+Geschichten, Fallstudien oder narrative Beispiele werden mit diesem Admonition-Typ gekennzeichnet.
+```
+````
+`````
+
 `````{admonition} Weiterführende Literatur / zusätzliche Materialien
 :class: seealso
 Weiterführende Literaturhinweise oder zusätzliche (externe) Materialien werden so gekennzeichnet.
