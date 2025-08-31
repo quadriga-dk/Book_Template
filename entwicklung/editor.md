@@ -1,6 +1,7 @@
 ---
 lang: de-DE
 ---
+(editor)=
 # Editor (optional)
 
 ## Editoren vs. Textprozessoren

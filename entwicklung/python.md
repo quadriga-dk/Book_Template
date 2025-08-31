@@ -1,6 +1,7 @@
 ---
 lang: de-DE
 ---
+(python)=
 # Python
 
 ## Installation

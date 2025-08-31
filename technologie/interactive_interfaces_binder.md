@@ -1,8 +1,6 @@
 # Interaktive Rechenumgebungen mit Binder
 
-Binder ist ein Dienst, der reproduzierbare, interaktive Rechenumgebungen aus Git-Repositories erstellt. Im Gegensatz zu Google Colab erstellt Binder die exakte Rechenumgebung nach, die in Ihrem Repository spezifiziert ist, und stellt dabei sicher, dass alle Pakete und Versionen identisch sind.
-
-Wenn ein Nutzer die Option Launch (🚀) → Binder auswählt, erhält er Zugriff auf eine Live-Version der Notebooks mit allen vorinstallierten Abhängigkeiten. Falls der Code keine erheblichen CPU- oder RAM-Ressourcen benötigt, können Sie den kostenlosen, öffentlichen BinderHub unter verwenden.
+Binder erstellt reproduzierbare, interaktive Rechenumgebungen aus Git-Repositories. Im Gegensatz zu Google Colab repliziert Binder exakt die im Repository definierte Umgebung, inklusive aller Pakete und Versionen. Über "Launch (🚀) → Binder" erhalten Nutzer eine Live-Version der Notebooks mit allen Abhängigkeiten. Für Projekte ohne hohe CPU- oder RAM-Anforderungen kann der öffentliche BinderHub genutzt werden.
 
 ## Wie Binder funktioniert
 

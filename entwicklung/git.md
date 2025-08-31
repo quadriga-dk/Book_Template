@@ -1,7 +1,7 @@
 ---
 lang: de-DE
 ---
-
+(git)=
 # Git – Der De-Facto-Standard der Versionskontrollsoftware
 
 Um die Zusammenarbeit zu unterstützen nutzen wir Git. Git ist eine Versionskontrollsoftware, die es Ihnen erlaubt Snapshots einer Ordner- und Dateistruktur anzulegen, zwischen diesen hin und her zu wechseln und mit parallelen Änderungen an einer Datei umgehen zu können.
