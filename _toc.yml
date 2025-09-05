@@ -28,7 +28,9 @@ chapters:
           - file: entwicklung/python
           - file: entwicklung/jupyter_book
           - file: entwicklung/editor
-      - file: technologie/interactive_interfaces
+      - file: technologie/interactive_interfaces_colab
+      - file: technologie/interactive_interfaces_binder
+      - file: technologie/local_mode
       - file: technologie/jupyter_book_mit_gh_page
       - file: technologie/jupyter_kernel
       - file: technologie/publikation_auf_zenodo.md

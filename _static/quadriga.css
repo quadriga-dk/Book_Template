@@ -8,6 +8,13 @@
     --quadriga-main-web: #c1d3e0;
 }
 
+html[data-theme='dark'] .navbar-brand img {
+    height: 100%;
+    max-width: 100%;
+    width: auto;
+    filter: invert(95%) hue-rotate(190deg) saturate(60%) brightness(135%);
+}
+
 /* Reset ALL default admonition icons */
 .admonition-title::before {
     content: none !important;
