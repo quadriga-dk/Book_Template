@@ -4,3 +4,5 @@ matplotlib
 numpy
 sparqlkernel
 ipywidgets==8.1.7
+git+https://github.com/TeachBooks/Sphinx-Thebe
+
