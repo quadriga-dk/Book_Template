@@ -63,6 +63,7 @@ html:
 
 sphinx:
   config:
+    bibtex_reference_style: author_year
     html_show_copyright: false
     html_static_path: ['_static']
     html_css_files:
@@ -74,8 +75,4 @@ sphinx:
     thebe_config:
       use_thebe_lite: true
       exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb"]
-    bibtex_default_style: myapastyle
-    bibtex_reference_style: author_year_round
-  local_extensions:
-    apastyle: _ext/
-    bracket_citation_style: _ext/
+
