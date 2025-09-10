@@ -5,7 +5,7 @@ Binder erstellt reproduzierbare, interaktive Rechenumgebungen aus Git-Repositori
 ## Wie Binder funktioniert
 
 **1. Analyse des Repositories**
-Binder untersucht beim Klick auf den „Launch (🚀) → Binder“-Option Ihr GitHub-Repository.
+Binder untersucht beim Klick auf die "Launch (🚀) → Binder"-Option Ihr GitHub-Repository.
 
 **2. Erstellung der Umgebung**
 Basierend auf den gefundenen Konfigurationsdateien (z. B. requirements.txt, environment.yml oder Dockerfile) wird ein Docker-Image gebaut.
