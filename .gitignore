@@ -2,6 +2,7 @@
 conda
 .venv
 venv/
+quadriga1/
 
 # jupyter book build directory
 _build
