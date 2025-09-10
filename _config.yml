@@ -54,18 +54,26 @@ launch_buttons:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  comments:
-    utterances:
-      repo: "quadriga-dk/Book_Template"
-      issue-term: "pathname"
-      theme: "preferred-color-scheme"
-      crossorigin: anonymous
-      label: Feedback
+  # comments:
+  #   utterances:
+  #     repo: "quadriga-dk/Book_Template"
+  #     issue-term: "pathname"
+  #     theme: "preferred-color-scheme"
+  #     crossorigin: anonymous
+  #     label: comment
   use_issues_button: true
   use_repository_button: true
   extra_footer: |
     <p xmlns:cc="http://creativecommons.org/ns#" >Dieses Werk ist lizensiert unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" class="external-link" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>. Detailliertere Informationen finden Sie unter <a href="https://github.com/quadriga-dk/Book_Template/blob/main/LICENSE.md" target="_blank" class="external-link">LICENSE.md</a></p>
     <p>Diese OER wurde im Rahmen des Projekts <a href="https://www.quadriga-dk.de" target="_blank" class="external-link">QUADRIGA</a> erstellt. Das Projekt wurde gefördert durch das <a href="https://www.bmbf.de" target="_blank" class="external-link">Bundesministerium für Forschungs, Technologie und Raumfahrt (BMFTR)</a>. Eine <a href="https://quadriga-dk.github.io/Book_Template/epilog/quadriga.html">Kurzvorstellung des Projekts</a> finden Sie im Epilog.</p>
+    <script src="https://utteranc.es/client.js"
+            repo="quadriga-dk/Book_Template"
+            issue-term="pathname"
+            label="comment"
+            theme="preferred-color-scheme"
+            crossorigin="anonymous"
+            async>
+    </script>
   use_multitoc_numbering: false
 
 sphinx:
