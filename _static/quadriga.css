@@ -9,9 +9,6 @@
 }
 
 html[data-theme='dark'] .navbar-brand img {
-    height: 100%;
-    max-width: 100%;
-    width: auto;
     filter: invert(95%) hue-rotate(190deg) saturate(60%) brightness(135%);
 }
 
