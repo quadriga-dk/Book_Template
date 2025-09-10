@@ -14,7 +14,7 @@ Mit dem Suchwerkzeug QUADRIGA Navigator werden basierend auf dem Datenkompetenzf
 
 Weitere Informationen sowie Publikationen finden Sie auf der <a href="https://www.quadriga-dk.de/de/" class="external-link" target="_blank">Webseite</a> und der <a href="https://zenodo.org/communities/quadriga/records?q=&l=list&p=1&s=10&sort=newest" class="external-link" target="_blank">Zenodo-Community-Seite</a> des Projekts.
 
-Das Datenkompetenzzentrum QUADRIGA wird vom <a href="https://www.bmftr.bund.de/DE/Forschung/Wissenschaftssystem/Forschungsdaten/DatenkompetenzenInDerWissenschaft/datenkompetenzeninderwissenschaft.html?templateQueryString=datenkompetenzzentren" class="external-link" target="_blank">Bundeministerium für Forschung, Technologie und Raumfahrt</a> unter dem Kennzeichen 16DKZ2034 gefördert. Zu den Verbundpartern zählen:
+Das Datenkompetenzzentrum QUADRIGA wird vom <a href="https://www.bmftr.bund.de/DE/Forschung/Wissenschaftssystem/Forschungsdaten/DatenkompetenzenInDerWissenschaft/datenkompetenzeninderwissenschaft.html?templateQueryString=datenkompetenzzentren" class="external-link" target="_blank">Bundeministerium für Forschung, Technologie und Raumfahrt</a> unter dem Kennzeichen 16DKZ2034 gefördert und von der Europäischen Union im Rahmen von "NextGenerationEU" finanziert. Zu den Verbundpartern zählen:
 - Universität Potsdam (Verbundkoordination) <span style="font-size: small">(Förderkennzeichen: 16DKZ2034A)</span>
 - Filmuniversität Babelsberg <span style="font-size: small">(Förderkennzeichen: 16DKZ2034B)</span>
 - Fachhochschule Potsdam <span style="font-size: small">(Förderkennzeichen: 16DKZ2034C)</span>
@@ -23,3 +23,9 @@ Das Datenkompetenzzentrum QUADRIGA wird vom <a href="https://www.bmftr.bund.de/D
 - Technische Universität Berlin <span style="font-size: small">(Förderkennzeichen: 16DKZ2034F)</span>
 - Gesellschaft für Informatik <span style="font-size: small">(Förderkennzeichen: 16DKZ2034G)</span>
 - Humboldt-Universität zu Berlin <span style="font-size: small">(Förderkennzeichen: 16DKZ2034H)</span>
+
+
+```{figure} /assets/partners.jpg
+---
+align: center
+```
