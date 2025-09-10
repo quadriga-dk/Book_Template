@@ -56,11 +56,6 @@ jobs:
         install-pandoc: false
         install-quarto: false
 
-    - name: Set up IRkernel
-      if: matrix.kernel == 'r'
-      run: |
-        IRkernel::installspec(name="ir", displayname="R")
-      shell: Rscript {0}
 
   deploy-book:
     runs-on: ubuntu-latest
@@ -99,12 +94,12 @@ jobs:
         install-pandoc: false
         install-quarto: false
 
+    # Register kernels with Jupyter
     - name: Set up IRkernel
       run: |
         IRkernel::installspec(name="ir", displayname="R")
       shell: Rscript {0}
 
-    # Install SPARQL kernel
     - name: Install SPARQL kernel
       run: |
         jupyter sparqlkernel install --user
