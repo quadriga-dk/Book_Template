@@ -1,5 +1,5 @@
-# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0-alpha/schema.json
-schema-version: 1.0.0-alpha
+# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0-beta/schema.json
+schema-version: 1.0.0-beta
 book-version: 0.57.0
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
@@ -52,7 +52,6 @@ chapters:
     Voraussetzungen und Vorkenntnissen.
   learning-goal: Überblick über Template
   duration: 15min
-  educational-level: Basis
   learning-objectives:
   - learning-objective: Verständnis der Lernziele des Templates
     competency: 1 Basiskompetenz
@@ -63,7 +62,6 @@ chapters:
   url: https://quadriga-dk.github.io/Book_Template/struktur_didaktisches_konzept/einleitung.html
   description: Dieses Kapitel stellt die Struktur des Templates und das zugrunde liegende
     didaktische Konzept vor.
-  educational-level: Basis
   duration: 1h
   learning-goal: Fallstudienbasiertes didaktisches Konzept von QUADRIGA
   learning-objectives:
@@ -91,7 +89,6 @@ chapters:
   description: Es werden die verschiedenen Bestandteile des Templates sowie die Technologien,
     welche genutzt werden, vorgestellt. Besonderes Augenmerk liegt auf dem Zusammenspiel
     der einzelnen Elemente.
-  educational-level: Basis
   duration: 1h
   learning-goal: Technische Umsetzung der QUADRIGA OERs
   learning-objectives:
@@ -131,7 +128,6 @@ chapters:
 - title: Formatierungs- und Darstellungsmöglichkeiten
   url: https://quadriga-dk.github.io/Book_Template/formatierung/einleitung.html
   duration: 1h
-  educational-level: Basis
   description: Spezifische Ausführungen und Anleitungen zu Markdown- und Jupyter-Noteboook-Dateien
     und Formatierungsmöglichkeiten. Empfehlungen für deren einheitliche Nutzung in
     QUADRIGA OERs.
@@ -155,7 +151,6 @@ chapters:
   description: Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books,
     die den QUADRIGA-Empfehlungen folgen
   learning-goal: Gestaltung und Implementierung von Assessments
-  educational-level: Basis
   duration: 1h
   learning-objectives:
   - learning-objective: Verständnis des Assessmentkonzepts von QUADRIGA
@@ -173,7 +168,6 @@ chapters:
   description: Zusammenfassung und Wiederholung der wichtigsten Inhalte des Buchs.
     Hinweise auf weiterführende Inhalte.
   learning-goal: Festigung der erlernten Inhalte
-  educational-level: Basis
   duration: 1h
   learning-objectives:
   - learning-objective: Kenntnis der wichtigsten Inhalte des Templates und dessen
@@ -201,4 +195,3 @@ license:
   content:
     url: https://creativecommons.org/licenses/by-sa/4.0/
     name: CC BY-SA 4.0
-date-of-last-change: '2025-09-05'
