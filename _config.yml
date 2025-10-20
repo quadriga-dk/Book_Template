@@ -54,13 +54,8 @@ launch_buttons:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  # comments:
-  #   utterances:
-  #     repo: "quadriga-dk/Book_Template"
-  #     issue-term: "pathname"
-  #     theme: "preferred-color-scheme"
-  #     crossorigin: anonymous
-  #     label: comment
+  comments:
+    hypothesis: true
   use_issues_button: true
   use_repository_button: true
   extra_footer: |
