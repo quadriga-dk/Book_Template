@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 (assessment:theoretische_überlegungen)=
 # Theoretische Überlegungen
 ````{margin}
@@ -35,6 +31,8 @@ Selbstlern-OERs vorgestellt. Daraus werden dann Empfehlungen für verschiedene
 Assessment-Formen für QUADRIGA OER erarbeitet. Anschließend wird die Umsetzung
 dieser Assessment-Formen in konkreten Technologien innerhalb der Jupyter Books
 beschrieben. Zuerst wird die Zielgruppe der QUADRIGA OER genauer definiert.
+
+**Literatur**
 
 ```{bibliography}
 :filter: docname in docnames
