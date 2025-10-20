@@ -54,9 +54,9 @@ chapters:
           - file: formatierung/admonitions
           - file: formatierung/interaktive_code_zelle.ipynb
       - file: formatierung/resümee
-  - file: assessment/toc
+  - file: assessment/einleitung.md
     sections:
-      - file: assessment/einleitung.md
+      - file: assessment/theoretische_überlegungen.md
         sections:
           - file: assessment/zielgruppe
           - file: assessment/selbstlern-oer
@@ -84,4 +84,3 @@ chapters:
       - file: epilog/authors
       - file: epilog/quadriga
       - file: epilog/impressum
-
