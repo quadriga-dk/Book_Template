@@ -5,7 +5,23 @@ title: "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open E
 author: Hannes Schnaitter, Evgenia Samoilova, Lamia Islam
 logo: assets/logo.jpg
 copyright: "2024, QUADRIGA"
-exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", conda, venv, .venv, README.md, LICENSE.md, useful_documentation.md, .github, "**Reviewbogen.md", Checkliste_Finalisierung.md, sprints.md]
+exclude_patterns:
+  [
+    _build,
+    Thumbs.db,
+    .DS_Store,
+    "**.ipynb_checkpoints",
+    conda,
+    venv,
+    .venv,
+    README.md,
+    LICENSE.md,
+    useful_documentation.md,
+    .github,
+    "**Reviewbogen.md",
+    Checkliste_Finalisierung.md,
+    sprints.md,
+  ]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -13,7 +29,7 @@ execute:
   execute_notebooks: cache
 
 parse:
-  myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+  myst_enable_extensions: # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
     # - amsmath
     - colon_fence
     # - deflist
@@ -26,8 +42,7 @@ parse:
     - substitution
     - tasklist
   myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
-  myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
-
+  myst_dmath_double_inline: true # Allow display math ($$) within an inline context
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -40,9 +55,9 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/quadriga-dk/Book_Template  # Online location of your book
+  url: https://github.com/quadriga-dk/Book_Template # Online location of your book
   # path_to_book: book  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
+  branch: main # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
   notebook_interface: jupyterlab # remove if you don't want to use binder
@@ -60,14 +75,14 @@ html:
   use_repository_button: true
   extra_footer: |
     <p xmlns:cc="http://creativecommons.org/ns#" >Dieses Werk ist lizensiert unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" class="external-link" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>. Detailliertere Informationen finden Sie unter <a href="https://github.com/quadriga-dk/Book_Template/blob/main/LICENSE.md" target="_blank" class="external-link">LICENSE.md</a></p>
-    <p>Diese OER wurde im Rahmen des Projekts <a href="https://www.quadriga-dk.de" target="_blank" class="external-link">QUADRIGA</a> erstellt. Das Projekt wurde gefördert durch das <a href="https://www.bmbf.de" target="_blank" class="external-link">Bundesministerium für Forschungs, Technologie und Raumfahrt (BMFTR)</a>. Eine <a href="https://quadriga-dk.github.io/Book_Template/epilog/quadriga.html">Kurzvorstellung des Projekts</a> finden Sie im Epilog.</p>
+    <p>Diese OER wurde im Rahmen des Projekts <a href="https://www.quadriga-dk.de" target="_blank" class="external-link">QUADRIGA</a> erstellt. Eine <a href="https://quadriga-dk.github.io/Book_Template/epilog/quadriga.html">Kurzvorstellung des Projekts</a> finden Sie im Epilog.<br>Das Projekt wurde gefördert durch das <a href="https://www.bmbf.de" target="_blank" class="external-link">Bundesministerium für Forschungs, Technologie und Raumfahrt (BMFTR)</a>.</p>
   use_multitoc_numbering: false
 
 sphinx:
   config:
     bibtex_reference_style: author_year
     html_show_copyright: false
-    html_static_path: ['_static']
+    html_static_path: ["_static"]
     html_css_files:
       - quadriga.css
       - carousel.css
