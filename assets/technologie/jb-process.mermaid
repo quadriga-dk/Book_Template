@@ -1,0 +1,8 @@
+flowchart LR
+        req[requirements.txt] --> installation[["pip&nbsp;install&nbsp;-r<br>requirements.txt"]]
+        installation --> jb[["jb build ."]]
+        config["_config.yml"] --> jb
+        toc["_toc.yml"] --> jb
+        content["Content&nbsp;Files"] -- "read &<br>execute" --> jb
+        static["_static/"] -- copy --> jb
+        jb --> build["_build/<br>resulting website files"]
