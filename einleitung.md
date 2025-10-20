@@ -77,7 +77,7 @@ In diesem interaktives Lehrbuch durchlaufen wir die folgenden Schritte:
 - Im **2. Schritt** stellen wir die inhaltliche Struktur einer QUADRIGA OER vor und erläutern das zugrundeliegende didaktische Konzept (siehe Kapitel {ref}`Struktur und didaktisches Konzept<struktur:einleitung>`).
 - Im **3. Schritt** beschäftigen wir uns mit der technischen Umsetzung, wobei wir das Zusammenspiel der verschiedenen Tools und deren grafische Aufbereitung betrachten im Detail betrachten. (siehe Kapitel {ref}`Technologie<technologie:einleitung>`).
 - Im **4. Schritt** präsentieren wir zuerst allgemeine Hinweise zu Formatierungs und Darstellungsmöglichkeiten und geben dann konkrete Vorgaben und Empfehlungen für QUADRIGA OER (siehe Kapitel {ref}`Formatierung<formatierung:einleitung>`).
-- Im **5. Schritt** widmen wir uns der Lernstandskontrolle, indem wir die Rolle des Assessments in QUADRIGA OER erläutern und dessen konkrete Umsetzungsmöglichkeiten aufzeigen (siehe Kapitel {ref}`Lernstandskontrolle (Assessment)<assesssment:einleitung>`).
+- Im **5. Schritt** widmen wir uns der Lernstandskontrolle, indem wir die Rolle des Assessments in QUADRIGA OER erläutern und dessen konkrete Umsetzungsmöglichkeiten aufzeigen (siehe Kapitel {ref}`Lernstandskontrolle (Assessment)<assessment:einleitung>`).
 - Im **6. Schritt** schließen wir die OER inhaltlich mit einem Abschlussassessment ab, fassen die wichtigsten Punkte zusammen und geben weiterführende Hinweise (siehe Kapitel {ref}`Reflexion und Resümee<reflexion>`).
 
 Die OER wird durch den Epilog komplettiert, das Raum für Fragen und Feedback bietet, das Literaturverzeichnis enthält, die Autor:innen vorstellt sowie Informationen zu QUADRIGA und das Impressum bereitstellt (siehe Kapitel {ref}`Epilog<fragen_feedback>`).
