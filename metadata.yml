@@ -1,9 +1,10 @@
-# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0-beta/schema.json
-schema-version: 1.0.0-beta
+# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json
+schema-version: 1.0.0
 book-version: 0.57.0
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
 identifier: https://doi.org/10.5281/zenodo.14970672
+language: de
 authors:
 - given-names: Hannes
   family-names: Schnaitter
@@ -54,9 +55,8 @@ chapters:
   duration: 15min
   learning-objectives:
   - learning-objective: Verständnis der Lernziele des Templates
-    competency: 1 Basiskompetenz
-    data-flow: Grundlagen
-    focus: Wissen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
 - title: Struktur und didaktisches Konzept
   url: https://quadriga-dk.github.io/Book_Template/struktur_didaktisches_konzept/einleitung.html
@@ -67,22 +67,19 @@ chapters:
   learning-objectives:
   - learning-objective: Der forschungsgeleitete Ansatz der QUADRIGA OERs kann erläutert
       und der Beitrag von Fallstudien zur Datenkompetenzvermittlung erklärt werden.
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
   - learning-objective: Die hierarchische Struktur der Lernziele in QUADRIGA OERs
       kann beschrieben und der Zusammenhang zwischen Fallstudienstruktur, Datenlebenszyklus
       und Lernzielen erläutert werden.
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
   - learning-objective: Die zentralen didaktischen Komponenten einer QUADRIGA OER
       können identifiziert und deren Funktion im Lernprozess erklärt werden.
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
 - title: Technologie
   url: https://quadriga-dk.github.io/Book_Template/technologie/einleitung.html
@@ -95,35 +92,30 @@ chapters:
   - learning-objective: Die Bestandteile der Entwicklungsumgebung (Git, Python, Jupyter
       Book, Editor) können identifiziert und deren Funktionen im OER-Entwicklungsprozess
       erläutert werden.
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
   - learning-objective: Der Unterschied zwischen Jupyter Book und Jupyter Notebook
       kann erklärt und deren jeweilige Rolle im Entwicklungsworkflow beschrieben werden.
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
   - learning-objective: Die automatische Website-Erstellung über GitHub Actions kann
       erklärt und der Vorteil gegenüber manueller lokaler Entwicklung bewertet werden.
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
   - learning-objective: Die Installation und Einrichtung einer lokalen Entwicklungsumgebung
       mit Python/Anaconda kann durchgeführt und Virtual Environments für projektspezifische
       Anforderungen erstellt werden.
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
   - learning-objective: Der Unterschied zwischen Texteditoren und Textprozessoren
       für die Code-Entwicklung kann erklärt und geeignete Editoren wie VS Code für
       die OER-Entwicklung ausgewählt werden.
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
 - title: Formatierungs- und Darstellungsmöglichkeiten
   url: https://quadriga-dk.github.io/Book_Template/formatierung/einleitung.html
@@ -136,15 +128,13 @@ chapters:
   learning-objectives:
   - learning-objective: Kenntnis, Auswahl und Nutzung verschiedener möglicher Dateiformate
       und Programmiersprachen
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
   - learning-objective: Kenntnis, Auswahl und Nutzung spezifischer Auszeichungs- und
       Formatierungsoptionen
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
 - title: Lernstandskontrolle (Assessment)
   url: https://quadriga-dk.github.io/Book_Template/assessment/toc.html
@@ -154,14 +144,12 @@ chapters:
   duration: 1h
   learning-objectives:
   - learning-objective: Verständnis des Assessmentkonzepts von QUADRIGA
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
   - learning-objective: Auswahl und Implementierung spezifischer Assessment-Formate
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
+    competency: Orientierungswissen
+    data-flow: übergreifend
     blooms-category: 1 Erinnern
 - title: Reflexion und Resümee
   url: https://quadriga-dk.github.io/Book_Template/reflexion_und_resümee/toc.html
@@ -172,10 +160,9 @@ chapters:
   learning-objectives:
   - learning-objective: Kenntnis der wichtigsten Inhalte des Templates und dessen
       Nutzung
-    competency: 1 Basiskompetenz
-    focus: Wissen
-    data-flow: Grundlagen
-    blooms-category: 1 Erinnern
+    competency: nicht anwendbar
+    data-flow: nicht anwendbar
+    blooms-category: nicht anwendbar
 target-group:
 - Forschende (PostDoc)
 - Forschende (Projektleitung)
@@ -186,6 +173,7 @@ date-published: '2024-05-06'
 date-modified: '2025-07-04'
 context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
   Datenkompetenzzentrum QUADRIGA erstellt.
+
 
   Förderkennzeichen: 16DKZ2034'
 url: https://quadriga-dk.github.io/Book_Template/
