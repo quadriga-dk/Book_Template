@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json
 schema-version: 1.0.0
-book-version: 0.57.0
+book-version: 0.58.0
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
 identifier: https://doi.org/10.5281/zenodo.14970672
@@ -170,7 +170,7 @@ target-group:
 - Hochschullehrende
 duration: 10h
 date-published: '2024-05-06'
-date-modified: '2025-07-04'
+date-modified: '2025-10-30'
 context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
   Datenkompetenzzentrum QUADRIGA erstellt.
 
