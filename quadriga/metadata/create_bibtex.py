@@ -1,12 +1,12 @@
-#!/usr/bin/env python3
-import sys
 import logging
+import sys
 from pathlib import Path
+
 from .utils import (
-    load_yaml_file,
-    get_file_path,
     format_authors_for_bibtex,
     generate_citation_key,
+    get_file_path,
+    load_yaml_file,
 )
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -112,9 +112,7 @@ def create_bibtex_from_cff():
         # Validate required fields
         authors = pref.get("authors", [])
         title = pref.get("title", "Untitled")
-        year = str(
-            pref.get("year", "")
-        )  # Ensure year is a string for generate_citation_key
+        year = str(pref.get("year", ""))  # Ensure year is a string for generate_citation_key
 
         if not authors:
             logging.warning("No authors found in CITATION.cff")
@@ -142,19 +140,13 @@ def create_bibtex_from_cff():
         if entry_type == "thesis":
             # Check for thesis type information
             thesis_type = pref.get("thesis-type", "").lower()
-            if (
-                thesis_type == "master"
-                or thesis_type == "masters"
-                or thesis_type == "master's"
-            ):
+            if thesis_type == "master" or thesis_type == "masters" or thesis_type == "master's":
                 entry_type = "mastersthesis"
             else:
                 # Default to phdthesis if type is not specified or is something else
                 entry_type = "phdthesis"
 
-        logging.info(
-            f"Converting CFF type '{cff_type}' to BibTeX entry type: {entry_type}"
-        )
+        logging.info(f"Converting CFF type '{cff_type}' to BibTeX entry type: {entry_type}")
 
         # Use utility function to generate citation key
         try:
@@ -195,11 +187,7 @@ def create_bibtex_from_cff():
             # Map CFF journal-specific fields to BibTeX fields
             if "collection-title" in pref and "journal" not in pref:
                 bibtex_lines.append(f"  journal   = {{{pref['collection-title']}}},")
-            if (
-                "volume-title" in pref
-                and "journal" not in pref
-                and "collection-title" not in pref
-            ):
+            if "volume-title" in pref and "journal" not in pref and "collection-title" not in pref:
                 bibtex_lines.append(f"  journal   = {{{pref['volume-title']}}},")
 
         elif entry_type in ["inproceedings", "proceedings"]:
@@ -261,9 +249,7 @@ def create_bibtex_from_cff():
                 bibtex_lines.append(f"  booktitle = {{{pref['collection-title']}}},")
 
             # Map collection editor if available
-            if "collection-editors" in pref and isinstance(
-                pref["collection-editors"], list
-            ):
+            if "collection-editors" in pref and isinstance(pref["collection-editors"], list):
                 try:
                     editor_str = format_authors_for_bibtex(pref["collection-editors"])
                     bibtex_lines.append(f"  editor    = {{{editor_str}}},")
@@ -280,18 +266,14 @@ def create_bibtex_from_cff():
 
             # Add repository info to note field if available
             if "repository-code" in pref and "note" not in pref:
-                bibtex_lines.append(
-                    f"  note      = {{Repository: {pref['repository-code']}}},"
-                )
+                bibtex_lines.append(f"  note      = {{Repository: {pref['repository-code']}}},")
 
             # Add version info
             if "version" in pref:
                 bibtex_lines.append(f"  version   = {{{pref['version']}}},")
 
             # Add software-specific details as howpublished if not present
-            if ("howpublished" not in pref) and (
-                "repository-code" in pref or "url" in pref
-            ):
+            if ("howpublished" not in pref) and ("repository-code" in pref or "url" in pref):
                 repo = pref.get("repository-code", pref.get("url", ""))
                 bibtex_lines.append(f"  howpublished = {{Available from: {repo}}},")
 
@@ -303,9 +285,7 @@ def create_bibtex_from_cff():
 
             # Include last accessed date if available
             if "date-accessed" in pref:
-                bibtex_lines.append(
-                    f"  note      = {{Accessed: {pref['date-accessed']}}},"
-                )
+                bibtex_lines.append(f"  note      = {{Accessed: {pref['date-accessed']}}},")
 
         # Process all simple fields
         for field in simple_fields:

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Updates the CITATION.cff file with metadata from metadata.yml.
 
@@ -7,10 +6,12 @@ fields in 'CITATION.cff'. It handles fields like title, authors, URL,
 repository URL, and publication date. It also ensures that the
 'preferred-citation' section, if present, is updated consistently.
 """
+
 import logging
 import sys
 from pathlib import Path
-from .utils import load_yaml_file, save_yaml_file, get_file_path
+
+from .utils import get_file_path, load_yaml_file, save_yaml_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
@@ -34,9 +35,7 @@ def update_citation():
     try:
         # Define file paths
         try:
-            repo_root = get_file_path(
-                ""
-            )  # Get repo root by providing empty relative path
+            repo_root = get_file_path("")  # Get repo root by providing empty relative path
             metadata_path = get_file_path("metadata.yml", repo_root)
             citation_cff_path = get_file_path("CITATION.cff", repo_root)
         except Exception as e:
@@ -83,15 +82,11 @@ def update_citation():
         if "book-version" in metadata:
             citation_data["version"] = metadata["book-version"]
             if "preferred-citation" in citation_data:
-                citation_data["preferred-citation"]["version"] = metadata[
-                    "book-version"
-                ]
+                citation_data["preferred-citation"]["version"] = metadata["book-version"]
             updates_made = True
             logging.info(f"Updated version to: {metadata['book-version']}")
         else:
-            logging.warning(
-                "No book version found in metadata.yml, skipping version update"
-            )
+            logging.warning("No book version found in metadata.yml, skipping version update")
 
         if "authors" in metadata and metadata["authors"]:
             try:
@@ -130,9 +125,7 @@ def update_citation():
 
                     # Also update preferred-citation if it exists
                     if "preferred-citation" in citation_data:
-                        citation_data["preferred-citation"][
-                            "authors"
-                        ] = citation_authors
+                        citation_data["preferred-citation"]["authors"] = citation_authors
 
                     updates_made = True
                     logging.info(f"Updated {len(citation_authors)} authors")
@@ -177,9 +170,7 @@ def update_citation():
         if year_value and "preferred-citation" in citation_data:
             citation_data["preferred-citation"]["year"] = year_value
             updates_made = True
-            logging.info(
-                f"Updated publication year to: {year_value} (from {year_source})"
-            )
+            logging.info(f"Updated publication year to: {year_value} (from {year_source})")
 
         # No changes
         if not updates_made:

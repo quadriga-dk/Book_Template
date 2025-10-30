@@ -4,16 +4,17 @@ It then uses this information to update metadata.yml.
 The titles for the TOC chapters are extracted from the first heading of the corresponding files.
 """
 
-from pathlib import Path
 import logging
 import sys
 from datetime import datetime
+from pathlib import Path
+
 from .utils import (
-    get_repo_root,
+    extract_first_heading,
     get_file_path,
+    get_repo_root,
     load_yaml_file,
     save_yaml_file,
-    extract_first_heading,
 )
 
 # Configure logging
@@ -75,9 +76,7 @@ def extract_and_update():
         else:
             for chapter in toc_data["chapters"]:
                 if "file" not in chapter:
-                    logging.warning(
-                        "Found chapter entry without 'file' attribute in _toc.yml"
-                    )
+                    logging.warning("Found chapter entry without 'file' attribute in _toc.yml")
                     continue
 
                 try:
@@ -106,9 +105,7 @@ def extract_and_update():
                     # Add to the list of chapters
                     toc_chapters.append(chapter_title)
                 except Exception as e:
-                    logging.error(
-                        f"Error processing chapter {chapter.get('file', 'unknown')}: {e}"
-                    )
+                    logging.error(f"Error processing chapter {chapter.get('file', 'unknown')}: {e}")
                     # Add a placeholder with the filename if possible
                     try:
                         toc_chapters.append(f"[Error: {p.stem}]")

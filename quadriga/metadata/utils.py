@@ -1,17 +1,17 @@
-#!/usr/bin/env python3
 """
 Common utility functions for metadata management in the Quadriga Book Template.
 This module provides reused functionality across different metadata scripts.
 """
 
-import yaml
-import re
 import json
 import logging
 import os
+import re
 import sys
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+
+import yaml
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
@@ -132,9 +132,7 @@ def save_yaml_file(file_path: str | Path, data, schema_comment: str | None = Non
                     file.seek(0, 0)
                     file.write(f"{schema_comment}\n" + content)
             except Exception as e:
-                logging.warning(
-                    f"Failed to add schema comment to {Path(file_path).name}: {e}"
-                )
+                logging.warning(f"Failed to add schema comment to {Path(file_path).name}: {e}")
                 # Not a critical error, proceed
 
         logging.info(f"Successfully updated {Path(file_path).name}")
@@ -210,9 +208,7 @@ def extract_first_heading(file_path: str | Path) -> str:
             except Exception as e:
                 logging.error(f"Error reading markdown {file_path_obj.name}: {e}")
         else:
-            logging.warning(
-                f"Unsupported file type for heading extraction: {file_path_obj.name}"
-            )
+            logging.warning(f"Unsupported file type for heading extraction: {file_path_obj.name}")
             return file_path_obj.stem
 
     except FileNotFoundError:
@@ -251,9 +247,7 @@ def format_authors_for_bibtex(authors):
             given = author.get("given-names", "")
 
             if not family and not given:
-                logging.warning(
-                    f"Author at index {i} is missing both family-names and given-names"
-                )
+                logging.warning(f"Author at index {i} is missing both family-names and given-names")
                 continue
 
             formatted_authors.append(f"{family}, {given}")
