@@ -346,7 +346,7 @@ def create_zenodo_json():
 
         # write .zenodo.json
         try:
-            with open(zenodo_json_path, "w", encoding="utf-8") as f:
+            with zenodo_json_path.open("w", encoding="utf-8") as f:
                 json.dump(zenodo_metadata, f, ensure_ascii=False, indent=2)
             logging.info(f"Zenodo metadata successfully created at {zenodo_json_path}")
             return True
