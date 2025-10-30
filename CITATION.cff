@@ -28,7 +28,7 @@ identifiers:
 repository-code: https://github.com/quadriga-dk/Book_Template
 url: https://quadriga-dk.github.io/Book_Template/
 keywords: &id002
-- Open Educational Resource
+- Open Educational Resources
 - Offene Bildungsressource
 - Jupyter Book
 - Data Literacy
