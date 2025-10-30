@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 
 from .utils import (
+    extract_keywords,
     format_authors_for_bibtex,
     generate_citation_key,
     get_file_path,
@@ -67,45 +68,6 @@ CFF_TO_BIBTEX_TYPES = {
     "personal-communication": "misc",  # Personal communication
     "serial": "periodical",  # Serial publication
 }
-
-
-def extract_keywords(keywords_data):
-    """
-    Extract keywords from various formats.
-
-    Supports:
-    1. Simple list of strings: ["keyword1", "keyword2"]
-    2. List of dictionaries with language codes: [{"de": "Keyword1"}, {"en": "Keyword2"}]
-    3. Mixed list: ["keyword1", {"de": "Keyword2"}, "keyword3", {"en": "Keyword4"}]
-
-    Args:
-        keywords_data: Keywords in various formats
-
-    Returns
-    -------
-        list: List of keyword strings
-    """
-    if not keywords_data:
-        return []
-
-    if not isinstance(keywords_data, list):
-        return []
-
-    keywords = []
-    for item in keywords_data:
-        if isinstance(item, str):
-            # Simple string format
-            keywords.append(item)
-        elif isinstance(item, dict):
-            # Dictionary format with language codes
-            # Extract all values from the dictionary (should be only one per item)
-            for lang_code, keyword in item.items():
-                if keyword:
-                    keywords.append(str(keyword))
-        else:
-            logging.warning(f"Unexpected keyword format: {item}")
-
-    return keywords
 
 
 def create_bibtex_from_cff():
