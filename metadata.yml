@@ -42,6 +42,12 @@ table-of-contents: '- Präambel
 description: Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
   für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung
   eigener OERs auf Basis der QUADRIGA-Empfehlungen.
+keywords:
+- Open Educational Resource
+- de: Offene Bildungsressource
+- en: Jupyter Book
+- en: Data Literacy
+  de: Datenkompetenz
 discipline:
 - übergreifend
 research-object-type:
@@ -183,4 +189,3 @@ license:
   content:
     url: https://creativecommons.org/licenses/by-sa/4.0/
     name: CC BY-SA 4.0
-date-of-last-change: '2025-10-30'

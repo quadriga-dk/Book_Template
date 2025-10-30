@@ -20,7 +20,11 @@
   "description": "Dieses Buch ist einerseits ein Template für die Erstellung von OERs nach den Empfehlungen von QUADRIGA (https://quadriga-dk.de) und andererseits eine OER für die Entwicklung von OERs entsprechend der QUADRIGA Empfehlungen.",
   "publication_date": "2025-10-30",
   "keywords": [
-    "Open Educational Resource"
+    "Open Educational Resource",
+    "Offene Bildungsressource",
+    "Jupyter Book",
+    "Data Literacy",
+    "Datenkompetenz"
   ],
   "license": "CC-BY-SA-4.0",
   "language": "deu",

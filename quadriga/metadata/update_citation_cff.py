@@ -11,7 +11,7 @@ import logging
 import sys
 from pathlib import Path
 
-from .utils import get_file_path, load_yaml_file, save_yaml_file
+from .utils import extract_keywords, get_file_path, load_yaml_file, save_yaml_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
@@ -171,6 +171,21 @@ def update_citation():
             citation_data["preferred-citation"]["year"] = year_value
             updates_made = True
             logging.info(f"Updated publication year to: {year_value} (from {year_source})")
+
+        # Update keywords if present in metadata
+        # Extract keywords to flatten any language-keyed formats
+        if "keywords" in metadata and metadata["keywords"]:
+            flattened_keywords = extract_keywords(metadata["keywords"])
+            if flattened_keywords:
+                citation_data["keywords"] = flattened_keywords
+                if "preferred-citation" in citation_data:
+                    citation_data["preferred-citation"]["keywords"] = flattened_keywords
+                updates_made = True
+                logging.info(f"Updated keywords with {len(flattened_keywords)} items")
+            else:
+                logging.warning("Keywords found in metadata.yml but could not be extracted")
+        else:
+            logging.warning("No keywords found in metadata.yml")
 
         # No changes
         if not updates_made:

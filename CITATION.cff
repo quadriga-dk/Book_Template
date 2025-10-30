@@ -27,8 +27,12 @@ identifiers:
   description: Zenodo
 repository-code: https://github.com/quadriga-dk/Book_Template
 url: https://quadriga-dk.github.io/Book_Template/
-keywords:
-- open educational resource
+keywords: &id002
+- Open Educational Resource
+- Offene Bildungsressource
+- Jupyter Book
+- Data Literacy
+- Datenkompetenz
 license: CC-BY-SA-4.0
 references:
 - title: Jupyter Book
@@ -50,5 +54,4 @@ preferred-citation:
   languages:
   - deu
   copyright: CC-BY-SA-4.0
-  keywords:
-  - Open Educational Resource
+  keywords: *id002
