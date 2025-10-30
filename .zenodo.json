@@ -1,0 +1,51 @@
+{
+  "upload_type": "lesson",
+  "title": "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template",
+  "creators": [
+    {
+      "name": "Schnaitter, Hannes",
+      "affiliation": "Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft",
+      "orcid": "0000-0002-1602-6032"
+    },
+    {
+      "name": "Samoilova, Evgenia",
+      "affiliation": "Universität Potsdam",
+      "orcid": "0000-0003-3858-901X"
+    },
+    {
+      "name": "Islam, Lamia",
+      "affiliation": "Universität Potsdam"
+    }
+  ],
+  "description": "Dieses Buch ist einerseits ein Template für die Erstellung von OERs nach den Empfehlungen von QUADRIGA (https://quadriga-dk.de) und andererseits eine OER für die Entwicklung von OERs entsprechend der QUADRIGA Empfehlungen.",
+  "publication_date": "2025-07-04",
+  "keywords": [
+    "Open Educational Resource"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "language": "deu",
+  "contributors": [
+    {
+      "name": "Zhang, Yue",
+      "type": "Other"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/quadriga-dk/Book_Template",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://quadriga-dk.github.io/Book_Template/",
+      "relation": "isAlternateIdentifier",
+      "scheme": "url"
+    }
+  ],
+  "communities": [
+    {
+      "identifier": "quadriga"
+    }
+  ],
+  "version": "0.57.0"
+}

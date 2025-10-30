@@ -4,9 +4,11 @@ This script runs the various metadata update scripts in the correct order.
 
 import logging
 import sys
+
+from .create_bibtex import create_bibtex_from_cff
 from .extract_from_book_config import extract_and_update
 from .update_citation_cff import update_citation
-from .create_bibtex import create_bibtex_from_cff
+from .create_zenodo_json import create_zenodo_json
 
 
 def main():
@@ -47,9 +49,17 @@ def main():
                 logging.error("Create BibTeX process failed.")
                 return False
         except Exception as e:
-            logging.exception(
-                f"Unexpected error during create_bibtex_from_cff: {str(e)}"
-            )
+            logging.exception(f"Unexpected error during create_bibtex_from_cff: {str(e)}")
+            return False
+
+        # Execute create_zenodo_json with error handling
+        try:
+            logging.info("Creating .zenodo.json from CITATION.cff and metadata.yml...")
+            if not create_zenodo_json():
+                logging.error("Create Zenodo JSON process failed.")
+                return False
+        except Exception as e:
+            logging.exception(f"Unexpected error during create_zenodo_json: {str(e)}")
             return False
 
         logging.info("All scripts executed successfully.")
