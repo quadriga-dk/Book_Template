@@ -295,8 +295,15 @@ def create_zenodo_json():
         # publication date
         publication_date = None
         if "date-modified" in metadata:
-            # Use date-modified from metadata.yml (already in YYYY-MM-DD format)
-            publication_date = metadata["date-modified"]
+            # Use date-modified from metadata.yml and convert to string if needed
+            date_value = metadata["date-modified"]
+            # Handle both date objects and strings
+            if hasattr(date_value, "isoformat"):
+                # It's a date/datetime object, convert to ISO format string
+                publication_date = date_value.isoformat()
+            else:
+                # It's already a string
+                publication_date = str(date_value)
             logging.info(f"Added publication_date from metadata.yml: {publication_date}")
         elif "year" in pref:
             # Fall back to year from CITATION.cff
