@@ -80,14 +80,14 @@ def update_citation():
         else:
             logging.warning("No title found in metadata.yml")
 
-        if "book-version" in metadata:
-            citation_data["version"] = metadata["book-version"]
+        if "version" in metadata:
+            citation_data["version"] = metadata["version"]
             if "preferred-citation" in citation_data:
-                citation_data["preferred-citation"]["version"] = metadata["book-version"]
+                citation_data["preferred-citation"]["version"] = metadata["version"]
             updates_made = True
-            logging.info(f"Updated version to: {metadata['book-version']}")
+            logging.info(f"Updated version to: {metadata['version']}")
         else:
-            logging.warning("No book version found in metadata.yml, skipping version update")
+            logging.warning("No version found in metadata.yml, skipping version update")
 
         if metadata.get("authors"):
             try:

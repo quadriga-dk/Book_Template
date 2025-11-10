@@ -3,7 +3,7 @@ schema-version: 1.0.0
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
 identifier: https://doi.org/10.5281/zenodo.14970672
-version: 0.59.0
+version: 0.60.0
 date-issued: 2024-05-06
 date-modified: '2025-11-10'
 authors:
@@ -212,4 +212,3 @@ quality-assurance:
 - date: 2025-11-10
   person: TODO
   description: TODO
-book-version: 0.59.0
