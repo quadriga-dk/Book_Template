@@ -62,7 +62,7 @@ jobs:
       - name: Check if files changed
         id: check_changes
         run: |
-          if git diff --quiet metadata.yml && git diff --quiet CITATION.bib && git diff --quiet CITATION.cff; then
+          if git diff --quiet metadata.yml && git diff --quiet CITATION.bib && git diff --quiet CITATION.cff && git diff --quiet .zenodo.json; then
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           else
             echo "changes_detected=true" >> $GITHUB_OUTPUT
@@ -73,7 +73,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add metadata.yml CITATION.bib CITATION.cff
+          git add metadata.yml CITATION.bib CITATION.cff .zenodo.json
           git commit -m "[Automated] Update metadata files"
           git push
 
@@ -85,7 +85,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
           # Commit the metadata changes
-          git add metadata.yml CITATION.bib CITATION.cff
+          git add metadata.yml CITATION.bib CITATION.cff .zenodo.json
           git commit -m "[Automated] Update metadata for version ${{ steps.extract_version.outputs.version }}"
 
           # Delete the old tag (locally and remotely)
