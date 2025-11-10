@@ -18,7 +18,7 @@
     }
   ],
   "description": "Dieses Buch ist einerseits ein Template für die Erstellung von OERs nach den Empfehlungen von QUADRIGA (https://quadriga-dk.de) und andererseits eine OER für die Entwicklung von OERs entsprechend der QUADRIGA Empfehlungen.",
-  "publication_date": "2025-10-30",
+  "publication_date": "2025-11-10",
   "keywords": [
     "Open Educational Resources",
     "Offene Bildungsressource",
@@ -30,8 +30,19 @@
   "language": "deu",
   "contributors": [
     {
+      "name": "Seltmann, Melanie",
+      "type": "Other",
+      "orcid": "0000-0002-7588-4395"
+    },
+    {
+      "name": "Walter, Paul",
+      "type": "Other",
+      "orcid": "0000-0002-9236-3268"
+    },
+    {
       "name": "Zhang, Yue",
-      "type": "Other"
+      "type": "Other",
+      "orcid": "0009-0007-6432-1259"
     }
   ],
   "related_identifiers": [
