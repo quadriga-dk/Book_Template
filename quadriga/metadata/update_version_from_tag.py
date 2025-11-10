@@ -47,14 +47,14 @@ def update_version_from_tag():
         # Track if updates were made
         updates_made = False
 
-        # Update book-version
-        current_version = metadata.get("book-version")
+        # Update version
+        current_version = metadata.get("version")
         if current_version != version:
-            metadata["book-version"] = version
+            metadata["version"] = version
             updates_made = True
-            logging.info(f"Updated book-version from '{current_version}' to '{version}'")
+            logging.info(f"Updated version from '{current_version}' to '{version}'")
         else:
-            logging.info(f"book-version already matches tag version: {version}")
+            logging.info(f"version already matches tag version: {version}")
 
         # Update date-modified
         current_date = datetime.now().strftime("%Y-%m-%d")
