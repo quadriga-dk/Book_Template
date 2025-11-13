@@ -304,7 +304,7 @@
       "@type": "LearningResource",
       "name": "Lernstandskontrolle (Assessment)",
       "description": "Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books, die den QUADRIGA-Empfehlungen folgen",
-      "url": "https://quadriga-dk.github.io/Book_Template/assessment/toc.html",
+      "url": "https://quadriga-dk.github.io/Book_Template/assessment/einleitung.html",
       "timeRequired": "PT3H",
       "teaches": "Gestaltung und Implementierung von Assessments",
       "educationalAlignment": [
