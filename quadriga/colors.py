@@ -1,4 +1,4 @@
-"""This submodule contains all QUADRIGA color presets for the various libraries used."""
+"""QUADRIGA color presets for various libraries used."""
 
 jupyterquiz = {
     "--jq-multiple-choice-bg": "#00305e",

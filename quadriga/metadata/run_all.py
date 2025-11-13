@@ -1,5 +1,7 @@
 """Script to coordinate the different metadata transformation scripts for QUADRIGA Jupyter Books."""
 
+from __future__ import annotations
+
 import logging
 import sys
 
@@ -9,8 +11,11 @@ from .create_zenodo_json import create_zenodo_json
 from .extract_from_book_config import extract_and_update
 from .update_citation_cff import update_citation
 
+logger = logging.getLogger(__name__)
 
-def main():
+
+def main() -> bool | None:
+    """Run the different metadata transformation scripts in order."""
     try:
         # Configure logging with timestamp
         logging.basicConfig(
@@ -19,66 +24,66 @@ def main():
             datefmt="%Y-%m-%d %H:%M:%S",
         )
 
-        logging.info("Running all metadata update scripts...")
+        logger.info("Running all metadata update scripts...")
 
         # Execute extract_and_update with error handling
         try:
-            logging.info("Extracting metadata from _config.yml and _toc.yml...")
+            logger.info("Extracting metadata from _config.yml and _toc.yml...")
             if not extract_and_update():
-                logging.error("Extract and update process failed.")
+                logger.error("Extract and update process failed.")
                 return False
         except Exception:
-            logging.exception("Unexpected error during extract_and_update")
+            logger.exception("Unexpected error during extract_and_update")
             return False
 
         # Execute update_citation with error handling
         try:
-            logging.info("Updating CITATION.cff...")
+            logger.info("Updating CITATION.cff...")
             if not update_citation():
-                logging.error("Update citation process failed.")
+                logger.error("Update citation process failed.")
                 return False
         except Exception:
-            logging.exception("Unexpected error during update_citation")
+            logger.exception("Unexpected error during update_citation")
             return False
 
         # Execute create_bibtex_from_cff with error handling
         try:
-            logging.info("Creating CITATION.bib from CITATION.cff...")
+            logger.info("Creating CITATION.bib from CITATION.cff...")
             if not create_bibtex_from_cff():
-                logging.error("Create BibTeX process failed.")
+                logger.error("Create BibTeX process failed.")
                 return False
         except Exception:
-            logging.exception("Unexpected error during create_bibtex_from_cff")
+            logger.exception("Unexpected error during create_bibtex_from_cff")
             return False
 
         # Execute create_zenodo_json with error handling
         try:
-            logging.info("Creating .zenodo.json from CITATION.cff and metadata.yml...")
+            logger.info("Creating .zenodo.json from CITATION.cff and metadata.yml...")
             if not create_zenodo_json():
-                logging.error("Create Zenodo JSON process failed.")
+                logger.error("Create Zenodo JSON process failed.")
                 return False
         except Exception:
-            logging.exception("Unexpected error during create_zenodo_json")
+            logger.exception("Unexpected error during create_zenodo_json")
             return False
 
         # Execute create_jsonld with error handling
         try:
-            logging.info("Creating metadata.jsonld from metadata.yml...")
+            logger.info("Creating metadata.jsonld from metadata.yml...")
             if not create_jsonld():
-                logging.error("Create JSON-LD process failed.")
+                logger.error("Create JSON-LD process failed.")
                 return False
         except Exception:
-            logging.exception("Unexpected error during create_jsonld")
+            logger.exception("Unexpected error during create_jsonld")
             return False
 
-        logging.info("All scripts executed successfully.")
+        logger.info("All scripts executed successfully.")
         return True
 
     except KeyboardInterrupt:
-        logging.warning("Process interrupted by user.")
+        logger.warning("Process interrupted by user.")
         return False
     except Exception:
-        logging.exception("Unexpected error in main")
+        logger.exception("Unexpected error in main")
         return False
 
 

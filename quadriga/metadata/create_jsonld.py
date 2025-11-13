@@ -9,17 +9,21 @@ The JSON-LD file provides machine-readable linked data that can be consumed by
 search engines, digital repositories, and other semantic web applications.
 """
 
+from __future__ import annotations
+
 import json
 import logging
 import sys
 from pathlib import Path
+from typing import Any
 
 from .utils import extract_keywords, get_file_path, get_repo_root, load_yaml_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+logger = logging.getLogger(__name__)
 
 
-def build_jsonld_context():
+def build_jsonld_context() -> dict[str, str]:
     """
     Build the JSON-LD @context with vocabulary namespaces.
 
@@ -85,7 +89,7 @@ def clean_doi(doi_string: str) -> str | None:
     return doi.strip()
 
 
-def transform_person(person_data: dict, person_type: str = "author") -> dict:
+def transform_person(person_data: Any) -> dict[str, Any]:
     """
     Transform author or contributor to Schema.org Person.
 
@@ -99,17 +103,16 @@ def transform_person(person_data: dict, person_type: str = "author") -> dict:
 
     Args:
         person_data (dict): Author or contributor dictionary
-        person_type (str): Type of person ("author" or "contributor")
 
     Returns
     -------
         dict: Schema.org Person object
     """
     if not isinstance(person_data, dict):
-        logging.warning(f"Invalid person data: {person_data}")
+        logger.warning("Invalid person data: %s", person_data)
         return {}
 
-    person = {"@type": "Person"}
+    person: dict[str, Any] = {"@type": "Person"}
 
     # given-names -> schema:givenName (exactMatch)
     if "given-names" in person_data:
@@ -154,7 +157,7 @@ def transform_person(person_data: dict, person_type: str = "author") -> dict:
     return person
 
 
-def transform_learning_objective(objective_data: dict) -> dict:
+def transform_learning_objective(objective_data: Any) -> dict[str, Any]:
     """
     Transform learning objective entry to AlignmentObject.
 
@@ -203,7 +206,7 @@ def transform_learning_objective(objective_data: dict) -> dict:
     return objective
 
 
-def transform_chapter(chapter_data: dict) -> dict:
+def transform_chapter(chapter_data: Any) -> dict[str, Any]:
     """
     Transform chapter to Schema.org/LRMI LearningResource.
 
@@ -226,7 +229,7 @@ def transform_chapter(chapter_data: dict) -> dict:
     if not isinstance(chapter_data, dict):
         return {}
 
-    chapter = {
+    chapter: dict[str, Any] = {
         "@type": "LearningResource",
     }
 
@@ -270,7 +273,7 @@ def transform_chapter(chapter_data: dict) -> dict:
     return chapter
 
 
-def transform_license(license_data) -> dict | list:
+def transform_license(license_data: Any) -> dict | list | str | None:
     """
     Transform license information to Schema.org license.
 
@@ -331,7 +334,7 @@ def transform_license(license_data) -> dict | list:
     return None
 
 
-def create_jsonld():
+def create_jsonld() -> bool | None:
     """
     Create a metadata.jsonld file from metadata.yml using QUADRIGA schema x-mappings.
 
@@ -351,22 +354,22 @@ def create_jsonld():
             metadata_path = get_file_path("metadata.yml", repo_root)
             jsonld_path = get_file_path("metadata.jsonld", repo_root)
         except Exception:
-            logging.exception("Failed to resolve file paths")
+            logger.exception("Failed to resolve file paths")
             return False
 
         # Check if metadata.yml exists
         if not Path(metadata_path).exists():
-            logging.error(f"metadata.yml file not found at {metadata_path}")
+            logger.error("metadata.yml file not found at %s", metadata_path)
             return False
 
         # Load metadata.yml
         metadata = load_yaml_file(metadata_path)
-        if not metadata:
-            logging.error("Could not load metadata.yml. Exiting.")
+        if not metadata or not isinstance(metadata, dict):
+            logger.error("Could not load metadata.yml or invalid format. Exiting.")
             return False
 
         # Build JSON-LD structure
-        jsonld = {
+        jsonld: dict[str, Any] = {
             "@context": build_jsonld_context(),
             "@type": ["Book", "LearningResource"],
         }
@@ -376,14 +379,14 @@ def create_jsonld():
         # title -> schema:name (exactMatch)
         if "title" in metadata:
             jsonld["name"] = metadata["title"]
-            logging.info(f"Added title: {metadata['title']}")
+            logger.info("Added title: %s", metadata["title"])
         else:
-            logging.warning("No title found in metadata.yml")
+            logger.warning("No title found in metadata.yml")
 
         # description -> schema:description (exactMatch)
         if "description" in metadata:
             jsonld["description"] = metadata["description"]
-            logging.info("Added description")
+            logger.info("Added description")
 
         # identifier (DOI) -> schema:identifier (exactMatch)
         if "identifier" in metadata:
@@ -395,27 +398,27 @@ def create_jsonld():
                     "value": clean_doi_id,
                     "url": metadata["identifier"],
                 }
-                logging.info(f"Added DOI identifier: {clean_doi_id}")
+                logger.info("Added DOI identifier: %s", clean_doi_id)
 
         # version -> schema:version (exactMatch)
         if "version" in metadata:
             jsonld["version"] = str(metadata["version"])
-            logging.info(f"Added version: {metadata['version']}")
+            logger.info("Added version: %s", metadata["version"])
 
         # schema-version -> schema:schemaVersion
         if "schema-version" in metadata:
             jsonld["schemaVersion"] = str(metadata["schema-version"])
-            logging.info(f"Added schema version: {metadata['schema-version']}")
+            logger.info("Added schema version: %s", metadata["schema-version"])
 
         # url -> schema:url (exactMatch)
         if "url" in metadata:
             jsonld["url"] = metadata["url"]
-            logging.info(f"Added URL: {metadata['url']}")
+            logger.info("Added URL: %s", metadata["url"])
 
         # git -> schema:codeRepository (exactMatch from x-mappings)
         if "git" in metadata:
             jsonld["codeRepository"] = metadata["git"]
-            logging.info(f"Added code repository: {metadata['git']}")
+            logger.info("Added code repository: %s", metadata["git"])
 
         # ===== DATES =====
 
@@ -427,7 +430,7 @@ def create_jsonld():
                 jsonld["datePublished"] = date_value.isoformat()
             else:
                 jsonld["datePublished"] = str(date_value)
-            logging.info(f"Added datePublished: {jsonld['datePublished']}")
+            logger.info("Added datePublished: %s", jsonld["datePublished"])
 
         # date-modified -> schema:dateModified (exactMatch)
         if "date-modified" in metadata:
@@ -436,7 +439,7 @@ def create_jsonld():
                 jsonld["dateModified"] = date_value.isoformat()
             else:
                 jsonld["dateModified"] = str(date_value)
-            logging.info(f"Added dateModified: {jsonld['dateModified']}")
+            logger.info("Added dateModified: %s", jsonld["dateModified"])
 
         # ===== PEOPLE =====
 
@@ -444,25 +447,25 @@ def create_jsonld():
         if metadata.get("authors"):
             authors = []
             for author in metadata["authors"]:
-                person = transform_person(author, "author")
+                person = transform_person(author)
                 if person and len(person) > 1:  # More than just @type
                     authors.append(person)
             if authors:
                 jsonld["author"] = authors
-                logging.info(f"Added {len(authors)} authors")
+                logger.info("Added %d authors", len(authors))
         else:
-            logging.warning("No authors found in metadata.yml")
+            logger.warning("No authors found in metadata.yml")
 
         # contributors -> schema:contributor (exactMatch)
         if metadata.get("contributors"):
             contributors = []
             for contributor in metadata["contributors"]:
-                person = transform_person(contributor, "contributor")
+                person = transform_person(contributor)
                 if person and len(person) > 1:  # More than just @type
                     contributors.append(person)
             if contributors:
                 jsonld["contributor"] = contributors
-                logging.info(f"Added {len(contributors)} contributors")
+                logger.info("Added %d contributors", len(contributors))
 
         # ===== LANGUAGE & KEYWORDS =====
 
@@ -474,9 +477,9 @@ def create_jsonld():
             # If it's a single string, use it as-is (Schema.org supports both)
             jsonld["inLanguage"] = language_value
             if isinstance(language_value, list):
-                logging.info(f"Added languages: {', '.join(language_value)}")
+                logger.info("Added languages: %s", ", ".join(language_value))
             else:
-                logging.info(f"Added language: {language_value}")
+                logger.info("Added language: %s", language_value)
 
         # keywords -> schema:keywords (exactMatch) and schema:about (closeMatch)
         if metadata.get("keywords"):
@@ -485,7 +488,7 @@ def create_jsonld():
                 jsonld["keywords"] = keywords_list
                 # Also add as 'about' for closeMatch mapping
                 jsonld["about"] = [{"@type": "Thing", "name": kw} for kw in keywords_list]
-                logging.info(f"Added {len(keywords_list)} keywords")
+                logger.info("Added %d keywords", len(keywords_list))
 
         # ===== EDUCATIONAL METADATA =====
 
@@ -495,7 +498,7 @@ def create_jsonld():
                 jsonld["about"] = []
             for disc in metadata["discipline"]:
                 jsonld["about"].append({"@type": "Thing", "name": disc})
-            logging.info(f"Added {len(metadata['discipline'])} disciplines")
+            logger.info("Added %d disciplines", len(metadata["discipline"]))
 
         # research-object-type -> schema:about (broadMatch)
         if metadata.get("research-object-type"):
@@ -503,19 +506,19 @@ def create_jsonld():
                 jsonld["about"] = []
             for obj_type in metadata["research-object-type"]:
                 jsonld["about"].append({"@type": "Thing", "name": obj_type})
-            logging.info(f"Added {len(metadata['research-object-type'])} research object types")
+            logger.info("Added %d research object types", len(metadata["research-object-type"]))
 
         # target-group -> schema:audience (closeMatch) and lrmi:educationalAudience (closeMatch)
         if metadata.get("target-group"):
             jsonld["audience"] = [
                 {"@type": "Audience", "audienceType": group} for group in metadata["target-group"]
             ]
-            logging.info(f"Added {len(jsonld['audience'])} target groups")
+            logger.info("Added %d target groups", len(jsonld["audience"]))
 
         # time-required -> schema:timeRequired (exactMatch)
         if "time-required" in metadata:
             jsonld["timeRequired"] = metadata["time-required"]
-            logging.info(f"Added time required: {metadata['time-required']}")
+            logger.info("Added time required: %s", metadata["time-required"])
 
         # ===== LICENSE =====
 
@@ -524,7 +527,7 @@ def create_jsonld():
             license_data = transform_license(metadata["license"])
             if license_data:
                 jsonld["license"] = license_data
-                logging.info("Added license information")
+                logger.info("Added license information")
 
         # ===== CHAPTERS (hasPart) =====
 
@@ -537,19 +540,19 @@ def create_jsonld():
                     parts.append(chapter_obj)
             if parts:
                 jsonld["hasPart"] = parts
-                logging.info(f"Added {len(parts)} chapters")
+                logger.info("Added %d chapters", len(parts))
 
         # table-of-contents -> dcterms:tableOfContents (exactMatch)
         if "table-of-contents" in metadata:
             jsonld["dcterms:tableOfContents"] = metadata["table-of-contents"]
-            logging.info("Added table of contents")
+            logger.info("Added table of contents")
 
         # ===== ADDITIONAL METADATA =====
 
         # context-of-creation -> modalia:Community (closeMatch)
         if "context-of-creation" in metadata:
             jsonld["funding"] = metadata["context-of-creation"]
-            logging.info("Added context of creation")
+            logger.info("Added context of creation")
 
         # quality-assurance -> dcterms:provenance (closeMatch)
         if metadata.get("quality-assurance"):
@@ -572,20 +575,21 @@ def create_jsonld():
 
             if qa_entries:
                 jsonld["qualityAssurance"] = qa_entries
-                logging.info(f"Added {len(qa_entries)} quality assurance entries")
+                logger.info("Added %d quality assurance entries", len(qa_entries))
 
         # Write JSON-LD file
         try:
             with jsonld_path.open("w", encoding="utf-8") as f:
                 json.dump(jsonld, f, ensure_ascii=False, indent=2)
-            logging.info(f"JSON-LD metadata successfully created at {jsonld_path}")
-            return True
         except OSError:
-            logging.exception(f"Error writing to {jsonld_path}")
+            logger.exception("Error writing to %s", jsonld_path)
             return False
+        else:
+            logger.info("JSON-LD metadata successfully created at %s", jsonld_path)
+            return True
 
     except Exception:
-        logging.exception(f"Unexpected error in create_jsonld")
+        logger.exception("Unexpected error in create_jsonld")
         return False
 
 

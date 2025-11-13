@@ -11,6 +11,8 @@ It injects:
 - Chapter-specific metadata into each chapter's first page
 """
 
+from __future__ import annotations
+
 import json
 import logging
 import sys
@@ -18,6 +20,10 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+logger = logging.getLogger(__name__)
+
+# Minimum number of path parts to consider removing a repository name prefix
+MIN_PARTS_FOR_REPO_STRIPPING = 2
 
 
 def inject_jsonld_into_html(html_path: Path, jsonld_content: str) -> bool:
@@ -39,7 +45,7 @@ def inject_jsonld_into_html(html_path: Path, jsonld_content: str) -> bool:
 
         # Check if JSON-LD is already present
         if '<script type="application/ld+json">' in html_content:
-            logging.debug(f"JSON-LD already present in {html_path.name}, skipping")
+            logger.debug("JSON-LD already present in %s, skipping", html_path.name)
             return True
 
         # Create the JSON-LD script tag with proper indentation
@@ -50,32 +56,32 @@ def inject_jsonld_into_html(html_path: Path, jsonld_content: str) -> bool:
             # Inject before </head>
             html_content = html_content.replace("</head>", f"{jsonld_script}</head>", 1)
         else:
-            logging.warning(f"No </head> tag found in {html_path.name}, skipping")
+            logger.warning("No </head> tag found in %s, skipping", html_path.name)
             return False
 
         # Write the modified HTML back
         with html_path.open("w", encoding="utf-8") as f:
             f.write(html_content)
 
-        logging.info(f"Injected JSON-LD into {html_path.name}")
+        logger.info("Injected JSON-LD into %s", html_path.name)
+
         return True
 
     except FileNotFoundError:
-        logging.exception(f"HTML file not found: {html_path}")
+        logger.exception("HTML file not found")
         return False
     except Exception:
-        logging.exception(f"Error injecting JSON-LD into {html_path}")
+        logger.exception("Error injecting JSON-LD into %s", html_path.name)
         return False
 
 
-def get_html_path_from_url(url: str, build_dir: Path, base_url: str = None) -> Path | None:
+def get_html_path_from_url(url: str, build_dir: Path) -> Path | None:
     """
     Extract the HTML file path from a chapter URL.
 
     Args:
         url (str): Full URL like "https://quadriga-dk.github.io/Book_Template/präambel/toc.html"
         build_dir (Path): Path to _build/html directory
-        base_url (str, optional): Base URL to strip. If None, will be extracted from url
 
     Returns
     -------
@@ -94,7 +100,9 @@ def get_html_path_from_url(url: str, build_dir: Path, base_url: str = None) -> P
         parts = path.split("/")
         if len(parts) > 1:
             # Assume first part might be the repo name, try both with and without it
-            relative_path = "/".join(parts[1:]) if len(parts) > 2 else path
+            relative_path = (
+                "/".join(parts[1:]) if len(parts) > MIN_PARTS_FOR_REPO_STRIPPING else path
+            )
 
             # Try the path with repo name removed
             html_path = build_dir / relative_path
@@ -106,11 +114,11 @@ def get_html_path_from_url(url: str, build_dir: Path, base_url: str = None) -> P
         if html_path.exists():
             return html_path
 
-        logging.warning(f"Could not find HTML file for URL: {url}")
+        logger.warning("Could not find HTML file for URL: %s", url)
         return None
 
     except Exception:
-        logging.exception(f"Error parsing URL {url}")
+        logger.exception("Error parsing URL %s", url)
         return None
 
 
@@ -215,7 +223,7 @@ def create_chapter_jsonld(chapter_data: dict, book_data: dict) -> dict:
     return chapter_jsonld
 
 
-def inject_jsonld(build_dir: Path = None, jsonld_path: Path = None) -> bool:
+def inject_jsonld(build_dir: Path | None = None, jsonld_path: Path | None = None) -> bool:
     """
     Inject JSON-LD metadata into HTML files of a Jupyter Book.
 
@@ -246,21 +254,21 @@ def inject_jsonld(build_dir: Path = None, jsonld_path: Path = None) -> bool:
 
         # Check if build directory exists
         if not build_dir.exists():
-            logging.error(f"Build directory not found: {build_dir}")
+            logger.error("Build directory not found: %s", build_dir)
             return False
 
         # Check if JSON-LD file exists
         if not jsonld_path.exists():
-            logging.error(f"JSON-LD file not found: {jsonld_path}")
+            logger.error("JSON-LD file not found: %s", jsonld_path)
             return False
 
         # Read and validate JSON-LD
         try:
-            with open(jsonld_path, encoding="utf-8") as f:
+            with jsonld_path.open(encoding="utf-8") as f:
                 jsonld_data = json.load(f)
-            logging.info(f"Loaded JSON-LD from {jsonld_path}")
-        except json.JSONDecodeError as e:
-            logging.exception(f"Invalid JSON in {jsonld_path}: {e}")
+            logger.info("Loaded JSON-LD from %s", jsonld_path)
+        except json.JSONDecodeError:
+            logger.exception("Invalid JSON in %s", jsonld_path)
             return False
 
         # Convert back to formatted JSON string with indentation
@@ -273,16 +281,16 @@ def inject_jsonld(build_dir: Path = None, jsonld_path: Path = None) -> bool:
         index_html = build_dir / "index.html"
         if index_html.exists():
             if not inject_jsonld_into_html(index_html, jsonld_content):
-                logging.error("Failed to inject JSON-LD into index.html")
+                logger.error("Failed to inject JSON-LD into index.html")
                 return False
         else:
-            logging.warning(f"index.html not found at {index_html}")
+            logger.warning("index.html not found at %s", index_html)
             return False
 
         # Inject chapter-specific metadata into each chapter page
         chapters_injected = 0
         if jsonld_data.get("hasPart"):
-            logging.info(f"Processing {len(jsonld_data['hasPart'])} chapters...")
+            logger.info("Processing %d chapters...", len(jsonld_data["hasPart"]))
 
             for chapter in jsonld_data["hasPart"]:
                 if not isinstance(chapter, dict):
@@ -291,14 +299,14 @@ def inject_jsonld(build_dir: Path = None, jsonld_path: Path = None) -> bool:
                 # Get chapter URL
                 chapter_url = chapter.get("url")
                 if not chapter_url:
-                    logging.warning(f"Chapter missing URL: {chapter.get('name', 'Unknown')}")
+                    logger.warning("Chapter missing URL: %s", chapter.get("name", "Unknown"))
                     continue
 
                 # Find the HTML file for this chapter
                 chapter_html_path = get_html_path_from_url(chapter_url, build_dir)
                 if not chapter_html_path:
-                    logging.warning(
-                        f"Could not find HTML file for chapter: {chapter.get('name', 'Unknown')}"
+                    logger.warning(
+                        "Could not find HTML file for chapter: %s", chapter.get("name", "Unknown")
                     )
                     continue
 
@@ -315,23 +323,23 @@ def inject_jsonld(build_dir: Path = None, jsonld_path: Path = None) -> bool:
                 if inject_jsonld_into_html(chapter_html_path, chapter_jsonld_str):
                     chapters_injected += 1
                 else:
-                    logging.warning(
-                        f"Failed to inject JSON-LD into chapter: {chapter.get('name', 'Unknown')}"
+                    logger.warning(
+                        "Failed to inject JSON-LD into chapter: %s", chapter.get("name", "Unknown")
                     )
 
-            logging.info(f"Injected JSON-LD into {chapters_injected} chapter pages")
+            logger.info("Injected JSON-LD into %d chapter pages", chapters_injected)
 
-        logging.info("JSON-LD injection completed successfully")
+        logger.info("JSON-LD injection completed successfully")
         return True
 
-    except Exception as e:
-        logging.exception(f"Unexpected error in inject_jsonld: {e!s}")
+    except Exception:
+        logger.exception("Unexpected error in inject_jsonld")
         return False
 
 
-def main():
+def main() -> None:
     """
-    Main entry point for the script.
+    Run the JSON-LD injection script.
 
     Usage:
         python -m quadriga.metadata.inject_jsonld
