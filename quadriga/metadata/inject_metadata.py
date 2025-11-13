@@ -1,14 +1,18 @@
 """
-Injects JSON-LD structured data into generated HTML files.
+Injects metadata (JSON-LD and RDF links) into generated HTML files.
 
 This script reads the metadata.jsonld file and injects it as a
 <script type="application/ld+json"> tag into the <head> section
 of the generated HTML files, making the structured data discoverable
 by search engines.
 
+It also adds <link> elements pointing to the standalone metadata files
+(metadata.jsonld and metadata.rdf) for RDF consumers and Linked Data tools.
+
 It injects:
 - Full book metadata into the root page (determined from _toc.yml)
 - Chapter-specific metadata into each chapter's first page
+- Link elements to standalone metadata files in all pages
 
 Note: index.html in Jupyter Book is typically just a redirect to the
 actual root page, so we determine the real root from _toc.yml.
@@ -29,13 +33,14 @@ logger = logging.getLogger(__name__)
 MIN_PARTS_FOR_REPO_STRIPPING = 2
 
 
-def inject_jsonld_into_html(html_path: Path, jsonld_content: str) -> bool:
+def inject_metadata_into_html(html_path: Path, jsonld_content: str, add_link_elements: bool = True) -> bool:
     """
-    Inject JSON-LD script tag into an HTML file's <head> section.
+    Inject JSON-LD script tag and metadata link elements into an HTML file's <head> section.
 
     Args:
         html_path (Path): Path to the HTML file
         jsonld_content (str): JSON-LD content as a string
+        add_link_elements (bool): Whether to add <link> elements for metadata files (default: True)
 
     Returns
     -------
@@ -54,10 +59,21 @@ def inject_jsonld_into_html(html_path: Path, jsonld_content: str) -> bool:
         # Create the JSON-LD script tag with proper indentation
         jsonld_script = f'\n  <script type="application/ld+json">\n{jsonld_content}\n  </script>\n'
 
+        # Create link elements for RDF discovery if requested
+        link_elements = ""
+        if add_link_elements:
+            link_elements = (
+                '  <link rel="alternate" type="application/ld+json" '
+                'href="/metadata.jsonld" title="JSON-LD Metadata" />\n'
+                '  <link rel="alternate" type="application/rdf+xml" '
+                'href="/metadata.rdf" title="RDF/XML Metadata" />\n'
+            )
+
         # Find the </head> tag and inject before it
         if "</head>" in html_content:
-            # Inject before </head>
-            html_content = html_content.replace("</head>", f"{jsonld_script}</head>", 1)
+            # Inject both JSON-LD script and link elements before </head>
+            injection = f"{link_elements}{jsonld_script}"
+            html_content = html_content.replace("</head>", f"{injection}</head>", 1)
         else:
             logger.warning("No </head> tag found in %s, skipping", html_path.name)
             return False
@@ -66,7 +82,7 @@ def inject_jsonld_into_html(html_path: Path, jsonld_content: str) -> bool:
         with html_path.open("w", encoding="utf-8") as f:
             f.write(html_content)
 
-        logger.info("Injected JSON-LD into %s", html_path.name)
+        logger.info("Injected metadata into %s", html_path.name)
 
         return True
 
@@ -74,7 +90,7 @@ def inject_jsonld_into_html(html_path: Path, jsonld_content: str) -> bool:
         logger.exception("HTML file not found")
         return False
     except Exception:
-        logger.exception("Error injecting JSON-LD into %s", html_path.name)
+        logger.exception("Error injecting metadata into %s", html_path.name)
         return False
 
 
@@ -226,17 +242,18 @@ def create_chapter_jsonld(chapter_data: dict, book_data: dict) -> dict:
     return chapter_jsonld
 
 
-def inject_jsonld(
+def inject_metadata(
     build_dir: Path | None = None,
     jsonld_path: Path | None = None,
     config_path: Path | None = None,
 ) -> bool:
     """
-    Inject JSON-LD metadata into HTML files of a Jupyter Book.
+    Inject metadata (JSON-LD and RDF links) into HTML files of a Jupyter Book.
 
     This function reads the metadata.jsonld file and injects:
     1. Full book metadata into the root page (determined from _toc.yml)
     2. Chapter-specific metadata into each chapter's first page
+    3. Link elements pointing to standalone metadata files (metadata.jsonld and metadata.rdf)
 
     For chapters, it creates a LearningResource JSON-LD object with an
     "isPartOf" reference to the parent book, providing better structured
@@ -315,8 +332,8 @@ def inject_jsonld(
 
         # Inject into root page
         if root_html.exists():
-            if not inject_jsonld_into_html(root_html, jsonld_content):
-                logger.error("Failed to inject JSON-LD into %s", root_html.name)
+            if not inject_metadata_into_html(root_html, jsonld_content):
+                logger.error("Failed to inject metadata into %s", root_html.name)
                 return False
         else:
             logger.warning("Root HTML file not found at %s", root_html)
@@ -355,34 +372,34 @@ def inject_jsonld(
                 )
 
                 # Inject into chapter HTML
-                if inject_jsonld_into_html(chapter_html_path, chapter_jsonld_str):
+                if inject_metadata_into_html(chapter_html_path, chapter_jsonld_str):
                     chapters_injected += 1
                 else:
                     logger.warning(
-                        "Failed to inject JSON-LD into chapter: %s", chapter.get("name", "Unknown")
+                        "Failed to inject metadata into chapter: %s", chapter.get("name", "Unknown")
                     )
 
-            logger.info("Injected JSON-LD into %d chapter pages", chapters_injected)
+            logger.info("Injected metadata into %d chapter pages", chapters_injected)
 
-        logger.info("JSON-LD injection completed successfully")
+        logger.info("Metadata injection completed successfully")
         return True
 
     except Exception:
-        logger.exception("Unexpected error in inject_jsonld")
+        logger.exception("Unexpected error in inject_metadata")
         return False
 
 
 def main() -> None:
     """
-    Run the JSON-LD injection script.
+    Run the metadata injection script.
 
     Usage:
-        python -m quadriga.metadata.inject_jsonld
+        python -m quadriga.metadata.inject_metadata
     """
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="Inject JSON-LD structured data into Jupyter Book HTML"
+        description="Inject metadata (JSON-LD and RDF links) into Jupyter Book HTML"
     )
     parser.add_argument(
         "--build-dir",
@@ -402,7 +419,7 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    success = inject_jsonld(
+    success = inject_metadata(
         build_dir=args.build_dir,
         jsonld_path=args.jsonld_path,
         config_path=args.config_path,
