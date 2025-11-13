@@ -7,8 +7,11 @@ of the generated HTML files, making the structured data discoverable
 by search engines.
 
 It injects:
-- Full book metadata into index.html
+- Full book metadata into the root page (determined from _toc.yml)
 - Chapter-specific metadata into each chapter's first page
+
+Note: index.html in Jupyter Book is typically just a redirect to the
+actual root page, so we determine the real root from _toc.yml.
 """
 
 from __future__ import annotations
@@ -223,23 +226,32 @@ def create_chapter_jsonld(chapter_data: dict, book_data: dict) -> dict:
     return chapter_jsonld
 
 
-def inject_jsonld(build_dir: Path | None = None, jsonld_path: Path | None = None) -> bool:
+def inject_jsonld(
+    build_dir: Path | None = None,
+    jsonld_path: Path | None = None,
+    config_path: Path | None = None,
+) -> bool:
     """
     Inject JSON-LD metadata into HTML files of a Jupyter Book.
 
     This function reads the metadata.jsonld file and injects:
-    1. Full book metadata into index.html
+    1. Full book metadata into the root page (determined from _toc.yml)
     2. Chapter-specific metadata into each chapter's first page
 
     For chapters, it creates a LearningResource JSON-LD object with an
     "isPartOf" reference to the parent book, providing better structured
     data when individual chapters are shared or indexed.
 
+    Note: index.html in Jupyter Book is typically just a redirect to the
+    actual root page, so we determine the real root from _toc.yml.
+
     Args:
         build_dir (Path, optional): Path to the _build/html directory.
                                     If None, uses current directory's _build/html
         jsonld_path (Path, optional): Path to metadata.jsonld file.
                                       If None, uses current directory's metadata.jsonld
+        config_path (Path, optional): Path to _toc.yml file.
+                                      If None, uses current directory's _toc.yml
 
     Returns
     -------
@@ -251,6 +263,8 @@ def inject_jsonld(build_dir: Path | None = None, jsonld_path: Path | None = None
             build_dir = Path.cwd() / "_build" / "html"
         if jsonld_path is None:
             jsonld_path = Path.cwd() / "metadata.jsonld"
+        if config_path is None:
+            config_path = Path.cwd() / "_toc.yml"
 
         # Check if build directory exists
         if not build_dir.exists():
@@ -277,14 +291,35 @@ def inject_jsonld(build_dir: Path | None = None, jsonld_path: Path | None = None
         # Add extra indentation for each line to align within the script tag
         jsonld_content = "\n".join("    " + line for line in jsonld_content.split("\n"))
 
-        # Inject into index.html (main page)
-        index_html = build_dir / "index.html"
-        if index_html.exists():
-            if not inject_jsonld_into_html(index_html, jsonld_content):
-                logger.error("Failed to inject JSON-LD into index.html")
+        # Determine the actual root page from _toc.yml
+        root_html = None
+        if config_path.exists():
+            try:
+                import yaml
+
+                with config_path.open(encoding="utf-8") as f:
+                    toc_config = yaml.safe_load(f)
+
+                root_file = toc_config.get("root")
+                if root_file:
+                    # Convert root file path to HTML filename
+                    root_html = build_dir / f"{root_file}.html"
+                    logger.info("Found root page in _toc.yml: %s", root_file)
+            except Exception:
+                logger.exception("Error reading _toc.yml, falling back to index.html")
+
+        # Fall back to index.html if we couldn't determine the root
+        if root_html is None or not root_html.exists():
+            root_html = build_dir / "index.html"
+            logger.info("Using index.html as root page")
+
+        # Inject into root page
+        if root_html.exists():
+            if not inject_jsonld_into_html(root_html, jsonld_content):
+                logger.error("Failed to inject JSON-LD into %s", root_html.name)
                 return False
         else:
-            logger.warning("index.html not found at %s", index_html)
+            logger.warning("Root HTML file not found at %s", root_html)
             return False
 
         # Inject chapter-specific metadata into each chapter page
@@ -359,10 +394,19 @@ def main() -> None:
         type=Path,
         help="Path to metadata.jsonld file (default: ./metadata.jsonld)",
     )
+    parser.add_argument(
+        "--config-path",
+        type=Path,
+        help="Path to _toc.yml file (default: ./_toc.yml)",
+    )
 
     args = parser.parse_args()
 
-    success = inject_jsonld(build_dir=args.build_dir, jsonld_path=args.jsonld_path)
+    success = inject_jsonld(
+        build_dir=args.build_dir,
+        jsonld_path=args.jsonld_path,
+        config_path=args.config_path,
+    )
     sys.exit(0 if success else 1)
 
 
