@@ -7,6 +7,7 @@ import sys
 
 from .create_bibtex import create_bibtex_from_cff
 from .create_jsonld import create_jsonld
+from .create_rdfxml import create_rdfxml
 from .create_zenodo_json import create_zenodo_json
 from .extract_from_book_config import extract_and_update
 from .update_citation_cff import update_citation
@@ -74,6 +75,16 @@ def main() -> bool | None:
                 return False
         except Exception:
             logger.exception("Unexpected error during create_jsonld")
+            return False
+
+        # Execute create_rdfxml with error handling
+        try:
+            logger.info("Creating metadata.rdf from metadata.yml...")
+            if not create_rdfxml():
+                logger.error("Create RDF/XML process failed.")
+                return False
+        except Exception:
+            logger.exception("Unexpected error during create_rdfxml")
             return False
 
         logger.info("All scripts executed successfully.")
