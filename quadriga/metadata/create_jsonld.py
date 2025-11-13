@@ -99,7 +99,7 @@ def transform_person(person_data: Any) -> dict[str, Any]:
     - family-names -> schema:familyName
     - orcid -> schema:identifier
     - affiliation -> schema:affiliation
-    - credit -> schema:roleName
+    - credit -> not included (no standard schema.org mapping for CRediT roles)
 
     Args:
         person_data (dict): Author or contributor dictionary
@@ -146,13 +146,9 @@ def transform_person(person_data: Any) -> dict[str, Any]:
             "name": person_data["affiliation"],
         }
 
-    # credit -> schema:roleName (closeMatch)
-    if person_data.get("credit"):
-        # CRediT roles as roleName
-        if isinstance(person_data["credit"], list):
-            person["roleName"] = person_data["credit"]
-        else:
-            person["roleName"] = [person_data["credit"]]
+    # Note: CRediT roles (credit field) are not included in JSON-LD
+    # because schema.org does not have a standard property for contributor roles
+    # on Person objects within author/contributor arrays
 
     return person
 
@@ -318,8 +314,8 @@ def transform_license(license_data: Any) -> dict | list | str | None:
                 }
                 if "url" in content_license_data:
                     content_license["license"] = content_license_data["url"]
-                if "name" in content_license_data:
-                    content_license["licenseName"] = content_license_data["name"]
+                # Note: licenseName is not a valid schema.org property
+                # The license URL should be sufficient for identification
                 licenses.append(content_license)
             elif isinstance(content_license_data, str):
                 content_license = {
@@ -415,10 +411,15 @@ def create_jsonld() -> bool | None:
             jsonld["url"] = metadata["url"]
             logger.info("Added URL: %s", metadata["url"])
 
-        # git -> schema:codeRepository (exactMatch from x-mappings)
+        # git -> schema:workExample as SoftwareSourceCode
+        # codeRepository is not valid for Book type, so we link to source code as a workExample
         if "git" in metadata:
-            jsonld["codeRepository"] = metadata["git"]
-            logger.info("Added code repository: %s", metadata["git"])
+            jsonld["workExample"] = {
+                "@type": "SoftwareSourceCode",
+                "name": "Source Code Repository",
+                "codeRepository": metadata["git"],
+            }
+            logger.info("Added code repository as workExample: %s", metadata["git"])
 
         # ===== DATES =====
 
@@ -554,28 +555,8 @@ def create_jsonld() -> bool | None:
             jsonld["funding"] = metadata["context-of-creation"]
             logger.info("Added context of creation")
 
-        # quality-assurance -> dcterms:provenance (closeMatch)
-        if metadata.get("quality-assurance"):
-            qa_entries = []
-            for qa in metadata["quality-assurance"]:
-                qa_entry = {"@type": "Action"}
-                if "date" in qa:
-                    date_value = qa["date"]
-                    if hasattr(date_value, "isoformat"):
-                        qa_entry["endTime"] = date_value.isoformat()
-                    else:
-                        qa_entry["endTime"] = str(date_value)
-                if "person" in qa:
-                    qa_entry["agent"] = qa["person"]
-                if "description" in qa:
-                    qa_entry["description"] = qa["description"]
-
-                if len(qa_entry) > 1:  # More than just @type
-                    qa_entries.append(qa_entry)
-
-            if qa_entries:
-                jsonld["qualityAssurance"] = qa_entries
-                logger.info("Added %d quality assurance entries", len(qa_entries))
+        # quality-assurance is not included in JSON-LD
+        # It's in active development and has no standard schema.org mapping
 
         # Write JSON-LD file
         try:
