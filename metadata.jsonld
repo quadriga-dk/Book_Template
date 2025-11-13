@@ -22,7 +22,11 @@
   "version": "0.60.0",
   "schemaVersion": "1.0.0",
   "url": "https://quadriga-dk.github.io/Book_Template/",
-  "codeRepository": "https://github.com/quadriga-dk/Book_Template",
+  "workExample": {
+    "@type": "SoftwareSourceCode",
+    "name": "Source Code Repository",
+    "codeRepository": "https://github.com/quadriga-dk/Book_Template"
+  },
   "datePublished": "2024-05-06",
   "dateModified": "2025-11-10",
   "author": [
@@ -40,11 +44,7 @@
       "affiliation": {
         "@type": "Organization",
         "name": "Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft"
-      },
-      "roleName": [
-        "Writing",
-        "Software"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -60,10 +60,7 @@
       "affiliation": {
         "@type": "Organization",
         "name": "Universität Potsdam"
-      },
-      "roleName": [
-        "Writing"
-      ]
+      }
     },
     {
       "@type": "Person",
@@ -73,10 +70,7 @@
       "affiliation": {
         "@type": "Organization",
         "name": "Universität Potsdam"
-      },
-      "roleName": [
-        "Software"
-      ]
+      }
     }
   ],
   "contributor": [
@@ -183,8 +177,7 @@
     {
       "@type": "CreativeWork",
       "name": "Content",
-      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "licenseName": "CC BY-SA 4.0"
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/"
     }
   ],
   "hasPart": [
@@ -346,13 +339,5 @@
     }
   ],
   "dcterms:tableOfContents": "- Präambel\n- Struktur und didaktisches Konzept\n- Technologie\n- Formatierungs- und Darstellungsmöglichkeiten\n- Lernstandskontrolle (Assessment)\n- Reflexion und Resümee\n- Epilog",
-  "funding": "Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.\n\nFörderkennzeichen: 16DKZ2034",
-  "qualityAssurance": [
-    {
-      "@type": "Action",
-      "endTime": "2025-11-10",
-      "agent": "TODO",
-      "description": "TODO"
-    }
-  ]
+  "funding": "Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.\n\nFörderkennzeichen: 16DKZ2034"
 }
