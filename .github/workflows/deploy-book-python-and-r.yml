@@ -74,15 +74,16 @@ jobs:
       run: |
         jupyter-book build .
 
-    - name: Inject JSON-LD metadata into HTML
+    - name: Inject metadata into HTML
       run: |
-        python -m quadriga.metadata.inject_jsonld
-        echo "Injected JSON-LD structured data into HTML head for search engines"
+        python -m quadriga.metadata.inject_metadata
+        echo "Injected metadata (JSON-LD and RDF links) into HTML head"
 
-    - name: Copy JSON-LD metadata to build directory
+    - name: Copy metadata files to build directory
       run: |
         cp metadata.jsonld _build/html/metadata.jsonld
-        echo "Copied metadata.jsonld to _build/html for search engine discovery"
+        cp metadata.rdf _build/html/metadata.rdf
+        echo "Copied metadata files to _build/html for discovery"
 
     - name: Upload book artifact
       uses: actions/upload-pages-artifact@v3
