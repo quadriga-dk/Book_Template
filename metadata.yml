@@ -177,7 +177,7 @@ chapters:
     data-flow: übergreifend
     blooms-category: 3 Anwenden
 - title: Lernstandskontrolle (Assessment)
-  url: https://quadriga-dk.github.io/Book_Template/assessment/toc.html
+  url: https://quadriga-dk.github.io/Book_Template/assessment/einleitung.html
   description: Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books,
     die den QUADRIGA-Empfehlungen folgen
   learning-goal: Gestaltung und Implementierung von Assessments
