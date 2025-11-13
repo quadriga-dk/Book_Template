@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 # QUADRIGA OERs: erstellen und gestalten mit Jupyter Book
 
 ````{margin}
@@ -82,10 +78,9 @@ In diesem interaktives Lehrbuch durchlaufen wir die folgenden Schritte:
 
 Die OER wird durch den Epilog komplettiert, das Raum für Fragen und Feedback bietet, das Literaturverzeichnis enthält, die Autor:innen vorstellt sowie Informationen zu QUADRIGA und das Impressum bereitstellt (siehe Kapitel {ref}`Epilog<fragen_feedback>`).
 
-## Literatur
+**Literatur**
 
 ```{bibliography}
 :filter: docname in docnames
 :style: plain
 ```
-

@@ -1,12 +1,8 @@
----
-lang: de-DE
----
-
 (struktur:einleitung)=
 # Struktur und didaktisches Konzept
 
 ````{margin}
-```{admonition} Fragen oder Feedback 
+```{admonition} Fragen oder Feedback
 :class: frage-feedback
 
 <a href="https://github.com/quadriga-dk/Book_Template/issues/new?assignees=&labels=question&projects=&template=frage.yml" class="external-link" target="_blank">
@@ -39,7 +35,8 @@ Open Educational Resources (OERs) werden gemäß der UNESCO-Empfehlung definiert
 
 In diesem Kapitel lernen Sie zunächst die grundlegenden didaktischen Ansätze kennen, auf denen QUADRIGA OERs basieren. Anschließend wird die Struktur der Lernmaterialien erläutert, wobei besonders auf die Formulierung von Lernzielen und den Aufbau von Fallstudien eingegangen wird. Darüber hinaus werden wir die zentralen Komponenten der OERs vorstellen und erklären, wie diese zur Erreichung der Lernziele beitragen.
 
-## Literatur
+**Literatur**
+
 ```{bibliography}
 :filter: docname in docnames
 :style: plain
