@@ -3,14 +3,21 @@
 from __future__ import annotations
 
 import logging
+import os
 import sys
 
-from .create_bibtex import create_bibtex_from_cff
-from .create_jsonld import create_jsonld
-from .create_rdfxml import create_rdfxml
-from .create_zenodo_json import create_zenodo_json
-from .extract_from_book_config import extract_and_update
-from .update_citation_cff import update_citation
+# Add current working directory to sys.path if not present
+# This allows the script to run with python -m without package installation
+cwd = os.getcwd()
+if cwd not in sys.path:
+    sys.path.insert(0, cwd)
+
+from quadriga.metadata.create_bibtex import create_bibtex_from_cff
+from quadriga.metadata.create_jsonld import create_jsonld
+from quadriga.metadata.create_rdfxml import create_rdfxml
+from quadriga.metadata.create_zenodo_json import create_zenodo_json
+from quadriga.metadata.extract_from_book_config import extract_and_update
+from quadriga.metadata.update_citation_cff import update_citation
 
 logger = logging.getLogger(__name__)
 
