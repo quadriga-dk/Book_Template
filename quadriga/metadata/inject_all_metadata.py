@@ -710,6 +710,67 @@ def inject_all_metadata(
             return False
 
         # ====================================================================
+        # Process index.html redirect page (if different from root)
+        # ====================================================================
+        # Jupyter Book may create index.html as a meta-refresh redirect
+        # Social media crawlers don't follow these redirects, so we need
+        # to inject OpenGraph metadata into index.html as well
+        index_html = build_dir / "index.html"
+        if index_html.exists() and index_html != root_html:
+            try:
+                with index_html.open(encoding="utf-8") as f:
+                    index_content = f.read()
+
+                # Check if this is a simple meta-refresh redirect page (with or without proper HTML structure)
+                if "meta http-equiv" in index_content.lower():
+                    logger.info("Found index.html redirect page, injecting OpenGraph metadata")
+
+                    # Generate OpenGraph tags (but skip JSON-LD for redirect page)
+                    og_tags = create_opengraph_meta_tags(
+                        jsonld_data,
+                        base_url,
+                        book_title,
+                        logo_filename,
+                        is_chapter=False,
+                    )
+
+                    # Check if the redirect page has proper HTML structure
+                    if "<html" not in index_content.lower() or "<head" not in index_content.lower():
+                        # Minimal redirect without proper structure - create proper HTML
+                        logger.info("Minimal redirect detected, creating proper HTML structure with OpenGraph")
+
+                        # Extract the meta refresh tag
+                        meta_refresh_match = re.search(r'<meta\s+http-equiv[^>]*>', index_content, re.IGNORECASE)
+                        meta_refresh = meta_refresh_match.group(0) if meta_refresh_match else ""
+
+                        # Create proper HTML with OpenGraph metadata and meta refresh
+                        new_index_content = f"""<!DOCTYPE html>
+<html lang="{jsonld_data.get('inLanguage', 'en')}">
+<head>
+  <meta charset="utf-8" />
+  {meta_refresh}
+{og_tags}
+  <title>{escape_html(book_title)}</title>
+</head>
+<body>
+  <p>Redirecting to <a href="{root_html.name}">{root_html.name}</a>...</p>
+</body>
+</html>
+"""
+                        # Write the new index.html
+                        with index_html.open("w", encoding="utf-8") as f:
+                            f.write(new_index_content)
+                        logger.info("Successfully created index.html with OpenGraph metadata and redirect")
+                    else:
+                        # Has proper HTML structure, inject normally
+                        if not inject_all_metadata_into_html(index_html, og_tags, "", add_link_elements=False):
+                            logger.warning("Failed to inject OpenGraph into index.html redirect page")
+                        else:
+                            logger.info("Successfully injected OpenGraph metadata into index.html redirect page")
+            except Exception:
+                logger.exception("Error processing index.html redirect page")
+
+        # ====================================================================
         # Process chapter pages
         # ====================================================================
         chapters_injected = 0
