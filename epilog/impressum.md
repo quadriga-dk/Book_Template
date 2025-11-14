@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 # Impressum
 
 *Kontakt:*<br>

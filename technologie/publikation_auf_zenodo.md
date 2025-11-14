@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 # Publikation auf Zenodo
 
 Zenodo[^url-zenodo] bietet eine Integration mit GitHub an, über die eine Publikation eines bestimmten Zustandes (`commit`) eine GitHub-Repositoriums möglich ist.
@@ -12,7 +9,7 @@ align: right
 name: fig:zenodo_profil_menü
 ---
 
-Zugriff auf die GitHub-Integration  
+Zugriff auf die GitHub-Integration
 ist im Profil-Menü oben rechts hinterlegt.
 ```
 
@@ -47,7 +44,7 @@ align: right
 name: fig:zenodo_GitHub_toggle
 ---
 
-Deaktiverter und aktivierter Schalter für  
+Deaktiverter und aktivierter Schalter für
 den Import neuer Releases in Zenodo.
 ```
 
@@ -64,8 +61,8 @@ align: right
 name: fig:GitHub_repo_release
 ---
 
-Anzeige des aktuellsten Releases  
-auf der Hauptseite eines  
+Anzeige des aktuellsten Releases
+auf der Hauptseite eines
 Repositoriums.
 ```
 
@@ -87,7 +84,7 @@ Schritt für Schritt gehen Sie so vor:
    $ git push origin tag v0.1.2
    ```
 3. Die Action `update-metadata.yml` läuft und erstellt ggf. einen neuen Commit. Wird ein Commit erstellt, so wird der Tag auf dem Server "verschoben".
-   
+
    Warten Sie, bis die Action vollständig ausgeführt wurde.
 4. Aktualisieren Sie die Tags in Ihrem lokalen Repositorium.
    ```{admonition} Achtung

@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 (jupyter_book)=
 # Jupyter Book
 

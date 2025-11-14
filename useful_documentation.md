@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 # Nützliche Dokumentation(en) und Links
 
 ## Markdown

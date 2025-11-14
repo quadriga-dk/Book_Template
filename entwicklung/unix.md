@@ -8,7 +8,6 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
-lang: de-DE
 ---
 ```{code-cell} ipython3
 :tags: [remove_cell]
@@ -59,7 +58,7 @@ $ pwd
 ```
 Manche Shell-Prompts haben eingebaut, dass Sie sehen, wo Sie gerade sind. In diesem Fall könnte das so aussehen:
 ```bash
-~ $ 
+~ $
 ```
 Wenn Sie in einem anderen Ordner wären (bspw. in `/Users/Testnutzer/Documents/Tutorial`), dann könnte das so aussehen:
 ```bash

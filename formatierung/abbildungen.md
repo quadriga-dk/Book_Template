@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 (formatierung:abbildungen)=
 # Abbildungen
 

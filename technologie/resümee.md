@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 (technologie:resümee)=
 # Resümee
 

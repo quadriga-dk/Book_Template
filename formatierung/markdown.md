@@ -1,7 +1,3 @@
----
-lang: en-US
----
-
 (formatierung:markdown)=
 # Markdown Files
 

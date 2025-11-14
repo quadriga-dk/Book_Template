@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 # Auswahl der Assessment-Inhalte
 Die im Assessment zu überprüfenden Inhalte der OER ergeben sich aus den Lernzielen und der Zielgruppe der OER.
 
