@@ -19,7 +19,7 @@
     "value": "10.5281/zenodo.14970672",
     "url": "https://doi.org/10.5281/zenodo.14970672"
   },
-  "version": "0.60.0",
+  "version": "0.61.0",
   "schemaVersion": "1.0.0",
   "url": "https://quadriga-dk.github.io/Book_Template/",
   "workExample": {
@@ -28,7 +28,7 @@
     "codeRepository": "https://github.com/quadriga-dk/Book_Template"
   },
   "datePublished": "2024-05-06",
-  "dateModified": "2025-11-10",
+  "dateModified": "2025-11-14",
   "author": [
     {
       "@type": "Person",
