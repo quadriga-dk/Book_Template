@@ -1,4 +1,1 @@
----
-lang: de-DE
----
 # Epilog

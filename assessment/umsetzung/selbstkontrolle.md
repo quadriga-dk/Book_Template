@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 # Selbstkontrolle
 
 Aufgaben, die eine selbstständige Kontrolle anhand eines Bewertungsrasters

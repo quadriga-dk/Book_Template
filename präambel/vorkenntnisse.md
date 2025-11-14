@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 # Vorkenntnisse
 
 Sie müssen keine spezifischen Vorkenntnisse mitbringen. Wir bieten drei verschiedene Zugangswege:

@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 (Checkliste_neue_OER)=
 # Checkliste neue OER
 Die nachfolgende Liste können Sie nutzen, wenn Sie eine neue OER auf Basis dieses Templates erstellen. Sie bietet einen Überblick über alle Schritte und verweist jeweils auf die relevanten Kapitel und Abschnitte dieses Templates.
@@ -12,7 +8,7 @@ Die nachfolgende Liste können Sie nutzen, wenn Sie eine neue OER auf Basis dies
 - [ ] Zielgruppe und erforderliches Vorwissen klar definiert
 - [ ] Struktur nach Datenzyklus/Forschungsprozess ausgerichtet
 - [ ] 3 Groblernziele (Kapitel) definiert (+Präambel, Fragestellung, Reflexion/Resümee, und Epilog)
-- [ ] Feinlernziele nach ABCD-Prinzip formuliert (Audience, Behavior, Condition, Degree) 
+- [ ] Feinlernziele nach ABCD-Prinzip formuliert (Audience, Behavior, Condition, Degree)
 - [ ] Bloom'sche Taxonomie für kognitive Lernzielformulierung verwendet
 - [ ] Geschätzter Workload pro Kapitel (1-3 Stunden) festgelegt
 - [ ] Geschätzter Workload pro Abschnitt (20-60 Minuten) festgelegt
@@ -52,7 +48,7 @@ Die nachfolgende Liste können Sie nutzen, wenn Sie eine neue OER auf Basis dies
 - [ ] Metadaten in der Konfigurationsdatei angepasst
 - [ ] GitHub/Gitlab/…-Verknüpfungen konfiguriert
 - [ ] Integrationen (Issues, Binder, Colab, …) konfiguriert
-- [ ] 
+- [ ]
 
 ## `_toc.yml`
 - [ ] Anpassen des ToC auf minimales Beispiel

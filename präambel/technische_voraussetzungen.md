@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 # Technische Voraussetzungen
 
 Die technischen Voraussetzungen werden in [Technologie](../technologie/zusammenspiel_der_tools.md) ausführlich beschrieben.

@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 (didaktisches_konzept)=
 # Forschungsgeleitete Fallstudien als Kern der Lernerfahrung
 

@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 (inhaltliche_strukur)=
 # Lernziele und Struktur
 

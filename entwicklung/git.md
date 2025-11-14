@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 (git)=
 # Git – Der De-Facto-Standard der Versionskontrollsoftware
 
@@ -45,7 +42,7 @@ Das Ergebnis dieses Befehls ist, dass ein Ordner `Book_Template` am aktuellen Or
 Wollen Sie Ihre eigene OER anlegen, dann nutzen Sie bspw. die Template-Funktion auf GitHub. Diese erstellt ein neues Repositorium mit den Inhalten des Templates jedoch ohne die Versionsgeschichte des Template-Repositoriums.
 
 ### Fetch
-Regelmäßig – insbesondere wenn Sie wissen, dass jemand anderes eine neue Version nach Github hochgeladen hat – sollten Sie `git fetch` nutzen um eine Kopie der Commits auf dem Server herunterzuladen. Ein `git fetch` ändert nichts an dem Commit in dem Sie gerade arbeiten und auch nichts an den Änderungen, die Sie lokal gerade vornehmen. 
+Regelmäßig – insbesondere wenn Sie wissen, dass jemand anderes eine neue Version nach Github hochgeladen hat – sollten Sie `git fetch` nutzen um eine Kopie der Commits auf dem Server herunterzuladen. Ein `git fetch` ändert nichts an dem Commit in dem Sie gerade arbeiten und auch nichts an den Änderungen, die Sie lokal gerade vornehmen.
 
 Wenn Sie einen anderen Commit auswählen wollen, geht das mit `git checkout`. Das überschreibt ggf. aktive Änderungen, die Sie noch nicht gespeichert – commit-tet – haben (s.u.).
 

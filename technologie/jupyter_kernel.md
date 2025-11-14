@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 (jupyter_kernel)=
 # Jupyter Kernels
 
@@ -91,9 +87,9 @@ Das Verständnis von Kernels hilft Ihnen bei der Fehlerbehebung, wenn Notebooks 
 :class: seealso
 
 Für detailliertere Informationen über Jupyter Kernels schauen Sie sich diese Ressourcen an:
-- <a href="https://docs.jupyter.org/en/stable/projects/kernels.html" class="external-link" target="_blank">Offizielle Jupyter Kernels Dokumentation</a> 
-- <a href="https://docs.jupyter.org/en/latest/install/kernels.html" class="external-link" target="_blank">Installation von Kernels</a> 
-- <a href="https://jupyter-client.readthedocs.io/en/latest/kernels.html" class="external-link" target="_blank">Entwicklung eigener Kernels für Jupyter</a> 
+- <a href="https://docs.jupyter.org/en/stable/projects/kernels.html" class="external-link" target="_blank">Offizielle Jupyter Kernels Dokumentation</a>
+- <a href="https://docs.jupyter.org/en/latest/install/kernels.html" class="external-link" target="_blank">Installation von Kernels</a>
+- <a href="https://jupyter-client.readthedocs.io/en/latest/kernels.html" class="external-link" target="_blank">Entwicklung eigener Kernels für Jupyter</a>
 - <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels" class="external-link" target="_blank">Liste verfügbarer Jupyter Kernels</a>
 
 ```
