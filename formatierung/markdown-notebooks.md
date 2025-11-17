@@ -1,5 +1,31 @@
 ---
 jupytext:
+    formats: md:myst
+    text_representation:
+        extension: .md
+        format_name: myst
+        format_version: 0.13
+        jupytext_version: 1.11.5
+kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+(formatierung:myst_notebooks)=
+
+# MyST-Markdown basierte Notebooks
+
+Markdown-Dateien in MyST können um Metadaten (sog. frontmatter) erweitert
+werden, wodurch sie wie Jupyter Notebooks ausführbare Inhalte beinhalten
+können.
+
+Dafür muss die Markdown-Datei mit der folgenden frontmatter (für ein Python
+Notebook) beginnen:
+
+```
+---
+jupytext:
   formats: md:myst
   text_representation:
     extension: .md
@@ -11,84 +37,16 @@ kernelspec:
   language: python
   name: python3
 ---
+```
 
-(formatierung:myst_notebooks)=
-# Notebooks with MyST Markdown
-
-Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See <a href="https://jupyterbook.org/file-types/myst-notebooks.html" class="external-link" target="_blank">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.
-
-## An example cell
-
-With MyST Markdown, you can define code cells with a directive like so:
+Dann kann das _directive_ `{code-cell}` genutzt werden um einen ausführbaren
+Code-Block zu definieren.
 
 ```{code-cell}
 print(2 + 2)
 ```
 
-When your book is built, the contents of any `{code-cell}` blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.
-
-You can also hide cell elements of a page. For example, notice the cell below contains the `hide-cell` tag:
-
-```{code-cell}
-:tags: [hide-cell]
-
-import numpy as np
-import matplotlib.pyplot as plt
-plt.ion()
-
-data = np.random.randn(2, 100)
-fig, ax = plt.subplots()
-ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
-```
-
-Similarly, you can hide just the input code or the output with the `hide-input` and `hide-output` tags respectively.
-
-To add these tags to your code cells, you can use the following syntax:
-
-````md
-```{code-cell}
-:tags: [hide-input]
-
-print("This code's input will be hidden!")
-```
-
-```{code-cell}
-:tags: [hide-output]
-
-print("This code's output will be hidden!")
-```
-
-```{code-cell}
-:tags: [hide-cell]
-
-print("Both input and output will be hidden!")
-```
-````
-
-The cell tags control the visibility of different parts of your code cells, and you can use them to customize how your notebook content is displayed.
-
-```{seealso}
-Jupyter Book uses <a href="https://jupytext.readthedocs.io/en/latest/" class="external-link" target="_blank">Jupytext</a> to convert text-based files to notebooks, and can support <a href="https://jupyterbook.org/file-types/jupytext.html" class="external-link" target="_blank">many other text-based notebook files</a>.
-```
-
-## Create a notebook with MyST Markdown
-
-MyST Markdown notebooks are defined by two things:
-
-1. YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-   See the YAML at the top of this page for example.
-2. The presence of `{code-cell}` directives, which will be executed with your book.
-
-That's all that is needed to get started!
-
-## Quickly add YAML metadata for MyST Notebooks
-
-If you have a markdown file and you'd like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:
-
-```
-jupyter-book myst init path/to/markdownfile.md
-```
+Gegenüber Jupyter Notebooks haben MyST-Markdown-Notebooks den Vorteil, dass
+kleine Änderungen auch in Git zu kleinen Diffs führen. Sie sind jedoch nicht so
+universell verbreitet. Bspw. müssen in einem JupyterHub extra Programmpakete
+installiert werden, damit die Nutzung korrekt funktioniert.
