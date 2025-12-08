@@ -61,10 +61,17 @@ jobs:
           PYTHONHASHSEED: 0
         run: python -m quadriga.metadata.run_all
 
-      - name: Check if files changed
+      - name: Stage metadata files
+        run: |
+          # Add all metadata files that exist (handles both new and modified files)
+          for file in metadata.yml CITATION.bib CITATION.cff .zenodo.json metadata.jsonld metadata.rdf; do
+            [ -f "$file" ] && git add "$file"
+          done
+
+      - name: Check if files staged
         id: check_changes
         run: |
-          if git diff --quiet metadata.yml && git diff --quiet CITATION.bib && git diff --quiet CITATION.cff && git diff --quiet .zenodo.json && git diff --quiet metadata.jsonld && git diff --quiet metadata.rdf; then
+          if git diff --cached --quiet; then
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           else
             echo "changes_detected=true" >> $GITHUB_OUTPUT
@@ -75,19 +82,14 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add metadata.yml CITATION.bib CITATION.cff .zenodo.json metadata.jsonld metadata.rdf
           git commit -m "[Automated] Update metadata files"
           git push
 
       - name: Commit changes and move tag (tag-triggered)
         if: steps.check_changes.outputs.changes_detected == 'true' && steps.extract_version.outputs.is_tag == 'true'
         run: |
-          # Configure git
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-
-          # Commit the metadata changes
-          git add metadata.yml CITATION.bib CITATION.cff .zenodo.json metadata.jsonld metadata.rdf
           git commit -m "[Automated] Update metadata for version ${{ steps.extract_version.outputs.version }}"
 
           # Delete the old tag (locally and remotely)
