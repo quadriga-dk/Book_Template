@@ -79,6 +79,8 @@ html:
   use_multitoc_numbering: false
 
 sphinx:
+  extra_extensions:
+    - sphinx_apa_references
   config:
     bibtex_reference_style: author_year
     html_show_copyright: false
