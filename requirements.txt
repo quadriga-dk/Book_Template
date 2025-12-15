@@ -1,3 +1,4 @@
+teachbooks == 0.2.3
 jupyter-book==1.0.4
 jupyterquiz==2.8.*
 matplotlib
