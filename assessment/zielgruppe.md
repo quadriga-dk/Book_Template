@@ -30,5 +30,4 @@ summativem Fremd-Assessment (Prüfungen) am Ende eines Kurses.
 
 ```{bibliography}
 :filter: docname in docnames
-:style: plain
 ```

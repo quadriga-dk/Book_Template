@@ -3,7 +3,6 @@
 
 ## Einrichtung der lokalen Entwicklungsumgebung
 
-
 ### Environments
 Es gibt verschiedene Möglichkeiten sogenannte *virtual environments* zu erstellen. Wir erläutern hier zwei Optionen.
 

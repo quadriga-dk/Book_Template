@@ -39,5 +39,4 @@ In diesem Kapitel lernen Sie zunächst die grundlegenden didaktischen Ansätze k
 
 ```{bibliography}
 :filter: docname in docnames
-:style: plain
 ```

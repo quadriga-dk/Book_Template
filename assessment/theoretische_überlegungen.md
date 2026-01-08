@@ -36,5 +36,4 @@ beschrieben. Zuerst wird die Zielgruppe der QUADRIGA OER genauer definiert.
 
 ```{bibliography}
 :filter: docname in docnames
-:style: plain
 ```

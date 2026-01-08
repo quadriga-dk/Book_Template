@@ -6,5 +6,4 @@ Es wird bei jedem Assessment festgelegt, ob und inwieweit eine Unterstützung du
 
 ```{bibliography}
 :filter: docname in docnames
-:style: plain
 ```
