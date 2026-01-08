@@ -82,5 +82,4 @@ Die OER wird durch den Epilog komplettiert, das Raum für Fragen und Feedback bi
 
 ```{bibliography}
 :filter: docname in docnames
-:style: plain
 ```
