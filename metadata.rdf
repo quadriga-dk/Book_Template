@@ -2,9 +2,12 @@
 <rdf:RDF
   xmlns:schema1="http://schema.org/"
   xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:lrmi="http://purl.org/dcx/lrmi-terms/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
   <schema1:Book rdf:about="https://quadriga-dk.github.io/Book_Template/">
+    <dc:type>Jupyter Book</dc:type>
     <dcterms:tableOfContents>- Präambel
 - Struktur und didaktisches Konzept
 - Technologie
@@ -12,6 +15,8 @@
 - Lernstandskontrolle (Assessment)
 - Reflexion und Resümee
 - Epilog</dcterms:tableOfContents>
+    <dcterms:type>Jupyter Book</dcterms:type>
+    <lrmi:learningResourceType>Jupyter Book</lrmi:learningResourceType>
     <schema1:about>
       <schema1:Thing rdf:about="https://quadriga-dk.github.io/Book_Template/#discipline_0">
         <schema1:name>übergreifend</schema1:name>
@@ -206,6 +211,7 @@ Förderkennzeichen: 16DKZ2034</schema1:funding>
     <schema1:keywords>Jupyter Book</schema1:keywords>
     <schema1:keywords>Offene Bildungsressource</schema1:keywords>
     <schema1:keywords>Open Educational Resources</schema1:keywords>
+    <schema1:learningResourceType>Jupyter Book</schema1:learningResourceType>
     <schema1:license>
       <schema1:CreativeWork rdf:about="https://quadriga-dk.github.io/Book_Template/#license_code">
         <schema1:license rdf:resource="https://opensource.org/licenses/AGPL-3.0"/>
@@ -241,19 +247,6 @@ Förderkennzeichen: 16DKZ2034</schema1:funding>
     <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend</schema1:targetDescription>
     <schema1:targetName>Kenntnis, Auswahl und Nutzung verschiedener möglicher Dateiformate und Programmiersprachen</schema1:targetName>
   </schema1:AlignmentObject>
-  <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_1">
-    <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
-    <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema1:targetDescription>
-    <schema1:targetName>Die hierarchische Struktur der Lernziele in QUADRIGA OERs kann beschrieben und der Zusammenhang zwischen Fallstudienstruktur, Datenlebenszyklus und Lernzielen erläutert werden.</schema1:targetName>
-  </schema1:AlignmentObject>
-  <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_4">
-    <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
-    <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema1:targetDescription>
-    <schema1:targetName>Der Unterschied zwischen Texteditoren und Textprozessoren für die Code-Entwicklung kann erklärt und geeignete Editoren wie VS Code für die OER-Entwicklung ausgewählt werden.</schema1:targetName>
-  </schema1:AlignmentObject>
-  <schema1:Organization rdf:about="https://quadriga-dk.github.io/Book_Template/#author_0_org">
-    <schema1:name>Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft</schema1:name>
-  </schema1:Organization>
   <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_5_objective_1">
     <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
     <schema1:targetDescription>Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: nicht anwendbar</schema1:targetDescription>
@@ -274,10 +267,10 @@ Förderkennzeichen: 16DKZ2034</schema1:funding>
     <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema1:targetDescription>
     <schema1:targetName>Das Template und seine Bestandteile werden verstanden und die jeweils relevanten Inhalte sind der Nutzer:in klar.</schema1:targetName>
   </schema1:AlignmentObject>
-  <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_0_objective_1">
+  <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_4">
     <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
     <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema1:targetDescription>
-    <schema1:targetName>Die technischen Voraussetzungen für die verschiedenen möglichen Nutzungsformen werden verstanden.</schema1:targetName>
+    <schema1:targetName>Der Unterschied zwischen Texteditoren und Textprozessoren für die Code-Entwicklung kann erklärt und geeignete Editoren wie VS Code für die OER-Entwicklung ausgewählt werden.</schema1:targetName>
   </schema1:AlignmentObject>
   <schema1:Organization rdf:about="https://quadriga-dk.github.io/Book_Template/#author_1_org">
     <schema1:name>Universität Potsdam</schema1:name>
@@ -297,52 +290,65 @@ Förderkennzeichen: 16DKZ2034</schema1:funding>
     <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend</schema1:targetDescription>
     <schema1:targetName>Auswahl und Implementierung spezifischer Assessment-Formate</schema1:targetName>
   </schema1:AlignmentObject>
-  <schema1:Organization rdf:about="https://quadriga-dk.github.io/Book_Template/#author_2_org">
-    <schema1:name>Universität Potsdam</schema1:name>
-  </schema1:Organization>
   <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_3">
     <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
     <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend</schema1:targetDescription>
     <schema1:targetName>Die Installation und Einrichtung einer lokalen Entwicklungsumgebung mit Python/Anaconda kann durchgeführt und Virtual Environments für projektspezifische Anforderungen erstellt werden.</schema1:targetName>
-  </schema1:AlignmentObject>
-  <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_2">
-    <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
-    <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema1:targetDescription>
-    <schema1:targetName>Die zentralen didaktischen Komponenten einer QUADRIGA OER können identifiziert und deren Funktion im Lernprozess erklärt werden.</schema1:targetName>
   </schema1:AlignmentObject>
   <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_3_objective_1">
     <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
     <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend</schema1:targetDescription>
     <schema1:targetName>Kenntnis, Auswahl und Nutzung spezifischer Auszeichungs- und Formatierungsoptionen</schema1:targetName>
   </schema1:AlignmentObject>
-  <schema1:PropertyValue rdf:about="https://quadriga-dk.github.io/Book_Template/#author_1_orcid">
-    <schema1:propertyID>ORCID</schema1:propertyID>
-    <schema1:url rdf:resource="https://orcid.org/0000-0003-3858-901X"/>
-    <schema1:value>0000-0003-3858-901X</schema1:value>
-  </schema1:PropertyValue>
-  <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_5_objective_0">
-    <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
-    <schema1:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema1:targetDescription>
-    <schema1:targetName>Kenntnis der wichtigsten Inhalte des Templates und dessen Nutzung</schema1:targetName>
-  </schema1:AlignmentObject>
-  <schema1:PropertyValue rdf:about="https://quadriga-dk.github.io/Book_Template/#contributor_1_orcid">
-    <schema1:propertyID>ORCID</schema1:propertyID>
-    <schema1:url rdf:resource="https://orcid.org/0000-0002-9236-3268"/>
-    <schema1:value>0000-0002-9236-3268</schema1:value>
-  </schema1:PropertyValue>
-  <schema1:PropertyValue rdf:about="https://quadriga-dk.github.io/Book_Template/#author_0_orcid">
-    <schema1:propertyID>ORCID</schema1:propertyID>
-    <schema1:url rdf:resource="https://orcid.org/0000-0002-1602-6032"/>
-    <schema1:value>0000-0002-1602-6032</schema1:value>
-  </schema1:PropertyValue>
   <schema1:PropertyValue rdf:about="https://quadriga-dk.github.io/Book_Template/#contributor_2_orcid">
     <schema1:propertyID>ORCID</schema1:propertyID>
     <schema1:url rdf:resource="https://orcid.org/0009-0007-6432-1259"/>
     <schema1:value>0009-0007-6432-1259</schema1:value>
+  </schema1:PropertyValue>
+  <schema1:PropertyValue rdf:about="https://quadriga-dk.github.io/Book_Template/#contributor_1_orcid">
+    <schema1:propertyID>ORCID</schema1:propertyID>
+    <schema1:url rdf:resource="https://orcid.org/0000-0002-9236-3268"/>
+    <schema1:value>0000-0002-9236-3268</schema1:value>
   </schema1:PropertyValue>
   <schema1:PropertyValue rdf:about="https://quadriga-dk.github.io/Book_Template/#contributor_0_orcid">
     <schema1:propertyID>ORCID</schema1:propertyID>
     <schema1:url rdf:resource="https://orcid.org/0000-0002-7588-4395"/>
     <schema1:value>0000-0002-7588-4395</schema1:value>
   </schema1:PropertyValue>
+  <schema1:PropertyValue rdf:about="https://quadriga-dk.github.io/Book_Template/#author_0_orcid">
+    <schema1:propertyID>ORCID</schema1:propertyID>
+    <schema1:url rdf:resource="https://orcid.org/0000-0002-1602-6032"/>
+    <schema1:value>0000-0002-1602-6032</schema1:value>
+  </schema1:PropertyValue>
+  <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_5_objective_0">
+    <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
+    <schema1:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema1:targetDescription>
+    <schema1:targetName>Kenntnis der wichtigsten Inhalte des Templates und dessen Nutzung</schema1:targetName>
+  </schema1:AlignmentObject>
+  <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_2">
+    <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
+    <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema1:targetDescription>
+    <schema1:targetName>Die zentralen didaktischen Komponenten einer QUADRIGA OER können identifiziert und deren Funktion im Lernprozess erklärt werden.</schema1:targetName>
+  </schema1:AlignmentObject>
+  <schema1:PropertyValue rdf:about="https://quadriga-dk.github.io/Book_Template/#author_1_orcid">
+    <schema1:propertyID>ORCID</schema1:propertyID>
+    <schema1:url rdf:resource="https://orcid.org/0000-0003-3858-901X"/>
+    <schema1:value>0000-0003-3858-901X</schema1:value>
+  </schema1:PropertyValue>
+  <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_1">
+    <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
+    <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema1:targetDescription>
+    <schema1:targetName>Die hierarchische Struktur der Lernziele in QUADRIGA OERs kann beschrieben und der Zusammenhang zwischen Fallstudienstruktur, Datenlebenszyklus und Lernzielen erläutert werden.</schema1:targetName>
+  </schema1:AlignmentObject>
+  <schema1:Organization rdf:about="https://quadriga-dk.github.io/Book_Template/#author_0_org">
+    <schema1:name>Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft</schema1:name>
+  </schema1:Organization>
+  <schema1:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_0_objective_1">
+    <schema1:educationalFramework>QUADRIGA Competency Framework</schema1:educationalFramework>
+    <schema1:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema1:targetDescription>
+    <schema1:targetName>Die technischen Voraussetzungen für die verschiedenen möglichen Nutzungsformen werden verstanden.</schema1:targetName>
+  </schema1:AlignmentObject>
+  <schema1:Organization rdf:about="https://quadriga-dk.github.io/Book_Template/#author_2_org">
+    <schema1:name>Universität Potsdam</schema1:name>
+  </schema1:Organization>
 </rdf:RDF>
