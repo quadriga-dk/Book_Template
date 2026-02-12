@@ -339,5 +339,9 @@
     }
   ],
   "dcterms:tableOfContents": "- Präambel\n- Struktur und didaktisches Konzept\n- Technologie\n- Formatierungs- und Darstellungsmöglichkeiten\n- Lernstandskontrolle (Assessment)\n- Reflexion und Resümee\n- Epilog",
-  "funding": "Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.\n\nFörderkennzeichen: 16DKZ2034"
+  "funding": "Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.\n\nFörderkennzeichen: 16DKZ2034",
+  "learningResourceType": "Jupyter Book",
+  "lrmi:learningResourceType": "Jupyter Book",
+  "dcterms:type": "Jupyter Book",
+  "dc:type": "Jupyter Book"
 }

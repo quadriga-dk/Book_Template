@@ -562,8 +562,20 @@ def create_rdfxml() -> bool | None:
             graph.add((resource_uri, SCHEMA.funding, Literal(metadata["context-of-creation"])))
             logger.info("Added context of creation")
 
-        # quality-assurance is not included in RDF
-        # It's in active development and has no standard schema.org mapping
+        # learning-resource-type -> schema:learningResourceType (closeMatch)
+        #                        -> lrmi:learningResourceType (closeMatch)
+        #                        -> dcterms:type (broadMatch)
+        #                        -> dc:type (broadMatch)
+        if "learning-resource-type" in metadata:
+            lrt = Literal(metadata["learning-resource-type"])
+            graph.add((resource_uri, SCHEMA.learningResourceType, lrt))
+            graph.add((resource_uri, LRMI.learningResourceType, lrt))
+            graph.add((resource_uri, DCTERMS.type, lrt))
+            graph.add((resource_uri, DC.type, lrt))
+            logger.info("Added learning resource type: %s", metadata["learning-resource-type"])
+
+        # quality-assurance: not mapped to RDF
+        # All schema x-mappings are relatedMatch only — too loose for RDF/JSON-LD output
 
         # Sort triples for deterministic output
         # This ensures consistent ordering regardless of Python's hash randomization
