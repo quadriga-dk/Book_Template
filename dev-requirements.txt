@@ -3,3 +3,4 @@ mypy
 ruff
 types-PyYAML
 rdflib
+jupytext
