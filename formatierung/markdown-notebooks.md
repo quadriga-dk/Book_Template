@@ -1,15 +1,15 @@
 ---
 jupytext:
-    formats: md:myst
-    text_representation:
-        extension: .md
-        format_name: myst
-        format_version: 0.13
-        jupytext_version: 1.11.5
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
-    display_name: Python 3
-    language: python
-    name: python3
+  name: python3
+  display_name: Python 3 (ipykernel)
+  language: python
 ---
 
 (formatierung:myst_notebooks)=
@@ -31,18 +31,18 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.5
+    jupytext_version: 1.19.1
 kernelspec:
-  display_name: Python 3
-  language: python
   name: python3
+  display_name: Python 3 (ipykernel)
+  language: python
 ---
 ```
 
 Dann kann das _directive_ `{code-cell}` genutzt werden um einen ausführbaren
 Code-Block zu definieren.
 
-```{code-cell}
+```{code-cell} ipython3
 print(2 + 2)
 ```
 
