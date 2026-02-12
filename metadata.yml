@@ -1,10 +1,11 @@
 # yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json
 schema-version: 1.0.0
+learning-resource-type: Jupyter Book
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
 identifier: https://doi.org/10.5281/zenodo.14970672
 version: 0.61.0
-date-issued: 2024-05-06
+date-issued: '2024-05-06'
 date-modified: '2025-11-14'
 authors:
 - given-names: Hannes
@@ -12,14 +13,16 @@ authors:
   orcid: https://orcid.org/0000-0002-1602-6032
   affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
   credit:
-  - Writing
+  - Writing – original draft
+  - Writing – review & editing
   - Software
 - given-names: Evgenia
   family-names: Samoilova
   orcid: https://orcid.org/0000-0003-3858-901X
   affiliation: Universität Potsdam
   credit:
-  - Writing
+  - Writing – original draft
+  - Writing – review & editing
 - given-names: Lamia
   family-names: Islam
   affiliation: Universität Potsdam
@@ -209,6 +212,5 @@ chapters:
     data-flow: nicht anwendbar
     blooms-category: 3 Anwenden
 quality-assurance:
-- date: 2025-11-10
-  person: TODO
-  description: TODO
+  date: '2025-11-10'
+  description: https://doi.org/TODO
