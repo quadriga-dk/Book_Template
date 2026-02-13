@@ -103,10 +103,10 @@ def load_yaml_file(file_path: str | Path) -> dict | list | None:
         logger.exception("File not found: %s", path.name)
         return None
     except yaml.YAMLError:
-        logger.exception("YAML parsing error in {path.name}")
+        logger.exception("YAML parsing error in %s", path.name)
         return None
     except Exception:
-        logger.exception("Error loading {path.name}")
+        logger.exception("Error loading %s", path.name)
         return None
 
 
@@ -155,13 +155,13 @@ def save_yaml_file(
                 logger.exception("Failed to add schema comment to %s", path.name)
                 # Not a critical error, proceed
     except yaml.YAMLError:
-        logger.exception("YAML encoding error for {path.name}")
+        logger.exception("YAML encoding error for %s", path.name)
         return False
     except PermissionError:
-        logger.exception("Permission denied when saving {path.name}")
+        logger.exception("Permission denied when saving %s", path.name)
         return False
     except Exception:
-        logger.exception("Error saving to {path.name}")
+        logger.exception("Error saving to %s", path.name)
         return False
     else:
         logger.info("Successfully updated %s", path.name)
@@ -215,9 +215,9 @@ def extract_first_heading(file_path: str | Path) -> str:
                         if heading_match:
                             return heading_match.group(1).strip()
             except json.JSONDecodeError:
-                logger.exception("Invalid JSON in notebook {file_path_obj.name}")
+                logger.exception("Invalid JSON in notebook %s", file_path_obj.name)
             except Exception:
-                logger.exception("Error reading notebook {file_path_obj.name}")
+                logger.exception("Error reading notebook %s", file_path_obj.name)
 
         elif file_path_obj.suffix == ".md":
             try:
@@ -229,7 +229,7 @@ def extract_first_heading(file_path: str | Path) -> str:
                 if heading_match:
                     return heading_match.group(1).strip()
             except Exception:
-                logger.exception("Error reading markdown {file_path_obj.name}")
+                logger.exception("Error reading markdown %s", file_path_obj.name)
         else:
             logger.warning("Unsupported file type for heading extraction: %s", file_path_obj.name)
             return file_path_obj.stem
@@ -237,7 +237,7 @@ def extract_first_heading(file_path: str | Path) -> str:
     except FileNotFoundError:
         logger.exception("File not found: %s", file_path_obj.name)
     except Exception:
-        logger.exception("Error processing {file_path_obj.name}")
+        logger.exception("Error processing %s", file_path_obj.name)
 
     return file_path_obj.stem
 
