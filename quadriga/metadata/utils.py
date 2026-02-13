@@ -65,14 +65,9 @@ def get_file_path(relative_path: str | Path, repo_root: Path | None = None) -> P
     -------
         Path: Absolute path to the file
     """
-    try:
-        if repo_root is None:
-            repo_root = get_repo_root()
-        return repo_root / Path(relative_path)
-    except Exception:
-        logger.exception("Error resolving file path for '{relative_path}'")
-        # Return the relative path as a fallback
-        return Path(relative_path)
+    if repo_root is None:
+        repo_root = get_repo_root()
+    return repo_root / Path(relative_path)
 
 
 # ---- YAML Handling ----
