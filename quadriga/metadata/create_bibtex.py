@@ -331,7 +331,7 @@ def create_bibtex_from_cff() -> bool | None:
             with citation_bib_path.open("w", encoding="utf-8") as f:
                 f.write(bibtex)
         except OSError:
-            logger.exception("Error writing to {citation_bib_path}")
+            logger.exception("Error writing to %s", citation_bib_path)
             return False
         else:
             logger.info("BibTeX citation successfully created at %s", citation_bib_path)

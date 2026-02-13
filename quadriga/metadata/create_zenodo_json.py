@@ -356,7 +356,7 @@ def create_zenodo_json() -> bool | None:
             with zenodo_json_path.open("w", encoding="utf-8") as f:
                 json.dump(zenodo_metadata, f, ensure_ascii=False, indent=2)
         except OSError:
-            logger.exception("Error writing to {zenodo_json_path}")
+            logger.exception("Error writing to %s", zenodo_json_path)
             return False
         else:
             logger.info("Zenodo metadata successfully created at %s", zenodo_json_path)

@@ -115,7 +115,7 @@ def extract_and_update() -> bool | None:
                     # Add to the list of chapters
                     toc_chapters.append(chapter_title)
                 except Exception:
-                    logger.exception("Error processing chapter {chapter.get('file', 'unknown')}")
+                    logger.exception("Error processing chapter %s", chapter.get("file", "unknown"))
                     # Add a placeholder with the filename if possible
                     try:
                         toc_chapters.append(f"[Error: {p.stem}]")
