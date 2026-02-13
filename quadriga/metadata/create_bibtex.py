@@ -275,9 +275,7 @@ def create_bibtex_from_cff() -> bool | None:
             if "repository-code" in pref and "note" not in pref:
                 bibtex_lines.append(f"  note      = {{Repository: {pref['repository-code']}}},")
 
-            # Add version info
-            if "version" in pref:
-                bibtex_lines.append(f"  version   = {{{pref['version']}}},")
+            # Note: version is already added in the common fields section above
 
             # Add software-specific details as howpublished if not present
             if ("howpublished" not in pref) and ("repository-code" in pref or "url" in pref):
