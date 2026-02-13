@@ -161,6 +161,7 @@ def transform_learning_objective(objective_data: Any) -> dict[str, Any]:
     - learning-objective -> schema:teaches / lrmi:teaches (closeMatch)
     - competency -> maps to modalia:Skill
     - blooms-category -> part of educational alignment
+    - assessment -> lrmi:assesses / schema:assesses (closeMatch)
 
     Args:
         objective_data (dict): Learning objective dictionary
@@ -198,6 +199,10 @@ def transform_learning_objective(objective_data: Any) -> dict[str, Any]:
             objective["targetDescription"] += f" | Data Flow: {objective_data['data-flow']}"
         else:
             objective["targetDescription"] = f"Data Flow: {objective_data['data-flow']}"
+
+    # assessment -> lrmi:assesses / schema:assesses (closeMatch)
+    if "assessment" in objective_data:
+        objective["lrmi:assesses"] = objective_data["assessment"]
 
     return objective
 

@@ -182,6 +182,7 @@ def add_learning_objective(
     - learning-objective -> schema:teaches / lrmi:teaches (closeMatch)
     - competency -> maps to modalia:Skill
     - blooms-category -> part of educational alignment
+    - assessment -> lrmi:assesses / schema:assesses (closeMatch)
 
     Args:
         graph: RDF graph to add triples to
@@ -227,6 +228,10 @@ def add_learning_objective(
     # Combine descriptions
     if descriptions:
         graph.add((obj_uri, SCHEMA.targetDescription, Literal(" | ".join(descriptions))))
+
+    # assessment -> lrmi:assesses (closeMatch)
+    if "assessment" in objective_data:
+        graph.add((obj_uri, LRMI.assesses, Literal(objective_data["assessment"])))
 
     return obj_uri
 
