@@ -4,3 +4,4 @@ ruff
 types-PyYAML
 rdflib
 jupytext
+jsonschema
