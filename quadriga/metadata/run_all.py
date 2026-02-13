@@ -18,6 +18,7 @@ from quadriga.metadata.create_rdfxml import create_rdfxml
 from quadriga.metadata.create_zenodo_json import create_zenodo_json
 from quadriga.metadata.extract_from_book_config import extract_and_update
 from quadriga.metadata.update_citation_cff import update_citation
+from quadriga.metadata.validate_schema import validate_schema
 
 logger = logging.getLogger(__name__)
 
@@ -33,6 +34,16 @@ def main() -> bool | None:
         )
 
         logger.info("Running all metadata update scripts...")
+
+        # Validate metadata.yml against QUADRIGA schema first
+        try:
+            logger.info("Validating metadata.yml against QUADRIGA schema...")
+            if not validate_schema():
+                logger.error("Schema validation failed.")
+                return False
+        except Exception:
+            logger.exception("Unexpected error during schema validation")
+            return False
 
         # Execute extract_and_update with error handling
         try:
