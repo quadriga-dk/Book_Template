@@ -72,7 +72,6 @@ def extract_and_update() -> bool | None:
 
         # Extract information from _config.yml
         title = config_data.get("title", "")
-        config_data.get("author", "")
 
         if not title:
             logger.warning("No title found in _config.yml")
