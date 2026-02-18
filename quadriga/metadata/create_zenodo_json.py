@@ -260,7 +260,7 @@ def create_zenodo_json() -> bool | None:
 <p>Zielgruppen von QUADRIGA sind in erster Linie promovierende und promovierte Wissenschaftler*innen der genannten Disziplinen, die den Umgang mit digitalen Daten, Methoden und Werkzeugen erlernen und weiterentwickeln wollen.</p>
 <p>QUADRIGA ist eins von 11 Datenkompetenzzentren in Deutschland und wird vom <a href="https://www.bmftr.bund.de/DE/Forschung/Wissenschaftssystem/Forschungsdaten/DatenkompetenzenInDerWissenschaft/datenkompetenzeninderwissenschaft.html" target="_blank">Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)</a> und von der Europäischen Union im Rahmen von “NextGenerationEU” finanziert. Zu den Verbundpartern zählen:
   <ul>
-    <li>Universität Potsdam (Verbundkoordination) <i>(Förderkennzeichen: 16DKZ2034A)<i></li>
+    <li>Universität Potsdam (Verbundkoordination) <i>(Förderkennzeichen: 16DKZ2034A)</i></li>
     <li>Filmuniversität Babelsberg <i>(Förderkennzeichen: 16DKZ2034B)</i></li>
     <li>Fachhochschule Potsdam <i>(Förderkennzeichen: 16DKZ2034C)</i></li>
     <li>Fraunhofer FOKUS <i>(Förderkennzeichen: 16DKZ2034D)</i></li>
