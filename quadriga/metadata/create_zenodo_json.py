@@ -250,15 +250,35 @@ def create_zenodo_json() -> bool | None:
             return False
 
         # description
-        description = citation_data.get("abstract")
-        if not description:
-            description = metadata.get("description")
+        description = metadata.get("description")
 
-        if description:
-            zenodo_metadata["description"] = description
-            logger.info("Added description")
-        else:
-            logger.warning("No description/abstract found")
+        description_base = f"""
+<hr>
+Das interaktive Lehrbuch kann als <a href="{metadata.get("url")}" target="_blank">Web-Version</a> verwendet, zur individuellen Anpassung heruntergeladen werden und steht darüber hinaus auch bei <a href="{metadata.get("git")}" target="_blank">GitHub</a> zur Verfügung.
+<hr>
+Die QUADRIGA OER sind nach einem einheitlichen <a href="https://quadriga-dk.github.io/Book_Template" target="_blank">Template</a> gestaltet, werden nach einem <a href="{metadata.get('quality-assurance').get('description', 'TODO')}" target="_blank">standardisierten Verfahren qualitätsgeprüft</a> und <a href="https://doi.org/10.5281/zenodo.18184772" target="_blank">mit Metadaten ausgezeichnet</a>.
+
+<strong>QUADRIGA Datenkompetenzzentrum</strong>
+QUADRIGA ist das Datenkompetenzzentrum der Wissenschaftsregion Berlin-Brandenburg. Für die beiden Anwendungsdomänen Digital Humanities und Verwaltungswissenschaft entstehen unter der Einbindung der Expertise der beiden Disziplinen Informatik und Informationswissenschaft Selbstlernangebote, die als OER in Form von Jupyter Books zur freien Nachnutzung zur Verfügung gestellt werden. Um den Forschungsprozesse möglichst realistisch abzubilden, basieren die OER auf Fallstudien, denen wiederum ein eigens für das Projekt entwickeltes <a href="https://doi.org/10.5281/zenodo.14747822" target="_blank">Datenkompetenzframework</a> zugrunde liegt. Die Fallstudien nehmen drei für die Anwendungsdomänen repräsentativen Datentypen in den Blick: Bewegtes Bild, Tabelle und Text.
+Zielgruppen von QUADRIGA sind in erster Linie promovierende und promovierte Wissenschaftler*innen der genannten Disziplinen, die den Umgang mit digitalen Daten, Methoden und Werkzeugen erlernen und weiterentwickeln wollen.
+QUADRIGA ist eins von 11 Datenkompetenzzentren in Deutschland und wird vom <a href="https://www.bmftr.bund.de/DE/Forschung/Wissenschaftssystem/Forschungsdaten/DatenkompetenzenInDerWissenschaft/datenkompetenzeninderwissenschaft.html" target="_blank">Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)</a> und von der Europäischen Union im Rahmen von “NextGenerationEU” finanziert. Zu den Verbundpartern zählen:
+<ul>
+<li>Universität Potsdam (Verbundkoordination) <span style="font-size: small">(Förderkennzeichen: 16DKZ2034A)</span></li>
+<li>Filmuniversität Babelsberg <span style="font-size: small">(Förderkennzeichen: 16DKZ2034B)</span></li>
+<li>Fachhochschule Potsdam <span style="font-size: small">(Förderkennzeichen: 16DKZ2034C)</span></li>
+<li>Fraunhofer FOKUS <span style="font-size: small">(Förderkennzeichen: 16DKZ2034D)</span></li>
+<li>Freie Universität Berlin <span style="font-size: small">(Förderkennzeichen: 16DKZ2034E)</span></li>
+<li>Technische Universität Berlin <span style="font-size: small">(Förderkennzeichen: 16DKZ2034F)</span></li>
+<li>Gesellschaft für Informatik <span style="font-size: small">(Förderkennzeichen: 16DKZ2034G)</span></li>
+<li>Humboldt-Universität zu Berlin <span style="font-size: small">(Förderkennzeichen: 16DKZ2034H)</span></li>
+</ul>
+
+Mehr zum Aufbau und zur Umsetzung des Projekts können Sie im <a href="https://doi.org/10.5281/zenodo.10805015" target="_blank">Umsetzungskonzept</a> erfahren.
+
+Weitere Informationen sowie Publikationen finden Sie auf der <a href="https://www.quadriga-dk.de" target="_blank">Webseite</a>, in der <a href="https://zenodo.org/communities/quadriga" target="_blank">Zenodo-Community</a> und der <a href="https://github.com/quadriga-dk" target="_blank">GitHub-Organisation</a> des Projekts.
+"""
+        zenodo_metadata["description"] = description + description_base
+        logger.info("Added description")
 
         # publication date
         publication_date = None
