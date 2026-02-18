@@ -196,7 +196,7 @@
         <schema:name>Yue Zhang</schema:name>
       </schema:Person>
     </schema:contributor>
-    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-11-14</schema:dateModified>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-18</schema:dateModified>
     <schema:datePublished rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-05-06</schema:datePublished>
     <schema:description>Diese OER führt in die Erstellung von QUADRIGA-OER ein. Sie bietet vorranging Informationen und Anleitungen für OER-Erstellende und dient als Vorlage für die Erstellung eigener OER. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen einzelner Funktionalitäten für Lernende an.</schema:description>
     <schema:funding>Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
@@ -302,7 +302,7 @@ Förderkennzeichen: 16DKZ2034</schema:funding>
     <schema:schemaVersion>1.0.0</schema:schemaVersion>
     <schema:timeRequired>PT16H15M</schema:timeRequired>
     <schema:url rdf:resource="https://quadriga-dk.github.io/Book_Template/" />
-    <schema:version>0.61.0</schema:version>
+    <schema:version>0.62.0</schema:version>
     <schema:workExample>
       <schema:SoftwareSourceCode rdf:about="https://quadriga-dk.github.io/Book_Template/#repository">
         <schema:codeRepository rdf:resource="https://github.com/quadriga-dk/Book_Template" />
