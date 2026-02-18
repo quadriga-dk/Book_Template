@@ -3,9 +3,6 @@ cff-version: 1.2.0
 version: 0.61.0
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
-abstract: Dieses Buch ist einerseits ein Template für die Erstellung von OERs nach
-  den Empfehlungen von QUADRIGA (https://quadriga-dk.de) und andererseits eine OER
-  für die Entwicklung von OERs entsprechend der QUADRIGA Empfehlungen.
 type: software
 message: Please cite this software using the metadata from `preferred-citation` in
   `CITATION.cff`.
@@ -55,3 +52,6 @@ preferred-citation:
   - deu
   copyright: CC-BY-SA-4.0
   keywords: *id002
+abstract: Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte
+  für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung
+  eigener OERs auf Basis der QUADRIGA-Empfehlungen.

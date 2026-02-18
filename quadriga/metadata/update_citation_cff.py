@@ -260,6 +260,11 @@ def update_citation() -> bool:
             updates_made = True
             logger.info("Updated publication year to: %s (from %s)", year_value, year_source)
 
+        if "description" in metadata:
+            citation_data["abstract"] = metadata["description"]
+            updates_made = True
+            logger.info("Updated abstract from description")
+
         # Update keywords if present in metadata
         # Extract keywords to flatten any language-keyed formats
         if metadata.get("keywords"):
