@@ -1,12 +1,6 @@
 # yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json
-schema-version: 1.0.0
-learning-resource-type: Jupyter Book
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
-identifier: https://doi.org/10.5281/zenodo.14970672
-version: 0.62.1
-date-issued: '2024-05-06'
-date-modified: '2026-02-18'
 authors:
 - given-names: Hannes
   family-names: Schnaitter
@@ -28,16 +22,16 @@ authors:
   affiliation: Universität Potsdam
   credit:
   - Software
-contributors:
-- family-names: Seltmann
-  given-names: Melanie
-  orcid: https://orcid.org/0000-0002-7588-4395
-- family-names: Walter
-  given-names: Paul
-  orcid: https://orcid.org/0000-0002-9236-3268
-- family-names: Zhang
-  given-names: Yue
-  orcid: https://orcid.org/0009-0007-6432-1259
+keywords:
+- Open Educational Resources
+- de: Offene Bildungsressource
+- en: Jupyter Book
+- en: Data Literacy
+  de: Datenkompetenz
+description: Diese OER führt in die Erstellung von QUADRIGA-OER ein. Sie bietet vorranging
+  Informationen und Anleitungen für OER-Erstellende und dient als Vorlage für die
+  Erstellung eigener OER. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen einzelner
+  Funktionalitäten für Lernende an.
 table-of-contents: '- Präambel
 
   - Struktur und didaktisches Konzept
@@ -51,17 +45,6 @@ table-of-contents: '- Präambel
   - Reflexion und Resümee
 
   - Epilog'
-description: Diese OER führt in die Erstellung von QUADRIGA-OER ein. Sie bietet vorranging
-  Informationen und Anleitungen für OER-Erstellende und dient als Vorlage für die
-  Erstellung eigener OER. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen einzelner
-  Funktionalitäten für Lernende an.
-keywords:
-- Open Educational Resources
-- de: Offene Bildungsressource
-- en: Jupyter Book
-- en: Data Literacy
-  de: Datenkompetenz
-language: de
 discipline:
 - übergreifend
 research-object-type:
@@ -72,18 +55,23 @@ target-group:
 - Promovierende
 - Hochschullehrende
 time-required: PT16H15M
-context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
-  Datenkompetenzzentrum QUADRIGA erstellt.
-
-
-  Förderkennzeichen: 16DKZ2034'
-url: https://quadriga-dk.github.io/Book_Template/
+language: de
+contributors:
+- family-names: Seltmann
+  given-names: Melanie
+  orcid: https://orcid.org/0000-0002-7588-4395
+- family-names: Walter
+  given-names: Paul
+  orcid: https://orcid.org/0000-0002-9236-3268
+- family-names: Zhang
+  given-names: Yue
+  orcid: https://orcid.org/0009-0007-6432-1259
+identifier: https://doi.org/10.5281/zenodo.14970672
 git: https://github.com/quadriga-dk/Book_Template
-license:
-  code: https://opensource.org/licenses/AGPL-3.0
-  content:
-    url: https://creativecommons.org/licenses/by-sa/4.0/
-    name: CC BY-SA 4.0
+url: https://quadriga-dk.github.io/Book_Template/
+used-tools:
+- name: Jupyter Book
+  url: https://jupyterbook.org
 chapters:
 - title: Präambel
   url: https://quadriga-dk.github.io/Book_Template/präambel/toc.html
@@ -212,6 +200,21 @@ chapters:
     competency: nicht anwendbar
     data-flow: nicht anwendbar
     blooms-category: 3 Anwenden
+date-issued: '2024-05-06'
+date-modified: '2026-02-18'
+version: 0.62.2
+context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
+  Datenkompetenzzentrum QUADRIGA erstellt.
+
+
+  Förderkennzeichen: 16DKZ2034'
 quality-assurance:
   date: '2025-11-10'
   description: https://doi.org/TODO
+learning-resource-type: Jupyter Book
+schema-version: 1.0.0
+license:
+  code: https://opensource.org/licenses/AGPL-3.0
+  content:
+    url: https://creativecommons.org/licenses/by-sa/4.0/
+    name: CC BY-SA 4.0
