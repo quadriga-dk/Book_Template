@@ -302,7 +302,7 @@ Förderkennzeichen: 16DKZ2034</schema:funding>
     <schema:schemaVersion>1.0.0</schema:schemaVersion>
     <schema:timeRequired>PT16H15M</schema:timeRequired>
     <schema:url rdf:resource="https://quadriga-dk.github.io/Book_Template/" />
-    <schema:version>0.62.1</schema:version>
+    <schema:version>0.62.2</schema:version>
     <schema:workExample>
       <schema:SoftwareSourceCode rdf:about="https://quadriga-dk.github.io/Book_Template/#repository">
         <schema:codeRepository rdf:resource="https://github.com/quadriga-dk/Book_Template" />
