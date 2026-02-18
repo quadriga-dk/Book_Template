@@ -198,7 +198,7 @@
     </schema:contributor>
     <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-11-14</schema:dateModified>
     <schema:datePublished rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-05-06</schema:datePublished>
-    <schema:description>Diese OER führt in die Erstellung von QUADRIGA-OERs ein, bietet Inhalte für Nutzer:innen der OERs und dient gleichzeitig als Template für die Erstellung eigener OERs auf Basis der QUADRIGA-Empfehlungen.</schema:description>
+    <schema:description>Diese OER führt in die Erstellung von QUADRIGA-OER ein. Sie bietet vorranging Informationen und Anleitungen für OER-Erstellende und dient als Vorlage für die Erstellung eigener OER. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen einzelner Funktionalitäten für Lernende an.</schema:description>
     <schema:funding>Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
 
 Förderkennzeichen: 16DKZ2034</schema:funding>
