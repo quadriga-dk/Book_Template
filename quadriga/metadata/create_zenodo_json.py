@@ -260,14 +260,14 @@ def create_zenodo_json() -> bool | None:
 <p>Zielgruppen von QUADRIGA sind in erster Linie promovierende und promovierte Wissenschaftler*innen der genannten Disziplinen, die den Umgang mit digitalen Daten, Methoden und Werkzeugen erlernen und weiterentwickeln wollen.</p>
 <p>QUADRIGA ist eins von 11 Datenkompetenzzentren in Deutschland und wird vom <a href="https://www.bmftr.bund.de/DE/Forschung/Wissenschaftssystem/Forschungsdaten/DatenkompetenzenInDerWissenschaft/datenkompetenzeninderwissenschaft.html" target="_blank">Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)</a> und von der Europäischen Union im Rahmen von “NextGenerationEU” finanziert. Zu den Verbundpartern zählen:
   <ul>
-    <li>Universität Potsdam (Verbundkoordination) <span style="font-size: small">(Förderkennzeichen: 16DKZ2034A)</span></li>
-    <li>Filmuniversität Babelsberg <span style="font-size: small">(Förderkennzeichen: 16DKZ2034B)</span></li>
-    <li>Fachhochschule Potsdam <span style="font-size: small">(Förderkennzeichen: 16DKZ2034C)</span></li>
-    <li>Fraunhofer FOKUS <span style="font-size: small">(Förderkennzeichen: 16DKZ2034D)</span></li>
-    <li>Freie Universität Berlin <span style="font-size: small">(Förderkennzeichen: 16DKZ2034E)</span></li>
-    <li>Technische Universität Berlin <span style="font-size: small">(Förderkennzeichen: 16DKZ2034F)</span></li>
-    <li>Gesellschaft für Informatik <span style="font-size: small">(Förderkennzeichen: 16DKZ2034G)</span></li>
-    <li>Humboldt-Universität zu Berlin <span style="font-size: small">(Förderkennzeichen: 16DKZ2034H)</span></li>
+    <li>Universität Potsdam (Verbundkoordination) <i>(Förderkennzeichen: 16DKZ2034A)<i></li>
+    <li>Filmuniversität Babelsberg <i>(Förderkennzeichen: 16DKZ2034B)</i></li>
+    <li>Fachhochschule Potsdam <i>(Förderkennzeichen: 16DKZ2034C)</i></li>
+    <li>Fraunhofer FOKUS <i>(Förderkennzeichen: 16DKZ2034D)</i></li>
+    <li>Freie Universität Berlin <i>(Förderkennzeichen: 16DKZ2034E)</i></li>
+    <li>Technische Universität Berlin <i>(Förderkennzeichen: 16DKZ2034F)</i></li>
+    <li>Gesellschaft für Informatik <i>(Förderkennzeichen: 16DKZ2034G)</i></li>
+    <li>Humboldt-Universität zu Berlin <i>(Förderkennzeichen: 16DKZ2034H)</i></li>
   </ul>
 </p>
 
