@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json
-title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
+title: 'QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
 authors:
 - given-names: Hannes
@@ -28,10 +28,12 @@ keywords:
 - en: Jupyter Book
 - en: Data Literacy
   de: Datenkompetenz
-description: Diese OER führt in die Erstellung von QUADRIGA-OER ein. Sie bietet vorranging
-  Informationen und Anleitungen für OER-Erstellende und dient als Vorlage für die
-  Erstellung eigener OER. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen einzelner
-  Funktionalitäten für Lernende an.
+description: Dieses Buch führt in die Erstellung von Open Educational Resources (OER)
+  nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA ein. Diese
+  sind einerseits inhaltlicher und didaktischer andererseits technischer Natur. Diese
+  OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt (Template)
+  für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel bieten zudem
+  Erläuterungen zu Funktionalitäten für Lernende.
 table-of-contents: '- Präambel
 
   - Struktur und didaktisches Konzept
@@ -60,9 +62,11 @@ contributors:
 - family-names: Seltmann
   given-names: Melanie
   orcid: https://orcid.org/0000-0002-7588-4395
+  affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
 - family-names: Walter
   given-names: Paul
   orcid: https://orcid.org/0000-0002-9236-3268
+  affiliation: Fachhochschule Potsdam
 - family-names: Zhang
   given-names: Yue
   orcid: https://orcid.org/0009-0007-6432-1259
@@ -202,7 +206,7 @@ chapters:
     blooms-category: 3 Anwenden
 date-issued: '2024-05-06'
 date-modified: '2026-02-18'
-version: 0.62.3
+version: 0.62.4
 context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
   Datenkompetenzzentrum QUADRIGA erstellt.
 

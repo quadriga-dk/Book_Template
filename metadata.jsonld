@@ -11,15 +11,15 @@
     "Book",
     "LearningResource"
   ],
-  "name": "QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template",
-  "description": "Diese OER führt in die Erstellung von QUADRIGA-OER ein. Sie bietet vorranging Informationen und Anleitungen für OER-Erstellende und dient als Vorlage für die Erstellung eigener OER. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen einzelner Funktionalitäten für Lernende an.",
+  "name": "QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template",
+  "description": "Dieses Buch führt in die Erstellung von Open Educational Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA ein. Diese sind einerseits inhaltlicher und didaktischer andererseits technischer Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen zu Funktionalitäten für Lernende.",
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "DOI",
     "value": "10.5281/zenodo.14970672",
     "url": "https://doi.org/10.5281/zenodo.14970672"
   },
-  "version": "0.62.3",
+  "version": "0.62.4",
   "schemaVersion": "1.0.0",
   "url": "https://quadriga-dk.github.io/Book_Template/",
   "workExample": {
@@ -84,6 +84,10 @@
         "propertyID": "ORCID",
         "value": "0000-0002-7588-4395",
         "url": "https://orcid.org/0000-0002-7588-4395"
+      },
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft"
       }
     },
     {
@@ -96,6 +100,10 @@
         "propertyID": "ORCID",
         "value": "0000-0002-9236-3268",
         "url": "https://orcid.org/0000-0002-9236-3268"
+      },
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Fachhochschule Potsdam"
       }
     },
     {

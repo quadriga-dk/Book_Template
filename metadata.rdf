@@ -174,6 +174,7 @@
     </schema:author>
     <schema:contributor>
       <schema:Person rdf:about="https://quadriga-dk.github.io/Book_Template/#contributor_0">
+        <schema:affiliation rdf:resource="https://quadriga-dk.github.io/Book_Template/#contributor_0_org" />
         <schema:familyName>Seltmann</schema:familyName>
         <schema:givenName>Melanie</schema:givenName>
         <schema:identifier rdf:resource="https://quadriga-dk.github.io/Book_Template/#contributor_0_orcid" />
@@ -182,6 +183,7 @@
     </schema:contributor>
     <schema:contributor>
       <schema:Person rdf:about="https://quadriga-dk.github.io/Book_Template/#contributor_1">
+        <schema:affiliation rdf:resource="https://quadriga-dk.github.io/Book_Template/#contributor_1_org" />
         <schema:familyName>Walter</schema:familyName>
         <schema:givenName>Paul</schema:givenName>
         <schema:identifier rdf:resource="https://quadriga-dk.github.io/Book_Template/#contributor_1_orcid" />
@@ -198,7 +200,7 @@
     </schema:contributor>
     <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-18</schema:dateModified>
     <schema:datePublished rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-05-06</schema:datePublished>
-    <schema:description>Diese OER führt in die Erstellung von QUADRIGA-OER ein. Sie bietet vorranging Informationen und Anleitungen für OER-Erstellende und dient als Vorlage für die Erstellung eigener OER. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen einzelner Funktionalitäten für Lernende an.</schema:description>
+    <schema:description>Dieses Buch führt in die Erstellung von Open Educational Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA ein. Diese sind einerseits inhaltlicher und didaktischer andererseits technischer Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen zu Funktionalitäten für Lernende.</schema:description>
     <schema:funding>Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
 
 Förderkennzeichen: 16DKZ2034</schema:funding>
@@ -298,11 +300,11 @@ Förderkennzeichen: 16DKZ2034</schema:funding>
         <schema:name>Content</schema:name>
       </schema:CreativeWork>
     </schema:license>
-    <schema:name>QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template</schema:name>
+    <schema:name>QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template</schema:name>
     <schema:schemaVersion>1.0.0</schema:schemaVersion>
     <schema:timeRequired>PT16H15M</schema:timeRequired>
     <schema:url rdf:resource="https://quadriga-dk.github.io/Book_Template/" />
-    <schema:version>0.62.3</schema:version>
+    <schema:version>0.62.4</schema:version>
     <schema:workExample>
       <schema:SoftwareSourceCode rdf:about="https://quadriga-dk.github.io/Book_Template/#repository">
         <schema:codeRepository rdf:resource="https://github.com/quadriga-dk/Book_Template" />
@@ -319,6 +321,12 @@ Förderkennzeichen: 16DKZ2034</schema:funding>
   </schema:Organization>
   <schema:Organization rdf:about="https://quadriga-dk.github.io/Book_Template/#author_2_org">
     <schema:name>Universität Potsdam</schema:name>
+  </schema:Organization>
+  <schema:Organization rdf:about="https://quadriga-dk.github.io/Book_Template/#contributor_0_org">
+    <schema:name>Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft</schema:name>
+  </schema:Organization>
+  <schema:Organization rdf:about="https://quadriga-dk.github.io/Book_Template/#contributor_1_org">
+    <schema:name>Fachhochschule Potsdam</schema:name>
   </schema:Organization>
   <schema:PropertyValue rdf:about="https://quadriga-dk.github.io/Book_Template/#author_0_orcid">
     <schema:propertyID>ORCID</schema:propertyID>
