@@ -1,0 +1,190 @@
+/* drag and drop styling */
+.drag-drop-quiz {
+    max-width: 900px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.quiz-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.quiz-main {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.descriptions-container {
+    width: 100%;
+}
+
+.description-zone {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    gap: 15px;
+}
+
+.description-label {
+    flex: 0 0 60%;
+    padding: 12px;
+    background: #f8f9fa;
+    color: #333333;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+}
+
+.drop-area {
+    flex: 0 0 35%;
+    min-height: 50px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+.drop-area.drag-over {
+    border-color: #667eea;
+    background: #e8f0ff;
+    border-style: solid;
+}
+
+.drop-placeholder {
+    color: #999;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.dropped-item {
+    background: #00305e;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.dropped-item:hover {
+    background: #004080;
+}
+
+.options-container {
+    margin-bottom: 20px;
+}
+
+.options-title {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.options-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.draggable-option {
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    color: #333333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: grab;
+    user-select: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-width: 120px;
+    text-align: center;
+}
+
+.draggable-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.draggable-option:active {
+    cursor: grabbing;
+}
+
+.draggable-option.dragging {
+    opacity: 0.5;
+}
+
+.quiz-controls {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.quiz-button {
+    background: #00305e;
+    color: white;
+    border: 2px solid #00396e;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px 0 0;
+    transition: background 0.3s ease;
+}
+
+.quiz-button:hover {
+    background: #004080;
+}
+
+.reset-button {
+    background: transparent;
+    color: #00305e;
+}
+
+
+html[data-theme='dark'] .reset-button {
+    color: #818bac;
+}
+
+.reset-button:hover {
+    background: #00305e;
+    color: white;
+}
+
+.feedback {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.feedback.correct {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.feedback.incorrect {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.feedback.partial {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.drop-area.correct-answer {
+    background-color: #d4edda;
+}
+
+.drop-area.incorrect-answer {
+    background-color: #f8d7da;
+}

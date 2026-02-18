@@ -143,5 +143,4 @@ abgedeckt werden können während höhere Stufen vorrangig durch komplexe Aufgab
 
 ```{bibliography}
 :filter: docname in docnames
-:style: plain
 ```

@@ -1,5 +1,1 @@
----
-lang: de-DE
----
-
 # Zusammenfassung

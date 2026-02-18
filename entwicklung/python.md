@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 (python)=
 # Python
 
@@ -19,6 +16,6 @@ Sie sollten die Anwendung *Anaconda Navigator* installiert haben, über die Sie 
 
 ## Jupyter Notebooks und Jupyter Lab
 
-Jupyter Notebooks sind einerseits ein Dateiformat mit der Namenserweiterung `.iypnb` und andererseits eine Software um (unter anderen) Jupyter Notebook Dateien zu bearbeiten. Jupyter Lab ist ebenfalls eine Software, um diese Dateien zu bearbeiten. Probieren Sie gerne beide aus, wenn Sie Jupyter Notebooks bspw. mit Python oder R für Ihre OER nutzen. Jupyter Notebook Dateien können auch in einigen Texteditoren und IDEs geöffnet werden (siehe dazu den Abschnitt zu Editoren). 
+Jupyter Notebooks sind einerseits ein Dateiformat mit der Namenserweiterung `.iypnb` und andererseits eine Software um (unter anderen) Jupyter Notebook Dateien zu bearbeiten. Jupyter Lab ist ebenfalls eine Software, um diese Dateien zu bearbeiten. Probieren Sie gerne beide aus, wenn Sie Jupyter Notebooks bspw. mit Python oder R für Ihre OER nutzen. Jupyter Notebook Dateien können auch in einigen Texteditoren und IDEs geöffnet werden (siehe dazu den Abschnitt zu Editoren).
 
 ## Ressourcen

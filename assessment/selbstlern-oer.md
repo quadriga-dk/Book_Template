@@ -42,7 +42,6 @@ Assessment im Rahmen einer Selbstlern-OER erfüllen muss:
 
 ```{bibliography}
 :filter: docname in docnames
-:style: plain
 ```
 
 [^orig-instructional]: orig. "instructional"

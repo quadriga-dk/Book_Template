@@ -1,47 +1,47 @@
-"""
-Updates book-version and date-modified in metadata.yml based on git tag.
-"""
+"""Update version and date-modified in metadata.yml based on git tag."""
 
 import logging
 import os
 import sys
-from datetime import datetime
+from datetime import UTC, datetime
 
 from .utils import get_file_path, load_yaml_file, save_yaml_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+logger = logging.getLogger(__name__)
 
 
-def update_version_from_tag():
+def update_version_from_tag() -> bool:
     """
-    Updates book-version and date-modified in metadata.yml from git tag.
+    Update book and date-modified in metadata.yml from git tag.
 
     Expects the version to be passed via environment variable TAG_VERSION.
 
-    Returns:
+    Returns
+    -------
         bool: True if successful, False otherwise.
     """
     try:
         # Get version from environment variable (set by GitHub Actions)
         version = os.environ.get("TAG_VERSION")
         if not version:
-            logging.info("No TAG_VERSION environment variable found - skipping version update")
+            logger.info("No TAG_VERSION environment variable found - skipping version update")
             return True
 
-        logging.info(f"Updating metadata for version: {version}")
+        logger.info("Updating metadata for version: %s", version)
 
         # Get file path
         try:
             repo_root = get_file_path("")
             metadata_path = get_file_path("metadata.yml", repo_root)
-        except Exception as e:
-            logging.error(f"Failed to resolve file paths: {str(e)}")
+        except Exception:
+            logger.exception("Failed to resolve file paths")
             return False
 
         # Load metadata.yml
         metadata = load_yaml_file(metadata_path)
-        if not metadata:
-            logging.error("Could not load metadata.yml")
+        if not metadata or not isinstance(metadata, dict):
+            logger.error("Could not load metadata.yml or invalid format")
             return False
 
         # Track if updates were made
@@ -52,19 +52,19 @@ def update_version_from_tag():
         if current_version != version:
             metadata["version"] = version
             updates_made = True
-            logging.info(f"Updated version from '{current_version}' to '{version}'")
+            logger.info("Updated version from '%s' to '%s'", current_version, version)
         else:
-            logging.info(f"version already matches tag version: {version}")
+            logger.info("version already matches tag version: %s", version)
 
         # Update date-modified
-        current_date = datetime.now().strftime("%Y-%m-%d")
+        current_date = datetime.now(UTC).strftime("%Y-%m-%d")
         old_date = metadata.get("date-modified")
         if old_date != current_date:
             metadata["date-modified"] = current_date
             updates_made = True
-            logging.info(f"Updated date-modified from '{old_date}' to '{current_date}'")
+            logger.info("Updated date-modified from '%s' to '%s'", old_date, current_date)
         else:
-            logging.info(f"date-modified already current: {current_date}")
+            logger.info("date-modified already current: %s", current_date)
 
         # Save if updates were made
         if updates_made:
@@ -74,14 +74,13 @@ def update_version_from_tag():
                 schema_comment="# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json",
             )
             if success:
-                logging.info("Successfully updated metadata.yml")
+                logger.info("Successfully updated metadata.yml")
             return success
-        else:
-            logging.info("No updates needed")
-            return True
+        logger.info("No updates needed")
+        return True
 
-    except Exception as e:
-        logging.exception(f"Unexpected error in update_version_from_tag: {str(e)}")
+    except Exception:
+        logger.exception("Unexpected error in update_version_from_tag")
         return False
 
 

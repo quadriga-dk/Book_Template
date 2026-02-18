@@ -1,6 +1,5 @@
 # Grafische Aufbereitung
 
-
 :::{figure} /assets/technologie/jb-process.mermaid.svg
 
 ---

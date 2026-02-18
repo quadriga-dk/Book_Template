@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 (editor)=
 # Editor (optional)
 

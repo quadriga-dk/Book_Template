@@ -1,6 +1,3 @@
----
-lang: de-de
----
 # Checkliste für die Finalisierung einer Fallstudie
 
 ## Zielgruppe & Lernziele
@@ -67,10 +64,10 @@ lang: de-de
 - [ ] Zitationshinweis
 
 ## Links, Verweise und Abhängigkeit
-- [ ] Alle nötigen Materialien sind verfügbar. Wenn möglich in einem sicheren Repositorium oder direkt in der OER hinterlegt. Wenn lizenzrechtlich erlaubt Kopie unsicher abgelegter Datensätze anlegen. 
+- [ ] Alle nötigen Materialien sind verfügbar. Wenn möglich in einem sicheren Repositorium oder direkt in der OER hinterlegt. Wenn lizenzrechtlich erlaubt Kopie unsicher abgelegter Datensätze anlegen.
 - [ ] Links innerhalb der Fallstudien funktionieren
 - [ ] Links auf externe Inhalte überprüft
 - [ ] Code-Abhängigkeiten sind so definiert, dass sie wieder installiert werden können (requirements.txt, …)
 - [ ] rechtliche Aspekte (z. B. bei Nachnutzung von existierenden Bildungsangeboten)
 
- 
+

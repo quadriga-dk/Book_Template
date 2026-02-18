@@ -1,0 +1,81 @@
+# Ruff configuration for quadriga/ package
+# See: https://docs.astral.sh/ruff/configuration/
+#
+# Note: This configuration is primarily intended for the quadriga/ Python package.
+# When running ruff on the entire repository, these rules will apply everywhere,
+# but the ignore rules are tailored for the quadriga/ codebase specifically.
+
+line-length = 100
+
+[lint]
+# Enable pycodestyle (E), Pyflakes (F), and other useful rules
+select = [
+    "E",    # pycodestyle errors
+    "F",    # Pyflakes
+    "W",    # pycodestyle warnings
+    "I",    # isort
+    "N",    # pep8-naming
+    "UP",   # pyupgrade
+    "ANN",  # flake8-annotations
+    "S",    # flake8-bandit
+    "BLE",  # flake8-blind-except
+    "FBT",  # flake8-boolean-trap
+    "B",    # flake8-bugbear
+    "A",    # flake8-builtins
+    "COM",  # flake8-commas
+    "C4",   # flake8-comprehensions
+    "DTZ",  # flake8-datetimez
+    "T10",  # flake8-debugger
+    "EM",   # flake8-errmsg
+    "ISC",  # flake8-implicit-str-concat
+    "ICN",  # flake8-import-conventions
+    "G",    # flake8-logging-format
+    "INP",  # flake8-no-pep420
+    "PIE",  # flake8-pie
+    "T20",  # flake8-print
+    "PYI",  # flake8-pyi
+    "PT",   # flake8-pytest-style
+    "Q",    # flake8-quotes
+    "RSE",  # flake8-raise
+    "RET",  # flake8-return
+    "SLF",  # flake8-self
+    "SIM",  # flake8-simplify
+    "TID",  # flake8-tidy-imports
+    "TCH",  # flake8-type-checking
+    "ARG",  # flake8-unused-arguments
+    "PTH",  # flake8-use-pathlib
+    "PD",   # pandas-vet
+    "PGH",  # pygrep-hooks
+    "PL",   # Pylint
+    "TRY",  # tryceratops
+    "NPY",  # NumPy-specific rules
+    "RUF",  # Ruff-specific rules
+]
+
+# Ignore rules that are not applicable for quadriga/ codebase
+ignore = [
+    # Complexity rules - these functions handle complex YAML transformations
+    "PLR0911",  # Too many return statements - early returns make complex validation clearer
+    "PLR0912",  # Too many branches - complex validation/transformation logic requires this
+    "PLR0913",  # Too many arguments
+    "PLR0915",  # Too many statements
+
+    # Type annotation rules
+    "ANN401",   # Dynamically typed expressions (Any) - needed for YAML data handling
+
+    # Exception handling patterns
+    "BLE001",   # Catching blind Exception - needed for broad error handling in some cases
+    "TRY300",   # Consider moving statement to else block - return statements are clearer as-is
+    "TRY301",   # Abstract raise to inner function - not worth it for single raises
+
+    # Code style
+    "COM812",   # Trailing comma missing - prefer to let formatter handle this
+
+    # Import location
+    "PLC0415",  # Import should be at top-level - some imports are conditional for CLI
+]
+
+[lint.per-file-ignores]
+# Test files can use magic values and have other relaxed rules
+"quadriga/**/test_*.py" = ["PLR2004", "S101"]
+"quadriga/**/tests/**/*.py" = ["PLR2004", "S101"]

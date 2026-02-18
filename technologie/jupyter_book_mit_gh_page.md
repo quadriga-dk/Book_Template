@@ -1,10 +1,7 @@
----
-lang: de-DE
----
 (gh_page)=
 # Jupyter Book mit GitHub Pages veröffentlichen
 
-GitHub Pages ist ein Hosting-Dienst, mit dem digitale Inhalte direkt aus einem GitHub-Repository veröffentlicht werden können. Dadurch können Jupyter Books online bereitgestellt und öffentlich zugänglich gemacht werden. In diesem Abschnitt werden die beiden gängigsten Methoden zur Bereitstellung eines Jupyter Books vorgestellt: 
+GitHub Pages ist ein Hosting-Dienst, mit dem digitale Inhalte direkt aus einem GitHub-Repository veröffentlicht werden können. Dadurch können Jupyter Books online bereitgestellt und öffentlich zugänglich gemacht werden. In diesem Abschnitt werden die beiden gängigsten Methoden zur Bereitstellung eines Jupyter Books vorgestellt:
 
 - Deploy from a branch
 - GitHub Actions
@@ -25,17 +22,17 @@ Damit diese Methoden funktionieren, muss das GitHub-Repository **public** sein.
 
 **Schritte zur Einrichtung:**
 
-1. **Buch bauen:**  
+1. **Buch bauen:**
    ```bash
    jupyter-book build .
    ```
-2. **Branch `gh-pages` erstellen:**  
+2. **Branch `gh-pages` erstellen:**
    ```bash
    git checkout -b gh-pages
    ```
-3. **Dateien hochladen:**  
-   Kopieren Sie die Dateien aus `_build/html` in das Root-Verzeichnis des Branches `gh-pages` und pushen Sie die Änderungen.  
-4. **Einstellungen anpassen:**  
+3. **Dateien hochladen:**
+   Kopieren Sie die Dateien aus `_build/html` in das Root-Verzeichnis des Branches `gh-pages` und pushen Sie die Änderungen.
+4. **Einstellungen anpassen:**
    Navigieren Sie zu **Settings > Pages** und wählen Sie bei "Build and Deployment" den Branch `gh-pages` sowie "Root" als Verzeichnis.
 
 
@@ -50,8 +47,8 @@ Damit diese Methoden funktionieren, muss das GitHub-Repository **public** sein.
 
 **Schritte zur Einrichtung:**
 
-1. Verzeichnis `.github/workflows/` im Repository erstellen.  
-2. Eine Workflow-Datei hinzufügen, z.B.:  
+1. Verzeichnis `.github/workflows/` im Repository erstellen.
+2. Eine Workflow-Datei hinzufügen, z.B.:
 
 ```yaml
 name: Deploy Jupyter Book
@@ -90,9 +87,9 @@ jobs:
 
 ```{dropdown} Erklärung der Workflow-Datei
 - **`name:`** Der Name des Workflows.
-- **`on:`** Auslöser für den Workflow (z. B. push auf den Main-Branch). 
-- **`jobs:`** Aufgaben, die im Workflow ausgeführt werden.  
-- **`runs-on:`** Gibt die Umgebung für den Workflow an (z. B. `ubuntu-latest`).  
+- **`on:`** Auslöser für den Workflow (z. B. push auf den Main-Branch).
+- **`jobs:`** Aufgaben, die im Workflow ausgeführt werden.
+- **`runs-on:`** Gibt die Umgebung für den Workflow an (z. B. `ubuntu-latest`).
 - **`steps:`** Einzelne Schritte innerhalb des Jobs:
     - **Checkout code:** Mit `actions/checkout` wird der Code des Repositories geladen.
     - **Set up Python:** Nutzt `actions/setup-python`, um die gewünschte Python-Version einzurichten.
@@ -110,7 +107,7 @@ jobs:
 
 ## Zugriff auf das veröffentlichte Buch
 
-Die publizierte Version Ihres Jupyter Books ist verfügbar unter:  
+Die publizierte Version Ihres Jupyter Books ist verfügbar unter:
 `https://<username>.github.io/<repository-name>`
 
 

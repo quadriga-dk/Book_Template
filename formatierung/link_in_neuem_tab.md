@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 (formatierung:neuer_tab)=
 # Link in neuem Tab öffnen
 

@@ -1,11 +1,8 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: 1.2.0
-version: 0.60.0
+version: 0.62.1
 title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
-abstract: Dieses Buch ist einerseits ein Template für die Erstellung von OERs nach
-  den Empfehlungen von QUADRIGA (https://quadriga-dk.de) und andererseits eine OER
-  für die Entwicklung von OERs entsprechend der QUADRIGA Empfehlungen.
 type: software
 message: Please cite this software using the metadata from `preferred-citation` in
   `CITATION.cff`.
@@ -41,8 +38,8 @@ references:
   - name: The Jupyter Book Community
     website: https://github.com/jupyter-book/jupyter-book/graphs/contributors
 preferred-citation:
-  year: '2025'
-  version: 0.60.0
+  year: '2026'
+  version: 0.62.1
   authors: *id001
   title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
     Resources: Template'
@@ -55,3 +52,7 @@ preferred-citation:
   - deu
   copyright: CC-BY-SA-4.0
   keywords: *id002
+abstract: Diese OER führt in die Erstellung von QUADRIGA-OER ein. Sie bietet vorranging
+  Informationen und Anleitungen für OER-Erstellende und dient als Vorlage für die
+  Erstellung eigener OER. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen einzelner
+  Funktionalitäten für Lernende an.

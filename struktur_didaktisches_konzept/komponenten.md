@@ -1,6 +1,3 @@
----
-lang: de-DE
----
 (komponenten)=
 # Zentrale Komponenten der OERs
 
@@ -35,7 +32,7 @@ Wenn die Übungen kein unmittelbares automatisiertes Feedback erlauben, wird den
 - Cloud Mode (ausführbar in Google Colab oder Binder)
 - Local Mode (herunterladbar zur lokalen Ausführung)
 
-## Resümee 
+## Resümee
 Dieser Abschnitt enthält die wichtigsten Punkte des Kapitels sowie eine Reflexion über das Gelernte, die kritische Aspekte und alternative Lösungen umfassen kann. Die Reflexion kann auch im abschließenden Modul der Fallstudie enthalten sein.
 
 ## Prozedurale Informationen

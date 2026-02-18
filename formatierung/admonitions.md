@@ -1,7 +1,3 @@
----
-lang: de-DE
----
-
 (formatierung:admonitions)=
 # Admonitions
 
@@ -44,11 +40,11 @@ Lernziele werden mit diesem Admonition-Typ gekennzeichnet.
 
 `````{admonition} Hinweis
 :class: hinweis, dropdown
-Hinweise werden mit diesem Admonition-Typ gekennzeichnet. 
+Hinweise werden mit diesem Admonition-Typ gekennzeichnet.
 ````
 ```{admonition} Hinweis
 :class: hinweis, dropdown
-Hinweise 
+Hinweise
 ```
 ````
 `````
