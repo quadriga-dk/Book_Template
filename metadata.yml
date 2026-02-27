@@ -28,12 +28,13 @@ keywords:
 - en: Jupyter Book
 - en: Data Literacy
   de: Datenkompetenz
-description: Dieses Buch führt in die Erstellung von Open Educational Resources (OER)
-  nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA ein. Diese
-  sind einerseits inhaltlicher und didaktischer andererseits technischer Natur. Diese
-  OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt (Template)
-  für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel bieten zudem
-  Erläuterungen zu Funktionalitäten für Lernende.
+description: Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational
+  Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA
+  als <a href="https://jupyterbook.org">Jupyter Book</a> ein. Diese Empfehlungen und
+  Vorgaben sind einerseits inhaltlicher und didaktischer andererseits technischer
+  Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt
+  (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel
+  bieten zudem Erläuterungen zu Funktionalitäten für Lernende.
 table-of-contents: '- Präambel
 
   - Struktur und didaktisches Konzept
@@ -205,8 +206,8 @@ chapters:
     data-flow: nicht anwendbar
     blooms-category: 3 Anwenden
 date-issued: '2024-05-06'
-date-modified: '2026-02-19'
-version: 0.62.4
+date-modified: '2026-03-03'
+version: 0.62.5
 context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
   Datenkompetenzzentrum QUADRIGA erstellt.
 
