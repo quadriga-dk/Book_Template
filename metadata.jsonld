@@ -12,14 +12,14 @@
     "LearningResource"
   ],
   "name": "QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template",
-  "description": "Dieses Buch führt in die Erstellung von Open Educational Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA ein. Diese sind einerseits inhaltlicher und didaktischer andererseits technischer Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen zu Funktionalitäten für Lernende.",
+  "description": "Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA als <a href=\"https://jupyterbook.org\">Jupyter Book</a> ein. Diese Empfehlungen und Vorgaben sind einerseits inhaltlicher und didaktischer andererseits technischer Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen zu Funktionalitäten für Lernende.",
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "DOI",
     "value": "10.5281/zenodo.14970672",
     "url": "https://doi.org/10.5281/zenodo.14970672"
   },
-  "version": "0.62.4",
+  "version": "0.62.5",
   "schemaVersion": "1.0.0",
   "url": "https://quadriga-dk.github.io/Book_Template/",
   "workExample": {
@@ -28,7 +28,7 @@
     "codeRepository": "https://github.com/quadriga-dk/Book_Template"
   },
   "datePublished": "2024-05-06",
-  "dateModified": "2026-02-19",
+  "dateModified": "2026-03-03",
   "author": [
     {
       "@type": "Person",
