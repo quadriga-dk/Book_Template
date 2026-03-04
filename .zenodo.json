@@ -1,6 +1,6 @@
 {
   "upload_type": "lesson",
-  "title": "QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template",
+  "title": "QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template",
   "creators": [
     {
       "name": "Schnaitter, Hannes",
@@ -65,5 +65,5 @@
       "identifier": "quadriga"
     }
   ],
-  "version": "0.62.5"
+  "version": "0.63.0"
 }

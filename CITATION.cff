@@ -1,8 +1,7 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: 1.2.0
-version: 0.62.5
-title: 'QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
-  Resources: Template'
+version: 0.63.0
+title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
 type: software
 message: Please cite this software using the metadata from `preferred-citation` in
   `CITATION.cff`.
@@ -40,10 +39,9 @@ references:
     website: https://github.com/jupyter-book/jupyter-book/graphs/contributors
 preferred-citation:
   year: '2026'
-  version: 0.62.5
+  version: 0.63.0
   authors: *id001
-  title: 'QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
-    Resources: Template'
+  title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
   type: book
   doi: 10.5281/zenodo.14970672
   url: https://quadriga-dk.github.io/Book_Template/
