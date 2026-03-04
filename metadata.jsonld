@@ -11,15 +11,15 @@
     "Book",
     "LearningResource"
   ],
-  "name": "QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources: Template",
-  "description": "Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA als <a href=\"https://jupyterbook.org\">Jupyter Book</a> ein. Diese Empfehlungen und Vorgaben sind einerseits inhaltlicher und didaktischer andererseits technischer Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen zu Funktionalitäten für Lernende.",
+  "name": "QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template",
+  "description": "Dieses Template dient als Startpunkt für die Erstellung von OER nach den Vorgaben und Empfehlungen von QUADRIGA. Eine ausführliche Anleitung finden Sie im <a href=\"https://quadriga-dk.github.io/QUADRIGA-OER-Manual\" target=\"_blank\">QUADRIGA-OER-Manual</a> (<a href=\"https://github.com/quadriga-dk/QUADRIGA-OER-Manual\" target=\"_blank\">GitHub</a>).",
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "DOI",
     "value": "10.5281/zenodo.14970672",
     "url": "https://doi.org/10.5281/zenodo.14970672"
   },
-  "version": "0.62.5",
+  "version": "0.63.0",
   "schemaVersion": "1.0.0",
   "url": "https://quadriga-dk.github.io/Book_Template/",
   "workExample": {
@@ -123,9 +123,8 @@
   "keywords": [
     "Open Educational Resources",
     "Offene Bildungsressource",
-    "Jupyter Book",
-    "Data Literacy",
-    "Datenkompetenz"
+    "Template",
+    "Jupyter Book"
   ],
   "about": [
     {
@@ -138,15 +137,11 @@
     },
     {
       "@type": "Thing",
+      "name": "Template"
+    },
+    {
+      "@type": "Thing",
       "name": "Jupyter Book"
-    },
-    {
-      "@type": "Thing",
-      "name": "Data Literacy"
-    },
-    {
-      "@type": "Thing",
-      "name": "Datenkompetenz"
     },
     {
       "@type": "Thing",
@@ -191,37 +186,15 @@
   "hasPart": [
     {
       "@type": "LearningResource",
-      "name": "Präambel",
-      "description": "Präambel des Templates. Gibt grundlegende Informationen zu Lernzielen, Voraussetzungen und Vorkenntnissen.",
-      "url": "https://quadriga-dk.github.io/Book_Template/präambel/toc.html",
-      "timeRequired": "PT15M",
-      "teaches": "Überblick über Template",
-      "educationalAlignment": [
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Das Template und seine Bestandteile werden verstanden und die jeweils relevanten Inhalte sind der Nutzer:in klar.",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
-        },
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Die technischen Voraussetzungen für die verschiedenen möglichen Nutzungsformen werden verstanden.",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
-        }
-      ]
-    },
-    {
-      "@type": "LearningResource",
-      "name": "Struktur und didaktisches Konzept",
-      "description": "Dieses Kapitel stellt die Struktur des Templates und das zugrunde liegende didaktische Konzept vor.",
-      "url": "https://quadriga-dk.github.io/Book_Template/struktur_didaktisches_konzept/einleitung.html",
+      "name": "Inhaltskapitel",
+      "description": "Dieses Kapitel steht für ein Inhaltskapitel in der zu erstellenden OER ein.",
+      "url": "https://quadriga-dk.github.io/Book_Template/inhaltskapitel/einleitung.html",
       "timeRequired": "PT2H",
-      "teaches": "Fallstudienbasiertes didaktisches Konzept von QUADRIGA",
+      "teaches": "Inhaltskapitel",
       "educationalAlignment": [
         {
           "@type": "AlignmentObject",
-          "targetName": "Der forschungsgeleitete Ansatz der QUADRIGA OERs kann erläutert und der Beitrag von Fallstudien zur Datenkompetenzvermittlung erklärt werden.",
+          "targetName": "Erstes Inhaltliches Lernziel.",
           "educationalFramework": "QUADRIGA Competency Framework",
           "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
         },
@@ -236,90 +209,6 @@
           "targetName": "Die zentralen didaktischen Komponenten einer QUADRIGA OER können identifiziert und deren Funktion im Lernprozess erklärt werden.",
           "educationalFramework": "QUADRIGA Competency Framework",
           "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
-        }
-      ]
-    },
-    {
-      "@type": "LearningResource",
-      "name": "Technologie",
-      "description": "Es werden die verschiedenen Bestandteile des Templates sowie die Technologien, welche genutzt werden, vorgestellt. Besonderes Augenmerk liegt auf dem Zusammenspiel der einzelnen Elemente.",
-      "url": "https://quadriga-dk.github.io/Book_Template/technologie/einleitung.html",
-      "timeRequired": "PT5H",
-      "teaches": "Technische Umsetzung der QUADRIGA OERs",
-      "educationalAlignment": [
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Die Bestandteile der Entwicklungsumgebung (Git, Python, Jupyter Book, Editor) können identifiziert und deren Funktionen im OER-Entwicklungsprozess erläutert werden.",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
-        },
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Der Unterschied zwischen Jupyter Book und Jupyter Notebook kann erklärt und deren jeweilige Rolle im Entwicklungsworkflow beschrieben werden.",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
-        },
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Die automatische Website-Erstellung über GitHub Actions kann erklärt und der Vorteil gegenüber manueller lokaler Entwicklung bewertet werden.",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
-        },
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Die Installation und Einrichtung einer lokalen Entwicklungsumgebung mit Python/Anaconda kann durchgeführt und Virtual Environments für projektspezifische Anforderungen erstellt werden.",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend"
-        },
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Der Unterschied zwischen Texteditoren und Textprozessoren für die Code-Entwicklung kann erklärt und geeignete Editoren wie VS Code für die OER-Entwicklung ausgewählt werden.",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
-        }
-      ]
-    },
-    {
-      "@type": "LearningResource",
-      "name": "Formatierungs- und Darstellungsmöglichkeiten",
-      "description": "Spezifische Ausführungen und Anleitungen zu Markdown- und Jupyter-Noteboook-Dateien und Formatierungsmöglichkeiten. Empfehlungen für deren einheitliche Nutzung in QUADRIGA OERs.",
-      "url": "https://quadriga-dk.github.io/Book_Template/formatierung/einleitung.html",
-      "timeRequired": "PT5H",
-      "teaches": "Schreiben und Formatieren von Inhalten nach den Empfehlungen von QUADRIGA",
-      "educationalAlignment": [
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Kenntnis, Auswahl und Nutzung verschiedener möglicher Dateiformate und Programmiersprachen",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend"
-        },
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Kenntnis, Auswahl und Nutzung spezifischer Auszeichungs- und Formatierungsoptionen",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend"
-        }
-      ]
-    },
-    {
-      "@type": "LearningResource",
-      "name": "Lernstandskontrolle (Assessment)",
-      "description": "Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books, die den QUADRIGA-Empfehlungen folgen",
-      "url": "https://quadriga-dk.github.io/Book_Template/assessment/einleitung.html",
-      "timeRequired": "PT3H",
-      "teaches": "Gestaltung und Implementierung von Assessments",
-      "educationalAlignment": [
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Verständnis des Assessmentkonzepts von QUADRIGA",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
-        },
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Auswahl und Implementierung spezifischer Assessment-Formate",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend"
         }
       ]
     },
@@ -346,7 +235,7 @@
       ]
     }
   ],
-  "dcterms:tableOfContents": "- Präambel\n- Struktur und didaktisches Konzept\n- Technologie\n- Formatierungs- und Darstellungsmöglichkeiten\n- Lernstandskontrolle (Assessment)\n- Reflexion und Resümee\n- Epilog",
+  "dcterms:tableOfContents": "- Präambel\n- Inhaltskapitel\n- Reflexion und Resümee\n- Epilog",
   "funding": "Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.\n\nFörderkennzeichen: 16DKZ2034",
   "learningResourceType": "Jupyter Book",
   "lrmi:learningResourceType": "Jupyter Book",
