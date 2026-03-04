@@ -6,80 +6,26 @@ root: einleitung
 options:
   numbered: 3
 chapters:
-  - file: präambel/toc
+  - file: präambel/einleitung.md
     sections:
-      - file: präambel/lernziele
-      - file: präambel/technische_voraussetzungen
-      - file: präambel/vorkenntnisse
-  - file: struktur_didaktisches_konzept/einleitung
+      - file: präambel/lernziele.md
+      - file: präambel/technische-voraussetzungen.md
+      - file: präambel/vorkenntnisse.md
+  - file: inhaltskapitel/einleitung.md
     sections:
-      - file: struktur_didaktisches_konzept/didaktisches_konzept
-      - file: struktur_didaktisches_konzept/struktur
-      - file: struktur_didaktisches_konzept/komponenten
-      - file: struktur_didaktisches_konzept/resümee
-  - file: technologie/einleitung
+      - file: inhaltskapitel/unterkapitel.md
+      - file: inhaltskapitel/zweites-unterkapitel.ipynb
+      - file: inhaltskapitel/r-beispiel.ipynb
+      - file: inhaltskapitel/sparql-beispiel.md
+  - file: reflexion-und-resümee/einleitung.md
     sections:
-      - file: technologie/zusammenspiel_der_tools
-      - file: technologie/grafische_aufbereitung
-      - file: entwicklung/einleitung
-        sections:
-          - file: entwicklung/git
-          - file: entwicklung/unix
-          - file: entwicklung/python
-          - file: entwicklung/jupyter_book
-          - file: entwicklung/editor
-      - file: technologie/interactive_interfaces_colab
-      - file: technologie/interactive_interfaces_binder
-      - file: technologie/local_mode
-      - file: technologie/jupyter_book_mit_gh_page
-      - file: technologie/jupyter_kernel
-      - file: technologie/publikation_auf_zenodo.md
-      - file: technologie/metadaten.md
-      - file: technologie/resümee
-  - file: formatierung/einleitung
-    sections:
-      - file: formatierung/dateiformate.md
-        sections:
-          - file: formatierung/markdown
-          - file: formatierung/notebooks
-          - file: formatierung/markdown-notebooks
-          - file: formatierung/R-notebook.ipynb
-          - file: formatierung/SPARQL-Notebook.ipynb
-      - file: formatierung/spezifische_elemente.md
-        sections:
-          - file: formatierung/link_in_neuem_tab
-          - file: formatierung/abbildungen
-          - file: formatierung/carousel
-          - file: formatierung/videos
-          - file: formatierung/admonitions
-          - file: formatierung/interaktive_code_zelle.ipynb
-      - file: formatierung/resümee
-  - file: assessment/einleitung.md
-    sections:
-      - file: assessment/theoretische_überlegungen.md
-        sections:
-          - file: assessment/zielgruppe
-          - file: assessment/selbstlern-oer
-          - file: assessment/formen
-          - file: assessment/auswahl
-          - file: assessment/assessment_genAI
-      - file: assessment/umsetzung
-        sections:
-          - file: assessment/umsetzung/jupyterquiz
-          - file: assessment/umsetzung/selbstkontrolle
-          - file: assessment/umsetzung/test-driven_assessment
-      - file: assessment/resümee
-  - file: reflexion_und_resümee/toc
-    sections:
-      - file: reflexion_und_resümee/reflexion
-      - file: reflexion_und_resümee/abschlussassessment
-      - file: reflexion_und_resümee/zusammenfassung
-      - file: reflexion_und_resümee/Checkliste_neue_OER.md
-      - file: reflexion_und_resümee/weiterführende_hinweise
-      - file: reflexion_und_resümee/resümee
+      - file: reflexion-und-resümee/reflexion.md
+      - file: reflexion-und-resümee/abschlussassessment.md
+      - file: reflexion-und-resümee/zusammenfassung.md
+      - file: reflexion-und-resümee/resümee.md
   - file: epilog/toc
     sections:
-      - file: epilog/fragen_und_feedback
+      - file: epilog/fragen-und-feedback
       - file: epilog/literaturverzeichnis
       - file: epilog/authors
       - file: epilog/quadriga
