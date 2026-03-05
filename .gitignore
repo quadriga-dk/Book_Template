@@ -11,6 +11,9 @@ _build
 __pycache__
 **/.ipynb_checkpoints
 
+# schema validation cache
+.schema_cache
+
 # macOS system files
 **/.DS_Store
 
