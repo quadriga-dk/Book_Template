@@ -1,8 +1,7 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: 1.2.0
-version: 0.62.5
-title: 'QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
-  Resources: Template'
+version: 0.63.0
+title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
 type: software
 message: Please cite this software using the metadata from `preferred-citation` in
   `CITATION.cff`.
@@ -27,9 +26,8 @@ url: https://quadriga-dk.github.io/Book_Template/
 keywords: &id002
 - Open Educational Resources
 - Offene Bildungsressource
+- Template
 - Jupyter Book
-- Data Literacy
-- Datenkompetenz
 license: CC-BY-SA-4.0
 references:
 - title: Jupyter Book
@@ -39,10 +37,9 @@ references:
     website: https://github.com/jupyter-book/jupyter-book/graphs/contributors
 preferred-citation:
   year: '2026'
-  version: 0.62.5
+  version: 0.63.0
   authors: *id001
-  title: 'QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
-    Resources: Template'
+  title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
   type: book
   doi: 10.5281/zenodo.14970672
   url: https://quadriga-dk.github.io/Book_Template/
@@ -52,10 +49,7 @@ preferred-citation:
   - deu
   copyright: CC-BY-SA-4.0
   keywords: *id002
-abstract: Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational
-  Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA
-  als <a href="https://jupyterbook.org">Jupyter Book</a> ein. Diese Empfehlungen und
-  Vorgaben sind einerseits inhaltlicher und didaktischer andererseits technischer
-  Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt
-  (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel
-  bieten zudem Erläuterungen zu Funktionalitäten für Lernende.
+abstract: Dieses Template dient als Startpunkt für die Erstellung von OER nach den
+  Vorgaben und Empfehlungen von QUADRIGA. Eine ausführliche Anleitung finden Sie im
+  <a href="https://quadriga-dk.github.io/QUADRIGA-OER-Manual" target="_blank">QUADRIGA-OER-Manual</a>
+  (<a href="https://github.com/quadriga-dk/QUADRIGA-OER-Manual" target="_blank">GitHub</a>).

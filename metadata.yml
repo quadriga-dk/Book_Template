@@ -1,6 +1,5 @@
 # yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json
-title: 'QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
-  Resources: Template'
+title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
 authors:
 - given-names: Hannes
   family-names: Schnaitter
@@ -23,27 +22,17 @@ authors:
   credit:
   - Software
 keywords:
-- Open Educational Resources
-- de: Offene Bildungsressource
-- en: Jupyter Book
-- en: Data Literacy
-  de: Datenkompetenz
-description: Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational
-  Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA
-  als <a href="https://jupyterbook.org">Jupyter Book</a> ein. Diese Empfehlungen und
-  Vorgaben sind einerseits inhaltlicher und didaktischer andererseits technischer
-  Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt
-  (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel
-  bieten zudem Erläuterungen zu Funktionalitäten für Lernende.
+- en: Open Educational Resources
+  de: Offene Bildungsressource
+- Template
+- Jupyter Book
+description: Dieses Template dient als Startpunkt für die Erstellung von OER nach
+  den Vorgaben und Empfehlungen von QUADRIGA. Eine ausführliche Anleitung finden Sie
+  im <a href="https://quadriga-dk.github.io/QUADRIGA-OER-Manual" target="_blank">QUADRIGA-OER-Manual</a>
+  (<a href="https://github.com/quadriga-dk/QUADRIGA-OER-Manual" target="_blank">GitHub</a>).
 table-of-contents: '- Präambel
 
-  - Struktur und didaktisches Konzept
-
-  - Technologie
-
-  - Formatierungs- und Darstellungsmöglichkeiten
-
-  - Lernstandskontrolle (Assessment)
+  - Inhaltskapitel
 
   - Reflexion und Resümee
 
@@ -78,32 +67,14 @@ used-tools:
 - name: Jupyter Book
   url: https://jupyterbook.org
 chapters:
-- title: Präambel
-  url: https://quadriga-dk.github.io/Book_Template/präambel/toc.html
-  description: Präambel des Templates. Gibt grundlegende Informationen zu Lernzielen,
-    Voraussetzungen und Vorkenntnissen.
-  learning-goal: Überblick über Template
-  time-required: PT15M
-  learning-objectives:
-  - learning-objective: Das Template und seine Bestandteile werden verstanden und
-      die jeweils relevanten Inhalte sind der Nutzer:in klar.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 2 Verstehen
-  - learning-objective: Die technischen Voraussetzungen für die verschiedenen möglichen
-      Nutzungsformen werden verstanden.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 2 Verstehen
-- title: Struktur und didaktisches Konzept
-  url: https://quadriga-dk.github.io/Book_Template/struktur_didaktisches_konzept/einleitung.html
-  description: Dieses Kapitel stellt die Struktur des Templates und das zugrunde liegende
-    didaktische Konzept vor.
+- title: Inhaltskapitel
+  url: https://quadriga-dk.github.io/Book_Template/inhaltskapitel/einleitung.html
+  description: Dieses Kapitel steht für ein Inhaltskapitel in der zu erstellenden
+    OER ein.
   time-required: PT2H
-  learning-goal: Fallstudienbasiertes didaktisches Konzept von QUADRIGA
+  learning-goal: Inhaltskapitel
   learning-objectives:
-  - learning-objective: Der forschungsgeleitete Ansatz der QUADRIGA OERs kann erläutert
-      und der Beitrag von Fallstudien zur Datenkompetenzvermittlung erklärt werden.
+  - learning-objective: Erstes Inhaltliches Lernziel.
     competency: Orientierungswissen
     data-flow: übergreifend
     blooms-category: 2 Verstehen
@@ -118,76 +89,6 @@ chapters:
     competency: Orientierungswissen
     data-flow: übergreifend
     blooms-category: 2 Verstehen
-- title: Technologie
-  url: https://quadriga-dk.github.io/Book_Template/technologie/einleitung.html
-  description: Es werden die verschiedenen Bestandteile des Templates sowie die Technologien,
-    welche genutzt werden, vorgestellt. Besonderes Augenmerk liegt auf dem Zusammenspiel
-    der einzelnen Elemente.
-  time-required: PT5H
-  learning-goal: Technische Umsetzung der QUADRIGA OERs
-  learning-objectives:
-  - learning-objective: Die Bestandteile der Entwicklungsumgebung (Git, Python, Jupyter
-      Book, Editor) können identifiziert und deren Funktionen im OER-Entwicklungsprozess
-      erläutert werden.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 2 Verstehen
-  - learning-objective: Der Unterschied zwischen Jupyter Book und Jupyter Notebook
-      kann erklärt und deren jeweilige Rolle im Entwicklungsworkflow beschrieben werden.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 2 Verstehen
-  - learning-objective: Die automatische Website-Erstellung über GitHub Actions kann
-      erklärt und der Vorteil gegenüber manueller lokaler Entwicklung bewertet werden.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 2 Verstehen
-  - learning-objective: Die Installation und Einrichtung einer lokalen Entwicklungsumgebung
-      mit Python/Anaconda kann durchgeführt und Virtual Environments für projektspezifische
-      Anforderungen erstellt werden.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 3 Anwenden
-  - learning-objective: Der Unterschied zwischen Texteditoren und Textprozessoren
-      für die Code-Entwicklung kann erklärt und geeignete Editoren wie VS Code für
-      die OER-Entwicklung ausgewählt werden.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 2 Verstehen
-- title: Formatierungs- und Darstellungsmöglichkeiten
-  url: https://quadriga-dk.github.io/Book_Template/formatierung/einleitung.html
-  time-required: PT5H
-  description: Spezifische Ausführungen und Anleitungen zu Markdown- und Jupyter-Noteboook-Dateien
-    und Formatierungsmöglichkeiten. Empfehlungen für deren einheitliche Nutzung in
-    QUADRIGA OERs.
-  learning-goal: Schreiben und Formatieren von Inhalten nach den Empfehlungen von
-    QUADRIGA
-  learning-objectives:
-  - learning-objective: Kenntnis, Auswahl und Nutzung verschiedener möglicher Dateiformate
-      und Programmiersprachen
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 3 Anwenden
-  - learning-objective: Kenntnis, Auswahl und Nutzung spezifischer Auszeichungs- und
-      Formatierungsoptionen
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 3 Anwenden
-- title: Lernstandskontrolle (Assessment)
-  url: https://quadriga-dk.github.io/Book_Template/assessment/einleitung.html
-  description: Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books,
-    die den QUADRIGA-Empfehlungen folgen
-  learning-goal: Gestaltung und Implementierung von Assessments
-  time-required: PT3H
-  learning-objectives:
-  - learning-objective: Verständnis des Assessmentkonzepts von QUADRIGA
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 2 Verstehen
-  - learning-objective: Auswahl und Implementierung spezifischer Assessment-Formate
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 3 Anwenden
 - title: Reflexion und Resümee
   url: https://quadriga-dk.github.io/Book_Template/reflexion_und_resümee/toc.html
   description: Zusammenfassung und Wiederholung der wichtigsten Inhalte des Buchs.
@@ -207,7 +108,7 @@ chapters:
     blooms-category: 3 Anwenden
 date-issued: '2024-05-06'
 date-modified: '2026-03-03'
-version: 0.62.5
+version: 0.63.0
 context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
   Datenkompetenzzentrum QUADRIGA erstellt.
 
