@@ -125,7 +125,8 @@
     "Offene Bildungsressource",
     "Jupyter Book",
     "Data Literacy",
-    "Datenkompetenz"
+    "Datenkompetenz",
+    "open-educational-resources"
   ],
   "about": [
     {
@@ -147,6 +148,10 @@
     {
       "@type": "Thing",
       "name": "Datenkompetenz"
+    },
+    {
+      "@type": "Thing",
+      "name": "open-educational-resources"
     },
     {
       "@type": "Thing",

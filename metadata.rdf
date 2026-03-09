@@ -117,6 +117,11 @@
       </schema:Thing>
     </schema:about>
     <schema:about>
+      <schema:Thing rdf:about="https://quadriga-dk.github.io/Book_Template/#keyword_5">
+        <schema:name>open-educational-resources</schema:name>
+      </schema:Thing>
+    </schema:about>
+    <schema:about>
       <schema:Thing rdf:about="https://quadriga-dk.github.io/Book_Template/#discipline_0">
         <schema:name>übergreifend</schema:name>
       </schema:Thing>
@@ -287,6 +292,7 @@ Förderkennzeichen: 16DKZ2034</schema:funding>
     <schema:keywords>Jupyter Book</schema:keywords>
     <schema:keywords>Offene Bildungsressource</schema:keywords>
     <schema:keywords>Open Educational Resources</schema:keywords>
+    <schema:keywords>open-educational-resources</schema:keywords>
     <schema:learningResourceType>Jupyter Book</schema:learningResourceType>
     <schema:license>
       <schema:CreativeWork rdf:about="https://quadriga-dk.github.io/Book_Template/#license_code">
