@@ -196,33 +196,11 @@
   "hasPart": [
     {
       "@type": "LearningResource",
-      "name": "Präambel",
-      "description": "Präambel des Templates. Gibt grundlegende Informationen zu Lernzielen, Voraussetzungen und Vorkenntnissen.",
-      "url": "https://quadriga-dk.github.io/Book_Template/präambel/toc.html",
-      "timeRequired": "PT15M",
-      "teaches": "Überblick über Template",
-      "educationalAlignment": [
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Das Template und seine Bestandteile werden verstanden und die jeweils relevanten Inhalte sind der Nutzer:in klar.",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
-        },
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Die technischen Voraussetzungen für die verschiedenen möglichen Nutzungsformen werden verstanden.",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
-        }
-      ]
-    },
-    {
-      "@type": "LearningResource",
       "name": "Struktur und didaktisches Konzept",
       "description": "Dieses Kapitel stellt die Struktur des Templates und das zugrunde liegende didaktische Konzept vor.",
       "url": "https://quadriga-dk.github.io/Book_Template/struktur_didaktisches_konzept/einleitung.html",
       "timeRequired": "PT2H",
-      "teaches": "Fallstudienbasiertes didaktisches Konzept von QUADRIGA",
+      "teaches": "Sie kennen und verstehen das fallstudienbasierte didaktische Konzept von QUADRIGA für die Gestaltung von OER.",
       "educationalAlignment": [
         {
           "@type": "AlignmentObject",
@@ -250,7 +228,7 @@
       "description": "Es werden die verschiedenen Bestandteile des Templates sowie die Technologien, welche genutzt werden, vorgestellt. Besonderes Augenmerk liegt auf dem Zusammenspiel der einzelnen Elemente.",
       "url": "https://quadriga-dk.github.io/Book_Template/technologie/einleitung.html",
       "timeRequired": "PT5H",
-      "teaches": "Technische Umsetzung der QUADRIGA OERs",
+      "teaches": "Sie kennen die verschiedenen technologischen Bestandteile von QUADRIGA OER und ihr Zusammenspiel.",
       "educationalAlignment": [
         {
           "@type": "AlignmentObject",
@@ -290,7 +268,7 @@
       "description": "Spezifische Ausführungen und Anleitungen zu Markdown- und Jupyter-Noteboook-Dateien und Formatierungsmöglichkeiten. Empfehlungen für deren einheitliche Nutzung in QUADRIGA OERs.",
       "url": "https://quadriga-dk.github.io/Book_Template/formatierung/einleitung.html",
       "timeRequired": "PT5H",
-      "teaches": "Schreiben und Formatieren von Inhalten nach den Empfehlungen von QUADRIGA",
+      "teaches": "Sie können Inhalte nach den Empfehlungen von QUADRIGA schreiben und formatieren.",
       "educationalAlignment": [
         {
           "@type": "AlignmentObject",
@@ -312,11 +290,11 @@
       "description": "Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books, die den QUADRIGA-Empfehlungen folgen",
       "url": "https://quadriga-dk.github.io/Book_Template/assessment/einleitung.html",
       "timeRequired": "PT3H",
-      "teaches": "Gestaltung und Implementierung von Assessments",
+      "teaches": "Sie verstehen das Assessmentkonzept QUADRIGAs und können dieses nach den Vorgaben und Empfehlungen implementieren",
       "educationalAlignment": [
         {
           "@type": "AlignmentObject",
-          "targetName": "Verständnis des Assessmentkonzepts von QUADRIGA",
+          "targetName": "Verständnis des Assessmentkonzepts von QUADRIGA.",
           "educationalFramework": "QUADRIGA Competency Framework",
           "targetDescription": "Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend"
         },
@@ -325,28 +303,6 @@
           "targetName": "Auswahl und Implementierung spezifischer Assessment-Formate",
           "educationalFramework": "QUADRIGA Competency Framework",
           "targetDescription": "Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend"
-        }
-      ]
-    },
-    {
-      "@type": "LearningResource",
-      "name": "Reflexion und Resümee",
-      "description": "Zusammenfassung und Wiederholung der wichtigsten Inhalte des Buchs. Hinweise auf weiterführende Inhalte.",
-      "url": "https://quadriga-dk.github.io/Book_Template/reflexion_und_resümee/toc.html",
-      "timeRequired": "PT1H",
-      "teaches": "Festigung der erlernten Inhalte",
-      "educationalAlignment": [
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Kenntnis der wichtigsten Inhalte des Templates und dessen Nutzung",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar"
-        },
-        {
-          "@type": "AlignmentObject",
-          "targetName": "Auswahl geeigneter Formate, Formatierungskonzepte, Übungs- und Assessmentformate und deren Anwendung.",
-          "educationalFramework": "QUADRIGA Competency Framework",
-          "targetDescription": "Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: nicht anwendbar"
         }
       ]
     }
