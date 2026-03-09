@@ -3,82 +3,62 @@
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_0_objective_0">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema:targetDescription>
-    <schema:targetName>Das Template und seine Bestandteile werden verstanden und die jeweils relevanten Inhalte sind der Nutzer:in klar.</schema:targetName>
+    <schema:targetName>Der forschungsgeleitete Ansatz der QUADRIGA OERs kann erläutert und der Beitrag von Fallstudien zur Datenkompetenzvermittlung erklärt werden.</schema:targetName>
   </schema:AlignmentObject>
   <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_0_objective_1">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema:targetDescription>
-    <schema:targetName>Die technischen Voraussetzungen für die verschiedenen möglichen Nutzungsformen werden verstanden.</schema:targetName>
-  </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_0">
-    <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema:targetDescription>
-    <schema:targetName>Der forschungsgeleitete Ansatz der QUADRIGA OERs kann erläutert und der Beitrag von Fallstudien zur Datenkompetenzvermittlung erklärt werden.</schema:targetName>
-  </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_1">
-    <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema:targetDescription>
     <schema:targetName>Die hierarchische Struktur der Lernziele in QUADRIGA OERs kann beschrieben und der Zusammenhang zwischen Fallstudienstruktur, Datenlebenszyklus und Lernzielen erläutert werden.</schema:targetName>
   </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_2">
+  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_0_objective_2">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema:targetDescription>
     <schema:targetName>Die zentralen didaktischen Komponenten einer QUADRIGA OER können identifiziert und deren Funktion im Lernprozess erklärt werden.</schema:targetName>
   </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_0">
+  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_0">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema:targetDescription>
     <schema:targetName>Die Bestandteile der Entwicklungsumgebung (Git, Python, Jupyter Book, Editor) können identifiziert und deren Funktionen im OER-Entwicklungsprozess erläutert werden.</schema:targetName>
   </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_1">
+  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_1">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema:targetDescription>
     <schema:targetName>Der Unterschied zwischen Jupyter Book und Jupyter Notebook kann erklärt und deren jeweilige Rolle im Entwicklungsworkflow beschrieben werden.</schema:targetName>
   </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_2">
+  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_2">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema:targetDescription>
     <schema:targetName>Die automatische Website-Erstellung über GitHub Actions kann erklärt und der Vorteil gegenüber manueller lokaler Entwicklung bewertet werden.</schema:targetName>
   </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_3">
+  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_3">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend</schema:targetDescription>
     <schema:targetName>Die Installation und Einrichtung einer lokalen Entwicklungsumgebung mit Python/Anaconda kann durchgeführt und Virtual Environments für projektspezifische Anforderungen erstellt werden.</schema:targetName>
   </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_4">
+  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_4">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema:targetDescription>
     <schema:targetName>Der Unterschied zwischen Texteditoren und Textprozessoren für die Code-Entwicklung kann erklärt und geeignete Editoren wie VS Code für die OER-Entwicklung ausgewählt werden.</schema:targetName>
   </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_3_objective_0">
+  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_0">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend</schema:targetDescription>
     <schema:targetName>Kenntnis, Auswahl und Nutzung verschiedener möglicher Dateiformate und Programmiersprachen</schema:targetName>
   </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_3_objective_1">
+  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_1">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend</schema:targetDescription>
     <schema:targetName>Kenntnis, Auswahl und Nutzung spezifischer Auszeichungs- und Formatierungsoptionen</schema:targetName>
   </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_4_objective_0">
+  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_3_objective_0">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 2 Verstehen | Data Flow: übergreifend</schema:targetDescription>
-    <schema:targetName>Verständnis des Assessmentkonzepts von QUADRIGA</schema:targetName>
+    <schema:targetName>Verständnis des Assessmentkonzepts von QUADRIGA.</schema:targetName>
   </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_4_objective_1">
+  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_3_objective_1">
     <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
     <schema:targetDescription>Competency: Orientierungswissen | Bloom's: 3 Anwenden | Data Flow: übergreifend</schema:targetDescription>
     <schema:targetName>Auswahl und Implementierung spezifischer Assessment-Formate</schema:targetName>
-  </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_5_objective_0">
-    <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 2 Verstehen | Data Flow: nicht anwendbar</schema:targetDescription>
-    <schema:targetName>Kenntnis der wichtigsten Inhalte des Templates und dessen Nutzung</schema:targetName>
-  </schema:AlignmentObject>
-  <schema:AlignmentObject rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_5_objective_1">
-    <schema:educationalFramework>QUADRIGA Competency Framework</schema:educationalFramework>
-    <schema:targetDescription>Competency: nicht anwendbar | Bloom's: 3 Anwenden | Data Flow: nicht anwendbar</schema:targetDescription>
-    <schema:targetName>Auswahl geeigneter Formate, Formatierungskonzepte, Übungs- und Assessmentformate und deren Anwendung.</schema:targetName>
   </schema:AlignmentObject>
   <schema:Book rdf:about="https://quadriga-dk.github.io/Book_Template/">
     <dc:type>Jupyter Book</dc:type>
@@ -211,72 +191,50 @@
 Förderkennzeichen: 16DKZ2034</schema:funding>
     <schema:hasPart>
       <schema:LearningResource rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_0">
-        <schema:description>Präambel des Templates. Gibt grundlegende Informationen zu Lernzielen, Voraussetzungen und Vorkenntnissen.</schema:description>
+        <schema:description>Dieses Kapitel stellt die Struktur des Templates und das zugrunde liegende didaktische Konzept vor.</schema:description>
         <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_0_objective_0" />
         <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_0_objective_1" />
-        <schema:name>Präambel</schema:name>
-        <schema:teaches>Überblick über Template</schema:teaches>
-        <schema:timeRequired>PT15M</schema:timeRequired>
-        <schema:url rdf:resource="https://quadriga-dk.github.io/Book_Template/präambel/toc.html" />
-      </schema:LearningResource>
-    </schema:hasPart>
-    <schema:hasPart>
-      <schema:LearningResource rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1">
-        <schema:description>Dieses Kapitel stellt die Struktur des Templates und das zugrunde liegende didaktische Konzept vor.</schema:description>
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_0" />
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_1" />
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_2" />
+        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_0_objective_2" />
         <schema:name>Struktur und didaktisches Konzept</schema:name>
-        <schema:teaches>Fallstudienbasiertes didaktisches Konzept von QUADRIGA</schema:teaches>
+        <schema:teaches>Sie kennen und verstehen das fallstudienbasierte didaktische Konzept von QUADRIGA für die Gestaltung von OER.</schema:teaches>
         <schema:timeRequired>PT2H</schema:timeRequired>
         <schema:url rdf:resource="https://quadriga-dk.github.io/Book_Template/struktur_didaktisches_konzept/einleitung.html" />
       </schema:LearningResource>
     </schema:hasPart>
     <schema:hasPart>
-      <schema:LearningResource rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2">
+      <schema:LearningResource rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_1">
         <schema:description>Es werden die verschiedenen Bestandteile des Templates sowie die Technologien, welche genutzt werden, vorgestellt. Besonderes Augenmerk liegt auf dem Zusammenspiel der einzelnen Elemente.</schema:description>
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_0" />
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_1" />
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_2" />
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_3" />
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_4" />
+        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_0" />
+        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_1" />
+        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_2" />
+        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_3" />
+        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_1_objective_4" />
         <schema:name>Technologie</schema:name>
-        <schema:teaches>Technische Umsetzung der QUADRIGA OERs</schema:teaches>
+        <schema:teaches>Sie kennen die verschiedenen technologischen Bestandteile von QUADRIGA OER und ihr Zusammenspiel.</schema:teaches>
         <schema:timeRequired>PT5H</schema:timeRequired>
         <schema:url rdf:resource="https://quadriga-dk.github.io/Book_Template/technologie/einleitung.html" />
       </schema:LearningResource>
     </schema:hasPart>
     <schema:hasPart>
-      <schema:LearningResource rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_3">
+      <schema:LearningResource rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_2">
         <schema:description>Spezifische Ausführungen und Anleitungen zu Markdown- und Jupyter-Noteboook-Dateien und Formatierungsmöglichkeiten. Empfehlungen für deren einheitliche Nutzung in QUADRIGA OERs.</schema:description>
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_3_objective_0" />
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_3_objective_1" />
+        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_0" />
+        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_2_objective_1" />
         <schema:name>Formatierungs- und Darstellungsmöglichkeiten</schema:name>
-        <schema:teaches>Schreiben und Formatieren von Inhalten nach den Empfehlungen von QUADRIGA</schema:teaches>
+        <schema:teaches>Sie können Inhalte nach den Empfehlungen von QUADRIGA schreiben und formatieren.</schema:teaches>
         <schema:timeRequired>PT5H</schema:timeRequired>
         <schema:url rdf:resource="https://quadriga-dk.github.io/Book_Template/formatierung/einleitung.html" />
       </schema:LearningResource>
     </schema:hasPart>
     <schema:hasPart>
-      <schema:LearningResource rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_4">
+      <schema:LearningResource rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_3">
         <schema:description>Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books, die den QUADRIGA-Empfehlungen folgen</schema:description>
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_4_objective_0" />
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_4_objective_1" />
+        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_3_objective_0" />
+        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_3_objective_1" />
         <schema:name>Lernstandskontrolle (Assessment)</schema:name>
-        <schema:teaches>Gestaltung und Implementierung von Assessments</schema:teaches>
+        <schema:teaches>Sie verstehen das Assessmentkonzept QUADRIGAs und können dieses nach den Vorgaben und Empfehlungen implementieren</schema:teaches>
         <schema:timeRequired>PT3H</schema:timeRequired>
         <schema:url rdf:resource="https://quadriga-dk.github.io/Book_Template/assessment/einleitung.html" />
-      </schema:LearningResource>
-    </schema:hasPart>
-    <schema:hasPart>
-      <schema:LearningResource rdf:about="https://quadriga-dk.github.io/Book_Template/#chapter_5">
-        <schema:description>Zusammenfassung und Wiederholung der wichtigsten Inhalte des Buchs. Hinweise auf weiterführende Inhalte.</schema:description>
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_5_objective_0" />
-        <schema:educationalAlignment rdf:resource="https://quadriga-dk.github.io/Book_Template/#chapter_5_objective_1" />
-        <schema:name>Reflexion und Resümee</schema:name>
-        <schema:teaches>Festigung der erlernten Inhalte</schema:teaches>
-        <schema:timeRequired>PT1H</schema:timeRequired>
-        <schema:url rdf:resource="https://quadriga-dk.github.io/Book_Template/reflexion_und_resümee/toc.html" />
       </schema:LearningResource>
     </schema:hasPart>
     <schema:identifier>
