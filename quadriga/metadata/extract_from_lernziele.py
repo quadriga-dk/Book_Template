@@ -299,8 +299,22 @@ def merge_learning_objectives_into_metadata() -> bool:
                     chapter_title,
                 )
                 continue
+
+            # Preserve existing 'assessment' values keyed by objective text
+            existing_assessments: dict[str, Any] = {}
+            for obj in chapter.get("learning-objectives", []):
+                if isinstance(obj, dict) and "assessment" in obj:
+                    existing_assessments[obj.get("learning-objective", "")] = obj["assessment"]
+
+            new_objectives = chapter_objectives[chapter_title]
+            for obj in new_objectives:
+                key = obj.get("learning-objective", "")
+                if key in existing_assessments:
+                    obj["assessment"] = existing_assessments[key]
+
+            # Store the new or updated data for writing to file
             chapter["learning-goal"] = chapter_learning_goals.get(chapter_title, "TODO")
-            chapter["learning-objectives"] = chapter_objectives[chapter_title]
+            chapter["learning-objectives"] = new_objectives
 
         if save_yaml_file(metadata_path, metadata):
             logger.info("Successfully merged learning objectives into metadata.yml")
