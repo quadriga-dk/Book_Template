@@ -39,23 +39,23 @@ def parse_metadata_comment(comment: str) -> dict[str, str]:
         elif key == 'competency':
             metadata[key] = value
             metadata['data-flow'] = derive_data_flow(value)
-    
+
     return metadata
 
 
 def validate_objective_metadata(objective_data: dict[str, Any]) -> list[str]:
     """Fill in missing competency/bloom/data-flow defaults and return names of missing fields."""
     missing_fields = []
-    
+
     if not objective_data.get('competency'):
         missing_fields.append('competency')
         objective_data['competency'] = DEFAULT_COMPETENCY
         objective_data['data-flow'] = DEFAULT_DATA_FLOW
-    
+
     if not objective_data.get('blooms-category'):
         missing_fields.append('blooms-category')
         objective_data['blooms-category'] = DEFAULT_BLOOM
-    
+
     return missing_fields
 
 
@@ -90,23 +90,23 @@ def extract_admonition_blocks(
     """Extract learning-objective blocks and validation issues from Markdown content."""
     blocks = []
     validation_issues = []
-    
+
     # Pattern to match admonition blocks with their content
     admonition_pattern = r'```\{admonition\}\s+(.+?)\n((?::[^\n]+\n)*)((?:(?!```).)+)```'
-    
+
     matches = re.finditer(admonition_pattern, content, re.DOTALL | re.MULTILINE)
-    
+
     for match in matches:
         title_line = match.group(1).strip()
         body = match.group(3).strip()
-        
+
         # Parse title - extract text and reference
         title_match = re.match(r'\[(.+?)\]\((.+?)\)(\s*\(\*(.+?)\*\))?', title_line)
-        
+
         if not title_match:
             logger.warning("Could not parse admonition title: %s", title_line)
             continue
-        
+
         section_title = title_match.group(1)
 
         # Learning goal
@@ -155,7 +155,7 @@ def extract_admonition_blocks(
                 })
 
             objectives.append(objective_data)
-        
+
         if not objectives:
             continue
 
@@ -232,7 +232,7 @@ def merge_learning_objectives_into_metadata() -> bool:
         md_file = None
         for file_str in iter_toc_files(toc_data or {}):
             p = Path(file_str)
-            if re.search(r'lernziel|learning.?objective', p.stem, re.IGNORECASE):
+            if re.search(r'lernziel|learning.?objective|learning.?outcome', p.stem, re.IGNORECASE):
                 if p.suffix not in [".md", ".ipynb"]:
                     p = p.with_suffix(".md")
                 full_path = get_file_path(p, repo_root)
