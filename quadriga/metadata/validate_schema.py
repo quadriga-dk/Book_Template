@@ -15,7 +15,7 @@ from quadriga.metadata.utils import get_file_path, load_yaml_file
 logger = logging.getLogger(__name__)
 
 QUADRIGA_SCHEMA_URL = (
-    "https://quadriga-dk.github.io/quadriga-schema/latest/schema.json"
+    "https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json"
 )
 
 
