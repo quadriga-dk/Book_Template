@@ -70,6 +70,31 @@ def get_file_path(relative_path: str | Path, repo_root: Path | None = None) -> P
     return repo_root / Path(relative_path)
 
 
+def iter_toc_files(node: dict | list):
+    """Yield all 'file' path strings from a parsed _toc.yml, at any nesting depth.
+
+    _toc.yml entries can be deeply nested under chapters, sections, and parts.
+    This walks the entire tree and yields each file path in document order.
+
+    Example — given::
+
+        chapters:
+          - file: Präambel/toc
+            sections:
+              - file: Präambel/Lernziele
+
+    Yields: ``"Präambel/toc"``, ``"Präambel/Lernziele"``
+    """
+    if isinstance(node, dict):
+        if "file" in node:
+            yield node["file"]
+        for v in node.values():
+            yield from iter_toc_files(v)
+    elif isinstance(node, list):
+        for item in node:
+            yield from iter_toc_files(item)
+
+
 # ---- YAML Handling ----
 
 

@@ -1,12 +1,6 @@
 # yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json
-schema-version: 1.0.0
-learning-resource-type: Jupyter Book
-title: 'QUADRIGA OERs: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
+title: 'QUADRIGA-OER: erstellen und gestalten mit Jupyter Book. QUADRIGA Open Educational
   Resources: Template'
-identifier: https://doi.org/10.5281/zenodo.14970672
-version: 0.62.1
-date-issued: '2024-05-06'
-date-modified: '2026-02-18'
 authors:
 - given-names: Hannes
   family-names: Schnaitter
@@ -28,16 +22,20 @@ authors:
   affiliation: Universität Potsdam
   credit:
   - Software
-contributors:
-- family-names: Seltmann
-  given-names: Melanie
-  orcid: https://orcid.org/0000-0002-7588-4395
-- family-names: Walter
-  given-names: Paul
-  orcid: https://orcid.org/0000-0002-9236-3268
-- family-names: Zhang
-  given-names: Yue
-  orcid: https://orcid.org/0009-0007-6432-1259
+keywords:
+- Open Educational Resources
+- de: Offene Bildungsressource
+- en: Jupyter Book
+- en: Data Literacy
+  de: Datenkompetenz
+- open-educational-resources
+description: Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational
+  Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA
+  als <a href="https://jupyterbook.org">Jupyter Book</a> ein. Diese Empfehlungen und
+  Vorgaben sind einerseits inhaltlicher und didaktischer andererseits technischer
+  Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt
+  (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel
+  bieten zudem Erläuterungen zu Funktionalitäten für Lernende.
 table-of-contents: '- Präambel
 
   - Struktur und didaktisches Konzept
@@ -51,17 +49,6 @@ table-of-contents: '- Präambel
   - Reflexion und Resümee
 
   - Epilog'
-description: Diese OER führt in die Erstellung von QUADRIGA-OER ein. Sie bietet vorranging
-  Informationen und Anleitungen für OER-Erstellende und dient als Vorlage für die
-  Erstellung eigener OER. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen einzelner
-  Funktionalitäten für Lernende an.
-keywords:
-- Open Educational Resources
-- de: Offene Bildungsressource
-- en: Jupyter Book
-- en: Data Literacy
-  de: Datenkompetenz
-language: de
 discipline:
 - übergreifend
 research-object-type:
@@ -72,42 +59,33 @@ target-group:
 - Promovierende
 - Hochschullehrende
 time-required: PT16H15M
-context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
-  Datenkompetenzzentrum QUADRIGA erstellt.
-
-
-  Förderkennzeichen: 16DKZ2034'
-url: https://quadriga-dk.github.io/Book_Template/
+language: de
+contributors:
+- family-names: Seltmann
+  given-names: Melanie
+  orcid: https://orcid.org/0000-0002-7588-4395
+  affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
+- family-names: Walter
+  given-names: Paul
+  orcid: https://orcid.org/0000-0002-9236-3268
+  affiliation: Fachhochschule Potsdam
+- family-names: Zhang
+  given-names: Yue
+  orcid: https://orcid.org/0009-0007-6432-1259
+identifier: https://doi.org/10.5281/zenodo.14970672
 git: https://github.com/quadriga-dk/Book_Template
-license:
-  code: https://opensource.org/licenses/AGPL-3.0
-  content:
-    url: https://creativecommons.org/licenses/by-sa/4.0/
-    name: CC BY-SA 4.0
+url: https://quadriga-dk.github.io/Book_Template/
+used-tools:
+- name: Jupyter Book
+  url: https://jupyterbook.org
 chapters:
-- title: Präambel
-  url: https://quadriga-dk.github.io/Book_Template/präambel/toc.html
-  description: Präambel des Templates. Gibt grundlegende Informationen zu Lernzielen,
-    Voraussetzungen und Vorkenntnissen.
-  learning-goal: Überblick über Template
-  time-required: PT15M
-  learning-objectives:
-  - learning-objective: Das Template und seine Bestandteile werden verstanden und
-      die jeweils relevanten Inhalte sind der Nutzer:in klar.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 2 Verstehen
-  - learning-objective: Die technischen Voraussetzungen für die verschiedenen möglichen
-      Nutzungsformen werden verstanden.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 2 Verstehen
 - title: Struktur und didaktisches Konzept
   url: https://quadriga-dk.github.io/Book_Template/struktur_didaktisches_konzept/einleitung.html
   description: Dieses Kapitel stellt die Struktur des Templates und das zugrunde liegende
     didaktische Konzept vor.
   time-required: PT2H
-  learning-goal: Fallstudienbasiertes didaktisches Konzept von QUADRIGA
+  learning-goal: Sie kennen und verstehen das fallstudienbasierte didaktische Konzept
+    von QUADRIGA für die Gestaltung von OER.
   learning-objectives:
   - learning-objective: Der forschungsgeleitete Ansatz der QUADRIGA OERs kann erläutert
       und der Beitrag von Fallstudien zur Datenkompetenzvermittlung erklärt werden.
@@ -131,7 +109,8 @@ chapters:
     welche genutzt werden, vorgestellt. Besonderes Augenmerk liegt auf dem Zusammenspiel
     der einzelnen Elemente.
   time-required: PT5H
-  learning-goal: Technische Umsetzung der QUADRIGA OERs
+  learning-goal: Sie kennen die verschiedenen technologischen Bestandteile von QUADRIGA
+    OER und ihr Zusammenspiel.
   learning-objectives:
   - learning-objective: Die Bestandteile der Entwicklungsumgebung (Git, Python, Jupyter
       Book, Editor) können identifiziert und deren Funktionen im OER-Entwicklungsprozess
@@ -167,8 +146,8 @@ chapters:
   description: Spezifische Ausführungen und Anleitungen zu Markdown- und Jupyter-Noteboook-Dateien
     und Formatierungsmöglichkeiten. Empfehlungen für deren einheitliche Nutzung in
     QUADRIGA OERs.
-  learning-goal: Schreiben und Formatieren von Inhalten nach den Empfehlungen von
-    QUADRIGA
+  learning-goal: Sie können Inhalte nach den Empfehlungen von QUADRIGA schreiben und
+    formatieren.
   learning-objectives:
   - learning-objective: Kenntnis, Auswahl und Nutzung verschiedener möglicher Dateiformate
       und Programmiersprachen
@@ -184,10 +163,11 @@ chapters:
   url: https://quadriga-dk.github.io/Book_Template/assessment/einleitung.html
   description: Assessment-Konzept und dessen konkrete Ausgestaltung in Jupyter Books,
     die den QUADRIGA-Empfehlungen folgen
-  learning-goal: Gestaltung und Implementierung von Assessments
+  learning-goal: Sie verstehen das Assessmentkonzept QUADRIGAs und können dieses nach
+    den Vorgaben und Empfehlungen implementieren
   time-required: PT3H
   learning-objectives:
-  - learning-objective: Verständnis des Assessmentkonzepts von QUADRIGA
+  - learning-objective: Verständnis des Assessmentkonzepts von QUADRIGA.
     competency: Orientierungswissen
     data-flow: übergreifend
     blooms-category: 2 Verstehen
@@ -195,23 +175,21 @@ chapters:
     competency: Orientierungswissen
     data-flow: übergreifend
     blooms-category: 3 Anwenden
-- title: Reflexion und Resümee
-  url: https://quadriga-dk.github.io/Book_Template/reflexion_und_resümee/toc.html
-  description: Zusammenfassung und Wiederholung der wichtigsten Inhalte des Buchs.
-    Hinweise auf weiterführende Inhalte.
-  learning-goal: Festigung der erlernten Inhalte
-  time-required: PT1H
-  learning-objectives:
-  - learning-objective: Kenntnis der wichtigsten Inhalte des Templates und dessen
-      Nutzung
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
-    blooms-category: 2 Verstehen
-  - learning-objective: Auswahl geeigneter Formate, Formatierungskonzepte, Übungs-
-      und Assessmentformate und deren Anwendung.
-    competency: nicht anwendbar
-    data-flow: nicht anwendbar
-    blooms-category: 3 Anwenden
+date-issued: '2024-05-06'
+date-modified: '2026-03-03'
+version: 0.62.5
+context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
+  Datenkompetenzzentrum QUADRIGA erstellt.
+
+
+  Förderkennzeichen: 16DKZ2034'
 quality-assurance:
   date: '2025-11-10'
   description: https://doi.org/TODO
+learning-resource-type: Jupyter Book
+schema-version: 1.0.0
+license:
+  code: https://opensource.org/licenses/AGPL-3.0
+  content:
+    url: https://creativecommons.org/licenses/by-sa/4.0/
+    name: CC BY-SA 4.0

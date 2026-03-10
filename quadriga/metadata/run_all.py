@@ -19,6 +19,7 @@ from quadriga.metadata.create_zenodo_json import create_zenodo_json
 from quadriga.metadata.extract_from_book_config import extract_and_update
 from quadriga.metadata.update_citation_cff import update_citation
 from quadriga.metadata.validate_schema import validate_schema
+from quadriga.metadata.extract_from_lernziele import merge_learning_objectives_into_metadata
 
 logger = logging.getLogger(__name__)
 
@@ -34,7 +35,17 @@ def main() -> bool | None:
         )
 
         logger.info("Running all metadata update scripts...")
-
+        
+        # Extract learning objectives
+        try:
+            logger.info("Extracting learning objectives from Lernziele.md...")
+            if not merge_learning_objectives_into_metadata():
+                logger.error("Learning objective extraction failed.")
+                return False
+        except Exception:
+            logger.exception("Unexpected error during learning objective extraction")
+            return False
+        
         # Validate metadata.yml against QUADRIGA schema first
         try:
             logger.info("Validating metadata.yml against QUADRIGA schema...")
