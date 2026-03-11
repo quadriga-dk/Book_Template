@@ -260,14 +260,14 @@ def create_zenodo_json() -> bool | None:
 <p>Zu den Zielgruppen von QUADRIGA zählen insbesondere promovierende und promovierte Wissenschaftler*innen der genannten Disziplinen, die den Umgang mit digitalen Daten, Methoden und Werkzeugen erlernen und weiterentwickeln wollen.</p>
 <p>QUADRIGA ist eins von 11 Datenkompetenzzentren in Deutschland und wird vom <a href="https://www.bmftr.bund.de/DE/Forschung/Wissenschaftssystem/Forschungsdaten/DatenkompetenzenInDerWissenschaft/datenkompetenzeninderwissenschaft.html" target="_blank">Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR)</a> und von der Europäischen Union im Rahmen von <a href="https://next-generation-eu.europa.eu/index_de" target="_blank">NextGenerationEU</a> finanziert. Zu den Verbundpartnern zählen:
   <ul>
-    <li>Universität Potsdam (Verbundkoordination)<i> (Förderkennzeichen: 16DKZ2034A)</i></li>
-    <li>Filmuniversität Babelsberg KONRAD WOLF<i> (Förderkennzeichen: 16DKZ2034B)</i></li>
-    <li>Fachhochschule Potsdam<i> (Förderkennzeichen: 16DKZ2034C)</i></li>
-    <li>Fraunhofer FOKUS<i> (Förderkennzeichen: 16DKZ2034D)</i></li>
-    <li>Freie Universität Berlin<i> (Förderkennzeichen: 16DKZ2034E)</i></li>
-    <li>Technische Universität Berlin<i> (Förderkennzeichen: 16DKZ2034F)</i></li>
-    <li>Gesellschaft für Informatik<i> (Förderkennzeichen: 16DKZ2034G)</i></li>
-    <li>Humboldt-Universität zu Berlin<i> (Förderkennzeichen: 16DKZ2034H)</i></li>
+    <li>Universität Potsdam (Verbundkoordination) <i>(Förderkennzeichen: 16DKZ2034A)</i></li>
+    <li>Filmuniversität Babelsberg KONRAD WOLF <i>(Förderkennzeichen: 16DKZ2034B)</i></li>
+    <li>Fachhochschule Potsdam <i>(Förderkennzeichen: 16DKZ2034C)</i></li>
+    <li>Fraunhofer FOKUS <i>(Förderkennzeichen: 16DKZ2034D)</i></li>
+    <li>Freie Universität Berlin <i>(Förderkennzeichen: 16DKZ2034E)</i></li>
+    <li>Technische Universität Berlin <i>(Förderkennzeichen: 16DKZ2034F)</i></li>
+    <li>Gesellschaft für Informatik <i>(Förderkennzeichen: 16DKZ2034G)</i></li>
+    <li>Humboldt-Universität zu Berlin <i>(Förderkennzeichen: 16DKZ2034H)</i></li>
   </ul>
 </p>
 
