@@ -1,6 +1,7 @@
 pyyaml
 mypy
 ruff
+pre-commit
 types-PyYAML
 rdflib
 jupytext
