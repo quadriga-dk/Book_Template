@@ -1,0 +1,26 @@
+name: Lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: '.python-version'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt -r dev-requirements.txt types-jsonschema
+
+      - name: Run pre-commit hooks
+        run: |
+          pre-commit run --all-files
