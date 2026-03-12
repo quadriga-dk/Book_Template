@@ -125,7 +125,9 @@ def extract_admonition_blocks(
                 'missing_fields': ['learning-goal']
             })
 
-        body_cleaned = body
+        # Strip all START/END markers before parsing objectives
+        body_cleaned = re.sub(r'<!--\s*START:\s*.+?\s*-->\s*', '', body)
+        body_cleaned = re.sub(r'\s*<!--\s*END:\s*.+?\s*-->', '', body_cleaned)
 
         # Parse numbered objectives with optional inline metadata comment
         objectives = []
