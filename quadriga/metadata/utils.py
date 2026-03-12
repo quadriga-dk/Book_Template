@@ -10,8 +10,13 @@ import json
 import logging
 import re
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import yaml
+
+if TYPE_CHECKING:
+    from collections.abc import Generator
+
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -70,7 +75,7 @@ def get_file_path(relative_path: str | Path, repo_root: Path | None = None) -> P
     return repo_root / Path(relative_path)
 
 
-def iter_toc_files(node: dict | list):
+def iter_toc_files(node: dict | list) -> Generator:
     """Yield all 'file' path strings from a parsed _toc.yml, at any nesting depth.
 
     _toc.yml entries can be deeply nested under chapters, sections, and parts.
