@@ -91,14 +91,15 @@ def extract_admonition_blocks(
     blocks = []
     validation_issues = []
 
-    # Pattern to match admonition blocks with their content
-    admonition_pattern = r'```\{admonition\}\s+(.+?)\n((?::[^\n]+\n)*)((?:(?!```).)+)```'
+    # Pattern to match admonition blocks preceded by <!-- START: ChapterName -->
+    admonition_pattern = r'<!--\s*START:\s*(.+?)\s*-->\s*\n```\{admonition\}\s+(.+?)\n((?::[^\n]+\n)*)((?:(?!```).)+)```'
 
     matches = re.finditer(admonition_pattern, content, re.DOTALL | re.MULTILINE)
 
     for match in matches:
-        title_line = match.group(1).strip()
-        body = match.group(3).strip()
+        chapter = match.group(1).strip()
+        title_line = match.group(2).strip()
+        body = match.group(4).strip()
 
         # Parse title - extract text and reference
         title_match = re.match(r'\[(.+?)\]\((.+?)\)(\s*\(\*(.+?)\*\))?', title_line)
@@ -123,12 +124,6 @@ def extract_admonition_blocks(
                 'section': section_title,
                 'missing_fields': ['learning-goal']
             })
-
-        # Chapter — use the first <!-- START: ChapterName --> tag in the admonition body.
-        chapter = None
-        start_match = re.search(r'<!--\s*START:\s*(.+?)\s*-->', body)
-        if start_match:
-            chapter = start_match.group(1).strip()
 
         # Strip all START/END markers before parsing objectives
         body_cleaned = re.sub(r'<!--\s*START:\s*.+?\s*-->\s*', '', body)
@@ -164,18 +159,7 @@ def extract_admonition_blocks(
             'objectives': objectives,
         }
 
-        if chapter:
-            block_data['chapter'] = chapter
-        else:
-            logger.warning(
-                "No chapter specified for section '%s'. "
-                "Add '<!-- START: ChapterName -->' after the line :class: lernziele, dropdown.",
-                section_title,
-            )
-            validation_issues.append({
-                'section': section_title,
-                'missing_fields': ['chapter'],
-            })
+        block_data['chapter'] = chapter
 
         blocks.append(block_data)
 
@@ -216,7 +200,7 @@ def generate_validation_report(
         report += "\nHow to fix:\n"
         report += "  competency/bloom   → <!-- competency: X | bloom: Y --> after the objective\n"
         report += "  learning-goal      → <!-- learning-goal: ... --> inside the admonition block\n"
-        report += "  chapter            → <!-- START: ChapterName --> before the learning goal\n"
+        report += "  chapter            → <!-- START: ChapterName --> before the admonition block\n"
 
     output_path.write_text(report, encoding="utf-8")
     logger.info("Validation report saved to %s", output_path)
