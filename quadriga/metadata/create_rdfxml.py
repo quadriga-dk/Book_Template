@@ -17,8 +17,8 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 
-from rdflib import RDF, Graph, Literal, Namespace, URIRef  # type: ignore[import-not-found]
-from rdflib.namespace import DCTERMS, SKOS, XSD  # type: ignore[import-not-found]
+from rdflib import RDF, Graph, Literal, Namespace, URIRef
+from rdflib.namespace import DCTERMS, SKOS, XSD
 
 from .utils import extract_keywords, get_file_path, get_repo_root, load_yaml_file
 
@@ -153,9 +153,7 @@ def add_person(
             graph.add((orcid_node, RDF.type, SCHEMA.PropertyValue))
             graph.add((orcid_node, SCHEMA.propertyID, Literal("ORCID")))
             graph.add((orcid_node, SCHEMA.value, Literal(clean_orcid_id)))
-            graph.add(
-                (orcid_node, SCHEMA.url, URIRef(f"https://orcid.org/{clean_orcid_id}"))
-            )
+            graph.add((orcid_node, SCHEMA.url, URIRef(f"https://orcid.org/{clean_orcid_id}")))
             graph.add((person_uri, SCHEMA.identifier, orcid_node))
 
     # affiliation -> schema:affiliation (mapped in both author and contributor)
@@ -290,9 +288,7 @@ def add_chapter(
     # learning-objectives -> educationalAlignment with AlignmentObject
     if chapter_data.get("learning-objectives"):
         for obj_index, obj_data in enumerate(chapter_data["learning-objectives"]):
-            obj_uri = add_learning_objective(
-                graph, obj_data, base_uri, chapter_index, obj_index
-            )
+            obj_uri = add_learning_objective(graph, obj_data, base_uri, chapter_index, obj_index)
             if obj_uri:
                 graph.add((chapter_uri, SCHEMA.educationalAlignment, obj_uri))
 
