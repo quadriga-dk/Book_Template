@@ -90,7 +90,7 @@ jobs:
         echo "Copied metadata files to _build/html for discovery"
 
     - name: Upload book artifact
-      uses: actions/upload-pages-artifact@v7
+      uses: actions/upload-pages-artifact@v4
       with:
         path: "_build/html"
 
