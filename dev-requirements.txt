@@ -1,7 +1,9 @@
 pyyaml
 mypy
 ruff
+pre-commit
 types-PyYAML
+types-jsonschema
 rdflib
 jupytext
 jsonschema

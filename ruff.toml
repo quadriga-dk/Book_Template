@@ -70,9 +70,11 @@ ignore = [
 
     # Code style
     "COM812",   # Trailing comma missing - prefer to let formatter handle this
+    "E501",     # Line too long (> 100)
 
     # Import location
     "PLC0415",  # Import should be at top-level - some imports are conditional for CLI
+    "E402",     # Module level import not at top of file
 ]
 
 [lint.per-file-ignores]

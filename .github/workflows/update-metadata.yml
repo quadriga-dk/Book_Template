@@ -1,17 +1,21 @@
 name: Update Metadata
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Lint"]
+    types:
+      - completed
   workflow_dispatch:
 
 # Prevent infinite loops when workflow commits changes
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.workflow_run.head_branch || github.ref }}
   cancel-in-progress: true
 
 jobs:
   update-metadata:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     # Need write permission to push changes
     permissions:
       contents: write
@@ -19,15 +23,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: ${{ github.event.workflow_run.head_sha || github.ref }}
           fetch-depth: 0
 
       - name: Extract version from tag (if triggered by tag)
         id: extract_version
         run: |
-          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
-            TAG_NAME=${GITHUB_REF#refs/tags/}
-            # Remove 'v' prefix if present (v1.0.0 -> 1.0.0)
+          REF="${{ github.event.workflow_run.head_branch || github.ref }}"
+          if [[ "$REF" == refs/tags/v* ]] || git tag --points-at HEAD | grep -q '^v'; then
+            TAG_NAME=$(git tag --points-at HEAD | grep '^v' | head -1)
+            if [[ -z "$TAG_NAME" && "$REF" == refs/tags/v* ]]; then
+              TAG_NAME=${REF#refs/tags/}
+            fi
             VERSION=${TAG_NAME#v}
             echo "version=$VERSION" >> $GITHUB_OUTPUT
             echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
@@ -35,7 +42,7 @@ jobs:
             echo "Triggered by version tag: $TAG_NAME (version: $VERSION)"
           else
             echo "is_tag=false" >> $GITHUB_OUTPUT
-            echo "Triggered by regular push to: $GITHUB_REF"
+            echo "Triggered by regular push to: $REF"
           fi
 
       - name: Set up Python

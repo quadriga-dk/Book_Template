@@ -3,12 +3,12 @@
 from __future__ import annotations
 
 import logging
-import os
 import sys
+from pathlib import Path
 
 # Add current working directory to sys.path if not present
 # This allows the script to run with python -m without package installation
-cwd = os.getcwd()
+cwd = str(Path.cwd())
 if cwd not in sys.path:
     sys.path.insert(0, cwd)
 
@@ -17,9 +17,9 @@ from quadriga.metadata.create_jsonld import create_jsonld
 from quadriga.metadata.create_rdfxml import create_rdfxml
 from quadriga.metadata.create_zenodo_json import create_zenodo_json
 from quadriga.metadata.extract_from_book_config import extract_and_update
+from quadriga.metadata.extract_from_lernziele import merge_learning_objectives_into_metadata
 from quadriga.metadata.update_citation_cff import update_citation
 from quadriga.metadata.validate_schema import validate_schema
-from quadriga.metadata.extract_from_lernziele import merge_learning_objectives_into_metadata
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ def main() -> bool | None:
         )
 
         logger.info("Running all metadata update scripts...")
-        
+
         # Extract learning objectives
         try:
             logger.info("Extracting learning objectives from Lernziele.md...")
@@ -45,7 +45,7 @@ def main() -> bool | None:
         except Exception:
             logger.exception("Unexpected error during learning objective extraction")
             return False
-        
+
         # Validate metadata.yml against QUADRIGA schema first
         try:
             logger.info("Validating metadata.yml against QUADRIGA schema...")
