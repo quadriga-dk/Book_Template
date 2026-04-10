@@ -280,6 +280,27 @@ def update_citation() -> bool:
         else:
             logger.warning("No keywords found in metadata.yml")
 
+        # Update license if present in metadata
+        if "license" in metadata:
+            license_data = metadata["license"]
+            license_id = None
+            if isinstance(license_data, str):
+                license_id = license_data
+            elif isinstance(license_data, dict) and "content" in license_data:
+                content_license = license_data["content"]
+                if isinstance(content_license, str):
+                    license_id = content_license
+                elif isinstance(content_license, dict) and "name" in content_license:
+                    license_id = content_license["name"]
+                elif isinstance(content_license, list) and content_license:
+                    license_id = content_license[0]
+            if license_id:
+                citation_data["license"] = str(license_id)
+                if "preferred-citation" in citation_data:
+                    citation_data["preferred-citation"]["license"] = str(license_id)
+                updates_made = True
+                logger.info("Updated license to: %s", license_id)
+
         # No changes
         if not updates_made:
             logger.warning("No updates were made to CITATION.cff")
