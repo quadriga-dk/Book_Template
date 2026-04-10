@@ -323,7 +323,7 @@ def create_zenodo_json() -> bool | None:
         if license_id:
             # Zenodo expects license IDs like "CC-BY-SA-4.0"
             # Clean up common variations
-            license_clean = str(license_id).upper().replace("_", "-")
+            license_clean = str(license_id).upper().replace("_", "-").replace(" ", "-")
             zenodo_metadata["license"] = license_clean
             logger.info("Added license: %s", license_clean)
 
