@@ -89,7 +89,7 @@ chapters:
     blooms-category: 3 Anwenden
 date-issued: '2024-05-06'
 date-modified: '2026-05-11'
-version: 0.64.0
+version: 0.64.1
 context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
   Datenkompetenzzentrum QUADRIGA erstellt.
 
@@ -104,4 +104,4 @@ license:
   code: https://opensource.org/licenses/AGPL-3.0
   content:
     url: https://creativecommons.org/licenses/by-sa/4.0/
-    name: CC BY-SA 4.0
+    name: CC-BY-SA-4.0

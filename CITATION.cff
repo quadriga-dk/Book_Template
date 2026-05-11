@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: 1.2.0
-version: 0.64.0
+version: 0.64.1
 title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
 type: software
 message: Please cite this software using the metadata from `preferred-citation` in
@@ -30,7 +30,7 @@ keywords: &id002
 - Data Literacy
 - Datenkompetenz
 - open-educational-resources
-license: CC BY-SA 4.0
+license: CC-BY-SA-4.0
 references:
 - title: Jupyter Book
   type: software
@@ -39,14 +39,14 @@ references:
     website: https://github.com/jupyter-book/jupyter-book/graphs/contributors
 preferred-citation:
   year: '2026'
-  version: 0.64.0
+  version: 0.64.1
   authors: *id001
   title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
   type: book
   doi: 10.5281/zenodo.14970672
   url: https://quadriga-dk.github.io/Book_Template/
   repository-code: https://github.com/quadriga-dk/Book_Template
-  license: CC BY-SA 4.0
+  license: CC-BY-SA-4.0
   languages:
   - deu
   copyright: CC-BY-SA-4.0
