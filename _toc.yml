@@ -6,11 +6,11 @@ root: einleitung
 options:
   numbered: 3
 chapters:
-  - file: präambel/einleitung.md
+  - file: einstieg/einleitung.md
     sections:
-      - file: präambel/lernziele.md
-      - file: präambel/technische-voraussetzungen.md
-      - file: präambel/vorkenntnisse.md
+      - file: einstieg/lernziele.md
+      - file: einstieg/technische-voraussetzungen.md
+      - file: einstieg/vorkenntnisse.md
   - file: inhaltskapitel/einleitung.md
     sections:
       - file: inhaltskapitel/unterkapitel.md
@@ -23,10 +23,10 @@ chapters:
       - file: reflexion-und-resümee/abschlussassessment.md
       - file: reflexion-und-resümee/zusammenfassung.md
       - file: reflexion-und-resümee/resümee.md
-  - file: epilog/toc
+  - file: abschluss/toc
     sections:
-      - file: epilog/fragen-und-feedback
-      - file: epilog/literaturverzeichnis
-      - file: epilog/authors
-      - file: epilog/quadriga
-      - file: epilog/impressum
+      - file: abschluss/fragen-und-feedback
+      - file: abschluss/literaturverzeichnis
+      - file: abschluss/authors
+      - file: abschluss/quadriga
+      - file: abschluss/impressum

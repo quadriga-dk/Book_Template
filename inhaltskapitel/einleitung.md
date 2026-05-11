@@ -1,7 +1,7 @@
 (inhaltskapitel:einleitung)=
 # Inhaltskapitel
 
-```{include} ../präambel/lernziele.md
+```{include} ../einstieg/lernziele.md
 :start-after: "<!-- START: Inhaltskapitel -->"
 :end-before: "<!-- END: Inhaltskapitel -->"
 ```

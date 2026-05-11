@@ -217,7 +217,7 @@
       ]
     }
   ],
-  "dcterms:tableOfContents": "- Präambel\n- Inhaltskapitel\n- Reflexion und Resümee\n- Epilog",
+  "dcterms:tableOfContents": "- Einstieg\n- Inhaltskapitel\n- Reflexion und Resümee\n- Epilog",
   "funding": "Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.\n\nFörderkennzeichen: 16DKZ2034",
   "learningResourceType": "Jupyter Book",
   "lrmi:learningResourceType": "Jupyter Book",
