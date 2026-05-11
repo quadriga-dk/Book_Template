@@ -67,11 +67,11 @@ Flussdiagramm der QUADRIGA-Vorlage, die sich aus sechs Schritten zusammensetzt.
 
 Nach den QUADRIGA Empfehlungen und Vorgaben für OER durchlaufen Fallstudien mindestens diese drei Schritte.
 
-- Im **1. Schritt** führen wir in die OER ein, indem wir die Lernziele definieren und die technischen Voraussetzungen klären (siehe Kapitel {ref}`Präambel<lernziele>`).
+- Im **1. Schritt** führen wir in die OER ein, indem wir die Lernziele definieren und die technischen Voraussetzungen klären (siehe Kapitel {ref}`Einstieg<lernziele>`).
 - Im **2. Schritt** und den nachfolgenden Schritten wird de Inhalt der Fallstudie präsentiert (siehe Kapitel {ref}`Inhaltskapitel<inhaltskapitel:einleitung>`).
 - Im **letzten Schritt** schließt die OER inhaltlich mit einem Abschlussassessment ab, fassf die wichtigsten Punkte zusammen und gibt ggf. weiterführende Hinweise (siehe Kapitel {ref}`Reflexion und Resümee<reflexion>`).
 
-Die OER wird durch den Epilog komplettiert, das Raum für Fragen und Feedback bietet, das Literaturverzeichnis enthält, die Autor:innen vorstellt sowie Informationen zu QUADRIGA und das Impressum bereitstellt (siehe Kapitel {ref}`Epilog<fragen_feedback>`).
+Die OER wird durch den Abschluss komplettiert, das Raum für Fragen und Feedback bietet, das Literaturverzeichnis enthält, die Autor:innen vorstellt sowie Informationen zu QUADRIGA und das Impressum bereitstellt (siehe Kapitel {ref}`Abschluss<fragen_feedback>`).
 
 **Literatur**
 

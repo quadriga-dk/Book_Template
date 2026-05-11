@@ -12,7 +12,7 @@
   </schema:AlignmentObject>
   <schema:Book rdf:about="https://quadriga-dk.github.io/Book_Template/">
     <dc:type>Jupyter Book</dc:type>
-    <dcterms:tableOfContents>- Präambel
+    <dcterms:tableOfContents>- Einstieg
 - Inhaltskapitel
 - Reflexion und Resümee
 - Epilog</dcterms:tableOfContents>
