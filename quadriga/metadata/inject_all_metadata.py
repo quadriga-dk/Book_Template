@@ -27,8 +27,11 @@ import json
 import logging
 import re
 import sys
+import unicodedata
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import unquote, urljoin, urlparse
+
+from quadriga.metadata.utils import load_yaml_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -62,12 +65,181 @@ LOCALE_MAP = {
 # ============================================================================
 
 
+def _normalize_nfc(text: str) -> str:
+    """Normalize a string to Unicode NFC form."""
+    return unicodedata.normalize("NFC", text)
+
+
+def _find_path_normalized(build_dir: Path, relative_path: str) -> Path | None:
+    """
+    Find a file in build_dir by relative path, handling Unicode normalization.
+
+    Tries the path directly first, then falls back to scanning the directory
+    with NFC-normalized comparison to handle NFC/NFD mismatches (common on macOS).
+
+    Args:
+        build_dir (Path): Base directory to search in
+        relative_path (str): Relative path (already NFC-normalized and percent-decoded)
+
+    Returns
+    -------
+        Path: Resolved path if found, None otherwise
+    """
+    # Direct lookup (works when filesystem and URL use same normalization)
+    direct = build_dir / relative_path
+    if direct.exists():
+        return direct
+
+    # Fallback: scan parent directory with NFC normalization
+    # This handles macOS NFD filenames vs NFC URLs
+    target_dir = build_dir / Path(relative_path).parent
+    target_name = _normalize_nfc(Path(relative_path).name)
+
+    if target_dir.exists():
+        for entry in target_dir.iterdir():
+            if _normalize_nfc(entry.name) == target_name:
+                return entry
+
+    return None
+
+
+def get_all_toc_files(toc_path: Path) -> tuple[str | None, list[str]]:
+    """
+    Extract the root file and all chapter/section file paths from _toc.yml.
+
+    Collects only top-level chapter file entries (not their sections).
+
+    Args:
+        toc_path (Path): Path to _toc.yml file
+
+    Returns
+    -------
+        tuple: (root_file, list_of_chapter_files) — file paths without extension
+    """
+    toc_config = load_yaml_file(toc_path)
+    if not isinstance(toc_config, dict):
+        return None, []
+
+    root_file = toc_config.get("root")
+    chapter_files: list[str] = []
+
+    # Collect only top-level chapter files, not their sections
+    for entry in toc_config.get("chapters", []):
+        if isinstance(entry, dict) and entry.get("file"):
+            chapter_files.append(entry["file"])
+
+    # Also handle "parts" format (jb-book with parts instead of chapters)
+    for part in toc_config.get("parts", []):
+        if isinstance(part, dict):
+            for entry in part.get("chapters", []):
+                if isinstance(entry, dict) and entry.get("file"):
+                    chapter_files.append(entry["file"])
+
+    return root_file, chapter_files
+
+
+def _build_chapter_lookup(jsonld_data: dict) -> dict[str, dict]:
+    """
+    Build a lookup dict from NFC-normalized chapter name to chapter data.
+
+    This allows matching _toc.yml file paths (which contain the real filenames)
+    to metadata.jsonld hasPart entries (which may have different URL paths but
+    matching names).
+
+    Args:
+        jsonld_data (dict): Full book JSON-LD data
+
+    Returns
+    -------
+        dict: Mapping from normalized chapter name (lowercase) to chapter dict
+    """
+    lookup: dict[str, dict] = {}
+    for chapter in jsonld_data.get("hasPart", []):
+        if not isinstance(chapter, dict):
+            continue
+        name = chapter.get("name", "")
+        if name:
+            key = _normalize_nfc(name).lower()
+            lookup[key] = chapter
+    return lookup
+
+
+def _match_toc_file_to_chapter(
+    toc_file: str, chapter_lookup: dict[str, dict]
+) -> dict | None:
+    """
+    Match a _toc.yml file path to a metadata.jsonld chapter entry.
+
+    Tries matching the filename stem (without numeric prefix) against chapter names.
+    For example, toc file "Markdown/4_Qualitätsbewertung" matches chapter name
+    "Qualitätsbewertung".
+
+    Args:
+        toc_file (str): File path from _toc.yml (e.g., "Markdown/4_Qualitätsbewertung")
+        chapter_lookup (dict): Mapping from normalized name to chapter data
+
+    Returns
+    -------
+        dict: Matching chapter data, or None if no match found
+    """
+    stem = Path(toc_file).stem  # e.g., "4_Qualitätsbewertung"
+    stem_nfc = _normalize_nfc(stem).lower()
+
+    # Direct match on full stem
+    if stem_nfc in chapter_lookup:
+        return chapter_lookup[stem_nfc]
+
+    # Try stripping numeric prefix (e.g., "4_" from "4_Qualitätsbewertung")
+    stripped = re.sub(r"^\d+_", "", stem_nfc)
+    if stripped in chapter_lookup:
+        return chapter_lookup[stripped]
+
+    # Try matching: check if stem equals a chapter name after stripping all numeric prefixes
+    # e.g., "6_1_datenstruktur" -> "datenstruktur"
+    fully_stripped = re.sub(r"^(\d+_)+", "", stem_nfc)
+    if fully_stripped and fully_stripped in chapter_lookup:
+        return chapter_lookup[fully_stripped]
+
+    return None
+
+
+def _extract_title_from_html(html_path: Path) -> str | None:
+    """
+    Extract the page title from an HTML file's <title> tag.
+
+    Strips the site name suffix (after " \u2014 ") that Jupyter Book appends.
+    Also decodes HTML entities (e.g., &#8212;).
+
+    Args:
+        html_path (Path): Path to the HTML file
+
+    Returns
+    -------
+        str: Page title, or None if not found
+    """
+    try:
+        with html_path.open(encoding="utf-8") as f:
+            content = f.read(4096)  # Title is always near the top
+        match = re.search(r"<title>(.+?)</title>", content, re.DOTALL)
+        if match:
+            title = html_module.unescape(match.group(1).strip())
+            # Strip site name suffix: "1. Einstieg \u2014 Book Title" -> "1. Einstieg"
+            if "\u2014" in title:
+                title = title.split("\u2014")[0].strip()
+            # Strip chapter numbering prefix: "1. Einstieg" -> "Einstieg"
+            title = re.sub(r"^[\d.]+\s+", "", title)
+            return title
+    except Exception:
+        pass
+    return None
+
+
 def get_html_path_from_url(url: str, build_dir: Path) -> Path | None:
     """
     Extract the HTML file path from a chapter URL.
 
     Args:
-        url (str): Full URL like "https://quadriga-dk.github.io/Book_Template/präambel/toc.html"
+        url (str): Full URL like "https://quadriga-dk.github.io/Book_Template/einstieg/toc.html"
         build_dir (Path): Path to _build/html directory
 
     Returns
@@ -76,14 +248,18 @@ def get_html_path_from_url(url: str, build_dir: Path) -> Path | None:
     """
     try:
         parsed = urlparse(url)
-        path = parsed.path
+        # Decode percent-encoded characters (e.g., %C3%A4 -> ä)
+        path = unquote(parsed.path)
+        # Normalize Unicode to NFC for consistent comparison
+        # (macOS may use NFD in filenames, URLs typically use NFC)
+        path = unicodedata.normalize("NFC", path)
 
         # Remove leading slash
         path = path.removeprefix("/")
 
         # If base_url provided, try to extract relative path
-        # e.g., from "https://quadriga-dk.github.io/Book_Template/präambel/toc.html"
-        # we want "präambel/toc.html"
+        # e.g., from "https://quadriga-dk.github.io/Book_Template/einstieg/toc.html"
+        # we want "einstieg/toc.html"
         parts = path.split("/")
         if len(parts) > 1:
             # Assume first part might be the repo name, try both with and without it
@@ -91,14 +267,14 @@ def get_html_path_from_url(url: str, build_dir: Path) -> Path | None:
                 "/".join(parts[1:]) if len(parts) > MIN_PARTS_FOR_REPO_STRIPPING else path
             )
 
-            # Try the path with repo name removed
-            html_path = build_dir / relative_path
-            if html_path.exists():
+            # Try the path with repo name removed, handling Unicode normalization
+            html_path = _find_path_normalized(build_dir, relative_path)
+            if html_path is not None:
                 return html_path
 
         # Try the full path
-        html_path = build_dir / path
-        if html_path.exists():
+        html_path = _find_path_normalized(build_dir, path)
+        if html_path is not None:
             return html_path
 
         logger.warning("Could not find HTML file for URL: %s", url)
@@ -120,23 +296,15 @@ def get_logo_from_config(config_path: Path) -> str:
     -------
         str: Logo filename (e.g., 'logo.jpg', 'logo.png')
     """
-    try:
-        import yaml
-
-        with config_path.open(encoding="utf-8") as f:
-            config = yaml.safe_load(f)
-
-        logo_path = config.get("logo", "assets/logo.jpg")
-
-        # Extract filename from path (e.g., 'assets/logo.jpg' -> 'logo.jpg')
-        return Path(logo_path).name
-
-    except FileNotFoundError:
-        logger.warning("Config file not found at %s, using default logo", config_path)
+    config = load_yaml_file(config_path)
+    if not isinstance(config, dict):
+        logger.warning("Could not read _config.yml at %s, using default logo", config_path)
         return "logo.jpg"
-    except Exception:
-        logger.exception("Could not read logo from _config.yml, using default")
-        return "logo.jpg"
+
+    logo_path = config.get("logo", "assets/logo.jpg")
+
+    # Extract filename from path (e.g., 'assets/logo.jpg' -> 'logo.jpg')
+    return Path(logo_path).name
 
 
 def get_root_page_from_toc(toc_path: Path, build_dir: Path) -> Path | None:
@@ -151,25 +319,17 @@ def get_root_page_from_toc(toc_path: Path, build_dir: Path) -> Path | None:
     -------
         Path: Path to root HTML file, or None if not found
     """
-    if not toc_path.exists():
+    toc_config = load_yaml_file(toc_path)
+    if not isinstance(toc_config, dict):
         return None
 
-    try:
-        import yaml
-
-        with toc_path.open(encoding="utf-8") as f:
-            toc_config = yaml.safe_load(f)
-
-        root_file = toc_config.get("root")
-        if root_file:
-            # Convert root file path to HTML filename
-            root_html = build_dir / f"{root_file}.html"
-            if root_html.exists():
-                logger.info("Found root page in _toc.yml: %s", root_file)
-                return root_html
-
-    except Exception:
-        logger.exception("Error reading _toc.yml")
+    root_file = toc_config.get("root")
+    if root_file:
+        # Convert root file path to HTML filename, handling Unicode normalization
+        root_html = _find_path_normalized(build_dir, f"{root_file}.html")
+        if root_html is not None:
+            logger.info("Found root page in _toc.yml: %s", root_file)
+            return root_html
 
     return None
 
@@ -250,10 +410,10 @@ def format_author_name(author_data: dict) -> str:
 
     if given and family:
         return f"{given} {family}"
-    elif name:
-        return name
+    if name:
+        return str(name)
 
-    return given or family
+    return str(given) or str(family)
 
 
 def ensure_absolute_url(url: str, base_url: str) -> str:
@@ -280,6 +440,7 @@ def create_opengraph_meta_tags(
     base_url: str,
     book_title: str,
     logo_filename: str,
+    *,
     is_chapter: bool = False,
 ) -> str:
     """
@@ -355,14 +516,20 @@ def create_opengraph_meta_tags(
     if not is_chapter:
         # Root page: book:release_date
         if "datePublished" in jsonld_data:
-            tags.append(f'  <meta property="book:release_date" content="{jsonld_data["datePublished"]}" />')
+            tags.append(
+                f'  <meta property="book:release_date" content="{jsonld_data["datePublished"]}" />'
+            )
         # Note: books don't have a modified_time property in OpenGraph
     else:
         # Chapters: article:published_time and article:modified_time
         if "datePublished" in jsonld_data:
-            tags.append(f'  <meta property="article:published_time" content="{jsonld_data["datePublished"]}" />')
+            tags.append(
+                f'  <meta property="article:published_time" content="{jsonld_data["datePublished"]}" />'
+            )
         if "dateModified" in jsonld_data:
-            tags.append(f'  <meta property="article:modified_time" content="{jsonld_data["dateModified"]}" />')
+            tags.append(
+                f'  <meta property="article:modified_time" content="{jsonld_data["dateModified"]}" />'
+            )
 
     # Tags/keywords - use book:tag for root page only
     if not is_chapter and "keywords" in jsonld_data:
@@ -495,6 +662,7 @@ def inject_all_metadata_into_html(
     html_path: Path,
     og_tags: str,
     jsonld_content: str,
+    *,
     add_link_elements: bool = True,
 ) -> bool:
     """
@@ -526,7 +694,10 @@ def inject_all_metadata_into_html(
             html_content = f.read()
 
         # Check if metadata is already present (avoid duplicates)
-        if '<meta property="og:' in html_content or '<script type="application/ld+json">' in html_content:
+        if (
+            '<meta property="og:' in html_content
+            or '<script type="application/ld+json">' in html_content
+        ):
             logger.debug("Metadata already present in %s, skipping", html_path.name)
             return True
 
@@ -539,7 +710,9 @@ def inject_all_metadata_into_html(
 
         # 2. JSON-LD structured data
         if jsonld_content:
-            injection_parts.append(f'  <script type="application/ld+json">\n{jsonld_content}\n  </script>')
+            injection_parts.append(
+                f'  <script type="application/ld+json">\n{jsonld_content}\n  </script>'
+            )
 
         # 3. RDF discovery links
         if add_link_elements:
@@ -560,7 +733,9 @@ def inject_all_metadata_into_html(
         injection_point = None
 
         # Try to inject after viewport meta tag (best practice for OpenGraph)
-        viewport_match = re.search(r"(<meta\s+name=\"viewport\"[^>]*>\s*)", html_content, re.IGNORECASE)
+        viewport_match = re.search(
+            r"(<meta\s+name=\"viewport\"[^>]*>\s*)", html_content, re.IGNORECASE
+        )
         if viewport_match:
             injection_point = viewport_match.end()
         else:
@@ -576,10 +751,18 @@ def inject_all_metadata_into_html(
                 logger.warning("No </head> tag found in %s, skipping", html_path.name)
                 return False
             # For </head> injection, add before the tag
-            html_content = html_content[:injection_point] + f"\n{full_injection}\n" + html_content[injection_point:]
+            html_content = (
+                html_content[:injection_point]
+                + f"\n{full_injection}\n"
+                + html_content[injection_point:]
+            )
         else:
             # For after viewport/charset injection, insert at found position
-            html_content = html_content[:injection_point] + f"\n{full_injection}\n\n" + html_content[injection_point:]
+            html_content = (
+                html_content[:injection_point]
+                + f"\n{full_injection}\n\n"
+                + html_content[injection_point:]
+            )
 
         # Write the modified HTML back
         with html_path.open("w", encoding="utf-8") as f:
@@ -662,10 +845,19 @@ def inject_all_metadata(
             return False
 
         # Extract base URL from metadata
-        base_url = jsonld_data.get("url", "")
-        if not base_url:
+        book_url = jsonld_data.get("url", "")
+        if not book_url:
             logger.error("No URL found in metadata.jsonld")
             return False
+
+        # Derive the site base URL by removing the path after the repo name
+        # e.g., "https://quadriga-dk.github.io/Tabelle-Fallstudie-1/Markdown/0_Intro.html"
+        # -> "https://quadriga-dk.github.io/Tabelle-Fallstudie-1"
+        parsed_book_url = urlparse(book_url)
+        path_parts = parsed_book_url.path.strip("/").split("/")
+        # Keep only the first path segment (repository name)
+        site_path = f"/{path_parts[0]}" if path_parts else ""
+        base_url = f"{parsed_book_url.scheme}://{parsed_book_url.netloc}{site_path}"
 
         # Extract book title for og:site_name
         book_title = jsonld_data.get("name", "")
@@ -737,15 +929,19 @@ def inject_all_metadata(
                     # Check if the redirect page has proper HTML structure
                     if "<html" not in index_content.lower() or "<head" not in index_content.lower():
                         # Minimal redirect without proper structure - create proper HTML
-                        logger.info("Minimal redirect detected, creating proper HTML structure with OpenGraph")
+                        logger.info(
+                            "Minimal redirect detected, creating proper HTML structure with OpenGraph"
+                        )
 
                         # Extract the meta refresh tag
-                        meta_refresh_match = re.search(r'<meta\s+http-equiv[^>]*>', index_content, re.IGNORECASE)
+                        meta_refresh_match = re.search(
+                            r"<meta\s+http-equiv[^>]*>", index_content, re.IGNORECASE
+                        )
                         meta_refresh = meta_refresh_match.group(0) if meta_refresh_match else ""
 
                         # Create proper HTML with OpenGraph metadata and meta refresh
                         new_index_content = f"""<!DOCTYPE html>
-<html lang="{jsonld_data.get('inLanguage', 'en')}">
+<html lang="{jsonld_data.get("inLanguage", "en")}">
 <head>
   <meta charset="utf-8" />
   {meta_refresh}
@@ -760,49 +956,100 @@ def inject_all_metadata(
                         # Write the new index.html
                         with index_html.open("w", encoding="utf-8") as f:
                             f.write(new_index_content)
-                        logger.info("Successfully created index.html with OpenGraph metadata and redirect")
+                        logger.info(
+                            "Successfully created index.html with OpenGraph metadata and redirect"
+                        )
+                    # Has proper HTML structure, inject normally
+                    elif not inject_all_metadata_into_html(
+                        index_html, og_tags, "", add_link_elements=False
+                    ):
+                        logger.warning("Failed to inject OpenGraph into index.html redirect page")
                     else:
-                        # Has proper HTML structure, inject normally
-                        if not inject_all_metadata_into_html(index_html, og_tags, "", add_link_elements=False):
-                            logger.warning("Failed to inject OpenGraph into index.html redirect page")
-                        else:
-                            logger.info("Successfully injected OpenGraph metadata into index.html redirect page")
+                        logger.info(
+                            "Successfully injected OpenGraph metadata into index.html redirect page"
+                        )
             except Exception:
                 logger.exception("Error processing index.html redirect page")
 
         # ====================================================================
-        # Process chapter pages
+        # Process chapter pages (using _toc.yml as source of truth for files)
         # ====================================================================
         chapters_injected = 0
-        if jsonld_data.get("hasPart"):
-            logger.info("Processing %d chapters...", len(jsonld_data["hasPart"]))
 
-            for chapter in jsonld_data["hasPart"]:
-                if not isinstance(chapter, dict):
-                    continue
+        # Get all chapter file paths from _toc.yml
+        _, toc_chapter_files = get_all_toc_files(toc_path)
 
-                # Get chapter URL
-                chapter_url = chapter.get("url")
-                if not chapter_url:
-                    logger.warning("Chapter missing URL: %s", chapter.get("name", "Unknown"))
-                    continue
+        if toc_chapter_files:
+            logger.info(
+                "Found %d chapter files in _toc.yml, matching against %d hasPart entries",
+                len(toc_chapter_files),
+                len(jsonld_data.get("hasPart", [])),
+            )
 
-                # Find the HTML file for this chapter
-                chapter_html_path = get_html_path_from_url(chapter_url, build_dir)
+            # Build lookup from chapter name -> chapter data for matching
+            chapter_lookup = _build_chapter_lookup(jsonld_data)
+
+            for toc_file in toc_chapter_files:
+                # Resolve HTML path from _toc.yml file entry
+                # _toc.yml may have paths with or without extensions
+                # e.g., "einstieg/einleitung.md" or "abschluss/toc"
+                toc_stem = str(Path(toc_file).with_suffix("")) if Path(toc_file).suffix else toc_file
+                html_relative = f"{toc_stem}.html"
+                chapter_html_path = _find_path_normalized(build_dir, html_relative)
+
                 if not chapter_html_path:
-                    logger.warning("Could not find HTML file for chapter: %s", chapter.get("name", "Unknown"))
+                    logger.warning(
+                        "Could not find HTML file for toc entry: %s", toc_file
+                    )
                     continue
 
-                # Create chapter metadata for OpenGraph (combining chapter + book data)
-                chapter_og_metadata = {
-                    "name": chapter.get("name", ""),
-                    "url": chapter_url,
-                    "description": chapter.get("description", ""),
-                    "author": jsonld_data.get("author", []),  # Inherit from book
-                    "datePublished": jsonld_data.get("datePublished"),  # Inherit from book
-                    "dateModified": jsonld_data.get("dateModified"),  # Inherit from book
-                    "inLanguage": jsonld_data.get("inLanguage"),  # Inherit from book
-                }
+                # Skip the root page (already processed above)
+                if chapter_html_path.resolve() == root_html.resolve():
+                    continue
+
+                # Try to match this toc entry to a jsonld chapter for rich metadata
+                chapter = _match_toc_file_to_chapter(toc_file, chapter_lookup)
+
+                # Build the canonical URL for this chapter from base_url + toc path
+                chapter_url = f"{base_url.rstrip('/')}/{html_relative}"
+
+                # Extract the actual page title from the HTML <title> tag
+                html_title = _extract_title_from_html(chapter_html_path)
+
+                if chapter:
+                    # Rich metadata from jsonld hasPart
+                    chapter_og_metadata = {
+                        "name": html_title or chapter.get("name", Path(toc_file).stem),
+                        "url": chapter_url,
+                        "description": chapter.get("description", ""),
+                        "author": jsonld_data.get("author", []),
+                        "datePublished": jsonld_data.get("datePublished"),
+                        "dateModified": jsonld_data.get("dateModified"),
+                        "inLanguage": jsonld_data.get("inLanguage"),
+                    }
+
+                    # Create chapter-specific JSON-LD with book-level metadata
+                    # Update the chapter URL to match the actual file path
+                    chapter_with_url = {**chapter, "url": chapter_url}
+                    chapter_jsonld = create_chapter_jsonld(chapter_with_url, jsonld_data)
+                else:
+                    # No matching jsonld chapter — use book-level metadata
+                    chapter_name = html_title
+                    if not chapter_name:
+                        chapter_name = Path(toc_file).stem.replace("_", " ")
+                        # Strip leading numeric prefix for display name
+                        chapter_name = re.sub(r"^\d+\s+", "", chapter_name)
+                    chapter_og_metadata = {
+                        "name": chapter_name,
+                        "url": chapter_url,
+                        "author": jsonld_data.get("author", []),
+                        "datePublished": jsonld_data.get("datePublished"),
+                        "dateModified": jsonld_data.get("dateModified"),
+                        "inLanguage": jsonld_data.get("inLanguage"),
+                    }
+                    chapter_jsonld = create_chapter_jsonld(
+                        {"name": chapter_name, "url": chapter_url}, jsonld_data
+                    )
 
                 # Generate OpenGraph tags for chapter (og:type="article")
                 chapter_og_tags = create_opengraph_meta_tags(
@@ -813,20 +1060,29 @@ def inject_all_metadata(
                     is_chapter=True,
                 )
 
-                # Create chapter-specific JSON-LD with book-level metadata
-                chapter_jsonld = create_chapter_jsonld(chapter, jsonld_data)
-
-                # Convert to formatted string
+                # Convert JSON-LD to formatted string
                 chapter_jsonld_str = json.dumps(chapter_jsonld, ensure_ascii=False, indent=2)
-                chapter_jsonld_str = "\n".join("    " + line for line in chapter_jsonld_str.split("\n"))
+                chapter_jsonld_str = "\n".join(
+                    "    " + line for line in chapter_jsonld_str.split("\n")
+                )
 
                 # Inject both OpenGraph and JSON-LD into chapter HTML
-                if inject_all_metadata_into_html(chapter_html_path, chapter_og_tags, chapter_jsonld_str):
+                if inject_all_metadata_into_html(
+                    chapter_html_path, chapter_og_tags, chapter_jsonld_str
+                ):
                     chapters_injected += 1
                 else:
-                    logger.warning("Failed to inject metadata into chapter: %s", chapter.get("name", "Unknown"))
+                    logger.warning(
+                        "Failed to inject metadata into: %s", chapter_html_path.name
+                    )
 
             logger.info("Injected metadata into %d chapter pages", chapters_injected)
+        elif jsonld_data.get("hasPart"):
+            logger.warning(
+                "No chapter files found in _toc.yml, but %d hasPart entries exist in metadata.jsonld. "
+                "Ensure _toc.yml is present and correctly formatted.",
+                len(jsonld_data["hasPart"]),
+            )
 
         logger.info("All metadata injection completed successfully")
         return True
