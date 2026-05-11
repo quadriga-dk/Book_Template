@@ -3,6 +3,8 @@ from __future__ import annotations
 import logging
 import sys
 
+from datetime import datetime
+
 from .utils import (
     extract_keywords,
     format_authors_for_bibtex,
@@ -119,7 +121,18 @@ def create_bibtex_from_cff() -> bool | None:
         # Validate required fields
         authors = pref.get("authors", [])
         title = pref.get("title", "Untitled")
-        year = str(pref.get("year", ""))  # Ensure year is a string for generate_citation_key
+        # Try 'year' field first, fall back to extracting year from 'date-released'
+        year = pref.get("year", "")
+        if not year and "date-released" in pref:
+            date_released = str(pref["date-released"])
+            year = date_released[:4] if len(date_released) >= 4 else ""
+        if not year and "date-released" in citation_data:
+            date_released = str(citation_data["date-released"])
+            year = date_released[:4] if len(date_released) >= 4 else ""
+        if not year:
+            year = str(datetime.now().year)
+            logger.info("No year or date-released found, using current year: %s", year)
+        year = str(year)  # Ensure year is a string for generate_citation_key
 
         if not authors:
             logger.warning("No authors found in CITATION.cff")
@@ -174,6 +187,18 @@ def create_bibtex_from_cff() -> bool | None:
             bibtex_lines.append(f"  year      = {{{year}}},")
         if "version" in pref:
             bibtex_lines.append(f"  version   = {{{pref['version']}}},")
+
+        # Extract DOI from 'identifiers' list if not present as a top-level field
+        if "doi" not in pref and "identifiers" in pref:
+            for identifier in pref["identifiers"]:
+                if isinstance(identifier, dict) and identifier.get("type") == "doi":
+                    bibtex_lines.append(f"  doi       = {{{identifier['value']}}},")
+                    break
+        if "doi" not in pref and "identifiers" not in pref and "identifiers" in citation_data:
+            for identifier in citation_data["identifiers"]:
+                if isinstance(identifier, dict) and identifier.get("type") == "doi":
+                    bibtex_lines.append(f"  doi       = {{{identifier['value']}}},")
+                    break
 
         # Define common fields for all entry types
         simple_fields = [
