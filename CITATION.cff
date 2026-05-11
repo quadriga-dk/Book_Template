@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: 1.2.0
-version: 0.63.0
+version: 0.64.0
 title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
 type: software
 message: Please cite this software using the metadata from `preferred-citation` in
@@ -39,7 +39,7 @@ references:
     website: https://github.com/jupyter-book/jupyter-book/graphs/contributors
 preferred-citation:
   year: '2026'
-  version: 0.63.0
+  version: 0.64.0
   authors: *id001
   title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
   type: book
