@@ -7,8 +7,8 @@ including CITATION.cff, CITATION.bib, and extracting metadata from _config.yml.
 
 __all__ = [
     "create_bibtex",
+    "create_citation_cff",
     "extract_from_book_config",
-    "update_citation_cff",
     "update_version_from_tag",
     "utils",
 ]
@@ -16,8 +16,8 @@ __all__ = [
 # Import the modules to make their functions available
 from . import (
     create_bibtex,
+    create_citation_cff,
     extract_from_book_config,
-    update_citation_cff,
     update_version_from_tag,
     utils,
 )

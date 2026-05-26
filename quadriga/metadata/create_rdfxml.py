@@ -17,10 +17,16 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 
-from rdflib import RDF, Graph, Literal, Namespace, URIRef  # type: ignore[import-not-found]
+from rdflib import (  # type: ignore[import-not-found]
+    RDF,
+    Graph,
+    Literal,
+    Namespace,
+    URIRef,
+)
 from rdflib.namespace import DCTERMS, SKOS, XSD  # type: ignore[import-not-found]
 
-from .utils import extract_keywords, get_file_path, get_repo_root, load_yaml_file
+from .utils import clean_orcid, extract_keywords, get_doi, get_file_path, get_repo_root, load_yaml_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -49,57 +55,7 @@ def _sort_xml_element(element: ET.Element) -> None:
     element[:] = children
 
 
-def clean_orcid(orcid_string: str) -> str | None:
-    """
-    Extract ORCID identifier from an ORCID string or URL.
-
-    Args:
-        orcid_string (str): ORCID string which may include URL prefix
-
-    Returns
-    -------
-        str: Clean ORCID identifier (e.g., "0000-0002-1602-6032")
-    """
-    if not orcid_string:
-        return None
-
-    orcid = str(orcid_string)
-    prefixes = ["https://orcid.org/", "http://orcid.org/", "orcid:"]
-    for prefix in prefixes:
-        if orcid.startswith(prefix):
-            orcid = orcid[len(prefix) :]
-            break
-
-    return orcid.strip()
-
-
-def clean_doi(doi_string: str) -> str | None:
-    """
-    Extract DOI identifier from a DOI string or URL.
-
-    Args:
-        doi_string (str): DOI string which may include URL prefix
-
-    Returns
-    -------
-        str: Clean DOI identifier (e.g., "10.5281/zenodo.14970672")
-    """
-    if not doi_string:
-        return None
-
-    doi = str(doi_string)
-    prefixes = ["https://doi.org/", "http://doi.org/", "doi:"]
-    for prefix in prefixes:
-        if doi.startswith(prefix):
-            doi = doi[len(prefix) :]
-            break
-
-    return doi.strip()
-
-
-def add_person(
-    graph: Graph, person_data: Any, base_uri: str, person_type: str, index: int
-) -> URIRef | None:
+def add_person(graph: Graph, person_data: Any, base_uri: str, person_type: str, index: int) -> URIRef | None:
     """
     Add a person (author or contributor) to the RDF graph.
 
@@ -153,9 +109,7 @@ def add_person(
             graph.add((orcid_node, RDF.type, SCHEMA.PropertyValue))
             graph.add((orcid_node, SCHEMA.propertyID, Literal("ORCID")))
             graph.add((orcid_node, SCHEMA.value, Literal(clean_orcid_id)))
-            graph.add(
-                (orcid_node, SCHEMA.url, URIRef(f"https://orcid.org/{clean_orcid_id}"))
-            )
+            graph.add((orcid_node, SCHEMA.url, URIRef(f"https://orcid.org/{clean_orcid_id}")))
             graph.add((person_uri, SCHEMA.identifier, orcid_node))
 
     # affiliation -> schema:affiliation (mapped in both author and contributor)
@@ -236,9 +190,7 @@ def add_learning_objective(
     return obj_uri
 
 
-def add_chapter(
-    graph: Graph, chapter_data: Any, base_uri: str, chapter_index: int
-) -> URIRef | None:
+def add_chapter(graph: Graph, chapter_data: Any, base_uri: str, chapter_index: int) -> URIRef | None:
     """
     Add a chapter to the RDF graph as a LearningResource.
 
@@ -290,9 +242,7 @@ def add_chapter(
     # learning-objectives -> educationalAlignment with AlignmentObject
     if chapter_data.get("learning-objectives"):
         for obj_index, obj_data in enumerate(chapter_data["learning-objectives"]):
-            obj_uri = add_learning_objective(
-                graph, obj_data, base_uri, chapter_index, obj_index
-            )
+            obj_uri = add_learning_objective(graph, obj_data, base_uri, chapter_index, obj_index)
             if obj_uri:
                 graph.add((chapter_uri, SCHEMA.educationalAlignment, obj_uri))
 
@@ -376,17 +326,18 @@ def create_rdfxml() -> bool | None:
             logger.info("Added description")
 
         # identifier (DOI) -> schema:identifier (exactMatch)
-        if "identifier" in metadata:
-            clean_doi_id = clean_doi(metadata["identifier"])
-            if clean_doi_id:
-                # Create PropertyValue node for DOI
-                doi_node = URIRef(f"{base_uri}#doi")
-                graph.add((doi_node, RDF.type, SCHEMA.PropertyValue))
-                graph.add((doi_node, SCHEMA.propertyID, Literal("DOI")))
-                graph.add((doi_node, SCHEMA.value, Literal(clean_doi_id)))
-                graph.add((doi_node, SCHEMA.url, URIRef(metadata["identifier"])))
-                graph.add((resource_uri, SCHEMA.identifier, doi_node))
-                logger.info("Added DOI identifier: %s", clean_doi_id)
+        doi = get_doi(metadata)
+        if doi:
+            # Create PropertyValue node for DOI
+            doi_node = URIRef(f"{base_uri}#doi")
+            graph.add((doi_node, RDF.type, SCHEMA.PropertyValue))
+            graph.add((doi_node, SCHEMA.propertyID, Literal("DOI")))
+            graph.add((doi_node, SCHEMA.value, Literal(doi)))
+            graph.add((doi_node, SCHEMA.url, URIRef(f"https://doi.org/{doi}")))
+            graph.add((resource_uri, SCHEMA.identifier, doi_node))
+            logger.info("Added DOI identifier: %s", doi)
+        else:
+            logger.warning("No DOI found in metadata.yml 'identifier' field")
 
         # version -> schema:version (exactMatch)
         if "version" in metadata:
@@ -395,9 +346,7 @@ def create_rdfxml() -> bool | None:
 
         # schema-version -> schema:schemaVersion
         if "schema-version" in metadata:
-            graph.add(
-                (resource_uri, SCHEMA.schemaVersion, Literal(str(metadata["schema-version"])))
-            )
+            graph.add((resource_uri, SCHEMA.schemaVersion, Literal(str(metadata["schema-version"]))))
             logger.info("Added schema version: %s", metadata["schema-version"])
 
         # url -> schema:url (exactMatch)
@@ -548,9 +497,7 @@ def create_rdfxml() -> bool | None:
                                 )
                             )
                     elif isinstance(content_license_data, str):
-                        graph.add(
-                            (content_license_node, SCHEMA.license, URIRef(content_license_data))
-                        )
+                        graph.add((content_license_node, SCHEMA.license, URIRef(content_license_data)))
                     graph.add((resource_uri, SCHEMA.license, content_license_node))
             logger.info("Added license information")
 
@@ -566,9 +513,7 @@ def create_rdfxml() -> bool | None:
 
         # table-of-contents -> dcterms:tableOfContents (exactMatch)
         if "table-of-contents" in metadata:
-            graph.add(
-                (resource_uri, DCTERMS.tableOfContents, Literal(metadata["table-of-contents"]))
-            )
+            graph.add((resource_uri, DCTERMS.tableOfContents, Literal(metadata["table-of-contents"])))
             logger.info("Added table of contents")
 
         # ===== ADDITIONAL METADATA =====
@@ -616,7 +561,7 @@ def create_rdfxml() -> bool | None:
                 ET.register_namespace(prefix, uri)
 
             # Parse, sort elements recursively, and re-serialize
-            root = ET.fromstring(xml_str)  # noqa: S314 — parsing our own rdflib output
+            root = ET.fromstring(xml_str)
             _sort_xml_element(root)
             ET.indent(root, space="  ")
 

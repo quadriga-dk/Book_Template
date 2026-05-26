@@ -41,10 +41,7 @@ def get_repo_root() -> Path:
         found_files = [f for f in required_files if (repo_root / f).exists()]
 
         if len(found_files) < 1:
-            msg = (
-                f"Repository root at {repo_root} doesn't contain expected files "
-                "(_config.yml or _toc.yml)"
-            )
+            msg = f"Repository root at {repo_root} doesn't contain expected files (_config.yml or _toc.yml)"
             raise FileNotFoundError(msg)
     except Exception:
         logger.exception("Error resolving repository root")
@@ -95,6 +92,38 @@ def iter_toc_files(node: dict | list):
             yield from iter_toc_files(item)
 
 
+def resolve_toc_file(file_str: str, repo_root: Path | None = None) -> Path:
+    """Resolve a _toc.yml 'file' entry to an absolute path.
+
+    _toc.yml entries usually omit the file extension, and the file names may
+    contain dots (e.g. "1_einstieg/1.0_einleitung"), so the extension must be
+    appended — Path.with_suffix would truncate the name at the last dot and
+    turn "1_einstieg/1.0_einleitung" into "1_einstieg/1.md".
+
+    Args:
+        file_str (str): The 'file' value from _toc.yml
+        repo_root (Path, optional): Repository root path. If None, it will be determined
+
+    Returns
+    -------
+        Path: Absolute path to the file. If no existing file is found, the
+              path with ".md" appended is returned so callers can report a
+              sensible missing path.
+    """
+    path = get_file_path(file_str, repo_root)
+
+    # Entry already carries an explicit extension
+    if path.suffix in {".md", ".ipynb"}:
+        return path
+
+    for ext in (".md", ".ipynb"):
+        candidate = path.with_name(path.name + ext)
+        if candidate.exists():
+            return candidate
+
+    return path.with_name(path.name + ".md")
+
+
 # ---- YAML Handling ----
 
 
@@ -130,9 +159,7 @@ def load_yaml_file(file_path: str | Path) -> dict | list | None:
         return None
 
 
-def save_yaml_file(
-    file_path: str | Path, data: dict | list, schema_comment: str | None = None
-) -> bool:
+def save_yaml_file(file_path: str | Path, data: dict | list, schema_comment: str | None = None) -> bool:
     """
     Save Python object as YAML to the specified file.
 
@@ -347,6 +374,194 @@ def generate_citation_key(authors: list, title: str, year: str) -> str:
         return "Unknown_Citation_Error"
     else:
         return clean_key or "Unknown_Citation"
+
+
+# ---- Identifier Handling ----
+
+
+def clean_doi(doi_string: str | None) -> str | None:
+    """
+    Extract DOI identifier from a DOI string or URL.
+
+    Args:
+        doi_string (str): DOI string which may include URL prefix
+
+    Returns
+    -------
+        str: Clean DOI identifier (e.g., "10.5281/zenodo.14970672")
+    """
+    if not doi_string:
+        return None
+
+    # Remove common DOI URL prefixes
+    doi = str(doi_string)
+    prefixes = ["https://doi.org/", "http://doi.org/", "doi:"]
+    for prefix in prefixes:
+        if doi.startswith(prefix):
+            doi = doi[len(prefix) :]
+            break
+
+    return doi.strip()
+
+
+def clean_orcid(orcid_string: str | None) -> str | None:
+    """
+    Extract ORCID identifier from an ORCID string or URL.
+
+    Args:
+        orcid_string (str): ORCID string which may include URL prefix
+
+    Returns
+    -------
+        str: Clean ORCID identifier (e.g., "0000-0002-1602-6032")
+    """
+    if not orcid_string:
+        return None
+
+    # Remove common ORCID URL prefixes
+    orcid = str(orcid_string)
+    prefixes = ["https://orcid.org/", "http://orcid.org/", "orcid:"]
+    for prefix in prefixes:
+        if orcid.startswith(prefix):
+            orcid = orcid[len(prefix) :]
+            break
+
+    return orcid.strip()
+
+
+# ---- Metadata Field Derivation ----
+#
+# metadata.yml is the single source of truth. These helpers derive common
+# fields from it so every output format (CFF, BibTeX, Zenodo, JSON-LD, RDF)
+# interprets the metadata identically.
+
+# ISO 639-1 (two-letter) to ISO 639-3 (three-letter) codes for languages
+# likely to appear in QUADRIGA OERs. Zenodo and CFF citations use ISO 639-3.
+ISO_639_1_TO_3 = {
+    "de": "deu",
+    "en": "eng",
+    "es": "spa",
+    "fr": "fra",
+    "it": "ita",
+    "nl": "nld",
+    "pl": "pol",
+    "pt": "por",
+    "ru": "rus",
+}
+
+
+def get_doi(metadata: dict) -> str | None:
+    """
+    Get the clean DOI from the 'identifier' field of metadata.yml.
+
+    Returns None if the identifier is missing, not a DOI, or a placeholder.
+    As long as no real DOI has been assigned yet, the identifier should hold
+    a sentinel containing "TODO" (e.g. "https://doi.org/10.5281/zenodo.TODOTODO")
+    rather than a DOI that belongs to another object; the DOI is then simply
+    omitted from all generated outputs.
+
+    Args:
+        metadata (dict): Parsed metadata.yml data
+
+    Returns
+    -------
+        str: Clean DOI identifier (e.g., "10.5281/zenodo.14970672") or None
+    """
+    doi = clean_doi(metadata.get("identifier"))
+    if doi and doi.startswith("10.") and "TODO" not in doi:
+        return doi
+    return None
+
+
+def get_publication_date(metadata: dict) -> str | None:
+    """
+    Get the publication date (ISO string) from metadata.yml.
+
+    Prefers 'date-modified' over 'date-issued' so re-releases carry
+    their current date.
+
+    Args:
+        metadata (dict): Parsed metadata.yml data
+
+    Returns
+    -------
+        str: ISO date string (e.g., "2026-06-26") or None
+    """
+    for field in ("date-modified", "date-issued"):
+        value = metadata.get(field)
+        if value:
+            # YAML may parse dates as date objects or leave them as strings
+            return value.isoformat() if hasattr(value, "isoformat") else str(value)
+    return None
+
+
+def get_publication_year(metadata: dict) -> str | None:
+    """
+    Get the publication year from metadata.yml (see get_publication_date).
+
+    Args:
+        metadata (dict): Parsed metadata.yml data
+
+    Returns
+    -------
+        str: Four-digit year (e.g., "2026") or None
+    """
+    year_digits = 4
+    date = get_publication_date(metadata)
+    if date and len(date) >= year_digits:
+        return date[:year_digits]
+    return None
+
+
+def get_languages(metadata: dict) -> list[str]:
+    """
+    Get the languages from metadata.yml as ISO 639-3 codes.
+
+    The 'language' field may be a single code or a list; two-letter
+    ISO 639-1 codes are converted to their three-letter equivalents.
+
+    Args:
+        metadata (dict): Parsed metadata.yml data
+
+    Returns
+    -------
+        list: ISO 639-3 language codes (e.g., ["deu"])
+    """
+    value = metadata.get("language")
+    if not value:
+        return []
+    codes = value if isinstance(value, list) else [value]
+    return [ISO_639_1_TO_3.get(str(code).lower(), str(code)) for code in codes]
+
+
+def get_content_license(metadata: dict) -> str | None:
+    """
+    Get the content license identifier (e.g., "CC-BY-4.0") from metadata.yml.
+
+    The 'license' field may be a plain string or a dict with 'content' and
+    'code' licenses; the content license is the relevant one for citations.
+    The content license itself may be a string, a list, or a dict with
+    'name' and 'url'.
+
+    Args:
+        metadata (dict): Parsed metadata.yml data
+
+    Returns
+    -------
+        str: License identifier or None
+    """
+    license_data = metadata.get("license")
+    if isinstance(license_data, str):
+        return license_data
+    if isinstance(license_data, dict) and "content" in license_data:
+        content = license_data["content"]
+        if isinstance(content, str):
+            return content
+        if isinstance(content, dict) and "name" in content:
+            return str(content["name"])
+        if isinstance(content, list) and content:
+            return str(content[0])
+    return None
 
 
 # ---- Keyword Handling ----

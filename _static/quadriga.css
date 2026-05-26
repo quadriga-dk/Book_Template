@@ -336,3 +336,22 @@ html[data-theme='dark'] div.story > .admonition-title {
 html[data-theme='dark'] div.story > .admonition-title::after {
     color: #b876d1
 }
+
+/* Fix bibliography URL overflow — targets actual rendered HTML */
+div.citation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+div.citation p,
+div.citation dd,
+div.citation .docutils {
+    overflow-wrap: break-word;
+    word-break: break-all;
+    word-wrap: break-word;
+    min-width: 0;
+    flex: 1;
+}

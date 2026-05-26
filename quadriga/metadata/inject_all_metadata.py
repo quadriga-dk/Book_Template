@@ -164,9 +164,7 @@ def _build_chapter_lookup(jsonld_data: dict) -> dict[str, dict]:
     return lookup
 
 
-def _match_toc_file_to_chapter(
-    toc_file: str, chapter_lookup: dict[str, dict]
-) -> dict | None:
+def _match_toc_file_to_chapter(toc_file: str, chapter_lookup: dict[str, dict]) -> dict | None:
     """
     Match a _toc.yml file path to a metadata.jsonld chapter entry.
 
@@ -263,9 +261,7 @@ def get_html_path_from_url(url: str, build_dir: Path) -> Path | None:
         parts = path.split("/")
         if len(parts) > 1:
             # Assume first part might be the repo name, try both with and without it
-            relative_path = (
-                "/".join(parts[1:]) if len(parts) > MIN_PARTS_FOR_REPO_STRIPPING else path
-            )
+            relative_path = "/".join(parts[1:]) if len(parts) > MIN_PARTS_FOR_REPO_STRIPPING else path
 
             # Try the path with repo name removed, handling Unicode normalization
             html_path = _find_path_normalized(build_dir, relative_path)
@@ -482,9 +478,7 @@ def create_opengraph_meta_tags(
 
     # Recommended: og:description
     if "description" in jsonld_data:
-        tags.append(
-            f'  <meta property="og:description" content="{escape_html(jsonld_data["description"])}" />'
-        )
+        tags.append(f'  <meta property="og:description" content="{escape_html(jsonld_data["description"])}" />')
 
     # og:site_name (use book title for all pages)
     tags.append(f'  <meta property="og:site_name" content="{escape_html(book_title)}" />')
@@ -508,28 +502,20 @@ def create_opengraph_meta_tags(
         for author in authors:
             author_name = format_author_name(author)
             if author_name:
-                tags.append(
-                    f'  <meta property="{author_property}" content="{escape_html(author_name)}" />'
-                )
+                tags.append(f'  <meta property="{author_property}" content="{escape_html(author_name)}" />')
 
     # Date properties - different for books vs articles
     if not is_chapter:
         # Root page: book:release_date
         if "datePublished" in jsonld_data:
-            tags.append(
-                f'  <meta property="book:release_date" content="{jsonld_data["datePublished"]}" />'
-            )
+            tags.append(f'  <meta property="book:release_date" content="{jsonld_data["datePublished"]}" />')
         # Note: books don't have a modified_time property in OpenGraph
     else:
         # Chapters: article:published_time and article:modified_time
         if "datePublished" in jsonld_data:
-            tags.append(
-                f'  <meta property="article:published_time" content="{jsonld_data["datePublished"]}" />'
-            )
+            tags.append(f'  <meta property="article:published_time" content="{jsonld_data["datePublished"]}" />')
         if "dateModified" in jsonld_data:
-            tags.append(
-                f'  <meta property="article:modified_time" content="{jsonld_data["dateModified"]}" />'
-            )
+            tags.append(f'  <meta property="article:modified_time" content="{jsonld_data["dateModified"]}" />')
 
     # Tags/keywords - use book:tag for root page only
     if not is_chapter and "keywords" in jsonld_data:
@@ -694,10 +680,7 @@ def inject_all_metadata_into_html(
             html_content = f.read()
 
         # Check if metadata is already present (avoid duplicates)
-        if (
-            '<meta property="og:' in html_content
-            or '<script type="application/ld+json">' in html_content
-        ):
+        if '<meta property="og:' in html_content or '<script type="application/ld+json">' in html_content:
             logger.debug("Metadata already present in %s, skipping", html_path.name)
             return True
 
@@ -710,19 +693,15 @@ def inject_all_metadata_into_html(
 
         # 2. JSON-LD structured data
         if jsonld_content:
-            injection_parts.append(
-                f'  <script type="application/ld+json">\n{jsonld_content}\n  </script>'
-            )
+            injection_parts.append(f'  <script type="application/ld+json">\n{jsonld_content}\n  </script>')
 
         # 3. RDF discovery links
         if add_link_elements:
             injection_parts.append(
-                '  <link rel="alternate" type="application/ld+json" '
-                'href="/metadata.jsonld" title="JSON-LD Metadata" />'
+                '  <link rel="alternate" type="application/ld+json" href="/metadata.jsonld" title="JSON-LD Metadata" />'
             )
             injection_parts.append(
-                '  <link rel="alternate" type="application/rdf+xml" '
-                'href="/metadata.rdf" title="RDF/XML Metadata" />'
+                '  <link rel="alternate" type="application/rdf+xml" href="/metadata.rdf" title="RDF/XML Metadata" />'
             )
 
         # Join all parts with newlines
@@ -733,9 +712,7 @@ def inject_all_metadata_into_html(
         injection_point = None
 
         # Try to inject after viewport meta tag (best practice for OpenGraph)
-        viewport_match = re.search(
-            r"(<meta\s+name=\"viewport\"[^>]*>\s*)", html_content, re.IGNORECASE
-        )
+        viewport_match = re.search(r"(<meta\s+name=\"viewport\"[^>]*>\s*)", html_content, re.IGNORECASE)
         if viewport_match:
             injection_point = viewport_match.end()
         else:
@@ -751,18 +728,10 @@ def inject_all_metadata_into_html(
                 logger.warning("No </head> tag found in %s, skipping", html_path.name)
                 return False
             # For </head> injection, add before the tag
-            html_content = (
-                html_content[:injection_point]
-                + f"\n{full_injection}\n"
-                + html_content[injection_point:]
-            )
+            html_content = html_content[:injection_point] + f"\n{full_injection}\n" + html_content[injection_point:]
         else:
             # For after viewport/charset injection, insert at found position
-            html_content = (
-                html_content[:injection_point]
-                + f"\n{full_injection}\n\n"
-                + html_content[injection_point:]
-            )
+            html_content = html_content[:injection_point] + f"\n{full_injection}\n\n" + html_content[injection_point:]
 
         # Write the modified HTML back
         with html_path.open("w", encoding="utf-8") as f:
@@ -929,14 +898,10 @@ def inject_all_metadata(
                     # Check if the redirect page has proper HTML structure
                     if "<html" not in index_content.lower() or "<head" not in index_content.lower():
                         # Minimal redirect without proper structure - create proper HTML
-                        logger.info(
-                            "Minimal redirect detected, creating proper HTML structure with OpenGraph"
-                        )
+                        logger.info("Minimal redirect detected, creating proper HTML structure with OpenGraph")
 
                         # Extract the meta refresh tag
-                        meta_refresh_match = re.search(
-                            r"<meta\s+http-equiv[^>]*>", index_content, re.IGNORECASE
-                        )
+                        meta_refresh_match = re.search(r"<meta\s+http-equiv[^>]*>", index_content, re.IGNORECASE)
                         meta_refresh = meta_refresh_match.group(0) if meta_refresh_match else ""
 
                         # Create proper HTML with OpenGraph metadata and meta refresh
@@ -956,18 +921,12 @@ def inject_all_metadata(
                         # Write the new index.html
                         with index_html.open("w", encoding="utf-8") as f:
                             f.write(new_index_content)
-                        logger.info(
-                            "Successfully created index.html with OpenGraph metadata and redirect"
-                        )
+                        logger.info("Successfully created index.html with OpenGraph metadata and redirect")
                     # Has proper HTML structure, inject normally
-                    elif not inject_all_metadata_into_html(
-                        index_html, og_tags, "", add_link_elements=False
-                    ):
+                    elif not inject_all_metadata_into_html(index_html, og_tags, "", add_link_elements=False):
                         logger.warning("Failed to inject OpenGraph into index.html redirect page")
                     else:
-                        logger.info(
-                            "Successfully injected OpenGraph metadata into index.html redirect page"
-                        )
+                        logger.info("Successfully injected OpenGraph metadata into index.html redirect page")
             except Exception:
                 logger.exception("Error processing index.html redirect page")
 
@@ -998,9 +957,7 @@ def inject_all_metadata(
                 chapter_html_path = _find_path_normalized(build_dir, html_relative)
 
                 if not chapter_html_path:
-                    logger.warning(
-                        "Could not find HTML file for toc entry: %s", toc_file
-                    )
+                    logger.warning("Could not find HTML file for toc entry: %s", toc_file)
                     continue
 
                 # Skip the root page (already processed above)
@@ -1047,9 +1004,7 @@ def inject_all_metadata(
                         "dateModified": jsonld_data.get("dateModified"),
                         "inLanguage": jsonld_data.get("inLanguage"),
                     }
-                    chapter_jsonld = create_chapter_jsonld(
-                        {"name": chapter_name, "url": chapter_url}, jsonld_data
-                    )
+                    chapter_jsonld = create_chapter_jsonld({"name": chapter_name, "url": chapter_url}, jsonld_data)
 
                 # Generate OpenGraph tags for chapter (og:type="article")
                 chapter_og_tags = create_opengraph_meta_tags(
@@ -1062,19 +1017,13 @@ def inject_all_metadata(
 
                 # Convert JSON-LD to formatted string
                 chapter_jsonld_str = json.dumps(chapter_jsonld, ensure_ascii=False, indent=2)
-                chapter_jsonld_str = "\n".join(
-                    "    " + line for line in chapter_jsonld_str.split("\n")
-                )
+                chapter_jsonld_str = "\n".join("    " + line for line in chapter_jsonld_str.split("\n"))
 
                 # Inject both OpenGraph and JSON-LD into chapter HTML
-                if inject_all_metadata_into_html(
-                    chapter_html_path, chapter_og_tags, chapter_jsonld_str
-                ):
+                if inject_all_metadata_into_html(chapter_html_path, chapter_og_tags, chapter_jsonld_str):
                     chapters_injected += 1
                 else:
-                    logger.warning(
-                        "Failed to inject metadata into: %s", chapter_html_path.name
-                    )
+                    logger.warning("Failed to inject metadata into: %s", chapter_html_path.name)
 
             logger.info("Injected metadata into %d chapter pages", chapters_injected)
         elif jsonld_data.get("hasPart"):

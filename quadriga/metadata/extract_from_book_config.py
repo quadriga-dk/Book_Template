@@ -16,6 +16,7 @@ from .utils import (
     get_file_path,
     get_repo_root,
     load_yaml_file,
+    resolve_toc_file,
     save_yaml_file,
 )
 
@@ -89,23 +90,17 @@ def extract_and_update() -> bool | None:
                     continue
 
                 try:
-                    # Get the file path as a Path object
                     file_path_str = chapter["file"]
-                    p = Path(file_path_str)
 
-                    # Ensure the file has an extension (default to .md if none)
-                    if p.suffix not in [".md", ".ipynb"]:
-                        p = p.with_suffix(".md")
-
-                    # Create the full path to the file
-                    full_path = get_file_path(p, repo_root)
+                    # Resolve the _toc.yml entry to an existing file
+                    full_path = resolve_toc_file(file_path_str, repo_root)
 
                     # Check if file exists
                     if not full_path.exists():
                         missing_files.append(str(full_path))
                         logger.warning("Chapter file not found: %s", full_path)
                         # Use filename as fallback title
-                        toc_chapters.append(f"[Missing: {p.stem}]")
+                        toc_chapters.append(f"[Missing: {Path(file_path_str).name}]")
                         continue
 
                     # Extract the chapter title from the file's first heading
@@ -117,7 +112,7 @@ def extract_and_update() -> bool | None:
                     logger.exception("Error processing chapter %s", chapter.get("file", "unknown"))
                     # Add a placeholder with the filename if possible
                     try:
-                        toc_chapters.append(f"[Error: {p.stem}]")
+                        toc_chapters.append(f"[Error: {Path(chapter['file']).name}]")
                     except Exception:
                         toc_chapters.append("[Error: unknown chapter]")
 

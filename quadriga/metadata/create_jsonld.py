@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from .utils import extract_keywords, get_file_path, get_repo_root, load_yaml_file
+from .utils import clean_orcid, extract_keywords, get_doi, get_file_path, get_repo_root, load_yaml_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -39,54 +39,6 @@ def build_jsonld_context() -> dict[str, str]:
         "skos": "http://www.w3.org/2004/02/skos/core#",
         "@vocab": "http://schema.org/",
     }
-
-
-def clean_orcid(orcid_string: str) -> str | None:
-    """
-    Extract ORCID identifier from an ORCID string or URL.
-
-    Args:
-        orcid_string (str): ORCID string which may include URL prefix
-
-    Returns
-    -------
-        str: Clean ORCID identifier (e.g., "0000-0002-1602-6032")
-    """
-    if not orcid_string:
-        return None
-
-    orcid = str(orcid_string)
-    prefixes = ["https://orcid.org/", "http://orcid.org/", "orcid:"]
-    for prefix in prefixes:
-        if orcid.startswith(prefix):
-            orcid = orcid[len(prefix) :]
-            break
-
-    return orcid.strip()
-
-
-def clean_doi(doi_string: str) -> str | None:
-    """
-    Extract DOI identifier from a DOI string or URL.
-
-    Args:
-        doi_string (str): DOI string which may include URL prefix
-
-    Returns
-    -------
-        str: Clean DOI identifier (e.g., "10.5281/zenodo.14970672")
-    """
-    if not doi_string:
-        return None
-
-    doi = str(doi_string)
-    prefixes = ["https://doi.org/", "http://doi.org/", "doi:"]
-    for prefix in prefixes:
-        if doi.startswith(prefix):
-            doi = doi[len(prefix) :]
-            break
-
-    return doi.strip()
 
 
 def transform_person(person_data: Any) -> dict[str, Any]:
@@ -390,16 +342,17 @@ def create_jsonld() -> bool | None:
             logger.info("Added description")
 
         # identifier (DOI) -> schema:identifier (exactMatch)
-        if "identifier" in metadata:
-            clean_doi_id = clean_doi(metadata["identifier"])
-            if clean_doi_id:
-                jsonld["identifier"] = {
-                    "@type": "PropertyValue",
-                    "propertyID": "DOI",
-                    "value": clean_doi_id,
-                    "url": metadata["identifier"],
-                }
-                logger.info("Added DOI identifier: %s", clean_doi_id)
+        doi = get_doi(metadata)
+        if doi:
+            jsonld["identifier"] = {
+                "@type": "PropertyValue",
+                "propertyID": "DOI",
+                "value": doi,
+                "url": f"https://doi.org/{doi}",
+            }
+            logger.info("Added DOI identifier: %s", doi)
+        else:
+            logger.warning("No DOI found in metadata.yml 'identifier' field")
 
         # version -> schema:version (exactMatch)
         if "version" in metadata:
@@ -516,9 +469,7 @@ def create_jsonld() -> bool | None:
 
         # target-group -> schema:audience (closeMatch) and lrmi:educationalAudience (closeMatch)
         if metadata.get("target-group"):
-            jsonld["audience"] = [
-                {"@type": "Audience", "audienceType": group} for group in metadata["target-group"]
-            ]
+            jsonld["audience"] = [{"@type": "Audience", "audienceType": group} for group in metadata["target-group"]]
             logger.info("Added %d target groups", len(jsonld["audience"]))
 
         # time-required -> schema:timeRequired (exactMatch)
