@@ -1,9 +1,9 @@
 """
-Creates a .zenodo.json file from CITATION.cff and metadata.yml.
+Creates a .zenodo.json file from metadata.yml.
 
-This script reads citation data from the 'preferred-citation' section of
-CITATION.cff and additional metadata from metadata.yml to generate a Zenodo
-deposit metadata file following the Zenodo JSON schema.
+metadata.yml is the single source of truth for all metadata. This script
+generates a Zenodo deposit metadata file from it following the Zenodo JSON
+schema.
 
 The upload_type is set to "lesson" as specified for QUADRIGA OERs.
 """
@@ -15,59 +15,18 @@ import logging
 import sys
 from typing import Any
 
-from .utils import extract_keywords, get_file_path, get_repo_root, load_yaml_file
+from .utils import (
+    clean_orcid,
+    extract_keywords,
+    get_content_license,
+    get_file_path,
+    get_languages,
+    get_publication_date,
+    get_repo_root,
+    load_yaml_file,
+)
 
 logger = logging.getLogger(__name__)
-
-
-def clean_doi(doi_string: str) -> str | None:
-    """
-    Extract DOI identifier from a DOI string or URL.
-
-    Args:
-        doi_string (str): DOI string which may include URL prefix
-
-    Returns
-    -------
-        str: Clean DOI identifier (e.g., "10.5281/zenodo.14970672")
-    """
-    if not doi_string:
-        return None
-
-    # Remove common DOI URL prefixes
-    doi = str(doi_string)
-    prefixes = ["https://doi.org/", "http://doi.org/", "doi:"]
-    for prefix in prefixes:
-        if doi.startswith(prefix):
-            doi = doi[len(prefix) :]
-            break
-
-    return doi.strip()
-
-
-def clean_orcid(orcid_string: str) -> str | None:
-    """
-    Extract ORCID identifier from an ORCID string or URL.
-
-    Args:
-        orcid_string (str): ORCID string which may include URL prefix
-
-    Returns
-    -------
-        str: Clean ORCID identifier (e.g., "0000-0002-1602-6032")
-    """
-    if not orcid_string:
-        return None
-
-    # Remove common ORCID URL prefixes
-    orcid = str(orcid_string)
-    prefixes = ["https://orcid.org/", "http://orcid.org/", "orcid:"]
-    for prefix in prefixes:
-        if orcid.startswith(prefix):
-            orcid = orcid[len(prefix) :]
-            break
-
-    return orcid.strip()
 
 
 def format_creators_for_zenodo(authors: list) -> list:
@@ -173,11 +132,9 @@ def format_contributors_for_zenodo(contributors: list | None) -> list:
 
 def create_zenodo_json() -> bool | None:
     """
-    Create a .zenodo.json file from CITATION.cff and metadata.yml.
+    Create a .zenodo.json file from metadata.yml.
 
-    Reads the 'preferred-citation' section from CITATION.cff
-    and combines it with data from metadata.yml to create a Zenodo-compliant
-    metadata file. The upload_type is always set to "lesson" for QUADRIGA OERs.
+    The upload_type is always set to "lesson" for QUADRIGA OERs.
 
     Returns
     -------
@@ -187,26 +144,14 @@ def create_zenodo_json() -> bool | None:
         # Define file paths
         try:
             repo_root = get_repo_root()  # Get repo root
-            citation_cff_path = get_file_path("CITATION.cff", repo_root)
             metadata_path = get_file_path("metadata.yml", repo_root)
             zenodo_json_path = get_file_path(".zenodo.json", repo_root)
         except Exception:
             logger.exception("Failed to resolve file paths")
             return False
 
-        # Check if required files exist
-        if not citation_cff_path.exists():
-            logger.error("CITATION.cff file not found at %s", citation_cff_path)
-            return False
-
         if not metadata_path.exists():
             logger.error("metadata.yml file not found at %s", metadata_path)
-            return False
-
-        # Load CITATION.cff
-        citation_data = load_yaml_file(citation_cff_path)
-        if not citation_data or not isinstance(citation_data, dict):
-            logger.error("Could not load CITATION.cff or invalid format. Exiting.")
             return False
 
         # Load metadata.yml
@@ -215,30 +160,19 @@ def create_zenodo_json() -> bool | None:
             logger.error("Could not load metadata.yml or invalid format. Exiting.")
             return False
 
-        # Extract data from preferred-citation or root
-        if "preferred-citation" in citation_data:
-            logger.info("Using 'preferred-citation' section from CITATION.cff")
-            pref = citation_data.get("preferred-citation")
-            if not isinstance(pref, dict):
-                logger.error("preferred-citation is not a dictionary")
-                return False
-        else:
-            logger.info("No 'preferred-citation' section found, using root data")
-            pref = citation_data
-
         zenodo_metadata: dict[str, Any] = {"upload_type": "lesson"}
 
         # title
-        if "title" in pref:
-            zenodo_metadata["title"] = pref["title"]
-            logger.info("Added title: %s", pref["title"])
+        if "title" in metadata:
+            zenodo_metadata["title"] = metadata["title"]
+            logger.info("Added title: %s", metadata["title"])
         else:
-            logger.error("No title found in CITATION.cff")
+            logger.error("No title found in metadata.yml")
             return False
 
         # creators
-        if pref.get("authors"):
-            creators = format_creators_for_zenodo(pref["authors"])
+        if metadata.get("authors"):
+            creators = format_creators_for_zenodo(metadata["authors"])
             if creators:
                 zenodo_metadata["creators"] = creators
                 logger.info("Added %d creators", len(creators))
@@ -246,7 +180,7 @@ def create_zenodo_json() -> bool | None:
                 logger.error("Could not format any creators from authors")
                 return False
         else:
-            logger.error("No authors found in preferred-citation")
+            logger.error("No authors found in metadata.yml")
             return False
 
         # description
@@ -279,61 +213,38 @@ def create_zenodo_json() -> bool | None:
         logger.info("Added description")
 
         # publication date
-        publication_date = None
-        if "date-modified" in metadata:
-            # Use date-modified from metadata.yml and convert to string if needed
-            date_value = metadata["date-modified"]
-            # Handle both date objects and strings
-            if hasattr(date_value, "isoformat"):
-                # It's a date/datetime object, convert to ISO format string
-                publication_date = date_value.isoformat()
-            else:
-                # It's already a string
-                publication_date = str(date_value)
-            logger.info("Added publication_date from metadata.yml: %s", publication_date)
-        elif "year" in pref:
-            # Fall back to year from CITATION.cff
-            year = str(pref["year"])
-            # Zenodo expects ISO 8601 date format (YYYY-MM-DD)
-            # We use January 1st as default when only year is provided
-            publication_date = f"{year}-01-01"
-            logger.info("Added publication_date from year (fallback): %s", publication_date)
-        else:
-            logger.warning("No publication date or year found")
+        publication_date = get_publication_date(metadata)
         if publication_date:
             zenodo_metadata["publication_date"] = publication_date
+            logger.info("Added publication_date: %s", publication_date)
+        else:
+            logger.warning("No publication date found")
 
         # Note: DOI field is intentionally NOT included in .zenodo.json
         # Zenodo assigns DOIs automatically upon upload/release.
         # Including a self-referencing DOI would be circular and incorrect.
 
         # keywords
-        if pref.get("keywords"):
-            keywords_list = extract_keywords(pref["keywords"])
+        if metadata.get("keywords"):
+            keywords_list = extract_keywords(metadata["keywords"])
             if keywords_list:
                 zenodo_metadata["keywords"] = keywords_list
                 logger.info("Added %d keywords", len(keywords_list))
 
         # license
-        license_id = None
-        if "license" in pref:
-            license_id = pref["license"]
-        elif "copyright" in pref:
-            license_id = pref["copyright"]
+        license_id = get_content_license(metadata)
         if license_id:
-            # Zenodo expects license IDs like "CC-BY-SA-4.0"
+            # Zenodo expects license IDs like "CC-BY-4.0"
             # Clean up common variations
             license_clean = str(license_id).upper().replace("_", "-").replace(" ", "-")
             zenodo_metadata["license"] = license_clean
             logger.info("Added license: %s", license_clean)
 
-        # language
-        if pref.get("languages"):
-            lang = (
-                pref["languages"][0] if isinstance(pref["languages"], list) else pref["languages"]
-            )
-            zenodo_metadata["language"] = lang
-            logger.info("Added language: %s", lang)
+        # language (Zenodo expects ISO 639-2/3 codes, e.g. "deu")
+        languages = get_languages(metadata)
+        if languages:
+            zenodo_metadata["language"] = languages[0]
+            logger.info("Added language: %s", languages[0])
 
         # contributors
         if metadata.get("contributors"):
@@ -344,17 +255,13 @@ def create_zenodo_json() -> bool | None:
 
         # related_identifiers
         related_identifiers = []
-        repo_url = pref.get("repository-code")
+        repo_url = metadata.get("git")
         if repo_url:
-            related_identifiers.append(
-                {"identifier": repo_url, "relation": "isSupplementedBy", "scheme": "url"}
-            )
+            related_identifiers.append({"identifier": repo_url, "relation": "isSupplementedBy", "scheme": "url"})
             logger.info("Added repository URL as related identifier")
-        url = pref.get("url")
+        url = metadata.get("url")
         if url and url != repo_url:
-            related_identifiers.append(
-                {"identifier": url, "relation": "isAlternateIdentifier", "scheme": "url"}
-            )
+            related_identifiers.append({"identifier": url, "relation": "isAlternateIdentifier", "scheme": "url"})
             logger.info("Added URL as related identifier")
 
         if related_identifiers:
@@ -365,9 +272,9 @@ def create_zenodo_json() -> bool | None:
         logger.info("Added QUADRIGA community")
 
         # version
-        if "version" in pref:
-            zenodo_metadata["version"] = str(pref["version"])
-            logger.info("Added version: %s", pref["version"])
+        if "version" in metadata:
+            zenodo_metadata["version"] = str(metadata["version"])
+            logger.info("Added version: %s", metadata["version"])
 
         # write .zenodo.json
         try:

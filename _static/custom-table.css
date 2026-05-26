@@ -7,8 +7,8 @@ div.cell_output table {
 }
 
 
-div.cell_output table tbody tr, 
-div.cell_output table tbody tr th, 
+div.cell_output table tbody tr,
+div.cell_output table tbody tr th,
 div.cell_output table tbody tr td {
     text-align: left !important;
     position: relative;
@@ -85,7 +85,7 @@ div.cell_output tbody tr:hover{
         min-width: 100px;
         font-size: 14px;
     }
-    
+
     div.cell_output table tbody tr:hover td {
         font-size: 13px;
         padding: 10px 6px;

@@ -18,9 +18,7 @@ from quadriga.metadata.utils import get_file_path, load_yaml_file
 
 logger = logging.getLogger(__name__)
 
-QUADRIGA_SCHEMA_URL = (
-    "https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json"
-)
+QUADRIGA_SCHEMA_URL = "https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json"
 
 # Cache directory and max age (24 hours)
 SCHEMA_CACHE_DIR = Path.cwd() / ".schema_cache"
@@ -69,7 +67,7 @@ def _fetch_json(url: str) -> dict:
 
     # Fetch from remote
     try:
-        with urllib.request.urlopen(url, timeout=30) as resp:  # noqa: S310
+        with urllib.request.urlopen(url, timeout=30) as resp:
             data = json.loads(resp.read())
 
         # Try to write to cache (skip silently if not writable, e.g. in Docker)
@@ -89,9 +87,7 @@ def _fetch_json(url: str) -> dict:
         raise
 
 
-def _validate_metadata(
-    metadata: dict, schema_url: str = QUADRIGA_SCHEMA_URL
-) -> tuple[bool, list[str]]:
+def _validate_metadata(metadata: dict, schema_url: str = QUADRIGA_SCHEMA_URL) -> tuple[bool, list[str]]:
     """Validate a metadata dictionary against the QUADRIGA JSON Schema.
 
     Fetches the schema (and any ``$ref`` sub-schemas) fresh from the given URL.
@@ -112,8 +108,7 @@ def _validate_metadata(
         from referencing.jsonschema import DRAFT202012
     except ImportError:
         logger.warning(
-            "jsonschema package not installed – skipping schema validation. "
-            "Install it via: pip install jsonschema"
+            "jsonschema package not installed – skipping schema validation. Install it via: pip install jsonschema"
         )
         return True, []
 

@@ -1,7 +1,13 @@
 # yaml-language-server: $schema=https://citation-file-format.github.io/1.2.0/schema.json
 cff-version: 1.2.0
-version: 0.64.1
 title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
+abstract: Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational
+  Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA
+  als <a href="https://jupyterbook.org">Jupyter Book</a> ein. Diese Empfehlungen und
+  Vorgaben sind einerseits inhaltlicher und didaktischer andererseits technischer
+  Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt
+  (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel
+  bieten zudem Erläuterungen zu Funktionalitäten für Lernende.
 type: software
 message: Please cite this software using the metadata from `preferred-citation` in
   `CITATION.cff`.
@@ -39,7 +45,6 @@ references:
     website: https://github.com/jupyter-book/jupyter-book/graphs/contributors
 preferred-citation:
   year: '2026'
-  version: 0.64.1
   authors: *id001
   title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
   type: book
@@ -51,10 +56,5 @@ preferred-citation:
   - deu
   copyright: CC-BY-SA-4.0
   keywords: *id002
-abstract: Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational
-  Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA
-  als <a href="https://jupyterbook.org">Jupyter Book</a> ein. Diese Empfehlungen und
-  Vorgaben sind einerseits inhaltlicher und didaktischer andererseits technischer
-  Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt
-  (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel
-  bieten zudem Erläuterungen zu Funktionalitäten für Lernende.
+  version: 0.64.1
+version: 0.64.1
