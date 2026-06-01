@@ -2,7 +2,7 @@
 
 H5P-Aktivitaeten koennen in dieser Jupyter Book-Vorlage als statische Inhalte
 ueber GitHub Pages bereitgestellt werden. Die Aktivitaet wird dabei als kleine
-Standalone-HTML-Seite unter `_static/h5p/` abgelegt und anschliessend per
+Standalone-HTML-Seite unter `_static_h5p/h5p/` abgelegt und anschliessend per
 `iframe` in eine Buchseite eingebunden.
 
 ## Ordnerstruktur
@@ -10,7 +10,7 @@ Standalone-HTML-Seite unter `_static/h5p/` abgelegt und anschliessend per
 Legen Sie pro Aktivitaet einen eigenen Ordner an:
 
 ```text
-_static/
+_static_h5p/
   h5p/
     my-activity/
       index.html
@@ -18,9 +18,13 @@ _static/
       dist/
 ```
 
-Die Datei `index.html` kann aus `_static/h5p/_template/index.html` kopiert
+Die Datei `index.html` kann aus `_static_h5p/h5p/_template/index.html` kopiert
 werden. In `content/` liegt der entpackte Inhalt der `.h5p`-Datei; in `dist/`
 liegen die Dateien aus `h5p-standalone`.
+
+Die Inhalte aus `_static_h5p/` werden beim Build in das Wurzelverzeichnis der
+HTML-Ausgabe kopiert. Aus `_static_h5p/h5p/my-activity/` wird deshalb
+`_build/html/h5p/my-activity/`.
 
 ## Einbettung
 
@@ -29,7 +33,7 @@ Auf einer Seite innerhalb eines Unterordners, zum Beispiel in
 
 ```html
 <iframe
-  src="../_static/h5p/my-activity/index.html"
+  src="../h5p/my-activity/index.html"
   title="H5P activity"
   width="100%"
   height="650"
@@ -43,7 +47,7 @@ Auf einer Seite im Wurzelverzeichnis der OER verwenden Sie stattdessen:
 
 ```html
 <iframe
-  src="_static/h5p/my-activity/index.html"
+  src="h5p/my-activity/index.html"
   title="H5P activity"
   width="100%"
   height="650"
@@ -56,7 +60,7 @@ Auf einer Seite im Wurzelverzeichnis der OER verwenden Sie stattdessen:
 GitHub Pages stellt die Aktivitaet nach dem Build unter folgendem Muster bereit:
 
 ```text
-https://quadriga-dk.github.io/Book_Template/_static/h5p/my-activity/index.html
+https://quadriga-dk.github.io/Book_Template/h5p/my-activity/index.html
 ```
 
 ```{admonition} Hinweis
