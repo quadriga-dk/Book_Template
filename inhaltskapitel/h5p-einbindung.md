@@ -28,6 +28,22 @@ HTML-Ausgabe kopiert. Aus `_static_h5p/h5p/my-activity/` wird deshalb
 
 ## Einbettung
 
+Dieses Beispiel laedt ein tatsaechliches `index.html`-Plugin aus
+`_static_h5p/h5p/index-html-plugin/`. Beim HTML-Build wird daraus
+`_build/html/h5p/index-html-plugin/index.html`.
+
+```{raw} html
+<iframe
+  src="../h5p/index-html-plugin/index.html"
+  title="Index.html plugin demo"
+  width="100%"
+  height="430"
+  style="border: 1px solid #d7dee8; border-radius: 6px;"
+  loading="lazy"
+  allowfullscreen>
+</iframe>
+```
+
 Auf einer Seite innerhalb eines Unterordners, zum Beispiel in
 `inhaltskapitel/`, wird die Aktivitaet so eingebunden:
 
