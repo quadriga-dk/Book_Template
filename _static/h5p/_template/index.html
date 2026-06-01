@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>H5P activity</title>
+  <link rel="stylesheet" href="./dist/styles/h5p.css">
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+    }
+
+    #h5p-container {
+      min-height: 320px;
+    }
+  </style>
+  <script src="./dist/main.bundle.js"></script>
+</head>
+<body>
+  <div id="h5p-container"></div>
+  <script>
+    const { H5P } = H5PStandalone;
+
+    new H5P(document.getElementById("h5p-container"), {
+      h5pJsonPath: "./content",
+      frameJs: "./dist/frame.bundle.js",
+      frameCss: "./dist/styles/h5p.css"
+    });
+  </script>
+</body>
+</html>
+
