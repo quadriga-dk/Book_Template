@@ -17,7 +17,6 @@ chapters:
       - file: inhaltskapitel/zweites-unterkapitel.ipynb
       - file: inhaltskapitel/r-beispiel.ipynb
       - file: inhaltskapitel/sparql-beispiel.md
-      - file: inhaltskapitel/h5p-einbindung.md
   - file: reflexion-und-resümee/einleitung.md
     sections:
       - file: reflexion-und-resümee/reflexion.md

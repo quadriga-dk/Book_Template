@@ -82,7 +82,6 @@ sphinx:
   config:
     bibtex_reference_style: author_year
     html_show_copyright: false
-    html_extra_path: ["_static_h5p"]
     html_static_path: ["_static"]
     html_css_files:
       - quadriga.css
