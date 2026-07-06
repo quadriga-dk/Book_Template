@@ -1,5 +1,5 @@
 teachbooks==0.2.3
-sphinx_apa_references==1.0
+sphinx_apa_references @ git+https://github.com/quadriga-dk/Sphinx-APA-References.git@d80f2b6edb18bb3c4c03507fe3e46e8ed1fd8ec6
 jupyter-book==1.0.4
 jupyterquiz==2.8.*
 matplotlib
