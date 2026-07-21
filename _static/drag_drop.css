@@ -154,7 +154,7 @@ html[data-theme='dark'] .reset-button {
 
 .reset-button:hover {
     background: #00305e;
-    color: white;
+    color: white !important;
 }
 
 .feedback {
