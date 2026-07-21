@@ -183,7 +183,7 @@ def create_zenodo_json() -> bool | None:
             logger.error("No authors found in metadata.yml")
             return False
 
-        # description
+        # description - must exist in metadata or schema checks block it
         description = "<p>" + metadata.get("description") + "</p>"
 
         description_base = f"""

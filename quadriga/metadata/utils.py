@@ -552,15 +552,15 @@ def get_content_license(metadata: dict) -> str | None:
     """
     license_data = metadata.get("license")
     if isinstance(license_data, str):
-        return license_data
+        return license_data.replace(" ", "-")
     if isinstance(license_data, dict) and "content" in license_data:
         content = license_data["content"]
         if isinstance(content, str):
-            return content
+            return content.replace(" ", "-")
         if isinstance(content, dict) and "name" in content:
-            return str(content["name"])
+            return str(content["name"]).replace(" ", "-")
         if isinstance(content, list) and content:
-            return str(content[0])
+            return str(content[0]).replace(" ", "-")
     return None
 
 
