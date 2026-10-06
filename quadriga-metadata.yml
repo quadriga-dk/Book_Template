@@ -28,17 +28,20 @@ keywordLIST:
 - en: Data Literacy
   de: Datenkompetenz
 - open-educational-resources
-description: Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational Resources (OER)
-  nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA als <a href="https://jupyterbook.org">Jupyter
-  Book</a> ein. Diese Empfehlungen und Vorgaben sind einerseits inhaltlicher und didaktischer andererseits
-  technischer Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt (Template)
-  für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel bieten zudem Erläuterungen zu
-  Funktionalitäten für Lernende.
-tableOfContents: |-
-  - Einstieg
+description: Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational
+  Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA
+  als <a href="https://jupyterbook.org">Jupyter Book</a> ein. Diese Empfehlungen und
+  Vorgaben sind einerseits inhaltlicher und didaktischer andererseits technischer
+  Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt
+  (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel
+  bieten zudem Erläuterungen zu Funktionalitäten für Lernende.
+tableOfContents: '- Einstieg
+
   - Inhaltskapitel
+
   - Reflexion und Resümee
-  - Epilog
+
+  - Epilog'
 disciplineLIST:
 - übergreifend
 researchObjectTypeLIST:
@@ -73,7 +76,8 @@ chapterLIST:
   description: Ein Kapitel mit Inhalt(sbeispielen).
   url: https://quadriga-dk.github.io/Book_Template/inhaltskapitel/einleitung.html
   timeRequired: PT1H
-  learningGoal: Sie kennen die Bestandteile des Templates und können es für Ihre Bedürfnisse nutzen.
+  learningGoal: Sie kennen die Bestandteile des Templates und können es für Ihre Bedürfnisse
+    nutzen.
   learningObjectiveLIST:
   - description: Kennen und verstehen der Bestandteile des Templates.
     competency: Orientierungswissen
@@ -86,10 +90,11 @@ chapterLIST:
 dateIssued: '2024-05-06'
 dateModified: '2026-05-11'
 version: 0.64.1
-contextOfCreation: |-
-  Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum QUADRIGA erstellt.
+contextOfCreation: 'Die vorliegenden Open Educational Resources wurden durch das Datenkompetenzzentrum
+  QUADRIGA erstellt.
 
-  Förderkennzeichen: 16DKZ2034
+
+  Förderkennzeichen: 16DKZ2034'
 qualityAssurance:
   date: '2026-11-14'
   description: https://doi.org/10.5281/zenodo.18953896

@@ -20,7 +20,7 @@
     "url": "https://doi.org/10.5281/zenodo.14970672"
   },
   "version": "0.64.1",
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "url": "https://quadriga-dk.github.io/Book_Template/",
   "workExample": {
     "@type": "SoftwareSourceCode",
@@ -184,13 +184,13 @@
   "license": [
     {
       "@type": "CreativeWork",
-      "name": "Source Code",
-      "license": "https://opensource.org/licenses/AGPL-3.0"
+      "name": "Content",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
     {
       "@type": "CreativeWork",
-      "name": "Content",
-      "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+      "name": "Source Code",
+      "license": "https://opensource.org/licenses/AGPL-3.0"
     }
   ],
   "hasPart": [

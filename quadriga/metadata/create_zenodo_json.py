@@ -1,9 +1,9 @@
 """
-Creates a .zenodo.json file from metadata.yml.
+Creates a .zenodo.json file from quadriga-metadata.yml.
 
-metadata.yml is the single source of truth for all metadata. This script
-generates a Zenodo deposit metadata file from it following the Zenodo JSON
-schema.
+quadriga-metadata.yml is the single source of truth for all metadata. This
+script generates a Zenodo deposit metadata file from it following the Zenodo
+JSON schema.
 
 The upload_type is set to "lesson" as specified for QUADRIGA OERs.
 """
@@ -16,6 +16,7 @@ import sys
 from typing import Any
 
 from .utils import (
+    METADATA_FILENAME,
     clean_orcid,
     extract_keywords,
     get_content_license,
@@ -34,7 +35,7 @@ def format_creators_for_zenodo(authors: list) -> list:
     Format authors list for Zenodo creators field.
 
     Args:
-        authors (list): List of author dictionaries with 'given-names' and 'family-names'
+        authors (list): List of author dictionaries with 'givenName' and 'familyName'
 
     Returns
     -------
@@ -50,11 +51,11 @@ def format_creators_for_zenodo(authors: list) -> list:
             logger.warning("Author at index %d is not a dictionary: %s", i, author)
             continue
 
-        family = author.get("family-names", "")
-        given = author.get("given-names", "")
+        family = author.get("familyName", "")
+        given = author.get("givenName", "")
 
         if not family and not given:
-            logger.warning("Author at index %d is missing both family-names and given-names", i)
+            logger.warning("Author at index %d is missing both familyName and givenName", i)
             continue
 
         creator = {"name": f"{family}, {given}" if family and given else (family or given)}
@@ -102,10 +103,10 @@ def format_contributors_for_zenodo(contributors: list | None) -> list:
             # Dictionary format with potential additional fields
             contrib = {}
 
-            # Try to construct name from given-names and family-names
-            if "family-names" in contributor or "given-names" in contributor:
-                family = contributor.get("family-names", "")
-                given = contributor.get("given-names", "")
+            # Try to construct name from givenName and familyName
+            if "familyName" in contributor or "givenName" in contributor:
+                family = contributor.get("familyName", "")
+                given = contributor.get("givenName", "")
                 contrib["name"] = f"{family}, {given}" if family and given else (family or given)
             elif "name" in contributor:
                 contrib["name"] = contributor["name"]
@@ -132,7 +133,7 @@ def format_contributors_for_zenodo(contributors: list | None) -> list:
 
 def create_zenodo_json() -> bool | None:
     """
-    Create a .zenodo.json file from metadata.yml.
+    Create a .zenodo.json file from quadriga-metadata.yml.
 
     The upload_type is always set to "lesson" for QUADRIGA OERs.
 
@@ -144,20 +145,20 @@ def create_zenodo_json() -> bool | None:
         # Define file paths
         try:
             repo_root = get_repo_root()  # Get repo root
-            metadata_path = get_file_path("metadata.yml", repo_root)
+            metadata_path = get_file_path(METADATA_FILENAME, repo_root)
             zenodo_json_path = get_file_path(".zenodo.json", repo_root)
         except Exception:
             logger.exception("Failed to resolve file paths")
             return False
 
         if not metadata_path.exists():
-            logger.error("metadata.yml file not found at %s", metadata_path)
+            logger.error("%s file not found at %s", METADATA_FILENAME, metadata_path)
             return False
 
-        # Load metadata.yml
+        # Load quadriga-metadata.yml
         metadata = load_yaml_file(metadata_path)
         if not metadata or not isinstance(metadata, dict):
-            logger.error("Could not load metadata.yml or invalid format. Exiting.")
+            logger.error("Could not load %s or invalid format. Exiting.", METADATA_FILENAME)
             return False
 
         zenodo_metadata: dict[str, Any] = {"upload_type": "lesson"}
@@ -167,28 +168,28 @@ def create_zenodo_json() -> bool | None:
             zenodo_metadata["title"] = metadata["title"]
             logger.info("Added title: %s", metadata["title"])
         else:
-            logger.error("No title found in metadata.yml")
+            logger.error("No title found in %s", METADATA_FILENAME)
             return False
 
         # creators
-        if metadata.get("authors"):
-            creators = format_creators_for_zenodo(metadata["authors"])
+        if metadata.get("authorLIST"):
+            creators = format_creators_for_zenodo(metadata["authorLIST"])
             if creators:
                 zenodo_metadata["creators"] = creators
                 logger.info("Added %d creators", len(creators))
             else:
-                logger.error("Could not format any creators from authors")
+                logger.error("Could not format any creators from authorLIST")
                 return False
         else:
-            logger.error("No authors found in metadata.yml")
+            logger.error("No authors found in %s", METADATA_FILENAME)
             return False
 
         # description - must exist in metadata or schema checks block it
         description = "<p>" + metadata.get("description") + "</p>"
 
         description_base = f"""
-<p>Dieses interaktive Lehrbuch kann als <a href="{metadata.get("url")}" target="_blank">Web-Version</a> verwendet, zur individuellen Anpassung heruntergeladen werden und steht darüber hinaus auch auf <a href="{metadata.get("git")}" target="_blank">GitHub</a> zur Verfügung.</p>
-<p>Die QUADRIGA-OER sind nach einem einheitlichen <a href="https://quadriga-dk.github.io/Book_Template" target="_blank">Template</a> gestaltet, werden nach einem standardisierten Verfahren <a href="{metadata.get("quality-assurance").get("description", "TODO")}" target="_blank">qualitätsgeprüft</a> und mit Metadaten nach dem <a href="https://doi.org/10.5281/zenodo.18184772" target="_blank">QUADRIGA-Metadatenschema</a> ausgezeichnet.</p>
+<p>Dieses interaktive Lehrbuch kann als <a href="{metadata.get("identifierOER")}" target="_blank">Web-Version</a> verwendet, zur individuellen Anpassung heruntergeladen werden und steht darüber hinaus auch auf <a href="{metadata.get("identifierGit")}" target="_blank">GitHub</a> zur Verfügung.</p>
+<p>Die QUADRIGA-OER sind nach einem einheitlichen <a href="https://quadriga-dk.github.io/Book_Template" target="_blank">Template</a> gestaltet, werden nach einem standardisierten Verfahren <a href="{metadata.get("qualityAssurance", {}).get("description", "TODO")}" target="_blank">qualitätsgeprüft</a> und mit Metadaten nach dem <a href="https://doi.org/10.5281/zenodo.18184772" target="_blank">QUADRIGA-Metadatenschema</a> ausgezeichnet.</p>
 <h5>QUADRIGA Datenkompetenzzentrum</h5>
 <p>QUADRIGA ist das Datenkompetenzzentrum der Wissenschaftsregion Berlin-Brandenburg. Für die beiden Anwendungsdomänen Digital Humanities und Verwaltungswissenschaft entstehen unter der Einbindung der Expertise der beiden Disziplinen Informatik und Informationswissenschaft Selbstlernangebote, die als OER in Form von Jupyter Books zur freien Nachnutzung zur Verfügung gestellt werden. Um den Forschungsprozess möglichst realistisch abzubilden, basieren die OER auf Fallstudien, denen wiederum ein eigens für das Projekt entwickeltes <a href="https://doi.org/10.5281/zenodo.14747822" target="_blank">Datenkompetenzframework</a> zugrunde liegt. Die Fallstudien nehmen drei für die Anwendungsdomänen repräsentativen Datentypen in den Blick: Bewegtes Bild, Tabelle und Text.</p>
 <p>Zu den Zielgruppen von QUADRIGA zählen insbesondere promovierende und promovierte Wissenschaftler*innen der genannten Disziplinen, die den Umgang mit digitalen Daten, Methoden und Werkzeugen erlernen und weiterentwickeln wollen.</p>
@@ -225,8 +226,8 @@ def create_zenodo_json() -> bool | None:
         # Including a self-referencing DOI would be circular and incorrect.
 
         # keywords
-        if metadata.get("keywords"):
-            keywords_list = extract_keywords(metadata["keywords"])
+        if metadata.get("keywordLIST"):
+            keywords_list = extract_keywords(metadata["keywordLIST"])
             if keywords_list:
                 zenodo_metadata["keywords"] = keywords_list
                 logger.info("Added %d keywords", len(keywords_list))
@@ -247,19 +248,19 @@ def create_zenodo_json() -> bool | None:
             logger.info("Added language: %s", languages[0])
 
         # contributors
-        if metadata.get("contributors"):
-            contributors = format_contributors_for_zenodo(metadata["contributors"])
+        if metadata.get("contributorLIST"):
+            contributors = format_contributors_for_zenodo(metadata["contributorLIST"])
             if contributors:
                 zenodo_metadata["contributors"] = contributors
                 logger.info("Added %d contributors", len(contributors))
 
         # related_identifiers
         related_identifiers = []
-        repo_url = metadata.get("git")
+        repo_url = metadata.get("identifierGit")
         if repo_url:
             related_identifiers.append({"identifier": repo_url, "relation": "isSupplementedBy", "scheme": "url"})
             logger.info("Added repository URL as related identifier")
-        url = metadata.get("url")
+        url = metadata.get("identifierOER")
         if url and url != repo_url:
             related_identifiers.append({"identifier": url, "relation": "isAlternateIdentifier", "scheme": "url"})
             logger.info("Added URL as related identifier")

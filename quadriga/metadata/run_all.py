@@ -48,9 +48,9 @@ def main() -> bool | None:
             logger.exception("Unexpected error during learning objective extraction")
             return False
 
-        # Validate metadata.yml against QUADRIGA schema first
+        # Validate quadriga-metadata.yml against QUADRIGA schema first
         try:
-            logger.info("Validating metadata.yml against QUADRIGA schema...")
+            logger.info("Validating quadriga-metadata.yml against QUADRIGA schema...")
             if not validate_schema():
                 logger.error("Schema validation failed.")
                 return False
@@ -70,7 +70,7 @@ def main() -> bool | None:
 
         # Execute create_citation_cff with error handling
         try:
-            logger.info("Creating CITATION.cff from metadata.yml...")
+            logger.info("Creating CITATION.cff from quadriga-metadata.yml...")
             if not create_citation_cff():
                 logger.error("Create citation process failed.")
                 return False
@@ -80,7 +80,7 @@ def main() -> bool | None:
 
         # Execute create_bibtex_from_metadata with error handling
         try:
-            logger.info("Creating CITATION.bib from metadata.yml...")
+            logger.info("Creating CITATION.bib from quadriga-metadata.yml...")
             if not create_bibtex_from_metadata():
                 logger.error("Create BibTeX process failed.")
                 return False
@@ -90,7 +90,7 @@ def main() -> bool | None:
 
         # Execute create_zenodo_json with error handling
         try:
-            logger.info("Creating .zenodo.json from metadata.yml...")
+            logger.info("Creating .zenodo.json from quadriga-metadata.yml...")
             if not create_zenodo_json():
                 logger.error("Create Zenodo JSON process failed.")
                 return False
@@ -100,7 +100,7 @@ def main() -> bool | None:
 
         # Execute create_jsonld with error handling
         try:
-            logger.info("Creating metadata.jsonld from metadata.yml...")
+            logger.info("Creating quadriga-metadata.jsonld from quadriga-metadata.yml...")
             if not create_jsonld():
                 logger.error("Create JSON-LD process failed.")
                 return False
@@ -110,7 +110,7 @@ def main() -> bool | None:
 
         # Execute create_rdfxml with error handling
         try:
-            logger.info("Creating metadata.rdf from metadata.yml...")
+            logger.info("Creating quadriga-metadata.rdf from quadriga-metadata.yml...")
             if not create_rdfxml():
                 logger.error("Create RDF/XML process failed.")
                 return False

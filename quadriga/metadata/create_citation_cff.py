@@ -1,8 +1,8 @@
 """
-Generate the CITATION.cff file from metadata.yml.
+Generate the CITATION.cff file from quadriga-metadata.yml.
 
-metadata.yml is the single source of truth for all metadata. This script
-rebuilds CITATION.cff from it completely on every run — manual edits to
+quadriga-metadata.yml is the single source of truth for all metadata. This
+script rebuilds CITATION.cff from it completely on every run — manual edits to
 CITATION.cff will be overwritten.
 
 The generated file contains a root citation (CFF type 'software', as required
@@ -18,6 +18,7 @@ import sys
 from pathlib import Path
 
 from .utils import (
+    METADATA_FILENAME,
     extract_keywords,
     get_content_license,
     get_doi,
@@ -34,30 +35,36 @@ logger = logging.getLogger(__name__)
 
 def _cff_person(person: dict) -> dict:
     """
-    Convert a metadata.yml author/contributor entry to a CFF person.
+    Convert a quadriga-metadata.yml author/contributor entry to a CFF person.
 
-    Copies only the fields CFF understands (drops e.g. 'credit').
+    Copies only the fields CFF understands (drops e.g. 'creditLIST') and maps
+    the v2.0.0 camelCase names onto the CFF kebab-case names.
 
     Args:
-        person: Author or contributor dictionary from metadata.yml
+        person: Author or contributor dictionary from quadriga-metadata.yml
 
     Returns
     -------
         dict: CFF person entry
     """
     cff_person = {}
-    for key in ("given-names", "family-names", "orcid", "affiliation"):
-        if key in person:
-            cff_person[key] = person[key]
+    for src, dst in (
+        ("givenName", "given-names"),
+        ("familyName", "family-names"),
+        ("orcid", "orcid"),
+        ("affiliation", "affiliation"),
+    ):
+        if src in person:
+            cff_person[dst] = person[src]
     return cff_person
 
 
 def build_citation_data(metadata: dict) -> dict:
     """
-    Build the complete CITATION.cff data structure from metadata.yml.
+    Build the complete CITATION.cff data structure from quadriga-metadata.yml.
 
     Args:
-        metadata: Parsed metadata.yml data
+        metadata: Parsed quadriga-metadata.yml data
 
     Returns
     -------
@@ -65,17 +72,19 @@ def build_citation_data(metadata: dict) -> dict:
     """
     title = metadata.get("title", "Untitled")
     if title == "Untitled":
-        logger.warning("No title found in metadata.yml, using 'Untitled'")
+        logger.warning("No title found in %s, using 'Untitled'", METADATA_FILENAME)
 
-    authors = [person for person in (_cff_person(a) for a in metadata.get("authors", [])) if person]
+    authors = [
+        person for person in (_cff_person(a) for a in metadata.get("authorLIST", [])) if person
+    ]
     if not authors:
-        logger.warning("No authors found in metadata.yml")
+        logger.warning("No authors found in %s", METADATA_FILENAME)
         authors = [{"name": "Unknown"}]
 
-    keywords = extract_keywords(metadata.get("keywords"))
+    keywords = extract_keywords(metadata.get("keywordLIST"))
     doi = get_doi(metadata)
     if not doi:
-        logger.warning("No DOI found in metadata.yml 'identifier' field")
+        logger.warning("No DOI found in %s 'identifier' field", METADATA_FILENAME)
     license_id = get_content_license(metadata)
     year = get_publication_year(metadata)
     languages = get_languages(metadata)
@@ -95,11 +104,11 @@ def build_citation_data(metadata: dict) -> dict:
     if doi:
         citation_data["identifiers"] = [{"type": "doi", "value": doi, "description": "Zenodo"}]
 
-    if "git" in metadata:
-        citation_data["repository-code"] = metadata["git"]
+    if "identifierGit" in metadata:
+        citation_data["repository-code"] = metadata["identifierGit"]
 
-    if "url" in metadata:
-        citation_data["url"] = metadata["url"]
+    if "identifierOER" in metadata:
+        citation_data["url"] = metadata["identifierOER"]
 
     if keywords:
         citation_data["keywords"] = keywords
@@ -108,7 +117,7 @@ def build_citation_data(metadata: dict) -> dict:
         citation_data["license"] = license_id
 
     # QUADRIGA OERs are built with Jupyter Book — cite it as a reference
-    if metadata.get("learning-resource-type") == "Jupyter Book":
+    if metadata.get("learningResourceType") == "Jupyter Book":
         citation_data["references"] = [
             {
                 "title": "Jupyter Book",
@@ -133,10 +142,10 @@ def build_citation_data(metadata: dict) -> dict:
     preferred_citation["type"] = "book"
     if doi:
         preferred_citation["doi"] = doi
-    if "url" in metadata:
-        preferred_citation["url"] = metadata["url"]
-    if "git" in metadata:
-        preferred_citation["repository-code"] = metadata["git"]
+    if "identifierOER" in metadata:
+        preferred_citation["url"] = metadata["identifierOER"]
+    if "identifierGit" in metadata:
+        preferred_citation["repository-code"] = metadata["identifierGit"]
     if license_id:
         preferred_citation["license"] = license_id
     if languages:
@@ -158,7 +167,7 @@ def build_citation_data(metadata: dict) -> dict:
 
 def create_citation_cff() -> bool:
     """
-    Generate the CITATION.cff file from metadata.yml.
+    Generate the CITATION.cff file from quadriga-metadata.yml.
 
     Returns
     -------
@@ -168,22 +177,22 @@ def create_citation_cff() -> bool:
         # Define file paths
         try:
             repo_root = get_file_path("")  # Get repo root by providing empty relative path
-            metadata_path = get_file_path("metadata.yml", repo_root)
+            metadata_path = get_file_path(METADATA_FILENAME, repo_root)
             citation_cff_path = get_file_path("CITATION.cff", repo_root)
         except Exception:
             logger.exception("Failed to resolve file paths")
             return False
 
-        # metadata.yml must exist
+        # quadriga-metadata.yml must exist
         if not Path(metadata_path).exists():
-            logger.error("Required file metadata.yml not found at %s", metadata_path)
+            logger.error("Required file %s not found at %s", METADATA_FILENAME, metadata_path)
             return False
 
-        # Load metadata.yml
+        # Load quadriga-metadata.yml
         metadata = load_yaml_file(metadata_path)
 
         if not metadata or not isinstance(metadata, dict):
-            logger.error("Could not load metadata.yml or invalid format. Exiting.")
+            logger.error("Could not load %s or invalid format. Exiting.", METADATA_FILENAME)
             return False
 
         citation_data = build_citation_data(metadata)

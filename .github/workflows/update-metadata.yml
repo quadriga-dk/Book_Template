@@ -64,7 +64,7 @@ jobs:
       - name: Stage metadata files
         run: |
           # Add all metadata files that exist (handles both new and modified files)
-          for file in metadata.yml CITATION.bib CITATION.cff .zenodo.json metadata.jsonld metadata.rdf; do
+          for file in quadriga-metadata.yml CITATION.bib CITATION.cff .zenodo.json quadriga-metadata.jsonld quadriga-metadata.rdf; do
             [ -f "$file" ] && git add "$file"
           done
 
