@@ -1,9 +1,9 @@
 """
-Creates an RDF/XML file from metadata.yml using QUADRIGA schema x-mappings.
+Creates an RDF/XML file from quadriga-metadata.yml using QUADRIGA schema x-mappings.
 
-This script reads metadata from 'metadata.yml' and transforms it into RDF/XML
-format using the x-mappings defined in the QUADRIGA schema. The output follows
-Schema.org, Dublin Core, LRMI, and other standard vocabularies.
+This script reads metadata from 'quadriga-metadata.yml' and transforms it into
+RDF/XML format using the x-mappings defined in the QUADRIGA v2.0.0 schema. The
+output follows Schema.org, Dublin Core, LRMI, and other standard vocabularies.
 
 The RDF/XML file provides machine-readable linked data that can be consumed by
 semantic web applications, triple stores, and other RDF-aware systems.
@@ -26,7 +26,15 @@ from rdflib import (  # type: ignore[import-not-found]
 )
 from rdflib.namespace import DCTERMS, SKOS, XSD  # type: ignore[import-not-found]
 
-from .utils import clean_orcid, extract_keywords, get_doi, get_file_path, get_repo_root, load_yaml_file
+from .utils import (
+    METADATA_FILENAME,
+    clean_orcid,
+    extract_keywords,
+    get_doi,
+    get_file_path,
+    get_repo_root,
+    load_yaml_file,
+)
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -60,9 +68,9 @@ def add_person(graph: Graph, person_data: Any, base_uri: str, person_type: str, 
     Add a person (author or contributor) to the RDF graph.
 
     Uses x-mappings:
-    - author/contributor -> schema:Person
-    - given-names -> schema:givenName
-    - family-names -> schema:familyName
+    - authorLIST/contributorLIST -> schema:Person
+    - givenName -> schema:givenName
+    - familyName -> schema:familyName
     - orcid -> schema:identifier
     - affiliation -> schema:affiliation
 
@@ -85,18 +93,18 @@ def add_person(graph: Graph, person_data: Any, base_uri: str, person_type: str, 
     person_uri = URIRef(f"{base_uri}#{person_type}_{index}")
     graph.add((person_uri, RDF.type, SCHEMA.Person))
 
-    # given-names -> schema:givenName (exactMatch)
-    if "given-names" in person_data:
-        graph.add((person_uri, SCHEMA.givenName, Literal(person_data["given-names"])))
+    # givenName -> schema:givenName (exactMatch)
+    if "givenName" in person_data:
+        graph.add((person_uri, SCHEMA.givenName, Literal(person_data["givenName"])))
 
-    # family-names -> schema:familyName (exactMatch)
-    if "family-names" in person_data:
-        graph.add((person_uri, SCHEMA.familyName, Literal(person_data["family-names"])))
+    # familyName -> schema:familyName (exactMatch)
+    if "familyName" in person_data:
+        graph.add((person_uri, SCHEMA.familyName, Literal(person_data["familyName"])))
 
     # Construct full name
-    if "given-names" in person_data or "family-names" in person_data:
-        given = person_data.get("given-names", "")
-        family = person_data.get("family-names", "")
+    if "givenName" in person_data or "familyName" in person_data:
+        given = person_data.get("givenName", "")
+        family = person_data.get("familyName", "")
         full_name = f"{given} {family}".strip()
         graph.add((person_uri, SCHEMA.name, Literal(full_name)))
 
@@ -120,7 +128,7 @@ def add_person(graph: Graph, person_data: Any, base_uri: str, person_type: str, 
         graph.add((org_node, SCHEMA.name, Literal(person_data["affiliation"])))
         graph.add((person_uri, SCHEMA.affiliation, org_node))
 
-    # Note: CRediT roles (credit field) are not included in RDF
+    # Note: CRediT roles (creditLIST field) are not included in RDF
     # because schema.org does not have a standard property for contributor roles
 
     return person_uri
@@ -133,9 +141,9 @@ def add_learning_objective(
     Add a learning objective to the RDF graph as an AlignmentObject.
 
     Uses x-mappings:
-    - learning-objective -> schema:teaches / lrmi:teaches (closeMatch)
+    - description -> schema:teaches / lrmi:teaches (closeMatch)
     - competency -> maps to modalia:Skill
-    - blooms-category -> part of educational alignment
+    - bloomsCategory -> part of educational alignment
     - assessment -> lrmi:assesses / schema:assesses (closeMatch)
 
     Args:
@@ -155,9 +163,9 @@ def add_learning_objective(
     obj_uri = URIRef(f"{base_uri}#chapter_{chapter_index}_objective_{obj_index}")
     graph.add((obj_uri, RDF.type, SCHEMA.AlignmentObject))
 
-    # learning-objective text
-    if "learning-objective" in objective_data:
-        graph.add((obj_uri, SCHEMA.targetName, Literal(objective_data["learning-objective"])))
+    # description -> learning objective text
+    if "description" in objective_data:
+        graph.add((obj_uri, SCHEMA.targetName, Literal(objective_data["description"])))
 
     # Add competency framework information
     descriptions = []
@@ -172,12 +180,12 @@ def add_learning_objective(
         descriptions.append(f"Competency: {objective_data['competency']}")
 
     # Add Bloom's taxonomy level
-    if "blooms-category" in objective_data:
-        descriptions.append(f"Bloom's: {objective_data['blooms-category']}")
+    if "bloomsCategory" in objective_data:
+        descriptions.append(f"Bloom's: {objective_data['bloomsCategory']}")
 
     # Add data flow
-    if "data-flow" in objective_data:
-        descriptions.append(f"Data Flow: {objective_data['data-flow']}")
+    if "dataFlow" in objective_data:
+        descriptions.append(f"Data Flow: {objective_data['dataFlow']}")
 
     # Combine descriptions
     if descriptions:
@@ -199,9 +207,9 @@ def add_chapter(graph: Graph, chapter_data: Any, base_uri: str, chapter_index: i
     - title -> schema:name (exactMatch)
     - description -> schema:description (exactMatch)
     - url -> schema:url (exactMatch)
-    - time-required -> schema:timeRequired (exactMatch)
-    - learning-goal -> schema:teaches / lrmi:teaches (closeMatch)
-    - learning-objectives -> schema:teaches / lrmi:teaches (closeMatch)
+    - timeRequired -> schema:timeRequired (exactMatch)
+    - learningGoal -> schema:teaches / lrmi:teaches (closeMatch)
+    - learningObjectiveLIST -> schema:teaches / lrmi:teaches (closeMatch)
 
     Args:
         graph: RDF graph to add triples to
@@ -231,17 +239,17 @@ def add_chapter(graph: Graph, chapter_data: Any, base_uri: str, chapter_index: i
     if "url" in chapter_data:
         graph.add((chapter_uri, SCHEMA.url, URIRef(chapter_data["url"])))
 
-    # time-required -> schema:timeRequired (exactMatch)
-    if "time-required" in chapter_data:
-        graph.add((chapter_uri, SCHEMA.timeRequired, Literal(chapter_data["time-required"])))
+    # timeRequired -> schema:timeRequired (exactMatch)
+    if "timeRequired" in chapter_data:
+        graph.add((chapter_uri, SCHEMA.timeRequired, Literal(chapter_data["timeRequired"])))
 
-    # learning-goal -> schema:teaches / lrmi:teaches (closeMatch)
-    if "learning-goal" in chapter_data:
-        graph.add((chapter_uri, SCHEMA.teaches, Literal(chapter_data["learning-goal"])))
+    # learningGoal -> schema:teaches / lrmi:teaches (closeMatch)
+    if "learningGoal" in chapter_data:
+        graph.add((chapter_uri, SCHEMA.teaches, Literal(chapter_data["learningGoal"])))
 
-    # learning-objectives -> educationalAlignment with AlignmentObject
-    if chapter_data.get("learning-objectives"):
-        for obj_index, obj_data in enumerate(chapter_data["learning-objectives"]):
+    # learningObjectiveLIST -> educationalAlignment with AlignmentObject
+    if chapter_data.get("learningObjectiveLIST"):
+        for obj_index, obj_data in enumerate(chapter_data["learningObjectiveLIST"]):
             obj_uri = add_learning_objective(graph, obj_data, base_uri, chapter_index, obj_index)
             if obj_uri:
                 graph.add((chapter_uri, SCHEMA.educationalAlignment, obj_uri))
@@ -260,12 +268,14 @@ def add_chapter(graph: Graph, chapter_data: Any, base_uri: str, chapter_index: i
 
 def create_rdfxml() -> bool | None:
     """
-    Create a metadata.rdf file from metadata.yml using QUADRIGA schema x-mappings.
+    Create a quadriga-metadata.rdf file from quadriga-metadata.yml using QUADRIGA
+    schema x-mappings.
 
-    The function reads metadata from metadata.yml and transforms it into RDF/XML
-    format using the x-mappings defined in the QUADRIGA schema. The output uses
-    Schema.org as the primary vocabulary, with additional terms from Dublin Core,
-    LRMI (Learning Resource Metadata Initiative), and other standards.
+    The function reads metadata from quadriga-metadata.yml and transforms it into
+    RDF/XML format using the x-mappings defined in the QUADRIGA v2.0.0 schema.
+    The output uses Schema.org as the primary vocabulary, with additional terms
+    from Dublin Core, LRMI (Learning Resource Metadata Initiative), and other
+    standards.
 
     Returns
     -------
@@ -275,21 +285,21 @@ def create_rdfxml() -> bool | None:
         # Define file paths
         try:
             repo_root = get_repo_root()
-            metadata_path = get_file_path("metadata.yml", repo_root)
-            rdf_path = get_file_path("metadata.rdf", repo_root)
+            metadata_path = get_file_path(METADATA_FILENAME, repo_root)
+            rdf_path = get_file_path("quadriga-metadata.rdf", repo_root)
         except Exception:
             logger.exception("Failed to resolve file paths")
             return False
 
-        # Check if metadata.yml exists
+        # Check if quadriga-metadata.yml exists
         if not Path(metadata_path).exists():
-            logger.error("metadata.yml file not found at %s", metadata_path)
+            logger.error("%s file not found at %s", METADATA_FILENAME, metadata_path)
             return False
 
-        # Load metadata.yml
+        # Load quadriga-metadata.yml
         metadata = load_yaml_file(metadata_path)
         if not metadata or not isinstance(metadata, dict):
-            logger.error("Could not load metadata.yml or invalid format. Exiting.")
+            logger.error("Could not load %s or invalid format. Exiting.", METADATA_FILENAME)
             return False
 
         # Create RDF graph
@@ -301,7 +311,7 @@ def create_rdfxml() -> bool | None:
         graph.bind("skos", SKOS)
 
         # Create base URI for the resource
-        base_uri = metadata.get("url", metadata.get("identifier", "http://example.org/book"))
+        base_uri = metadata.get("identifierOER", metadata.get("identifier", "http://example.org/book"))
         if isinstance(base_uri, str) and not base_uri.startswith("http"):
             base_uri = f"http://example.org/{base_uri}"
 
@@ -318,7 +328,7 @@ def create_rdfxml() -> bool | None:
             graph.add((resource_uri, SCHEMA.name, Literal(metadata["title"])))
             logger.info("Added title: %s", metadata["title"])
         else:
-            logger.warning("No title found in metadata.yml")
+            logger.warning("No title found in %s", METADATA_FILENAME)
 
         # description -> schema:description (exactMatch)
         if "description" in metadata:
@@ -337,37 +347,37 @@ def create_rdfxml() -> bool | None:
             graph.add((resource_uri, SCHEMA.identifier, doi_node))
             logger.info("Added DOI identifier: %s", doi)
         else:
-            logger.warning("No DOI found in metadata.yml 'identifier' field")
+            logger.warning("No DOI found in %s 'identifier' field", METADATA_FILENAME)
 
         # version -> schema:version (exactMatch)
         if "version" in metadata:
             graph.add((resource_uri, SCHEMA.version, Literal(str(metadata["version"]))))
             logger.info("Added version: %s", metadata["version"])
 
-        # schema-version -> schema:schemaVersion
-        if "schema-version" in metadata:
-            graph.add((resource_uri, SCHEMA.schemaVersion, Literal(str(metadata["schema-version"]))))
-            logger.info("Added schema version: %s", metadata["schema-version"])
+        # schemaVersion -> schema:schemaVersion
+        if "schemaVersion" in metadata:
+            graph.add((resource_uri, SCHEMA.schemaVersion, Literal(str(metadata["schemaVersion"]))))
+            logger.info("Added schema version: %s", metadata["schemaVersion"])
 
-        # url -> schema:url (exactMatch)
-        if "url" in metadata:
-            graph.add((resource_uri, SCHEMA.url, URIRef(metadata["url"])))
-            logger.info("Added URL: %s", metadata["url"])
+        # identifierOER -> schema:url (exactMatch)
+        if "identifierOER" in metadata:
+            graph.add((resource_uri, SCHEMA.url, URIRef(metadata["identifierOER"])))
+            logger.info("Added URL: %s", metadata["identifierOER"])
 
-        # git -> schema:workExample as SoftwareSourceCode
-        if "git" in metadata:
+        # identifierGit -> schema:codeRepository as SoftwareSourceCode
+        if "identifierGit" in metadata:
             repo_node = URIRef(f"{base_uri}#repository")
             graph.add((repo_node, RDF.type, SCHEMA.SoftwareSourceCode))
             graph.add((repo_node, SCHEMA.name, Literal("Source Code Repository")))
-            graph.add((repo_node, SCHEMA.codeRepository, URIRef(metadata["git"])))
+            graph.add((repo_node, SCHEMA.codeRepository, URIRef(metadata["identifierGit"])))
             graph.add((resource_uri, SCHEMA.workExample, repo_node))
-            logger.info("Added code repository as workExample: %s", metadata["git"])
+            logger.info("Added code repository as workExample: %s", metadata["identifierGit"])
 
         # ===== DATES =====
 
-        # date-issued -> schema:datePublished (exactMatch)
-        if "date-issued" in metadata:
-            date_value = metadata["date-issued"]
+        # dateIssued -> schema:datePublished (exactMatch)
+        if "dateIssued" in metadata:
+            date_value = metadata["dateIssued"]
             if hasattr(date_value, "isoformat"):
                 date_str = date_value.isoformat()
             else:
@@ -375,9 +385,9 @@ def create_rdfxml() -> bool | None:
             graph.add((resource_uri, SCHEMA.datePublished, Literal(date_str, datatype=XSD.date)))
             logger.info("Added datePublished: %s", date_str)
 
-        # date-modified -> schema:dateModified (exactMatch)
-        if "date-modified" in metadata:
-            date_value = metadata["date-modified"]
+        # dateModified -> schema:dateModified (exactMatch)
+        if "dateModified" in metadata:
+            date_value = metadata["dateModified"]
             if hasattr(date_value, "isoformat"):
                 date_str = date_value.isoformat()
             else:
@@ -387,23 +397,23 @@ def create_rdfxml() -> bool | None:
 
         # ===== PEOPLE =====
 
-        # authors -> schema:author (exactMatch)
-        if metadata.get("authors"):
-            for i, author in enumerate(metadata["authors"]):
+        # authorLIST -> schema:author (exactMatch)
+        if metadata.get("authorLIST"):
+            for i, author in enumerate(metadata["authorLIST"]):
                 person_uri = add_person(graph, author, base_uri, "author", i)
                 if person_uri:
                     graph.add((resource_uri, SCHEMA.author, person_uri))
-            logger.info("Added %d authors", len(metadata["authors"]))
+            logger.info("Added %d authors", len(metadata["authorLIST"]))
         else:
-            logger.warning("No authors found in metadata.yml")
+            logger.warning("No authors found in %s", METADATA_FILENAME)
 
-        # contributors -> schema:contributor (exactMatch)
-        if metadata.get("contributors"):
-            for i, contributor in enumerate(metadata["contributors"]):
+        # contributorLIST -> schema:contributor (exactMatch)
+        if metadata.get("contributorLIST"):
+            for i, contributor in enumerate(metadata["contributorLIST"]):
                 person_uri = add_person(graph, contributor, base_uri, "contributor", i)
                 if person_uri:
                     graph.add((resource_uri, SCHEMA.contributor, person_uri))
-            logger.info("Added %d contributors", len(metadata["contributors"]))
+            logger.info("Added %d contributors", len(metadata["contributorLIST"]))
 
         # ===== LANGUAGE & KEYWORDS =====
 
@@ -418,9 +428,9 @@ def create_rdfxml() -> bool | None:
                 graph.add((resource_uri, SCHEMA.inLanguage, Literal(language_value)))
                 logger.info("Added language: %s", language_value)
 
-        # keywords -> schema:keywords (exactMatch) and schema:about (closeMatch)
-        if metadata.get("keywords"):
-            keywords_list = extract_keywords(metadata["keywords"])
+        # keywordLIST -> schema:keywords (exactMatch) and schema:about (closeMatch)
+        if metadata.get("keywordLIST"):
+            keywords_list = extract_keywords(metadata["keywordLIST"])
             if keywords_list:
                 for keyword in keywords_list:
                     graph.add((resource_uri, SCHEMA.keywords, Literal(keyword)))
@@ -433,109 +443,91 @@ def create_rdfxml() -> bool | None:
 
         # ===== EDUCATIONAL METADATA =====
 
-        # discipline -> schema:about (closeMatch)
-        if metadata.get("discipline"):
-            for i, disc in enumerate(metadata["discipline"]):
+        # disciplineLIST -> schema:about (closeMatch)
+        if metadata.get("disciplineLIST"):
+            for i, disc in enumerate(metadata["disciplineLIST"]):
                 disc_node = URIRef(f"{base_uri}#discipline_{i}")
                 graph.add((disc_node, RDF.type, SCHEMA.Thing))
                 graph.add((disc_node, SCHEMA.name, Literal(disc)))
                 graph.add((resource_uri, SCHEMA.about, disc_node))
-            logger.info("Added %d disciplines", len(metadata["discipline"]))
+            logger.info("Added %d disciplines", len(metadata["disciplineLIST"]))
 
-        # research-object-type -> schema:about (broadMatch)
-        if metadata.get("research-object-type"):
-            for i, obj_type in enumerate(metadata["research-object-type"]):
+        # researchObjectTypeLIST -> schema:about (broadMatch)
+        if metadata.get("researchObjectTypeLIST"):
+            for i, obj_type in enumerate(metadata["researchObjectTypeLIST"]):
                 obj_node = URIRef(f"{base_uri}#research_object_{i}")
                 graph.add((obj_node, RDF.type, SCHEMA.Thing))
                 graph.add((obj_node, SCHEMA.name, Literal(obj_type)))
                 graph.add((resource_uri, SCHEMA.about, obj_node))
-            logger.info("Added %d research object types", len(metadata["research-object-type"]))
+            logger.info("Added %d research object types", len(metadata["researchObjectTypeLIST"]))
 
-        # target-group -> schema:audience (closeMatch)
-        if metadata.get("target-group"):
-            for i, group in enumerate(metadata["target-group"]):
+        # targetGroupLIST -> schema:audience (closeMatch)
+        if metadata.get("targetGroupLIST"):
+            for i, group in enumerate(metadata["targetGroupLIST"]):
                 audience_node = URIRef(f"{base_uri}#audience_{i}")
                 graph.add((audience_node, RDF.type, SCHEMA.Audience))
                 graph.add((audience_node, SCHEMA.audienceType, Literal(group)))
                 graph.add((resource_uri, SCHEMA.audience, audience_node))
-            logger.info("Added %d target groups", len(metadata["target-group"]))
+            logger.info("Added %d target groups", len(metadata["targetGroupLIST"]))
 
-        # time-required -> schema:timeRequired (exactMatch)
-        if "time-required" in metadata:
-            graph.add((resource_uri, SCHEMA.timeRequired, Literal(metadata["time-required"])))
-            logger.info("Added time required: %s", metadata["time-required"])
+        # timeRequired -> schema:timeRequired (exactMatch)
+        if "timeRequired" in metadata:
+            graph.add((resource_uri, SCHEMA.timeRequired, Literal(metadata["timeRequired"])))
+            logger.info("Added time required: %s", metadata["timeRequired"])
 
         # ===== LICENSE =====
 
-        # license -> schema:license (exactMatch)
-        if "license" in metadata:
-            license_data = metadata["license"]
-            if isinstance(license_data, str):
-                graph.add((resource_uri, SCHEMA.license, URIRef(license_data)))
-            elif isinstance(license_data, dict):
-                # Code license
-                if "code" in license_data:
-                    code_license_node = URIRef(f"{base_uri}#license_code")
-                    graph.add((code_license_node, RDF.type, SCHEMA.CreativeWork))
-                    graph.add((code_license_node, SCHEMA.name, Literal("Source Code")))
-                    graph.add((code_license_node, SCHEMA.license, URIRef(license_data["code"])))
-                    graph.add((resource_uri, SCHEMA.license, code_license_node))
+        # license -> schema:license; licenseCode -> schema:license (code)
+        licenses = []
+        if metadata.get("license"):
+            licenses.append(("Content", metadata["license"]))
+        if metadata.get("licenseCode"):
+            licenses.append(("Source Code", metadata["licenseCode"]))
 
-                # Content license
-                if "content" in license_data:
-                    content_license_data = license_data["content"]
-                    content_license_node = URIRef(f"{base_uri}#license_content")
-                    graph.add((content_license_node, RDF.type, SCHEMA.CreativeWork))
-                    graph.add((content_license_node, SCHEMA.name, Literal("Content")))
-                    if isinstance(content_license_data, dict):
-                        if "url" in content_license_data:
-                            graph.add(
-                                (
-                                    content_license_node,
-                                    SCHEMA.license,
-                                    URIRef(content_license_data["url"]),
-                                )
-                            )
-                    elif isinstance(content_license_data, str):
-                        graph.add((content_license_node, SCHEMA.license, URIRef(content_license_data)))
-                    graph.add((resource_uri, SCHEMA.license, content_license_node))
+        for i, (name, license_url) in enumerate(licenses):
+            license_node = URIRef(f"{base_uri}#license_{i}")
+            graph.add((license_node, RDF.type, SCHEMA.CreativeWork))
+            graph.add((license_node, SCHEMA.name, Literal(name)))
+            graph.add((license_node, SCHEMA.license, URIRef(license_url)))
+            graph.add((resource_uri, SCHEMA.license, license_node))
+        if licenses:
             logger.info("Added license information")
 
         # ===== CHAPTERS (hasPart) =====
 
-        # chapters -> schema:hasPart (closeMatch)
-        if metadata.get("chapters"):
-            for i, chapter in enumerate(metadata["chapters"]):
+        # chapterLIST -> schema:hasPart (closeMatch)
+        if metadata.get("chapterLIST"):
+            for i, chapter in enumerate(metadata["chapterLIST"]):
                 chapter_uri = add_chapter(graph, chapter, base_uri, i)
                 if chapter_uri:
                     graph.add((resource_uri, SCHEMA.hasPart, chapter_uri))
-            logger.info("Added %d chapters", len(metadata["chapters"]))
+            logger.info("Added %d chapters", len(metadata["chapterLIST"]))
 
-        # table-of-contents -> dcterms:tableOfContents (exactMatch)
-        if "table-of-contents" in metadata:
-            graph.add((resource_uri, DCTERMS.tableOfContents, Literal(metadata["table-of-contents"])))
+        # tableOfContents -> dcterms:tableOfContents (exactMatch)
+        if "tableOfContents" in metadata:
+            graph.add((resource_uri, DCTERMS.tableOfContents, Literal(metadata["tableOfContents"])))
             logger.info("Added table of contents")
 
         # ===== ADDITIONAL METADATA =====
 
-        # context-of-creation -> schema:funding (adapted mapping)
-        if "context-of-creation" in metadata:
-            graph.add((resource_uri, SCHEMA.funding, Literal(metadata["context-of-creation"])))
+        # contextOfCreation -> schema:funding (adapted mapping)
+        if "contextOfCreation" in metadata:
+            graph.add((resource_uri, SCHEMA.funding, Literal(metadata["contextOfCreation"])))
             logger.info("Added context of creation")
 
-        # learning-resource-type -> schema:learningResourceType (closeMatch)
-        #                        -> lrmi:learningResourceType (closeMatch)
-        #                        -> dcterms:type (broadMatch)
-        #                        -> dc:type (broadMatch)
-        if "learning-resource-type" in metadata:
-            lrt = Literal(metadata["learning-resource-type"])
+        # learningResourceType -> schema:learningResourceType (closeMatch)
+        #                       -> lrmi:learningResourceType (closeMatch)
+        #                       -> dcterms:type (broadMatch)
+        #                       -> dc:type (broadMatch)
+        if "learningResourceType" in metadata:
+            lrt = Literal(metadata["learningResourceType"])
             graph.add((resource_uri, SCHEMA.learningResourceType, lrt))
             graph.add((resource_uri, LRMI.learningResourceType, lrt))
             graph.add((resource_uri, DCTERMS.type, lrt))
             graph.add((resource_uri, DC.type, lrt))
-            logger.info("Added learning resource type: %s", metadata["learning-resource-type"])
+            logger.info("Added learning resource type: %s", metadata["learningResourceType"])
 
-        # quality-assurance: not mapped to RDF
+        # qualityAssurance: not mapped to RDF
         # All schema x-mappings are relatedMatch only — too loose for RDF/JSON-LD output
 
         # Serialize to RDF/XML and post-process for deterministic output.

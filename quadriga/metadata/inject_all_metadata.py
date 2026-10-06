@@ -4,7 +4,7 @@ Injects all metadata (JSON-LD, OpenGraph, and RDF links) into generated HTML fil
 This unified script combines JSON-LD structured data injection and OpenGraph
 social media metadata into a single efficient pass through HTML files.
 
-It reads metadata.jsonld and injects:
+It reads quadriga-metadata.jsonld and injects:
 - OpenGraph <meta> tags for social media previews
 - JSON-LD <script> tags for search engine structured data
 - <link> elements to standalone metadata files
@@ -143,7 +143,8 @@ def _build_chapter_lookup(jsonld_data: dict) -> dict[str, dict]:
     Build a lookup dict from NFC-normalized chapter name to chapter data.
 
     This allows matching _toc.yml file paths (which contain the real filenames)
-    to metadata.jsonld hasPart entries (which may have different URL paths but
+    to quadriga-metadata.jsonld hasPart entries (which may have different URL
+    paths but
     matching names).
 
     Args:
@@ -166,7 +167,7 @@ def _build_chapter_lookup(jsonld_data: dict) -> dict[str, dict]:
 
 def _match_toc_file_to_chapter(toc_file: str, chapter_lookup: dict[str, dict]) -> dict | None:
     """
-    Match a _toc.yml file path to a metadata.jsonld chapter entry.
+    Match a _toc.yml file path to a quadriga-metadata.jsonld chapter entry.
 
     Tries matching the filename stem (without numeric prefix) against chapter names.
     For example, toc file "Markdown/4_Qualitätsbewertung" matches chapter name
@@ -698,10 +699,10 @@ def inject_all_metadata_into_html(
         # 3. RDF discovery links
         if add_link_elements:
             injection_parts.append(
-                '  <link rel="alternate" type="application/ld+json" href="/metadata.jsonld" title="JSON-LD Metadata" />'
+                '  <link rel="alternate" type="application/ld+json" href="/quadriga-metadata.jsonld" title="JSON-LD Metadata" />'
             )
             injection_parts.append(
-                '  <link rel="alternate" type="application/rdf+xml" href="/metadata.rdf" title="RDF/XML Metadata" />'
+                '  <link rel="alternate" type="application/rdf+xml" href="/quadriga-metadata.rdf" title="RDF/XML Metadata" />'
             )
 
         # Join all parts with newlines
@@ -775,7 +776,7 @@ def inject_all_metadata(
 
     Args:
         build_dir (Path, optional): Path to _build/html directory (default: ./_build/html)
-        jsonld_path (Path, optional): Path to metadata.jsonld (default: ./metadata.jsonld)
+        jsonld_path (Path, optional): Path to quadriga-metadata.jsonld (default: ./quadriga-metadata.jsonld)
         config_path (Path, optional): Path to _config.yml (default: ./_config.yml)
         toc_path (Path, optional): Path to _toc.yml (default: ./_toc.yml)
 
@@ -788,7 +789,7 @@ def inject_all_metadata(
         if build_dir is None:
             build_dir = Path.cwd() / "_build" / "html"
         if jsonld_path is None:
-            jsonld_path = Path.cwd() / "metadata.jsonld"
+            jsonld_path = Path.cwd() / "quadriga-metadata.jsonld"
         if config_path is None:
             config_path = Path.cwd() / "_config.yml"
         if toc_path is None:
@@ -816,7 +817,7 @@ def inject_all_metadata(
         # Extract base URL from metadata
         book_url = jsonld_data.get("url", "")
         if not book_url:
-            logger.error("No URL found in metadata.jsonld")
+            logger.error("No URL found in quadriga-metadata.jsonld")
             return False
 
         # Derive the site base URL by removing the path after the repo name
@@ -831,7 +832,7 @@ def inject_all_metadata(
         # Extract book title for og:site_name
         book_title = jsonld_data.get("name", "")
         if not book_title:
-            logger.warning("No book title found in metadata.jsonld")
+            logger.warning("No book title found in quadriga-metadata.jsonld")
 
         # Get logo filename from config
         logo_filename = get_logo_from_config(config_path)
@@ -1028,7 +1029,7 @@ def inject_all_metadata(
             logger.info("Injected metadata into %d chapter pages", chapters_injected)
         elif jsonld_data.get("hasPart"):
             logger.warning(
-                "No chapter files found in _toc.yml, but %d hasPart entries exist in metadata.jsonld. "
+                "No chapter files found in _toc.yml, but %d hasPart entries exist in quadriga-metadata.jsonld. "
                 "Ensure _toc.yml is present and correctly formatted.",
                 len(jsonld_data["hasPart"]),
             )
@@ -1066,7 +1067,7 @@ def main() -> None:
     parser.add_argument(
         "--jsonld-path",
         type=Path,
-        help="Path to metadata.jsonld file (default: ./metadata.jsonld)",
+        help="Path to quadriga-metadata.jsonld file (default: ./quadriga-metadata.jsonld)",
     )
     parser.add_argument(
         "--config-path",

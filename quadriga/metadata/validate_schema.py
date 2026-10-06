@@ -1,4 +1,4 @@
-"""Validate metadata.yml against the QUADRIGA JSON Schema.
+"""Validate quadriga-metadata.yml against the QUADRIGA JSON Schema.
 
 This module fetches the QUADRIGA schema (and referenced sub-schemas) from the
 remote URL and validates a metadata dictionary against it.  Schemas are cached
@@ -14,11 +14,11 @@ import time
 import urllib.request
 from pathlib import Path
 
-from quadriga.metadata.utils import get_file_path, load_yaml_file
+from quadriga.metadata.utils import METADATA_FILENAME, get_file_path, load_yaml_file
 
 logger = logging.getLogger(__name__)
 
-QUADRIGA_SCHEMA_URL = "https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json"
+QUADRIGA_SCHEMA_URL = "https://quadriga-dk.github.io/quadriga-schema/v2.0.0/schema.json"
 
 # Cache directory and max age (24 hours)
 SCHEMA_CACHE_DIR = Path.cwd() / ".schema_cache"
@@ -87,13 +87,45 @@ def _fetch_json(url: str) -> dict:
         raise
 
 
+def _relax_multilingual_oneof(node: object) -> None:
+    """Relax ``oneOf`` fields that mix in ``MultilingualText.json`` to ``anyOf``.
+
+    The QUADRIGA v2.0.0 schema describes a few fields (e.g.
+    ``qualityAssurance.description`` and ``contextOfCreation``) as a ``oneOf``
+    between a specific string shape (a DOI URL or an enum value) and
+    ``MultilingualText.json``. Because ``MultilingualText.json`` accepts *any*
+    non-empty string, a value such as ``https://doi.org/10.5281/...`` satisfies
+    both branches and ``oneOf`` can never succeed, even though the metadata is
+    valid.
+
+    Rewriting only those ``oneOf``s to ``anyOf`` restores the intended
+    "either/or" semantics. The published schema is left untouched; the change is
+    applied to the in-memory copy used for validation here.
+
+    This mutates ``node`` in place and walks nested dicts and lists.
+    """
+    if isinstance(node, dict):
+        one_of = node.get("oneOf")
+        if isinstance(one_of, list) and any(
+            isinstance(branch, dict) and str(branch.get("$ref", "")).endswith("MultilingualText.json")
+            for branch in one_of
+        ):
+            node["anyOf"] = node.pop("oneOf")
+            logger.debug("Relaxed a MultilingualText oneOf to anyOf in the schema")
+        for value in node.values():
+            _relax_multilingual_oneof(value)
+    elif isinstance(node, list):
+        for item in node:
+            _relax_multilingual_oneof(item)
+
+
 def _validate_metadata(metadata: dict, schema_url: str = QUADRIGA_SCHEMA_URL) -> tuple[bool, list[str]]:
     """Validate a metadata dictionary against the QUADRIGA JSON Schema.
 
     Fetches the schema (and any ``$ref`` sub-schemas) fresh from the given URL.
 
     Args:
-        metadata: Metadata dictionary (e.g. parsed from metadata.yml)
+        metadata: Metadata dictionary (e.g. parsed from quadriga-metadata.yml)
         schema_url: URL of the main QUADRIGA schema
 
     Returns
@@ -119,8 +151,13 @@ def _validate_metadata(metadata: dict, schema_url: str = QUADRIGA_SCHEMA_URL) ->
         logger.exception("Failed to fetch schema from %s", schema_url)
         return False, [f"Could not fetch schema from {schema_url}"]
 
+    # Work around the schema's MultilingualText ``oneOf`` ambiguity (see
+    # _relax_multilingual_oneof) before building the validator.
+    _relax_multilingual_oneof(main_schema)
+
     def retrieve(uri: str) -> Resource:
         data = _fetch_json(uri)
+        _relax_multilingual_oneof(data)
         return Resource.from_contents(data, default_specification=DRAFT202012)
 
     try:
@@ -142,16 +179,16 @@ def _validate_metadata(metadata: dict, schema_url: str = QUADRIGA_SCHEMA_URL) ->
 
 
 def validate_schema() -> bool:
-    """Load metadata.yml and validate it against the QUADRIGA schema.
+    """Load quadriga-metadata.yml and validate it against the QUADRIGA schema.
 
     Returns
     -------
         bool: True if validation passed, False otherwise.
     """
-    metadata_path = get_file_path("metadata.yml")
+    metadata_path = get_file_path(METADATA_FILENAME)
     metadata = load_yaml_file(metadata_path)
     if metadata is None:
-        logger.error("Could not load metadata.yml for validation.")
+        logger.error("Could not load %s for validation.", METADATA_FILENAME)
         return False
 
     valid, errors = _validate_metadata(metadata)

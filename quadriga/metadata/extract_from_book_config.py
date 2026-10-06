@@ -1,8 +1,8 @@
 """
 Extract the title from _config.yml and the first level of the TOC from _toc.yml.
 
-It then uses this information to update metadata.yml. The titles for the TOC chapters are extracted
-from the first heading of the corresponding files.
+It then uses this information to update quadriga-metadata.yml. The titles for
+the TOC chapters are extracted from the first heading of the corresponding files.
 """
 
 from __future__ import annotations
@@ -12,6 +12,8 @@ import sys
 from pathlib import Path
 
 from .utils import (
+    METADATA_FILENAME,
+    SCHEMA_COMMENT,
     extract_first_heading,
     get_file_path,
     get_repo_root,
@@ -27,7 +29,8 @@ logger = logging.getLogger(__name__)
 
 def extract_and_update() -> bool | None:
     """
-    Extract information from _config.yml and _toc.yml files and update metadata.yml.
+    Extract information from _config.yml and _toc.yml files and update
+    quadriga-metadata.yml.
 
     Returns
     -------
@@ -44,13 +47,13 @@ def extract_and_update() -> bool | None:
         # Define file paths using the get_file_path utility function
         config_path = get_file_path("_config.yml", repo_root)
         toc_path = get_file_path("_toc.yml", repo_root)
-        metadata_path = get_file_path("metadata.yml", repo_root)
+        metadata_path = get_file_path(METADATA_FILENAME, repo_root)
 
         # Verify files exist before loading
         for path, name in [
             (config_path, "_config.yml"),
             (toc_path, "_toc.yml"),
-            (metadata_path, "metadata.yml"),
+            (metadata_path, METADATA_FILENAME),
         ]:
             if not path.exists():
                 logger.error("Required file %s not found at %s", name, path)
@@ -68,7 +71,7 @@ def extract_and_update() -> bool | None:
             logger.error("Could not load _toc.yml or invalid format. Exiting.")
             return False
         if not metadata_data or not isinstance(metadata_data, dict):
-            logger.error("Could not load metadata.yml or invalid format. Exiting.")
+            logger.error("Could not load %s or invalid format. Exiting.", METADATA_FILENAME)
             return False
 
         # Extract information from _config.yml
@@ -125,7 +128,7 @@ def extract_and_update() -> bool | None:
         # Format the TOC as a string with proper indentation and single newline between items
         toc_formatted = "- " + "\n- ".join(toc_chapters)
 
-        # Update metadata.yml
+        # Update quadriga-metadata.yml
         if metadata_data:
             try:
                 # Update the title by using the data from _config.yml
@@ -133,23 +136,23 @@ def extract_and_update() -> bool | None:
                     metadata_data["title"] = title
 
                 # Update the description table of contents
-                if "table-of-contents" in metadata_data:
-                    metadata_data["table-of-contents"] = toc_formatted
+                if "tableOfContents" in metadata_data:
+                    metadata_data["tableOfContents"] = toc_formatted
                 else:
-                    logger.warning("No 'table-of-contents' field found in metadata.yml")
+                    logger.warning("No 'tableOfContents' field found in %s", METADATA_FILENAME)
 
                 # Save the updated metadata
                 if save_yaml_file(
                     metadata_path,
                     metadata_data,
-                    schema_comment="# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json",
+                    schema_comment=SCHEMA_COMMENT,
                 ):
                     logger.info("Metadata updated successfully!")
                     return True
-                logger.error("Failed to save metadata.yml")
+                logger.error("Failed to save %s", METADATA_FILENAME)
                 return False
             except Exception:
-                logger.exception("Error updating metadata.yml")
+                logger.exception("Error updating %s", METADATA_FILENAME)
                 return False
         else:
             logger.error("Metadata file couldn't be loaded or is empty.")

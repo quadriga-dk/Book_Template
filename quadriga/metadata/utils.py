@@ -16,6 +16,14 @@ import yaml
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
+#: Name of the base metadata file (QUADRIGA application profile v2.0.0) in the repo root.
+METADATA_FILENAME = "quadriga-metadata.yml"
+
+#: yaml-language-server directive pointing at the QUADRIGA v2.0.0 JSON schema.
+SCHEMA_COMMENT = (
+    "# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v2.0.0/schema.json"
+)
+
 # ---- File Path Handling ----
 
 
@@ -297,7 +305,7 @@ def format_authors_for_bibtex(authors: list) -> str:
     Format a list of authors in the proper BibTeX format.
 
     Args:
-        authors (list): List of author dictionaries with 'given-names' and 'family-names'
+        authors (list): List of author dictionaries with 'givenName' and 'familyName'
 
     Returns
     -------
@@ -314,11 +322,11 @@ def format_authors_for_bibtex(authors: list) -> str:
                 logger.warning("Author at index %s is not a dictionary: %s", i, author)
                 continue
 
-            family = author.get("family-names", "")
-            given = author.get("given-names", "")
+            family = author.get("familyName", "")
+            given = author.get("givenName", "")
 
             if not family and not given:
-                logger.warning("Author at index %s is missing both family-names and given-names", i)
+                logger.warning("Author at index %s is missing both familyName and givenName", i)
                 continue
 
             formatted_authors.append(f"{family}, {given}")
@@ -346,7 +354,7 @@ def generate_citation_key(authors: list, title: str, year: str) -> str:
         # Get the first author's family name or use 'Unknown'
         if authors and isinstance(authors, list) and authors[0]:
             first_author = authors[0]
-            family_name = first_author.get("family-names", "Unknown")
+            family_name = first_author.get("familyName", "Unknown")
         else:
             family_name = "Unknown"
             logger.warning("No valid authors provided for citation key generation")
@@ -431,9 +439,9 @@ def clean_orcid(orcid_string: str | None) -> str | None:
 
 # ---- Metadata Field Derivation ----
 #
-# metadata.yml is the single source of truth. These helpers derive common
-# fields from it so every output format (CFF, BibTeX, Zenodo, JSON-LD, RDF)
-# interprets the metadata identically.
+# quadriga-metadata.yml is the single source of truth. These helpers derive
+# common fields from it so every output format (CFF, BibTeX, Zenodo, JSON-LD,
+# RDF) interprets the metadata identically.
 
 # ISO 639-1 (two-letter) to ISO 639-3 (three-letter) codes for languages
 # likely to appear in QUADRIGA OERs. Zenodo and CFF citations use ISO 639-3.
@@ -452,7 +460,7 @@ ISO_639_1_TO_3 = {
 
 def get_doi(metadata: dict) -> str | None:
     """
-    Get the clean DOI from the 'identifier' field of metadata.yml.
+    Get the clean DOI from the 'identifier' field of quadriga-metadata.yml.
 
     Returns None if the identifier is missing, not a DOI, or a placeholder.
     As long as no real DOI has been assigned yet, the identifier should hold
@@ -461,7 +469,7 @@ def get_doi(metadata: dict) -> str | None:
     omitted from all generated outputs.
 
     Args:
-        metadata (dict): Parsed metadata.yml data
+        metadata (dict): Parsed quadriga-metadata.yml data
 
     Returns
     -------
@@ -475,19 +483,19 @@ def get_doi(metadata: dict) -> str | None:
 
 def get_publication_date(metadata: dict) -> str | None:
     """
-    Get the publication date (ISO string) from metadata.yml.
+    Get the publication date (ISO string) from quadriga-metadata.yml.
 
-    Prefers 'date-modified' over 'date-issued' so re-releases carry
+    Prefers 'dateModified' over 'dateIssued' so re-releases carry
     their current date.
 
     Args:
-        metadata (dict): Parsed metadata.yml data
+        metadata (dict): Parsed quadriga-metadata.yml data
 
     Returns
     -------
         str: ISO date string (e.g., "2026-06-26") or None
     """
-    for field in ("date-modified", "date-issued"):
+    for field in ("dateModified", "dateIssued"):
         value = metadata.get(field)
         if value:
             # YAML may parse dates as date objects or leave them as strings
@@ -497,10 +505,10 @@ def get_publication_date(metadata: dict) -> str | None:
 
 def get_publication_year(metadata: dict) -> str | None:
     """
-    Get the publication year from metadata.yml (see get_publication_date).
+    Get the publication year from quadriga-metadata.yml (see get_publication_date).
 
     Args:
-        metadata (dict): Parsed metadata.yml data
+        metadata (dict): Parsed quadriga-metadata.yml data
 
     Returns
     -------
@@ -515,13 +523,13 @@ def get_publication_year(metadata: dict) -> str | None:
 
 def get_languages(metadata: dict) -> list[str]:
     """
-    Get the languages from metadata.yml as ISO 639-3 codes.
+    Get the languages from quadriga-metadata.yml as ISO 639-3 codes.
 
     The 'language' field may be a single code or a list; two-letter
     ISO 639-1 codes are converted to their three-letter equivalents.
 
     Args:
-        metadata (dict): Parsed metadata.yml data
+        metadata (dict): Parsed quadriga-metadata.yml data
 
     Returns
     -------
@@ -534,17 +542,55 @@ def get_languages(metadata: dict) -> list[str]:
     return [ISO_639_1_TO_3.get(str(code).lower(), str(code)) for code in codes]
 
 
-def get_content_license(metadata: dict) -> str | None:
-    """
-    Get the content license identifier (e.g., "CC-BY-4.0") from metadata.yml.
+# Matches the path of a Creative Commons license/public-domain URL and
+# captures the license name (e.g. "by-sa") and version (e.g. "4.0").
+_CC_LICENSE_RE = re.compile(
+    r"creativecommons\.org/(?:licenses|publicdomain)/(?P<name>[A-Za-z\-]+)/(?P<version>[0-9.]+)"
+)
 
-    The 'license' field may be a plain string or a dict with 'content' and
-    'code' licenses; the content license is the relevant one for citations.
-    The content license itself may be a string, a list, or a dict with
-    'name' and 'url'.
+
+def license_url_to_id(license_url: str) -> str:
+    """
+    Convert a license URL into a compact license identifier.
+
+    Creative Commons URLs are turned into their well-known SPDX-style
+    identifiers (e.g. ``https://creativecommons.org/licenses/by-sa/4.0/``
+    becomes ``CC-BY-SA-4.0`` and ``.../publicdomain/zero/1.0/`` becomes
+    ``CC0-1.0``). Any other URL is reduced to its last path segment, which is
+    a sensible fallback for SPDX-style license URLs such as
+    ``https://opensource.org/licenses/MIT`` -> ``MIT``.
 
     Args:
-        metadata (dict): Parsed metadata.yml data
+        license_url (str): License URL from quadriga-metadata.yml
+
+    Returns
+    -------
+        str: Compact license identifier
+    """
+    text = str(license_url).strip()
+    match = _CC_LICENSE_RE.search(text)
+    if match:
+        name = match.group("name").upper()
+        version = match.group("version")
+        if name == "ZERO":
+            return f"CC0-{version}"
+        return f"CC-{name}-{version}"
+
+    last_segment = text.rstrip("/").rsplit("/", 1)[-1]
+    return (last_segment or text).replace(" ", "-")
+
+
+def get_content_license(metadata: dict) -> str | None:
+    """
+    Get the content license identifier (e.g., "CC-BY-4.0") from quadriga-metadata.yml.
+
+    In schema v2.0.0 the 'license' field is the URL of the content license
+    (e.g. ``https://creativecommons.org/licenses/by-sa/4.0/``); the separate
+    code license lives in 'licenseCode'. Older v1-shaped dicts with 'content'
+    and 'code' entries are still understood for backwards compatibility.
+
+    Args:
+        metadata (dict): Parsed quadriga-metadata.yml data
 
     Returns
     -------
@@ -552,15 +598,17 @@ def get_content_license(metadata: dict) -> str | None:
     """
     license_data = metadata.get("license")
     if isinstance(license_data, str):
-        return license_data.replace(" ", "-")
+        return license_url_to_id(license_data)
     if isinstance(license_data, dict) and "content" in license_data:
         content = license_data["content"]
         if isinstance(content, str):
-            return content.replace(" ", "-")
+            return license_url_to_id(content)
         if isinstance(content, dict) and "name" in content:
             return str(content["name"]).replace(" ", "-")
+        if isinstance(content, dict) and "url" in content:
+            return license_url_to_id(content["url"])
         if isinstance(content, list) and content:
-            return str(content[0]).replace(" ", "-")
+            return license_url_to_id(str(content[0]))
     return None
 
 

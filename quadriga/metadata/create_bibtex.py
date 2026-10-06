@@ -1,8 +1,8 @@
 """
-Create the CITATION.bib file from metadata.yml.
+Create the CITATION.bib file from quadriga-metadata.yml.
 
-metadata.yml is the single source of truth for all metadata. This script
-rebuilds CITATION.bib from it completely on every run.
+quadriga-metadata.yml is the single source of truth for all metadata. This
+script rebuilds CITATION.bib from it completely on every run.
 """
 
 from __future__ import annotations
@@ -12,6 +12,7 @@ import sys
 from datetime import datetime, timezone
 
 from .utils import (
+    METADATA_FILENAME,
     extract_keywords,
     format_authors_for_bibtex,
     generate_citation_key,
@@ -35,7 +36,7 @@ def _bibtex_field(name: str, value: str) -> str:
 
 def create_bibtex_from_metadata() -> bool:
     """
-    Create a CITATION.bib file from metadata.yml.
+    Create a CITATION.bib file from quadriga-metadata.yml.
 
     QUADRIGA OERs are published as books (Jupyter Books), so the entry type
     is '@book'.
@@ -48,34 +49,34 @@ def create_bibtex_from_metadata() -> bool:
         # Define file paths using utility functions
         try:
             repo_root = get_file_path("")  # Get repo root
-            metadata_path = get_file_path("metadata.yml", repo_root)
+            metadata_path = get_file_path(METADATA_FILENAME, repo_root)
             citation_bib_path = get_file_path("CITATION.bib", repo_root)
         except Exception:
             logger.exception("Failed to resolve file paths")
             return False
 
         if not metadata_path.exists():
-            logger.error("metadata.yml file not found at %s", metadata_path)
+            logger.error("%s file not found at %s", METADATA_FILENAME, metadata_path)
             return False
 
         metadata = load_yaml_file(metadata_path)
 
         if not metadata or not isinstance(metadata, dict):
-            logger.error("Could not load metadata.yml or invalid format. Exiting.")
+            logger.error("Could not load %s or invalid format. Exiting.", METADATA_FILENAME)
             return False
 
         title = metadata.get("title", "")
         if not title:
-            logger.warning("No title found in metadata.yml")
+            logger.warning("No title found in %s", METADATA_FILENAME)
 
-        authors = metadata.get("authors", [])
+        authors = metadata.get("authorLIST", [])
         if not authors:
-            logger.warning("No authors found in metadata.yml")
+            logger.warning("No authors found in %s", METADATA_FILENAME)
 
         year = get_publication_year(metadata)
         if not year:
             year = str(datetime.now(tz=timezone.utc).year)
-            logger.info("No date-modified or date-issued found, using current year: %s", year)
+            logger.info("No dateModified or dateIssued found, using current year: %s", year)
 
         try:
             author_str = format_authors_for_bibtex(authors)
@@ -105,10 +106,10 @@ def create_bibtex_from_metadata() -> bool:
         if doi:
             bibtex_lines.append(_bibtex_field("doi", doi))
         else:
-            logger.warning("No DOI found in metadata.yml 'identifier' field")
+            logger.warning("No DOI found in %s 'identifier' field", METADATA_FILENAME)
 
-        if "url" in metadata:
-            bibtex_lines.append(_bibtex_field("url", metadata["url"]))
+        if "identifierOER" in metadata:
+            bibtex_lines.append(_bibtex_field("url", metadata["identifierOER"]))
 
         license_id = get_content_license(metadata)
         if license_id:
@@ -118,7 +119,7 @@ def create_bibtex_from_metadata() -> bool:
         if languages:
             bibtex_lines.append(_bibtex_field("language", ", ".join(languages)))
 
-        keywords = extract_keywords(metadata.get("keywords"))
+        keywords = extract_keywords(metadata.get("keywordLIST"))
         if keywords:
             bibtex_lines.append(_bibtex_field("keywords", ", ".join(keywords)))
 

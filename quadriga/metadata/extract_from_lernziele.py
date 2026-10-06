@@ -8,6 +8,8 @@ from pathlib import Path
 from typing import Any
 
 from .utils import (
+    METADATA_FILENAME,
+    SCHEMA_COMMENT,
     get_file_path,
     get_repo_root,
     iter_toc_files,
@@ -44,10 +46,10 @@ def parse_metadata_comment(comment: str) -> dict[str, str]:
         if not value:
             continue
         if key == "bloom":
-            metadata["blooms-category"] = value
+            metadata["bloomsCategory"] = value
         elif key == "competency":
             metadata[key] = value
-            metadata["data-flow"] = derive_data_flow(value)
+            metadata["dataFlow"] = derive_data_flow(value)
 
     return metadata
 
@@ -59,11 +61,11 @@ def validate_objective_metadata(objective_data: dict[str, Any]) -> list[str]:
     if not objective_data.get("competency"):
         missing_fields.append("competency")
         objective_data["competency"] = DEFAULT_COMPETENCY
-        objective_data["data-flow"] = DEFAULT_DATA_FLOW
+        objective_data["dataFlow"] = DEFAULT_DATA_FLOW
 
-    if not objective_data.get("blooms-category"):
-        missing_fields.append("blooms-category")
-        objective_data["blooms-category"] = DEFAULT_BLOOM
+    if not objective_data.get("bloomsCategory"):
+        missing_fields.append("bloomsCategory")
+        objective_data["bloomsCategory"] = DEFAULT_BLOOM
 
     return missing_fields
 
@@ -152,7 +154,7 @@ def extract_admonition_blocks(
             objective_text = normalize_whitespace(obj_match.group(1))
             metadata_comment = obj_match.group(2)
 
-            objective_data = {"learning-objective": objective_text}
+            objective_data = {"description": objective_text}
             if metadata_comment:
                 objective_data.update(parse_metadata_comment(metadata_comment))
 
@@ -168,7 +170,7 @@ def extract_admonition_blocks(
             continue
 
         block_data: dict[str, Any] = {
-            "learning-goal": learning_goal,
+            "learningGoal": learning_goal,
             "objectives": objectives,
         }
 
@@ -220,7 +222,7 @@ def generate_validation_report(
 
 
 def merge_learning_objectives_into_metadata() -> bool:
-    """Extract learning objectives from Lernziele.md and merge into metadata.yml."""
+    """Extract learning objectives from Lernziele.md and merge into quadriga-metadata.yml."""
     try:
         repo_root = get_repo_root()
 
@@ -260,11 +262,11 @@ def merge_learning_objectives_into_metadata() -> bool:
             logger.warning("No learning objectives extracted")
             return True
 
-        metadata_path = get_file_path("metadata.yml", repo_root)
+        metadata_path = get_file_path(METADATA_FILENAME, repo_root)
         metadata = load_yaml_file(metadata_path)
 
         if not metadata or not isinstance(metadata, dict):
-            logger.error("Could not load metadata.yml")
+            logger.error("Could not load %s", METADATA_FILENAME)
             return False
 
         chapter_objectives: dict[str, list] = {}
@@ -274,7 +276,7 @@ def merge_learning_objectives_into_metadata() -> bool:
             if not chapter:
                 continue
             chapter_objectives.setdefault(chapter, []).extend(section["objectives"])
-            learning_goal = section.get("learning-goal")
+            learning_goal = section.get("learningGoal")
             if learning_goal:
                 if chapter in chapter_learning_goals and chapter_learning_goals[chapter] != learning_goal:
                     logger.warning(
@@ -284,7 +286,7 @@ def merge_learning_objectives_into_metadata() -> bool:
                 else:
                     chapter_learning_goals[chapter] = learning_goal
 
-        for chapter in metadata.get("chapters", []):
+        for chapter in metadata.get("chapterLIST", []):
             if not isinstance(chapter, dict):
                 continue
             chapter_title = chapter.get("title", "")
@@ -297,29 +299,29 @@ def merge_learning_objectives_into_metadata() -> bool:
 
             # Preserve existing 'assessment' values keyed by objective text
             existing_assessments: dict[str, Any] = {}
-            for obj in chapter.get("learning-objectives", []):
+            for obj in chapter.get("learningObjectiveLIST", []):
                 if isinstance(obj, dict) and "assessment" in obj:
-                    existing_assessments[obj.get("learning-objective", "")] = obj["assessment"]
+                    existing_assessments[obj.get("description", "")] = obj["assessment"]
 
             new_objectives = chapter_objectives[chapter_title]
             for obj in new_objectives:
-                key = obj.get("learning-objective", "")
+                key = obj.get("description", "")
                 if key in existing_assessments:
                     obj["assessment"] = existing_assessments[key]
 
             # Store the new or updated data for writing to file
-            chapter["learning-goal"] = chapter_learning_goals.get(chapter_title, "TODO")
-            chapter["learning-objectives"] = new_objectives
+            chapter["learningGoal"] = chapter_learning_goals.get(chapter_title, "TODO")
+            chapter["learningObjectiveLIST"] = new_objectives
 
         if save_yaml_file(
             metadata_path,
             metadata,
-            schema_comment="# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json",
+            schema_comment=SCHEMA_COMMENT,
         ):
-            logger.info("Successfully merged learning objectives into metadata.yml")
+            logger.info("Successfully merged learning objectives into %s", METADATA_FILENAME)
             return True
 
-        logger.error("Failed to save updated metadata.yml")
+        logger.error("Failed to save updated %s", METADATA_FILENAME)
         return False
 
     except Exception:
