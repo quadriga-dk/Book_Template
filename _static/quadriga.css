@@ -355,3 +355,14 @@ div.citation .docutils {
     min-width: 0;
     flex: 1;
 }
+
+/* Inline run-mode icons in the "Hinweise zur Ausführung" box.
+   inline-run-links.js turns these spans into <a> links to Colab / the .ipynb
+   source; the rule makes them read as interactive (and keeps the emoji from
+   getting an underline). */
+.launch-colab-inline,
+.launch-ipynb-inline {
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+}
