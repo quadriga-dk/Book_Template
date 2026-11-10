@@ -7,3 +7,20 @@ numpy
 sparqlkernel
 ipywidgets==8.1.7
 sphinxcontrib-mermaid
+
+# Security overrides for transitive dependencies.
+# Remove an entry once the upstream pin resolves to a fixed version on its own.
+anyio==4.16.0
+bleach==6.4.0
+certifi==2026.10.23
+idna==3.20
+jupyter-server==2.21.1
+jupyterlab==4.6.6
+mistune==3.4.0
+nbconvert==7.17.2
+notebook==7.6.5
+pillow==13.0.0
+setuptools==84.2.1
+soupsieve==4.1
+tornado==6.6.1
+urllib3==2.8.0
