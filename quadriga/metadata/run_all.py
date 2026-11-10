@@ -14,6 +14,7 @@ if cwd not in sys.path:
 
 from quadriga.metadata.create_bibtex import create_bibtex_from_metadata
 from quadriga.metadata.create_jsonld import create_jsonld
+from quadriga.metadata.create_oersi_metadata import create_oersi_metadata
 from quadriga.metadata.create_rdfxml import create_rdfxml
 from quadriga.metadata.create_zenodo_json import create_zenodo_json
 from quadriga.metadata.extract_from_book_config import extract_and_update
@@ -116,6 +117,16 @@ def main() -> bool | None:
                 return False
         except Exception:
             logger.exception("Unexpected error during create_rdfxml")
+            return False
+
+        # Execute create_oersi_metadata with error handling
+        try:
+            logger.info("Creating metadata.yml for OERSI from quadriga-metadata.yml...")
+            if not create_oersi_metadata():
+                logger.error("Create OERSI metadata process failed.")
+                return False
+        except Exception:
+            logger.exception("Unexpected error during create_oersi_metadata")
             return False
 
         logger.info("All scripts executed successfully.")

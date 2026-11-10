@@ -1,33 +1,8 @@
-# yaml-language-server: $schema=https://quadriga-dk.github.io/quadriga-schema/v1.0.0/schema.json
-title: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
-authors:
-- given-names: Hannes
-  family-names: Schnaitter
-  orcid: https://orcid.org/0000-0002-1602-6032
-  affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
-  credit:
-  - Writing – original draft
-  - Writing – review & editing
-  - Software
-- given-names: Evgenia
-  family-names: Samoilova
-  orcid: https://orcid.org/0000-0003-3858-901X
-  affiliation: Universität Potsdam
-  credit:
-  - Writing – original draft
-  - Writing – review & editing
-- given-names: Lamia
-  family-names: Islam
-  affiliation: Universität Potsdam
-  credit:
-  - Software
-keywords:
-- Open Educational Resources
-- de: Offene Bildungsressource
-- en: Jupyter Book
-- en: Data Literacy
-  de: Datenkompetenz
-- open-educational-resources
+# Generated from quadriga-metadata.yml by quadriga/metadata/create_oersi_metadata.py. Do not edit manually.
+'@context': https://schema.org/
+creativeWorkStatus: Published
+type: LearningResource
+name: 'QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template'
 description: Dieses interaktive Lehrbuch führt in die Erstellung von Open Educational
   Resources (OER) nach den Empfehlungen und Vorgaben des Datenkompetenzzentrumgs QUADRIGA
   als <a href="https://jupyterbook.org">Jupyter Book</a> ein. Diese Empfehlungen und
@@ -35,73 +10,77 @@ description: Dieses interaktive Lehrbuch führt in die Erstellung von Open Educa
   Natur. Diese OER richtet sich vorrangig an OER-Erstellende und kann als Startpunkt
   (Template) für die Erstellung eigener OER genutzt werden. Einzelne (Unter-)Kapitel
   bieten zudem Erläuterungen zu Funktionalitäten für Lernende.
-table-of-contents: '- Einstieg
-
-  - Inhaltskapitel
-
-  - Reflexion und Resümee
-
-  - Epilog'
-discipline:
-- übergreifend
-research-object-type:
-- übergreifend
-target-group:
-- Forschende (PostDoc)
-- Forschende (Projektleitung)
-- Promovierende
-- Hochschullehrende
-time-required: PT16H15M
-language: de
-contributors:
-- family-names: Seltmann
-  given-names: Melanie
-  orcid: https://orcid.org/0000-0002-7588-4395
-  affiliation: Humboldt-Universität zu Berlin, Institut für Bibliotheks- und Informationswissenschaft
-- family-names: Walter
-  given-names: Paul
-  orcid: https://orcid.org/0000-0002-9236-3268
-  affiliation: Fachhochschule Potsdam
-- family-names: Zhang
-  given-names: Yue
-  orcid: https://orcid.org/0009-0007-6432-1259
-identifier: https://doi.org/10.5281/zenodo.14970672
-git: https://github.com/quadriga-dk/Book_Template
-url: https://quadriga-dk.github.io/Book_Template/
-used-tools:
-- name: Jupyter Book
-  url: https://jupyterbook.org
-chapters:
-- title: Inhaltskapitel
-  description: Ein Kapitel mit Inhalt(sbeispielen).
-  url: https://quadriga-dk.github.io/Book_Template/inhaltskapitel/einleitung.html
-  time-required: PT1H
-  learning-goal: Sie kennen die Bestandteile des Templates und können es für Ihre
-    Bedürfnisse nutzen.
-  learning-objectives:
-  - learning-objective: Kennen und verstehen der Bestandteile des Templates.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 2 Verstehen
-  - learning-objective: Template kann angewandt werden.
-    competency: Orientierungswissen
-    data-flow: übergreifend
-    blooms-category: 3 Anwenden
-date-issued: '2024-05-06'
-date-modified: '2026-05-11'
+license: https://creativecommons.org/licenses/by-sa/4.0/
+id: https://quadriga-dk.github.io/Book_Template/
+creator:
+- givenName: Hannes
+  familyName: Schnaitter
+  name: Hannes Schnaitter
+  id: https://orcid.org/0000-0002-1602-6032
+  type: Person
+  affiliation:
+    name: Humboldt-Universität zu Berlin
+    id: https://ror.org/01hcx6992
+    type: Organization
+- givenName: Evgenia
+  familyName: Samoilova
+  name: Evgenia Samoilova
+  id: https://orcid.org/0000-0003-3858-901X
+  type: Person
+  affiliation:
+    name: Universität Potsdam
+    id: https://ror.org/03bnmw459
+    type: Organization
+- givenName: Lamia
+  familyName: Islam
+  name: Lamia Islam
+  type: Person
+  affiliation:
+    name: Universität Potsdam
+    id: https://ror.org/03bnmw459
+    type: Organization
+contributor:
+- givenName: Melanie
+  familyName: Seltmann
+  name: Melanie Seltmann
+  id: https://orcid.org/0000-0002-7588-4395
+  type: Person
+  affiliation:
+    name: Humboldt-Universität zu Berlin
+    id: https://ror.org/01hcx6992
+    type: Organization
+- givenName: Paul
+  familyName: Walter
+  name: Paul Walter
+  id: https://orcid.org/0000-0002-9236-3268
+  type: Person
+  affiliation:
+    name: Fachhochschule Potsdam
+    id: https://ror.org/012m9bp23
+    type: Organization
+- givenName: Yue
+  familyName: Zhang
+  name: Yue Zhang
+  id: https://orcid.org/0009-0007-6432-1259
+  type: Person
+keywords:
+- Open Educational Resources
+- Offene Bildungsressource
+- Jupyter Book
+- Data Literacy
+- Datenkompetenz
+- open-educational-resources
+inLanguage:
+- de
+about:
+- https://w3id.org/kim/hochschulfaechersystematik/n0
+educationalLevel:
+- https://w3id.org/kim/educationalLevel/level_8
+- https://w3id.org/kim/educationalLevel/level_A
+learningResourceType:
+- https://w3id.org/kim/hcrt/textbook
+duration: PT16H15M
 version: 0.64.1
-context-of-creation: 'Die vorliegenden Open Educational Resources wurden durch das
-  Datenkompetenzzentrum QUADRIGA erstellt.
-
-
-  Förderkennzeichen: 16DKZ2034'
-quality-assurance:
-  date: '2026-11-14'
-  description: https://doi.org/10.5281/zenodo.18953896
-learning-resource-type: Jupyter Book
-schema-version: 1.0.0
-license:
-  code: https://opensource.org/licenses/AGPL-3.0
-  content:
-    url: https://creativecommons.org/licenses/by-sa/4.0/
-    name: CC-BY-SA-4.0
+datePublished: '2024-05-06'
+dateModified: '2026-05-11'
+identifier: https://doi.org/10.5281/zenodo.14970672
