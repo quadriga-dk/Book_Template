@@ -135,6 +135,7 @@ jinja2==3.1.6
     #   myst-parser
     #   nbconvert
     #   sphinx
+    #   sphinxcontrib-mermaid
 json5==0.14.0
     # via jupyterlab-server
 jsonpointer==3.1.1
@@ -336,6 +337,7 @@ pyyaml==6.0.3
     #   myst-parser
     #   pybtex
     #   sphinx-external-toc
+    #   sphinxcontrib-mermaid
 pyzmq==27.1.0
     # via
     #   ipykernel
@@ -405,6 +407,7 @@ sphinx==7.4.7
     #   sphinx-thebe
     #   sphinx-togglebutton
     #   sphinxcontrib-bibtex
+    #   sphinxcontrib-mermaid
 sphinx-apa-references @ git+https://github.com/quadriga-dk/Sphinx-APA-References.git@ecc1f8144c65b8af4f2388d8210750ac0ad805ec
     # via -r requirements.in
 sphinx-book-theme==1.2.0
@@ -439,6 +442,8 @@ sphinxcontrib-htmlhelp==2.1.0
     # via sphinx
 sphinxcontrib-jsmath==1.0.1
     # via sphinx
+sphinxcontrib-mermaid==2.1.1
+    # via -r requirements.in
 sphinxcontrib-qthelp==2.0.0
     # via sphinx
 sphinxcontrib-serializinghtml==2.0.0
