@@ -337,6 +337,36 @@ def format_authors_for_bibtex(authors: list) -> str:
         return ""
 
 
+def _distinctive_title_word(title: str) -> str:
+    """
+    Pick the word of a title that best distinguishes this work.
+
+    QUADRIGA titles follow the pattern
+    ``{name}: {subtitle}. {series}: {label}`` — e.g. ``QUADRIGA-OER: erstellen
+    und gestalten mit Jupyter Book. QUADRIGA Open Educational Resources:
+    Anleitung``. The first word of such a title ("QUADRIGA-OER") is shared by
+    every OER of the project, while the label after the last colon
+    ("Anleitung", "Template", ...) identifies the individual resource. So the
+    last colon segment is preferred; titles without a subtitle fall back to
+    their first word.
+
+    Args:
+        title (str): Title of the work
+
+    Returns
+    -------
+        str: A single word to be used in the citation key
+    """
+    segments = [segment.strip() for segment in title.split(":") if segment.strip()]
+    if len(segments) > 1:
+        label_words = segments[-1].split()
+        if label_words:
+            return label_words[0]
+
+    title_words = title.split()
+    return title_words[0] if title_words else "Untitled"
+
+
 def generate_citation_key(authors: list, title: str, year: str) -> str:
     """
     Generate a citation key for BibTeX.
@@ -359,12 +389,11 @@ def generate_citation_key(authors: list, title: str, year: str) -> str:
             family_name = "Unknown"
             logger.warning("No valid authors provided for citation key generation")
 
-        # Get the first word of the title or use 'Untitled'
+        # Get the distinctive word of the title or use 'Untitled'
         if title and isinstance(title, str):
-            title_words = title.split()
-            first_word = title_words[0] if title_words else "Untitled"
+            title_word = _distinctive_title_word(title)
         else:
-            first_word = "Untitled"
+            title_word = "Untitled"
             logger.warning("No valid title provided for citation key generation")
 
         # Use the year or empty string
@@ -373,7 +402,7 @@ def generate_citation_key(authors: list, title: str, year: str) -> str:
             year = ""
 
         # Create a citation key with no invalid characters
-        raw_key = f"{family_name}_{first_word}_{year}"
+        raw_key = f"{family_name}_{title_word}_{year}"
 
         # Clean the key - remove special characters
         clean_key = re.sub(r"[^a-zA-Z0-9_]", "", raw_key)
