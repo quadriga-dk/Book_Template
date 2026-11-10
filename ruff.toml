@@ -76,6 +76,9 @@ ignore = [
 ]
 
 [lint.per-file-ignores]
+# Local Sphinx extensions are loaded via sys.path (sphinx.local_extensions),
+# not as a package.
+"_ext/*.py" = ["INP001"]
 # Test files can use magic values and have other relaxed rules
 "quadriga/**/test_*.py" = ["PLR2004", "S101"]
 "quadriga/**/tests/**/*.py" = ["PLR2004", "S101"]
