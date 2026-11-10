@@ -1,5 +1,10 @@
 name: Deploy book with Python, SPARQL, and R
 
+# Deliberately no `workflow_dispatch` here: this workflow holds Pages/OIDC and
+# artifact permissions and restores caches, so a manual dispatch could run it
+# against an untrusted branch and poison those caches (CodeQL: "Cache Poisoning
+# via caching of untrusted files"). To redeploy manually, dispatch the
+# "Update Metadata" workflow instead - its completion triggers this one.
 on:
   workflow_run:
     workflows: ["Update Metadata"]
@@ -8,18 +13,36 @@ on:
     branches:
       - main
 
+# Serialise Pages deployments. Two deployments running at the same time fail
+# with "Deployment request failed ... due to in progress deployment".
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
 # This job installs dependencies, builds the book, and deploys it to GitHub Pages
 # only runs if "Update Metadata" workflow is successful
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  # Needed to delete stale "github-pages" artifacts left behind by earlier
+  # attempts of the same workflow run before uploading a new one.
+  actions: write
+
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+    # Safety cap for the whole job. The Pages deploy step is limited to
+    # 10 minutes by the action itself; the build needs the room here.
+    timeout-minutes: 90
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v6
+      with:
+        # Build the commit whose "Update Metadata" run just finished instead of
+        # whatever the default branch points at when this job starts.
+        ref: ${{ github.event.workflow_run.head_sha }}
 
     # Set up Python with pip caching
     - name: Set up Python
@@ -89,6 +112,21 @@ jobs:
         cp quadriga-metadata.rdf _build/html/quadriga-metadata.rdf
         echo "Copied metadata files to _build/html for discovery"
 
+    # A re-run of this workflow appends another artifact named "github-pages"
+    # to the same run instead of replacing the previous one. deploy-pages then
+    # aborts with "Multiple artifacts named github-pages were unexpectedly
+    # found". Drop leftovers first so a re-run is as good as a fresh run.
+    - name: Delete stale Pages artifacts from earlier attempts
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh api --paginate "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" \
+          --jq '.artifacts[] | select(.name == "github-pages") | .id' |
+        while read -r artifact_id; do
+          echo "Deleting stale artifact ${artifact_id}"
+          gh api --method DELETE "repos/${GITHUB_REPOSITORY}/actions/artifacts/${artifact_id}"
+        done
+
     - name: Upload book artifact
       uses: actions/upload-pages-artifact@v4
       with:
@@ -97,3 +135,6 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v5
+      # No `timeout` override: 600000 ms (10 minutes) is the maximum the action
+      # accepts, so a slow Pages sync cannot be fixed by waiting longer - keep
+      # the published site small instead.
