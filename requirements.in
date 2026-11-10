@@ -1,0 +1,8 @@
+teachbooks==0.2.3
+sphinx_apa_references @ git+https://github.com/quadriga-dk/Sphinx-APA-References.git@ecc1f8144c65b8af4f2388d8210750ac0ad805ec
+jupyter-book==1.0.4
+jupyterquiz==2.8.*
+matplotlib
+numpy
+sparqlkernel
+ipywidgets==8.1.7
