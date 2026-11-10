@@ -7,6 +7,32 @@
   - <a href="https://jupyterbook.org/en/stable/content/citations.html#citing-a-work-in-different-documents" class="external-link" target="_blank">Abschnitt zur Zitation eines Werks in mehreren Dokumenten</a>
 - <a href="https://jupyterbook.org/en/stable/content/figures.html" class="external-link" target="_blank">Abbildungen in Jupyter Book</a>
 
+### Videos als Abbildungen
+
+`{figure}` kann neben Bilddateien auch Videos (`.mp4`, `.webm`, `.ogv`) einbinden. Die lokale Sphinx-Erweiterung `_ext/video_figure.py` (registriert in `_config.yml` unter `sphinx.local_extensions`) rendert dafür ein `<video>`-Element statt eines `<img>`; Bildunterschrift, Nummerierung ("Fig. X.Y") und Querverweise bleiben unverändert. Die Videodateien werden beim Build nach `_videos/` kopiert.
+
+Die Videos laufen stumm in einer Schleife und haben keine eingeblendeten Bedienelemente (wie die früheren GIFs). Ein Klick auf das Video – oder `Leertaste`/`Enter`, wenn es den Fokus hat – hält die Animation an und startet sie wieder; außerhalb des sichtbaren Bereichs pausieren die Videos automatisch (`_static/video-figure.js`).
+
+````markdown
+```{figure} ../assets/beispiel.mp4
+---
+align: center
+width: 100%
+name: beispiel-animation
+alt: Beschreibung der Animation für Screenreader.
+---
+Bildunterschrift der Animation.
+```
+````
+
+Bitte keine animierten GIFs mehr einbinden: Videos sind bei gleicher Qualität rund 20-mal kleiner und halten den Pages-Deploy schnell. Erzeugen lässt sich ein MP4 aus einem GIF zum Beispiel mit:
+
+```bash
+ffmpeg -i eingabe.gif -an -c:v libx264 -preset slow -crf 23 \
+  -pix_fmt yuv420p -movflags +faststart ausgabe.mp4
+```
+
+
 
 ## Git
 

@@ -80,6 +80,10 @@ sphinx:
   extra_extensions:
     - sphinx_apa_references
     - sphinxcontrib.mermaid
+  # Local extension that renders `{figure}` targets ending in .mp4/.webm as
+  # HTML5 <video> (see _ext/video_figure.py).
+  local_extensions:
+    video_figure: _ext
   config:
     html_show_copyright: false
     html_static_path: ["_static"]
@@ -88,3 +92,4 @@ sphinx:
       - carousel.css
     html_js_files:
       - carousel.js
+      - video-figure.js

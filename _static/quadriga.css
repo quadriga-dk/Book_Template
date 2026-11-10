@@ -366,3 +366,36 @@ div.citation .docutils {
     text-decoration: none;
     white-space: nowrap;
 }
+
+/* Videos embedded via the local video_figure extension: a `{figure}` whose
+   target is an .mp4/.webm file is rendered as <video> instead of <img>. Keep
+   the animation responsive and level with the surrounding text like images. */
+figure video.book-video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    /* no native controls; a click toggles playback (see video-figure.js) */
+    cursor: pointer;
+}
+
+:root {
+    --qu-figure-icon-video: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z'/%3E%3C/svg%3E");
+}
+
+/* Icon in front of the caption of animated figures. They are rendered as
+   <video> by _ext/video_figure.py, which tags the figure with 'figure-video';
+   fixed images stay unmarked. The icon is a CSS mask, so it follows the text
+   colour in light and dark mode and stays decorative for screen readers. */
+figure.figure-video figcaption .caption-text::before {
+    content: "";
+    display: inline-block;
+    width: 0.95em;
+    height: 0.95em;
+    margin-right: 0.35em;
+    vertical-align: -0.12em;
+    background-color: currentColor;
+    opacity: 0.6;
+    -webkit-mask: var(--qu-figure-icon-video) center / contain no-repeat;
+    mask: var(--qu-figure-icon-video) center / contain no-repeat;
+}
