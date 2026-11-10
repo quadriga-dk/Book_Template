@@ -4,12 +4,10 @@ accessible-pygments==0.0.5
     # via pydata-sphinx-theme
 alabaster==0.7.16
     # via sphinx
-anyio==4.13.0
+anyio==4.14.2
     # via
     #   httpx
     #   jupyter-server
-appnope==0.1.4 ; sys_platform == 'darwin'
-    # via ipykernel
 argon2-cffi==25.1.0
     # via jupyter-server
 argon2-cffi-bindings==25.1.0
@@ -34,17 +32,15 @@ beautifulsoup4==4.14.3
     # via
     #   nbconvert
     #   pydata-sphinx-theme
-bleach==6.3.0
+bleach[css]==6.4.0
     # via nbconvert
-certifi==2026.2.25
+certifi==2026.10.18
     # via
     #   httpcore
     #   httpx
     #   requests
 cffi==2.0.0
-    # via
-    #   argon2-cffi-bindings
-    #   pyzmq
+    # via argon2-cffi-bindings
 charset-normalizer==3.4.7
     # via requests
 click==8.3.2
@@ -53,11 +49,6 @@ click==8.3.2
     #   jupyter-cache
     #   sphinx-external-toc
     #   teachbooks
-colorama==0.4.6 ; sys_platform == 'win32'
-    # via
-    #   click
-    #   ipython
-    #   sphinx
 comm==0.2.3
     # via
     #   ipykernel
@@ -88,7 +79,7 @@ fonttools==4.62.1
     # via matplotlib
 fqdn==1.5.1
     # via jsonschema
-greenlet==3.5.6 ; platform_machine == 'AMD64' or platform_machine == 'WIN32' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'ppc64le' or platform_machine == 'win32' or platform_machine == 'x86_64'
+greenlet==3.5.6
     # via sqlalchemy
 h11==0.16.0
     # via httpcore
@@ -140,7 +131,7 @@ json5==0.14.0
     # via jupyterlab-server
 jsonpointer==3.1.1
     # via jsonschema
-jsonschema==4.26.0
+jsonschema[format-nongpl]==4.26.0
     # via
     #   jupyter-book
     #   jupyter-events
@@ -152,6 +143,10 @@ jupyter-book==1.0.4
     # via
     #   -r requirements.in
     #   teachbooks
+jupyter-builder==1.2.4
+    # via
+    #   jupyterlab
+    #   notebook
 jupyter-cache==1.0.1
     # via myst-nb
 jupyter-client==8.8.0
@@ -162,6 +157,7 @@ jupyter-client==8.8.0
 jupyter-core==5.9.1
     # via
     #   ipykernel
+    #   jupyter-builder
     #   jupyter-client
     #   jupyter-server
     #   jupyterlab
@@ -172,7 +168,7 @@ jupyter-events==0.12.0
     # via jupyter-server
 jupyter-lsp==2.3.1
     # via jupyterlab
-jupyter-server==2.17.0
+jupyter-server==2.21.1
     # via
     #   jupyter-lsp
     #   jupyterlab
@@ -181,7 +177,7 @@ jupyter-server==2.17.0
     #   notebook-shim
 jupyter-server-terminals==0.5.4
     # via jupyter-server
-jupyterlab==4.5.6
+jupyterlab==4.6.6
     # via notebook
 jupyterlab-pygments==0.3.0
     # via nbconvert
@@ -219,7 +215,7 @@ mdit-py-plugins==0.5.0
     # via myst-parser
 mdurl==0.1.2
     # via markdown-it-py
-mistune==3.2.0
+mistune==3.3.3
     # via nbconvert
 myst-nb==1.4.0
     # via jupyter-book
@@ -232,7 +228,7 @@ nbclient==0.10.4
     #   jupyter-cache
     #   myst-nb
     #   nbconvert
-nbconvert==7.17.1
+nbconvert==7.17.2
     # via jupyter-server
 nbformat==5.10.4
     # via
@@ -243,7 +239,7 @@ nbformat==5.10.4
     #   nbconvert
 nest-asyncio==1.6.0
     # via ipykernel
-notebook==7.5.5
+notebook==7.6.5
     # via sparqlkernel
 notebook-shim==0.2.4
     # via
@@ -270,9 +266,9 @@ pandocfilters==1.5.1
     # via nbconvert
 parso==0.8.6
     # via jedi
-pexpect==4.9.0 ; sys_platform != 'emscripten' and sys_platform != 'win32'
+pexpect==4.9.0
     # via ipython
-pillow==12.2.0
+pillow==13.0.0
     # via matplotlib
 platformdirs==4.9.6
     # via jupyter-core
@@ -284,7 +280,7 @@ psutil==7.2.2
     # via
     #   ipykernel
     #   teachbooks
-ptyprocess==0.7.0 ; os_name != 'nt' or (sys_platform != 'emscripten' and sys_platform != 'win32')
+ptyprocess==0.7.0
     # via
     #   pexpect
     #   terminado
@@ -299,7 +295,7 @@ pybtex-apa-style==1.3
     # via sphinx-apa-references
 pybtex-docutils==1.0.3
     # via sphinxcontrib-bibtex
-pycparser==3.0 ; implementation_name != 'PyPy'
+pycparser==3.0
     # via cffi
 pydata-sphinx-theme==0.16.1
     # via sphinx-book-theme
@@ -323,11 +319,6 @@ python-dateutil==2.9.0.post0
     #   matplotlib
 python-json-logger==4.1.0
     # via jupyter-events
-pywinpty==3.1.2 ; os_name == 'nt'
-    # via
-    #   jupyter-server
-    #   jupyter-server-terminals
-    #   terminado
 pyyaml==6.0.3
     # via
     #   jupyter-book
@@ -372,11 +363,6 @@ rpds-py==0.30.0
     #   referencing
 send2trash==2.1.0
     # via jupyter-server
-setuptools==82.0.1
-    # via
-    #   jupyterlab
-    #   sparqlkernel
-    #   sphinx-togglebutton
 six==1.17.0
     # via
     #   python-dateutil
@@ -384,7 +370,7 @@ six==1.17.0
     #   sphinx-apa-references
 snowballstemmer==3.0.1
     # via sphinx
-soupsieve==2.8.3
+soupsieve==2.9
     # via beautifulsoup4
 sparqlkernel==1.3.0
     # via -r requirements.in
@@ -462,7 +448,7 @@ terminado==0.18.1
     #   jupyter-server-terminals
 tinycss2==1.4.0
     # via bleach
-tornado==6.5.5
+tornado==6.6
     # via
     #   ipykernel
     #   jupyter-client
@@ -475,6 +461,7 @@ traitlets==5.14.3
     #   ipykernel
     #   ipython
     #   ipywidgets
+    #   jupyter-builder
     #   jupyter-client
     #   jupyter-core
     #   jupyter-events
@@ -497,7 +484,7 @@ uc-micro-py==2.0.0
     # via linkify-it-py
 uri-template==1.3.0
     # via jsonschema
-urllib3==2.6.3
+urllib3==2.8.0
     # via requests
 wcwidth==0.6.0
     # via prompt-toolkit
