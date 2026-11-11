@@ -9,7 +9,7 @@ Passen Sie dann die Inhalte an. Insbesondere sollten Sie achten auf die
 Einstellungen in `_config.yml` und das Inhaltsverzeichnis in `_toc.yml`.
 
 Wollen Sie GitHub-Pages für die Veröffentlichung des Jupyter Books nutzen, so
-müssen Sie einerseits die Funktionalität in den Einstellungen der Repositoriums
+müssen Sie einerseits die Funktionalität in den Einstellungen des Repositoriums
 anpassen und die GitHub Action in
 `.github/workflows/deploy-book-python-sparql-r.yml` anpassen, ggf. umbenennen
 und aktivieren. Zudem muss das Repositorium normalerweise öffentlich sein.
