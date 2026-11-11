@@ -33,7 +33,7 @@ Diese Vorlage dient der Erstellung von Open Educational Resources (OER) im Rahme
 
 Zur einfachen Erstellung und langfristigen, technikunabhängigen Nutzbarkeit werden QUADRIGA-OERs mit Markdown-Dateien und Jupyter-Notebooks erstellt. Die konkrete Transformation dieser Inhalte in die hier zu sehende Darstellung erfolgt dabei per <a href="https://jupyterbook.org" class="external-link" target="_blank">Jupyter Book</a> {cite}`executable_books_community_2021_2561065`.
 
-Weitere Hinweise zu Empfehlungen und Vorgaben zur OER-Erstellung des Datenkompetenzzentrums QUADRIGA finden Sie im <a href="https://quadriga-dk.github.io/QUADRIGA-OER-Manual/" target="_blank">QUADRIGA-OER-Manual</a>
+Weitere Hinweise zu Empfehlungen und Vorgaben zur OER-Erstellung des Datenkompetenzzentrums QUADRIGA finden Sie im <a href="https://quadriga-dk.github.io/QUADRIGA-OER-Manual/" target="_blank">QUADRIGA-OER-Manual</a>.
 
 ```{figure} /assets/intro/oer-creation-process.png
 ---
@@ -53,7 +53,7 @@ Im QUADRIGA-Projekt entwickeln wir Fallstudien, die auf datengetriebenen Forschu
 
 - dem Datenlebenszyklus folgen,
 - den strukturellen Rahmen für Lehrmaterialien bilden,
-- den einzelnen Kapiteln im interaktives Lehrbuch entsprechen.
+- den einzelnen Kapiteln im interaktiven Lehrbuch entsprechen.
 
 Diese Schritte sollten in diesem Abschnitt visualisiert und kurz beschrieben werden.
 
@@ -68,10 +68,10 @@ Flussdiagramm der QUADRIGA-Vorlage, die sich aus sechs Schritten zusammensetzt.
 Nach den QUADRIGA Empfehlungen und Vorgaben für OER durchlaufen Fallstudien mindestens diese drei Schritte.
 
 - Im **1. Schritt** führen wir in die OER ein, indem wir die Lernziele definieren und die technischen Voraussetzungen klären (siehe Kapitel {ref}`Einstieg<lernziele>`).
-- Im **2. Schritt** und den nachfolgenden Schritten wird de Inhalt der Fallstudie präsentiert (siehe Kapitel {ref}`Inhaltskapitel<inhaltskapitel:einleitung>`).
-- Im **letzten Schritt** schließt die OER inhaltlich mit einem Abschlussassessment ab, fassf die wichtigsten Punkte zusammen und gibt ggf. weiterführende Hinweise (siehe Kapitel {ref}`Reflexion und Resümee<reflexion>`).
+- Im **2. Schritt** und den nachfolgenden Schritten wird der Inhalt der Fallstudie präsentiert (siehe Kapitel {ref}`Inhaltskapitel<inhaltskapitel:einleitung>`).
+- Im **letzten Schritt** schließt die OER inhaltlich mit einem Abschlussassessment ab, fasst die wichtigsten Punkte zusammen und gibt ggf. weiterführende Hinweise (siehe Kapitel {ref}`Reflexion und Resümee<reflexion>`).
 
-Die OER wird durch den Abschluss komplettiert, das Raum für Fragen und Feedback bietet, das Literaturverzeichnis enthält, die Autor:innen vorstellt sowie Informationen zu QUADRIGA und das Impressum bereitstellt (siehe Kapitel {ref}`Abschluss<fragen_feedback>`).
+Die OER wird durch den Abschluss komplettiert, der Raum für Fragen und Feedback bietet, das Literaturverzeichnis enthält, die Autor:innen vorstellt sowie Informationen zu QUADRIGA und das Impressum bereitstellt (siehe Kapitel {ref}`Abschluss<fragen_feedback>`).
 
 **Literatur**
 
