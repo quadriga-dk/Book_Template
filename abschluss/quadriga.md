@@ -4,8 +4,10 @@
 Das Datenkompetenzzentrum QUADRIGA vereint die vier Disziplinen Digital Humanities, Verwaltungswissenschaft, Informatik und Informationswissenschaft entlang der Datentypen Text, Tabelle und Bewegtes Bild am Wissenschaftsstandort Berlin-Brandenburg.
 Die Metropolregion ist ein Hotspot für Openness in den Anwendungsdomänen Digital Humanities und Verwaltungswissenschaft.
 Die Basiswissenschaften Informatik und Informationswissenschaft mit umfangreicher Expertise für Data Science und Data Stewardship unterstützen die beiden Anwendungsdomänen hinsichtlich Forschung zum Datenfluss, (inter)nationalen Standards und Prinzipien (z.B. FAIR, CARE).
+
 QUADRIGA führt Forschungs- und Lernorte durch vielfältige Vernetzungsorte zusammen. Zur Entwicklung digitaler Methoden werden mittels Fallstudien in den Forschungsorten spezifische Fragestellungen und Datentypen behandelt.
 Die Datensätze, Standards und Methoden werden in den Lernorten mit didaktischen Mitteln in fallstudienbasierte, zielgruppenspezifische und kompetenzorientierte QUADRIGA Educational Resources transformiert.
+
 Assessment-Werkzeuge verbinden Forschungs- mit Lernorten auf Basis eines optimierten QUADRIGA Datenkompetenzframeworks und ermöglichen Forschenden, ihre Datenkompetenzen entlang des Datenflusses zuzuordnen.
 Mit dem Suchwerkzeug QUADRIGA Navigator werden basierend auf dem Datenkompetenzframework alle QUADRIGA Bildungsangebote zielgruppengerecht und interessengeleitet auf der Datenkompetenzplattform QUADRIGA Space angeboten.
 
@@ -13,7 +15,7 @@ Weitere Informationen sowie Publikationen finden Sie auf der <a href="https://ww
 
 Das Datenkompetenzzentrum QUADRIGA wird vom <a href="https://www.bmftr.bund.de/DE/Forschung/Wissenschaftssystem/Forschungsdaten/DatenkompetenzenInDerWissenschaft/datenkompetenzeninderwissenschaft.html?templateQueryString=datenkompetenzzentren" class="external-link" target="_blank">Bundesministerium für Forschung, Technologie und Raumfahrt</a> unter dem Kennzeichen 16DKZ2034 gefördert und von der Europäischen Union im Rahmen von "NextGenerationEU" finanziert. Zu den Verbundpartnern zählen:
 - Universität Potsdam (Verbundkoordination) <span style="font-size: small">(Förderkennzeichen: 16DKZ2034A)</span>
-- Filmuniversität Babelsberg <span style="font-size: small">(Förderkennzeichen: 16DKZ2034B)</span>
+- Filmuniversität Babelsberg KONRAD WOLF <span style="font-size: small">(Förderkennzeichen: 16DKZ2034B)</span>
 - Fachhochschule Potsdam <span style="font-size: small">(Förderkennzeichen: 16DKZ2034C)</span>
 - Fraunhofer FOKUS <span style="font-size: small">(Förderkennzeichen: 16DKZ2034D)</span>
 - Freie Universität Berlin <span style="font-size: small">(Förderkennzeichen: 16DKZ2034E)</span>
