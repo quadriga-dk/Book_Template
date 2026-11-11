@@ -15,7 +15,7 @@ kernelspec:
 
 Neben Jupyter Notebooks können auch Markdown-Dateien ausführbaren Code enthalten. Dazu muss ein korrekter Vorspann ("frontmatter") vorhanden sein, in dem per `kernelspec` ein Jupyter Kernel für das Notebook definiert wird. Hier wird der SPARQL-Kernel geladen.
 
-Basierend auf der OER https://quadriga-dk.github.io/Tabelle-Fallstudie-2/SPARQL_Grundlagen.html als minimaler Test der SPARQL-Einbindung.
+Dieses Beispiel basiert auf der OER https://quadriga-dk.github.io/Tabelle-Fallstudie-2/SPARQL_Grundlagen.html und dient als minimaler Test der SPARQL-Einbindung.
 
 ```{code-cell} sparql
 %endpoint https://data.europa.eu/sparql
