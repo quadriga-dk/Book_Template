@@ -35,7 +35,7 @@
 </tr>
 <tr>
 <td><b>Website:</b></td>
-<td><a href="https://www.uni-potsdam.de/de/multimedia/team/wissenschaftliches-personal/evgenia-samoilova-phd" class="external-link" target="_blank">Mitarbeiterinnen-Seite Universität Potsdam</td>
+<td><a href="https://www.uni-potsdam.de/de/multimedia/team/wissenschaftliches-personal/evgenia-samoilova-phd" class="external-link" target="_blank">Mitarbeiterinnen-Seite Universität Potsdam</a></td>
 </tr>
 <tr>
 <td><b>GitHub:</b></td>
@@ -59,7 +59,7 @@
 </tr>
 </table>
 
-## sonstige beteiligte Personen
+## Sonstige beteiligte Personen
 
 ### Yue Zhang
 <table style="margin-left: 0">
