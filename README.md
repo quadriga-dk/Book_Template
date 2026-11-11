@@ -6,4 +6,4 @@ Launch the latest version in Binder: [![Binder](https://mybinder.org/badge_logo.
 
 Dieses Repositorium dient als Vorlage für <a href="https://www.quadriga-dk.de" class="external-link" target="_blank">QUADRIGA</a> OERs, die mit <a href="https://jupyterbook.org" class="external-link" target="_blank">Jupyter Book</a> geschrieben werden.
 
-Nutzen Sie die Inhalt der <a href="https://github.com/quadriga-dk/QUADRIGA-OER-Manual" target="_blank">Anleitung</a> um mehr über QUADRIGA-OERs und die Nutzung der Vorlage zu lernen.
+Nutzen Sie den Inhalt der <a href="https://github.com/quadriga-dk/QUADRIGA-OER-Manual" target="_blank">Anleitung</a> um mehr über QUADRIGA-OERs und die Nutzung der Vorlage zu lernen.
