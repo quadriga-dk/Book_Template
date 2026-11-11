@@ -5,8 +5,9 @@
 Wir empfehlen die Nutzung der Template-Funktion in GitHub. Sie können auch eine
 `.zip`-Datei herunterladen und von dort aus beginnen.
 
-Passen Sie dann die Inhalte an. Insbesondere sollten Sie achten auf die
-Einstellungen in `_config.yml` und das Inhaltsverzeichnis in `_toc.yml`.
+Passen Sie dann die Inhalte an. Insbesondere sollten Sie auf die
+Einstellungen in `_config.yml` und das Inhaltsverzeichnis in `_toc.yml`
+achten.
 
 Wollen Sie GitHub-Pages für die Veröffentlichung des Jupyter Books nutzen, so
 müssen Sie einerseits die Funktionalität in den Einstellungen des Repositoriums
