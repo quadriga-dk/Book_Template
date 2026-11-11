@@ -41,7 +41,7 @@ ffmpeg -i eingabe.gif -an -c:v libx264 -preset slow -crf 23 \
 - <a href="https://www.git-scm.com/book/en/v2" class="external-link" target="_blank">Scott Chacon & Ben Straub – Pro Git</a> (Website, PDF, EPUB)
 
 
-## über `requirements.txt` installierte Pakete upgraden
+## Über `requirements.txt` installierte Pakete upgraden
 
 Sollen Pakete auf die aktuellste Version gebracht werden, auch wenn dies den Vorgaben in `requirements.txt` widerspricht, so können einzelne Pakete wie folgt aktualisiert werden:
 
@@ -49,13 +49,13 @@ Sollen Pakete auf die aktuellste Version gebracht werden, auch wenn dies den Vor
 (venv)$ pip install -U jupyter-book
 ```
 
-Sollen alle Pakete aktualisiert werden geht dies mit den nachfolgenden Befehl:
+Sollen alle Pakete aktualisiert werden, geht dies mit dem nachfolgenden Befehl:
 
 ```bash
 (venv)$ cat requirements.txt | cut -f1 -d= | xargs pip install -U
 ```
 
-Nachdem ein Paket aktualisiert wurde sollte die Funktionalität überprüft werden. Funktioniert alles weiterhin, so kann der neue Stand der installierten Versionen wieder in der `requirements.txt` gesichert werden:
+Nachdem ein Paket aktualisiert wurde, sollte die Funktionalität überprüft werden. Funktioniert alles weiterhin, so kann der neue Stand der installierten Versionen wieder in der `requirements.txt` gesichert werden:
 
 ```bash
 (venv)$ pip freeze > requirements.txt
