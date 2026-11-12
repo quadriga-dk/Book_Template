@@ -337,23 +337,20 @@ html[data-theme='dark'] div.story > .admonition-title::after {
     color: #b876d1
 }
 
-/* Fix bibliography URL overflow — targets actual rendered HTML */
+/* Bibliography entries (sphinxcontrib-bibtex / APA plugin).
+   Only break within a word when that word alone cannot fit on a line
+   (long URLs, DOIs); normal words are always kept intact and moved to
+   the next line instead of being split arbitrarily. */
 div.citation {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
     margin-bottom: 1rem;
-    overflow: hidden;
 }
 
 div.citation p,
 div.citation dd,
 div.citation .docutils {
-    overflow-wrap: break-word;
-    word-break: break-all;
-    word-wrap: break-word;
-    min-width: 0;
-    flex: 1;
+    overflow-wrap: break-word; /* break long tokens only when unavoidable */
+    word-break: normal;      /* never split words at arbitrary characters */
+    hyphens: none;           /* no automatic hyphenation */
 }
 
 /* Inline run-mode icons in the "Hinweise zur Ausführung" box.
