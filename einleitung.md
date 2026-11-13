@@ -57,12 +57,12 @@ Im QUADRIGA-Projekt entwickeln wir Fallstudien, die auf datengetriebenen Forschu
 
 Diese Schritte sollten in diesem Abschnitt visualisiert und kurz beschrieben werden.
 
-```{figure} ./assets/intro/Aufbau_der_OER.svg
----
-align: left
-width: 100%
----
-Flussdiagramm der QUADRIGA-Vorlage, die sich aus sechs Schritten zusammensetzt.
+```{mermaid}
+:align: center
+:caption: Flussdiagramm der QUADRIGA-Vorlage: Einstieg, Inhaltskapitel, Reflexion und Resümee sowie Abschluss.
+
+graph LR
+    A[Einstieg] --> B[Inhaltskapitel] --> C[Reflexion und Resümee] --> D[Abschluss]
 ```
 
 Nach den QUADRIGA Empfehlungen und Vorgaben für OER durchlaufen Fallstudien mindestens diese drei Schritte.
