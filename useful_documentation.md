@@ -2,10 +2,10 @@
 
 ## Markdown
 
-- <a href="https://jupyterbook.org/en/stable/reference/cheatsheet.html" class="external-link" target="_blank">Markdown Cheatsheet für Jupyter Book</a>
-- <a href="https://jupyterbook.org/en/stable/content/citations.html" class="external-link" target="_blank">Zitationen in Jupyter Book</a>
-  - <a href="https://jupyterbook.org/en/stable/content/citations.html#citing-a-work-in-different-documents" class="external-link" target="_blank">Abschnitt zur Zitation eines Werks in mehreren Dokumenten</a>
-- <a href="https://jupyterbook.org/en/stable/content/figures.html" class="external-link" target="_blank">Abbildungen in Jupyter Book</a>
+- <a href="https://jupyterbook.org/v1/reference/cheatsheet.html" class="external-link" target="_blank">Markdown Cheatsheet für Jupyter Book</a>
+- <a href="https://jupyterbook.org/v1/content/citations.html" class="external-link" target="_blank">Zitationen in Jupyter Book</a>
+  - <a href="https://jupyterbook.org/v1/content/citations.html#citing-a-work-in-different-documents" class="external-link" target="_blank">Abschnitt zur Zitation eines Werks in mehreren Dokumenten</a>
+- <a href="https://jupyterbook.org/v1/content/figures.html" class="external-link" target="_blank">Abbildungen in Jupyter Book</a>
 
 ### Videos als Abbildungen
 

@@ -1,5 +1,5 @@
 # Book settings
-# Learn more at https://jupyterbook.org/customize/config.html
+# Learn more at https://jupyterbook.org/v1/customize/config.html
 
 title: "QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template"
 author: Hannes Schnaitter, Evgenia Samoilova, Lamia Islam
@@ -22,7 +22,7 @@ exclude_patterns:
   ]
 
 # Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
+# See https://jupyterbook.org/v1/content/execute.html
 execute:
   execute_notebooks: cache
 
@@ -65,7 +65,7 @@ launch_buttons:
   thebe: true
 
 # Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# See https://jupyterbook.org/v1/customize/config.html#add-a-link-to-your-repository
 html:
   comments:
     hypothesis: true

@@ -31,7 +31,7 @@ Schnaitter, H., Samoilova, E. & Islam, L. (2026). _QUADRIGA-OER-Template. QUADRI
 
 Diese Vorlage dient der Erstellung von Open Educational Resources (OER) im Rahmen des <a href="https://www.quadriga-dk.de/" class="external-link" target="_blank">QUADRIGA-Projekts</a>.
 
-Zur einfachen Erstellung und langfristigen, technikunabhängigen Nutzbarkeit werden QUADRIGA-OERs mit Markdown-Dateien und Jupyter-Notebooks erstellt. Die konkrete Transformation dieser Inhalte in die hier zu sehende Darstellung erfolgt dabei per <a href="https://jupyterbook.org" class="external-link" target="_blank">Jupyter Book</a> {cite}`executable_books_community_2021_2561065`.
+Zur einfachen Erstellung und langfristigen, technikunabhängigen Nutzbarkeit werden QUADRIGA-OERs mit Markdown-Dateien und Jupyter-Notebooks erstellt. Die konkrete Transformation dieser Inhalte in die hier zu sehende Darstellung erfolgt dabei per <a href="https://jupyterbook.org/v1/intro.html" class="external-link" target="_blank">Jupyter Book</a> {cite}`executable_books_community_2021_2561065`.
 
 Weitere Hinweise zu Empfehlungen und Vorgaben zur OER-Erstellung des Datenkompetenzzentrums QUADRIGA finden Sie im <a href="https://quadriga-dk.github.io/QUADRIGA-OER-Manual/" target="_blank">QUADRIGA-OER-Manual</a>.
 
