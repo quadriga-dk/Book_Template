@@ -6,7 +6,7 @@
 ```{literalinclude} ../CITATION.bib
 :language: bibtex
 ```
-Schnaitter, H., Samoilova, E. & Islam, L. (2024). _QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template._ https://doi.org/10.5281/zenodo.14970672
+Schnaitter, H., Samoilova, E. & Islam, L. (2026). _QUADRIGA-OER-Template. QUADRIGA Open Educational Resources: Template._ https://doi.org/10.5281/zenodo.14970672
 
 ````
 `````
