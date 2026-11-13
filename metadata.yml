@@ -80,7 +80,7 @@ educationalLevel:
 learningResourceType:
 - https://w3id.org/kim/hcrt/textbook
 duration: PT16H15M
-version: 0.64.1
+version: 1.0.0
 datePublished: '2024-05-06'
-dateModified: '2026-05-11'
+dateModified: '2026-11-13'
 identifier: https://doi.org/10.5281/zenodo.14970672
