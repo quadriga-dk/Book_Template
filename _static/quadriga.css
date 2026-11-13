@@ -396,3 +396,18 @@ figure.figure-video figcaption .caption-text::before {
     -webkit-mask: var(--qu-figure-icon-video) center / contain no-repeat;
     mask: var(--qu-figure-icon-video) center / contain no-repeat;
 }
+
+/* Mermaid diagrams (sphinxcontrib-mermaid) are wrapped in a <pre class="mermaid">,
+   which the theme styles like a code block. Render them as figures instead:
+   no surface background, no border, and the SVG keeps its natural height
+   (see `mermaid_height` in _config.yml). */
+pre.mermaid {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+pre.mermaid > svg {
+    margin: 0 auto;
+}
