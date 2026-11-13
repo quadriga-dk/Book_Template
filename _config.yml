@@ -88,6 +88,11 @@ sphinx:
     language: de
     smartquotes: true
     html_show_copyright: false
+    # Mermaid diagrams keep their natural size instead of being stretched into
+    # the 500px-high viewport that sphinxcontrib-mermaid uses by default.
+    mermaid_height: auto
+    # The fullscreen button overlays small diagrams; zooming is done in the browser.
+    mermaid_fullscreen: false
     html_static_path: ["_static"]
     html_css_files:
       - quadriga.css
